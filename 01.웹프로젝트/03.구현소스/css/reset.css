@@ -3,7 +3,7 @@
 /* 기본 세팅이 되어 있는 요소들 초기화 하기 */
 
 /* 마진, 패딩 초기화 */
-html, body, h1, h2, ul, ol{
+html, body, h1, h2, h3, h4, ul, ol{
     margin: 0;
     padding: 0;
 }
@@ -15,5 +15,6 @@ ul, ol{
 
 /* root 글자 크기 세팅 */
 html{
-    
+    font-size: 10px;
 }
+
