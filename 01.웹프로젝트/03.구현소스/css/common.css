@@ -2,58 +2,136 @@
 /* 공통 모듈 디자인 CSS - common.css */
 /* 상단 영역, 하단 영역 디자인 */
 
-/*********************************** 1. 상단영역 ***********************************/
+/************************************************** 1. 상단영역 **************************************************/
 
 /* 상단영역 최상위 겉박스 */
 #top{
-    
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.top{
+    position: relative;
+    /* 부모자격 - .stieMap */
 }
 
 /* 1-1. 로고와 아이콘 영역 */
 .topArea{
-    height: 100px;
+    /* 플렉스 박스 */
     display: flex;
+    height: 50px;
+    padding: 20px 50px;
     justify-content: space-between;
-
-    padding-top: 20px;
-
+    align-items: center;
     background-color: #e9e9e9;
-
-    /* 사이트맵 등장하면 숨기기 */
-    display: none;
+}
+.etc a:nth-child(1){
+    margin-right: 40px;
 }
 
 
-/* 사이트맵 박스 */
+/*************************************************** 사이트맵 박스 ***************************************************/
 .siteMap{
-    position: absolute;
-    height: 100vh;
+    position: fixed;
+    /* : 오른쪽에 숨어있다가 나와서 화면 다 가려야 함 */
+    top: 0;
+    height: 100%;
+    width: 100%;
     background-color: #bbbbbb;
 
-    padding: 10vh;
     text-align: center;
+
+    /* 오른쪽에 숨기기 */
+    right: 100%;
+}
+/* 사이트맵 닫기 버튼 */
+.siteMap .close{
+    height: 100px;
+    margin-top: 50px;
+}
+.close a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: -60px;
 }
 /* 사이트맵 제목 */
 .siteMap h2{
-    font-size: 5rem;
-    line-height: 1.7;
+    /* font-size: min(2.5rem, 50px); */
+    font-size: 50px;
+    line-height: 2;
     letter-spacing: 4px;
+    padding-bottom: 50px;
 }
 /* 사이트맵 상위메뉴 */
 .siteMap ul{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
-    font-size: 3rem;
+    /* font-size: min(1.8rem, 30px); */
+    font-size: 25px;
     font-weight: bold;
 }
 /* 사이트맵 하위메뉴 */
 .smenu{
-    font-size: 2rem;
-    font-weight: normal;
-
+    margin-top: 80px;
+    /* 위쪽에 마우스 따라다니는 바와 트랙 만들기 위해 널찍하게 간격 넓힘 */
 }
-
+.smenu ol li{
+    /* font-size: min(1.4rem, 20px); */
+    font-size: 18px;
+    font-weight: normal;
+    padding: 15px;
+}
 .cont{
     /* background-color: #a0a0a0; */
+}
+
+/***************************************** 2. 메인 영역 *****************************************/
+.cont{
+    position: relative;
+    /* 부모자격 - .mainTitle */
+}
+
+.main{
+    height: 100vh;
+    background: url(../../00.자료수집/02.이미지데이터/01.메인페이지이미지/clear_bg.png) no-repeat center/cover;
+}
+
+.main h1{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 80px;
+    font-weight: lighter;
+    letter-spacing: 10px;
+    color: #2e2e2e;
+}
+.main h3{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 50px;
+    font-weight: lighter;
+    color: #2e2e2e;
+}
+
+.mainSlogan{
+    position: absolute;
+    top: 25%;
+    right: 2%;
+}
+.mainSlogan h2{
+    text-align: right;
+    font-size: 32px;
+    letter-spacing: 2px;
+    line-height: 1.7;
+    font-weight: normal;
+    color: #e2e2e2;
 }
