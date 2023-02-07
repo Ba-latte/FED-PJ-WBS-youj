@@ -18,3 +18,9 @@ html{
     font-size: 10px;
 }
 
+/* a요소 세팅 */
+a{
+    color: #111;
+    text-decoration: none;
+}
+
