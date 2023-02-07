@@ -8,3 +8,22 @@
 #top{
     
 }
+
+/* 개별 속박스 - .top */
+.top{
+    height: 110px;
+    
+    background-color: #e9e9e9;
+}
+
+.topArea{
+    
+}
+
+.siteMap{
+    background-color: #bbbbbb;
+}
+
+.cont{
+    background-color: #a0a0a0;
+}
