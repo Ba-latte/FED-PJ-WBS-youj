@@ -7,3 +7,72 @@
 @import url(./core.css);
 @import url(./common.css);
 
+.main{
+    position: relative;
+}
+.main h1::before{
+    content: '';
+    position: absolute;
+    top: 155px;
+    left: 7px;
+    z-index: -1;
+    width: 40px;
+    height: 50px;
+    background-color: #f00;
+    border-radius: 50%;
+    /* transform: scale(.8) scaleY(1.2); */
+    animation: mvcAni2 3s linear infinite alternate;
+}
+
+.mvc{
+    animation: mvcAni 3s linear infinite alternate;
+}
+
+/* 움직이는 원 키프레임 */
+@keyframes mvcAni {
+    0%{
+        transform: rotate(0deg) translateY(0px);
+    }
+    20%{
+        transform: rotate(30deg)  translateY(10px);
+    }
+    40%{
+        transform: rotate(60deg) translateY(-10px);
+    }
+    60%{
+        transform: rotate(90deg)  translateY(10px);
+    }
+    70%{
+        transform: rotate(180deg) translateY(-10px);
+    }
+    80%{
+        transform: rotate(270deg)  translateY(10px);
+    }
+    100%{
+        transform: rotate(0deg) translateY(0px);
+    }
+}
+/* 움직이는 원 키프레임 */
+@keyframes mvcAni2 {
+    0%{
+        transform: translate(5px,0px);
+    }
+    20%{
+        transform:   translate(-5px,5px);
+    }
+    40%{
+        transform:  translate(5px,-5px);
+    }
+    60%{
+        transform:  translate(-5px,5px);
+    }
+    70%{
+        transform: translate(-5px,-5px);
+    }
+    80%{
+        transform: translate(5px,5px);
+    }
+    100%{
+        transform: translate(-5px,0px);
+    }
+}
