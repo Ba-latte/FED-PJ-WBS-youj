@@ -19,6 +19,7 @@
 }
 
 /* 1-1. 로고와 아이콘 영역 */
+/* (1) 로고 */
 .topArea{
     /* 플렉스 박스 */
     display: flex;
@@ -26,8 +27,24 @@
     padding: 20px 50px;
     justify-content: space-between;
     align-items: center;
-    background-color: #e9e9e9;
+    background-color: #d1d1d144;
 }
+/* (1-1) 로고 주위 돌아다니는 원형 이미지 */
+.topArea h1::before{
+    content: '';
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    
+    background-color: #e2de73;
+
+    border-radius: 50%;
+
+}
+
+
+/* (2) 기타 - 아이콘 영역 */
 .etc a:nth-child(1){
     margin-right: 40px;
 }
@@ -90,49 +107,3 @@
     /* background-color: #a0a0a0; */
 }
 
-/***************************************** 2. 메인 영역 *****************************************/
-.cont{
-    position: relative;
-    /* 부모자격 - .mainTitle */
-}
-
-.main{
-    height: 100vh;
-    background: url(../../00.자료수집/02.이미지데이터/01.메인페이지이미지/clear_bg.png) no-repeat center/cover;
-}
-
-.main h1{
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    font-size: 80px;
-    font-weight: lighter;
-    letter-spacing: 10px;
-    color: #2e2e2e;
-}
-.main h3{
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translateX(-50%);
-
-    font-size: 50px;
-    font-weight: lighter;
-    color: #2e2e2e;
-}
-
-.mainSlogan{
-    position: absolute;
-    top: 25%;
-    right: 2%;
-}
-.mainSlogan h2{
-    text-align: right;
-    font-size: 32px;
-    letter-spacing: 2px;
-    line-height: 1.7;
-    font-weight: normal;
-    color: #e2e2e2;
-}

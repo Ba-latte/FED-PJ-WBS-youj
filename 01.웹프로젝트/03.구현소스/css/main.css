@@ -6,73 +6,83 @@
 @import url(./reset.css);
 @import url(./core.css);
 @import url(./common.css);
+@import url(./ani.css);
+
+
+/***************************************** 2. 메인 영역 *****************************************/
 
 .main{
     position: relative;
+    /* 부모자격 - .mainTitle */
+    height: 100vh;
+
+    /* background: url(../../00.자료수집/02.이미지데이터/01.메인페이지이미지/clear_bg.png) no-repeat center/cover; */
+    /* 📌배경이미지가 없는 게 더 이쁜거 같은걸...?ㅠㅠ */
+
+    background-color: rgb(243, 243, 243);
 }
+
+/* (1)메인 타이틀 */
+.main h1{
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 80px;
+    font-weight: lighter;
+    letter-spacing: 10px;
+    line-height: 1.7;
+    color: #2e2e2e;
+}
+
+/* (2)메인 문구 - 기간 */
+.main h3{
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 50px;
+    font-weight: lighter;
+    color: #2e2e2e;
+}
+
+/* (3)메인 슬로건 */
+.mainSlogan{
+    position: absolute;
+    top: 25%;
+    right: 2%;
+}
+.mainSlogan h2{
+    text-align: right;
+    font-size: 32px;
+    letter-spacing: 2px;
+    line-height: 1.7;
+    font-weight: normal;
+    color: #e2e2e2;
+}
+
+
+
+
+
+/* 메인 제목 아래 움직이는 원형 이미지 */
 .main h1::before{
     content: '';
     position: absolute;
     top: 155px;
     left: 7px;
     z-index: -1;
-    width: 40px;
+    width: 50px;
     height: 50px;
-    background-color: #f00;
+    background-color: #d7a7bf;
     border-radius: 50%;
-    /* transform: scale(.8) scaleY(1.2); */
+    transform: scale(.8) scaleY(1.2);
     animation: mvcAni2 3s linear infinite alternate;
 }
 
-.mvc{
-    animation: mvcAni 3s linear infinite alternate;
-}
 
-/* 움직이는 원 키프레임 */
-@keyframes mvcAni {
-    0%{
-        transform: rotate(0deg) translateY(0px);
-    }
-    20%{
-        transform: rotate(30deg)  translateY(10px);
-    }
-    40%{
-        transform: rotate(60deg) translateY(-10px);
-    }
-    60%{
-        transform: rotate(90deg)  translateY(10px);
-    }
-    70%{
-        transform: rotate(180deg) translateY(-10px);
-    }
-    80%{
-        transform: rotate(270deg)  translateY(10px);
-    }
-    100%{
-        transform: rotate(0deg) translateY(0px);
-    }
-}
-/* 움직이는 원 키프레임 */
-@keyframes mvcAni2 {
-    0%{
-        transform: translate(5px,0px);
-    }
-    20%{
-        transform:   translate(-5px,5px);
-    }
-    40%{
-        transform:  translate(5px,-5px);
-    }
-    60%{
-        transform:  translate(-5px,5px);
-    }
-    70%{
-        transform: translate(-5px,-5px);
-    }
-    80%{
-        transform: translate(5px,5px);
-    }
-    100%{
-        transform: translate(-5px,0px);
-    }
-}
+

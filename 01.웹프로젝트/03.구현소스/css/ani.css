@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/* 애니메이션 CSS - ani.css */
+
+
+
+/* 움직이는 애니메이션 클래스 */
+.mvc{
+    animation: mvcAni 3s linear infinite alternate;
+}
+
+/* 움직이는 원 키프레임 */
+@keyframes mvcAni {
+    0%{
+        transform: rotate(0deg) translateY(0px);
+    }
+    20%{
+        transform: rotate(30deg)  translateY(10px);
+    }
+    40%{
+        transform: rotate(60deg) translateY(-10px);
+    }
+    60%{
+        transform: rotate(90deg)  translateY(10px);
+    }
+    70%{
+        transform: rotate(180deg) translateY(-10px);
+    }
+    80%{
+        transform: rotate(270deg)  translateY(10px);
+    }
+    100%{
+        transform: rotate(0deg) translateY(0px);
+    }
+}
+/* 움직이는 원 키프레임 */
+@keyframes mvcAni2 {
+    0%{
+        transform: translate(5px,0px);
+    }
+    20%{
+        transform:   translate(-5px,5px);
+    }
+    40%{
+        transform:  translate(5px,-5px);
+    }
+    60%{
+        transform:  translate(-5px,5px);
+    }
+    70%{
+        transform: translate(-5px,-5px);
+    }
+    80%{
+        transform: translate(5px,5px);
+    }
+    100%{
+        transform: translate(-5px,0px);
+    }
+}
