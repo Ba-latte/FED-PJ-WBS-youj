@@ -57,3 +57,24 @@
         transform: translate(-5px,0px);
     }
 }
+
+
+
+/* 메인 페이지 회전 키프레임 */
+@keyframes ratation {
+    from{
+        transform: rotate(0deg) translateX(-250px) rotate(0deg);
+        /*
+            [ 주변회전 만들기 ]
+        1. 첫번째 rotate : 0deg -> 350deg
+            ->중앙 회전 만들기
+        2. 위치이동 translateX()
+            ->주변을 도는 효과 생김
+        3. 두번째 rotate : 0deg -> -360deg
+            ->반대 회전은 옆으로 이동한 박스에 적용되어, 세워져서 주변을 두는 효과가 생김
+        */
+    }
+    to{
+        transform: rotate(360deg) translateX(-250px) rotate(-360deg);
+    }
+} /* rotation 키프레임 끝 */

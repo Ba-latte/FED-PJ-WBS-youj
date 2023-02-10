@@ -20,6 +20,23 @@
     /* 📌배경이미지가 없는 게 더 이쁜거 같은걸...?ㅠㅠ */
 
     background-color: rgb(243, 243, 243);
+
+    overflow: hidden;
+}
+.cont .main::before{
+    content: '';
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border-radius: 50%;
+    /* background-color: #654376; */
+    /* border: 10px solid #000; */
+    
+
+    animation: ratation 8s linear infinite;
 }
 
 /* (1)메인 타이틀 */

@@ -29,19 +29,48 @@
     align-items: center;
     background-color: #d1d1d144;
 }
+.logo{
+    position: relative;
+    /* 부모자격 - .circle */
+}
 /* (1-1) 로고 주위 돌아다니는 원형 이미지 */
-.topArea h1::before{
-    content: '';
-    display: block;
+.logo .circle{
+    position: absolute;
+    /* : 겹치게 만들려고 앱솔루트 줌 */
+    z-index: -1;
+    /* : 로고보다 한칸 아래쪽에 위치시키기 */
 
     width: 20px;
     height: 20px;
-    
-    background-color: #e2de73;
-
     border-radius: 50%;
-
+    
 }
+/* 로고 주변 원 개별 세팅 */
+.logo .cr1{
+    top: 11%;
+    left: 6%;
+    background-color: #e2de73;
+}
+.logo .cr2{
+    top: 55%;
+    left: 32%;
+    width: 15px;
+    height: 15px;
+    background-color: #19833b;
+}
+.logo .cr3{
+    top: 25%;
+    left: 78%;
+    background-color: #b5416e;
+}
+.logo .cr4{
+    top: 1%;
+    left: 97%;
+    width: 12px;
+    height: 12px;
+    background-color: #d8693e;
+}
+
 
 
 /* (2) 기타 - 아이콘 영역 */
