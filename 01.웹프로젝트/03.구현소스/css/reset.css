@@ -3,7 +3,7 @@
 /* 기본 세팅이 되어 있는 요소들 초기화 하기 */
 
 /* 마진, 패딩 초기화 */
-html, body, h1, h2, h3, h4, ul, ol{
+html, body, h1, h2, h3, h4, ul, ol, p{
     margin: 0;
     padding: 0;
 }

@@ -327,10 +327,6 @@
     font-size: 1.6rem;
 }
 
-.topBtn{
-}
-
-
 
 /************************************* 2-4. 4페이지 *************************************/
 /* 셰프와 바텐더 소개 */
@@ -349,10 +345,12 @@
     background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/info-banner-bg.jpg) no-repeat center/100% auto;
 }
 
-/* 왼쪽고정 오른쪽상하스크롤 박스 */
+/* 왼쪽단+오른쪽단 박스 */
 .stkBox{
     /* height: auto; */
-    
+    display: flex;
+    justify-content: center;
+    width: 100%;
     
 }
 
@@ -366,25 +364,127 @@
 /* 왼쪽단 제목 */
 .fixedArea h3{
     padding: 40% 10% 10%;
-    font-size: 2rem;
+    font-size: 3rem;
     letter-spacing: 1px;
+    text-align: center;
 }
+
+/* 왼쪽단 제목 근처 배경 원형 - 초록색 */
+.fixedArea h3::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 32%;
+    right: 20%;
+    z-index: -1;
+
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #19833b;
+}
+
+/* 왼쪽단 제목 근처 배경 원형 - 노란색 */
+.fixedArea h3::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 18%;
+    left: 10%;
+    z-index: -1;
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #e2de73;
+}
+
 /* 왼쪽단 설명 */
 .fixedArea p{
-    padding: 20% 10%;
+    padding: 5% 10%;
     font-size: 1.6rem;
     word-spacing: 2px;
     line-height: 2;
+    text-align: justify;
+    color: #2e2e2e;
 }
 
+/* 오른쪽단 */
+.introList{
+    margin-top: 40%;
+}
+.introList li{
+    margin-bottom: 30%;
+}
 
 /* 셰프 이미지 공통 세팅 */
 .introList img{
-    width: 100%;
-    height: 400px;
+    width: 50vw;
+    height: 60vh;
     object-fit: cover;
-    object-position: 0% 20%;
-    transform: scale(1);
+    object-position: top;
 } 
 /* 셰프 이름 */
+.introList li p{
+    font-size: 1.6rem;
+    line-height: 2;
+    margin: 20px 0 50px;
+    color: #2e2e2e;
+}
 
+
+
+/************************************* 2-5. 5페이지 *************************************/
+/* 동영상 페이지 */
+.vSection{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*  (1) 섹션 타이틀 */
+.secTitle5{
+    text-align: center;
+    font-size: 4rem;
+    line-height: 2;
+    margin: 15vh 0 5vh;
+    color: #2e2e2e;
+}
+
+.vArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* (2) 메인 비디오 영역 */
+.vArea iframe{
+    width: 55vw;
+    height: 55vh;
+    margin: 50px;
+    border: none;
+}
+
+/* (3) 비디오 목록 */
+.videoList{
+    width: 50vw;
+    overflow: hidden;
+
+}
+
+.videoList ol{
+    display: flex;
+}
+
+/* 비디오 목록내의 이미지 */
+.videoList img{
+    width: 10vw;
+}
+
+/* (4) 비디오 목록 이전/다음 전환 버튼 */
+.movebtn{
+    display: flex;
+    justify-content: space-around;
+}
+.movebtn{
+    margin: 20px;
+}
