@@ -510,3 +510,66 @@
 .movebtn .nextbtn:hover {
     filter: brightness(0.5);
 }
+
+
+/************************************* 2-6. 6페이지 *************************************/
+/* 공지사항과 보도자료 페이지 */
+
+/* 6페이지 속박스 */
+.NnPSection{
+    /* 디스플레이 플렉스 */
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 양쪽 단 공통 세팅 */
+.NnPSection .lside,
+.NnPSection .rside{
+    padding: 15% 3%;
+    height: auto;
+    /* 기존에 ".lside"에 들어가있는거 같은데..높이값 세팅이..여기서 없애주기ㅠㅠ */
+}
+
+/* 양쪽단 등분할 */
+.NnPSection aside{
+    flex: 1;
+}
+
+/* 공지사항 박스 내의 메뉴 */
+.NnPMenu{
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 10%;
+}
+
+/* 공지사항 박스 내의 게시글 박스 공통 */
+.notice ol{
+    display: flex;
+    gap: 3%;
+}
+
+/* 공지사항 박스 내의 게시글 목록 */
+.notice li{
+    flex: 1;
+    font-size: 2rem;
+
+    background-color: #e2e2e2;
+}
+
+/* 공지사항 게시글 제목 */
+.notice li h4{
+    padding: 5%;
+    font-weight: bold;
+}
+/* 공지사항 게시글 본문 */
+.notice li p{
+    padding: 5%;
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
