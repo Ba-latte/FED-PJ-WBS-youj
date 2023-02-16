@@ -524,19 +524,17 @@
 }
 
 /* 양쪽 단 공통 세팅 */
-.NnPSection .lside,
-.NnPSection .rside{
+.NnPSection aside{
+    flex: 1;
+    /* 등분할시키기 */
+
     padding: 15% 3%;
     height: auto;
     /* 기존에 ".lside"에 들어가있는거 같은데..높이값 세팅이..여기서 없애주기ㅠㅠ */
 }
 
-/* 양쪽단 등분할 */
-.NnPSection aside{
-    flex: 1;
-}
 
-/* 공지사항 박스 내의 메뉴 */
+/* 양쪽단 박스 내의 메뉴 */
 .NnPMenu{
     font-size: 3.5rem;
     letter-spacing: 3px;
@@ -547,29 +545,62 @@
     padding-bottom: 10%;
 }
 
-/* 공지사항 박스 내의 게시글 박스 공통 */
-.notice ol{
+/* 양쪽단 박스 내의 게시글 박스 공통 디자인 */
+.NnPSection aside ol{
     display: flex;
     gap: 3%;
 }
 
-/* 공지사항 박스 내의 게시글 목록 */
-.notice li{
+/* 양쪽단 박스 내의 게시글 목록 */
+.NnPSection aside ol li{
     flex: 1;
+    /* 등분할 */
     font-size: 2rem;
 
-    background-color: #e2e2e2;
+    height: 30vh;
+
+    background-color: #f7f7f7;
+
+    /* 마우스오버시 색 변경 트랜지션 */
+    transition: background-color .3s ease-in-out;
 }
 
-/* 공지사항 게시글 제목 */
-.notice li h4{
+/* 양쪽단 박스 내의 a요소에 크기 부여하기 (자식 요소들에 크기 부여해서 자기 자리 차지하게 만들려고(?)) */
+.NnPSection li a{
+    display: inline-block;
+    height: 30vh;
+}
+
+/* 양쪽단 박스 내의 게시글 제목 */
+.NnPSection aside li h4{
+    box-sizing: border-box;
+    height: 20%;
     padding: 5%;
     font-weight: bold;
 }
-/* 공지사항 게시글 본문 */
-.notice li p{
+/* 양쪽단 게시글 본문 */
+.NnPSection aside li p{
+    box-sizing: border-box;
+    height: 60%;
     padding: 5%;
-    font-size: 1.8rem;
+    padding-top: 15%;
+    font-size: 1.6rem;
     font-weight: normal;
 }
 
+/* 양쪽단 게시글 작성날짜 */
+.NnPSection aside li span{
+    box-sizing: border-box;
+    display: inline-block;
+
+    height: 20%;
+    padding: 5%;
+
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+/* 양쪽단 게시글에 마우스오버시 박스의 배경색 변경하기 */
+.NnPSection aside ol li:hover{
+    background-color: #d7a7bf;
+}
