@@ -574,9 +574,15 @@
 /* 양쪽단 박스 내의 게시글 제목 */
 .NnPSection aside li h4{
     box-sizing: border-box;
-    height: 20%;
+    height: 26%;
     padding: 5%;
     font-weight: bold;
+
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 /* 양쪽단 게시글 본문 */
 .NnPSection aside li p{
