@@ -574,10 +574,11 @@
 /* 양쪽단 박스 내의 게시글 제목 */
 .NnPSection aside li h4{
     box-sizing: border-box;
-    height: 26%;
-    padding: 5%;
+    height: 20%;
+    margin: 5%;
     font-weight: bold;
 
+    /* 2줄 초과일 경우 자동 말줄임표시 넣기 */
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -587,11 +588,17 @@
 /* 양쪽단 게시글 본문 */
 .NnPSection aside li p{
     box-sizing: border-box;
-    height: 60%;
-    padding: 5%;
-    padding-top: 15%;
+    height: 35%;
+    margin: 10% 5% 5%;
     font-size: 1.6rem;
     font-weight: normal;
+
+    /* 3줄 초과일 경우 자동 말줄임표시 넣기 */
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 /* 양쪽단 게시글 작성날짜 */
@@ -599,11 +606,12 @@
     box-sizing: border-box;
     display: inline-block;
 
-    height: 20%;
-    padding: 5%;
+    height: 13%;
+    margin: 5%;
 
     font-size: 1.4rem;
     font-weight: normal;
+    line-height: 3.4rem;
 }
 
 /* 양쪽단 게시글에 마우스오버시 박스의 배경색 변경하기 */
