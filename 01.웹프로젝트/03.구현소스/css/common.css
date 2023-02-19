@@ -4,6 +4,7 @@
 
 /******************************************** 상단영역 ********************************************/
 
+
 /* 상단영역 최상위 겉박스 */
 #top{
     position: fixed;
@@ -74,8 +75,51 @@
 
 
 /* (2) 기타 - 아이콘 영역 */
-.etc a:nth-child(1){
+.etc ul{
+    /* 플렉스 박스 */
+    display: flex;
+}
+/* 다국어 아이콘과 햄버거 버튼 사이 간격 */
+.etc ul>li:nth-child(1){
     margin-right: 40px;
+    position: relative;
+}
+/* 다국어 메뉴 박스 */
+.lang{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 40px;
+    text-align: center;
+
+    /* 처음에 안보이게 숨겨두기 */
+    height: 0px;
+    overflow: hidden;
+    opacity: 0;
+
+    transition: all .3s ease-in-out;
+}
+/* 다국어 아이콘에 마우스오버시 다국어 메뉴 박스 보이게 만들기 */
+.etc ul>li:nth-child(1):hover .lang{
+    height: 45px;
+    opacity: 1;
+}
+/* 다국어 메뉴 li */
+.lang li{
+    padding-top: 4px;
+}
+/* 다국어 메뉴 a요소 */
+.lang a{
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: 'Julius Sans One', sans-serif;
+    color: #999;
+    letter-spacing: 1px;
+    line-height: 1.7;
+}
+/* 다국어 메뉴 a요소에 마우스오버시 색 변경 */
+.lang a:hover{
+    color: #111;
 }
 
 
@@ -83,6 +127,7 @@
 .siteMap{
     position: fixed;
     /* : 오른쪽에 숨어있다가 나와서 화면 다 가려야 함 */
+    z-index: 1;
     top: 0;
     height: 100%;
     width: 100%;
@@ -111,6 +156,7 @@
     line-height: 2;
     letter-spacing: 4px;
     padding-bottom: 50px;
+    color: #111;
 }
 /* 사이트맵 상위메뉴 */
 .siteMap ul{
@@ -121,6 +167,32 @@
     font-size: 25px;
     font-weight: bold;
 }
+/* 사이트맵 상위메뉴 글자색 변경 */
+.siteMap li a{
+    color: #333;
+}
+
+/* 상위메뉴 아래에 있는 트랙 */
+.barTrack{
+    position: absolute;
+    top: 40vh;
+    left: 50%;
+    transform: translate(-50%);
+    width: 93vw;
+    border-bottom: 2px solid #555;
+}
+
+/* 마우스 따라다니는 바 */
+.barTrack .bar{
+    position: absolute;
+    top: -7px;
+    left: 0px;
+    width: 125px;
+    height: 15px;
+    background-color: #111;
+
+}
+
 /* 사이트맵 하위메뉴 */
 .smenu{
     margin-top: 80px;
@@ -132,10 +204,15 @@
     font-weight: normal;
     padding: 15px;
 }
-.cont{
-    /* background-color: #a0a0a0; */
+/* 사이트맵 하위메뉴 글자색 변경 */
+.smenu li a{
+    color: #555;
 }
 
+/* 사이트맵 하위메뉴에 마우스오버시 글자색 진하게 변경 */
+.smenu li a:hover{
+    color: #111;
+}
 
 /****************************************** 하단 영역 ******************************************/
 /* 하단영역 겉박스 */
@@ -153,10 +230,16 @@
 }
 
 /* 하단영역 로고  */
+.logo img{
+    position: relative;
+    /* 로고주변 원보다 z인덱스 1 높게 하기 위함 */
+    z-index: 1;
+}
 
 /* 하단영역 로고 주변 원 */
 .info .circle{
     z-index: 0;
+    /* 하단 배경보다 z인덱스 높게 하기 위함 */
 }
 
 /* 하단영역 사이트 정보 */

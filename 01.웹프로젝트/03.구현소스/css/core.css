@@ -23,3 +23,29 @@ body{
     max-width: 1400px;
     margin: 0 auto;
 }
+
+
+/* 스크롤바 디자인 클래스 */
+/* -webkit- 밴더사명(크롬, 사파리) 접두어 사용함! */
+/* (참고: 접두어의 종류로는 -ms-(ie), -o-(오페라), -moz-(파이어폭스) 가 있음) */
+/* 클래스명 scbar */
+.scbar::-webkit-scrollbar{
+    scroll-behavior: smooth;
+    /* 스크롤 동작 부드럽게 */
+    width: 10px;
+    /* 전체 스크롤바 크기(폭)변경 */
+    
+    /* display: none; */
+}
+
+.scbar::-webkit-scrollbar-thumb{
+    /* 스크롤바 변경 */
+    background-color: #a5a5a5;
+    border-radius: 3px;
+}
+
+.scbar::-webkit-scrollbar-track{
+    /* 스크롤바트랙 (스크롤바가 다니는 길) 변경 */
+    background-color: #dddddd;
+    border-radius: 3px;
+}
