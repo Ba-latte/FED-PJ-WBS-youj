@@ -131,12 +131,19 @@
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: #bbbbbb;
+    /* background-color: #b1b1b1; */
+    background: url(../../00.자료수집/02.이미지데이터/01.메인페이지이미지/program-bg.jpg) no-repeat center/cover;
 
     text-align: center;
 
     /* 오른쪽에 숨기기 */
-    right: 100%;
+    left: 100%;
+
+    /* 트랜지션 */
+    transition: left .5s ease-in-out;
+
+    /* 스크롤바 없애기 */
+    sc
 }
 /* 사이트맵 닫기 버튼 */
 .siteMap .close{
@@ -152,9 +159,10 @@
 /* 사이트맵 제목 */
 .siteMap h2{
     /* font-size: min(2.5rem, 50px); */
+    font-family: 'Julius Sans One', sans-serif;
     font-size: 50px;
     line-height: 2;
-    letter-spacing: 4px;
+    letter-spacing: 10px;
     padding-bottom: 50px;
     color: #111;
 }
@@ -169,7 +177,7 @@
 }
 /* 사이트맵 상위메뉴 글자색 변경 */
 .siteMap li a{
-    color: #333;
+    color: #555;
 }
 
 /* 상위메뉴 아래에 있는 트랙 */
@@ -179,7 +187,8 @@
     left: 50%;
     transform: translate(-50%);
     width: 93vw;
-    border-bottom: 2px solid #555;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 1px 1px 3px #767676;
 }
 
 /* 마우스 따라다니는 바 */
@@ -189,7 +198,8 @@
     left: 0px;
     width: 125px;
     height: 15px;
-    background-color: #111;
+    background-color: #e38888;
+    box-shadow: 1px 1px #3333336e;
 
 }
 
@@ -206,7 +216,7 @@
 }
 /* 사이트맵 하위메뉴 글자색 변경 */
 .smenu li a{
-    color: #555;
+    color: #a5a5a5;
 }
 
 /* 사이트맵 하위메뉴에 마우스오버시 글자색 진하게 변경 */
@@ -298,4 +308,13 @@ address span:nth-child(2){
 /* 정책박스 내의 a요소에 마우스오버시 밑줄 생기게 만들기 */
 .policy a:hover{
     text-decoration: underline;
+}
+
+
+
+
+/********************************************* .on 추가 영역 *********************************************/
+/* .siteMap.on 일 경우, 사이트맵 페이지가 오른쪽에서 등장하기 */
+.siteMap.on{
+    left: 0;
 }
