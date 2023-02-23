@@ -143,19 +143,21 @@
     transition: left .5s ease-in-out;
 
     /* 스크롤바 없애기 */
-    sc
 }
+
 /* 사이트맵 닫기 버튼 */
 .siteMap .close{
     height: 100px;
     margin-top: 50px;
 }
+/* 닫기버튼 a요소 */
 .close a{
     display: inline-block;
     width: 40px;
     height: 40px;
     vertical-align: -60px;
 }
+
 /* 사이트맵 제목 */
 .siteMap h2{
     /* font-size: min(2.5rem, 50px); */
@@ -166,6 +168,7 @@
     padding-bottom: 50px;
     color: #111;
 }
+
 /* 사이트맵 상위메뉴 */
 .siteMap ul{
     display: flex;
@@ -175,6 +178,7 @@
     font-size: 25px;
     font-weight: bold;
 }
+
 /* 사이트맵 상위메뉴 글자색 변경 */
 .siteMap li a{
     color: #555;
@@ -318,3 +322,4 @@ address span:nth-child(2){
 .siteMap.on{
     left: 0;
 }
+

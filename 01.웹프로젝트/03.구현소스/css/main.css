@@ -216,6 +216,17 @@
     transform: scale(1.1);
 }
 
+/* 주요 프로그램 섹션의 이미지 요소 공통 */
+.pl img {
+    transform: scale(0);
+    transition: .5s ease-in;
+}
+
+/* .on일 경우, 주요 프로그램 섹션의 이미지가 제자리에서 등장하기 */
+.pl img.on {
+    transform: scale(1);
+}
+
 
 
 /* (4) 2페이지 움직이는 원 공통 세팅 */
