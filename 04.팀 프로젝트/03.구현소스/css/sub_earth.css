@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* 서브페이지 : 지구 CSS - sub_earth.css */
+
+/* 공통 외부 CSS 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+/* 초기화 */
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+/* 2.메인영역 */
+/* 타이틀 */
+h1.tit {
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    left: 9%;
+    font-size: 20rem;
+    color: rgb(67, 170, 237);
+}
+
+/* 부제 */
+h3.stit {
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    left: 10%;
+    color: #fff;
+    font-size: 5rem;
+    letter-spacing: 0.4rem;
+}
+
+/* 전문 */
+p.contTxt {
+    position: absolute;
+    z-index: 1;
+    top: 52%;
+    left: 10%;
+    width: 33vw;
+    color: #fff;
+    font-size: 1.7rem;
+    text-align: justify;
+    word-break: break-word;
+}
+/* 지구 3D 모델 겉박스 */
+.outWrap{
+    background-color: #a9d3ee;
+    height: 100vh;
+}
+/* 지구 3D 모델 속박스 */
+.inWrap {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    width: 50%;
+    height: 70%;
+}
+/* 지구 3D 모델 아이프레임 */
+.inWrap iframe {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+    /* 아주 약간 아래쪽에 사이 간격 발생하는 것 때문에 부여함 */
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SOLAR SYSTEM-EARTH</title>
+        <!-- Favicon -->
+        <link href="./img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+        <!-- 폰트어썸 CDN CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        <!-- 외부CSS 불러오기 -->
+        <link rel="stylesheet" href="./css/sub_earth.css" />
+        <!-- 외부 미디어쿼리 CSS 불러오기 -->
+        <link rel="stylesheet" href="./css/mainmedia.css" />
+        <!-- 외부JS삽입 -->
+        <script src="./js/main.js"></script>
+    </head>
+    <body>
+        <!-- 1. 상단영역 -->
+        <div class="top">
+            <header class="topbx">
+                <!-- 1-1.로고 -->
+                <h1 class="logo">
+                    <a href="main.html">
+                        <img src="./img/logo.png" alt="로고이미지" />
+                    </a>
+                </h1>
+                <!-- 1-2.GNB메뉴 -->
+                <nav class="gnb">
+                    <ul>
+                        <li><a href="#">Jupiter</a></li>
+                        <li><a href="#">Mercury</a></li>
+                        <li><a href="#">Sun</a></li>
+                        <li><a href="#">Earth</a></li>
+                        <li><a href="#">Mars</a></li>
+                        <li><a href="#">Saturn</a></li>
+                        <li>
+                            <div class="sbx">
+                                <input type="text" id="searchbx" class="searchbx" />
+                                <label for="searchbx" class="fa-solid fa-magnifying-glass sicon"></label>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- 모바일 햄버거버튼 -->
+                <button class="ham"></button>
+            </header>
+        </div>
+
+        <!-- 2.메인영역 -->
+        <div id="cont">
+            <!-- 2-1. 메인페이지 -->
+            <section>
+                <!-- (1)메인 타이틀 -->
+                <div id="tit">
+                    <h1 class="tit">Earth</h1>
+                </div>
+                <!-- (2)메인 부제 -->
+                <div id="stit">
+                    <h3 class="stit">Our home planet</h3>
+                </div>
+                <!-- (3)메인 전문 -->
+                <div id="contTxt">
+                    <p class="contTxt">
+                        Our home planet is the third planet from the Sun, and the only place we know of so far that’s
+                        inhabited by living things.
+                        <br />
+                        While Earth is only the fifth largest planet in the solar system, it is the only world in our
+                        solar system with liquid water on the surface. Just slightly larger than nearby Venus, Earth is
+                        the biggest of the four planets closest to the Sun, all of which are made of rock and metal.
+                        <br />
+                        The name Earth is at least 1,000 years old. All of the planets, except for Earth, were named
+                        after Greek and Roman gods and goddesses. However, the name Earth is a Germanic word, which
+                        simply means “the ground.”
+                    </p>
+                </div>
+                <!-- (4)3D 지구 모델 -->
+                <div class="outWrap">
+                    <div class="inWrap">
+                        <iframe src="https://solarsystem.nasa.gov/gltf_embed/2392" frameborder="0"> </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2-2. 2페이지 -->
+            <section class="2pg"></section>
+
+            <!-- 2-2. 3페이지 -->
+            <section class="3pg"></section>
+
+            <!-- 2-2. 4페이지 -->
+            <section class="4pg"></section>
+        </div>
+
+        <!-- 3. 하단영역 -->
+        <div id="info">
+            <footer class="info ibx">
+                <!-- 3-1. More Destinations -->
+                <div class="more">
+                    <h3>More Destinations</h3>
+
+                    <div class="mbx">
+                        <ul id="mslide">
+                            <li>
+                                <a href="#">
+                                    <img src="./img/jupiter_new.png" alt="Jupiter" />
+                                    <span>Jupiter</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/earth.png" alt="Earth" />
+                                    <span>Earth</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/mercury_new.png" alt="Mercury" />
+                                    <span>Mercury</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/mars.png" alt="Mars" />
+                                    <span>Mars</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/venus_jg.png" alt="Venus" />
+                                    <span>Venus</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/saturn.png" alt="Saturn" />
+                                    <span>Saturn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/uranus.png" alt="Uranus" />
+                                    <span>Uranus</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/neptune.png" alt="Neptune" />
+                                    <span>Neptune</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/earth_moon.png" alt="Earth's Moon" />
+                                    <span>Earth's Moon</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--이동버튼-->
+                    <div href="#" class="mbtn mb1">
+                        <img src="./img/arrow_left_slim.png" alt="왼쪽이동버튼" />
+                    </div>
+                    <div href="#" class="mbtn mb2">
+                        <img src="./img/arrow_right_slim.png" alt="오른쪽이동버튼" />
+                    </div>
+                </div>
+
+                <!-- 3-2. SNS -->
+                <div class="sns">
+                    <h3>Stay Connected</h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="ir">트위터 바로가기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="ir">페이스북 바로가기</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="ir">인스타그램 바로가기</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 3-3. 하단링크 -->
+                <div class="blink">
+                    <ul>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">BIBLIOGRAPHY</a></li>
+                        <li><a href="#">FEEDBACK</a></li>
+                        <li><a href="#">PRIVACY</a></li>
+                        <li><a href="#">IMAGE USE</a></li>
+                        <li><a href="#">NASA SCIENCE MISSION DIRECTORATE</a></li>
+                        <li><a href="#">NASA PORTAL</a></li>
+                        <li><a href="#">SITEMAP</a></li>
+                    </ul>
+                </div>
+
+                <!-- 3-4. 회사정보 -->
+                <div class="addr">
+                    <address>
+                        This site is maintained by the Planetary Science Communications team at <br />
+                        <strong>NASA’s Jet Propulsion Laboratory</strong> for
+                        <a href="#">NASA’s Science Mission Directorate.</a>
+                    </address>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
