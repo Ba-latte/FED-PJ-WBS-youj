@@ -161,9 +161,118 @@ h1, h2, h3{
 
 
 /* 3페이지 */
-/* 🚀형성 */
+/* 🚀형성 박스 */
 .pg3{
+    height: 35vh;
     padding-top: 10vw;
     padding-bottom: 10vw;
-    background: url();
+    background: url(../../00.자료수집/sub_img/earth02.jpg) no-repeat center/cover;
+    background-attachment: fixed;
+}
+/* 형성 타이틀 */
+.formation .artit{
+    color: #fff;
+    margin-bottom: 1vw;
+}
+/* 형성 본문 */
+.formation .contTxt{
+    color: #c2c2c1;
+    text-shadow: 1px 1px #000;
+}
+
+
+/* 4페이지 */
+/* 🚀궤도 및 회전 */
+.pg4{
+    padding-top: 20vw;
+    padding-bottom: 20vw;
+}
+.orbitAndRotation{
+    position: relative;
+    /* 부모자격 - .figimg */
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    border-top: 1px solid #3a3a3a;
+    border-bottom: 1px solid #3a3a3a;
+}
+/* 타이틀 */
+.pg4 .artit{
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1vw;
+    font-size: 9.5rem;
+}
+/* 본문 내용 공통 디자인 */
+.pg4 .contTxt{
+    position: relative;
+    margin: 2vw 0;
+    width: 70%;
+    font-size: 3rem;
+    letter-spacing: .1rem;
+}
+/* 본문 첫번째 단 개별 디자인*/
+.pg4 .pgh1{
+    z-index: 1;
+}
+/* 본문 두번째 단 개별 디자인 */
+.pg4 .pgh2{
+    left: 30%;
+}
+/* 첫번째 이미지 겉박스 */
+.pg4 .figimg1{
+    position: absolute;
+    top: -20%;
+    left: 55%;
+}
+/* 첫번째 이미지 */
+.pg4 .figimg1 img{
+    width: 35vw;
+}
+/* 두번째 이미지 겉박스 */
+.pg4 .figimg2{
+    position: absolute;
+    z-index: -1;
+    top: 80%;
+    left: 5%;
+}
+/* 두번째 이미지 */
+.pg4 .figimg2 img{
+    width: 25vw;
+}
+
+
+/* 5페이지 */
+/* 🚀삶의 잠재력 */
+/* 삶의 잠재력 타이틀 */
+.potentialForLife .artit{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+
+    text-align: center;
+    background-color: #1d56a3;
+    font-size: 15rem;
+    color: #fff;
+    letter-spacing: .4rem;
+}
+/* 본문 겉박스 */
+.potentialForLife #contTxt{
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+}
+/* 본문 박스 */
+.pg5 .contTxt{
+    width: auto;
+    font-weight: bold;
+    font-size: 5rem;
+    color: #c2c2c1;
+}
+/* 본문 내 강조효과 세팅 */
+.highlighter{
+    color: #1d56a3;
+}
+/* 세번째 이미지 */
+.pg5 .figimg3 img{
+    width: 20vw;
 }
