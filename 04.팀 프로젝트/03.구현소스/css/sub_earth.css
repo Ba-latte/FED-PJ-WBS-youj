@@ -11,58 +11,159 @@ body {
     width: 100%;
     height: 100vh;
 }
-
-/* 2.메인영역 */
+/* 제목 폰트 */
+h1, h2, h3{
+    font-family: 'Kanit', sans-serif;
+}
 /* 타이틀 */
-h1.tit {
+.artit{
+    font-size: 4rem;
+    color: #3a3a3a;
+}
+/* 본문 */
+.contTxt{
+    width: 30vw;
+
+    font-size: 1.7rem;
+    color: #222;
+    text-align: justify;
+    word-break: break-word;
+    line-height: 1.7;
+}
+
+
+/****************************************** 2.메인영역 ******************************************/
+
+/* 2-1. 1페이지 */
+/* 타이틀 */
+.pg1 .tit {
     position: absolute;
     z-index: 1;
-    top: 15%;
-    left: 9%;
-    font-size: 20rem;
+    top: 20%;
+    left: 10%;
+    font-size: 18rem;
+    letter-spacing: 0.8rem;
     color: rgb(67, 170, 237);
 }
 
 /* 부제 */
-h3.stit {
+.pg1 .stit {
     position: absolute;
     z-index: 1;
-    top: 40%;
+    top: 45%;
     left: 10%;
+
     color: #fff;
     font-size: 5rem;
-    letter-spacing: 0.4rem;
+    letter-spacing: 0.5rem;
 }
 
 /* 전문 */
-p.contTxt {
+.pg1 .contTxt {
     position: absolute;
     z-index: 1;
-    top: 52%;
+    top: 55%;
     left: 10%;
-    width: 33vw;
+    width: 30vw;
+
     color: #fff;
     font-size: 1.7rem;
     text-align: justify;
     word-break: break-word;
+    line-height: 1.7;
 }
-/* 지구 3D 모델 겉박스 */
-.outWrap{
-    background-color: #a9d3ee;
+
+/* 지구 동영상 속박스 */
+.pg1 .screen {
+    width: 100%;
     height: 100vh;
+    background-color: #000;
+}
+
+/* 지구 동영상 아이프레임 */
+.pg1 #earthVid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* filter: brightness(65%); */
+}
+
+
+/* 2-2. 2페이지 */
+.pg2{
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+}
+/* 이름 기원 겉박스 */
+.pg2 .namesake{
+    margin-bottom: 3vw;
+}
+/* 이름 기원 타이틀 */
+.namesake .artit{
+    font-size: 4rem;
+    color: #3a3a3a;
+}
+/* 이름 기원 본문 */
+.namesake .contTxt{
+    margin-top: 1vw;
+    width: 30vw;
+
+    font-size: 1.7rem;
+    color: #222;
+    text-align: justify;
+    word-break: break-word;
+    line-height: 1.7;
+}
+
+/* 크기와 거리 겉박스 */
+.pg2 .SizeAndDistance{
+    position: relative;
+    /* 부모자격 - .artit, .conTxt */
 }
 /* 지구 3D 모델 속박스 */
-.inWrap {
-    position: absolute;
-    top: 15%;
-    right: 10%;
+.pg2 .inWrap {
     width: 50%;
-    height: 70%;
+    height: 50vh;
 }
 /* 지구 3D 모델 아이프레임 */
-.inWrap iframe {
+.pg2 iframe {
     width: 100%;
     height: 100%;
     vertical-align: bottom;
     /* 아주 약간 아래쪽에 사이 간격 발생하는 것 때문에 부여함 */
+}
+/* 크기와 거리 타이틀 */
+.SizeAndDistance .artit{
+    position: absolute;
+    /* 부모는? - .SizeAndDistance */
+    top: 38%;
+    left: 55%;
+    font-size: 4rem;
+    color: #3a3a3a;
+}
+/* 크기와 거리 본문 */
+.SizeAndDistance .contTxt{
+    position: absolute;
+    /* 부모는? - .SizeAndDistance */
+    top: 54%;
+    left: 55%;
+
+    width: 30vw;
+
+    font-size: 1.7rem;
+    color: #222;
+    text-align: justify;
+    word-break: break-word;
+    line-height: 1.7;
+
+    /* outline: 2px dashed red; */
+}
+
+
+/* 3페이지 */
+/* 🚀형성 */
+.pg3{
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    background: url();
 }

@@ -6,7 +6,20 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     // a요소 클릭시 화면 맨 위로 튀는 기본값 적용 해제하기
     // document.querySelectorAll("a").preventDefault();
+    // ->안돼
     // event.preventDefault();
+    // ->안돼
+    const atag = document.querySelectorAll("a");
+    console.log(atag);
+    const dntADft = ()=>{
+        console.log("a 튀는거 막아줘 제발ㅠㅠ");
+        event.preventDefault();
+    };
+    
+    atag.onclick = dntADft;
+    // 안돼ㅠ
+    
+
     
 
     /*************************** 햄버거 버튼 클릭하면 사이트맵 화면이 오른쪽에서 등장하기 ***************************/
@@ -22,7 +35,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
     hambtn.onclick = ()=>{
 
         // a요소 클릭하면 맨위로 튀는 기본값 해제하기
-        event.preventDefault();
+        // event.preventDefault();
+        // dntADft;
         
         siteMap.classList.add("on");
     }; ////////////// onclick 이벤트 끝 /////////////////
