@@ -23,7 +23,6 @@ h1, h2, h3{
 /* 본문 */
 .contTxt{
     width: 30vw;
-    /* width: max(30vw,300px); */
 
     font-size: 1.7rem;
     color: #222;
@@ -66,7 +65,7 @@ h1, h2, h3{
     z-index: 1;
     top: 55%;
     left: 10%;
-    width: 30vw;
+    width: max(30vw, 450px);
 
     color: #fff;
     font-size: 1.7rem;
@@ -82,7 +81,7 @@ h1, h2, h3{
     background-color: #000;
 }
 
-/* 지구 동영상 아이프레임 */
+/* 지구 동영상 프레임 */
 .pg1 #earthVid{
     width: 100%;
     height: 100%;
@@ -108,6 +107,7 @@ h1, h2, h3{
 /* 이름 기원 본문 */
 .namesake .contTxt{
     margin-top: 1vw;
+    width: min(50vw, 600px);
 }
 
 /* 🚀크기와 거리 */
@@ -132,15 +132,16 @@ h1, h2, h3{
 .SizeAndDistance .artit{
     position: absolute;
     /* 부모는? - .SizeAndDistance */
-    top: 38%;
+    top: 22%;
     left: 55%;
 }
 /* 크기와 거리 본문 */
 .SizeAndDistance .contTxt{
     position: absolute;
     /* 부모는? - .SizeAndDistance */
-    top: 54%;
+    bottom: 0%;
     left: 55%;
+    width: min(50vw, 500px);
 
     /* outline: 2px dashed red; */
 }
@@ -149,7 +150,8 @@ h1, h2, h3{
 /* 3페이지 */
 /* 3페이지 겉박스 */
 .pg3{
-    height: 35vh;
+    /* height: 35vh; */
+    min-height: 35vh;
     padding-top: 10vw;
     padding-bottom: 10vw;
     background: url(../../00.자료수집/sub_img/earth02.jpg) no-repeat center/cover;
@@ -212,7 +214,8 @@ h1, h2, h3{
 /* 첫번째 이미지 겉박스 */
 .pg4 .figimg1{
     position: absolute;
-    top: -20%;
+    top: -180px;
+    /* top위치에서 고정되어 줄어들도록 절대단위 씀 */
     left: 55%;
 }
 /* 첫번째 이미지 */
@@ -247,7 +250,7 @@ article.potentialForLife{
 
     text-align: center;
     background-color: #1d56a3;
-    font-size: 15rem;
+    font-size: 8vw;
     color: #fff;
     letter-spacing: .4rem;
 }
@@ -260,7 +263,7 @@ article.potentialForLife{
 .potentialForLife .contTxt{
     width: auto;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: max(1.7vw, 1.8rem);
     color: #c2c2c1;
 }
 /* 타 사이트 링크 */
@@ -313,4 +316,14 @@ body .cont figure{
 .highlighter.on{
     background-color: transparent;
     color: #1d56a3;
+}
+
+
+
+
+/*************************************************** 😊미디어 쿼리😊 ***************************************************/
+@media screen and (max-width: 1440px) {
+    .potentialForLife .artit {
+        width: 90vw;
+    }
 }
