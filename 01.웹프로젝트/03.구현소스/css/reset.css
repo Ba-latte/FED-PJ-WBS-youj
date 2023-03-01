@@ -17,7 +17,9 @@ ul, ol{
 html{
     font-size: 10px;
 }
-
+body{
+    width: 100%;
+}
 /* a요소 세팅 */
 a{
     color: #111;
