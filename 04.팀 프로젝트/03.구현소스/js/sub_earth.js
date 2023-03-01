@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         for(let x of highlighter) highlighterFn(x);
 
 
-        for(let x of figure) expansionFn(x);
+        // for(let x of figure) expansionFn(x);
 
     }); /////////////////////// scroll 이벤트 끝 ///////////////////////
 
@@ -110,7 +110,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
     }; //////////////////// mousemove 이벤트 함수 끝 /////////////////////
 
     // pg2영역 바깥으로 나가면 사라지고 들어오면 나타나게 하기
-    pg2.onmouseenter = ()=>{move_mouse_pointer.style.display = "block";};
+    pg2.onmouseenter = ()=>{
+        move_mouse_pointer.style.display = "block";
+    };
+    pg2.onmouseleave = ()=>{
+        move_mouse_pointer.style.display = "none";
+    };
 
 
 

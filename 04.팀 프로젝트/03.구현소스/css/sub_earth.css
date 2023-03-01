@@ -9,7 +9,7 @@
 /* 초기화 */
 body {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 /* 제목 폰트 */
 h1,
@@ -94,6 +94,8 @@ h3 {
 /************ 2-2. 2페이지 ************/
 /* 2페이지 겉박스 */
 .pg2 {
+    /* width: 100%; */
+    /* height: 100%; */
     padding-top: 10vw;
     padding-bottom: 10vw;
 }
@@ -151,6 +153,8 @@ h3 {
     position: absolute;
     z-index: 1;
     /* 제일 위에 위치해야 보이니까 z-index에 1을 줌 */
+    top: 0;
+    left: 0;
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -445,6 +449,14 @@ body .cont figure {
     .pg4 .figimg1 {
         top: -7vh;
     }
+    .pg5 .figimg3 {
+        top: 30%;
+    }
+    .pg5 .figimg3 img {
+        width: 25vw;
+        height: 48vh;
+        object-fit: cover;
+    }
 }
 /* 768px 사이즈 이하 미디어쿼리 끝 */
 
@@ -507,15 +519,16 @@ body .cont figure {
         object-fit: cover;
     }
 
+    .pg5 .figimg3 {
+        top: 16%;
+    }
+
     .pg5 .figimg3 img {
         width: 25vw;
-        height: 50vh;
+        height: 75vh;
         object-fit: cover;
     }
 
-    .pg5 .figimg3 {
-        top: 30%;
-    }
 }
 /* 500px 사이즈 이하 미디어쿼리 끝 */
 

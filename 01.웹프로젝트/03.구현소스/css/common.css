@@ -299,6 +299,7 @@ address span:nth-child(2){
 /* 정책 박스 내의 두 li 등분할시키기 */
 .policy ul li{
     flex: 1;
+    white-space: nowrap;
 }
 /* 정책 박스 내의 a요소 세팅 */
 .policy a{

@@ -1,0 +1,422 @@
+@charset "utf-8";
+
+/* 미디어쿼리 CSS - media.css */
+
+/* 1400px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1400px) {
+    /* 하단영역 - 사이트 정보 */
+    address span:nth-child(1) {
+        font-size: 1.7vw;
+    }
+    address {
+        font-size: 1.2vw;
+    }
+    address {
+        font-size: 1.2vw;
+        font-size: 1vw;
+    }
+
+    /* 하단영역 - 정책 */
+    .policy ul {
+        gap: 5px;
+        flex-direction: column;
+    }
+}
+/* 1400px 사이즈 이하 미디어쿼리 끝 */
+
+/* 1200px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
+    /* 4페이지 셰프와 바텐더 소개 - 왼쪽단 */
+    /* 제목 */
+    .fixedArea h3 {
+        white-space: normal;
+        font-size: 2.3vw;
+    }
+    /* 본문 */
+    .fixedArea p {
+        font-size: 1.8vw;
+    }
+}
+/* 1200px 사이즈 이하 미디어쿼리 끝 */
+
+/* 1100px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1100px) {
+    /* 사이트맵 */
+    .siteMap {
+        z-index: 999;
+        /* 다른 요소들보다 제일 위에 있어야 해서 999 줌 */
+    }
+
+    /* 메인 타이틀 */
+    .main h1 {
+        font-size: 8rem;
+        top: 18vh;
+    }
+    /* 메인 문구(기간) */
+    .main h3 {
+        top: 82vh;
+        font-size: 5rem;
+    }
+
+    /* 2페이지 주요 프로그램 소개 */
+    .programList {
+        margin-top: 10vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10vw;
+    }
+    .programList li.pl {
+        position: static;
+    }
+
+    /* 주요 프로그램 소개 - 배경 원 개별 세팅 */
+    .cr5 {
+        top: 24vh;
+        left: 80vw;
+    }
+    .cr6 {
+        top: 106vh;
+        left: 9vw;
+    }
+    .cr7 {
+        top: 72vh;
+        left: 19vw;
+    }
+    .cr8 {
+        top: 144vh;
+        left: 77vw;
+    }
+    .cr9 {
+        top: 186vh;
+        left: 10vw;
+    }
+    .cr10 {
+        top: 213vh;
+        left: 76vw;
+    }
+    .cr11 {
+        top: 266vh;
+        left: 6vw;
+    }
+
+    /* 4페이지 셰프와 바텐더 소개 */
+    /* 왼쪽단 */
+    .CnBIntro .lside {
+        top: 15vh;
+    }
+
+    /* 하단영역 */
+    /* 하단영역 - 속박스 */
+    .info {
+        padding: 3vw;
+        height: auto;
+        flex-direction: column;
+    }
+    /* 하단 로고 */
+    .logo {
+        margin: 1vw;
+    }
+    /* 하단 사이트 정보 */
+    address {
+        margin-bottom: 2vw;
+    }
+    /* 하단 SNS */
+    .sns {
+        gap: 1vw;
+    }
+    /* 하단 정책 ul */
+    .policy ul {
+        flex-direction: row;
+        gap: 1vw;
+    }
+    /* 하단 정책 링크 */
+    .blink {
+        width: auto;
+    }
+}
+/* 1100px 사이즈 이하 미디어쿼리 끝 */
+
+/* 960px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 960px) {
+    .CnBIntro .secTitle {
+        height: 23vh;
+    }
+}
+/* 960px 사이즈 이하 미디어쿼리 끝 */
+
+/* 850px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 850px) {
+    /* 메인 페이지 - 회전 원(보라색) */
+    .cont .main .wrap h3::before {
+        left: -40vw;
+    }
+    /* 4페이지 셰프와 바텐더 소개 */
+    .CnBIntro .stkBox {
+        flex-direction: column;
+        align-items: center;
+    }
+    .CnBIntro .lside {
+        width: auto;
+        height: 75vh;
+        position: relative;
+        top: 0;
+        padding: 5vw;
+    }
+
+    .fixedArea h3 {
+        padding-top: 30%;
+        font-size: 4.3vw;
+    }
+
+    .fixedArea p {
+        font-size: 2vw;
+    }
+
+    .CnBIntro .rside {
+        width: 100%;
+    }
+
+    .CnBIntro .introList {
+        margin-top: 20%;
+    }
+
+    .CnBIntro .rside .introList ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .CnBIntro .introList li {
+        margin-bottom: 20%;
+    }
+
+    .CnBIntro .introList li p {
+        text-align: center;
+        font-size: 2rem;
+    }
+    .CnBIntro .introList img {
+        width: 100%;
+    }
+
+    /* 6페이지 공지사항 */
+    /* 겉박스 */
+    .NnPSection {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* 양쪽 단 공통 세팅 */
+    .NnPSection aside {
+        padding: 10%;
+    }
+}
+/* 850px 사이즈 이하 미디어쿼리 끝 */
+
+/* 650px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 650px) {
+    /* 상단영역 */
+    /* 상단영역 기타메뉴 */
+    .topArea .etc ul {
+        gap: 2vh;
+    }
+
+    .topArea .etc ul > li:nth-child(1) {
+        margin-right: 0px;
+    }
+
+    /* 4페이지 셰프와 바텐더 소개 */
+    /* 타이틀 */
+    .CnBIntro .secTitle {
+        font-size: 3rem;
+        background-size: cover;
+        line-height: 5;
+    }
+    /* 고정되는 박스(왼쪽단) */
+    .CnBIntro .fixedArea h3 {
+        font-size: 4.8vw;
+    }
+    .CnBIntro .fixedArea p {
+        font-size: 3vw;
+    }
+
+    /* 6페이지 공지사항과 보도자료 */
+    /* 양쪽단 공통 세팅 */
+    .NnPSection aside ol {
+        flex-direction: column;
+    }
+    .NnPSection aside ol li {
+        margin: 3vw;
+        /* height: auto; */
+    }
+    .NnPSection li a {
+        height: auto;
+    }
+    /* 공지사항 (오른쪽단) */
+    .NnPSection .lside .notice h4 {
+        /* width: 100%; */
+    }
+    /* 보도자료 (왼쪽단) */
+    .NnPSection .rside {
+        margin-bottom: 20%;
+    }
+
+    /* 하단영역 */
+    /* 하단영역 겉박스 */
+    footer.info {
+        padding: 10vw 0;
+        gap: 1vh;
+    }
+    /* 하단 사이트 정보 */
+    .info address {
+        font-size: 2.3vw;
+    }
+    /* 하단 사이트 정보 - 타이틀 */
+    address span:nth-child(1) {
+        font-size: 3vw;
+        margin-right: 10px;
+    }
+}
+/* 650px 사이즈 이하 미디어쿼리 끝 */
+
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    /* 2페이지 주요 프로그램 소개 */
+    /* 배경 원 공통 세팅 */
+    .program .circle {
+        z-index: -1;
+    }
+
+    /* 5페이지 메인 동영상 */
+    /* 섹션 타이틀 */
+    .cont .vSection .secTitle5 {
+        font-size: 3rem;
+    }
+    .program .circleList .cr5 {
+        left: auto;
+        right: 5vw;
+    }
+    .program .circleList .cr8 {
+        top: 148vh;
+        left: auto;
+        right: 8vw;
+    }
+    .program .circleList .cr10 {
+        left: auto;
+        right: 5vw;
+        top: 226vh;
+    }
+}
+/* 600px 사이즈 이하 미디어쿼리 끝 */
+
+/* 550px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 550px) {
+    .top .topArea {
+        padding: 2vh 3vw;
+    }
+    .top .topArea .etc ul {
+        gap: 2w;
+    }
+}
+/* 550px 사이즈 이하 미디어쿼리 끝 */
+
+/* 480px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 480px) {
+    /* 상단영역 */
+    /* 로고 이미지 */
+    .topArea .logo img {
+        width: 80%;
+    }
+    /* 로고 주변 원 이미지 */
+    .topArea .logo .circleList .circle {
+        width: 2vh;
+        height: 2vh;
+    }
+    .logo .circleList .cr2 {
+        left: 20%;
+    }
+    .logo .circleList .cr3 {
+        left: 57%;
+    }
+    .logo .circleList .cr4 {
+        left: 75%;
+    }
+
+    /* 메인 페이지 */
+    /* 타이틀 */
+    .main .wrap h1 {
+        font-size: 7vh;
+    }
+    .main h1::before {
+        width: 35px;
+        height: 35px;
+        top: 15vh;
+    }
+    .main h1::after {
+        width: 40px;
+        height: 40px;
+        top: 27vh;
+        left: 11vh;
+    }
+    /* 메인 문구(기간) */
+    .main .wrap h3 {
+        font-size: 4vh;
+    }
+
+    /* 2페이지 주요 프로그램 소개 */
+    /* 프로그램 섹션 타이틀 */
+    .program .secTitle{
+        font-size: 3vh;
+    }
+    /* 프로그램 섹션 슬로건(문구) */
+    .program .secSlogan {
+        font-size: 1.8vh;
+    }
+    /* 프로그램 이미지 리스트 */
+    .program .programList{
+        margin-top: 20vw;
+        gap: 18vh;
+    }
+    /* 프로그램 이미지 */
+    .program .programList .pl img{
+        width: 22vh;
+    }
+    /* 4페이지 셰프와 바텐더 소개 */
+    /* 섹션 타이틀 */
+    .CnBIntro .secTitle h2{
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 1;
+    }
+    .CnBIntro .stkBox .lside {
+        height: 60vh;
+    }
+    /* 타이틀 */
+    .CnBIntro .fixedArea h3 {
+        font-size: 4.5vw;
+    }
+    /* 소개글 */
+    .CnBIntro .fixedArea p {
+        font-size: 3.5vw;
+    }
+    /* 5페이지 메인 동영상 */
+    .cont .vSection .secTitle5 {
+        font-size: 3vh;
+    }
+    .vSection .vArea .prebtn {
+        display: none;
+    }
+    .vSection .vArea .nextbtn {
+        display: none;
+    }
+    /* 6페이지 공지사항과 보도자료 */
+    .NnPSection .NnPMenu{
+        font-size: 7vw;
+    }
+
+    /* 하단영역 */
+    .info .addr {
+        width: 85vw;
+        text-align: center;
+    }
+}
+/* 480px 사이즈 이하 미디어쿼리 끝 */

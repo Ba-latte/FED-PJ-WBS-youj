@@ -8,10 +8,9 @@
 @import url(./common.css);
 @import url(./ani.css);
 
-
 /************************************* 2. 메인 영역  *************************************/
-/************************************* 2-1. 1페이지 *************************************/
-.main{
+/************************************* 2-1. 메인 페이지 *************************************/
+.main {
     position: relative;
     /* 부모자격 - .mainTitle */
     height: 100vh;
@@ -24,10 +23,20 @@
     overflow: hidden;
 }
 
+/* 메인페이지 타이틀과 기간 겉박스 */
+.wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 6vw;
+}
 
 /* 메인페이지 움직이는 원형 배경 - 연노란색 */
-.cont .main::before{
-    content: '';
+.cont .main::before {
+    content: "";
     display: block;
     width: 350px;
     height: 350px;
@@ -40,14 +49,15 @@
     animation: ratation2 15s linear infinite;
 }
 /* 메인페이지 움직이는 원형 배경 - 보라색 */
-.cont .main::after{
-    content: '';
+.cont .main .wrap h3::before {
+    content: "";
     display: block;
     width: 200px;
     height: 200px;
     position: absolute;
-    top: 70%;
-    left: 10%;
+    z-index: -1;
+    top: 77%;
+    left: -30vw;
     border-radius: 50%;
     background-color: #654376;
     /* border: 10px solid #000; */
@@ -56,14 +66,13 @@
 }
 
 /* (1)메인 타이틀 */
-.main h1{
-    position: absolute;
-    top: 27%;
-    /* top: 18%; */
-    left: 50%;
-    transform: translateX(-50%);
+.main h1 {
+    /* position: absolute; */
+    /* top: 27%; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
 
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     font-size: 80px;
     font-weight: lighter;
     letter-spacing: 10px;
@@ -72,26 +81,25 @@
 }
 
 /* (2)메인 문구 - 기간 */
-.main h3{
-    position: absolute;
-    top: 87%;
-    /* top: 80%; */
-    left: 50%;
-    transform: translateX(-50%);
+.main h3 {
+    /* position: absolute; */
+    /* top: 87%; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
 
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: "Julius Sans One", sans-serif;
     font-size: 50px;
     font-weight: lighter;
     color: #2e2e2e;
 }
 
 /* (3)메인 슬로건 */
-.mainSlogan{
+.mainSlogan {
     position: absolute;
     top: 25%;
     right: 2%;
 }
-.mainSlogan h2{
+.mainSlogan h2 {
     text-align: right;
     font-size: 32px;
     letter-spacing: 2px;
@@ -100,10 +108,9 @@
     color: #e2e2e2;
 }
 
-
 /* 메인 제목 아래 움직이는 원형 이미지 - 연분홍색 */
-.main h1::before{
-    content: '';
+.main h1::before {
+    content: "";
     position: absolute;
     top: 155px;
     left: 2px;
@@ -115,8 +122,8 @@
     animation: mvcAni2 1.8s linear infinite alternate;
 }
 /* 메인 제목 아래 움직이는 원형 이미지 - 주황색 */
-.main h1::after{
-    content: '';
+.main h1::after {
+    content: "";
     position: absolute;
     top: 315px;
     left: 121px;
@@ -128,42 +135,42 @@
     animation: mvcAni1 2.5s linear infinite alternate;
 }
 
-
 /************************************* 2-2. 2페이지 *************************************/
 
 /* 2페이지 - 주요 프로그램 */
 /* 주요 프로그램 속박스 */
-.program{
+.program {
     position: relative;
     /* 부모자격 - .cr5~.cr9 */
     margin: 0 auto;
-    padding: 100px 50px;
+    padding: 15vh 2vh;
     max-width: 1400px;
 
     text-align: center;
 }
 /* (1) 섹션 타이틀 */
-.secTitle{
+.program .secTitle {
     font-size: 4rem;
     letter-spacing: 5px;
     word-spacing: 10px;
     line-height: 3;
+    white-space: nowrap;
 }
 /* (2) 섹션 슬로건 */
-.secSlogan{
+.program .secSlogan {
     font-size: 2rem;
     letter-spacing: 2px;
     font-weight: normal;
     line-height: 2;
 }
 /* (3) 주요 프로그램 소개 */
-.programList{
+.programList {
     position: relative;
     /* 부모자격 - .programList li.pl */
     height: 250vh;
 }
 /* 주요 프로그램 이미지 공통 세팅 */
-.programList li.pl{
+.programList li.pl {
     position: absolute;
     /* 내가 원하는 것 - 부모박스 안에서 자기 위치를 갖는 것! 그래서 부모박스가 자식요소가 있는 그위치만큼 길어졌으면 좋겠음!!
     💥앱솔루트로 위치값을 주려고 했음
@@ -175,51 +182,51 @@
     ->>>아아아악 아냐ㅠㅠㅠ 박스가 밀고 나가는거 생각을 못했네ㅠㅠㅠㅠㅠㅠㅠㅠ
     tftl을 주면...얘는 일단 자기 크기 유지하고 자기자리 지키는 박스니까... 옆으로 이동하면 그 크기만큼 밀어내버려...그래서 가로스크롤이 생기잖아...ㅠ0ㅜ...그럼 우쨔?? ㅠㅠㅠㅠㅠㅠㅠㅠ아이고 머리야...일단 앱솔루트 주고...일단 그렇게 하고 다른거 먼저 하자..ㅠ.ㅠㅠㅠㅠㅠㅠ...ㅠㅠ.ㅠ.ㅠ.ㅠㅠㅠ
     */
-    
-    transition: .3s ease-out;
+
+    transition: 0.3s ease-out;
 }
 
 /* 주요 프로그램 이미지 개별 세팅 */
-.pl1{
+.pl1 {
     /* transform: translate(-40%, 20%); */
     /* : 그냥.. 일단 앱솔루트로 줘보기...ㅠ... */
     top: 3%;
     left: 0%;
 }
-.pl2{
+.pl2 {
     top: 14%;
     left: 70%;
 }
-.pl3{
+.pl3 {
     top: 27%;
     left: 16%;
 }
-.pl4{
+.pl4 {
     top: 40%;
     left: 57%;
 }
-.pl5{
+.pl5 {
     top: 56%;
     left: 7%;
 }
-.pl6{
+.pl6 {
     top: 68%;
     left: 68%;
 }
-.pl7{
+.pl7 {
     top: 80%;
     left: 30%;
 }
 
 /* 주요프로그램 이미지에 마우스 오버시 이미지 확대 */
-.pl:hover{
+.pl:hover {
     transform: scale(1.1);
 }
 
 /* 주요 프로그램 섹션의 이미지 요소 공통 */
 .pl img {
     transform: scale(0);
-    transition: .5s ease-in;
+    transition: 0.5s ease-in;
 }
 
 /* .on일 경우, 주요 프로그램 섹션의 이미지가 제자리에서 등장하기 */
@@ -227,27 +234,24 @@
     transform: scale(1);
 }
 
-
-
 /* (4) 2페이지 움직이는 원 공통 세팅 */
 /* 💥갑자기 궁금한거!!
 -앱솔루트 포지션을 준 거랑, 트랜스폼 트랜스레이트준거랑...무슨 차이지...?
 */
-.circle{
+.circle {
     position: absolute;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    
 }
 /* 2페이지 움직이는 원 개별 세팅 */
-.cr5{
+.cr5 {
     top: 7.7%;
     left: 83%;
 
     background-color: #19833b;
 }
-.cr6{
+.cr6 {
     width: 30px;
     height: 30px;
     top: 34%;
@@ -255,35 +259,35 @@
 
     background-color: #d8693e;
 }
-.cr7{
+.cr7 {
     width: 30px;
     height: 30px;
     top: 22%;
     left: 40%;
     background-color: #e2de73;
 }
-.cr8{
+.cr8 {
     width: 60px;
     height: 60px;
     top: 43%;
     left: 88%;
     background-color: #654376;
 }
-.cr9{
+.cr9 {
     width: 90px;
     height: 90px;
     top: 54%;
     left: 8%;
     background-color: #b5416e;
 }
-.cr10{
+.cr10 {
     width: 25px;
     height: 25px;
     top: 66%;
     left: 54%;
     background-color: #19833b;
 }
-.cr11{
+.cr11 {
     width: 45px;
     height: 45px;
     top: 79%;
@@ -291,38 +295,37 @@
     background-color: #d7a7bf;
 }
 
-
 /************************************* 2-3. 3페이지 *************************************/
 /* 테이스트오브서울 지도 */
 
 /* 지도페이지 속박스 */
-.foodMap{
+.foodMap {
     position: relative;
     /* 부모자격 - .mapButton */
     /* max-width: 1400px; */
     width: 100%;
     height: 100vh;
     text-align: center;
-    
+
     /* background-color: #5e5e5e; */
 }
-.rollingBanner{
+.rollingBanner {
     padding: 100px;
 }
-.rollingBanner .txt{
+.rollingBanner .txt {
     font-size: 4rem;
     line-height: 2;
 }
 
 /* (2) 지도명, 지도버튼 */
-.mapButton{
+.mapButton {
     position: absolute;
     /* 부모는? - .foodMap */
     font-size: 2rem;
     letter-spacing: 1px;
 }
 
-.mapButton .btn{
+.mapButton .btn {
     display: inline-block;
     margin: 0 auto;
     width: 100px;
@@ -338,42 +341,44 @@
     font-size: 1.6rem;
 }
 
-
 /************************************* 2-4. 4페이지 *************************************/
 /* 셰프와 바텐더 소개 */
-.CnBIntro{
+.CnBIntro {
     /* height: 100vh; */
 }
 
 /* (1) 섹션 타이틀 */
-.CnBIntro .secTitle{
+.CnBIntro .secTitle {
     text-align: center;
-
-    font-family: 'Rajdhani', sans-serif;
+    
+    font-family: "Rajdhani", sans-serif;
+    font-size: 5rem;
     color: #e2e2e2;
     letter-spacing: 0;
+    line-height: 3;
 
-    background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/info-banner-bg.jpg) no-repeat center/100% auto;
+    background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/info-banner-bg.jpg)
+        no-repeat center/100% auto;
 }
 
 /* 왼쪽단+오른쪽단 박스 */
-.stkBox{
+.stkBox {
     /* height: auto; */
     display: flex;
     justify-content: center;
     width: 100%;
-    
 }
 
 /* 왼쪽단 */
-.lside{
+.CnBIntro .lside {
     position: sticky;
     top: 0;
     width: 50%;
     height: 100vh;
 }
 /* 왼쪽단 제목 */
-.fixedArea h3{
+.fixedArea h3 {
+    white-space: nowrap;
     padding: 40% 10% 10%;
     font-size: 3.5rem;
     letter-spacing: 1px;
@@ -381,8 +386,8 @@
 }
 
 /* 왼쪽단 제목 근처 배경 원형 - 초록색 */
-.fixedArea h3::before{
-    content: '';
+.fixedArea h3::before {
+    content: "";
     display: block;
     position: absolute;
     top: 32%;
@@ -392,12 +397,12 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: #19833b;
+    background-color: #19833b7a;
 }
 
 /* 왼쪽단 제목 근처 배경 원형 - 노란색 */
-.fixedArea h3::after{
-    content: '';
+.fixedArea h3::after {
+    content: "";
     display: block;
     position: absolute;
     top: 18%;
@@ -411,7 +416,7 @@
 }
 
 /* 왼쪽단 설명 */
-.fixedArea p{
+.fixedArea p {
     padding: 5% 10%;
     font-size: 1.8rem;
     word-spacing: 2px;
@@ -421,39 +426,37 @@
 }
 
 /* 오른쪽단 */
-.introList{
+.introList {
     margin-top: 40%;
 }
-.introList li{
+.introList li {
     margin-bottom: 30%;
 }
 
 /* 셰프 이미지 공통 세팅 */
-.introList img{
+.introList img {
     width: 50vw;
     height: 60vh;
     object-fit: cover;
     object-position: top;
-} 
+}
 /* 셰프 이름 */
-.introList li p{
+.introList li p {
     font-size: 1.6rem;
     line-height: 2;
     margin: 20px 0 50px;
     color: #2e2e2e;
 }
 
-
-
 /************************************* 2-5. 5페이지 *************************************/
 /* 동영상 페이지 */
-.vSection{
+.vSection {
     max-width: 1400px;
     margin: 0 auto;
 }
 
 /*  (1) 섹션 타이틀 */
-.secTitle5{
+.secTitle5 {
     text-align: center;
     font-size: 4rem;
     line-height: 2;
@@ -461,14 +464,14 @@
     color: #2e2e2e;
 }
 
-.vArea{
+.vArea {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 /* (2) 메인 비디오 영역 */
-.vArea iframe{
+.vArea iframe {
     width: 55vw;
     height: 55vh;
     margin: 50px;
@@ -477,21 +480,21 @@
 
 /* 메인 비디오 영역의 이전/다음 버튼 */
 .vArea .prebtn,
-.vArea .nextbtn{
+.vArea .nextbtn {
     filter: brightness(1.3);
 
     /* 트랜지션 */
-    transition: .3s;
+    transition: 0.3s;
 }
 
 /* 메인 비디오 영역의 이전/다음 버튼에 마우스오버시 색상 변경 */
 .vArea .prebtn:hover,
-.vArea .nextbtn:hover{
+.vArea .nextbtn:hover {
     filter: brightness(0.5);
 }
 
 /* (3) 비디오 목록 */
-.videoList{
+.videoList {
     position: relative;
     top: 0;
     left: 50%;
@@ -500,27 +503,26 @@
 
     width: 50vw;
     overflow: hidden;
-
 }
 
-.videoList ol{
+.videoList ol {
     display: flex;
 }
 
 /* 비디오 목록내의 이미지 */
-.videoList img{
+.videoList img {
     width: 10vw;
 }
 
 /* (4) 비디오 목록 이전/다음 전환 버튼 */
-.movebtn{
+.movebtn {
     display: flex;
     justify-content: space-evenly;
     margin: 20px;
     filter: brightness(1.3);
 
     /* 트랜지션 */
-    transition: .3s;
+    transition: 0.3s;
 }
 /* 비디오 목록 이전/다음 전환 버튼에 마우스오버시 색상 변경 */
 .movebtn .prebtn:hover,
@@ -528,12 +530,11 @@
     filter: brightness(0.5);
 }
 
-
 /************************************* 2-6. 6페이지 *************************************/
 /* 공지사항과 보도자료 페이지 */
 
 /* 6페이지 속박스 */
-.NnPSection{
+.NnPSection {
     /* 디스플레이 플렉스 */
     display: flex;
     max-width: 1400px;
@@ -541,7 +542,7 @@
 }
 
 /* 양쪽 단 공통 세팅 */
-.NnPSection aside{
+.NnPSection aside {
     flex: 1;
     /* 등분할시키기 */
 
@@ -550,9 +551,8 @@
     /* 기존에 ".lside"에 들어가있는거 같은데..높이값 세팅이..여기서 없애주기ㅠㅠ */
 }
 
-
 /* 양쪽단 박스 내의 메뉴 */
-.NnPMenu{
+.NnPMenu {
     font-size: 3.5rem;
     letter-spacing: 3px;
     display: flex;
@@ -563,13 +563,13 @@
 }
 
 /* 양쪽단 박스 내의 게시글 박스 공통 디자인 */
-.NnPSection aside ol{
+.NnPSection aside ol {
     display: flex;
     gap: 3%;
 }
 
 /* 양쪽단 박스 내의 게시글 목록 */
-.NnPSection aside ol li{
+.NnPSection aside ol li {
     flex: 1;
     /* 등분할 */
     font-size: 2rem;
@@ -579,17 +579,17 @@
     background-color: #f7f7f7;
 
     /* 마우스오버시 색 변경 트랜지션 */
-    transition: background-color .3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 /* 양쪽단 박스 내의 a요소에 크기 부여하기 (자식 요소들에 크기 부여해서 자기 자리 차지하게 만들려고(?)) */
-.NnPSection li a{
+.NnPSection li a {
     display: inline-block;
     height: 30vh;
 }
 
 /* 양쪽단 박스 내의 게시글 제목 */
-.NnPSection aside li h4{
+.NnPSection aside li h4 {
     box-sizing: border-box;
     height: 20%;
     margin: 5%;
@@ -603,7 +603,7 @@
     -webkit-box-orient: vertical;
 }
 /* 양쪽단 게시글 본문 */
-.NnPSection aside li p{
+.NnPSection aside li p {
     box-sizing: border-box;
     height: 35%;
     margin: 10% 5% 5%;
@@ -619,7 +619,7 @@
 }
 
 /* 양쪽단 게시글 작성날짜 */
-.NnPSection aside li span{
+.NnPSection aside li span {
     box-sizing: border-box;
     display: inline-block;
 
@@ -632,6 +632,6 @@
 }
 
 /* 양쪽단 게시글에 마우스오버시 박스의 배경색 변경하기 */
-.NnPSection aside ol li:hover{
+.NnPSection aside ol li:hover {
     background-color: #d7a7bf;
 }
