@@ -317,7 +317,7 @@ body .cont figure {
 /* 제자리에서 커지는 클래스 초기화 */
 .expansion {
     transform: scale(1);
-    transition: 1s ease-in-out;
+    transition: 3s ease-in-out;
 }
 /* 제자리에서 커지는 클래스 작동 */
 .expansion.on {

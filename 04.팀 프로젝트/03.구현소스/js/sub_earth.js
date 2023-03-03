@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         for(let x of highlighter) highlighterFn(x);
 
 
-        // for(let x of figure) expansionFn(x);
+        for(let x of figure) expansionFn(x);
 
     }); /////////////////////// scroll 이벤트 끝 ///////////////////////
 
