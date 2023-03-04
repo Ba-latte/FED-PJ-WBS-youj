@@ -43,10 +43,40 @@
 @media screen and (max-width: 1100px) {
     /* 사이트맵 */
     .siteMap {
-        z-index: 999;
+        /* z-index: 999; */
         /* 다른 요소들보다 제일 위에 있어야 해서 999 줌 */
     }
+    /* 사이트맵 상위 메뉴 */
+    .siteMap ul{
+        flex-direction: column;
+        gap: 4vh;
+    }
+    /* more/less 아이콘 */
+    .material-symbols-outlined{
+        display: inline;
+    }
+    /* 사이트맵 하위 메뉴 겉박스 */
+    .siteMap ul .smenu{
+        margin-top: auto;
+        height: 0;
+        overflow: hidden;
+    }
+    /* 사이트맵 하위메뉴 li */
+    .siteMap ol li{
+        padding: 0;
+    }
+    /* 사이트맵 하위메뉴 a요소 확장 */
+    .siteMap .smenu li a{
+        display: inline-block;
+        padding-top: 15px;
+    }
+    /* 사이트맵 마우스 따라다니는 트랙,바 숨기기 */
+    .siteMap .barTrack, .siteMap .bar{
+        display: none;
+    }
 
+
+    /* 1페이지 메인 화면 */
     /* 메인 타이틀 */
     .main h1 {
         font-size: 8rem;

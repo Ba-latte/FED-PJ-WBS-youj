@@ -4,7 +4,8 @@
 window.addEventListener("DOMContentLoaded", ()=>{
     console.log("로딩 완료");
 
-    // a요소 클릭시 화면 맨 위로 튀는 기본값 적용 해제하기
+    /************************* a요소 클릭시 화면 맨 위로 튀는 기본값 적용 해제하기 *************************/
+    // 대상선정 : 모든 a요소
     const atag = document.querySelectorAll("a");
     for(let x of atag){
         // console.log(x);
@@ -26,12 +27,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     // ⭐이벤트 세팅하기
     hambtn.onclick = ()=>{
-
-        // a요소 클릭하면 맨위로 튀는 기본값 해제하기
-        // event.preventDefault();
-        // dntADft;
         
         siteMap.classList.add("on");
+
+        /* 스크롤바, 스크롤기능 없애기 */
+        document.body.classList.add("scrollOff");
     }; ////////////// onclick 이벤트 끝 /////////////////
 
 
@@ -46,9 +46,12 @@ window.addEventListener("DOMContentLoaded", ()=>{
     closebtn.onclick = (e)=>{
 
         // a요소 클릭하면 맨위로 튀는 기본값 해제하기
-        e.preventDefault();
+        // e.preventDefault();
 
         siteMap.classList.remove("on");
+
+        /* 스크롤바, 스크롤기능 다시 추가하기 */
+        document.body.classList.remove("scrollOff");
     }; //////////// onclick 이벤트 끝 /////////////////
 
     /*********************** 주요프로그램 섹션의 스크롤 액션 ***********************/
@@ -101,6 +104,42 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     }); /////////////////////// 스크롤 액션 끝 /////////////////////////////////////
 
+    
+
+    /*********************** 사이트맵 상위메뉴 클릭시 하위메뉴 등장 ***********************/
+    // 이벤트 적용 대상 : .siteMap ul>li
+    const gnb = document.querySelectorAll(".siteMap ul>li:has(.smenu)"); 
+    // console.log(gnb);
+
+    // 적용할 이벤트 : click 이벤트
+    gnb.forEach((ele, idx)=>{
+        ele.onclick = ()=>{
+            // 0.초기화 함수 호출
+            
+            
+            // 하위메뉴 변수
+            let lnb = ele.querySelector(".smenu");
+            // 높이값 가져오기
+            let heightValue = ele.querySelector(".smenu ol").clientHeight;
+            
+            console.log("높이값: ". heightValue);
+            // 💥💥💥💥아니 근데 왜  undefined가 나오냐구ㅠㅠㅠㅠㅠㅠ
+
+            
+            // console.log(lnb);
+            
+            lnb.style.height = heightValue + "px";
+            // 구글 심볼 바꾸기
+            const symbols = ele.querySelector("span");
+            symbols.innerText = "expand_less";
+
+            // if(symbols.innerText === "expand_less") symbols.innerText = "expand_more";
+
+            
+            
+
+        }; ///////////// click 이벤트 끝 ///////////////
+    }); /////////////// forEach() 끝 /////////////
     
 
 

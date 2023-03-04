@@ -25,4 +25,10 @@ a{
     color: #111;
     text-decoration: none;
 }
-
+/* 구글 아이콘 폰트 */
+.material-symbols-outlined{
+    display: none;
+    font-size: 5vh;
+    vertical-align: -1.8vh;
+    color: #555;
+}

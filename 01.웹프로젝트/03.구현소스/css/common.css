@@ -144,7 +144,10 @@
     /* 트랜지션 */
     transition: left .5s ease-in-out;
 
-    /* 스크롤바 없애기 */
+}
+/* 사이트맵 화면에 등장하면 스크롤바 없애기 */
+.scrollOff{
+    overflow: hidden;
 }
 
 /* 사이트맵 닫기 버튼 */
