@@ -5,20 +5,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
     console.log("로딩 완료");
 
     // a요소 클릭시 화면 맨 위로 튀는 기본값 적용 해제하기
-    // document.querySelectorAll("a").preventDefault();
-    // ->안돼
-    // event.preventDefault();
-    // ->안돼
     const atag = document.querySelectorAll("a");
-    console.log(atag);
-    const dntADft = ()=>{
-        console.log("a 튀는거 막아줘 제발ㅠㅠ");
-        event.preventDefault();
-    };
-    
-    atag.onclick = dntADft;
-    // 안돼ㅠ
-    
+    for(let x of atag){
+        // console.log(x);
+        x.onclick = (e)=>{
+            e.preventDefault();
+        };
+    } ///////////// for of 끝 ////////////////
 
     
 
@@ -50,10 +43,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
     // 적용 대상 - .siteMap
     
     // 이벤트 세팅하기
-    closebtn.onclick = ()=>{
+    closebtn.onclick = (e)=>{
 
         // a요소 클릭하면 맨위로 튀는 기본값 해제하기
-        event.preventDefault();
+        e.preventDefault();
 
         siteMap.classList.remove("on");
     }; //////////// onclick 이벤트 끝 /////////////////
