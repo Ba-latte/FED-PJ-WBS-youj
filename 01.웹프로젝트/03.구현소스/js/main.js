@@ -122,18 +122,17 @@ window.addEventListener("DOMContentLoaded", ()=>{
             // 높이값 가져오기
             let heightValue = ele.querySelector(".smenu ol").clientHeight;
             
-            console.log("높이값: ". heightValue);
-            // 💥💥💥💥아니 근데 왜  undefined가 나오냐구ㅠㅠㅠㅠㅠㅠ
-
+            console.log("높이값: ", heightValue);
             
-            // console.log(lnb);
+            console.log(lnb.clientHeight);
             
-            lnb.style.height = heightValue + "px";
+            lnb.style.height = (lnb.clientHeight===0?heightValue:0) + "px";
             // 구글 심볼 바꾸기
             const symbols = ele.querySelector("span");
-            symbols.innerText = "expand_less";
+            symbols.innerText = (lnb.clientHeight===0?"expand_more":"expand_less");
 
-            // if(symbols.innerText === "expand_less") symbols.innerText = "expand_more";
+            // 
+
 
             
             
