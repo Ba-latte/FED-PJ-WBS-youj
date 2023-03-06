@@ -123,9 +123,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
             let heightValue = ele.querySelector(".smenu ol").clientHeight;
             
             console.log("높이값: ", heightValue);
-            // 💥💥💥💥아니 근데 왜  undefined가 나오냐구ㅠㅠㅠㅠㅠㅠ
-
-            
             
             console.log(lnb.clientHeight);
             
@@ -134,7 +131,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
             const symbols = ele.querySelector("span");
             symbols.innerText = (lnb.clientHeight===0?"expand_more":"expand_less");
 
-            // if(symbols.innerText === "expand_less") symbols.innerText = "expand_more";
+            // 
+
 
             
             
