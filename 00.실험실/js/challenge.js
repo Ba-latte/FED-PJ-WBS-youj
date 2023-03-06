@@ -64,10 +64,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     /* 3.랜덤 배경이미지 */
     const imgs = [
-        "bg01.jpg",
-        "bg02.jpg",
-        "bg03.jpg",
-        "bg04.jpg",
+        "01.jpg",
+        "02.jpg",
+        "03.jpg",
+        "04.jpg",
     ];
     
     function randomImg(){
@@ -76,7 +76,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         
         console.log("랜덤이미지: " , todaysImg);
         
-        document.body.style.background = `url(../img/${todaysImg}) no-repeat center/cover`;
+        document.body.style.backgroundImage = `url(./img/${todaysImg})`;
     }
 
     randomImg();
