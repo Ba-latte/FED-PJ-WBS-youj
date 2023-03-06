@@ -216,6 +216,7 @@
 .smenu{
     margin-top: 80px;
     /* 위쪽에 마우스 따라다니는 바와 트랙 만들기 위해 널찍하게 간격 넓힘 */
+    opacity: 1;
 }
 .smenu ol li{
     /* font-size: min(1.4rem, 20px); */

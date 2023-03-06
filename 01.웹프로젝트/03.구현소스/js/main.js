@@ -113,20 +113,22 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     // 적용할 이벤트 : click 이벤트
     gnb.forEach((ele, idx)=>{
-        ele.onclick = ()=>{
-            // 0.초기화 함수 호출
+        ele.querySelector("a").onclick = ()=>{
             
+            // 0.초기화 함수 호출
+            initFn(idx);
             
             // 하위메뉴 변수
-            let lnb = ele.querySelector(".smenu");
+            const lnb = ele.querySelector(".smenu");
             // 높이값 가져오기
             let heightValue = ele.querySelector(".smenu ol").clientHeight;
             
             console.log("높이값: ", heightValue);
             
-            console.log(lnb.clientHeight);
+            // console.log(lnb.clientHeight);
             
             lnb.style.height = (lnb.clientHeight===0?heightValue:0) + "px";
+            lnb.style.opacity = lnb.clientHeight===0?1:0;
             // 구글 심볼 바꾸기
             const symbols = ele.querySelector("span");
             symbols.innerText = (lnb.clientHeight===0?"expand_more":"expand_less");
@@ -139,6 +141,27 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         }; ///////////// click 이벤트 끝 ///////////////
     }); /////////////// forEach() 끝 /////////////
+
+
+    /******************************* 사이트맵 클릭 초기화 함수 *******************************/
+    function initFn(seq){
+        // 호출확인
+        console.log("초기화 함수: ", seq);
+
+        // 모든 서브메뉴 높이값 0 만들기
+        const smenu = document.querySelectorAll(".siteMap ul li .smenu");
+        console.log("smenu: ", smenu);
+
+        smenu.forEach((ele, idx)=>{
+            if(idx === seq) return;
+            console.log("lnb 순번: ", idx);
+
+            // 높이값 0 만들기
+            ele.style.height = 0;
+            // 투명도 0 만들기
+            ele.style.opacity = 0;
+        }); ///////////////// forEach() 끝 ////////////////////
+    } //////////////////// initFn 함수 끝 //////////////////////
     
 
 
