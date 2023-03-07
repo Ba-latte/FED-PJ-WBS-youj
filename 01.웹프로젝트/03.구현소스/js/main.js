@@ -43,10 +43,10 @@ window.addEventListener("DOMContentLoaded", ()=>{
     // 적용 대상 - .siteMap
     
     // 이벤트 세팅하기
-    closebtn.onclick = (e)=>{
+    closebtn.onclick = (idx)=>{
 
-        // a요소 클릭하면 맨위로 튀는 기본값 해제하기
-        // e.preventDefault();
+        /* 사이트맵 하위메뉴 펼쳐져 있을 시 초기화 해주기 */
+        initFn(idx);
 
         siteMap.classList.remove("on");
 

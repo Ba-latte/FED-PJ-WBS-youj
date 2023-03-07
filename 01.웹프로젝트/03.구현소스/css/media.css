@@ -55,7 +55,7 @@
         gap: 1.5vh;
     }
     /* more/less 아이콘 */
-    .material-symbols-outlined{
+    .expandMore{
         display: inline;
         font-size: 4vh;
         vertical-align: middle;
@@ -381,6 +381,26 @@
     .logo .circleList .cr4 {
         left: 75%;
     }
+
+    /* 사이트맵 */
+    /* 사이트맵 닫기 버튼 */
+    .siteMap .close {
+        height: auto;
+    }
+    /* 사이트맵 타이틀 */
+    .siteMap h2 {
+        font-size: 4vh;
+        padding: 2vh 0;
+    }
+    /* 사이트맵 ul 공통 */
+    .siteMap ul {
+        font-size: 3vh;
+    }
+    /* 사이트맵 ul li 공통 */
+    .smenu ol li {
+        font-size: 2vh;
+    }
+
 
     /* 메인 페이지 */
     /* 타이틀 */
