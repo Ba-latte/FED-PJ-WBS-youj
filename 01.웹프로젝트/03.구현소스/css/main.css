@@ -455,6 +455,11 @@
 .introList .moreImg{
     height: 30vh;
 }
+/* 더보기 단락 */
+.introList .morePart{
+    display: inline-block;
+    width: auto;
+}
 /* 더보기 심볼 */
 .introList .moreCont{
     display: inline-block;
@@ -480,6 +485,11 @@
 }
 
 .vArea {
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding: 0 2vh;
+    box-sizing: border-box;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -487,8 +497,8 @@
 
 /* (2) 메인 비디오 영역 */
 .vArea iframe {
-    width: 55vw;
-    height: 55vh;
+    width: 100%;
+    height: 100%;
     margin: 50px;
     border: none;
 }
