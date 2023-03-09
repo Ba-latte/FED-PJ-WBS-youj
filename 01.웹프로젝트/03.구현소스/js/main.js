@@ -142,7 +142,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // 적용할 이벤트 : click 이벤트
     gnb.forEach((ele, idx) => {
         ele.querySelector("a").onclick = () => {
-
+            // 📌모바일 버전이 아니라면 이 함수 적용 안되도록 리턴하기!
             if(!mob)return;
 
             // 0.초기화 함수 호출
