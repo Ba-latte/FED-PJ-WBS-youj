@@ -1,5 +1,6 @@
 /* 동영상 데이터 리스트 - video_data.js */
 
+// 총 11개
 const videoObj = [
     {tit:"2022 서울미식주간 소개",vID:"317Ctu99DF8"},
     {tit:"그랜드 갈라 디너 행사 스케치",vID:"V0rs1nphDuQ"},

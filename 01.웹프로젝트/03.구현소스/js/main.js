@@ -1,5 +1,7 @@
 // 서울미식주간 메인페이지 JS - main.js
 
+
+
 // 모바일 상태값
 let mob = 0; // 1모바일
 const chgMob = () => {
@@ -198,6 +200,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
     /******************************* 동영상 좌/우 버튼 클릭시 동영상 넘어가는 함수 *******************************/
     // 기능 : 좌/우 버튼 클릭하면 동영상 영상이 바뀜
+    // 이벤트 적용 대상 : .prebtn img, .nextbtn img
+    // 변경 대상 : .vArea iframe
+    // 이벤트 종류 : click 이벤트
+    const prebtn = document.querySelector(".vArea .prebtn img");
+    const nextbtn = document.querySelector(".vArea .nextbtn img");
+    let screen = document.querySelector(".vArea iframe");
+    let test = "";
+    let innerTest = screen
+
+    function playFn(){
+        // console.log("클릭했어?");
+        screen.setAttribute("src", `https://www.youtube.com/embed/${videoObj[10].vID}`);
+
+        
+    } //////////////// playFn() 함수 끝 /////////////////////
+
+    // 이벤트 적용하기
+    prebtn.onclick = ()=>{playFn()};
+    nextbtn.onclick = ()=>{playFn()};
     
 
 }); ////////////////////////////////// 로딩 구역 끝 /////////////////////////////////////////////////////
