@@ -12,13 +12,15 @@ const chgMob = () => {
         document.querySelectorAll(".smenu").forEach(ele=>ele.style="");
     }
 
-    console.log("in모바일:", mob);
+    // console.log("in모바일:", mob);
 }; ////// chgMob //////////
 
+// 최초 호출하기
 chgMob();
 
-console.log("모바일:", mob);
+// console.log("모바일:", mob);
 
+// 사이즈 변경 이벤트 실행시 chgMob 함수 실행!
 window.addEventListener("resize", chgMob);
 
 ////////////////////////////////////////// 로딩 구역 /////////////////////////////////////////////////////////

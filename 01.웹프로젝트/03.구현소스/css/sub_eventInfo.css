@@ -16,32 +16,72 @@ section.eventInfo{
     position: relative;
     /* 부모자격 - .cr들 */
     text-align: center;
+    
     font-size: 8vh;
     font-family: 'Rajdhani', sans-serif;
     margin: 10vh;
+}
+/* 섹션 타이틀 로고 주변 원 이미지 공통 세팅 */
+.sectionTitBx .circle{
+    z-index: -1;
 }
 /* 섹션 타이틀 로고 주변 원 이미지 개별 세팅 */
 .sectionTitBx .cr1 {
     top: 11%;
     left: 6%;
+    width: 70px;
+    height: 70px;
     background-color: #e2de73;
+
+    /* 애니메이션 */
+    animation: upAndDownAni 12s linear infinite;
 }
 .sectionTitBx .cr2 {
     top: 55%;
     left: 32%;
-    width: 15px;
-    height: 15px;
+    width: 45px;
+    height: 45px;
     background-color: #19833b;
+
+    /* 애니메이션 */
+    animation: upAndDownAni 8s linear infinite;
 }
 .sectionTitBx .cr3 {
     top: 25%;
     left: 78%;
+    width: 85px;
+    height: 85px;
     background-color: #b5416e;
+
+    /* 애니메이션 */
+    animation: upAndDownAni 20s linear infinite;
 }
 .sectionTitBx .cr4 {
     top: 1%;
     left: 97%;
-    width: 12px;
-    height: 12px;
+    width: 25px;
+    height: 25px;
     background-color: #d8693e;
+
+    /* 애니메이션 */
+    animation: upAndDownAni 5s linear infinite;
+}
+
+/* 오르락 내리락 애니메이션 키프레임 */
+@keyframes upAndDownAni {
+    0%{
+        transform: translateY(0%);
+    }
+    25%{
+        transform: translateY(50%);
+    }
+    50%{
+        transform: translateY(0%);
+    }
+    75%{
+        transform: translateY(-50%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
 }
