@@ -543,5 +543,27 @@ body .cont figure {
         font-size: 3.9vw;
     }
 
+    /* 2페이지 이름 기원*/
+    /* 이름 기원 겉박스 */
+    .pg2 .namesake {
+        margin-bottom: 8vh;
+    }
+    /* 2페이지 크기와 거리 */
+    /* 크기와 거리 겉박스 */
+    .pg2 .SizeAndDistance {
+        margin-bottom: 8vh;
+    }
+
+    /* 3페이지 형성 */
+    /* 형성 겉박스 */
+    .pg3{
+        margin-bottom: 10vh;
+    }
+    
+    /* 4페이지 궤도 및 회전 */
+    /* 궤도 및 회전 겉박스 */
+    .pg4{
+        padding-bottom: 40vw;
+    }
 }
 /* 464px 사이즈 이하 미디어쿼리 끝 */
