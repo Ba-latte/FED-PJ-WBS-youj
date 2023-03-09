@@ -148,28 +148,6 @@ h3 {
 
     /* outline: 2px dashed red; */
 }
-/* 2페이지 안에서 마우스 따라다니는 포인터 만들기 */
-.pg2 .move-mouse-pointer{
-    position: absolute;
-    z-index: 1;
-    /* 제일 위에 위치해야 보이니까 z-index에 1을 줌 */
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #1d57a373;
-
-    mix-blend-mode: exclusion;
-
-    text-align: center;
-    line-height: 100px;
-    /* 글자 가운데 정렬 */
-    font-size: 1.1rem;
-    /* color: #3a3a3a; */
-
-    transition: .3s ease-out;
-}
 
 /***************** 2-3. 3페이지 *****************/
 /* 3페이지 겉박스 */
@@ -188,6 +166,16 @@ h3 {
     font-size: 6rem;
     color: #fff;
     margin-bottom: 1vw;
+
+    /* 등장액션 관련 */
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    transform: translateX(-10%);
+}
+/* 형성 타이틀 등장액션 */
+.formation .artit.appear{
+    opacity: 1;
+    transform: translateX(0);
 }
 /* 형성 본문 */
 .formation .contTxt {
@@ -195,8 +183,17 @@ h3 {
     font-size: 3rem;
     color: #c2c2c1;
     text-shadow: 1px 1px #000;
-}
 
+    /* 등장액션 관련 */
+    transition: 1s ease-in-out;
+    opacity: 0;
+    transform: translateX(-10%);
+}
+/* 형성 본문 등장액션 */
+.formation .contTxt.appear{
+    opacity: 1;
+    transform: translateX(0);
+}
 /********************** 2-4. 4페이지 **********************/
 /* 🚀궤도 및 회전 */
 .pg4 {
