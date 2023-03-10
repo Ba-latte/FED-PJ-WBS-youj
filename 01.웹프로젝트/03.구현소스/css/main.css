@@ -453,9 +453,9 @@
     color: #2e2e2e;
 }
 /* 더보기 이미지 */
-.introList .moreImg{
+/* .introList .moreImg{
     height: 30vh;
-}
+} */
 /* 더보기 단락 */
 .introList .morePart{
     display: inline-block;
@@ -467,6 +467,15 @@
     vertical-align: middle;
     font-size: 2.5vh;
     color: #555;
+}
+/* 더보기 심볼에 마우스오버시 애니메이션 적용 */
+.morePart:hover .moreCont{
+    animation: rightMoveAni 1s ease-in-out infinite;
+}
+
+/* 애니메이션 키프레임 */
+@keyframes rightMoveAni {
+    100%{transform: translateX(20px);}
 }
 
 /************************************* 2-5. 5페이지 *************************************/

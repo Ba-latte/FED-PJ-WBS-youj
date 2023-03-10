@@ -17,16 +17,36 @@ window.addEventListener("DOMContentLoaded", loadFn);
 function loadFn(){
 
     // 호출 확인
-    console.log("링크시스템 - 로딩 완료!");
+    console.log("링크시스템js - 로딩 완료!");
 
-    
+    // 상단 로고 링크
+    topLogoLinkFn();
+
+    // 사이트맵 하위 메뉴 관련 링크
+    siteMapLinkFn();
 
 
 
 }; ///////////////////// loadFn 함수 끝 ////////////////////////
 
 
-////////////////////////// 사이트 맵 링크 //////////////////////////
+////////////////////////// 상단 로고 링크 //////////////////////////
+/*********************************************************************
+    함수명 : topLogoLinkFn
+    기능 : 상단의 로고 클릭하면 index.html로 연결하기
+*********************************************************************/
+function topLogoLinkFn(){
+    const topLogoImg = document.querySelector(".topArea .logo img");
+    // console.log(topLogoImg);
+    topLogoImg.addEventListener("click", ()=>{
+        location.href = "./index.html";
+    });
+} /////////////////////// topLogoLinkFn 함수 끝 ////////////////////////////
+
+
+
+
+////////////////////////// 사이트맵 링크 //////////////////////////
 /*********************************************************************
     함수명 : siteMapLinkFn
     기능 : 사이트맵 화면에서 각 하위 메뉴 클릭시 각각에 맞는 서브페이지로 이동하기
@@ -35,6 +55,23 @@ function loadFn(){
 function siteMapLinkFn(){
     // 이벤트 대상 : smenu ol ul li? 아니면 a?
     // 이벤트 종류 : 클릭 이벤트
+    const lnb = document.querySelectorAll(".smenu li a");
+    // console.log(lnb);
+    let lnbTxt = "";
     
-    // if()
+    lnb.forEach((ele)=>{
+        ele.addEventListener("click", ()=>{
+            lnbTxt = ele.innerText;
+            console.log("클릭한거 맞아?ㅠㅠ: ", lnbTxt);
+
+            switch(lnbTxt){
+                case "행사 소개" : location.href = "./sub_eventInfo.html";
+                case "주요 프로그램 소개" : location.href = "./sub_programInfo.html";
+                default : alert("공사중입니다😊");
+            } //////////////// switch문 끝 /////////////////////
+            
+        }); /////////////// click 이벤트 끝 ///////////////////
+    }); ///////////////////// forEach문 끝 //////////////////////////
+
+
 }; ///////////////////// siteMapLinkFn 함수 끝 ///////////////////////
