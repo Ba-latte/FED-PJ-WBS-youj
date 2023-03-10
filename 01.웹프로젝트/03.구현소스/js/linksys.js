@@ -65,8 +65,8 @@ function siteMapLinkFn(){
             console.log("클릭한거 맞아?ㅠㅠ: ", lnbTxt);
 
             switch(lnbTxt){
-                case "행사 소개" : location.href = "./sub_eventInfo.html";
-                case "주요 프로그램 소개" : location.href = "./sub_programInfo.html";
+                case "행사 소개" : location.href = "./sub_eventInfo.html"; break;
+                case "주요 프로그램 소개" : location.href = "./sub_programInfo.html"; break;
                 default : alert("공사중입니다😊");
             } //////////////// switch문 끝 /////////////////////
             
