@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     for (let x of atag) {
         // console.log(x);
         x.onclick = (e) => {
-            // e.preventDefault();
+            e.preventDefault();
         };
     } ///////////// for of 끝 ////////////////
 
