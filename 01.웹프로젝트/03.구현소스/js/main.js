@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     for (let x of atag) {
         // console.log(x);
         x.onclick = (e) => {
-            e.preventDefault();
+            // e.preventDefault();
         };
     } ///////////// for of 끝 ////////////////
 
@@ -55,6 +55,8 @@ window.addEventListener("DOMContentLoaded", () => {
     hambtn.onclick = () => {
         siteMap.classList.add("on");
 
+        
+
         /* 스크롤바, 스크롤기능 없애기 */
         document.body.classList.add("scrollOff");
     }; ////////////// onclick 이벤트 끝 /////////////////
@@ -72,7 +74,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // 이벤트 세팅하기
     closebtn.onclick = (idx) => {
         /* 사이트맵 하위메뉴 펼쳐져 있을 시 초기화 해주기 */
-        initFn(idx);
+        // initFn(idx);
+
 
         siteMap.classList.remove("on");
 
@@ -136,7 +139,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /*********************** 사이트맵 상위메뉴 클릭시 하위메뉴 등장 ***********************/
+    /*********************** 모바일버전에서 사이트맵 상위메뉴 클릭시 하위메뉴 등장 ***********************/
     // 이벤트 적용 대상 : .siteMap ul>li
     const gnb = document.querySelectorAll(".siteMap ul>li:has(.smenu)");
     // console.log(gnb);
@@ -187,7 +190,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         smenu.forEach((ele, idx) => {
             if (idx === seq) return;
-            console.log("lnb 순번: ", idx);
+            // console.log("lnb 순번: ", idx);
 
             // 높이값 0 만들기
             ele.style.height = 0;
