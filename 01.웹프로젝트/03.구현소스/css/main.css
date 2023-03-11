@@ -445,6 +445,23 @@
     object-fit: cover;
     object-position: top;
 }
+/* 셰프 이미지 스크롤 등장 액션 세팅 */
+.introList li:nth-child(1){
+    position: relative;
+}
+.test{
+    top: 0;
+    position: absolute;
+    width: 50vw;
+    height: 60vh;
+    left: 0;
+    background-color: lightgray;
+    transform: translateY(100%);
+    transition: transform .5s ease-in-out;
+}
+.test.on{
+    transform: translateY(0);
+}
 /* 셰프 이름 */
 .introList li p {
     font-size: 1.6rem;
@@ -452,10 +469,7 @@
     margin: 20px 0 50px;
     color: #2e2e2e;
 }
-/* 더보기 이미지 */
-/* .introList .moreImg{
-    height: 30vh;
-} */
+
 /* 더보기 단락 */
 .introList .morePart{
     display: inline-block;
@@ -542,6 +556,7 @@
 
 .videoList ol {
     display: flex;
+    transition: transform .5s ease-in-out;
 }
 
 /* 비디오 목록내의 이미지 */

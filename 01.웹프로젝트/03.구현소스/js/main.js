@@ -213,7 +213,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const screen = document.querySelector(".vArea iframe");
     // 동영상 번호 변수
     let vNum = 0;
-    
+
+
     function playFn(sort){
         // console.log("어떤거 클릭했어?: ", sort);
 
@@ -286,9 +287,30 @@ window.addEventListener("DOMContentLoaded", () => {
 
     /******************************* 동영상 썸네일 목록 아래의 좌/우 버튼 클릭시 썸네일 목록 이동되는 함수 *******************************/
     // 기능 : 썸네일 목록 아래의 이전/다음 버튼을 클릭하면, 리스트 박스 내의 썸네일이 한개씩 좌우로 이동된다
-    // 이벤트 적용 대상 : .movebtn아래의 .prebtn img, .nextbtn img
+    // 이벤트 적용 대상 : .movebtn아래의 divd img들
     // 변경 대상 : .videoList박스 li img들
     // 이벤트 종류 : 클릭 이벤트
-    
+    const thumbnailbtns = document.querySelectorAll(".movebtn div img");
+    // console.log(thumbnailbtns);
+    let clickNum = 1;
+
+    thumbnailbtns.forEach((ele, idx)=>{
+        ele.onclick = ()=>{
+            // console.log("누가 버튼 클릭했어? : ", idx);
+            // 오른쪽 버튼 클릭한 경우
+            if(idx === 1){
+                document.querySelector(".vSection .videoList ol").style.transform = `translateX(${20 * clickNum}%)`;
+                clickNum++;
+                console.log("오른쪽 클릭했을때 숫자: ", clickNum);
+            }
+            // 왼쪽 버튼 클릭한 경우
+            else{
+                clickNum--;
+                document.querySelector(".vSection .videoList ol").style.transform = `translateX(${20 * clickNum}%)`;
+                console.log("왼쪽 클릭했을때 숫자: ", clickNum);
+            }
+
+        };
+    });
 
 }); ////////////////////////////////// 로딩 구역 끝 /////////////////////////////////////////////////////
