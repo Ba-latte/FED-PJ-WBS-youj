@@ -210,20 +210,85 @@ window.addEventListener("DOMContentLoaded", () => {
     // 이벤트 종류 : click 이벤트
     const prebtn = document.querySelector(".vArea .prebtn img");
     const nextbtn = document.querySelector(".vArea .nextbtn img");
-    let screen = document.querySelector(".vArea iframe");
-    let test = "";
-    let innerTest = screen
+    const screen = document.querySelector(".vArea iframe");
+    // 동영상 번호 변수
+    let vNum = 0;
+    
+    function playFn(sort){
+        // console.log("어떤거 클릭했어?: ", sort);
 
-    function playFn(){
-        // console.log("클릭했어?");
-        screen.setAttribute("src", `https://www.youtube.com/embed/${videoObj[10].vID}`);
+        // 다음 버튼 제어
+        if(sort === "next"){
+            // 동영상 번호 변수 1씩 증가시키기
+            vNum++;
+            
+            // 동영상 번호 변수의 한계값 체크하기 (10이 되면 0으로 돌아가기)
+            if(vNum === 11) vNum = 0;
 
+            // 동영상 인덱스 번호 바꿔서 출력하기
+            screen.setAttribute("src", `https://www.youtube.com/embed/${videoObj[vNum].vID}`);
+            
+            // console.log(vNum);
+            
+        } ///////////// if : nextbtn 클릭한 경우 //////////////////
+        else{
+            if(vNum === 0) vNum = 11;
+            
+            vNum--;
+
+            // console.log(vNum);
+
+            screen.setAttribute("src", `https://www.youtube.com/embed/${videoObj[vNum].vID}`);
+
+        } //////////////// else : prebtn 클릭한 경우 //////////////////////////
         
     } //////////////// playFn() 함수 끝 /////////////////////
 
     // 이벤트 적용하기
-    prebtn.onclick = ()=>{playFn()};
-    nextbtn.onclick = ()=>{playFn()};
+    prebtn.onclick = ()=>{playFn("prev")};
+    nextbtn.onclick = ()=>{playFn("next")};
+
+
+
+
+    /******************************* 동영상 썸네일 클릭시 해당 동영상으로 바뀌는 함수 *******************************/
+    // 기능 : 동영상 목록에 있는 썸네일을 클릭하면, 해당 동영상으로 바뀐다
+    // 이벤트 적용 대상 : . videoList li img들
+    // 변경 대상 : .vArea iframe -> screen
+    // 이벤트 종류 : 클릭 이벤트
+    const thumbnailImg = document.querySelectorAll(".videoList li img");
+
+
+    thumbnailImg.forEach((ele, idx)=>{
+        // console.log(ele);
+        ele.onclick=()=>{
+            console.log(idx);
+            
+            vNum = idx + 1;
+            // console.log(vNum);
+            screen.setAttribute("src", `https://www.youtube.com/embed/${videoObj[vNum].vID}`);
+            
+            // 모든 대상에서 on클래스 빼기
+            for(let x of thumbnailImg) x.classList.remove("on");
+
+            // 클릭된 요소에만 on클래스 넣기
+            ele.classList.add("on");
+
+
+
+        };
+    });
+    
+
+
+
+
+
+    /******************************* 동영상 썸네일 목록 아래의 좌/우 버튼 클릭시 썸네일 목록 이동되는 함수 *******************************/
+    // 기능 : 썸네일 목록 아래의 이전/다음 버튼을 클릭하면, 리스트 박스 내의 썸네일이 한개씩 좌우로 이동된다
+    // 이벤트 적용 대상 : .movebtn아래의 .prebtn img, .nextbtn img
+    // 변경 대상 : .videoList박스 li img들
+    // 이벤트 종류 : 클릭 이벤트
     
 
 }); ////////////////////////////////// 로딩 구역 끝 /////////////////////////////////////////////////////

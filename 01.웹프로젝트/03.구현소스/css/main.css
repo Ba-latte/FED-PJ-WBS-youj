@@ -548,6 +548,13 @@
 .videoList img {
     width: 10vw;
     vertical-align: bottom;
+    box-sizing: border-box;
+    border: 5px solid transparent;
+
+    transition: border .3s;
+}
+.videoList img.on{
+    border: 5px solid #d8693e;
 }
 
 /* (4) 비디오 목록 이전/다음 전환 버튼 */
