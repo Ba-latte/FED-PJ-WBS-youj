@@ -5,7 +5,6 @@
 /************************************* 2. 메인 영역  *************************************/
 section.eventInfo{
     width: 100%;
-    height: 100vh;
     margin-top: 15vh;
 
     font-size: 2vh;
@@ -20,6 +19,8 @@ section.eventInfo{
     font-size: 8vh;
     font-family: 'Rajdhani', sans-serif;
     margin: 10vh;
+    font-weight: bold;
+    color: #333;
 }
 /* 섹션 타이틀 로고 주변 원 이미지 공통 세팅 */
 .sectionTitBx .circle{
@@ -84,4 +85,52 @@ section.eventInfo{
     100%{
         transform: translateY(0%);
     }
+}
+
+/* 섹션 컨텐츠 겉박스 */
+.sectionContBx{
+    position: relative;
+    /* 부모자격 - .ir */
+    padding: 10vh;
+}
+
+/* 섹션 컨텐츠 단락 공통 세팅 */
+.sectionContBx p{
+    padding: 1vh 5vh;
+    color: #2e2e2e;
+}
+
+/* 섹션 컨텐츠 첫번째 단락 */
+.eventInfo .sectionContBx p:nth-child(1){
+    /* text-align: center; */
+    font-size: 10vh;
+    font-weight: bolder;
+    color: #000;
+}
+.eventInfo .sectionContBx p:nth-child(1)>span{
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/eventInfo01.png);
+    background-position: center left;
+}
+/* 두번째 단락 */
+.eventInfo .sectionContBx p:nth-child(2){
+    margin-top: 5vh;
+}
+/* 마지막 단락 */
+.eventInfo .sectionContBx p:last-child{
+    margin-bottom: 5vh;
+}
+/* 두번째~ 마지막 단락 공통 세팅 */
+.eventInfo .sectionContBx p + p{
+    width: 30vw;
+    line-height: 1.7;
+}
+.eventInfo .sectionContBx div{
+    position: absolute;
+    width: 20vw;
+    height: 50vh;
+    bottom: 15vh;
+    right: 15%;
+    background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/eventInfo01.png) no-repeat bottom/cover;
 }
