@@ -61,6 +61,52 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 
 
+    /***************************************************
+        함수명 :  bottomMoveFn
+        기능 : 특정 위치에 도착하면 글자가 아래쪽에서부터 등장함
+    ***************************************************/
+    function bottomMoveFn(){
+        const stage = document.querySelector(".pg4 .artit");
+        // console.log(stage);
+
+        // 데이터 변수
+        const moveTxt = "Orbit and Rotation";
+
+        // 한글자씩 담을 변수
+        let hcode = "";
+
+        // 순번 변수
+        let idx = 0;
+
+        // for of문으로 한글자씩 잘라서 코드 저장 변수에 넣기(축적)
+        for(let x of moveTxt){
+            // 띄어쓰기일 경우 처리법
+            if(x === "") x = "&nbsp;&nbsp;";
+            
+            // 글자 담기
+            hcode +=`<span style="transition-delay: ${idx*0.1}s">${x}</span>`;
+            
+            idx++;
+        } ////////////// for of //////////////////
+        
+        // 스테이지 박스에 글자 넣기
+        // stage.innerHTML = hcode;
+        
+        // function addClassFn(){
+        //     const addTag = document.querySelectorAll("span");
+        //     // console.log(addTag);
+        //     addTag.forEach((ele)=>{
+        //         ele.classList.add("on");
+        //     });
+        // }
+
+        // setTimeout(addClassFn, 300);
+
+    }; //////////////// bottomMoveFn /////////////////////
+    
+
+
+
 
     /***************************************************
         함수명 :  expansionFn
@@ -97,9 +143,11 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
         const formationTit = document.querySelector(".formation .artit");
         const formationContTxt = document.querySelector(".formation .contTxt");
+        const orbitAndRotationTit = document.querySelector(".orbitAndRotation .artit");
         
         appearFn(formationTit);
         appearFn(formationContTxt);
+        appearFn(orbitAndRotationTit);
 
     }); /////////////////////// scroll 이벤트 끝 ///////////////////////
 
