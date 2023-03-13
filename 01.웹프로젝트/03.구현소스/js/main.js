@@ -93,9 +93,10 @@ window.addEventListener("DOMContentLoaded", () => {
     // 이벤트 대상 - .pl
     const tg = document.querySelectorAll(".pl img");
     // console.log(pl);
-    // 화면 높이값의 3분의2(2/3) 구하기
+
+    // 화면 높이값의 5분의4(4/5) 구하기
     const hv = (window.innerHeight / 5) * 4;
-    // console.log(hv);
+    // console.log("화면 높이값의 5분의 4 지점은?: ", hv);
 
     // 등장액션 대상 위치값 리턴 함수
     const retVal = (ele) => ele.getBoundingClientRect().top;
@@ -133,6 +134,48 @@ window.addEventListener("DOMContentLoaded", () => {
             tg[0].classList.add("on");
         }
     }); /////////////////////// 스크롤 액션 끝 /////////////////////////////////////
+
+
+
+
+    /*********************** 셰프&바텐더 소개 섹션의 스크롤 액션 ***********************/
+    // 기능 : 셰프&바텐더 소개 섹션에 진입하기 전에는 셰프 이미지가 translateX(110%)이었다가, 스크롤되어 특정 위치 진입하면 translateX(0%)이 되어서 아래쪽에서 등장하도록 만들기
+    // 변경 대상 : .introList img들
+    // 이벤트 종류 : 스크롤 이벤트
+    // 이벤트 적용할 대상 : .CnBIntro .rside (rside박스 안에 .introList가 있음)
+    const CnBIntroImgs = document.querySelectorAll(".introList img");
+    const CnBIntroInRside = document.querySelector(".CnBIntro .rside");
+    // console.log(CnBIntroImgs);
+
+    // 화면 높이값의 10분의 9 지점 구하기
+    const CnBIntro_hv = (window.innerHeight / 10) * 9;
+    // console.log("화면 높이값의 10분의 9 지점은?: ", CnBIntro_hv);
+
+    // 화면의 토탈 높이값 구하기
+    const totalHv = window.innerHeight;
+    // console.log("화면의 높이값: ", totalHv);
+
+    // 등장액션 대상 위치값 리턴 함수 -> retVal에 담겨있음
+
+    // 함수 만들기
+    function introFn(){
+        // console.log("스크롤 중!");
+        
+        CnBIntroImgs.forEach((ele)=>{
+            let eleVal = retVal(ele);
+            // console.log(eleVal);
+
+            // 구간 적용 여부 검사하기
+            if (eleVal < CnBIntro_hv && eleVal > 0) {
+                // console.log("작동!!");
+                ele.classList.add("appear");
+            }
+        });
+
+    }
+
+    // 이벤트 세팅하기
+    window.addEventListener("scroll", introFn);
 
 
 

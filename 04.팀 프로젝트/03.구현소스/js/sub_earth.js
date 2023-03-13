@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     // console.log(highlighter);
     // 화면 높이값의 3분의2(2/3)지점
     const hv = window.innerHeight/3*2;
-    console.log("화면 높이값의 3분의 2 지점 : ", hv);
+    // console.log("화면 높이값의 3분의 2 지점 : ", hv);
 
 
     // 등장액션 대상 위치값 리턴하는 함수
