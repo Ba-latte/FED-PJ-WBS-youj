@@ -352,7 +352,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.querySelector(".vSection .videoList ol").style.transform = `translateX(${20 * clickNum}%)`;
                 console.log("왼쪽 클릭했을때 숫자: ", clickNum);
             }
-
+            console.log("클릭 다 하고 넘어간 숫자는?: ", clickNum);
         };
     });
 

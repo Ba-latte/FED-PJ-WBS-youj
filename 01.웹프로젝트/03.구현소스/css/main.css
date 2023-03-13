@@ -521,10 +521,9 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: red;
+    background-color: #b5416e;
 
-    /* opacity: 0; */
-    /* display: none; */
+    opacity: 0;
     transition: .3s ease-in-out;
 }
 /* 스테이지박스 밑의 직계 span박스(글자때문에 넣음) */
@@ -539,9 +538,9 @@
     font-size: 5vh;
     text-shadow: 1px 1px #000;
 }
-.CnBIntro .introList ul a:hover .tset{
+.CnBIntro .introList ul li:hover .tset{
     /* display: block; */
-    /* opacity: 1; */
+    opacity: 1;
 }
 
 

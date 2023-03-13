@@ -5,8 +5,73 @@
 /************************************* 2. 메인 영역  *************************************/
 .programPageLnb ul{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
     background-color: red;
     height: 5vh;
+}
+.programPageLnb ul a{
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+
+/* 타이틀, 간략한 소개 문구 */
+/* 첫번째 단락 - 간단 소개 문구 */
+.categoryTit p:first-child{
+    font-size: 1.5vw;
+    text-align: center;
+    color: #b5416e;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+/* 타이틀 */
+.categoryTit h6{
+    font-size: 2vw;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #333;
+}
+/* 타이틀 다음 단락 공통 세팅 */
+.categoryTit h6+p{
+    padding: 5vh;
+    text-align: center;
+    font-size: 0.9vw;
+    color: #555;
+}
+/* 요약 겉박스 */
+.categorySummary{
+    width: 45vw;
+    /* height: 5vh; */
+    margin: 0 auto;
+    padding: 3vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+    line-height: 1.7;
+}
+/* 날짜와장소 */
+.dateAndLocation{
+    display: inline-block;
+    color: #b5416e;
+    letter-spacing: 1px;
+    font-size: 1.5vw;
+    padding-bottom: 1vh;
+}
+/* 대상 */
+.categorySummary li>em{
+    border-radius: 11px;
+    background-color: #b5416e;
+    padding: 0 10px;
+
+    font-style: normal;
+    font-size: .8vw;
+    color: #fff;
+}
+/* 대상 */
+.categorySummary ul li{
+    font-size: .8vw;
+    color: #555;
+
 }
