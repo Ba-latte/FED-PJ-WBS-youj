@@ -28,6 +28,9 @@ function loadFn(){
     // 하단영역 링크
     footerLinkFn();
 
+    // 화면 하단 오른쪽의 top버튼 링크
+    topLinkFn();
+
 
 }; ///////////////////// loadFn 함수 끝 ////////////////////////
 
@@ -69,6 +72,7 @@ function siteMapLinkFn(){
             switch(lnbTxt){
                 case "행사 소개" : location.href = "./sub_eventInfo.html"; break;
                 case "주요 프로그램 소개" : location.href = "./sub_programInfo.html"; break;
+                case "테이스트오브서울 어워즈" : location.href = "./sub_tasteOfSeoulAward"; break;
                 default : alert("공사중입니다😊");
             } //////////////// switch문 끝 /////////////////////
             
@@ -109,9 +113,11 @@ function footerLinkFn(){
     기능 : 화면 하단 오른쪽의 top버튼을 클릭하면 페이지 맨 위로 올라가기
 *********************************************************************/
 function topLinkFn(){
-    const tg = document.querySelector(".pageTopBtn");
-    console.log()
+    const mainTopBtn = document.querySelector(".pageTopBtn");
+    // console.log(mainTopBtn);
 
-
+    mainTopBtn.addEventListener("click", ()=>{
+        window.scrollTo(0,0);
+    });
 
 } ///////////////////// topLinkFn 함수 끝 ///////////////////////////
