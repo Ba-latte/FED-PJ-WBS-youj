@@ -3,3 +3,10 @@
 /* 서브 페이지 - 테이스트오브서울 어워즈 */
 
 /************************************* 2. 메인 영역  *************************************/
+.programPageLnb ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: red;
+    height: 5vh;
+}

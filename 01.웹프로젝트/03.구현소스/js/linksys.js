@@ -67,7 +67,7 @@ function siteMapLinkFn(){
     lnb.forEach((ele)=>{
         ele.addEventListener("click", ()=>{
             lnbTxt = ele.innerText;
-            console.log("클릭한거 맞아?ㅠㅠ: ", lnbTxt);
+            // console.log("클릭한거 맞아?ㅠㅠ: ", lnbTxt);
 
             switch(lnbTxt){
                 case "행사 소개" : location.href = "./sub_eventInfo.html"; break;

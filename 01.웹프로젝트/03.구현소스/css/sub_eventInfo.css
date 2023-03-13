@@ -3,7 +3,7 @@
 /* 서브 페이지 - 행사 소개 */
 
 /************************************* 2. 메인 영역  *************************************/
-section.eventInfo{
+header.eventInfo{
     width: 100%;
     margin-top: 15vh;
 
@@ -126,7 +126,7 @@ section.eventInfo{
     width: 30vw;
     line-height: 1.7;
 }
-.eventInfo .sectionContBx div{
+.eventInfo .sectionContBx .sectionContImg{
     position: absolute;
     width: 20vw;
     height: 50vh;
