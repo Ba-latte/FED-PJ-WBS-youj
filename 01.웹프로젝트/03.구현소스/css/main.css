@@ -56,6 +56,8 @@
     text-align: center;
     line-height: 50px;
     font-size: 20px;
+
+    cursor: pointer;
 }
 
 /************************************* 2-1. 메인 페이지 *************************************/
@@ -522,16 +524,23 @@
     background-color: red;
 
     /* opacity: 0; */
+    /* display: none; */
     transition: .3s ease-in-out;
 }
+/* 스테이지박스 밑의 직계 span박스(글자때문에 넣음) */
 .introList .stageBx>div>span{
-    display: block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Rajdhani', sans-serif;
     color: #fff;
-    text-align: center;
     font-size: 5vh;
-    transform: translateY(300%);
+    text-shadow: 1px 1px #000;
 }
 .CnBIntro .introList ul a:hover .tset{
+    /* display: block; */
     /* opacity: 1; */
 }
 
