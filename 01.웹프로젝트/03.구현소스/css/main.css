@@ -194,7 +194,7 @@
     position: relative;
     /* 부모자격 - .cr5~.cr9 */
     margin: 0 auto;
-    padding: 15vh 2vh;
+    padding: 15vh 2vh 40vh;
     max-width: 1400px;
 
     text-align: center;
@@ -359,42 +359,81 @@
     /* 부모자격 - .mapButton */
     /* max-width: 1400px; */
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     text-align: center;
 
-    /* background-color: #5e5e5e; */
+    background-color: #FEF7E6;
 }
-.rollingBanner {
+/* 원형 시작부분 겉박스 */
+.circleStart{
+    transform: translateY(-73%);
+}
+/* 원형 시작부분 srg */
+.circleStart>svg{
+    transform: translate3d(0px, 0px, 0px) scale(1, 0.5231);
+}
+/* 원형 내부 부분 겉박스 */
+.circleBody {
     padding: 100px;
+    height: 100%;
 }
-.rollingBanner .txt {
-    font-size: 4rem;
-    line-height: 2;
+/* 원형 배너의 메인 텍스트 */
+.circleMainTxt .txt {
+    
+    font-size: 6vw;
+    font-family: 'Rajdhani', sans-serif;
+    color: #333;
 }
 
 /* (2) 지도명, 지도버튼 */
-.mapButton {
-    position: absolute;
-    /* 부모는? - .foodMap */
-    font-size: 2rem;
+/* 테이스트오브서울 100선 지도 버튼 겉박스 */
+.tasteofseoul100BtnsBx{
+    height: 100vh;
+    font-size: 3vh;
     letter-spacing: 1px;
+    color: #555;
+    padding: 10vh 15vh;
+}
+/* 테이스트오브서울 100선 박스의 ol */
+.tasteofseoul100Btn ol{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10vh;
 }
 
-.mapButton .btn {
+/* 서울 채식 50선 지도 버튼 겉박스 */
+.vegetarian50BtnsBx{
+    height: 100vh;
+    font-size: 3vh;
+    letter-spacing: 1px;
+    color: #555;
+    padding: 10vh 15vh;
+}
+/* 서울 채식 50선 박스의 ol */
+.vegetarian50Btn ol{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+}
+/* 지도 링크 버튼의 a요소 공통 세팅 */
+.btn a{
     display: inline-block;
     margin: 0 auto;
-    width: 100px;
-    height: 40px;
     border-radius: 15px;
-    text-align: center;
-    line-height: 40px;
-
-    background-color: #c4c4c4;
-    border: 1px solid #3a3a3a;
-    box-shadow: 1px 1px 1px #000000;
-
-    font-size: 1.6rem;
+    background-color: #b5416e;
+    padding: 0 10px;
+    
+    font-size: 1vw;
+    color: #fff;
+    font-weight: normal;
 }
+.mapIcon{
+    display: inline-block;
+    vertical-align: auto;
+    font-size: 8vh;
+    color: #555;
+}
+
 
 /************************************* 2-4. 4페이지 *************************************/
 /* 셰프와 바텐더 소개 */

@@ -14,6 +14,10 @@ font-family: 'Rajdhani', sans-serif;
 font-family: 'Noto Sans KR', sans-serif;
 */
 
+/* 스크롤바 부드럽게 움직이기 */
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -30,8 +34,6 @@ body{
 /* (참고: 접두어의 종류로는 -ms-(ie), -o-(오페라), -moz-(파이어폭스) 가 있음) */
 /* 클래스명 scbar */
 .scbar::-webkit-scrollbar{
-    scroll-behavior: smooth;
-    /* 스크롤 동작 부드럽게 */
     width: 10px;
     /* 전체 스크롤바 크기(폭)변경 */
     
