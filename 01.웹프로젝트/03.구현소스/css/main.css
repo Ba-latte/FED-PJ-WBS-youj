@@ -33,7 +33,7 @@
 /* 인디케이터 바 */
 .indicator .indicBar{
     width: 2px;
-    height: 100px;
+    height: 0;
     background-color: #333;
 }
 
