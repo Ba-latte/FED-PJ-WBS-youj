@@ -359,4 +359,48 @@ window.addEventListener("DOMContentLoaded", () => {
             // console.log("클릭 다 하고 넘어간 숫자는?: ", clickNum);
         };
     });
+
+
+
+
+
+    /******************************* 가로로 스크롤 이동되는 함수 *******************************/
+    // 기능 : 스크롤바를 내리면 화면이 가로로 움직인다
+    // 적용 대상 : .tpg, .slidePg
+    // 타겟박스 : .tpg
+    const hScrollBx = document.querySelector(".tpg");
+    const hScrollSlide = document.querySelector(".hScrollTgBx");
+    const moveBx = hScrollSlide.querySelector("ul");
+    // console.log(hScrollBx, hScrollSlide);
+
+    // 이벤트 세팅하기
+    window.addEventListener("scroll", hScrollFn);
+
+    // getBoundingClientRect() 값을 리턴받기
+    const retRectVal = x => x.getBoundingClientRect().top;
+    
+    function hScrollFn(){
+        // 스크롤 위치값 확인
+        console.log(window.scrollY);
+        let tgpos = retRectVal(hScrollBx);
+        console.log("바운딩값: ", tgpos);
+
+        // 적용구간 설정하기 : 0이하 -3000px 이상!
+        if(tgpos <=0 && tgpos >= -3000){
+            moveBx.style.left = tgpos + "px";
+        }
+        else if(tgpos > 0){
+            moveBx.style.left = "0";
+        }
+    } //////////////// hScrollFn 끝 /////////////////
+
+    
+
+
+
+
+
+
+
+
 }); ////////////////////////////////// 로딩 구역 끝 /////////////////////////////////////////////////////

@@ -359,74 +359,80 @@
     /* 부모자격 - .mapButton */
     /* max-width: 1400px; */
     width: 100%;
-    /* height: 100vh; */
     text-align: center;
 
     background-color: #FEF7E6;
 }
-/* 원형 시작부분 겉박스 */
+/* 원형배너 시작부분 srg의 겉박스 */
 .circleStart{
     transform: translateY(-73%);
 }
-/* 원형 시작부분 srg */
+/* 원형배너 시작부분 srg */
 .circleStart>svg{
     transform: translate3d(0px, 0px, 0px) scale(1, 0.5231);
 }
-/* 원형 내부 부분 겉박스 */
-.circleBody {
-    padding: 100px;
-    height: 100%;
+
+/* 🌈원형배너 가로스크롤 위한 겉박스 */
+.circleBody{
+    height: calc(100vh + 3000px);
+    outline: 2px dashed lime;
 }
-/* 원형 배너의 메인 텍스트 */
-.circleMainTxt .txt {
-    
+/* 🌈원형배너 가로스크롤 위한 속박스 */
+.hScrollTgBx{
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100%;
+
+    /* background-color: orange; */
+
+}
+/* 🌈원형배너 실제로 가로이동할 박스(가로스크롤 위한 속박스 바로 아래에 있는 박스들) */
+.hScrollTgBx ul{
+    position: relative;
+    left: 0;
+    display: flex;
+    width: calc(100vw + 3000px);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    /* 트랜지션 */
+    transition: .4s ease-out;
+}
+/* 가로이동하는 li들 공통 세팅 */
+.hScrollTgBx ul li{
+    flex: 1;
+    text-align: center;
+
+    font-size: 1vw;
+    letter-spacing: 1px;
+    color: #333;
+}
+/* 가로이동하는 li들 세부 세팅 */
+/* 첫번째 슬라이드 */
+.circleMainTxt p{
     font-size: 6vw;
     font-family: 'Rajdhani', sans-serif;
     color: #333;
+    /* padding: 5vh; */
+}
+/* 두번째와 세번째 슬라이드 공통 세팅 */
+.hScrollTgBx ul li ol{
+    display: flex;
 }
 
-/* (2) 지도명, 지도버튼 */
-/* 테이스트오브서울 100선 지도 버튼 겉박스 */
-.tasteofseoul100BtnsBx{
-    height: 100vh;
-    font-size: 3vh;
-    letter-spacing: 1px;
-    color: #555;
-    padding: 10vh 15vh;
-}
-/* 테이스트오브서울 100선 박스의 ol */
-.tasteofseoul100Btn ol{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10vh;
-}
-
-/* 서울 채식 50선 지도 버튼 겉박스 */
-.vegetarian50BtnsBx{
-    height: 100vh;
-    font-size: 3vh;
-    letter-spacing: 1px;
-    color: #555;
-    padding: 10vh 15vh;
-}
-/* 서울 채식 50선 박스의 ol */
-.vegetarian50Btn ol{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10vh;
-}
-/* 지도 링크 버튼의 a요소 공통 세팅 */
-.btn a{
-    display: inline-block;
-    margin: 0 auto;
-    border-radius: 15px;
+/* 두번째 슬라이드 개별세팅 */
+.tasteofseoul100Btn a{
+    padding: 2px 10px;
     background-color: #b5416e;
-    padding: 0 10px;
-    
-    font-size: 1vw;
+    border-radius: 10px;
+
+    font-size: .8vw;
     color: #fff;
-    font-weight: normal;
+    letter-spacing: 1px;
 }
+
 .mapIcon{
     display: inline-block;
     vertical-align: auto;
