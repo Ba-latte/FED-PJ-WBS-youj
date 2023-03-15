@@ -385,8 +385,8 @@ window.addEventListener("DOMContentLoaded", () => {
         let tgpos = retRectVal(hScrollBx);
         console.log("바운딩값: ", tgpos);
 
-        // 적용구간 설정하기 : 0이하 -3000px 이상!
-        if(tgpos <=0 && tgpos >= -3000){
+        // 적용구간 설정하기 : 200이하 -3000px 이상!
+        if(tgpos <= 0 && tgpos >= -3000){
             moveBx.style.left = tgpos + "px";
         }
         else if(tgpos > 0){
