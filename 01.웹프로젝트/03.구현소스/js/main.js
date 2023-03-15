@@ -125,6 +125,9 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }); /////////////////////// 스크롤 액션 끝 /////////////////////////////////////
 
+
+
+
     /*********************** 인디케이터 스크롤 액션 ***********************/
     // 기능 : 스크롤 위치에 따라서 인디케이터의 바가 채워진다
 
@@ -431,9 +434,18 @@ window.addEventListener("DOMContentLoaded", () => {
     } //////////////// hScrollFn 끝 /////////////////
 
     
+    /******************************* 지도 섹션 배경 상단의 svg 변경 함수 *******************************/
+    // 기능 : 스크롤바가 특정 위치에 오면 지도 섹션의 배경 상단에 있는 svg의 scale속성이 변화함
+    // 변경 대상 : .circleStart>svg
+    const svgScale = document.querySelector(".circleStart>svg");
+    // 이벤트 종류 : 스크롤 이벤트
 
+    function svgChgFn(){
+        console.log("해당 요소의 top 위치값: ", svgScale.getBoundingClientRect().top + window.scrollY);
+        console.log("현재 스크롤바 위치값: ", window.scrollY);
 
-
+    }
+    window.addEventListener("scroll", svgChgFn);
 
 
 

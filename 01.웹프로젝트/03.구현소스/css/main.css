@@ -366,7 +366,7 @@
 }
 /* 원형배너 시작부분 srg의 겉박스 */
 .circleStart{
-    transform: translateY(-73%);
+    transform: translateY(-95%);
 }
 /* 원형배너 시작부분 srg */
 .circleStart>svg{
