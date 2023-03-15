@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // 이벤트 세팅하기
     closebtn.onclick = (idx) => {
         /* 사이트맵 하위메뉴 펼쳐져 있을 시 초기화 해주기 */
-        // initFn(idx);
+        initFn(idx);
 
         siteMap.classList.remove("on");
 
@@ -93,23 +93,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // 스크롤과 위치표시바의 이동비율 계산을 위한 전체이동크기
-    let totalSc = document.body.clientHeight - window.innerHeight;
-    // 전체문서높이값 - 윈도우높이값 = 이동할 스크롤범위
-    // console.log("스크롤범위",totalSc);
-    // 스크롤위치바 : .indicBar
-    const bar = document.querySelector(".indicBar");
-
     // 스크롤 액션 세팅하기
     window.addEventListener("scroll", () => {
-        // 현재스크롤 위치 이동값
-        let scTop = window.scrollY;
-        // 이동비율
-        let perSc = Math.floor((scTop / totalSc) * 100);
-        // console.log("위치:",scTop," | 비율:",perSc);
+        // // 현재스크롤 위치 이동값
+        // let scTop = window.scrollY;
+        // // 이동비율
+        // let perSc = Math.floor((scTop / totalSc) * 100);
+        // // console.log("위치:",scTop," | 비율:",perSc);
 
-        // 바크기 업데이트
-        bar.style.height = perSc + "%";
+        // // 바크기 업데이트
+        // bar.style.height = perSc + "%";
+
+        indicFn();
 
         // pl들에 스크롤 액션 함수 적용하기
         for (let x of tg) showIt(x);
@@ -129,6 +124,37 @@ window.addEventListener("DOMContentLoaded", () => {
             tg[0].classList.add("on");
         }
     }); /////////////////////// 스크롤 액션 끝 /////////////////////////////////////
+
+    /*********************** 인디케이터 스크롤 액션 ***********************/
+    // 기능 : 스크롤 위치에 따라서 인디케이터의 바가 채워진다
+
+    // 스크롤과 위치표시바의 이동비율 계산을 위한 전체이동크기
+    // let totalSc = document.body.clientHeight - window.innerHeight;
+    let totalSc = document.body.scrollHeight - window.innerHeight;
+    // 전체문서높이값 - 윈도우높이값 = 이동할 스크롤범위
+    // console.log("스크롤범위",totalSc);
+
+    // 인디케이터 박스 : .indicator
+    const indicator = document.querySelector(".indicator");
+
+    // 스크롤위치바 : .indicBar
+    const bar = document.querySelector(".indicBar");
+
+    function indicFn(){
+        
+        // 현재스크롤 위치 이동값
+        let scTop = window.scrollY;
+        // 이동비율
+        let perSc = Math.floor((scTop / totalSc) * 100);
+        console.log("위치:",scTop," | 비율:",perSc);
+
+        // 바크기 업데이트
+        bar.style.width = perSc + "%";
+
+    } /////////////////////////// indicFn 함수 끝 //////////////////////////////////
+
+
+
 
     /*********************** 셰프&바텐더 소개 섹션의 스크롤 액션 ***********************/
     // 기능 : 셰프&바텐더 소개 섹션에 진입하기 전에는 셰프 이미지가 translateX(110%)이었다가, 스크롤되어 특정 위치 진입하면 translateX(0%)이 되어서 아래쪽에서 등장하도록 만들기
@@ -188,28 +214,31 @@ window.addEventListener("DOMContentLoaded", () => {
             // 높이값 가져오기
             let heightValue = ele.querySelector(".smenu ol").clientHeight;
 
-            console.log("높이값: ", heightValue);
+            // console.log("높이값: ", heightValue);
 
             // console.log(lnb.clientHeight);
-
+            
             lnb.style.height = (lnb.clientHeight === 0 ? heightValue : 0) + "px";
             lnb.style.opacity = lnb.clientHeight === 0 ? 1 : 0;
+            
+
+
             // 구글 심볼 바꾸기
             const symbols = ele.querySelector("span");
-            symbols.innerText = lnb.clientHeight === 0 ? "expand_more" : "expand_less";
+            // symbols.innerText = lnb.clientHeight === 0 ? "expand_more" : "expand_less";
+            symbols.innerText = lnb.clientHeight === 0 ? "expand_less" : "expand_more";
 
-            //
         }; ///////////// click 이벤트 끝 ///////////////
     }); /////////////// forEach() 끝 /////////////
 
     /******************************* 사이트맵 클릭 초기화 함수 *******************************/
     function initFn(seq) {
         // 호출확인
-        console.log("초기화 함수: ", seq);
+        // console.log("초기화 함수: ", seq);
 
         // 모든 서브메뉴 높이값 0 만들기
         const smenu = document.querySelectorAll(".siteMap ul li .smenu");
-        console.log("smenu: ", smenu);
+        // console.log("smenu: ", smenu);
 
         smenu.forEach((ele, idx) => {
             if (idx === seq) return;
@@ -219,7 +248,14 @@ window.addEventListener("DOMContentLoaded", () => {
             ele.style.height = 0;
             // 투명도 0 만들기
             ele.style.opacity = 0;
+
         }); ///////////////// forEach() 끝 ////////////////////
+
+        // 모든 심볼 innerText의 내용을 expand_more라고 바꾸기
+        const symbols = document.querySelectorAll(".siteMap li span");
+        // console.log("초기화할 심볼들: ", symbols);
+        symbols.forEach(ele=>ele.innerText = "expand_more");
+
     } //////////////////// initFn 함수 끝 //////////////////////
 
     /******************************* 동영상 좌/우 버튼 클릭시 동영상 넘어가는 함수 *******************************/

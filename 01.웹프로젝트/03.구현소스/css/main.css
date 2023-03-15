@@ -17,24 +17,25 @@
 .topWrap .indicInBx{
     position: relative;
     /* 부모자격 - .indicator */
-    left: 50px;
 }
 /* 인디케이터 */
 .topWrap .indicator{
     position: fixed;
     /* 부모는? - */
-    top: 50%;
+    top: 0;
     transform: translateY(-50%);
 
-    width: 2px;
-    height: 200px;
+    width: 100%;
+    height: 3px;
     background-color:#c4c4c4;
 }
 /* 인디케이터 바 */
 .indicator .indicBar{
-    width: 2px;
-    height: 0;
-    background-color: #333;
+    /* position: absolute; */
+    width: 0;
+    height: 100%;
+    background-color: #b5416e;
+    /* transition: width .5s ease; */
 }
 
 /* top버튼 박스 */
@@ -480,8 +481,9 @@
     cursor: pointer;
 }
 /* 맵 아이콘 마우스오버시 변경되는 부분 */
-.hScrollTgBx li.btn *:hover .mapIcon{
+span.material-symbols-outlined.mapIcon:hover{
     color: #333;
+    transition: .3s;
 }
 
 /* 두번째 슬라이드 개별세팅 */
