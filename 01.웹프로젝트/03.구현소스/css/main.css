@@ -372,7 +372,7 @@
 .circleStart > svg {
     transform: translate3d(0px, 0px, 0px) scale(1, 0);
     transform-origin: bottom;
-    transition: transform 0.3s ease-out;
+    /* transition: transform 0.3s ease-out; */
 }
 
 /* 🌈원형배너 가로스크롤 위한 겉박스 */
@@ -794,7 +794,7 @@ span.material-symbols-outlined.mapIcon:hover {
     border: 5px solid #d8693e;
     box-sizing: border-box;
     /* img 크기에 맞게 비율 유지 */
-    aspect-ratio: 320/180;
+    /* aspect-ratio: 320/180; */
 }
 
 /* (4) 비디오 목록 이전/다음 전환 버튼 */
