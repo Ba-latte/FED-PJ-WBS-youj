@@ -427,5 +427,15 @@ window.addEventListener("DOMContentLoaded", () => {
             svgScale.style.transform = `scale(1,${ratio})`;
         }
     }
+    // 이벤트 적용하기
     window.addEventListener("scroll", svgChgFn);
+
+
+
+    /******************************* 썸네일 리스트 안에서 마우스 따라다니는 박스 함수 *******************************/
+    // 기능 : 처음엔 안보이다가 5페이지 섹션에서 썸네일 리스트 안에서만 등장!한 보더박스가 마우스를 따라다닌다!
+    // 변경 대상 : .moveThumbIndicater
+    // 이벤트 종류 : mouseenter 이벤트, mouseleave 이벤트
+    // 이벤트 적용 대상 : .videoList img들
+    
 }); ////////////////////////////////// 로딩 구역 끝 /////////////////////////////////////////////////////
