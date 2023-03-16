@@ -12,10 +12,13 @@
 @import url(./sub_tasteOfSeoulAward.css);
 
 /************************************* 인디케이터와 top버튼  *************************************/
-/* 인디케이터 박스 */
-.topWrap .indicInBx {
-    position: relative;
-    /* 부모자격 - .indicator */
+/* 인디케이터 스타일 세팅 */
+#scroll-indicator {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: #b5416e;
+    /* transition: height .5s ease-in-out; */
 }
 /* 인디케이터 */
 .topWrap .indicator {
@@ -27,14 +30,6 @@
     width: 100%;
     height: 3px;
     background-color: #c4c4c4;
-}
-/* 인디케이터 바 */
-.indicator .indicBar {
-    /* position: absolute; */
-    width: 0;
-    height: 100%;
-    background-color: #b5416e;
-    /* transition: width .5s ease; */
 }
 
 /* top버튼 박스 */
@@ -58,6 +53,12 @@
     font-size: 20px;
 
     cursor: pointer;
+}
+.topIcon{
+    display: inline-block;
+    font-size: 30px;
+    vertical-align: -8px;
+    color: #555;
 }
 
 /************************************* 2-1. 메인 페이지 *************************************/
@@ -369,8 +370,9 @@
 }
 /* 원형배너 시작부분 srg */
 .circleStart > svg {
-    transform: translate3d(0px, 0px, 0px) scale(1, 0.5231);
+    transform: translate3d(0px, 0px, 0px) scale(1, 0);
     transform-origin: bottom;
+    transition: transform 0.3s ease-out;
 }
 
 /* 🌈원형배너 가로스크롤 위한 겉박스 */
@@ -450,7 +452,7 @@
 
 /* 두번째와 세번째 슬라이드 공통 세팅 */
 .hScrollTgBx ul > li + li {
-    padding: 20vh;
+    padding: 12vh;
     font-size: 2vw;
 }
 .hScrollTgBx ul li ol {
@@ -477,7 +479,7 @@
 }
 /* 맵 아이콘 마우스오버시 변경되는 부분 */
 span.material-symbols-outlined.mapIcon:hover {
-    color: #333;
+    color: #b5416e;
     transition: 0.3s;
 }
 
@@ -492,9 +494,10 @@ span.material-symbols-outlined.mapIcon:hover {
     letter-spacing: 1px;
 }
 .mapScreen {
-    background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/2022-sub-visual.jpg) no-repeat center/cover;
-    height: 20vh;
-    margin-top: 20vh;
+    /* background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/2022-sub-visual.jpg)
+        no-repeat center/cover; */
+    height: 15vh;
+    margin-top: 4%;
 }
 /* 세번째 슬라이드 개별세팅 */
 .vegetarian50Btn a {
@@ -524,7 +527,8 @@ span.material-symbols-outlined.mapIcon:hover {
     letter-spacing: 0;
     line-height: 3;
 
-    background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/info-banner-bg.jpg) no-repeat center/100% auto;
+    background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/info-banner-bg.jpg)
+        no-repeat center/100% auto;
 }
 
 /* 왼쪽단+오른쪽단 박스 */
@@ -649,7 +653,7 @@ span.material-symbols-outlined.mapIcon:hover {
     font-size: 5vh;
     text-shadow: 1px 1px #000;
 }
-.CnBIntro .introList ul li:hover .tset {
+.introList .stageBx > div.on {
     /* display: block; */
     opacity: 1;
 }
@@ -664,7 +668,7 @@ span.material-symbols-outlined.mapIcon:hover {
 
 /* 더보기 단락 */
 .introList .morePart {
-    display: inline-block;
+    /* display: inline-block; */
     width: auto;
 }
 /* 더보기 심볼 */
@@ -749,7 +753,9 @@ span.material-symbols-outlined.mapIcon:hover {
     transform: translate(-50%);
     /* 가운데 정렬 */
 
+    margin-bottom: 3vh;
     width: 50vw;
+    background-color: #fef7e6;
     overflow: hidden;
 }
 

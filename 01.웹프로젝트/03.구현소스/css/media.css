@@ -4,6 +4,12 @@
 
 /* 1400px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1400px) {
+    /* 5페이지 메인 동영상 */
+    /* 비디오 썸네일 리스트 */
+    .videoList{
+        transform: translate(-50%) scale(1.6);
+        margin-bottom: 5vh;
+    }
     /* 하단영역 - 사이트 정보 */
     address span:nth-child(1) {
         font-size: 1.7vw;
@@ -240,6 +246,16 @@
         width: 100%;
     }
 
+    /* 5페이지 메인 동영상 */
+    /* 메인 동영상 아이프레임 */
+    .vArea iframe {
+        margin: 35px;
+    }
+    /* 썸네일 리스트 */
+    .videoList {
+        margin-bottom: 4vh;
+    }
+
     /* 6페이지 공지사항 */
     /* 겉박스 */
     .NnPSection {
@@ -278,6 +294,15 @@
     }
     .CnBIntro .fixedArea p {
         font-size: 3vw;
+    }
+    /* 5페이지 메인 동영상 */
+    /* 5페이지 메인동영상의 좌/우버튼 */
+    .vSection .vArea>div{
+        display: none;
+    }
+    /* 메인 동영상 아이프레임 */
+    .vArea iframe {
+        margin: 0 0 4vh;
     }
 
     /* 6페이지 공지사항과 보도자료 */
@@ -356,6 +381,11 @@
     }
     .top .topArea .etc ul {
         gap: 2w;
+    }
+    /* 5페이지 메인 동영상 썸네일 리스트 좌/우버튼 */
+    .vSection .movebtn {
+        margin: 30px 10vw 10vh;
+        gap: 40vw;
     }
 }
 /* 550px 사이즈 이하 미디어쿼리 끝 */
@@ -464,12 +494,6 @@
     .cont .vSection .secTitle5 {
         font-size: 3vh;
     }
-    .vSection .vArea .prebtn {
-        display: none;
-    }
-    .vSection .vArea .nextbtn {
-        display: none;
-    }
     /* 6페이지 공지사항과 보도자료 */
     .NnPSection .NnPMenu{
         font-size: 7vw;
@@ -482,3 +506,12 @@
     }
 }
 /* 480px 사이즈 이하 미디어쿼리 끝 */
+
+/* 400px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 400px) {
+    .cont .vSection .secTitle5 {
+        font-size: 5.5vw;
+    }
+}
+/* 400px 사이즈 이하 미디어쿼리 끝 */
+
