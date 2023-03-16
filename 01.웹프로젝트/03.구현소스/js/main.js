@@ -420,9 +420,9 @@ window.addEventListener("DOMContentLoaded", () => {
     
     function hScrollFn(){
         // 스크롤 위치값 확인
-        console.log(window.scrollY);
+        // console.log(window.scrollY);
         let tgpos = retRectVal(hScrollBx);
-        console.log("바운딩값: ", tgpos);
+        // console.log("바운딩값: ", tgpos);
 
         // 적용구간 설정하기 : 200이하 -3000px 이상!
         if(tgpos <= 0 && tgpos >= -3000){
@@ -435,13 +435,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     
     /******************************* 지도 섹션 배경 상단의 svg 변경 함수 *******************************/
-    // 기능 : 스크롤바가 특정 위치에 오면 지도 섹션의 배경 상단에 있는 svg의 scale속성이 변화함
+    // 기능 : 스크롤바(scrollY가 3066부터 4000까지...ㅠㅠ)가 특정 위치에 오면 지도 섹션의 배경 상단에 있는 svg의 scaleY속성이 0.1에서부터 1까지 변화함
+    // 
     // 변경 대상 : .circleStart>svg
     const svgScale = document.querySelector(".circleStart>svg");
     // 이벤트 종류 : 스크롤 이벤트
 
     function svgChgFn(){
-        console.log("해당 요소의 top 위치값: ", svgScale.getBoundingClientRect().top + window.scrollY);
+        // console.log("해당 요소의 top 위치값: ", svgScale.getBoundingClientRect().top + window.scrollY);
         console.log("현재 스크롤바 위치값: ", window.scrollY);
 
     }
