@@ -25,6 +25,9 @@ window.addEventListener("resize", chgMob);
 window.addEventListener("DOMContentLoaded", () => {
     console.log("메인js - 로딩 완료");
 
+    // 새로고침시 맨위로 위치설정!
+    setTimeout(()=>window.scrollTo(0,0),100);
+
     /************************* a요소 클릭시 화면 맨 위로 튀는 기본값 적용 해제하기 *************************/
     // 대상선정 : 모든 a요소
     const atag = document.querySelectorAll("a");
@@ -450,6 +453,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if(chkPos < winH && chkPos > 0){
             console.log(chkPos);
+            // 계산법 : 1 - 바운딩수 / 전체높이
+            // 1~0까지 계산 되므로 반대수치는 1에서 빼면 된다!
             let ratio = 1-chkPos/winH;
             console.log(ratio);
             svgScale.style.transform = `scale(1,${ratio})`;
