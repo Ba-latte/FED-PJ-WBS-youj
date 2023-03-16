@@ -149,7 +149,7 @@ window.addEventListener("DOMContentLoaded", () => {
         let scTop = window.scrollY;
         // 이동비율
         let perSc = Math.floor((scTop / totalSc) * 100);
-        console.log("위치:",scTop," | 비율:",perSc);
+        // console.log("위치:",scTop," | 비율:",perSc);
 
         // 바크기 업데이트
         bar.style.width = perSc + "%";
@@ -439,11 +439,22 @@ window.addEventListener("DOMContentLoaded", () => {
     // 
     // 변경 대상 : .circleStart>svg
     const svgScale = document.querySelector(".circleStart>svg");
+    const winH = window.innerHeight;
     // 이벤트 종류 : 스크롤 이벤트
 
     function svgChgFn(){
         // console.log("해당 요소의 top 위치값: ", svgScale.getBoundingClientRect().top + window.scrollY);
-        console.log("현재 스크롤바 위치값: ", window.scrollY);
+        // console.log("현재 스크롤바 위치값: ", window.scrollY);
+
+        let chkPos = retVal(svgScale);
+
+        if(chkPos < winH && chkPos > 0){
+            console.log(chkPos);
+            let ratio = 1-chkPos/winH;
+            console.log(ratio);
+            svgScale.style.transform = `scale(1,${ratio})`;
+
+        }
 
     }
     window.addEventListener("scroll", svgChgFn);

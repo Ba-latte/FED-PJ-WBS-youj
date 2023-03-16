@@ -11,15 +11,14 @@
 @import url(./sub_programInfo.css);
 @import url(./sub_tasteOfSeoulAward.css);
 
-
 /************************************* 인디케이터와 top버튼  *************************************/
 /* 인디케이터 박스 */
-.topWrap .indicInBx{
+.topWrap .indicInBx {
     position: relative;
     /* 부모자격 - .indicator */
 }
 /* 인디케이터 */
-.topWrap .indicator{
+.topWrap .indicator {
     position: fixed;
     /* 부모는? - */
     top: 0;
@@ -27,10 +26,10 @@
 
     width: 100%;
     height: 3px;
-    background-color:#c4c4c4;
+    background-color: #c4c4c4;
 }
 /* 인디케이터 바 */
-.indicator .indicBar{
+.indicator .indicBar {
     /* position: absolute; */
     width: 0;
     height: 100%;
@@ -39,12 +38,12 @@
 }
 
 /* top버튼 박스 */
-.pageTopBtnInBx{
+.pageTopBtnInBx {
     position: relative;
     /* 부모자격 - topBtn */
 }
 /* top버튼 */
-.pageTopBtn{
+.pageTopBtn {
     position: fixed;
     bottom: 7%;
     right: 5%;
@@ -216,7 +215,7 @@
     line-height: 2;
 }
 /* 섹션 슬로건의 h3 */
-.program .secSlogan h3{
+.program .secSlogan h3 {
     font-weight: normal;
 }
 /* (3) 주요 프로그램 소개 */
@@ -362,37 +361,36 @@
     width: 100%;
     text-align: center;
 
-    background-color: #FEF7E6;
+    background-color: #fef7e6;
 }
 /* 원형배너 시작부분 srg의 겉박스 */
-.circleStart{
+.circleStart {
     transform: translateY(-95%);
 }
 /* 원형배너 시작부분 srg */
-.circleStart>svg{
+.circleStart > svg {
     transform: translate3d(0px, 0px, 0px) scale(1, 0.5231);
     transform-origin: bottom;
 }
 
 /* 🌈원형배너 가로스크롤 위한 겉박스 */
-.circleBody{
+.circleBody {
     height: calc(100vh + 3000px);
     margin: 0;
     padding: 0;
     outline: 2px dashed lime;
 }
 /* 🌈원형배너 가로스크롤 위한 속박스 */
-.hScrollTgBx{
+.hScrollTgBx {
     position: sticky;
     top: 0;
     left: 0;
     height: 100vh;
 
-    background-color: #FEF7E6;
-
+    background-color: #fef7e6;
 }
 /* 🌈원형배너 실제로 가로이동할 박스(가로스크롤 위한 속박스 바로 아래에 있는 박스들) */
-.hScrollTgBx ul{
+.hScrollTgBx ul {
     position: relative;
     left: 0;
     display: flex;
@@ -402,10 +400,10 @@
     padding: 0;
 
     /* 트랜지션 */
-    transition: .4s ease-out;
+    transition: 0.4s ease-out;
 }
 /* 🌈가로이동하는 li들 공통 세팅 */
-.hScrollTgBx ul li{
+.hScrollTgBx ul li {
     flex: 1;
     text-align: center;
 
@@ -417,63 +415,60 @@
 }
 /* 가로이동하는 li들 세부 세팅 */
 /* 첫번째 슬라이드 첫번째 단락 */
-.circleMainTxt p:first-child{
+.circleMainTxt p:first-child {
+    width: 100vw;
     font-size: 6vw;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: "Rajdhani", sans-serif;
     color: #333;
     padding: 20vh 20vh 10vh;
-
+    box-sizing: border-box;
 }
 /* 첫번째 슬라이드 두번째 단락 */
-.circleMainTxt p:nth-of-type(2){
+.circleMainTxt p:nth-of-type(2) {
     font-size: 2vw;
     color: #555;
 }
 /* 첫번쨰 슬라이드 심볼 */
-.locationPointerIcon{
+.locationPointerIcon {
     display: inline-block;
     vertical-align: auto;
     margin-bottom: 5vh;
     font-size: 8vh;
     color: #b5416e;
-    font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48;
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
     transform: translateY(0);
 
     /* 애니메이션 */
-    animation: locationPointerAni .8s ease-in-out infinite alternate;
+    animation: locationPointerAni 0.8s ease-in-out infinite alternate;
 }
 /* locationPointerIcon 심볼 애니메이션 키프레임 */
 @keyframes locationPointerAni {
-    100%{
+    100% {
         transform: translateY(-15px);
     }
 }
 
 /* 두번째와 세번째 슬라이드 공통 세팅 */
-.hScrollTgBx ul>li+li{
+.hScrollTgBx ul > li + li {
     padding: 20vh;
     font-size: 2vw;
 }
-.hScrollTgBx ul li ol{
+.hScrollTgBx ul li ol {
     display: flex;
     margin-top: 10vh;
 }
-.hScrollTgBx>ul>li>ol>li{
+.hScrollTgBx > ul > li > ol > li {
     /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1vh;
 }
-.hScrollTgBx>ul>li>ol>li a {
+.hScrollTgBx > ul > li > ol > li a {
     transform: translate(-43px, 14px);
 }
 /* 두번째와 세번째 슬라이드의 맵 아이콘 */
-.mapIcon{
+.mapIcon {
     display: inline-block;
     vertical-align: auto;
     font-size: 8vh;
@@ -481,38 +476,36 @@
     cursor: pointer;
 }
 /* 맵 아이콘 마우스오버시 변경되는 부분 */
-span.material-symbols-outlined.mapIcon:hover{
+span.material-symbols-outlined.mapIcon:hover {
     color: #333;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 /* 두번째 슬라이드 개별세팅 */
-.tasteofseoul100Btn a{
+.tasteofseoul100Btn a {
     padding: 2px 10px;
     background-color: #b5416e;
     border-radius: 10px;
 
-    font-size: .8vw;
+    font-size: 0.8vw;
     color: #fff;
     letter-spacing: 1px;
 }
-.mapScreen{
+.mapScreen {
     background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/2022-sub-visual.jpg) no-repeat center/cover;
     height: 20vh;
     margin-top: 20vh;
 }
 /* 세번째 슬라이드 개별세팅 */
-.vegetarian50Btn a{
+.vegetarian50Btn a {
     padding: 2px 10px;
     background-color: #b5416e;
     border-radius: 10px;
 
-    font-size: .8vw;
+    font-size: 0.8vw;
     color: #fff;
     letter-spacing: 1px;
 }
-
-
 
 /************************************* 2-4. 4페이지 *************************************/
 /* 셰프와 바텐더 소개 */
@@ -524,7 +517,7 @@ span.material-symbols-outlined.mapIcon:hover{
 .CnBIntro .secTitle {
     margin-top: 20vh;
     text-align: center;
-    
+
     font-family: "Rajdhani", sans-serif;
     font-size: 5rem;
     color: #e2e2e2;
@@ -607,7 +600,7 @@ span.material-symbols-outlined.mapIcon:hover{
 }
 
 /* 셰프이미지 왼쪽에서 등장시키기 위한 스테이지박스 */
-.introList .stageBx{
+.introList .stageBx {
     position: relative;
     /* 부모자격 - .stageBx>div */
     /* 넘치는 자식요소 숨기기 */
@@ -624,15 +617,15 @@ span.material-symbols-outlined.mapIcon:hover{
 
     transform: translateX(-110%);
 }
-.introList img.appear{
+.introList img.appear {
     transform: translateX(0);
-    
+
     /* 트랜지션 */
     transition: transform 1s;
 }
 
 /* 셰프이미지를 감싸는 스테이지박스의 직계박스(마우스오버시 more등장하게 할 예정) */
-.introList .stageBx>div{
+.introList .stageBx > div {
     position: absolute;
     /* 부모는? - .introList li */
     top: 0;
@@ -642,25 +635,24 @@ span.material-symbols-outlined.mapIcon:hover{
     background-color: #b5416e;
 
     opacity: 0;
-    transition: .3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 /* 스테이지박스 밑의 직계 span박스(글자때문에 넣음) */
-.introList .stageBx>div>span{
+.introList .stageBx > div > span {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-family: 'Rajdhani', sans-serif;
+    font-family: "Rajdhani", sans-serif;
     color: #fff;
     font-size: 5vh;
     text-shadow: 1px 1px #000;
 }
-.CnBIntro .introList ul li:hover .tset{
+.CnBIntro .introList ul li:hover .tset {
     /* display: block; */
     opacity: 1;
 }
-
 
 /* 셰프 이름 */
 .introList li p {
@@ -671,29 +663,31 @@ span.material-symbols-outlined.mapIcon:hover{
 }
 
 /* 더보기 단락 */
-.introList .morePart{
+.introList .morePart {
     display: inline-block;
     width: auto;
 }
 /* 더보기 심볼 */
-.introList .moreCont{
+.introList .moreCont {
     display: inline-block;
     vertical-align: middle;
     font-size: 2.5vh;
     color: #555;
 }
 /* 더보기 심볼에 마우스오버시 애니메이션 적용 */
-.morePart:hover .moreCont{
+.morePart:hover .moreCont {
     animation: rightMoveAni 1s ease-in-out infinite;
 }
 
 /* 애니메이션 키프레임 */
 @keyframes rightMoveAni {
-    100%{transform: translateX(20px);}
+    100% {
+        transform: translateX(20px);
+    }
 }
 
 /* 셰프&바텐더 소개 목록 li에 마우스오버시 .moreCont의 >> 애니메이션 적용하기 */
-.CnBIntro .introList ul li:hover .moreCont{
+.CnBIntro .introList ul li:hover .moreCont {
     animation: rightMoveAni 1s ease-in-out infinite;
 }
 
@@ -761,7 +755,7 @@ span.material-symbols-outlined.mapIcon:hover{
 
 .videoList ol {
     display: flex;
-    transition: transform .5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 /* 비디오 목록내의 이미지 */
@@ -771,9 +765,9 @@ span.material-symbols-outlined.mapIcon:hover{
     box-sizing: border-box;
     border: 5px solid transparent;
 
-    transition: border .3s;
+    transition: border 0.3s;
 }
-.videoList img.on{
+.videoList img.on {
     border: 5px solid #d8693e;
 }
 
@@ -898,5 +892,3 @@ span.material-symbols-outlined.mapIcon:hover{
 .NnPSection aside ol li:hover {
     background-color: #d7a7bf;
 }
-
-
