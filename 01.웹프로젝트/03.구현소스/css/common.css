@@ -173,6 +173,28 @@
     padding-bottom: 50px;
     color: #111;
 }
+/* 사이트맵 안에서의 내비게이션 박스 */
+.siteMapGnbBx{
+    position: relative;
+    /* 부모자격 - .moveGnbIndicBx */
+}
+/* 사이트맵 GNB 상위메뉴 인디케이터 박스 */
+.moveGnbIndicBx{
+    position: absolute;
+    /* 부모는? - .siteMapGnbBx */
+    z-index: -1;
+    left: 0;
+    width: 99px;
+    height: 36px;
+    padding: 0 10px;
+    background-color: #d8693e;
+
+    /* 트랜지션 : 속시이지 */
+    transition: .4s ease-in-out;
+
+    /* 맨처음에는 박스가 안보여야 함! */
+    opacity: 0;
+}
 
 /* 사이트맵 상위메뉴 */
 .siteMap ul{
@@ -197,7 +219,7 @@
     transform: translate(-50%);
     width: 93vw;
     border-bottom: 2px solid #ddd;
-    box-shadow: 1px 1px 3px #767676;
+    /* box-shadow: 1px 1px 3px #767676; */
 }
 
 /* 마우스 따라다니는 바 */
