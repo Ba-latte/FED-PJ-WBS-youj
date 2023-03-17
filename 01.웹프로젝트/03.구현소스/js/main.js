@@ -61,8 +61,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 이벤트 세팅하기
     closebtn.onclick = (idx) => {
-        /* 사이트맵 하위메뉴 펼쳐져 있을 시 초기화 해주기 */
-        initFn(idx);
+        /* 모바일 버전에서 사이트맵 하위메뉴 펼쳐져 있을 시 초기화 해주기 */
+        if(mob) initFn(idx);
 
         siteMap.classList.remove("on");
 
