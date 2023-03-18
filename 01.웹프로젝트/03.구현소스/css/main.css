@@ -630,17 +630,18 @@ span.material-symbols-outlined.mapIcon:hover {
 }
 
 /* 셰프이미지를 감싸는 스테이지박스의 직계박스(마우스오버시 more등장하게 할 예정) */
-.introList .stageBx > div {
+.introList .stageBx > .moreContMoveBx {
     position: absolute;
     /* 부모는? - .introList li */
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #b5416e;
+    background-color: #00000069;
 
+    display: none;
     opacity: 0;
-    transition: 0.3s ease-in-out;
+    transition: 1s ease-in-out 1s;
 }
 /* 스테이지박스 밑의 직계 span박스(글자때문에 넣음) */
 .introList .stageBx > div > span {
@@ -654,9 +655,10 @@ span.material-symbols-outlined.mapIcon:hover {
     font-size: 5vh;
     text-shadow: 1px 1px #000;
 }
-.introList .stageBx > div.on {
-    /* display: block; */
+.introList .stageBx > .moreContMoveBx.on {
+    display: block;
     opacity: 1;
+    transition: 1s ease-in-out 1s;
 }
 
 /* 셰프 이름 */

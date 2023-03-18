@@ -77,7 +77,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // console.log(pl);
 
     // 화면 높이값의 5분의4(4/5) 구하기
-    const hv = (window.innerHeight / 5) * 4;
+    // const hv = (window.innerHeight / 10) * 9;
+    const hv = window.innerHeight;
     // console.log("화면 높이값의 5분의 4 지점은?: ", hv);
 
     // 등장액션 대상 위치값 리턴 함수
@@ -141,7 +142,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
     /*********************** 셰프&바텐더 소개 섹션의 스크롤 액션 ***********************/
-    // 기능 : 셰프&바텐더 소개 섹션에 진입하기 전에는 셰프 이미지가 translateX(110%)이었다가, 스크롤되어 특정 위치 진입하면 translateX(0%)이 되어서 아래쪽에서 등장하도록 만들기
+    // 기능 : 셰프&바텐더 소개 섹션에 진입하기 전에는 셰프 이미지가 translateX(110%)이었다가, 스크롤되어 특정 위치 진입하면 translateX(0%)이 되어서 왼쪽에서 등장하도록 만들기
     // 변경 대상 : .introList img들
     // 이벤트 종류 : 스크롤 이벤트
     // 이벤트 적용할 대상 : .CnBIntro .rside (rside박스 안에 .introList가 있음)
@@ -463,8 +464,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 moveGnbIndic.style.opacity = 1;
     
                 // a요소의 글자색 변경하기
-                tg_a.style.color = "#fff";
-                tg_a.style.transitionDelay = ".25s";
+                // tg_a.style.color = "#fff";
+                // tg_a.style.transitionDelay = ".25s";
             } //////////////// if : !mob //////////////////
         }; ////////////////// mouseenter ////////////////////////
         // 2.마우스가 나갈때 투명도를 0으로 바꿔서 박스를 사라지게 만들기
@@ -473,11 +474,55 @@ window.addEventListener("DOMContentLoaded", () => {
                 moveGnbIndic.style.opacity = 0;
                 
                 // a요소의 글자색 변경하기
-                tg_a.style.color = "#555";
+                // tg_a.style.color = "#555";
             } ////////////// if : !mob //////////////////////
         }; /////////////////// mouseleave /////////////////////
     }); /////////////// forEach /////////////////////
     
+
+
+
+    /******************************* 셰프&바텐더 소개 섹션의 셰프이미지 마우스오버 함수 *******************************/
+    // 기능 : 클래스 on을 주어서! 셰프 이미지에 마우스오버하면 more 글씨가 나타나며 이미지가 조금 어두워진다!
+    // 이벤트 대상 : .introList .stageBx>img
+    // 이벤트 종류 : mouseenter, mouseleave 이벤트
+    // 변경 대상 : .moreContMoveBx 
+    // const CnBIntro_img = document.querySelectorAll(".introList .stageBx>img");
+    const CnBIntro_img = document.querySelectorAll(".introList>ul>li>a");
+    const CnBIntro_moveMorBx = document.querySelectorAll(".moreContMoveBx");
+    
+    // console.log(CnBIntro_moveMorBx);
+
+    // 이벤트 함수 만들기 : 마우스엔터시
+    function mouseEnterFn(seq){
+        // console.log("more 등장하게 만들기!", seq);
+        let tempSeq = seq;
+        // console.log("tempSeq:", tempSeq);
+
+        // 가져온 순번에 맞는 .moreContMoveBx를 찾아서 거기에 클래스 .on을 부여하기
+        CnBIntro_moveMorBx[tempSeq].classList.add("on");
+        CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out 1s";
+
+    } ////////////////// mouseEnterFn 함수 ///////////////////////
+
+    // 이벤트 함수 만들기 : 마우스리브시
+    function mouseLeaveFn(seq){
+        // console.log("more 등장하게 만들기!", seq);
+        let tempSeq = seq;
+        // console.log("tempSeq:", tempSeq);
+
+        // 가져온 순번에 맞는 .moreContMoveBx를 찾아서 클래스 .on 빼기
+        CnBIntro_moveMorBx[tempSeq].classList.remove("on");
+        CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out 1s";
+
+    } ////////////////// mouseLeaveFn 함수 ///////////////////////
+
+    // 이벤트 적용하기
+    CnBIntro_img.forEach((ele, idx)=>{
+        ele.addEventListener("mouseover", ()=>{mouseEnterFn(idx)});
+        ele.addEventListener("mouseout", ()=>{mouseLeaveFn(idx)});
+    }); //////////////////////// forEach //////////////////////////
+
 
 
 

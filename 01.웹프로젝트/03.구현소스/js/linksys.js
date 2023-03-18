@@ -98,11 +98,15 @@ function footerLinkFn(){
                 case 0 : window.open("https://www.seoul.go.kr/main/index.jsp"); break;
                 case 1 : window.open("https://www.facebook.com/tasteofseoul.official"); break;
                 case 2 : window.open("https://www.instagram.com/tasteofseoul_official/"); break;
+                case 3 : location.href = "./sub_RejectionEmail.html"; break;
+                case 4 : location.href = "./sub_PrivacyPolicy.html"; break;
             } ////////////////// switch 끝 //////////////////////
 
         }); ////////////// click 끝 //////////////////
     }); /////////////////// forEach() 끝 ////////////////////
 } ///////////////////// footerLinkFn 함수 끝 ///////////////////////////
+
+
 
 
 
