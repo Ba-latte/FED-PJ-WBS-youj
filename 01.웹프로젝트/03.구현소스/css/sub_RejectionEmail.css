@@ -2,6 +2,9 @@
 /* 서울미식주간 서브 페이지 CSS - sub_RejectionEmail.css */
 /* 서브 페이지 - 이메일무단수집거부 */
 
+header.RejectionEmailSection{
+    margin-top: 15vh;
+}
 .policybox{
     color: #666;
     font-size: 14px;

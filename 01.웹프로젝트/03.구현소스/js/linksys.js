@@ -10,11 +10,11 @@
 *********************************************************************************************************/
 
 ////////////////////////////////// 📢로딩 구역📢 //////////////////////////////////////////
-window.addEventListener("DOMContentLoaded", loadFn);
+window.addEventListener("DOMContentLoaded", loadingLinkSysFn);
 
 
 
-function loadFn(){
+function loadingLinkSysFn(){
 
     // 호출 확인
     console.log("링크시스템js - 로딩 완료!");
@@ -25,6 +25,9 @@ function loadFn(){
     // 사이트맵 하위 메뉴 관련 링크
     siteMapLinkFn();
 
+    // 지도 섹션 링크
+    mapSectionLinkFn();
+
     // 하단영역 링크
     footerLinkFn();
 
@@ -32,7 +35,7 @@ function loadFn(){
     topLinkFn();
 
 
-}; ///////////////////// loadFn 함수 끝 ////////////////////////
+}; ///////////////////// loadingLinkSysFn 함수 끝 ////////////////////////
 
 
 ////////////////////////// 상단 로고 링크 //////////////////////////
@@ -81,6 +84,45 @@ function siteMapLinkFn(){
 
 
 }; ///////////////////// siteMapLinkFn 함수 끝 ///////////////////////
+
+
+
+
+
+////////////////////////// 미식 지도 섹션 링크 //////////////////////////
+/*********************************************************************
+    함수명 : mapSectionLinkFn
+    기능 : 지도 섹션의 a요소 아래 있는 자식요소들을 클릭하면 해당되는 지도가 아래쪽에 뜬다
+*********************************************************************/
+function mapSectionLinkFn(){
+    // 대상 : li.btn의 모든 자식 요소들 (span과 a가 있음)
+    // li로 잡지 않은 이유 : li 범위가 넓어서 빈공간 클릭해도 먹히기 때문
+    const mapSectionBtn = document.querySelectorAll(".btn *");
+    const mapIframe = document.querySelector(".mapScreen>iframe");
+    // console.log("지도 버튼: ", mapSectionBtn);
+
+    mapSectionBtn.forEach((ele)=>{
+        // 각 클래스를 가지고 있으면 링크 이동하도록 만들기
+        ele.onclick = ()=>{
+            if(ele.classList.contains("m1")) mapIframe.setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2s-VDImHhbnpYDnDw2RlUD_b8PuEJH8w!3e3?authuser=2");
+            
+            else if(ele.classList.contains("m2")){
+                mapIframe.setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
+            }
+            else if(ele.classList.contains("m3")){
+                ("https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2sR3_4gAnvSyyYrpCPGyVYTg!3e3?authuser=2");
+            }
+            else if(ele.classList.contains("m4")){
+                ("https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
+            }
+            
+        }; //////////////// onclick /////////////////////
+    }); /////////////// forEach ///////////////////
+} //////////////////// mapSectionLinkFn 함수 끝 ////////////////////////
+
+
+
+
 
 
 ////////////////////////// 하단 링크 //////////////////////////

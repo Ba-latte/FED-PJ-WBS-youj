@@ -29,8 +29,8 @@
     transform: translateY(-50%);
 
     width: 100%;
-    height: 3px;
-    background-color: #c4c4c4;
+    height: 8px;
+    background-color: #c4c4c48a;
 }
 
 /* top버튼 박스 */
@@ -458,17 +458,17 @@
 }
 .hScrollTgBx ul li ol {
     display: flex;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 .hScrollTgBx > ul > li > ol > li {
     /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1vh;
+    /* gap: 1vh; */
 }
 .hScrollTgBx > ul > li > ol > li a {
-    transform: translate(-43px, 14px);
+    transform: translate(-23px, 14px);
 }
 /* 두번째와 세번째 슬라이드의 맵 아이콘 */
 .mapIcon {
@@ -480,9 +480,10 @@
 }
 /* 맵 아이콘 마우스오버시 변경되는 부분 */
 span.material-symbols-outlined.mapIcon:hover {
-    color: #b5416e;
-    transition: 0.3s;
+    /* color: #b5416e; */
+    /* transition: 0.3s; */
 }
+
 
 /* 두번째 슬라이드 개별세팅 */
 .tasteofseoul100Btn a {
@@ -495,10 +496,15 @@ span.material-symbols-outlined.mapIcon:hover {
     letter-spacing: 1px;
 }
 .mapScreen {
-    /* background: url(../../00.자료수집/02.이미지데이터/02.서브페이지-22년행사및주요프로그램소개이미지/2022-sub-visual.jpg)
-        no-repeat center/cover; */
-    height: 15vh;
-    margin-top: 4%;
+    margin: 4vh auto;
+    width: 65vw;
+    height: 55vh;
+}
+/* 지도 아이프레임 */
+.mapScreen>iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 /* 세번째 슬라이드 개별세팅 */
 .vegetarian50Btn a {

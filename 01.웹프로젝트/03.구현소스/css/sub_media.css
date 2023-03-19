@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/* 서브페이지 미디어쿼리 CSS - sub_media.css */
+
+/* 750px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 750px) {
+    /* 개인정보처리방침 페이지 */
+    .agr-tit1 {
+        margin: 15px 0 10px 0;
+        font-size: 13px;
+        padding-left: 15px;
+    }
+    .agr-tit2 {
+        margin: 20px 0;
+        font-size: 13px;
+    }
+    .agr-tit3 {
+        margin: 20px 0;
+        font-size: 13px;
+    }
+}
+/* 750px 사이즈 이하 미디어쿼리 끝 */
+
+/* 550px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 550px) {
+    /* 개인정보처리방침 페이지 */
+    .sectionTitBx {
+        margin: 3vh;
+    }
+    .sectionTitBx>div{
+        font-size: 4vh;
+    }
+    .policybox>.ibx{
+        padding: 3vh;
+        margin-top: 8vh;
+    }
+    .agr-tit1 {
+        margin: 15px 0 10px 0;
+        font-size: 13px;
+        padding-left: 15px;
+    }
+    .agr-tit2 {
+        margin: 20px 0;
+        font-size: 13px;
+    }
+    .agr-tit3 {
+        margin: 20px 0;
+        font-size: 13px;
+    }
+}
+/* 550px 사이즈 이하 미디어쿼리 끝 */
