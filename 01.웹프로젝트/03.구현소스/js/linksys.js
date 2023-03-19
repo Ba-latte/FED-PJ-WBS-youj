@@ -105,17 +105,9 @@ function mapSectionLinkFn(){
         // 각 클래스를 가지고 있으면 링크 이동하도록 만들기
         ele.onclick = ()=>{
             if(ele.classList.contains("m1")) mapIframe.setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2s-VDImHhbnpYDnDw2RlUD_b8PuEJH8w!3e3?authuser=2");
-            
-            else if(ele.classList.contains("m2")){
-                mapIframe.setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
-            }
-            else if(ele.classList.contains("m3")){
-                ("https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2sR3_4gAnvSyyYrpCPGyVYTg!3e3?authuser=2");
-            }
-            else if(ele.classList.contains("m4")){
-                ("https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
-            }
-            
+            else if(ele.classList.contains("m2")) mapIframe.setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
+            else if(ele.classList.contains("m3")) mapIframe.setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2sR3_4gAnvSyyYrpCPGyVYTg!3e3?authuser=2");
+            else if(ele.classList.contains("m4")) mapIframe.setAttribute("src", "https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
         }; //////////////// onclick /////////////////////
     }); /////////////// forEach ///////////////////
 } //////////////////// mapSectionLinkFn 함수 끝 ////////////////////////

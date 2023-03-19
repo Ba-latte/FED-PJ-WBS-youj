@@ -33,3 +33,8 @@ a{
     vertical-align: -1.8vh;
     color: #555;
 }
+
+/* em 초기화 */
+em{
+    font-style: normal;
+}
