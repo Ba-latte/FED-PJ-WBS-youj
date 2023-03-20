@@ -18,7 +18,7 @@
 .categoryTxtBx .stit{
     text-align: center;
     font-size: 5.5vh;
-    padding: 5vh 0;
+    padding: 10vh 0 15vh;
     margin: 0 auto;
 }
 /* 프로그램 리스트 ul */
@@ -39,6 +39,7 @@ ul.program-list3{
     /* transform: translateX(-50%); */
     padding: 70px;
     margin: 0 auto;
+    margin-bottom: 10vh;
 
     background: #fff;
     border-radius: 20px;
@@ -113,10 +114,18 @@ ul.opt>li>em{
     /* top: 0; */
     /* left: 0; */
 }
+/* '상세'부분의 마지막 문장 */
 .caution{
     display: inline-block;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 5px;
+    font-size: .6vw;
+}
+
+/* 두번째 슬라이드의 이미지 세팅 */
+.nonDisplay{
+    display: none;
+    /* 처음에는 앞쪽에 있는 이미지가 안 보이다가 미디어쿼리가 적용되면 보일 예정임! */
 }

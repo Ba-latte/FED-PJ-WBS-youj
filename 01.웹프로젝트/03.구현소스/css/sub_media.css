@@ -2,6 +2,41 @@
 
 /* 서브페이지 미디어쿼리 CSS - sub_media.css */
 
+/* 1200px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
+    /* 프로그램 - 특별 메뉴로의 초대 페이지 */
+    .categoryTxtBx .stit {
+        font-size: 5vh;
+        padding: 10vh 5vh 15vh;
+    }
+    .program-list3>li>img {
+        width: auto;
+    }
+    .program-list3 .inf>strong {
+        font-size: 3vh;
+    }
+    .weekList>ul>li {
+        flex-direction: column;
+    }
+    p.colRed {
+        font-size: 2vh;
+    }
+    p.popTxt {
+        font-size: 1.5vh;
+    }
+    .program-list3 .opt {
+        font-size: 1.5vh;
+    }
+    .nonDisplay{
+        display: block;
+    }
+    .display{
+        display: none;
+    }
+}
+/* 1200px 사이즈 이하 미디어쿼리 끝 */
+
+
 /* 750px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 750px) {
     /* 개인정보처리방침 페이지 */
@@ -17,6 +52,17 @@
     .agr-tit3 {
         margin: 20px 0;
         font-size: 13px;
+    }
+
+    /* 프로그램 - 특별 메뉴로의 초대 페이지 */
+    .sectionContBx {
+        padding: 10vh 5vh;
+    }
+    .categoryTit p:first-child {
+        padding: 0;
+    }
+    .categoryTit h6+p {
+        padding: 5vh 0;
     }
 }
 /* 750px 사이즈 이하 미디어쿼리 끝 */
@@ -46,6 +92,21 @@
     .agr-tit3 {
         margin: 20px 0;
         font-size: 13px;
+    }
+
+    /* 프로그램 - 테이스트오브서울 어워즈 */
+    .categorySummary{
+        margin: 0 auto;
+        width: 68vw;
+    }
+    .categoryTxtBx>p{
+        margin: 10vh 0;
+        padding: 0;
+    }
+
+    /* 프로그램 - 특별 메뉴로의 초대 페이지 */
+    .program-list3>li>img {
+        width: 100%;
     }
 }
 /* 550px 사이즈 이하 미디어쿼리 끝 */

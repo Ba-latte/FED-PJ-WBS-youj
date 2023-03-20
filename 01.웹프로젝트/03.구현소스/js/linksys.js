@@ -28,6 +28,9 @@ function loadingLinkSysFn(){
     // 지도 섹션 링크
     mapSectionLinkFn();
 
+    // 프로그램소개 페이지의 lnb 링크
+    programIntroLinkFn();
+
     // 하단영역 링크
     footerLinkFn();
 
@@ -76,6 +79,7 @@ function siteMapLinkFn(){
                 case "행사 소개" : location.href = "./sub_eventInfo.html"; break;
                 case "주요 프로그램 소개" : location.href = "./sub_programInfo.html"; break;
                 case "테이스트오브서울 어워즈" : location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case "특별 메뉴로의 초대" : location.href = "./sub_seoulRestaurantWeek.html"; break;
                 default : alert("공사중입니다😊");
             } //////////////// switch문 끝 /////////////////////
             
@@ -98,19 +102,57 @@ function mapSectionLinkFn(){
     // 대상 : li.btn의 모든 자식 요소들 (span과 a가 있음)
     // li로 잡지 않은 이유 : li 범위가 넓어서 빈공간 클릭해도 먹히기 때문
     const mapSectionBtn = document.querySelectorAll(".btn *");
-    const mapIframe = document.querySelector(".mapScreen>iframe");
+    const mapIframe = document.querySelectorAll(".mapScreen>iframe");
     // console.log("지도 버튼: ", mapSectionBtn);
+    // console.log(mapIframe);
 
     mapSectionBtn.forEach((ele)=>{
         // 각 클래스를 가지고 있으면 링크 이동하도록 만들기
-        ele.onclick = ()=>{
-            if(ele.classList.contains("m1")) mapIframe.setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2s-VDImHhbnpYDnDw2RlUD_b8PuEJH8w!3e3?authuser=2");
-            else if(ele.classList.contains("m2")) mapIframe.setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
-            else if(ele.classList.contains("m3")) mapIframe.setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2sR3_4gAnvSyyYrpCPGyVYTg!3e3?authuser=2");
-            else if(ele.classList.contains("m4")) mapIframe.setAttribute("src", "https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
+        ele.onclick = (e)=>{
+            // a요소 기본기능 막기
+            e.preventDefault();
+            // 클래스로 구분하여 각 아이프레임에 맞게 설정하기
+            if(ele.classList.contains("m1")) mapIframe[0].setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2s-VDImHhbnpYDnDw2RlUD_b8PuEJH8w!3e3?authuser=2");
+            else if(ele.classList.contains("m2")) mapIframe[0].setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
+            else if(ele.classList.contains("m3")) mapIframe[1].setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2sR3_4gAnvSyyYrpCPGyVYTg!3e3?authuser=2");
+            else if(ele.classList.contains("m4")) mapIframe[1].setAttribute("src", "https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
         }; //////////////// onclick /////////////////////
     }); /////////////// forEach ///////////////////
 } //////////////////// mapSectionLinkFn 함수 끝 ////////////////////////
+
+
+
+
+
+////////////////////////// 프로그램소개 페이지 링크 //////////////////////////
+/*********************************************************************
+    함수명 : programIntroLinkFn
+    기능 : 프로그램 소개 페이지에서의 a요소들 링크 걸기
+*********************************************************************/
+function programIntroLinkFn(){
+    // 대상 : 프로그램 소개 페이지에서의 .programPageLnb 밑의 li들
+    const programPageLnbs = document.querySelectorAll(".programPageLnb>ul>li");
+    // 이벤트 종류 : 클릭 이벤트
+    
+    // console.log("프로그램 페이지 아래 li들 링크", programPageLnbs);
+    
+    programPageLnbs.forEach((ele, idx)=>{
+        ele.addEventListener("click", ()=>{
+            // console.log(idx);
+            switch(idx){
+                case 0 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 1 :location.href = "./sub_seoulRestaurantWeek.html"; break;
+                case 2 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 3 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 4 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 5 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 6 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+            }
+        });
+    });
+    
+} ////////////////////////// programIntroLinkFn 함수 /////////////////////////////
+
 
 
 

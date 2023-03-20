@@ -45,7 +45,7 @@ function categoryFn(){
     // const sub_data = subPgObj[tg_title];
     // console.log(sub_data);
     let sub_subTit = subPgObj["테이스트오브서울 어워즈"]["서브타이틀"];
-    console.log(sub_subTit);
+    // console.log(sub_subTit);
     
     // 값 집어넣기
     subTitInCategory.innerHTML = "엥 왜 안들어가지지?ㅠㅠ";
