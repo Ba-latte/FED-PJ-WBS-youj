@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>서울미식주간</title>
     <!-- 구글 아이콘 -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- 외부 CSS 링크 -->
     <link rel="stylesheet" href="./css/main.css">
     <!-- 미디어쿼리 CSS 링크 -->
     <link rel="stylesheet" href="./css/media.css">
     <!-- 외부 JS 링크 -->
     <script src="./js/main.js"></script>
-    <script src="./js/dataList.js"></script>
+    <script src="./js/common.js"></script>
+    <!-- <script src="./js/dataList.js"></script> -->
     <script src="./js/linksys.js"></script>
 </head>
 <body class="scbar">
@@ -183,8 +184,75 @@
 
     <!-- 2. 메인 영역 -->
     <div id="cont">
-        <main class="cont">
-            
+        <main class="cont ibx">
+            <!-- 2-1. 프로그램 섹션 -->
+            <header class="mainProgramInfo">
+                <div class="sectionTitBx">
+                    <!-- <div>테이스트오브서울 어워즈</div> -->
+                    <div>프로그램</div>
+                    <!-- 로고 주변 원 -->
+                    <div class="circleList">
+                        <div class="circle cr1"></div>
+                        <div class="circle cr2"></div>
+                        <div class="circle cr3"></div>
+                        <div class="circle cr4"></div>
+                    </div>
+                </div>
+                <!-- 섹션 lnb 박스 -->
+                <div class="sectionLnbBx">
+                    <nav class="programPageLnb">
+                        <ul>
+                            <li>
+                                <a href="#">테이스트오브서울 어워즈</a>
+                            </li>
+                            <li>
+                                <a href="#">특별 메뉴로의 초대</a>
+                            </li>
+                            <li>
+                                <a href="#">재래시장과 핫플의 맛남</a>
+                            </li>
+                            <li>
+                                <a href="#">도시와 농부의 맛남</a>
+                            </li>
+                            <li>
+                                <a href="#">미식과 영화의 맛남</a>
+                            </li>
+                            <li>
+                                <a href="#">전통주와의 맛남</a>
+                            </li>
+                            <li>
+                                <a href="#">해외 셰프와 서울 셰프의 맛남</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <!-- 섹션 컨텐츠 박스 -->
+            <div class="sectionContBx">
+                <!-- 타이틀, 간략한 소개 문구 -->
+                <div class="categoryTit">
+                    <p></p>
+                    <h6></h6>
+                    <p></p>
+                </div>
+                <!-- 요약 박스 -->
+                <div class="categorySummary">
+                    <strong class="dateAndLocation"></strong>
+                    <ul>
+                        <li>
+                            <em>대상</em>
+                            
+                        </li>
+                    </ul>
+                </div>
+                <!-- 주된 컨텐츠 소개(상세) -->
+                <div class="categoryTxtBx">
+                    <p></p>
+                    <div class="imgBx">
+                        <span class="ir"></span>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 

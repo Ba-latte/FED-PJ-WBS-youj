@@ -137,14 +137,20 @@ window.addEventListener("DOMContentLoaded", () => {
     function mouseEnterFn(ele, seq){
         // console.log("more 등장하게 만들기!", ele.querySelector("img").getAttribute("data-ap"));
         let tempSeq = seq;
-        // console.log("tempSeq:", tempSeq);
+        console.log("tempSeq:", tempSeq);
+        let img_data_ap = ele.querySelector("img");
+        if(tempSeq === "5"){
+            return;
+        }
+        else{
+            // data-ap가 1이면, 가져온 순번에 맞는 .moreContMoveBx를 찾아서 거기에 클래스 .on을 부여하기 (0이면 부여하면 안됨!)
+            if(img_data_ap.getAttribute("data-ap") === "1"){
+                console.log("data-ap값은?: ", ele.querySelector("img").getAttribute("data-ap"));
+                CnBIntro_moveMorBx[tempSeq].classList.add("on");
+            }
 
-        // data-ap가 1이면, 가져온 순번에 맞는 .moreContMoveBx를 찾아서 거기에 클래스 .on을 부여하기 (0이면 부여하면 안됨!)
-        CnBIntro_moveMorBx[tempSeq].classList.add("on");
-        // CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out";
-        // if(ele.querySelector("img").getAttribute("data-ap") === 1){
-        //     console.log("나와!")
-        // }
+        }
+
 
     } ////////////////// mouseEnterFn 함수 ///////////////////////
 
@@ -156,14 +162,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 가져온 순번에 맞는 .moreContMoveBx를 찾아서 클래스 .on 빼기
         CnBIntro_moveMorBx[tempSeq].classList.remove("on");
-        // CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out";
 
     } ////////////////// mouseLeaveFn 함수 ///////////////////////
 
     // 이벤트 적용하기
     // 맨처음 1초동안은 이미지가 왼쪽에서 오른쪽으로 등장하는데 시간이 걸리기 때문에, 1초가 지난 후부터 마우스오버 액션이 적용되면 좋겠음
     CnBIntro_img.forEach((ele, idx)=>{
-        
         ele.addEventListener("mouseover", ()=>{mouseEnterFn(ele, idx)});
         ele.addEventListener("mouseout", ()=>{mouseLeaveFn(ele, idx)});
     }); //////////////////////// forEach //////////////////////////

@@ -141,8 +141,8 @@ function programIntroLinkFn(){
             switch(idx){
                 case 0 :location.href = "./sub_tasteOfSeoulAward.html"; break;
                 case 1 :location.href = "./sub_seoulRestaurantWeek.html"; break;
-                case 2 :location.href = "./sub_tasteOfSeoulAward.html"; break;
-                case 3 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 2 :location.href = "./sub_seoulMarketDining.html"; break;
+                case 3 :location.href = "./sub_seoulMarché.html"; break;
                 case 4 :location.href = "./sub_tasteOfSeoulAward.html"; break;
                 case 5 :location.href = "./sub_tasteOfSeoulAward.html"; break;
                 case 6 :location.href = "./sub_tasteOfSeoulAward.html"; break;

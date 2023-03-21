@@ -12,6 +12,8 @@
 @import url(./sub_tasteOfSeoulAward.css);
 @import url(./sub_PrivacyPolicy.css);
 @import url(./sub_RejectionEmail.css);
+@import url(./sub/sub_seoulMarketDining.css);
+@import url(./sub/sub_seoulMarché.css);
 /************************************* 인디케이터와 top버튼  *************************************/
 /* 인디케이터 스타일 세팅 */
 #scroll-indicator {
@@ -667,7 +669,7 @@ span.material-symbols-outlined.mapIcon:hover {
 }
 .introList .stageBx > .moreContMoveBx.on {
     opacity: 1;
-    transition: .3s ease-in-out .4s;
+    transition: .3s ease-in-out;
 }
 
 /* 셰프 이름 */
