@@ -19,37 +19,9 @@ window.addEventListener("DOMContentLoaded", () => {
         };
     } ///////////// for of 끝 ////////////////
 
-    /*************************** 햄버거 버튼 클릭하면 사이트맵 화면이 오른쪽에서 등장하기 ***************************/
-    // ⭐대상 선정
-    // 이벤트 대상 - .hambtn
-    const hambtn = document.querySelector(".hambtn");
-    // 적용 대상 - .siteMap
-    const siteMap = document.querySelector(".siteMap");
-    // console.log(siteMap);
+    
 
-    // ⭐이벤트 세팅하기
-    hambtn.onclick = () => {
-        siteMap.classList.add("on");
-
-        /* 스크롤바, 스크롤기능 없애기 */
-        document.body.classList.add("scrollOff");
-    }; ////////////// onclick 이벤트 끝 /////////////////
-
-    /*********************** 닫기 버튼 클릭하면 사이트맵 화면이 오른쪽으로 들어가기 ***********************/
-    // 이벤트 대상 - .close
-    const closebtn = document.querySelector(".close img");
-    // 적용 대상 - .siteMap
-
-    // 이벤트 세팅하기
-    closebtn.onclick = (idx) => {
-        /* 모바일 버전에서 사이트맵 하위메뉴 펼쳐져 있을 시 초기화 해주기 */
-        if(mob) initFn(idx);
-
-        siteMap.classList.remove("on");
-
-        /* 스크롤바, 스크롤기능 다시 추가하기 */
-        document.body.classList.remove("scrollOff");
-    }; //////////// onclick 이벤트 끝 /////////////////
+    
 
     /*********************** 주요프로그램 섹션의 스크롤 액션 ***********************/
     // 기능 : 주요 프로그램 섹션에 진입하기 전에는 이미지가 scale(0)이었다가, 스크롤되어 특정 위치 진입하면 scale(1)이 되어서 제자리에서 등장하도록 만들기
@@ -181,11 +153,11 @@ window.addEventListener("DOMContentLoaded", () => {
         // console.log("tempSeq:", tempSeq);
 
         // data-ap가 1이면, 가져온 순번에 맞는 .moreContMoveBx를 찾아서 거기에 클래스 .on을 부여하기 (0이면 부여하면 안됨!)
-        if(ele.querySelector("img").getAttribute("data-ap") === 1){
-            console.log("나와!")
-            CnBIntro_moveMorBx[tempSeq].classList.add("on");
-            CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out";
-        }
+        CnBIntro_moveMorBx[tempSeq].classList.add("on");
+        // CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out";
+        // if(ele.querySelector("img").getAttribute("data-ap") === 1){
+        //     console.log("나와!")
+        // }
 
     } ////////////////// mouseEnterFn 함수 ///////////////////////
 
@@ -197,7 +169,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 가져온 순번에 맞는 .moreContMoveBx를 찾아서 클래스 .on 빼기
         CnBIntro_moveMorBx[tempSeq].classList.remove("on");
-        CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out";
+        // CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out";
 
     } ////////////////// mouseLeaveFn 함수 ///////////////////////
 
@@ -314,12 +286,12 @@ window.addEventListener("DOMContentLoaded", () => {
     } //////////////// playFn() 함수 끝 /////////////////////
 
     // 이벤트 적용하기
-    prebtn.onclick = () => {
-        playFn("prev");
-    };
-    nextbtn.onclick = () => {
-        playFn("next");
-    };
+    // prebtn.onclick = () => {
+    //     playFn("prev");
+    // };
+    // nextbtn.onclick = () => {
+    //     playFn("next");
+    // };
 
     /******************************* 동영상 썸네일 클릭시 해당 동영상으로 바뀌는 함수 *******************************/
     // 기능 : 동영상 목록에 있는 썸네일을 클릭하면, 해당 동영상으로 바뀐다
@@ -437,7 +409,7 @@ window.addEventListener("DOMContentLoaded", () => {
         // 마지막 위치 포인트 : last x, last y -> 맨 처음에는 마지막 위치 포인트가 없으므로 0이라 해줘야 함
 
         // 슬라이드의 처음 left값 세팅하기
-        let leftX = obj.offsetLeft;
+        // let leftX = obj.offsetLeft;
         let leftY = 0;
         
         // 움직일 때 위치 포인트 move x, move y
@@ -484,25 +456,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 이벤트 등록하기
         // 1.마우스 내려갈때 : 드래그 true + 첫번쨰 위치값 업데이트하기
-        obj.addEventListener("mousedown", ()=>{
-            // 드래그 true
-            dragT();
-            // 첫번째 위치값 업데이트
-            firstPoint();
-        });
+        // obj.addEventListener("mousedown", ()=>{
+        //     // 드래그 true
+        //     dragT();
+        //     // 첫번째 위치값 업데이트
+        //     firstPoint();
+        // });
         // 2.마우스 올라올 때 : 드래그 false + 마지막 위치값 업데이트하기
-        obj.addEventListener("mouseup",()=>{
-            // 드래그 false
-            dragF();
+        // obj.addEventListener("mouseup",()=>{
+        //     // 드래그 false
+        //     dragF();
             
-            // 드래그 이동방향 판별하는 함수 호출하기
-            whereDrag(obj);
-        });
+        //     // 드래그 이동방향 판별하는 함수 호출하기
+        //     whereDrag(obj);
+        // });
         
         // 3.마우스 움직일 때
-        obj.addEventListener("mousemove", dragMove);
-        // 4.마우스 벗어날 때
-        obj.addEventListener("mouseleave", dragF);
+        // obj.addEventListener("mousemove", dragMove);
+        // // 4.마우스 벗어날 때
+        // obj.addEventListener("mouseleave", dragF);
         
     } //////////////////// dragFn 함수 /////////////////////////
 
