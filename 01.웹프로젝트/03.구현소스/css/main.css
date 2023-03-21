@@ -667,7 +667,7 @@ span.material-symbols-outlined.mapIcon:hover {
 }
 .introList .stageBx > .moreContMoveBx.on {
     opacity: 1;
-    transition: .5s ease-in-out .5s;
+    transition: .3s ease-in-out .4s;
 }
 
 /* 셰프 이름 */
