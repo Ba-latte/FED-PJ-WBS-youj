@@ -272,6 +272,9 @@ window.addEventListener("DOMContentLoaded", () => {
         symbols.forEach((ele) => (ele.innerText = "expand_more"));
     } //////////////////// initFn 함수 끝 //////////////////////
 
+
+
+
     /******************************* 동영상 좌/우 버튼 클릭시 동영상 넘어가는 함수 *******************************/
     // 기능 : 좌/우 버튼 클릭하면 동영상 영상이 바뀜
     // 이벤트 적용 대상 : .prebtn img, .nextbtn img
@@ -409,6 +412,121 @@ window.addEventListener("DOMContentLoaded", () => {
             // console.log("클릭 다 하고 넘어간 숫자는?: ", clickNum);
         };
     });
+
+
+    /////////////////////////////// 동영상 썸네일 리스트 드래그 함수 ///////////////////////////////
+    // 기능 : 동영상 목록에 있는 썸네일을 드래그하면하면 썸네일이 하나씩 넘어가진다
+    // 적용 대상 : 슬라이드 배너
+    const slideBanner = document.querySelector("#slideBanner");
+    // 이벤트 적용하기
+    dragFn(slideBanner);
+    
+    /*****************************************
+        함수명 : dragFn
+        기능 : 다중 드래그 기능 적용
+    *****************************************/
+    function dragFn(obj){
+        console.log("드래그!");
+        // 대상 선정 : .videoList>ol (아이디가 slideBanner인 것!!)
+        
+
+        // 드래그 상태 변수 - true:드래그 중 / false:드래그 안함
+        let drag = false;
+        // 첫번째 위치 포인트 : first x, first y
+        let firstX, firstY;
+        // 마지막 위치 포인트 : last x, last y -> 맨 처음에는 마지막 위치 포인트가 없으므로 0이라 해줘야 함
+
+        // 슬라이드의 처음 left값 세팅하기
+        let leftX = obj.offsetLeft;
+        let leftY = 0;
+        
+        // 움직일 때 위치 포인트 move x, move y
+        let moveX, moveY;
+        // 위치 이동한 차이값을 저장할 변수 result x, result y
+        let resultX, resultY;
+        
+        // 함수 만들기
+        // (1)드래그 상태가 true인 변수
+        const dragT = ()=>{drag = true};
+        // (2)드래그 상태가 false인 변수
+        const dragF = ()=>{drag = false};
+        // (3)드래그 작동할 때의 작동 함수
+        const dragMove = ()=>{
+            // console.log("드래그 상태", drag);
+
+            // 드래그 상태일때만 실행하기
+            if(drag){
+                obj.style.transition = "none";
+
+                // 1.드래그한 상태에서 움직일 때의 위치값 : moveX,Y
+                moveX = event.pageX;
+                moveY = event.pageY;
+
+                // 2.움직일 때의 위치값 - 처음위치값 = resultX,Y에 담기
+                resultX = moveX - firstX;
+                resultY = moveY - firstY;
+
+                // 3.움직인 x,y값을 타겟 요소에 적용하기
+                obj.style.left = resultX + leftX + "px";
+            } //////////////////// if : 드래그 /////////////////////////
+        };
+        // (4)첫번째 위치 포인트 세팅하는 함수 : 처음 찍었을 때 작동하는 것
+        const firstPoint = ()=>{
+            firstX = event.pageX;
+            firstY = event.pageY;
+        };
+        // (5)마지막 위치 포인트 세팅하는 함수 : 클릭버튼에서 손 뗄 때 작동하는 것!
+        const lastPoint = ()=>{
+            leftX += resultX;
+            leftY += resultY;
+        };
+        // 최종 이동 결과값인 resultX,Y값을 항상 대입연산해서 값을 업데이트 해줘야함!!!!
+
+        // 이벤트 등록하기
+        // 1.마우스 내려갈때 : 드래그 true + 첫번쨰 위치값 업데이트하기
+        obj.addEventListener("mousedown", ()=>{
+            // 드래그 true
+            dragT();
+            // 첫번째 위치값 업데이트
+            firstPoint();
+        });
+        // 2.마우스 올라올 때 : 드래그 false + 마지막 위치값 업데이트하기
+        obj.addEventListener("mouseup",()=>{
+            // 드래그 false
+            dragF();
+            
+            // 드래그 이동방향 판별하는 함수 호출하기
+            whereDrag(obj);
+        });
+        
+        // 3.마우스 움직일 때
+        obj.addEventListener("mousemove", dragMove);
+        // 4.마우스 벗어날 때
+        obj.addEventListener("mouseleave", dragF);
+        
+    } //////////////////// dragFn 함수 /////////////////////////
+
+    /************************************************************
+        함수명 : goWhere
+        기능 : 드래그시 왼쪽으로 갈 것인지, 오른쪽으로 갈 것인지 이동 방향을 판별해준다
+        호출 : 드래그시 mouseup 이벤트 함수에서 호출한다
+    ************************************************************/
+    function whereDrag(obj){
+        // 1.현재 드래그 대상의 left 위치값
+        let tg_left = obj.offsetLeft;
+
+        // 유동적 사이즈 변경에 따른 위치값 구하기
+        // let tg_point = obj.parentElement.clientHeight
+
+        // 3.방향 판별하기 : 특정값을 더하거나 빼기
+        // 3-1.왼쪽 방향으로 이동하기 = 오른쪽 버튼 클릭 기능과 동일함
+        if(tg_left ){}
+    }
+
+
+
+
+
 
     /******************************* 가로로 스크롤 이동되는 함수 *******************************/
     // 기능 : 스크롤바를 내리면 화면이 가로로 움직인다
