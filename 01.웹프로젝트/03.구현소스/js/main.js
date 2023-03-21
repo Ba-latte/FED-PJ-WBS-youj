@@ -153,12 +153,65 @@ window.addEventListener("DOMContentLoaded", () => {
             if (eleVal < CnBIntro_hv && eleVal > 0) {
                 // console.log("작동!!");
                 ele.classList.add("appear");
+                setTimeout(()=>{ele.setAttribute("data-ap", "1");}, 1000);
             }
         });
     }
 
     // 이벤트 세팅하기
     window.addEventListener("scroll", introFn);
+
+
+
+    /******************************* 셰프&바텐더 소개 섹션의 셰프이미지 마우스오버 함수 *******************************/
+    // 기능 : 클래스 on을 주어서! 셰프 이미지에 마우스오버하면 more 글씨가 나타나며 이미지가 조금 어두워진다!
+    // 이벤트 대상 : .introList .stageBx>img
+    // 이벤트 종류 : mouseenter, mouseleave 이벤트
+    // 변경 대상 : .moreContMoveBx 
+    // const CnBIntro_img = document.querySelectorAll(".introList .stageBx>img");
+    const CnBIntro_img = document.querySelectorAll(".introList>ul>li>a");
+    const CnBIntro_moveMorBx = document.querySelectorAll(".moreContMoveBx");
+    
+    // console.log(CnBIntro_moveMorBx);
+
+    // 이벤트 함수 만들기 : 마우스엔터시
+    function mouseEnterFn(ele, seq){
+        // console.log("more 등장하게 만들기!", ele.querySelector("img").getAttribute("data-ap"));
+        let tempSeq = seq;
+        // console.log("tempSeq:", tempSeq);
+
+        // data-ap가 1이면, 가져온 순번에 맞는 .moreContMoveBx를 찾아서 거기에 클래스 .on을 부여하기 (0이면 부여하면 안됨!)
+        if(ele.querySelector("img").getAttribute("data-ap") === 1){
+            console.log("나와!")
+            CnBIntro_moveMorBx[tempSeq].classList.add("on");
+            CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out";
+        }
+
+    } ////////////////// mouseEnterFn 함수 ///////////////////////
+
+    // 이벤트 함수 만들기 : 마우스리브시
+    function mouseLeaveFn(ele, seq){
+        // console.log("more 등장하게 만들기!", seq);
+        let tempSeq = seq;
+        // console.log("tempSeq:", tempSeq);
+
+        // 가져온 순번에 맞는 .moreContMoveBx를 찾아서 클래스 .on 빼기
+        CnBIntro_moveMorBx[tempSeq].classList.remove("on");
+        CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out";
+
+    } ////////////////// mouseLeaveFn 함수 ///////////////////////
+
+    // 이벤트 적용하기
+    // 맨처음 1초동안은 이미지가 왼쪽에서 오른쪽으로 등장하는데 시간이 걸리기 때문에, 1초가 지난 후부터 마우스오버 액션이 적용되면 좋겠음
+    CnBIntro_img.forEach((ele, idx)=>{
+        
+        ele.addEventListener("mouseover", ()=>{mouseEnterFn(ele, idx)});
+        ele.addEventListener("mouseout", ()=>{mouseLeaveFn(ele, idx)});
+    }); //////////////////////// forEach //////////////////////////
+
+
+
+
 
     /*********************** 모바일버전에서 사이트맵 상위메뉴 클릭시 하위메뉴 등장 ***********************/
     // 이벤트 적용 대상 : .siteMap ul>li
@@ -463,46 +516,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /******************************* 셰프&바텐더 소개 섹션의 셰프이미지 마우스오버 함수 *******************************/
-    // 기능 : 클래스 on을 주어서! 셰프 이미지에 마우스오버하면 more 글씨가 나타나며 이미지가 조금 어두워진다!
-    // 이벤트 대상 : .introList .stageBx>img
-    // 이벤트 종류 : mouseenter, mouseleave 이벤트
-    // 변경 대상 : .moreContMoveBx 
-    // const CnBIntro_img = document.querySelectorAll(".introList .stageBx>img");
-    const CnBIntro_img = document.querySelectorAll(".introList>ul>li>a");
-    const CnBIntro_moveMorBx = document.querySelectorAll(".moreContMoveBx");
     
-    // console.log(CnBIntro_moveMorBx);
-
-    // 이벤트 함수 만들기 : 마우스엔터시
-    function mouseEnterFn(seq){
-        // console.log("more 등장하게 만들기!", seq);
-        let tempSeq = seq;
-        // console.log("tempSeq:", tempSeq);
-
-        // 가져온 순번에 맞는 .moreContMoveBx를 찾아서 거기에 클래스 .on을 부여하기
-        CnBIntro_moveMorBx[tempSeq].classList.add("on");
-        CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out 1s";
-
-    } ////////////////// mouseEnterFn 함수 ///////////////////////
-
-    // 이벤트 함수 만들기 : 마우스리브시
-    function mouseLeaveFn(seq){
-        // console.log("more 등장하게 만들기!", seq);
-        let tempSeq = seq;
-        // console.log("tempSeq:", tempSeq);
-
-        // 가져온 순번에 맞는 .moreContMoveBx를 찾아서 클래스 .on 빼기
-        CnBIntro_moveMorBx[tempSeq].classList.remove("on");
-        CnBIntro_moveMorBx[tempSeq].style.transition = "1s ease-in-out 1s";
-
-    } ////////////////// mouseLeaveFn 함수 ///////////////////////
-
-    // 이벤트 적용하기
-    CnBIntro_img.forEach((ele, idx)=>{
-        ele.addEventListener("mouseover", ()=>{mouseEnterFn(idx)});
-        ele.addEventListener("mouseout", ()=>{mouseLeaveFn(idx)});
-    }); //////////////////////// forEach //////////////////////////
 
 
 
