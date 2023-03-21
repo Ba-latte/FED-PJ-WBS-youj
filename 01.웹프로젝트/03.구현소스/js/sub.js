@@ -1,7 +1,7 @@
 /* 서울미식주간 서브페이지 JS - sub.js */
 
 ////////////////////////////////// 로딩 구역 //////////////////////////////////////////
-window.addEventListener("DOMContentLoaded", lodingCategoryFn());
+window.addEventListener("DOMContentLoaded", lodingCategoryFn);
 
 function lodingCategoryFn(){
     console.log("서브페이지 js - 로딩 완료");

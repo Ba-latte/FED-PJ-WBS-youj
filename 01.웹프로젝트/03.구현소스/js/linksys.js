@@ -34,8 +34,7 @@ function loadingLinkSysFn(){
     // 하단영역 링크
     footerLinkFn();
 
-    // 화면 하단 오른쪽의 top버튼 링크
-    topLinkFn();
+    
 
 
 }; ///////////////////// loadingLinkSysFn 함수 끝 ////////////////////////
@@ -187,17 +186,3 @@ function footerLinkFn(){
 
 
 
-////////////////////////// 화면 하단 오른쪽의 top버튼 링크 //////////////////////////
-/*********************************************************************
-    함수명 : topLinkFn
-    기능 : 화면 하단 오른쪽의 top버튼을 클릭하면 페이지 맨 위로 올라가기
-*********************************************************************/
-function topLinkFn(){
-    const mainTopBtn = document.querySelector(".pageTopBtn");
-    // console.log(mainTopBtn);
-
-    mainTopBtn.addEventListener("click", ()=>{
-        window.scrollTo(0,0);
-    });
-
-} ///////////////////// topLinkFn 함수 끝 ///////////////////////////

@@ -651,9 +651,7 @@ span.material-symbols-outlined.mapIcon:hover {
     right: 0;
     background-color: #00000069;
 
-    display: none;
     opacity: 0;
-    transition: 1s ease-in-out 1s;
 }
 /* 스테이지박스 밑의 직계 span박스(글자때문에 넣음) */
 .introList .stageBx > div > span {
@@ -661,16 +659,15 @@ span.material-symbols-outlined.mapIcon:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     font-family: "Rajdhani", sans-serif;
     color: #fff;
     font-size: 5vh;
     text-shadow: 1px 1px #000;
 }
 .introList .stageBx > .moreContMoveBx.on {
-    display: block;
     opacity: 1;
-    transition: 1s ease-in-out 1s;
+    transition: .5s ease-in-out .5s;
 }
 
 /* 셰프 이름 */
