@@ -34,8 +34,8 @@ function loadingLinkSysFn(){
     // 하단영역 링크
     footerLinkFn();
 
-    
-
+    // 메인페이지 프로그램소개 링크
+    prgLinkFn();
 
 }; ///////////////////// loadingLinkSysFn 함수 끝 ////////////////////////
 
@@ -51,7 +51,38 @@ function topLogoLinkFn(){
     topLogoImg.addEventListener("click", ()=>{
         location.href = "./index.html";
     });
-} /////////////////////// topLogoLinkFn 함수 끝 ////////////////////////////
+}; /////////////////////// topLogoLinkFn 함수 끝 ////////////////////////////
+
+
+
+
+////////////////////////// 메인페이지 프로그램소개 섹션 링크 //////////////////////////
+/*********************************************************************
+    함수명 : programIntroLinkFn
+    기능 : 메인페이지의 프로그램 소개 섹션에 있는 링크 이미지를 클릭하면 해당 페이지로 넘어가기
+*********************************************************************/
+function prgLinkFn(){
+    const programLists = document.querySelectorAll(".pl");
+    // console.log(programLists);
+    programLists.forEach((ele, idx)=>{
+        ele.addEventListener("click",()=>{
+            // console.log(ele);
+            switch(idx){
+                case 0 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 1 :location.href = "./sub_seoulRestaurantWeek.html"; break;
+                case 2 :location.href = "./sub_seoulMarketDining.html"; break;
+                case 3 :location.href = "./sub_seoulMarché.html"; break;
+                case 4 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 5 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+                case 6 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+            }
+        });
+    });
+}; /////////////////////////////// prgLinkFn 함수 끝 ////////////////////////////////////
+
+
+
+
 
 
 
@@ -79,6 +110,9 @@ function siteMapLinkFn(){
                 case "주요 프로그램 소개" : location.href = "./sub_programInfo.html"; break;
                 case "테이스트오브서울 어워즈" : location.href = "./sub_tasteOfSeoulAward.html"; break;
                 case "특별 메뉴로의 초대" : location.href = "./sub_seoulRestaurantWeek.html"; break;
+                case "재래시장과 핫플의 맛남" : location.href = "./sub_seoulMarketDining.html"; break;
+                case "도시와 농부의 맛남" : location.href = "./sub_seoulMarché.html"; break;
+                
                 default : alert("공사중입니다😊");
             } //////////////// switch문 끝 /////////////////////
             

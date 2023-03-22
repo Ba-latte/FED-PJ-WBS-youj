@@ -63,6 +63,9 @@ function commonLinkFn(){
         document.body.classList.add("scrollOff");
     }; ////////////// onclick 이벤트 끝 /////////////////
 
+
+
+
     /*********************** 닫기 버튼 클릭하면 사이트맵 화면이 오른쪽으로 들어가기 ***********************/
     // 이벤트 대상 - .close
     const closebtn = document.querySelector(".close img");
@@ -78,6 +81,22 @@ function commonLinkFn(){
         /* 스크롤바, 스크롤기능 다시 추가하기 */
         document.body.classList.remove("scrollOff");
     }; //////////// onclick 이벤트 끝 /////////////////
+
+
+    /*********************** 사이트맵 화면 등장하고 나서 글자 등장 이벤트 함수 ***********************/
+    // 기능 : 사이트맵 화면이 나타나고 나서 메뉴가 아래쪽에서 등장하기
+    function rexidFn(){
+        const siteMapGnbBx = document.querySelectorAll(".siteMapGnbBx>ul>li>a");
+        // console.log(siteMapGnbBx);
+        siteMapGnbBx.forEach((ele)=>{
+            let tempTxt = ele.innerText;
+            
+            ele.innerHTML=`<span class="rexid">${tempTxt}</span>`;
+        });
+    } //////////////////////// rexidFn 함수 끝 /////////////////////////
+
+    rexidFn();
+
 
     /*********************** 모바일버전에서 사이트맵 상위메뉴 클릭시 하위메뉴 등장 ***********************/
     // 이벤트 적용 대상 : .siteMap ul>li
@@ -114,6 +133,7 @@ function commonLinkFn(){
     }); /////////////// forEach() 끝 /////////////
 
 
+
     /******************************* 사이트맵 클릭 초기화 함수 *******************************/
     function initFn(seq) {
         // 호출확인
@@ -138,6 +158,7 @@ function commonLinkFn(){
         // console.log("초기화할 심볼들: ", symbols);
         symbols.forEach((ele) => (ele.innerText = "expand_more"));
     } //////////////////// initFn 함수 끝 //////////////////////
+
 
 
     /******************************* 사이트맵 섹션의 gnb상위메뉴 li안에서 마우스 따라다니는 박스 함수 *******************************/

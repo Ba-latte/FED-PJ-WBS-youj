@@ -67,6 +67,9 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }); /////////////////////// 스크롤 액션 끝 /////////////////////////////////////
 
+
+
+
     /*********************** 인디케이터 스크롤 액션 ***********************/
     // 기능 : 스크롤 위치에 따라서 인디케이터의 바가 채워진다
     const handleScrollIndicator = () => {
@@ -137,7 +140,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function mouseEnterFn(ele, seq){
         // console.log("more 등장하게 만들기!", ele.querySelector("img").getAttribute("data-ap"));
         let tempSeq = seq;
-        console.log("tempSeq:", tempSeq);
+        // console.log("tempSeq:", tempSeq);
         let img_data_ap = ele.querySelector("img");
         if(tempSeq === "5"){
             return;
@@ -145,7 +148,7 @@ window.addEventListener("DOMContentLoaded", () => {
         else{
             // data-ap가 1이면, 가져온 순번에 맞는 .moreContMoveBx를 찾아서 거기에 클래스 .on을 부여하기 (0이면 부여하면 안됨!)
             if(img_data_ap.getAttribute("data-ap") === "1"){
-                console.log("data-ap값은?: ", ele.querySelector("img").getAttribute("data-ap"));
+                // console.log("data-ap값은?: ", ele.querySelector("img").getAttribute("data-ap"));
                 CnBIntro_moveMorBx[tempSeq].classList.add("on");
             }
 
@@ -212,12 +215,12 @@ window.addEventListener("DOMContentLoaded", () => {
     } //////////////// playFn() 함수 끝 /////////////////////
 
     // 이벤트 적용하기
-    // prebtn.onclick = () => {
-    //     playFn("prev");
-    // };
-    // nextbtn.onclick = () => {
-    //     playFn("next");
-    // };
+    prebtn.onclick = () => {
+        playFn("prev");
+    };
+    nextbtn.onclick = () => {
+        playFn("next");
+    };
 
 
     /******************************* 동영상 썸네일 클릭시 해당 동영상으로 바뀌는 함수 *******************************/
@@ -296,19 +299,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 // 이동후 자르기
             }
             // console.log("클릭 다 하고 넘어간 숫자는?: ", clickNum);
-
-            // if(idx === 1){
-            //     clickNum--;
-            //     vSlide.style.transform = `translateX(${20 * clickNum}%)`;
-            //     console.log("왼쪽 클릭했을때 숫자: ", clickNum);
-            // }
-            // // 왼쪽 버튼 클릭한 경우
-            // else{
-            //     clickNum++;
-            //     vSlide.style.transform = `translateX(${20 * clickNum}%)`;
-            //     console.log("오른쪽 클릭했을때 숫자: ", clickNum);
-            // }
-            // console.log("클릭 다 하고 넘어간 숫자는?: ", clickNum);
         };
     });
 
@@ -317,6 +307,9 @@ window.addEventListener("DOMContentLoaded", () => {
     // 기능 : 동영상 목록에 있는 썸네일을 드래그하면하면 썸네일이 하나씩 넘어가진다
     // 적용 대상 : 슬라이드 배너
     const slideBanner = document.querySelector("#slideBanner");
+    const imgDfStop = document.querySelectorAll("slideBanner>li>a>img");
+    // console.log(document.querySelector(".sb1"));
+    
     // 이벤트 적용하기
     dragFn(slideBanner);
     
@@ -360,6 +353,7 @@ window.addEventListener("DOMContentLoaded", () => {
             // 드래그 상태일때만 실행하기
             if(drag){
                 obj.style.transition = "none";
+                console.log("왜안돼ㅠ");
 
                 // 1.드래그한 상태에서 움직일 때의 위치값 : moveX,Y
                 moveX = event.pageX;
@@ -370,7 +364,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 resultY = moveY - firstY;
 
                 // 3.움직인 x,y값을 타겟 요소에 적용하기
-                obj.style.left = resultX + leftX + "px";
+                obj.style.transform = `translateX(-20%)`;
             } //////////////////// if : 드래그 /////////////////////////
         };
         // (4)첫번째 위치 포인트 세팅하는 함수 : 처음 찍었을 때 작동하는 것
@@ -392,6 +386,9 @@ window.addEventListener("DOMContentLoaded", () => {
             dragT();
             // 첫번째 위치값 업데이트
             firstPoint();
+
+            event.preventDefault();
+
         });
         // 2.마우스 올라올 때 : 드래그 false + 마지막 위치값 업데이트하기
         obj.addEventListener("mouseup",()=>{
@@ -404,7 +401,7 @@ window.addEventListener("DOMContentLoaded", () => {
         
         // 3.마우스 움직일 때
         obj.addEventListener("mousemove", dragMove);
-        // // 4.마우스 벗어날 때
+        // 4.마우스 벗어날 때
         obj.addEventListener("mouseleave", dragF);
         
     } //////////////////// dragFn 함수 /////////////////////////

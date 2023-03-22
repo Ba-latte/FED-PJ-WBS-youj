@@ -165,12 +165,12 @@
 
 /* 사이트맵 제목 */
 .siteMap h2{
+    margin: 50px;
     /* font-size: min(2.5rem, 50px); */
     font-family: 'Julius Sans One', sans-serif;
     font-size: 50px;
-    line-height: 2;
     letter-spacing: 10px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     color: #111;
 }
 /* 사이트맵 안에서의 내비게이션 박스 */
@@ -208,9 +208,15 @@
 
 /* 사이트맵 상위메뉴 글자색 변경 */
 .siteMap li a{
+    display: inline-block;
+    overflow: hidden;
     color: #555;
 }
-
+/* 사이트맵 상위 메뉴 등장 액션 클래스 */
+.rexid{
+    display: inline-block;
+    transform: translateY(100%);
+}
 /* 상위메뉴 아래에 있는 트랙 */
 .barTrack{
     position: absolute;
