@@ -2,6 +2,17 @@
 
 /* 미디어쿼리 CSS - media.css */
 
+
+/* 1500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1500px) {
+    /* top버튼 */
+    .pageTopBtn{
+        bottom: 10%;
+        right: 2%;
+    }
+}
+/* 1500px 사이즈 이하 미디어쿼리 끝 */
+
 /* 1400px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1400px) {
     /* 5페이지 메인 동영상 */
@@ -32,6 +43,19 @@
 
 /* 1200px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1200px) {
+    /* 3페이지 지도 섹션 */
+    /* 첫번째 슬라이드의 제목 */
+    .circleMainTxt p:first-child {
+        font-size: 10vh;
+    }
+    /* 첫번째 슬라이드의 문구 */
+    .circleMainTxt p:nth-of-type(2) {
+        font-size: 3vh;
+    }
+    /* 2,3번째 슬라이드 지도 겉박스 */
+    .mapScreen{
+        width: 80vw;
+    }
     /* 4페이지 셰프와 바텐더 소개 - 왼쪽단 */
     /* 제목 */
     .fixedArea h3 {
@@ -42,11 +66,17 @@
     .fixedArea p {
         font-size: 1.8vw;
     }
+    
 }
 /* 1200px 사이즈 이하 미디어쿼리 끝 */
 
 /* 1100px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1100px) {
+    /* top버튼 */
+    .pageTopBtn {
+        bottom: 10%;
+        right: 4%;
+    }
     /* 사이트맵 */
     .siteMap {
         /* z-index: 999; */
@@ -148,6 +178,10 @@
         left: 6vw;
     }
 
+    /* 3페이지 지도 섹션 */
+    .circleStart {
+        transform: translateY(-91%);
+    }
     /* 4페이지 셰프와 바텐더 소개 */
     /* 왼쪽단 */
     .CnBIntro .lside {
@@ -187,6 +221,11 @@
 
 /* 960px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 960px) {
+    /* 3페이지 지도 섹션 */
+    .circleMainTxt p:first-child{
+        padding: 20vh 5vh 10vh;
+    }
+    /* 4페이지 셰프&바텐더 소개 섹션 */
     .CnBIntro .secTitle {
         height: 23vh;
     }
@@ -198,6 +237,22 @@
     /* 메인 페이지 - 회전 원(보라색) */
     .cont .main .wrap h3::before {
         left: -40vw;
+    }
+    /* 3페이지 지도 섹션 */
+    .hScrollTgBx ul li ol {
+        margin: 5vh 20vh 0;
+    }
+    /* 첫번째 슬라이드 제목 부분 */
+    .circleMainTxt p:first-child {
+        font-size: 8vh;
+    }
+    /* 첫번째 슬라이드 문구 부분 */
+    .circleMainTxt p:nth-of-type(2) {
+        font-size: 2vh;
+    }
+    /* 두번째, 세번째 슬라이드 공통 부분 */
+    .hScrollTgBx ul > li + li {
+        font-size: 5vh;
     }
     /* 4페이지 셰프와 바텐더 소개 */
     .CnBIntro .stkBox {
@@ -269,6 +324,15 @@
 }
 /* 850px 사이즈 이하 미디어쿼리 끝 */
 
+/* 670px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 670px) {
+    /* 3페이지 지도 섹션 */
+    .circleMainTxt p:first-child {
+        padding: 20vh 5vh 10vh;
+    }
+}
+/* 670px 사이즈 이하 미디어쿼리 시작 */
+
 /* 650px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 650px) {
     /* 상단영역 */
@@ -279,6 +343,12 @@
 
     .topArea .etc ul > li:nth-child(1) {
         margin-right: 0px;
+    }
+
+    /* 3페이지 지도 섹션 */
+    /* 첫번째 슬라이드 제목 패딩 수정 */
+    .circleMainTxt p:first-child {
+        padding: 20vh 0vh 10vh;
     }
 
     /* 4페이지 셰프와 바텐더 소개 */
@@ -352,6 +422,12 @@
         z-index: -1;
     }
 
+    /* 3페이지 지도 섹션 */
+    /* 두번째, 세번째 슬라이드 지도 부분 */
+    .mapScreen {
+        height: 50vh;
+    }
+
     /* 5페이지 메인 동영상 */
     /* 섹션 타이틀 */
     .cont .vSection .secTitle5 {
@@ -381,6 +457,10 @@
     }
     .top .topArea .etc ul {
         gap: 2w;
+    }
+    /* top버튼 - 사라지게 만들기 */
+    .pageTopBtn{
+        display: none;
     }
     /* 5페이지 메인 동영상 썸네일 리스트 좌/우버튼 */
     .vSection .movebtn {
@@ -471,6 +551,33 @@
     .program .programList .pl img{
         width: 22vh;
     }
+
+    /* 3페이지 지도 섹션 */
+    /* 첫번째 슬라이드 제목 */
+    .circleMainTxt p:first-child {
+        font-size: 4vh;
+    }
+    /* 좌표 아이콘 */
+    .locationPointerIcon {
+        font-size: 6vh;
+    }
+    /* 첫번째 슬라이드 문구 */
+    .circleMainTxt p:nth-of-type(2) {
+        font-size: 1.5vh;
+    }
+    /* 두번째, 세번째 슬라이드 공통 세팅 */
+    .hScrollTgBx ul > li + li {
+        font-size: 3vh;
+    }
+    /* 지도 아이콘 */
+    .mapIcon {
+        font-size: 6vh;
+    }
+    /* 지도 아이콘 리스트 패딩 수정하기 */
+    .hScrollTgBx ul li ol {
+        margin: 5vh 33vh 0;
+    }
+
     /* 4페이지 셰프와 바텐더 소개 */
     /* 섹션 타이틀 */
     .CnBIntro .secTitle h2{
@@ -509,6 +616,18 @@
 
 /* 400px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 400px) {
+    /* 3페이지 지도 섹션 */
+    /* 지도아이콘이 있는 리스트를 세로형으로 만들기 */
+    .hScrollTgBx ul li ol {
+        flex-direction: column;
+        gap: 5vh;
+    }
+    /* 지도 아이프레임 겉박스 */
+    .mapScreen {
+        display: none;
+        /* 아예 숨겨버리고 새창이동하기로 만들기 */
+    }
+    
     .cont .vSection .secTitle5 {
         font-size: 5.5vw;
     }

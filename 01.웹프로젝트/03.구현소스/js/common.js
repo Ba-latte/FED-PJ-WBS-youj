@@ -54,13 +54,21 @@ function commonLinkFn(){
     // 적용 대상 - .siteMap
     const siteMap = document.querySelector(".siteMap");
     // console.log(hambtn);
-
+    const test1 = siteMap.querySelector(".smenu a");
     // ⭐이벤트 세팅하기
     hambtn.onclick = () => {
         siteMap.classList.add("on");
 
         /* 스크롤바, 스크롤기능 없애기 */
         document.body.classList.add("scrollOff");
+
+        // 사이트맵 타이틀 글자 등장 액션 주기
+        comingUpFn();
+        
+        // 상위메뉴 글자 등장 액션 주기
+        rexidFn(siteMapGnbBx);
+
+        
     }; ////////////// onclick 이벤트 끝 /////////////////
 
 
@@ -85,17 +93,38 @@ function commonLinkFn(){
 
     /*********************** 사이트맵 화면 등장하고 나서 글자 등장 이벤트 함수 ***********************/
     // 기능 : 사이트맵 화면이 나타나고 나서 메뉴가 아래쪽에서 등장하기
-    function rexidFn(){
-        const siteMapGnbBx = document.querySelectorAll(".siteMapGnbBx>ul>li>a");
+    const siteMapGnbBx = document.querySelectorAll(".siteMapGnbBx>ul>li>a");
+    function rexidFn(obj){
         // console.log(siteMapGnbBx);
-        siteMapGnbBx.forEach((ele)=>{
+        let hcode = "";
+
+        obj.forEach((ele)=>{
+        // siteMapGnbBx.forEach((ele)=>{
             let tempTxt = ele.innerText;
-            
-            ele.innerHTML=`<span class="rexid">${tempTxt}</span>`;
+
+            hcode = `<span class="rexid">${tempTxt}</span>`;
+            ele.innerHTML = hcode;
         });
+
+        setTimeout(()=>{
+            const upAni = document.querySelectorAll(".rexid");
+            for(let x of upAni){ x.classList.add("up")};
+        }, 700);
     } //////////////////////// rexidFn 함수 끝 /////////////////////////
 
-    rexidFn();
+
+    function comingUpFn(){
+        const sateMapTit = document.querySelector(".siteMap h2>span");
+        // sateMapTit.parentElement.style.overflow = "hidden";
+        sateMapTit.classList.add("rexid");
+
+        setTimeout(()=>{
+            sateMapTit.classList.add("up");
+        }, 500)
+    } ///////////////////////////// comingUpFn //////////////////////////
+    
+
+    
 
 
     /*********************** 모바일버전에서 사이트맵 상위메뉴 클릭시 하위메뉴 등장 ***********************/
@@ -127,7 +156,6 @@ function commonLinkFn(){
 
             // 구글 심볼 바꾸기
             const symbols = ele.querySelector("span");
-            // symbols.innerText = lnb.clientHeight === 0 ? "expand_more" : "expand_less";
             symbols.innerText = lnb.clientHeight === 0 ? "expand_less" : "expand_more";
         }; ///////////// click 이벤트 끝 ///////////////
     }); /////////////// forEach() 끝 /////////////

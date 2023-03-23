@@ -172,6 +172,7 @@
     letter-spacing: 10px;
     /* padding-bottom: 50px; */
     color: #111;
+    overflow: hidden;
 }
 /* 사이트맵 안에서의 내비게이션 박스 */
 .siteMapGnbBx{
@@ -216,6 +217,15 @@
 .rexid{
     display: inline-block;
     transform: translateY(100%);
+}
+/* 사이트맵 섹션이 화면에 다 등정(.5s)하고 난 뒤에 상위메뉴 글자 등장하기 애니메이션 */
+.rexid.up{
+    animation: txtUpAni .5s ease-in-out forwards;
+}
+@keyframes txtUpAni {
+    100%{
+        transform: translateY(0);
+    }
 }
 /* 상위메뉴 아래에 있는 트랙 */
 .barTrack{

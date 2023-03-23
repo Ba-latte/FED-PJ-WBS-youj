@@ -462,7 +462,7 @@
 /* 두번째와 세번째 슬라이드 공통 세팅 */
 .hScrollTgBx ul > li + li {
     padding: 12vh;
-    font-size: 2vw;
+    font-size: 6vh;
 }
 .hScrollTgBx ul li ol {
     display: flex;
@@ -515,6 +515,9 @@ span.material-symbols-outlined.mapIcon:hover {
     border: none;
 }
 /* 세번째 슬라이드 개별세팅 */
+.hScrollTgBx ul > li:last-child{
+    padding-right: 20vw;
+}
 .vegetarian50Btn a {
     padding: 2px 10px;
     background-color: #b5416e;
