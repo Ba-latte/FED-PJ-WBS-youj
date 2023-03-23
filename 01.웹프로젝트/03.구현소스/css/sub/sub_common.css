@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* 서울미식주간 서브페이지 CSS - sub_common.css */
+
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Noto+Sans+KR&family=Rajdhani&display=swap');
+
+/*
+    [ 웹폰트 ]
+1.대문자로만 된 글자 전용 폰트
+font-family: 'Julius Sans One', sans-serif;
+2.대소문자 폰트
+font-family: 'Rajdhani', sans-serif;
+3.한글 폰트
+font-family: 'Noto Sans KR', sans-serif;
+*/
+
+@import url(./sub_seoulFoodCinema.css);
+
+
+
+/* 프로그램 리스트 li박스 공통 세팅 */
+.listBxDesign{
+    /* position: relative; */
+    display: flex;
+    gap: 5vh;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+    width: 65%;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    padding: 70px;
+    margin: 0 auto;
+    margin-bottom: 10vh;
+
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

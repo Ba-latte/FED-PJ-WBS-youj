@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>서울미식주간</title>
     <!-- 구글 아이콘 -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- 외부 CSS 링크 -->
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/sub_seoulRestaurantWeek.css">
+    <link rel="stylesheet" href="./css/sub/sub_common.css">
     <!-- 미디어쿼리 CSS 링크 -->
     <link rel="stylesheet" href="./css/media.css">
-    <link rel="stylesheet" href="./css/sub_media.css">
     <!-- 외부 JS 링크 -->
+    <!-- <script src="./js/main.js"></script> -->
     <script src="./js/common.js"></script>
+    <!-- <script src="./js/dataList.js"></script> -->
     <script src="./js/linksys.js"></script>
-    <!-- <script src="./js/sub.js"></script> -->
 </head>
 <body class="scbar">
     <!-- 1. 상단 영역 -->
@@ -185,11 +185,11 @@
 
     <!-- 2. 메인 영역 -->
     <div id="cont">
-        <main class="cont">
-            <!-- 2-1. 테이스트오브서울 어워즈 섹션 -->
-            <header class="mainProgramInfo ibx">
+        <main class="cont ibx">
+            <!-- 2-1. 프로그램 섹션 -->
+            <header class="mainProgramInfo">
                 <div class="sectionTitBx">
-                    <!-- <div>특별 메뉴로의 초대</div> -->
+                    <!-- <div>테이스트오브서울 어워즈</div> -->
                     <div>프로그램</div>
                     <!-- 로고 주변 원 -->
                     <div class="circleList">
@@ -228,86 +228,87 @@
                     </nav>
                 </div>
             </header>
-
             <!-- 섹션 컨텐츠 박스 -->
-            <div class="sectionContBx">
+            <div class="sectionContBx cinema">
                 <!-- 타이틀, 간략한 소개 문구 -->
                 <div class="categoryTit">
-                    <p>서울만의 맛과 멋을 즐기는 일주일</p>
-                    <h6>특별메뉴로의 초대</h6>
-                    <p>
-                        서울 레스토랑 위크는 서울의 맛과 멋을 즐길 수 있는 일주일이에요! <br>
-                        레스토랑에 따라 레스토랑 위크 특별 메뉴나 혜택을 준비했어요. <br>
-                        * 일부 레스토랑 제외. 레스토랑 사정에 따라 레스토랑 위크 특선 메뉴 및 고객 혜택이 변경될 수 있으니 방문 전 유선으로 확인해주세요!
-                    </p>
+                    <p>미식과 영화의 맛남 서울미식 시네마</p>
+                    <h6>SEOUL FOOD CINEMA</h6>
+                    <p>세계 최초의 레스토랑에서부터 지속가능한 미식에 이르기까지 영화로 만나는 다양한 미식의 세계</p>
+                </div>
+                <!-- 요약 박스 -->
+                <div class="categorySummary cinema">
+                    <strong class="dateAndLocation">2022년 10월 1일(토) ~ 2일(일) / 문화비축기지 문화마당 나무데크 / 무료관람</strong>
+                    <ul>
+                        <li>
+                            <em>공동주최</em>
+                            <img src="../00.자료수집/02.이미지데이터/08.서브페이지-미식과_영화의_맛남/program2022-cont5-opt1.jpg" alt="공동주최 서울국제음식영화제 로고 이미지">
+                        </li>
+                    </ul>
                 </div>
                 <!-- 주된 컨텐츠 소개(상세) -->
                 <div class="categoryTxtBx">
-                    <h6 class="stit">
-                        서울의 미식문화를 즐겁게 경험할 수 있는 특별 팝업!
-                    </h6>
-                    <section class="weekList">
-                        <ul class="program-list3">
-                            <li class="listBxDesign">
-                                <img src="../00.자료수집/02.이미지데이터/05.서브페이지-특별_메뉴로의_초대/program2022-cont2-img1-1.jpg" alt="서울 레스토랑 위크 이미지 1">
-                                <article class="inf">
-                                    <strong>Korean Spirit 한국인의 혼을 담은 미식과 칵테일의 만남:</strong>
-                                    <p class="colRed big">2022년 10월 1일 (토), 17:30/18:00/18:30</p>
-                                    <p class="popTxt">
-                                        2014년 같은 해 오픈한 오너 셰프와 오너 바텐더의 콜라보레이션.<br>
-                                        한국의 바 문화와 미식 문화의 변화를 선도하고 있는 &lt;밍글스&gt;와 &lt;르챔버&gt;가 한국적 재료를 사용해, <br>
-                                        한국인의 혼을 담은 칵테일 페어링 디너를 선사합니다.
-                                    </p>
-                                    <ul class="opt">
-                                        <li>
-                                            <em>장소</em>
-                                            밍글스 @mingles_restaurant
-                                        </li>
-                                        <li>
-                                            <em>예약</em>
-                                            캐치테이블 밍글스
-                                        </li>
-                                        <li>
-                                            <em>가격</em>
-                                            40만원/인당
-                                        </li>
-                                        <li class="left_indent">
-                                            <em>상세</em>
-                                            총 9코스+칵테일 및 위스키 페어링 *목테일(논알코올 칵테일), 주스 페어링은 사전 예약시만 가능 <br>
-                                            <span class="caution">행사의 수익금은 서울미식 발전기금으로 기부됩니다.</span>
-                                        </li>
-                                    </ul>
-                                </article>
-                            </li>
-                            <li class="listBxDesign">
-                                <img class="nonDisplay" src="../00.자료수집/02.이미지데이터/05.서브페이지-특별_메뉴로의_초대/program2022-cont2-img1-2.jpg" alt="서울 레스토랑 위크 이미지 2">
-                                <article class="inf">
-                                    <strong>Korean French 한국 식재료의 재발견:</strong>
-                                    <p class="colRed big">2022년 10월 2일 (일), 17:30/18:00/18:30</p>
-                                    <p class="popTxt">
-                                        한국의 아름다운 사계절을 섬세하게 플레이트에 담는 &lt;레스토랑 알렌&gt;과 &lt;제로컴플렉스&gt;가 <br>
-                                        가장 풍요로운 계절 가을에 만난 한국 식재료를 재발견하는 경험을 선사합니다.
-                                    </p>
-                                    <ul class="opt">
-                                        <li>
-                                            <em>장소</em>레스토랑 알렌 @restaurant_allen
-                                        </li>
-                                        <li>
-                                            <em>예약</em>캐치테이블 레스토랑 알렌
-                                        </li>
-                                        <li>
-                                            <em>가격</em>40만원/인당
-                                        </li>
-                                        <li>
-                                            <em>상세</em>
-                                            8코스+와인 또는 논알코올 페어링
-                                        </li>
-                                    </ul>
-                                </article>
-                                <img class="display" src="../00.자료수집/02.이미지데이터/05.서브페이지-특별_메뉴로의_초대/program2022-cont2-img1-2.jpg" alt="서울 레스토랑 위크 이미지 2">
-                            </li>
-                        </ul>
-                    </section>
+                    <figure><span class="ir">영화 관람과 관련된 이미지</span></figure>
+                    <div class="cinemaEventTxt">이벤트</div>
+                    <ul class="cinemaEventList">
+                        <li class="listBxDesign cinema">
+                            <img src="../00.자료수집/02.이미지데이터/08.서브페이지-미식과_영화의_맛남/program2022-cont5-event-ico1.jpg" alt="와인과 와인잔 이미지">
+                            <ul>
+                                <li>
+                                    <strong>&lt;오!? 미쉐린 스타&gt;</strong>
+                                    <br>
+                                    Michelin Stars - Tales from the Kitchen
+                                </li>
+                                <li>
+                                    와인 이벤트
+                                </li>
+                                <li>
+                                    <em>일시</em>
+                                    10월 1일 (토) 17:00
+                                </li>
+                                <li>
+                                    와인과 함께 하는 세계 곳곳의 미쉐린 스타 레스토랑 탐방기 <br>
+                                    본 이벤트는 사전 신청이 필요하며 현장에서 성인 확인 후 진행됩니다.
+                                </li>
+                                <li class="requestBtn">
+                                    선착순 참여 신청하기
+                                </li>
+                                <li>
+                                    스폰서
+                                    <img src="../00.자료수집/02.이미지데이터/08.서브페이지-미식과_영화의_맛남/program2022-cont5-event-logo1.jpg" alt="스폰서 리스트 이미지">
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="listBxDesign cinema">
+                            <img src="../00.자료수집/02.이미지데이터/08.서브페이지-미식과_영화의_맛남/program2022-cont5-event-ico2.jpg" alt="빵과 스테이크 이미지">
+                            <ul>
+                                <li>
+                                    <strong>&lt;딜리셔스: 프렌치 레스토랑의 시작&gt;</strong>
+                                    <br>
+                                    Delicious
+                                </li>
+                                <li>
+                                    파인다이닝, 파인시네마 with 윌로뜨 이승준 셰프
+                                </li>
+                                <li>
+                                    <em>일시</em>
+                                    10월 2일 (일) 15:00
+                                </li>
+                                <li>
+                                    ‘2022 서울 레스토랑&바 100선’에 선정된 프렌치 파인다이닝 레스토랑 <br>
+                                    윌로뜨, 이승준 셰프의 특별한 선물이 준비됩니다. <br>
+                                    *본 이벤트는 사전 신청이 필요합니다.
+                                </li>
+                                <li class="requestBtn">
+                                    선착순 참여 신청하기
+                                </li>
+                                <li>
+                                    스폰서
+                                    <img src="../00.자료수집/02.이미지데이터/08.서브페이지-미식과_영화의_맛남/program2022-cont5-event-logo2.jpg" alt="스폰서 리스트 이미지">
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </main>
