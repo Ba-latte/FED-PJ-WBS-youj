@@ -68,6 +68,31 @@ window.addEventListener("DOMContentLoaded", () => {
     }); /////////////////////// 스크롤 액션 끝 /////////////////////////////////////
 
 
+    /*********************** 2페이지 주요프로그램 소개 섹션의 li들 지그재그로 위치 변경하는 함수 ***********************/
+    // 기능 : 윈도우 가로 사이즈가 1100px 이하가 되면, .programList(ul)의 li들이 세로 일렬 정렬에서 지그재그로 정렬을 바꾼다
+    function zigzagFn(){
+        const plLists = document.querySelectorAll(".programList li");
+        console.log(plLists);
+        // console.log(plLists.item(1));
+        let n = 1;
+        if(window.innerWidth <= 1100){
+            plLists.forEach((ele, idx)=>{
+                if(idx % 2 === 0){
+                    // ele.style.position="relative";
+                    ele.style.transform="translateX(15%)";
+                }
+                else{
+                    // ele.style.position="relative";
+                    ele.style.transform="translateX(-15%)";
+                }
+            })
+        }
+
+    } ///////////////////// zigzagFn //////////////////////
+    // 함수 호출
+    zigzagFn();
+
+
 
 
     /*********************** 인디케이터 스크롤 액션 ***********************/
@@ -82,6 +107,70 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 이벤트 적용하기
     window.addEventListener("scroll", handleScrollIndicator);
+
+
+
+
+    /******************************* 3페이지 지도 섹션의 가로로 스크롤 이동되는 함수 *******************************/
+    // 기능 : 스크롤바를 내리면 화면이 가로로 움직인다
+    // 적용 대상 : .tpg, .slidePg
+    // 타겟박스 : .tpg
+    const hScrollBx = document.querySelector(".tpg");
+    const hScrollSlide = document.querySelector(".hScrollTgBx");
+    const moveBx = hScrollSlide.querySelector("ul");
+    // console.log(hScrollBx, hScrollSlide);
+
+    // 이벤트 세팅하기
+    if(!mob){
+        window.addEventListener("scroll", hScrollFn);
+    }
+
+    // getBoundingClientRect() 값을 리턴받기
+    const retRectVal = (x) => x.getBoundingClientRect().top;
+
+    function hScrollFn() {
+        // 스크롤 위치값 확인
+        // console.log(window.scrollY);
+        let tgpos = retRectVal(hScrollBx);
+        // console.log("바운딩값: ", tgpos);
+
+        // 적용구간 설정하기 : 200이하 -3000px 이상!
+        if (tgpos <= 0 && tgpos >= -3000) {
+            moveBx.style.left = tgpos + "px";
+        } else if (tgpos > 0) {
+            moveBx.style.left = "0";
+        }
+    } //////////////// hScrollFn 끝 /////////////////
+
+
+    /******************************* 지도 섹션 배경 상단의 svg 변경 함수 *******************************/
+    // 기능 : 스크롤바(scrollY가 3066부터 4000까지...ㅠㅠ)가 특정 위치에 오면 지도 섹션의 배경 상단에 있는 svg의 scaleY속성이 0.1에서부터 1까지 변화함
+    //
+    // 변경 대상 : .circleStart>svg
+    const svgScale = document.querySelector(".circleStart>svg");
+    const winH = window.innerHeight;
+    // 이벤트 종류 : 스크롤 이벤트
+
+    function svgChgFn() {
+        // console.log("해당 요소의 top 위치값: ", svgScale.getBoundingClientRect().top + window.scrollY);
+        // console.log("현재 스크롤바 위치값: ", window.scrollY);
+
+        let chkPos = retVal(svgScale);
+
+        if (chkPos < winH && chkPos > 0) {
+            // console.log(chkPos);
+            // 계산법 : 1 - 바운딩수 / 전체높이
+            // 1~0까지 계산 되므로 반대수치는 1에서 빼면 된다!
+            let ratio = 1 - chkPos / winH;
+            // console.log(ratio);
+            svgScale.style.transform = `scale(1,${ratio})`;
+        }
+    }
+    // 이벤트 적용하기
+    window.addEventListener("scroll", svgChgFn);
+
+
+
 
 
     /*********************** 셰프&바텐더 소개 섹션의 스크롤 액션 ***********************/
@@ -445,62 +534,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /******************************* 가로로 스크롤 이동되는 함수 *******************************/
-    // 기능 : 스크롤바를 내리면 화면이 가로로 움직인다
-    // 적용 대상 : .tpg, .slidePg
-    // 타겟박스 : .tpg
-    const hScrollBx = document.querySelector(".tpg");
-    const hScrollSlide = document.querySelector(".hScrollTgBx");
-    const moveBx = hScrollSlide.querySelector("ul");
-    // console.log(hScrollBx, hScrollSlide);
-
-    // 이벤트 세팅하기
-    window.addEventListener("scroll", hScrollFn);
-
-    // getBoundingClientRect() 값을 리턴받기
-    const retRectVal = (x) => x.getBoundingClientRect().top;
-
-    function hScrollFn() {
-        // 스크롤 위치값 확인
-        // console.log(window.scrollY);
-        let tgpos = retRectVal(hScrollBx);
-        // console.log("바운딩값: ", tgpos);
-
-        // 적용구간 설정하기 : 200이하 -3000px 이상!
-        if (tgpos <= 0 && tgpos >= -3000) {
-            moveBx.style.left = tgpos + "px";
-        } else if (tgpos > 0) {
-            moveBx.style.left = "0";
-        }
-    } //////////////// hScrollFn 끝 /////////////////
-
-
-    /******************************* 지도 섹션 배경 상단의 svg 변경 함수 *******************************/
-    // 기능 : 스크롤바(scrollY가 3066부터 4000까지...ㅠㅠ)가 특정 위치에 오면 지도 섹션의 배경 상단에 있는 svg의 scaleY속성이 0.1에서부터 1까지 변화함
-    //
-    // 변경 대상 : .circleStart>svg
-    const svgScale = document.querySelector(".circleStart>svg");
-    const winH = window.innerHeight;
-    // 이벤트 종류 : 스크롤 이벤트
-
-    function svgChgFn() {
-        // console.log("해당 요소의 top 위치값: ", svgScale.getBoundingClientRect().top + window.scrollY);
-        // console.log("현재 스크롤바 위치값: ", window.scrollY);
-
-        let chkPos = retVal(svgScale);
-
-        if (chkPos < winH && chkPos > 0) {
-            // console.log(chkPos);
-            // 계산법 : 1 - 바운딩수 / 전체높이
-            // 1~0까지 계산 되므로 반대수치는 1에서 빼면 된다!
-            let ratio = 1 - chkPos / winH;
-            // console.log(ratio);
-            svgScale.style.transform = `scale(1,${ratio})`;
-        }
-    }
-    // 이벤트 적용하기
-    window.addEventListener("scroll", svgChgFn);
-
+    
 
 
     

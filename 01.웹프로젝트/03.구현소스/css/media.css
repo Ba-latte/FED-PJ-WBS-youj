@@ -179,9 +179,51 @@
     }
 
     /* 3페이지 지도 섹션 */
-    .circleStart {
-        transform: translateY(-91%);
+    /* 🌈원형배너 가로스크롤 위한 겉박스 */
+    .circleBody {
+        height: auto;
+        margin: 0;
+        padding: 0;
+        /* outline: 2px dashed lime; */
     }
+    /* 🌈원형배너 가로스크롤 위한 속박스 */
+    .hScrollTgBx {
+        position: static;
+        height: auto;
+
+        background-color: #fef7e6;
+    }
+    /* 🌈원형배너 실제로 가로이동할 박스(가로스크롤 위한 속박스 바로 아래에 있는 박스들) */
+    .hScrollTgBx ul {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    /* 🌈가로이동하는 li들 공통 세팅 */
+    .hScrollTgBx ul li {
+        background-color: #fef7e6;
+        font-size: 1vw;
+        color: #333;
+
+        /* outline: 2px dashed purple; */
+    }
+    /* 첫번째 슬라이드 li의 자식요소들 중앙 정렬 위한 세팅 */
+    .circleMainTxt{
+        height: 100vh;
+        /* flex: 1; */
+        /* 슬라이드들(li들) 등분할 하게 만들기 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hScrollTgBx ul li ol {
+        display: flex;
+        margin-top: 5vh;
+        justify-content: center;
+        gap: 10vh;
+    }
+
     /* 4페이지 셰프와 바텐더 소개 */
     /* 왼쪽단 */
     .CnBIntro .lside {
@@ -221,10 +263,6 @@
 
 /* 960px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 960px) {
-    /* 3페이지 지도 섹션 */
-    .circleMainTxt p:first-child{
-        padding: 20vh 5vh 10vh;
-    }
     /* 4페이지 셰프&바텐더 소개 섹션 */
     .CnBIntro .secTitle {
         height: 23vh;
@@ -238,22 +276,7 @@
     .cont .main .wrap h3::before {
         left: -40vw;
     }
-    /* 3페이지 지도 섹션 */
-    .hScrollTgBx ul li ol {
-        margin: 5vh 20vh 0;
-    }
-    /* 첫번째 슬라이드 제목 부분 */
-    .circleMainTxt p:first-child {
-        font-size: 8vh;
-    }
-    /* 첫번째 슬라이드 문구 부분 */
-    .circleMainTxt p:nth-of-type(2) {
-        font-size: 2vh;
-    }
-    /* 두번째, 세번째 슬라이드 공통 부분 */
-    .hScrollTgBx ul > li + li {
-        font-size: 5vh;
-    }
+
     /* 4페이지 셰프와 바텐더 소개 */
     .CnBIntro .stkBox {
         flex-direction: column;
@@ -324,14 +347,6 @@
 }
 /* 850px 사이즈 이하 미디어쿼리 끝 */
 
-/* 670px 사이즈 이하 미디어쿼리 시작 */
-@media screen and (max-width: 670px) {
-    /* 3페이지 지도 섹션 */
-    .circleMainTxt p:first-child {
-        padding: 20vh 5vh 10vh;
-    }
-}
-/* 670px 사이즈 이하 미디어쿼리 시작 */
 
 /* 650px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 650px) {
@@ -343,12 +358,6 @@
 
     .topArea .etc ul > li:nth-child(1) {
         margin-right: 0px;
-    }
-
-    /* 3페이지 지도 섹션 */
-    /* 첫번째 슬라이드 제목 패딩 수정 */
-    .circleMainTxt p:first-child {
-        padding: 20vh 0vh 10vh;
     }
 
     /* 4페이지 셰프와 바텐더 소개 */
@@ -421,13 +430,6 @@
     .program .circle {
         z-index: -1;
     }
-
-    /* 3페이지 지도 섹션 */
-    /* 두번째, 세번째 슬라이드 지도 부분 */
-    .mapScreen {
-        height: 50vh;
-    }
-
     /* 5페이지 메인 동영상 */
     /* 섹션 타이틀 */
     .cont .vSection .secTitle5 {
@@ -452,6 +454,7 @@
 
 /* 550px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 550px) {
+    /* 상단 영역 */
     .top .topArea {
         padding: 2vh 3vw;
     }
@@ -552,32 +555,6 @@
         width: 22vh;
     }
 
-    /* 3페이지 지도 섹션 */
-    /* 첫번째 슬라이드 제목 */
-    .circleMainTxt p:first-child {
-        font-size: 4vh;
-    }
-    /* 좌표 아이콘 */
-    .locationPointerIcon {
-        font-size: 6vh;
-    }
-    /* 첫번째 슬라이드 문구 */
-    .circleMainTxt p:nth-of-type(2) {
-        font-size: 1.5vh;
-    }
-    /* 두번째, 세번째 슬라이드 공통 세팅 */
-    .hScrollTgBx ul > li + li {
-        font-size: 3vh;
-    }
-    /* 지도 아이콘 */
-    .mapIcon {
-        font-size: 6vh;
-    }
-    /* 지도 아이콘 리스트 패딩 수정하기 */
-    .hScrollTgBx ul li ol {
-        margin: 5vh 33vh 0;
-    }
-
     /* 4페이지 셰프와 바텐더 소개 */
     /* 섹션 타이틀 */
     .CnBIntro .secTitle h2{
@@ -616,18 +593,7 @@
 
 /* 400px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 400px) {
-    /* 3페이지 지도 섹션 */
-    /* 지도아이콘이 있는 리스트를 세로형으로 만들기 */
-    .hScrollTgBx ul li ol {
-        flex-direction: column;
-        gap: 5vh;
-    }
-    /* 지도 아이프레임 겉박스 */
-    .mapScreen {
-        display: none;
-        /* 아예 숨겨버리고 새창이동하기로 만들기 */
-    }
-    
+    /* 동영상 섹션 */
     .cont .vSection .secTitle5 {
         font-size: 5.5vw;
     }
