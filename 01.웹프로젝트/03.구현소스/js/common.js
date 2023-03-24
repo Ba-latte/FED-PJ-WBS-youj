@@ -62,8 +62,8 @@ function commonLinkFn(){
         /* 스크롤바, 스크롤기능 없애기 */
         document.body.classList.add("scrollOff");
 
-        // 사이트맵 타이틀 글자 등장 액션 주기
-        comingUpFn();
+        // 사이트맵 타이틀 글자 등장 액션 주기 (모바일일 때에는 액션 기능 없애기)
+        if(mob){comingUpFn();};
         
         // 상위메뉴 글자 등장 액션 주기
         rexidFn(siteMapGnbBx);
