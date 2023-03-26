@@ -72,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // 기능 : 윈도우 가로 사이즈가 1100px 이하가 되면, .programList(ul)의 li들이 세로 일렬 정렬에서 지그재그로 정렬을 바꾼다
     function zigzagFn(){
         const plLists = document.querySelectorAll(".programList li");
-        console.log(plLists);
+        // console.log(plLists);
         // console.log(plLists.item(1));
         if(window.innerWidth <= 1100){
             plLists.forEach((ele, idx)=>{

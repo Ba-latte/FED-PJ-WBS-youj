@@ -54,7 +54,7 @@ function commonLinkFn(){
     // 적용 대상 - .siteMap
     const siteMap = document.querySelector(".siteMap");
     // console.log(hambtn);
-    const test1 = siteMap.querySelector(".smenu a");
+    const test1 = siteMap.querySelectorAll(".smenu a");
     // ⭐이벤트 세팅하기
     hambtn.onclick = () => {
         siteMap.classList.add("on");
@@ -65,9 +65,13 @@ function commonLinkFn(){
         // 사이트맵 타이틀 글자 등장 액션 주기 (모바일일 때에는 액션 기능 없애기)
         // if(!mob){comingUpFn();};
         
-        // 상위메뉴 글자 등장 액션 주기(DT든 모바일이든 상관 없음)
+        // 사이트맵 상위메뉴 글자 등장 액션 주기(DT든 모바일이든 상관 없음)
         rexidFn(siteMapGnbBx);
-
+        
+        
+        rexidFn(test1);
+        
+        rexidFn(document.querySelector(".siteMap>div>h2"));
         
     }; ////////////// onclick 이벤트 끝 /////////////////
 
@@ -94,22 +98,58 @@ function commonLinkFn(){
     /*********************** 사이트맵 화면 등장하고 나서 글자 등장 이벤트 함수 ***********************/
     // 기능 : 사이트맵 화면이 나타나고 나서 메뉴가 아래쪽에서 등장하기
     const siteMapGnbBx = document.querySelectorAll(".siteMapGnbBx>ul>li>a");
+
     function rexidFn(obj){
-        // console.log(siteMapGnbBx);
+        console.log(obj.length);
         let hcode = "";
 
+        for(let i = 0; i < obj.length; i++){
+            
+        }
+
         obj.forEach((ele)=>{
-        // siteMapGnbBx.forEach((ele)=>{
-            let tempTxt = ele.innerText;
+            // siteMapGnbBx.forEach((ele)=>{
+            let tempHTML = ele.innerHTML;
 
-            hcode = `<span class="rexid">${tempTxt}</span>`;
+            hcode = `<span class="rexid">${tempHTML}</span>`;
             ele.innerHTML = hcode;
-        });
+            });
+            setTimeout(()=>{
+                const upAni = document.querySelectorAll(".rexid");
+                for(let x of upAni){ x.classList.add("up")};
+            }, 700);
 
-        setTimeout(()=>{
-            const upAni = document.querySelectorAll(".rexid");
-            for(let x of upAni){ x.classList.add("up")};
-        }, 700);
+        // // 모바일 버전일 때
+        // if(mob){
+        //     obj.forEach((ele)=>{
+        //     // siteMapGnbBx.forEach((ele)=>{
+        //         let tempHTML = ele.innerHTML;
+        //         console.log(tempHTML)
+    
+        //         hcode = `<span class="rexid">${tempHTML}</span>`;
+        //         ele.innerHTML = hcode;
+        //     });
+    
+        //     setTimeout(()=>{
+        //         const upAni = document.querySelectorAll(".rexid");
+        //         for(let x of upAni){ x.classList.add("up")};
+        //     }, 700);
+        // }
+        // // 모바일 버전이 아닐 때
+        // else{
+        //     obj.forEach((ele)=>{
+        //     // siteMapGnbBx.forEach((ele)=>{
+        //     let tempHTML = ele.innerHTML;
+
+        //     hcode = `<span class="rexid">${tempHTML}</span>`;
+        //     ele.innerHTML = hcode;
+        //     });
+        //     setTimeout(()=>{
+        //         const upAni = document.querySelectorAll(".rexid");
+        //         for(let x of upAni){ x.classList.add("up")};
+        //     }, 700);
+        // }
+        
     } //////////////////////// rexidFn 함수 끝 /////////////////////////
 
 
@@ -133,33 +173,39 @@ function commonLinkFn(){
     // console.log(gnb);
 
     // 적용할 이벤트 : click 이벤트
-    gnb.forEach((ele, idx) => {
-        ele.querySelector("a").onclick = () => {
-            // 📌모바일 버전이 아니라면 이 함수 적용 안되도록 리턴하기!
-            if (!mob) return;
+    
+    // 📢📢모바일 버전일 때만!!! 상위메뉴 클릭하면 하위메뉴 등장 기능이 먹혀야 함
+    function topMenuClickFn(){
+        gnb.forEach((ele, idx) => {
+            ele.querySelector("a").onclick = () => {
+                // 0.초기화 함수 호출
+                initFn(idx);
+    
+                // 하위메뉴 변수
+                const lnb = ele.querySelector(".smenu");
+    
+                // 높이값 가져오기
+                let heightValue = ele.querySelector(".smenu ol").clientHeight;
+    
+                // console.log("높이값: ", heightValue);
+    
+                // console.log(lnb.clientHeight);
+    
+                lnb.style.height = (lnb.clientHeight === 0 ? heightValue : 0) + "px";
+                lnb.style.opacity = lnb.clientHeight === 0 ? 1 : 0;
+    
+                // 클릭할 때마다 구글 심볼 바꾸기
+                const symbols = ele.querySelector(".siteMapGnbBx>ul>li .lnbMoreIcon");
+                symbols.innerHTML = lnb.clientHeight === 0 ? "expand_less" : "expand_more";
+            }; ///////////// click 이벤트 끝 ///////////////
+        }); /////////////// forEach() 끝 /////////////
+    } ////////////////////////// topMenuClickFn  함수 끝 ////////////////////////////
 
-            // 0.초기화 함수 호출
-            initFn(idx);
-
-            // 하위메뉴 변수
-            const lnb = ele.querySelector(".smenu");
-
-            // 높이값 가져오기
-            let heightValue = ele.querySelector(".smenu ol").clientHeight;
-
-            // console.log("높이값: ", heightValue);
-
-            // console.log(lnb.clientHeight);
-
-            lnb.style.height = (lnb.clientHeight === 0 ? heightValue : 0) + "px";
-            lnb.style.opacity = lnb.clientHeight === 0 ? 1 : 0;
-
-            // 구글 심볼 바꾸기
-            const symbols = ele.querySelector("span");
-            symbols.innerText = lnb.clientHeight === 0 ? "expand_less" : "expand_more";
-        }; ///////////// click 이벤트 끝 ///////////////
-    }); /////////////// forEach() 끝 /////////////
-
+    // 모바일 버전일때만 위의 함수 실행하기
+    if(mob===1){
+        topMenuClickFn();
+    }
+    // 📢📢 DT 버전일떄 상위메뉴 클릭해도 무반응
 
 
     /******************************* 사이트맵 클릭 초기화 함수 *******************************/
@@ -182,7 +228,7 @@ function commonLinkFn(){
         }); ///////////////// forEach() 끝 ////////////////////
 
         // 모든 심볼 innerText의 내용을 expand_more라고 바꾸기
-        const symbols = document.querySelectorAll(".siteMap li span");
+        const symbols = document.querySelectorAll(".siteMapGnbBx>ul>li .lnbMoreIcon");
         // console.log("초기화할 심볼들: ", symbols);
         symbols.forEach((ele) => (ele.innerText = "expand_more"));
     } //////////////////// initFn 함수 끝 //////////////////////
