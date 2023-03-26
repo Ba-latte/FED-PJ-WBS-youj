@@ -21,7 +21,7 @@ const chgMob = () => {
 // 최초 호출하기
 chgMob();
 
-// console.log("모바일:", mob);
+console.log("모바일:", mob);
 
 // 사이즈 변경 이벤트 실행시 chgMob 함수 실행!
 window.addEventListener("resize", chgMob);
@@ -118,37 +118,6 @@ function commonLinkFn(){
                 const upAni = document.querySelectorAll(".rexid");
                 for(let x of upAni){ x.classList.add("up")};
             }, 700);
-
-        // // 모바일 버전일 때
-        // if(mob){
-        //     obj.forEach((ele)=>{
-        //     // siteMapGnbBx.forEach((ele)=>{
-        //         let tempHTML = ele.innerHTML;
-        //         console.log(tempHTML)
-    
-        //         hcode = `<span class="rexid">${tempHTML}</span>`;
-        //         ele.innerHTML = hcode;
-        //     });
-    
-        //     setTimeout(()=>{
-        //         const upAni = document.querySelectorAll(".rexid");
-        //         for(let x of upAni){ x.classList.add("up")};
-        //     }, 700);
-        // }
-        // // 모바일 버전이 아닐 때
-        // else{
-        //     obj.forEach((ele)=>{
-        //     // siteMapGnbBx.forEach((ele)=>{
-        //     let tempHTML = ele.innerHTML;
-
-        //     hcode = `<span class="rexid">${tempHTML}</span>`;
-        //     ele.innerHTML = hcode;
-        //     });
-        //     setTimeout(()=>{
-        //         const upAni = document.querySelectorAll(".rexid");
-        //         for(let x of upAni){ x.classList.add("up")};
-        //     }, 700);
-        // }
         
     } //////////////////////// rexidFn 함수 끝 /////////////////////////
 

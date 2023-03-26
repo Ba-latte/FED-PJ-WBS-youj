@@ -145,9 +145,9 @@ function mapSectionLinkFn(){
             // a요소 기본기능 막기
             e.preventDefault();
             // 클래스로 구분하여 각 아이프레임에 맞게 설정하기
-            if(ele.classList.contains("m1")) mapIframe[0].setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2s-VDImHhbnpYDnDw2RlUD_b8PuEJH8w!3e3?authuser=2");
+            if(ele.classList.contains("m1")) mapIframe[0].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F");
             else if(ele.classList.contains("m2")) mapIframe[0].setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
-            else if(ele.classList.contains("m3")) mapIframe[1].setAttribute("src", "https://www.google.com/maps/@/data=!3m1!4b1!4m3!11m2!2sR3_4gAnvSyyYrpCPGyVYTg!3e3?authuser=2");
+            else if(ele.classList.contains("m3")) mapIframe[1].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F");
             else if(ele.classList.contains("m4")) mapIframe[1].setAttribute("src", "https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
         }; //////////////// onclick /////////////////////
     }); /////////////// forEach ///////////////////

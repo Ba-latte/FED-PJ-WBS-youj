@@ -110,7 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /******************************* 3페이지 지도 섹션의 가로로 스크롤 이동되는 함수 *******************************/
+    /******************************* 3페이지 지도 섹션의 가로 스크롤 이동되는 함수 *******************************/
     // 기능 : 스크롤바를 내리면 화면이 가로로 움직인다
     // 적용 대상 : .tpg, .slidePg
     // 타겟박스 : .tpg
@@ -120,7 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // console.log(hScrollBx, hScrollSlide);
 
     // 이벤트 세팅하기
-    if(!mob){
+    if(mob===0){
         window.addEventListener("scroll", hScrollFn);
     }
 
