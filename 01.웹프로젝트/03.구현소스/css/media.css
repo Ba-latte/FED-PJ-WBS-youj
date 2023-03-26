@@ -195,7 +195,7 @@
     }
     /* 🌈원형배너 실제로 가로이동할 박스(가로스크롤 위한 속박스 바로 아래에 있는 박스들) */
     .hScrollTgBx ul {
-        width: 100vw;
+        width: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -222,6 +222,10 @@
         margin-top: 5vh;
         justify-content: center;
         gap: 10vh;
+    }
+    /* 마지막 슬라이드 중앙 정렬하기 */
+    .hScrollTgBx ul > li:last-child {
+        padding: 12vh;
     }
 
     /* 4페이지 셰프와 바텐더 소개 */
@@ -263,6 +267,10 @@
 
 /* 960px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 960px) {
+    /* 3페이지 지도 섹션 */
+    .circleStart {
+        transform: translateY(-93%);
+    }
     /* 4페이지 셰프&바텐더 소개 섹션 */
     .CnBIntro .secTitle {
         height: 23vh;
@@ -275,6 +283,13 @@
     /* 메인 페이지 - 회전 원(보라색) */
     .cont .main .wrap h3::before {
         left: -40vw;
+    }
+
+    /* 3페이지 지도 섹션 */
+    /* 2,3번째 슬라이드 공통 세팅 */
+    .hScrollTgBx ul > li + li {
+        font-size: 4.5vh;
+        font-weight: bold;
     }
 
     /* 4페이지 셰프와 바텐더 소개 */
@@ -344,9 +359,56 @@
     .NnPSection aside {
         padding: 10%;
     }
+
+
 }
 /* 850px 사이즈 이하 미디어쿼리 끝 */
 
+/* 700px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 700px) {
+    /* 3페이지 지도 섹션 */
+    .circleMainTxt p:first-child{
+        padding: 5vh 3vh 3vh;
+    }
+    /* 슬라이드 공통 세팅 */
+    .hScrollTgBx ul li{
+        flex: auto;
+    }
+    /* 1번째 슬라이드 세팅 */
+    .circleMainTxt{
+        height: 80vh;
+    }
+    /* 2,3번째 슬라이드 공통세팅 */
+    .hScrollTgBx ul > li + li{
+        padding: 10vh;
+    }
+    /* 마지막 슬라이드 */
+    .hScrollTgBx ul > li:last-child {
+        padding: 10vh;
+    }
+    .vegetarian50Btn{
+        margin-bottom: 15vh;
+    }
+    /* 지도 겉박스 */
+    .mapScreen{
+        display: none;
+    }
+    .hScrollTgBx > ul > li > ol > li a{
+        transform: translate(0);
+        font-size: 14px;
+    }
+    /* 4페이지 셰프와 바텐더 소개 섹션 */
+    /* 소개 문구 있는 단락 */
+    .CnBIntro .lside{
+        height: 68%;
+    }
+
+    /* 6페이지 공지사항과 보도자료 */
+    .NnPSection .rside{
+        margin-bottom: 20vh;
+    }
+}
+/* 700px 사이즈 이하 미디어쿼리 끝 */
 
 /* 650px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 650px) {
@@ -359,6 +421,26 @@
     .topArea .etc ul > li:nth-child(1) {
         margin-right: 0px;
     }
+
+    /* 3페이지 지도 섹션 */
+    /* 섹션의 동그란 svg */
+    .circleStart {
+        transform: translateY(-90%);
+    }
+    .circleMainTxt{
+        justify-content: center;
+    }
+    /* 첫번째 슬라이드 - 타이틀 */
+    .circleMainTxt p:first-child {
+        font-size: 5vh;
+        width: auto;
+        padding: 2vh;
+    }
+    /* 부제목 */
+    .circleMainTxt p:nth-of-type(2) {
+        font-size: 1.6vh;
+    }
+
 
     /* 4페이지 셰프와 바텐더 소개 */
     /* 타이틀 */
@@ -465,6 +547,27 @@
     .pageTopBtn{
         display: none;
     }
+    /* 3페이지 지도 섹션 */
+    /* 첫번째 슬라이드 - 타이틀 */
+    .circleMainTxt p:first-child {
+        font-size: 5vh;
+        width: auto;
+        padding: 2vh;
+    }
+    /* 부제목 */
+    .circleMainTxt p:nth-of-type(2) {
+        font-size: 1.6vh;
+    }
+    /* 2,3번째 슬라이드 공통 세팅 */
+    .hScrollTgBx ul > li + li {
+        font-size: 3vh;
+    }
+    /* 지도 버튼 세팅 */
+    .tasteofseoul100Btn a{
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
     /* 5페이지 메인 동영상 썸네일 리스트 좌/우버튼 */
     .vSection .movebtn {
         margin: 30px 10vw 10vh;
@@ -555,6 +658,20 @@
         width: 22vh;
     }
 
+    /* 3페이지 지도 섹션 */
+    /* svg부분 */
+    .circleStart {
+        transform: translateY(-88%);
+    }
+    /* 2번째 슬라이드 */
+    .hScrollTgBx ul > li + li{
+        padding: 5vh 0;
+    }
+    /* 3번째 슬라이드 */
+    .hScrollTgBx ul > li:last-child{
+        padding: 5vh 0;
+    }
+
     /* 4페이지 셰프와 바텐더 소개 */
     /* 섹션 타이틀 */
     .CnBIntro .secTitle h2{
@@ -593,10 +710,24 @@
 
 /* 400px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 400px) {
-    /* 동영상 섹션 */
+    /* 3페이지 지도 섹션 */
+    .circleStart {
+        transform: translateY(-80%);
+    }
+    /* 5페이지 동영상 섹션 */
     .cont .vSection .secTitle5 {
         font-size: 5.5vw;
     }
 }
 /* 400px 사이즈 이하 미디어쿼리 끝 */
+
+
+/* 380px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 380px) {
+    /* 3페이지 지도 섹션 */
+    .circleMainTxt p:nth-of-type(2) {
+        font-size: 12px;
+    }
+}
+/* 380px 사이즈 이하 미디어쿼리 끝 */
 

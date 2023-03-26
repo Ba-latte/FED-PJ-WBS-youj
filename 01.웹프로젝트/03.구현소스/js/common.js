@@ -63,9 +63,9 @@ function commonLinkFn(){
         document.body.classList.add("scrollOff");
 
         // 사이트맵 타이틀 글자 등장 액션 주기 (모바일일 때에는 액션 기능 없애기)
-        if(mob){comingUpFn();};
+        // if(!mob){comingUpFn();};
         
-        // 상위메뉴 글자 등장 액션 주기
+        // 상위메뉴 글자 등장 액션 주기(DT든 모바일이든 상관 없음)
         rexidFn(siteMapGnbBx);
 
         

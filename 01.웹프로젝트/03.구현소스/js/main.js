@@ -74,7 +74,6 @@ window.addEventListener("DOMContentLoaded", () => {
         const plLists = document.querySelectorAll(".programList li");
         console.log(plLists);
         // console.log(plLists.item(1));
-        let n = 1;
         if(window.innerWidth <= 1100){
             plLists.forEach((ele, idx)=>{
                 if(idx % 2 === 0){
