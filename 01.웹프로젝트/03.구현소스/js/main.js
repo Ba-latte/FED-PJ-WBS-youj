@@ -90,7 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } ///////////////////// zigzagFn //////////////////////
     // 함수 호출
     // zigzagFn();
-
+    // window.addEventListener("resize", zigzagFn);
 
 
 
@@ -229,20 +229,19 @@ window.addEventListener("DOMContentLoaded", () => {
     // 이벤트 함수 만들기 : 마우스엔터시
     function mouseEnterFn(ele, seq){
         // console.log("more 등장하게 만들기!", ele.querySelector("img").getAttribute("data-ap"));
-        let tempSeq = seq;
-        // console.log("tempSeq:", tempSeq);
         let img_data_ap = ele.querySelector("img");
-        if(tempSeq === "5"){
+
+        // 주의! : 인덱스번호가 5번인 것은 more이란 글자밖에 없으니까 걔는 이 함수 적용 안되게 해야함!
+        if(seq === 5){
             return;
-        }
+        } //////////////////////// if : 인덱스번호 5번인 경우 ////////////////////////
         else{
             // data-ap가 1이면, 가져온 순번에 맞는 .moreContMoveBx를 찾아서 거기에 클래스 .on을 부여하기 (0이면 부여하면 안됨!)
             if(img_data_ap.getAttribute("data-ap") === "1"){
                 // console.log("data-ap값은?: ", ele.querySelector("img").getAttribute("data-ap"));
-                CnBIntro_moveMorBx[tempSeq].classList.add("on");
+                CnBIntro_moveMorBx[seq].classList.add("on");
             }
-
-        }
+        } //////////////////// else : 그밖에 나머지인 경우 //////////////////////////
 
 
     } ////////////////// mouseEnterFn 함수 ///////////////////////
@@ -250,11 +249,11 @@ window.addEventListener("DOMContentLoaded", () => {
     // 이벤트 함수 만들기 : 마우스리브시
     function mouseLeaveFn(ele, seq){
         // console.log("more 등장하게 만들기!", seq);
-        let tempSeq = seq;
-        // console.log("tempSeq:", tempSeq);
 
         // 가져온 순번에 맞는 .moreContMoveBx를 찾아서 클래스 .on 빼기
-        CnBIntro_moveMorBx[tempSeq].classList.remove("on");
+        // 주의! : 인덱스번호가 5번인 것은 more이란 글자밖에 없으니까 걔는 이 함수 적용 안되게 해야함!
+        if(seq===5) return;
+        else{CnBIntro_moveMorBx[seq].classList.remove("on");}
 
     } ////////////////// mouseLeaveFn 함수 ///////////////////////
 
@@ -424,7 +423,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // 슬라이드의 처음 left값 세팅하기
         let leftX = obj.offsetLeft;
-        let leftY = 0;
+        // let leftY = 0;
         
         // 움직일 때 위치 포인트 move x, move y
         let moveX, moveY;
