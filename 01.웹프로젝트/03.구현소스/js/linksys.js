@@ -12,10 +12,7 @@
 ////////////////////////////////// 📢로딩 구역📢 //////////////////////////////////////////
 window.addEventListener("DOMContentLoaded", loadingLinkSysFn);
 
-
-
-function loadingLinkSysFn(){
-
+function loadingLinkSysFn() {
     // 호출 확인
     console.log("링크시스템js - 로딩 완료!");
 
@@ -36,56 +33,58 @@ function loadingLinkSysFn(){
 
     // 메인페이지 프로그램소개 링크
     prgLinkFn();
-
-}; ///////////////////// loadingLinkSysFn 함수 끝 ////////////////////////
-
+} ///////////////////// loadingLinkSysFn 함수 끝 ////////////////////////
 
 ////////////////////////// 상단 로고 링크 //////////////////////////
 /*********************************************************************
     함수명 : topLogoLinkFn
     기능 : 상단의 로고 클릭하면 index.html로 연결하기
 *********************************************************************/
-function topLogoLinkFn(){
+function topLogoLinkFn() {
     const topLogoImg = document.querySelector(".topArea .logo img");
     // console.log(topLogoImg);
-    topLogoImg.addEventListener("click", ()=>{
+    topLogoImg.addEventListener("click", () => {
         location.href = "./index.html";
     });
-}; /////////////////////// topLogoLinkFn 함수 끝 ////////////////////////////
-
-
-
+} /////////////////////// topLogoLinkFn 함수 끝 ////////////////////////////
 
 ////////////////////////// 메인페이지 프로그램소개 섹션 링크 //////////////////////////
 /*********************************************************************
     함수명 : programIntroLinkFn
     기능 : 메인페이지의 프로그램 소개 섹션에 있는 링크 이미지를 클릭하면 해당 페이지로 넘어가기
 *********************************************************************/
-function prgLinkFn(){
+function prgLinkFn() {
     const programLists = document.querySelectorAll(".pl");
     // console.log(programLists);
-    programLists.forEach((ele, idx)=>{
-        ele.addEventListener("click",()=>{
+    programLists.forEach((ele, idx) => {
+        ele.addEventListener("click", () => {
             // console.log(ele);
-            switch(idx){
-                case 0 :location.href = "./sub_tasteOfSeoulAward.html"; break;
-                case 1 :location.href = "./sub_seoulRestaurantWeek.html"; break;
-                case 2 :location.href = "./sub_seoulMarketDining.html"; break;
-                case 3 :location.href = "./sub_seoulMarché.html"; break;
-                case 4 :location.href = "./sub_tasteOfSeoulAward.html"; break;
-                case 5 :location.href = "./sub_tasteOfSeoulAward.html"; break;
-                case 6 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+            switch (idx) {
+                case 0:
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
+                case 1:
+                    location.href = "./sub_seoulRestaurantWeek.html";
+                    break;
+                case 2:
+                    location.href = "./sub_seoulMarketDining.html";
+                    break;
+                case 3:
+                    location.href = "./sub_seoulMarché.html";
+                    break;
+                case 4:
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
+                case 5:
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
+                case 6:
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
             }
         });
     });
-}; /////////////////////////////// prgLinkFn 함수 끝 ////////////////////////////////////
-
-
-
-
-
-
-
+} /////////////////////////////// prgLinkFn 함수 끝 ////////////////////////////////////
 
 ////////////////////////// 사이트맵 링크 //////////////////////////
 /*********************************************************************
@@ -93,45 +92,51 @@ function prgLinkFn(){
     기능 : 사이트맵 화면에서 각 하위 메뉴 클릭시 각각에 맞는 서브페이지로 이동하기
     (구현한 페이지 이외의 메뉴 클릭하면 알람창 띄우기)
 *********************************************************************/
-function siteMapLinkFn(){
+function siteMapLinkFn() {
     // 이벤트 대상 : smenu ol ul li? 아니면 a?
     // 이벤트 종류 : 클릭 이벤트
     const lnb = document.querySelectorAll(".smenu li a");
     // console.log(lnb);
     let lnbTxt = "";
-    
-    lnb.forEach((ele)=>{
-        ele.addEventListener("click", ()=>{
+
+    lnb.forEach((ele) => {
+        ele.addEventListener("click", () => {
             lnbTxt = ele.innerText;
             // console.log("클릭한거 맞아?ㅠㅠ: ", lnbTxt);
 
-            switch(lnbTxt){
-                case "행사 소개" : location.href = "./sub_eventInfo.html"; break;
-                case "주요 프로그램 소개" : location.href = "./sub_programInfo.html"; break;
-                case "테이스트오브서울 어워즈" : location.href = "./sub_tasteOfSeoulAward.html"; break;
-                case "특별 메뉴로의 초대" : location.href = "./sub_seoulRestaurantWeek.html"; break;
-                case "재래시장과 핫플의 맛남" : location.href = "./sub_seoulMarketDining.html"; break;
-                case "도시와 농부의 맛남" : location.href = "./sub_seoulMarché.html"; break;
-                
-                default : alert("공사중입니다😊");
+            switch (lnbTxt) {
+                case "행사 소개":
+                    location.href = "./sub_eventInfo.html";
+                    break;
+                case "주요 프로그램 소개":
+                    location.href = "./sub_programInfo.html";
+                    break;
+                case "테이스트오브서울 어워즈":
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
+                case "특별 메뉴로의 초대":
+                    location.href = "./sub_seoulRestaurantWeek.html";
+                    break;
+                case "재래시장과 핫플의 맛남":
+                    location.href = "./sub_seoulMarketDining.html";
+                    break;
+                case "도시와 농부의 맛남":
+                    location.href = "./sub_seoulMarché.html";
+                    break;
+
+                default:
+                    alert("공사중입니다😊");
             } //////////////// switch문 끝 /////////////////////
-            
         }); /////////////// click 이벤트 끝 ///////////////////
     }); ///////////////////// forEach문 끝 //////////////////////////
-
-
-}; ///////////////////// siteMapLinkFn 함수 끝 ///////////////////////
-
-
-
-
+} ///////////////////// siteMapLinkFn 함수 끝 ///////////////////////
 
 ////////////////////////// 미식 지도 섹션 링크 //////////////////////////
 /*********************************************************************
     함수명 : mapSectionLinkFn
     기능 : 지도 섹션의 a요소 아래 있는 자식요소들을 클릭하면 해당되는 지도가 아래쪽에 뜬다
 *********************************************************************/
-function mapSectionLinkFn(){
+function mapSectionLinkFn() {
     // 대상 : li.btn의 모든 자식 요소들 (span과 a가 있음)
     // li로 잡지 않은 이유 : li 범위가 넓어서 빈공간 클릭해도 먹히기 때문
     const mapSectionBtn = document.querySelectorAll(".btn *");
@@ -139,84 +144,90 @@ function mapSectionLinkFn(){
     // console.log("지도 버튼: ", mapSectionBtn);
     // console.log(mapIframe);
 
-    mapSectionBtn.forEach((ele)=>{
+    mapSectionBtn.forEach((ele) => {
         // 각 클래스를 가지고 있으면 링크 이동하도록 만들기
-        ele.onclick = (e)=>{
+        ele.onclick = (e) => {
             // a요소 기본기능 막기
             e.preventDefault();
             // 클래스로 구분하여 각 아이프레임에 맞게 설정하기
-            if(ele.classList.contains("m1")) mapIframe[0].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F");
-            else if(ele.classList.contains("m2")) mapIframe[0].setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
-            else if(ele.classList.contains("m3")) mapIframe[1].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F");
-            else if(ele.classList.contains("m4")) mapIframe[1].setAttribute("src", "https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
+            if (ele.classList.contains("m1")) mapIframe[0].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F");
+            else if (ele.classList.contains("m2")) mapIframe[0].setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
+            else if (ele.classList.contains("m3")) mapIframe[1].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F");
+            else if (ele.classList.contains("m4")) mapIframe[1].setAttribute("src", "https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
         }; //////////////// onclick /////////////////////
     }); /////////////// forEach ///////////////////
 } //////////////////// mapSectionLinkFn 함수 끝 ////////////////////////
-
-
-
-
 
 ////////////////////////// 프로그램소개 페이지 링크 //////////////////////////
 /*********************************************************************
     함수명 : programIntroLinkFn
     기능 : 프로그램 소개 페이지에서의 a요소들 링크 걸기
 *********************************************************************/
-function programIntroLinkFn(){
+function programIntroLinkFn() {
     // 대상 : 프로그램 소개 페이지에서의 .programPageLnb 밑의 li들
     const programPageLnbs = document.querySelectorAll(".programPageLnb>ul>li");
     // 이벤트 종류 : 클릭 이벤트
-    
+
     // console.log("프로그램 페이지 아래 li들 링크", programPageLnbs);
-    
-    programPageLnbs.forEach((ele, idx)=>{
-        ele.addEventListener("click", ()=>{
+
+    programPageLnbs.forEach((ele, idx) => {
+        ele.addEventListener("click", () => {
             // console.log(idx);
-            switch(idx){
-                case 0 :location.href = "./sub_tasteOfSeoulAward.html"; break;
-                case 1 :location.href = "./sub_seoulRestaurantWeek.html"; break;
-                case 2 :location.href = "./sub_seoulMarketDining.html"; break;
-                case 3 :location.href = "./sub_seoulMarché.html"; break;
-                case 4 :location.href = "./sub_tasteOfSeoulAward.html"; break;
-                case 5 :location.href = "./sub_tasteOfSeoulAward.html"; break;
-                case 6 :location.href = "./sub_tasteOfSeoulAward.html"; break;
+            switch (idx) {
+                case 0:
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
+                case 1:
+                    location.href = "./sub_seoulRestaurantWeek.html";
+                    break;
+                case 2:
+                    location.href = "./sub_seoulMarketDining.html";
+                    break;
+                case 3:
+                    location.href = "./sub_seoulMarché.html";
+                    break;
+                case 4:
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
+                case 5:
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
+                case 6:
+                    location.href = "./sub_tasteOfSeoulAward.html";
+                    break;
             }
         });
     });
-    
 } ////////////////////////// programIntroLinkFn 함수 /////////////////////////////
-
-
-
-
-
-
 
 ////////////////////////// 하단 링크 //////////////////////////
 /*********************************************************************
     함수명 : footerLinkFn
     기능 : 하단영역의 각 a요소들 링크 구현하기
 *********************************************************************/
-function footerLinkFn(){
+function footerLinkFn() {
     const bLink = document.querySelectorAll(".blink a");
     // console.log("하단 링크 a: ", bLink);
-    bLink.forEach((ele, idx)=>{
-        ele.addEventListener("click", ()=>{
+    bLink.forEach((ele, idx) => {
+        ele.addEventListener("click", () => {
             // console.log("클릭한거 맞지?", idx);
-            switch(idx){
-                case 0 : window.open("https://www.seoul.go.kr/main/index.jsp"); break;
-                case 1 : window.open("https://www.facebook.com/tasteofseoul.official"); break;
-                case 2 : window.open("https://www.instagram.com/tasteofseoul_official/"); break;
-                case 3 : location.href = "./sub_RejectionEmail.html"; break;
-                case 4 : location.href = "./sub_PrivacyPolicy.html"; break;
+            switch (idx) {
+                case 0:
+                    window.open("https://www.seoul.go.kr/main/index.jsp");
+                    break;
+                case 1:
+                    window.open("https://www.facebook.com/tasteofseoul.official");
+                    break;
+                case 2:
+                    window.open("https://www.instagram.com/tasteofseoul_official/");
+                    break;
+                case 3:
+                    location.href = "./sub_RejectionEmail.html";
+                    break;
+                case 4:
+                    location.href = "./sub_PrivacyPolicy.html";
+                    break;
             } ////////////////// switch 끝 //////////////////////
-
         }); ////////////// click 끝 //////////////////
     }); /////////////////// forEach() 끝 ////////////////////
 } ///////////////////// footerLinkFn 함수 끝 ///////////////////////////
-
-
-
-
-
-

@@ -2,11 +2,26 @@
 /* 상단 영역, 하단 영역 JS */
 
 
+
+// 모바일 상태값
+let mob = 0; // 1모바일
+
+
+
+
+/////////////////////////////////////// 로딩 구역 //////////////////////////////////////
+window.addEventListener("DOMContentLoaded", commonLinkFn);
+
+function commonLinkFn(){
+    console.log("공통 모듈js - 로딩 완료");
+
+    // 이벤트 적용 대상 : .siteMap ul>li
+    const gnb = document.querySelectorAll(".siteMap ul>li:has(.smenu)");
+    // console.log(gnb);
+
 /*********************************************************
     [ 모바일 관련 함수 ]
 *********************************************************/
-// 모바일 상태값
-let mob = 0; // 1모바일
 const chgMob = () => {
     if (window.innerWidth < 1100) mob = 1;
     else mob = 0;
@@ -15,7 +30,9 @@ const chgMob = () => {
         document.querySelectorAll(".smenu").forEach((ele) => (ele.style = ""));
     }
 
-    // console.log("in모바일:", mob);
+    
+    topMenuClickFn();
+    console.log("in모바일:", mob);
 }; ////// chgMob //////////
 
 // 최초 호출하기
@@ -25,14 +42,6 @@ console.log("모바일:", mob);
 
 // 사이즈 변경 이벤트 실행시 chgMob 함수 실행!
 window.addEventListener("resize", chgMob);
-
-
-
-/////////////////////////////////////// 로딩 구역 //////////////////////////////////////
-window.addEventListener("DOMContentLoaded", commonLinkFn);
-
-function commonLinkFn(){
-    console.log("공통 모듈js - 로딩 완료");
 
 
     /************************* a요소 클릭시 화면 맨 위로 튀는 기본값 적용 해제하기 *************************/
@@ -71,7 +80,7 @@ function commonLinkFn(){
         
         rexidFn(test1);
         
-        rexidFn(document.querySelector(".siteMap>div>h2"));
+        rexidFn(document.querySelectorAll(".siteMap>div>h2"));
         
     }; ////////////// onclick 이벤트 끝 /////////////////
 
@@ -118,6 +127,9 @@ function commonLinkFn(){
                 const upAni = document.querySelectorAll(".rexid");
                 for(let x of upAni){ x.classList.add("up")};
             }, 700);
+
+
+            
         
     } //////////////////////// rexidFn 함수 끝 /////////////////////////
 
@@ -137,16 +149,17 @@ function commonLinkFn(){
 
 
     /*********************** 모바일버전에서 사이트맵 상위메뉴 클릭시 하위메뉴 등장 ***********************/
-    // 이벤트 적용 대상 : .siteMap ul>li
-    const gnb = document.querySelectorAll(".siteMap ul>li:has(.smenu)");
-    // console.log(gnb);
+    
 
     // 적용할 이벤트 : click 이벤트
     
     // 📢📢모바일 버전일 때만!!! 상위메뉴 클릭하면 하위메뉴 등장 기능이 먹혀야 함
     function topMenuClickFn(){
+
         gnb.forEach((ele, idx) => {
             ele.querySelector("a").onclick = () => {
+
+                if(!mob) return;
                 // 0.초기화 함수 호출
                 initFn(idx);
     
@@ -171,9 +184,9 @@ function commonLinkFn(){
     } ////////////////////////// topMenuClickFn  함수 끝 ////////////////////////////
 
     // 모바일 버전일때만 위의 함수 실행하기
-    if(mob===1){
+    
         topMenuClickFn();
-    }
+
     // 📢📢 DT 버전일떄 상위메뉴 클릭해도 무반응
 
 
