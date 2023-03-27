@@ -152,7 +152,7 @@ function mapSectionLinkFn() {
             // 클래스로 구분하여 각 아이프레임에 맞게 설정하기
             if (ele.classList.contains("m1")) mapIframe[0].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F");
             else if (ele.classList.contains("m2")) mapIframe[0].setAttribute("src", "https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true");
-            else if (ele.classList.contains("m3")) mapIframe[1].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F");
+            else if (ele.classList.contains("m3")) mapIframe[1].setAttribute("src", "https://www.google.com/maps/d/embed?mid=1mIn4mr_coXw3gmCgtW0YFnR_cK6NvQ4&ehbc=2E312F");
             else if (ele.classList.contains("m4")) mapIframe[1].setAttribute("src", "https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true");
         }; //////////////// onclick /////////////////////
     }); /////////////// forEach ///////////////////
