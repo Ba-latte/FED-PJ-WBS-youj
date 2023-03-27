@@ -57,6 +57,11 @@ header.programInfo{
     color: #a5a5a5;
     font-weight: normal;
 }
+/* 슬라이드 배너와 불릿 연결하기 */
+.programLnb>.indic a.on{
+    color: #b5416e;
+    font-weight: bold;
+}
 
 
 

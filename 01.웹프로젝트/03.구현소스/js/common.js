@@ -7,8 +7,6 @@
 let mob = 0; // 1모바일
 
 
-
-
 /////////////////////////////////////// 로딩 구역 //////////////////////////////////////
 window.addEventListener("DOMContentLoaded", commonLinkFn);
 
@@ -32,13 +30,13 @@ const chgMob = () => {
 
     
     topMenuClickFn();
-    console.log("in모바일:", mob);
+    // console.log("in모바일:", mob);
 }; ////// chgMob //////////
 
 // 최초 호출하기
 chgMob();
 
-console.log("모바일:", mob);
+// console.log("모바일:", mob);
 
 // 사이즈 변경 이벤트 실행시 chgMob 함수 실행!
 window.addEventListener("resize", chgMob);
@@ -109,15 +107,9 @@ window.addEventListener("resize", chgMob);
     const siteMapGnbBx = document.querySelectorAll(".siteMapGnbBx>ul>li>a");
 
     function rexidFn(obj){
-        console.log(obj.length);
         let hcode = "";
 
-        for(let i = 0; i < obj.length; i++){
-            
-        }
-
         obj.forEach((ele)=>{
-            // siteMapGnbBx.forEach((ele)=>{
             let tempHTML = ele.innerHTML;
 
             hcode = `<span class="rexid">${tempHTML}</span>`;

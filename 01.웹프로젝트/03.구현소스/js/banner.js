@@ -4,72 +4,13 @@ window.addEventListener("DOMContentLoaded", ()=>{
     console.log("배너 js - 로딩완료");
 
     // ⭐1.최상위 배너 박스 대상 선정하기 :.banbx
-    const banbx = document.querySelectorAll(".banbx");
+    const banbx = document.querySelector(".banbx");
 
-    // 2.배너 박스 일괄 세팅하기
-    banbx.forEach((ele, idx)=>{
-        setBan(ele, idx);
-        // setBan(각요소, 요소별 순번)을 보냄
-    });
+    // 배너 세팅함수 호출하기
+    setBan(banbx);
 
 }); ///////////////// 로드 구역 ///////////////////////
 
-
-/***************************************************** 
-    [ 슬라이드 이동 기능정의 ]
-    1. 이벤트 종류: click
-    2. 이벤트 대상: 이동버튼(.abtn)
-    3. 변경 대상: 슬라이드 박스(.slide)
-    4. 기능 설계:
-        -> left 이동의 기준값이 -220% 인것이 포인트!
-        (이유: 2장의 슬라이드가 앞에 나가있음. 잘라내는 것이
-            숨겨져야하므로 셋팅한것임!)
-
-        (1) 오른쪽 버튼 클릭시
-
-            ※ 변경된부분!!!
-            {   트랜지션 중앙 커지기를 적용한 경우이므로
-                왼쪽버튼과 같이 잘라내기를 먼저하여
-                슬라이드 주인공 순서를 일치 시킨다!!!! }
-
-            -> 슬라이드 이동전!!! 
-            바깥에 나가있는 첫번째 슬라이드
-            li를 잘라서 맨뒤로 보낸다!
-            동시에 left값을 -110%으로 변경한다!
-        
-            다음 슬라이드가
-            나타나도록 슬라이드 박스의 left값을
-            -220%로 변경시킨다.
-            
-
-        (2) 왼쪽버튼 클릭시 이전 슬라이드가
-            나타나도록 하기위해 우선 맨뒤 li를
-            맨앞으로 이동하고 동시에 left값을
-            -330%로 변경한다.
-            그 후 left값을 -220%으로 애니메이션하여
-            슬라이드가 왼쪽에서 들어온다.
-
-        (3) 공통기능: 슬라이드 위치표시 블릿
-            - 블릿 대상: .indic li
-            - 변경 내용: 슬라이드 순번과 같은 순번의
-            li에 클래스 "on"주기(나머진 빼기->초기화!)
-
-*****************************************************/
-
-
-/*******************************************************
-    [ 배너함수 다중배너 세팅함수로 모듈화 하기 ]
--전달값을 사용하여 개별적인 배너요소 하위의 기능으로 작동하도록 최상위 배열요소를 함수로 전달하여
-내부 기능 세팅시 document로 선택했던 요소를 모두 개별 최상위 배너 요소 하위 요소 선택으로 변경하면
-기존 변수 세팅을 그대로 사용하여 개별 배너 모듈화를 손쉽게 할 수 있다
-
-    [ 모듈화 원칙 ]
-1.상대적인 선택자 사용
-: 누구밑의 누구 이런식으로 선택하면 된다는 뜻임
-2.for문에 의한 개별요소별 일괄 세팅
-3.구체적인 차이점은 전달변수를 통하여 해결
-
-*******************************************************/
 
 
 // 배너 세팅 함수 //////////////////////////////
@@ -102,11 +43,6 @@ function setBan(obj){ // obj는 최상위 요소 객체! / seq는 요소 순번!
     bancont.innerHTML = hcode;
 
 
-
-    //_________________________________________________________
-
-
-
     ////////// [ ✨✨슬라이드 기본 기능 구현✨✨ ] /////////////
 
     // 1. 대상선정 //////////////////////////
@@ -122,6 +58,9 @@ function setBan(obj){ // obj는 최상위 요소 객체! / seq는 요소 순번!
 
     // 1-4. 슬라이드 li리스트
     let slist = obj.querySelectorAll(".slide>li");
+
+    // 🌈드래그 함수 호출🌈
+    dragFn(slide);
 
     // [ 초기화1 - 순번붙이기 ] ///////////////////
     // 잘라내기로 li순번이 뒤섞이므로 블릿변경 매칭을 위한
@@ -235,22 +174,23 @@ function setBan(obj){ // obj는 최상위 요소 객체! / seq는 요소 순번!
 
         // 2. 현재 슬라이드 순번과 같은 블릿표시하기
         // 대상: . li -> indic변수
+        const indic = document.querySelectorAll(".programLnb .indic a");
         // 2-1. 현재 배너리스트 업데이트하기
-        // clist = slide.querySelectorAll("li");
+        clist = slide.querySelectorAll("li");
         // !!!!! 오른쪽이든 왼쪽이든 먼저 잘라내기 때문에
         // 순번은 3번째로 일치함!!!!!!
         // console.log("다시수집:",clist);
 
         // 2-2.방향별 읽어올 슬라이드 순번으로 "data-seq"값 읽어오기
         // 세번째 슬라이드가 주인공이니까 0,1,2 즉 2번을 쓰면됨!!!
-        // let cseq = clist[2].getAttribute("data-seq");
-        //  console.log("현재순번:", cseq);
+        let cseq = clist[2].getAttribute("data-seq");
+        // console.log("현재순번:", cseq);
 
         // 2-3. 블릿초기화
-        // for (let x of indic) x.classList.remove("on");
+        for (let x of indic) x.classList.remove("on");
 
         // 2-4. 읽어온 슬라이드 순번의 블릿에 클래스 "on"넣기
-        // indic[cseq].classList.add("on");
+        indic[cseq].classList.add("on");
     }; ////////// goSlide함수 ///////////
 
     // 3. 이동버튼대상에 이벤트 설정하기
@@ -323,12 +263,145 @@ function setBan(obj){ // obj는 최상위 요소 객체! / seq는 요소 순번!
     programLnbList.forEach((ele, idx)=>{
         // console.log(ele);
         ele.onclick=()=>{
-            console.log(idx);
+            // console.log(idx);
             // data-seq와 연결하면 되지 않을까?
         };
     });
 
 
 
-} //////////////// loadFn 함수 ///////////////
-/////////////////////////////////////////////
+} //////////////// setBan 함수 끝 ///////////////
+
+
+
+/*****************************************
+    함수명 : dragFn
+    기능 : 다중 드래그 기능 적용
+*****************************************/
+function dragFn(obj) {
+    console.log("드래그!");
+
+    // 드래그 상태 변수 - true:드래그 중 / false:드래그 안함
+    let drag = false;
+    // 첫번째 위치 포인트 : first x, first y
+    let firstX, firstY;
+    // 마지막 위치 포인트 : last x, last y -> 맨 처음에는 마지막 위치 포인트가 없으므로 0이라 해줘야 함
+
+    // 슬라이드의 처음 left값 세팅하기
+    let leftX = obj.offsetLeft;
+    let leftY = 0;
+
+    // 움직일 때 위치 포인트 move x, move y
+    let moveX, moveY;
+    // 위치 이동한 차이값을 저장할 변수 result x, result y
+    let resultX, resultY;
+
+    // 함수 만들기
+    // (1)드래그 상태가 true인 변수
+    const dragT = () => {
+        drag = true;
+    };
+    // (2)드래그 상태가 false인 변수
+    const dragF = () => {
+        drag = false;
+    };
+    // (3)드래그 작동할 때의 작동 함수
+    const dragMove = () => {
+    // console.log("드래그 상태", drag);
+
+    // 드래그 상태일때만 실행하기
+    if (drag) {
+        console.log("왜안돼ㅠ");
+        // 트랜지션 없애기
+        obj.style.transition = "none";
+
+        // 1.드래그한 상태에서 움직일 때의 위치값 : moveX,Y
+        moveX = event.pageX;
+        moveY = event.pageY;
+
+        // 2.움직일 때의 위치값 - 처음위치값 = resultX,Y에 담기
+        resultX = moveX - firstX;
+        resultY = moveY - firstY;
+
+        // 3.움직인 x,y값을 타겟 요소에 적용하기
+        obj.style.left = resultX + leftX + "px";
+    } //////////////////// if : 드래그 /////////////////////////
+    };
+    // (4)첫번째 위치 포인트 세팅하는 함수 : 처음 찍었을 때 작동하는 것
+    const firstPoint = () => {
+        firstX = event.pageX;
+        firstY = event.pageY;
+    };
+    // (5)마지막 위치 포인트 세팅하는 함수 : 클릭버튼에서 손 뗄 때 작동하는 것!
+    const lastPoint = () => {
+        leftX += resultX;
+        leftY += resultY;
+    };
+    // 최종 이동 결과값인 resultX,Y값을 항상 대입연산해서 값을 업데이트 해줘야함!!!!
+
+    // 이벤트 등록하기
+    // 1.마우스 내려갈때 : 드래그 true + 첫번쨰 위치값 업데이트하기
+    obj.addEventListener("mousedown", () => {
+        // 드래그 true
+        dragT();
+        // 첫번째 위치값 업데이트
+        firstPoint();
+
+        // event.preventDefault();
+    });
+    // 2.마우스 올라올 때 : 드래그 false + 마지막 위치값 업데이트하기
+    obj.addEventListener("mouseup", () => {
+        // 드래그 false
+        dragF();
+
+        // 드래그 이동방향 판별하는 함수 호출하기
+        whereDrag(obj);
+    });
+
+    // 3.마우스 움직일 때
+    obj.addEventListener("mousemove", dragMove);
+    // 4.마우스 벗어날 때
+    obj.addEventListener("mouseleave", dragF);
+
+
+    // 화면 크기 변경할 경우 발생하는 resize 이벤트!
+    // 필요한 경우, 이 코드 실행하기
+    window.addEventListener("resize", ()=>{
+        leftX = -obj.parentElement.clientWidth * 2.2;
+    }); //////////////// resize 이벤트 끝 /////////////////
+
+
+} //////////////////// dragFn 함수 /////////////////////////
+
+/************************************************************
+    함수명 : whereDrag
+    기능 : 드래그시 왼쪽으로 갈 것인지, 오른쪽으로 갈 것인지 이동 방향을 판별해준다
+    호출 : 드래그시 mouseup 이벤트 함수에서 호출한다
+************************************************************/
+function whereDrag(obj) {
+    // 1.현재 드래그 대상의 left 위치값
+    let tg_left = obj.offsetLeft;
+
+    // 유동적 사이즈 변경에 따른 위치값 구하기
+    let tg_point = obj.parentElement.clientHeight * 2.2;
+
+    // 3.방향 판별하기 : 특정값을 더하거나 빼기
+    // 3-1.왼쪽 방향으로 이동하기 = 오른쪽 버튼 클릭 기능과 동일함
+    if (tg_left < tg_point - 50) {
+        console.log("왼쪽으로!");
+        dragFn(1);
+    }
+    // 3-2.오른쪽 방향 이동하기 = 왼쪽 버튼 클릭 기능과 동일함
+    else if (tg_left > tg_point + 50) {
+        console.log("오른쪽으로!");
+        dragFn(0);
+    } else {
+        console.log("제자리로!");
+
+        // 기준값 left로 다시 보내기
+        obj.style.left = -tg_point + "px";
+
+        // 트랜지션을 줘서 부드럽게 움직이게 만들기
+        obj.style.transition = "left .2s ease-in-out";
+    }
+} ////////////////////////////// whereDrag 함수 끝 ///////////////////////////
