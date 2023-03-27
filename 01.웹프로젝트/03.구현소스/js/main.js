@@ -6,8 +6,8 @@
 window.addEventListener("DOMContentLoaded", () => {
     console.log("메인js - 로딩 완료");
 
-    // 새로고침시 맨위로 위치설정!
-    setTimeout(() => window.scrollTo(0, 0), 100);
+    // 새로고침시 맨위로 위치설정! -> 가로 스크롤이동 섹션때문에 자꾸 width값이 커지는 문제 해결 위함
+    // setTimeout(() => window.scrollTo(0, 0), 100);
 
 
     /*********************** 주요프로그램 섹션의 스크롤 액션 ***********************/
@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     } ///////////////////// zigzagFn //////////////////////
     // 함수 호출
-    zigzagFn();
+    // zigzagFn();
 
 
 
@@ -123,6 +123,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if(mob===0){
         window.addEventListener("scroll", hScrollFn);
     }
+
+    // window.addEventListener("scroll", hScrollFn);
 
     // getBoundingClientRect() 값을 리턴받기
     const retRectVal = (x) => x.getBoundingClientRect().top;
