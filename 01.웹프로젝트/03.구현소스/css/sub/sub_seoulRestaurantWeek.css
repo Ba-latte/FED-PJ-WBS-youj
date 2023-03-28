@@ -3,10 +3,15 @@
 /* 서브 페이지 - 특별메뉴로의 초대 */
 
 
+/* 상단의 공통 세팅은 sub_common.css에 있음 */
+/* 유의사항 단락만 개별 세팅 줌 */
+.categoryTit .notice{
+    font-size: 1vw;
+}
 
 /* 주된 컨텐츠 소개(상세) */
 /* 겉박스 */
-.categoryTxtBx{
+.categoryTxtBx.sub_week{
     position: relative;
     padding: 0;
     width: 100vw;
@@ -17,7 +22,7 @@
 /* 제목 */
 .categoryTxtBx .stit{
     text-align: center;
-    font-size: 5.5vh;
+    font-size: max(3vw, 25px);
     padding: 10vh 0 15vh;
     margin: 0 auto;
 }
@@ -129,3 +134,36 @@ ul.opt>li>em{
     display: none;
     /* 처음에는 앞쪽에 있는 이미지가 안 보이다가 미디어쿼리가 적용되면 보일 예정임! */
 }
+
+
+
+
+/***************************************** 미디어쿼리 *****************************************/
+
+/* 1200px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
+    .program-list3>li>img {
+        width: auto;
+    }
+}
+/* 1200px 사이즈 이하 미디어쿼리 끝 */
+
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    .sectionContBx .sub_week{
+        padding: 15vw 5vw;
+    }
+    .program-list3>li>img{
+        width: 100%;
+    }
+}
+/* 600px 사이즈 이하 미디어쿼리 끝 */
+
+/* 500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+    .listBxDesign.sub_week{
+        width: 55%;
+    }
+}
+/* 500px 사이즈 이하 미디어쿼리 끝 */
+

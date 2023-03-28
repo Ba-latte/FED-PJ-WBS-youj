@@ -60,21 +60,23 @@ function topLogoLinkFn() {
 function siteMapTopLinkFn(){
     const siteMapTopMenu = document.querySelectorAll(".siteMapGnbBx>ul>li>a");
     // console.log(siteMapTopMenu);
+    if(!mob){
+        siteMapTopMenu.forEach((ele, idx)=>{
+            // console.log(idx);
+            ele.addEventListener("click", ()=>{
+                console.log(idx);
     
-    siteMapTopMenu.forEach((ele, idx)=>{
-        // console.log(idx);
-        ele.addEventListener("click", ()=>{
-            console.log(idx);
+                switch(idx){
+                    case 0 : location.href = "./sub_eventInfo.html"; break;
+                    case 1 : location.href = "./sub_open.html"; break;
+                    case 2 : location.href = "./sub_open.html"; break;
+                    case 3 : location.href = "./sub_tasteOfSeoulAward.html"; break;
+                    case 4 : location.href = "./sub_open.html"; break;
+                }
+            });
+        }); //////////////////// forEach /////////////////////
 
-            switch(idx){
-                case 0 : location.href = "./sub_eventInfo.html"; break;
-                case 1 : location.href = "./sub_open.html"; break;
-                case 2 : location.href = "./sub_open.html"; break;
-                case 3 : location.href = "./sub_programOpen.html"; break;
-                case 4 : location.href = "./sub_open.html"; break;
-            }
-        });
-    }); //////////////////// forEach /////////////////////
+    }
 } /////////////////////////// siteMapTopLinkFn 함수 끝 //////////////////////////////
 
 

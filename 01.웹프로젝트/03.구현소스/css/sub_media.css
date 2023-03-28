@@ -6,11 +6,8 @@
 @media screen and (max-width: 1200px) {
     /* 프로그램 - 특별 메뉴로의 초대 페이지 */
     .categoryTxtBx .stit {
-        font-size: 5vh;
+        /* font-size: 5vh; */
         padding: 10vh 5vh 15vh;
-    }
-    .program-list3>li>img {
-        width: auto;
     }
     .program-list3 .inf>strong {
         font-size: 3vh;
@@ -56,7 +53,7 @@
 
     /* 프로그램 - 특별 메뉴로의 초대 페이지 */
     .sectionContBx {
-        padding: 10vh 5vh;
+        /* padding: 10vh 5vh; */
     }
     .categoryTit p:first-child {
         padding: 0;
@@ -104,9 +101,5 @@
         padding: 0;
     }
 
-    /* 프로그램 - 특별 메뉴로의 초대 페이지 */
-    .program-list3>li>img {
-        width: 100%;
-    }
 }
 /* 550px 사이즈 이하 미디어쿼리 끝 */

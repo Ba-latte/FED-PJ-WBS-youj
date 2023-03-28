@@ -15,8 +15,111 @@ font-family: 'Noto Sans KR', sans-serif;
 */
 
 /* 외부 CSS 합치기 */
+@import url(./sub_tasteOfSeoulAward.css);
+@import url(./sub_seoulRestaurantWeek.css);
+@import url(./sub_seoulMarketDining.css);
 @import url(./sub_seoulFoodCinema.css);
 @import url(./sub_open.css);
+
+
+/* 프로그램 소개 섹션 - 상단의 header 태그 */
+.mainProgramInfo{
+    padding-top: 80px;
+}
+/* 프로그램 소개 섹션 - 상단의 lnb 부분 */
+.programLnb{
+    position: relative;
+    /* 부모자격 - 가상요소 */
+}
+.programPageLnb::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    background-color: #ddd;
+    height: 1px;
+    width: 100%;
+}
+/* 페이지 내부 내비게이션 */
+.programPageLnb ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1vw;
+    /* background-color: rgb(219, 219, 219); */
+    /* height: 5vh; */
+    padding: 1vh;
+}
+/* 페이지 내부 내비게이션의 a요소 */
+.programPageLnb>ul a{
+    font-size: 1.7vh;
+    font-weight: bold;
+}
+/* a요소에 마우스오버시 글자 색상 변경 */
+.programPageLnb>ul a:hover{
+    color: #b5416e;
+}
+
+/* 타이틀, 간략한 소개 문구 */
+/* 첫번째 단락 - 간단 소개 문구 */
+.categoryTit p:first-child{
+    font-size: max(2.5vw, 19px);
+    text-align: center;
+    color: #b5416e;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+/* 타이틀 */
+.categoryTit h6{
+    font-size: max(3.7vw, 28px);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #333;
+}
+/* 타이틀 다음 단락 공통 세팅 */
+.categoryTit h6+p{
+    padding: 2vh 2vh 5vh;
+    text-align: center;
+    font-size: max(1.5vw, 14px);
+    color: #555;
+}
+/* 요약 겉박스 */
+.categorySummary{
+    width: 45vw;
+    /* height: 5vh; */
+    margin: 0vh auto 5vh;
+    padding: 3vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+    line-height: 1.7;
+}
+/* 날짜와장소 */
+.dateAndLocation{
+    display: inline-block;
+    color: #b5416e;
+    letter-spacing: 1px;
+    font-size: 3vh;
+    padding-bottom: 1vh;
+}
+/* 대상 */
+.categorySummary li>em{
+    border-radius: 11px;
+    background-color: #b5416e;
+    padding: 0 10px;
+
+    font-style: normal;
+    font-size: 15px;
+    color: #fff;
+}
+/* 대상 li */
+.categorySummary ul li{
+    font-size: max(1vw, 15px);
+    color: #555;
+}
+
+
 
 
 
@@ -40,3 +143,25 @@ font-family: 'Noto Sans KR', sans-serif;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+
+
+
+/******************************* 미디어쿼리 *******************************/
+/* 500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+    /* 서브 페이지 내부 프로그램 링크 lnb */
+    .programPageLnb>ul{
+        flex-direction: column;
+        gap: 2vw;
+    }
+    /* 서브 페이지 - 섹션 컨텐츠 박스 패딩 세팅 */
+    .sectionContBx{
+        padding: 10vh 5vw;
+    }
+    /* 서브 페이지 - 요약 박스(그림자 세팅) */
+    .categorySummary{
+        width: 50vw;
+    }
+    
+} /* 500px 사이즈 이하 미디어쿼리 끝 */
