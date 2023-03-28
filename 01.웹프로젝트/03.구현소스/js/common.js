@@ -30,9 +30,8 @@ const chgMob = () => {
         document.querySelectorAll(".smenu").forEach((ele) => (ele.style = ""));
     }
 
-    
     topMenuClickFn();
-    // console.log("in모바일:", mob);
+    console.log("in모바일:", mob);
 
 
 }; ////// chgMob //////////
