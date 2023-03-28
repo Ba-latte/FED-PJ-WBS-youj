@@ -19,6 +19,9 @@ function loadingLinkSysFn() {
     // 상단 로고 링크
     topLogoLinkFn();
 
+    // 사이트맵 상위 메뉴 관련 링크
+    siteMapTopLinkFn();
+
     // 사이트맵 하위 메뉴 관련 링크
     siteMapLinkFn();
 
@@ -48,6 +51,35 @@ function topLogoLinkFn() {
     });
 } /////////////////////// topLogoLinkFn 함수 끝 ////////////////////////////
 
+
+////////////////////////// 사이트맵 섹션 상위메뉴 링크 //////////////////////////
+/*********************************************************************
+    함수명 : siteMapTopLinkFn
+    기능 : 사이트맵 섹션의 상위메뉴 클릭시 링크 이동하기
+*********************************************************************/
+function siteMapTopLinkFn(){
+    const siteMapTopMenu = document.querySelectorAll(".siteMapGnbBx>ul>li>a");
+    // console.log(siteMapTopMenu);
+    
+    siteMapTopMenu.forEach((ele, idx)=>{
+        // console.log(idx);
+        ele.addEventListener("click", ()=>{
+            console.log(idx);
+
+            switch(idx){
+                case 0 : location.href = "./sub_eventInfo.html"; break;
+                case 1 : location.href = "./sub_open.html"; break;
+                case 2 : location.href = "./sub_open.html"; break;
+                case 3 : location.href = "./sub_programOpen.html"; break;
+                case 4 : location.href = "./sub_open.html"; break;
+            }
+        });
+    }); //////////////////// forEach /////////////////////
+} /////////////////////////// siteMapTopLinkFn 함수 끝 //////////////////////////////
+
+
+
+
 ////////////////////////// 메인페이지 프로그램소개 섹션 링크 //////////////////////////
 /*********************************************************************
     함수명 : programIntroLinkFn
@@ -73,13 +105,13 @@ function prgLinkFn() {
                     location.href = "./sub_seoulMarché.html";
                     break;
                 case 4:
-                    location.href = "./sub_tasteOfSeoulAward.html";
+                    location.href = "./sub_open.html";
                     break;
                 case 5:
-                    location.href = "./sub_tasteOfSeoulAward.html";
+                    location.href = "./sub_open.html";
                     break;
                 case 6:
-                    location.href = "./sub_tasteOfSeoulAward.html";
+                    location.href = "./sub_open.html";
                     break;
             }
         });
@@ -122,6 +154,15 @@ function siteMapLinkFn() {
                     break;
                 case "도시와 농부의 맛남":
                     location.href = "./sub_seoulMarché.html";
+                    break;
+                case "미식과 영화의 맛남":
+                    location.href = "./sub_open.html";
+                    break;
+                case "전통주와의 맛남":
+                    location.href = "./sub_open.html";
+                    break;
+                case "해외 셰프와 서울 셰프의 맛남":
+                    location.href = "./sub_open.html";
                     break;
 
                 default:
@@ -187,13 +228,13 @@ function programIntroLinkFn() {
                     location.href = "./sub_seoulMarché.html";
                     break;
                 case 4:
-                    location.href = "./sub_tasteOfSeoulAward.html";
+                    location.href = "./sub_open.html";
                     break;
                 case 5:
-                    location.href = "./sub_tasteOfSeoulAward.html";
+                    location.href = "./sub_open.html";
                     break;
                 case 6:
-                    location.href = "./sub_tasteOfSeoulAward.html";
+                    location.href = "./sub_open.html";
                     break;
             }
         });

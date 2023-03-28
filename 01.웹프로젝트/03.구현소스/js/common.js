@@ -6,6 +6,7 @@
 // 모바일 상태값
 let mob = 0; // 1모바일
 
+// 최초 상위메뉴의 심볼 담아두기
 
 /////////////////////////////////////// 로딩 구역 //////////////////////////////////////
 window.addEventListener("DOMContentLoaded", commonLinkFn);
@@ -19,6 +20,7 @@ function commonLinkFn(){
 
 /*********************************************************
     [ 모바일 관련 함수 ]
+    -0:DT / 1:모바일
 *********************************************************/
 const chgMob = () => {
     if (window.innerWidth < 1100) mob = 1;
@@ -31,6 +33,8 @@ const chgMob = () => {
     
     topMenuClickFn();
     // console.log("in모바일:", mob);
+
+
 }; ////// chgMob //////////
 
 // 최초 호출하기
@@ -61,7 +65,7 @@ window.addEventListener("resize", chgMob);
     // 적용 대상 - .siteMap
     const siteMap = document.querySelector(".siteMap");
     // console.log(hambtn);
-    const test1 = siteMap.querySelectorAll(".smenu a");
+    const subMenuTit = siteMap.querySelectorAll(".smenu a");
     // ⭐이벤트 세팅하기
     hambtn.onclick = () => {
         siteMap.classList.add("on");
@@ -73,12 +77,9 @@ window.addEventListener("resize", chgMob);
         // if(!mob){comingUpFn();};
         
         // 사이트맵 상위메뉴 글자 등장 액션 주기(DT든 모바일이든 상관 없음)
-        rexidFn(siteMapGnbBx);
-        
-        
-        rexidFn(test1);
-        
-        rexidFn(document.querySelectorAll(".siteMap>div>h2"));
+        rexidFn(document.querySelectorAll(".siteMap>div>h2"), 400);
+        rexidFn(siteMapGnbBx, 500);
+        rexidFn(subMenuTit, 1000);
         
     }; ////////////// onclick 이벤트 끝 /////////////////
 
@@ -99,6 +100,8 @@ window.addEventListener("resize", chgMob);
 
         /* 스크롤바, 스크롤기능 다시 추가하기 */
         document.body.classList.remove("scrollOff");
+
+
     }; //////////// onclick 이벤트 끝 /////////////////
 
 
@@ -106,35 +109,40 @@ window.addEventListener("resize", chgMob);
     // 기능 : 사이트맵 화면이 나타나고 나서 메뉴가 아래쪽에서 등장하기
     const siteMapGnbBx = document.querySelectorAll(".siteMapGnbBx>ul>li>a");
 
-    function rexidFn(obj){
+    function rexidFn(obj, sec){
         let hcode = "";
-
+        
         obj.forEach((ele)=>{
-            let tempHTML = ele.innerHTML;
-
+            let tempHTML = "";
+            tempHTML = ele.innerHTML;
+            
             hcode = `<span class="rexid">${tempHTML}</span>`;
             ele.innerHTML = hcode;
-            });
-            setTimeout(()=>{
-                const upAni = document.querySelectorAll(".rexid");
-                for(let x of upAni){ x.classList.add("up")};
-            }, 700);
+        });
 
-
-            
+        // if(!mob){
+        //     obj.forEach(ele=>{
+        //         let test2 = ele.querySelector(".rexid");
+        //         console.log(test2);
+        //         let tempTxt = test2.innerText;
+        //         let hasClass = test2.classList.contains("rexid");
+        //         console.log(tempTxt);
+        //         if(hasClass){
+        //             test2.innerHTML = tempTxt;
+        //         }
+        //     });
+        // }
         
-    } //////////////////////// rexidFn 함수 끝 /////////////////////////
-
-
-    function comingUpFn(){
-        const sateMapTit = document.querySelector(".siteMap h2>span");
-        // sateMapTit.parentElement.style.overflow = "hidden";
-        sateMapTit.classList.add("rexid");
-
+        
         setTimeout(()=>{
-            sateMapTit.classList.add("up");
-        }, 500)
-    } ///////////////////////////// comingUpFn //////////////////////////
+            const upAni = document.querySelectorAll(".rexid");
+            for(let x of upAni){
+                x.classList.add("up")
+            }; /////////// for of문 //////////////
+        }, sec);
+
+
+    } //////////////////////// rexidFn 함수 끝 /////////////////////////
     
 
     

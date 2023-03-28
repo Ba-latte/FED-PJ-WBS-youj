@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 서울미식주간 서브페이지 CSS - sub_common.css */
+/* 서울미식주간 서브페이지 공통 CSS - sub_common.css */
 
 /* 웹폰트 CDN */
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Noto+Sans+KR&family=Rajdhani&display=swap');
@@ -14,7 +14,9 @@ font-family: 'Rajdhani', sans-serif;
 font-family: 'Noto Sans KR', sans-serif;
 */
 
+/* 외부 CSS 합치기 */
 @import url(./sub_seoulFoodCinema.css);
+@import url(./sub_open.css);
 
 
 

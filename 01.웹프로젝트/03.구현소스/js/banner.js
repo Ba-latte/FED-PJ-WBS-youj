@@ -60,7 +60,7 @@ function setBan(obj){ // obj는 최상위 요소 객체! / seq는 요소 순번!
     let slist = obj.querySelectorAll(".slide>li");
 
     // 🌈드래그 함수 호출🌈
-    dragFn(slide);
+    // dragFn(slide);
 
     // [ 초기화1 - 순번붙이기 ] ///////////////////
     // 잘라내기로 li순번이 뒤섞이므로 블릿변경 매칭을 위한
