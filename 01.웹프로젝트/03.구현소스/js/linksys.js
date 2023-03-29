@@ -31,6 +31,9 @@ function loadingLinkSysFn() {
     // 프로그램소개 페이지의 lnb 링크
     programIntroLinkFn();
 
+    // 6페이지 더보기 버튼 링크
+    moreLinkFn();
+
     // 하단영역 링크
     footerLinkFn();
 
@@ -242,6 +245,34 @@ function programIntroLinkFn() {
         });
     });
 } ////////////////////////// programIntroLinkFn 함수 /////////////////////////////
+
+
+
+////////////////////////// 6페이지 공지사항과 보도자료 링크 //////////////////////////
+/*********************************************************************
+    함수명 : moreLinkFn
+    기능 : 공지사항과 보도자료 옆 +버튼을 클릭하면 링크 이동하기
+*********************************************************************/
+function moreLinkFn(){
+    const moreBtn = document.querySelectorAll(".moreBtn");
+    // console.log(moreBtn);
+    moreBtn.forEach((ele, idx)=>{
+        ele.addEventListener("click", ()=>{
+            // console.log(idx);
+            if(idx){
+                location.href = "./sub_open.html";
+            }
+            else{
+                location.href = "./sub_open.html";
+            }
+        }) ////////////// click 이벤트 ////////////////
+    }); ///////////// forEach //////////////
+} ////////////////////////////// moreLinkFn 함수 끝 ///////////////////////////////////
+
+
+
+
+
 
 ////////////////////////// 하단 링크 //////////////////////////
 /*********************************************************************

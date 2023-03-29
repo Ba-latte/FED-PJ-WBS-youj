@@ -186,7 +186,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const CnBIntroInRside = document.querySelector(".CnBIntro .rside");
     // console.log(CnBIntroImgs);
 
-    // 화면 높이값의 10분의 9 지점 구하기
+    // 화면 높이값의 10분의 9 지점 구하기 (메뉴있는 윗부분이 0 ~ 윈도우있는 아래쪽이 nnn값)
     const CnBIntro_hv = (window.innerHeight / 10) * 9;
     // console.log("화면 높이값의 10분의 9 지점은?: ", CnBIntro_hv);
 
