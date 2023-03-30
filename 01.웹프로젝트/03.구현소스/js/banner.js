@@ -10,7 +10,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
     setBan(banbx);
 
     // 불릿 클릭시 배너 바뀌는 함수 호출
-    indicClickFn();
+    // indicClickFn(banbx);
+    setIndicLinkFn(banbx);
 
 }); ///////////////// 로드 구역 ///////////////////////
 
@@ -261,18 +262,52 @@ function setBan(obj){ // obj는 최상위 요소 객체! / seq는 요소 순번!
         autoT = setTimeout(autoSlide, 5000);
     } ///////// clearAuto 함수 /////////////
 
-    const programLnbList = document.querySelectorAll(".programLnb ul li");
-    programLnbList.forEach((ele, idx)=>{
-        // console.log(ele);
-        ele.onclick=()=>{
-            // console.log(idx);
-            // data-seq와 연결하면 되지 않을까?
-        };
-    });
-
-
-
+    
 } //////////////// setBan 함수 끝 ///////////////
+
+// 🌈🌈🌈🌈🌈data-seq와 indic의 idx와 동일하니까 그걸로 연결시키면 되지 않을까?🌈🌈🌈🌈🌈🌈🌈
+function setIndicLinkFn(obj){
+    const slide = obj.querySelector(".slide");
+    const indic = document.querySelectorAll(".programLnb .indic a");
+    let iseq = 0;
+    // console.log(indic);
+
+    // console.log(clist);
+    
+    indic.forEach((ele, idx)=>{
+        
+        ele.addEventListener("click", ()=>{
+            let clist = slide.querySelectorAll("li");
+
+            // 1.클릭된 순번
+            let click_seq = idx;
+            // 2.현재 순번 - iseq
+            // 3.순번차이 : 클릭된 순번 - 현재 순번
+            let diff = click_seq - iseq;
+            // 절대값으로 만들기
+            let pure = Math.abs(diff);
+
+            console.log("클릭된순번: ", click_seq);
+            console.log("현재순번", iseq);
+            console.log("순번차: ", diff);
+            console.log("순수한 차이값: ", pure);
+
+
+            slide.appendChild(clist[0]);
+            slide.style.left = "-110%";
+            // slide.style.left = (-110 * diff)+"%";
+            slide.style.transition = "none";
+            
+            setTimeout(() => {
+                slide.style.left = "-220%";
+                // slide.style.left = (-220 * diff)+"%";
+                slide.style.transition = "left .8s ease-in-out";
+            }, 1); //// 타임아웃 //////
+
+        }); ////////////////// click ///////////////////////
+
+    }); ////////////////// forEach ///////////////////////
+} /////////////////////////////// setIndicLinkFn 함수 끝 ////////////////////////////////
 
 
 /***************************************************
@@ -298,20 +333,95 @@ function setBan(obj){ // obj는 최상위 요소 객체! / seq는 요소 순번!
 // 순번을 담을 변수 만들기 : 처음엔 무조건 맨 처음슬라이드가 보이니까, 맨 처음 슬라이드의 인덱스번호는 0임
 // 클래스리스트.컨테인스"on"으로 무조건 찾을 필요 없음1 요기서는 맨처음에 온이 들어간 li가 뭔지 아니까
 // =>> 함수 바깥에 변수를 만든 이유 : 공용으로... 함수내에서 바뀌는 그런 내용들이 바로바로 업데이트돼서 적용되는거..확인용..??
-let iseq = 0;
 
-function indicClickFn() {
+
+function indicClickFn(obj) {
     const indic = document.querySelectorAll(".programLnb .indic a");
-    console.log(indic);
+    const slide = obj.querySelector(".slide");
+    // console.log(indic);
 
-    indic.forEach((ele, inx)=>{
+    indic.forEach((ele, idx)=>{
         ele.addEventListener("click", ()=>{
             // 1.클릭된 순번
             let click_seq = idx;
             // 2.현재 순번 - iseq
+            // 3.순번차이 : 클릭된 순번 - 현재 순번
+            let diff = click_seq - iseq;
+            // 절대값으로 만들기
+            let pure = Math.abs(diff);
+
+            console.log("클릭된순번: ", click_seq);
+            console.log("현재순번", iseq);
+            console.log("순번차: ", diff);
+            console.log("순수한 차이값: ", pure);
+
+            // 4.방향별 슬라이드 이동하기
+            // 4-1.양수 = 오른쪽 이동 ///////////////////
+            if(diff > 0){
+                // (1) 오른쪽 버튼 클릭시 다음 슬라이드가 나타나도록 슬라이드 박스의 left값을 (-100% * 절대값)으로 변경하기
+                slide.style.left = -100 * pure + "%";
+                slide.style.transition = "left .8s ease-in-out";
+
+                // (2) 슬라이드 이동 후 (=0.8초 후) 작동할 타임아웃
+                setTimeout(() => {
+                    // for문으로 자를 수(절대값)만큼 순서대로 처리하기
+                    // 계산되는 차이수 : 1씩 감소하여 left값에 계산 시키면 됨
+                    let temp = pure;
+
+                    for(let i = 0; i < pure; i++){
+                        temp--;
+
+                        // (2-1) 바깥에 나가있는 첫번째 슬라이드 li를 잘라서 맨 뒤로 보내기
+                        slide.appendChild(slide.querySelectorAll("li")[0]);
+                        // (2-2) 동시에 left값을 0으로 변경해서 잘라낸거 끝에다가 붙이기
+                        slide.style.left = -100 * temp + "%";
+                        // (2-3) 트랜지션 없애기
+                        slide.style.transition = "none";
+                    } //////////////////// for문 //////////////////////
+                }, 800); //////////////// setTimeout ///////////////////
+            } /////////////////////// if : 오른쪽 이동하는 경우 ///////////////////////////
+            
+            // 4-2. 음수면 왼쪽으로 이동하기
+            else if (diff < 0) {
+                // (1) 왼쪽버튼 클릭시 이전 슬라이드가 나타나도록 하기 위해 우선 맨뒤의 li를 맨 앞으로 이동시키기
+                
+                for(let i = 0; i < pure; i++){
+                    // 이동할 리스트 변수
+                    let clist = slide.querySelectorAll("li");
+
+                    // (2) 동시에 left값을 -100%로 변경하기 (i값이 0부터 반복횟수만큼 증가하므로 이걸 이용함)
+                    slide.style.left = ((i+1) * -100) + "%";
+
+                    slide.insertBefore(clist[clist.length - 1], clist[0]);
+                } ///////////////// for문 ///////////////////
+
+                slide.style.transition = "none";
+
+                // (3) 그 후 left값을 0으로 애니메이션하여 슬라이드가 왼쪽에서 들어오게 만듦
+                // ->> 시간차 주고 분리하기
+                setTimeout(() => {
+                    slide.style.left = "0";
+                    slide.style.transition = "left .8s ease-in-out";
+                }, 1); ///////////////// setTimeout //////////////////////////////
+            } ///////////////////// else if : 왼쪽으로 이동하는 경우 ////////////////////////////
+            // 4-3. 0이면 나가게 만들기
+            else{return;}
+
+            // 5. 현재 변경 불릿 초기화하기
+            indic[iseq].classList.remove("on");
+
+            // 6. 클릭된 순번으로 현재 순번을 변경하기
+            iseq = click_seq;
+
+            // 7. 클릭된 불릿에 on넣기
+            indic[iseq].classList.add("on");
+
+
         }); //////////////////// click ///////////////////////
     }); //////////////// forEach ////////////////////
 } /////////////////////////////// indicClickFn 함수 끝 ///////////////////////////////
+
+
 
 
 
