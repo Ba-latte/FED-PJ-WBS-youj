@@ -216,7 +216,7 @@
 /* 사이트맵 상위 메뉴 등장 액션 클래스 */
 .rexid{
     display: inline-block;
-    transform: translateY(100%);
+    transform: translateY(130%);
 }
 /* 사이트맵 섹션이 화면에 다 등정(.5s)하고 난 뒤에 상위메뉴 글자 등장하기 애니메이션 */
 .rexid.up{
