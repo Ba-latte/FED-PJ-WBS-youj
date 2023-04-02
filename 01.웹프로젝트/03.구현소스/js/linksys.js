@@ -110,13 +110,13 @@ function prgLinkFn() {
                     location.href = "./sub_seoulMarché.html";
                     break;
                 case 4:
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
                 case 5:
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
                 case 6:
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
             }
         });
@@ -161,13 +161,13 @@ function siteMapLinkFn() {
                     location.href = "./sub_seoulMarché.html";
                     break;
                 case "미식과 영화의 맛남":
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
                 case "전통주와의 맛남":
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
                 case "해외 셰프와 서울 셰프의 맛남":
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
 
                 default:
@@ -237,13 +237,13 @@ function programIntroLinkFn() {
                     location.href = "./sub_seoulMarché.html";
                     break;
                 case 4:
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
                 case 5:
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
                 case 6:
-                    location.href = "./sub_open.html";
+                    location.href = "./sub_programOpen.html";
                     break;
             }
         });
