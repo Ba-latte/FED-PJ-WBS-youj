@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log("메인js - 로딩 완료");
 
     // 🌈🌈새로고침시 맨위로 위치설정! -> 가로 스크롤이동 섹션때문에 자꾸 width값이 커지는 문제 해결 위함🌈🌈
-    setTimeout(() => window.scrollTo(0, 0), 100);
+    // setTimeout(() => window.scrollTo(0, 0), 100);
 
 
     /*********************** 주요프로그램 섹션의 스크롤 액션 ***********************/
@@ -92,6 +92,24 @@ window.addEventListener("DOMContentLoaded", () => {
     // zigzagFn();
     // window.addEventListener("resize", zigzagFn);
 
+
+    /*********************** 2페이지 주요프로그램 소개 섹션의 배경 원 패럴렉스 함수 ***********************/
+    // 기능 : 2페이지의 배경 원들이 시간차를 두고 스크롤업된다
+    // const circleLists = document.querySelectorAll(".program .circle ");
+    // console.log(circleLists);
+    const handleRellax = ()=>{
+        // console.log("패럴렉스");
+        const rellax1 = new Rellax(".program .cr5", {speed: -2, percentage:0.5});
+        const rellax2 = new Rellax(".program .cr6", {speed: 1, percentage:0.2});
+        const rellax3 = new Rellax(".program .cr7", {speed: 3, percentage:0.8});
+        const rellax4 = new Rellax(".program .cr8", {speed: -2, percentage:1});
+        const rellax5 = new Rellax(".program .cr9", {speed: -3, percentage:0.3});
+        const rellax6 = new Rellax(".program .cr10", {speed: 2, percentage:0.7});
+        const rellax7 = new Rellax(".program .cr11", {speed: -5});
+    }; ///////////////////// handleRellax 할당 함수 끝 ///////////////////////////
+    
+    // 최초 호출
+    handleRellax();
 
 
     /*********************** 인디케이터 스크롤 액션 ***********************/
