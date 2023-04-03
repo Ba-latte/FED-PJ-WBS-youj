@@ -25,7 +25,7 @@ function loadingLinkSysFn() {
     // 사이트맵 하위 메뉴 관련 링크
     siteMapLinkFn();
 
-    // 지도 섹션 링크
+    // 미식 지도 섹션 링크
     mapSectionLinkFn();
 
     // 프로그램소개 페이지의 lnb 링크
@@ -189,7 +189,6 @@ function mapSectionLinkFn() {
     const mapIframe = document.querySelectorAll(".mapScreen>iframe");
     // console.log("지도 버튼: ", mapSectionBtn);
     // console.log(mapIframe);
-
     mapSectionBtn.forEach((ele) => {
         // 각 클래스를 가지고 있으면 링크 이동하도록 만들기
         ele.onclick = (e) => {

@@ -45,6 +45,39 @@ chgMob();
 window.addEventListener("resize", chgMob);
 
 
+///////////////////////////////////////// 가로 700px이하일 때 지도 새창띄우기 //////////////////////////////////////////////////
+const mobMapLinkFn = ()=>{
+    const t100Btns = document.querySelectorAll(".tasteofseoul100Btn li");
+    const b50Btns = document.querySelectorAll(".vegetarian50Btn ol li");
+    if(window.innerWidth <= 700){
+        console.log("700이하! 지도 새창으로 띄우기!");
+        t100Btns.forEach((ele, idx)=>{
+            ele.addEventListener("click", ()=>{
+                switch(idx){
+                    case 0: window.open("https://www.google.com/maps/d/embed?mid=1xzqc2HSERGDfc_wBaSjM-nw2fhxQvQU&ehbc=2E312F&ll=37.53964956412276%2C127.00366896964975&z=12"); break;
+                    case 1: window.open("https://m.place.naver.com/my/place/detailList/5547ebf11e0342f1af46e528d06490b3?external=true"); break;
+                }
+            })
+        });
+        b50Btns.forEach((ele, idx)=>{
+            ele.addEventListener("click", ()=>{
+                switch(idx){
+                    case 0: window.open("https://www.google.com/maps/d/embed?mid=1mIn4mr_coXw3gmCgtW0YFnR_cK6NvQ4&ehbc=2E312F"); break;
+                    case 1: window.open("https://m.place.naver.com/my/place/detailList/e262371abc914bb389010164ac6b3934?external=true"); break;
+                }
+            })
+        });
+    } ////////////////////////////////// if : 가로 700px이하 /////////////////////////////////////////////////
+};
+
+// 최초 호출하기
+// mobMapLinkFn();
+// 사이즈 변경 이벤트 실행시 새창 띄우기 함수 실행
+// window.addEventListener("resize", mobMapLinkFn);
+
+
+
+
     /************************* a요소 클릭시 화면 맨 위로 튀는 기본값 적용 해제하기 *************************/
     // 대상선정 : 모든 a요소
     const atag = document.querySelectorAll("a");

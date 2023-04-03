@@ -390,7 +390,11 @@
         margin-bottom: 15vh;
     }
     /* 지도 겉박스 */
-    .mapScreen{
+    /* .mapScreen{
+        display: none;
+    } */
+    /* slidePg의 맵 아이콘 지우기 */
+    .slidePg .mapIcon{
         display: none;
     }
     .hScrollTgBx > ul > li > ol > li a{
@@ -541,7 +545,7 @@
         padding: 2vh 3vw;
     }
     .top .topArea .etc ul {
-        gap: 2w;
+        gap: 2vw;
     }
     /* top버튼 - 사라지게 만들기 */
     .pageTopBtn{
@@ -556,7 +560,8 @@
     }
     /* 부제목 */
     .circleMainTxt p:nth-of-type(2) {
-        font-size: 1.6vh;
+        font-size: 20px;
+        padding: 25px;
     }
     /* 2,3번째 슬라이드 공통 세팅 */
     .hScrollTgBx ul > li + li {
@@ -727,7 +732,15 @@
 @media screen and (max-width: 380px) {
     /* 3페이지 지도 섹션 */
     .circleMainTxt p:nth-of-type(2) {
-        font-size: 12px;
+        font-size: 20px;
+    }
+    /* 3페이지 지도 섹션의 지도 버튼들 공통 세팅 */
+    .hScrollTgBx ul li ol{
+        gap: 0;
+    }
+    /* 3페이지 지도 섹션의 3번째 슬라이드 (채식) */
+    .vegetarian50Btn{
+        width: 100vw;
     }
 }
 /* 380px 사이즈 이하 미디어쿼리 끝 */

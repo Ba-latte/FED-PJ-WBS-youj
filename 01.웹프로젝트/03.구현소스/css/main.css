@@ -438,6 +438,7 @@
 }
 /* 첫번째 슬라이드 두번째 단락 */
 .circleMainTxt p:nth-of-type(2) {
+    word-break: keep-all;
     font-size: 2vw;
     color: #555;
 }
