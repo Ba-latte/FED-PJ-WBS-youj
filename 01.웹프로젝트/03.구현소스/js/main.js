@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const rellax2 = new Rellax(".program .cr6", {speed: 1, percentage:0.2});
         const rellax3 = new Rellax(".program .cr7", {speed: 3, percentage:0.8});
         const rellax4 = new Rellax(".program .cr8", {speed: -2, percentage:1});
-        const rellax5 = new Rellax(".program .cr9", {speed: -3, percentage:0.3});
+        const rellax5 = new Rellax(".program .cr9", {speed: -1.5, percentage:0.3});
         const rellax6 = new Rellax(".program .cr10", {speed: 2, percentage:0.7});
         const rellax7 = new Rellax(".program .cr11", {speed: -5});
     }; ///////////////////// handleRellax 할당 함수 끝 ///////////////////////////
