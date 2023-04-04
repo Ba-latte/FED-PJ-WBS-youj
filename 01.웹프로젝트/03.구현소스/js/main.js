@@ -105,7 +105,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const rellax4 = new Rellax(".program .cr8", {speed: -2, percentage:1});
         const rellax5 = new Rellax(".program .cr9", {speed: -1.5, percentage:0.3});
         const rellax6 = new Rellax(".program .cr10", {speed: 2, percentage:0.7});
-        const rellax7 = new Rellax(".program .cr11", {speed: -5});
+        const rellax7 = new Rellax(".program .cr11", {speed: -3, percentage:0.9});
     }; ///////////////////// handleRellax 할당 함수 끝 ///////////////////////////
     
     // 최초 호출

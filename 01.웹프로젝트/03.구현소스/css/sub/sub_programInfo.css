@@ -22,6 +22,7 @@ header.programInfo{
     color: #2e2e2e;
     font-size: 2vh;
     text-align: center;
+    word-break: keep-all;
 }
 .programInfo .sectionContBx p:first-child{
     font-weight: bold;
@@ -175,3 +176,50 @@ header.programInfo{
     vertical-align: -1.4vh;
 }
 
+
+
+/* 1700px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1700px) {
+    .banbx{
+        margin: 0 4vw 10vw;
+    }
+}
+/* 1700px 사이즈 이하 미디어쿼리 끝 */
+
+/* 1600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1600px) {
+    .banbx{
+        margin: 0 7vw 10vw;
+    }
+}
+/* 1600px 사이즈 이하 미디어쿼리 끝 */
+
+/* 1550px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1550px) {
+    .abtn{
+        top: 100%;
+    }
+    .ab1{
+        left: 18%;
+    }
+    .ab2{
+        right: 18%;
+    }
+}
+/* 1550px 사이즈 이하 미디어쿼리 끝 */
+
+/* 900px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 900px) {
+    .abtn{
+        top: 90%;
+    }
+}
+/* 900px 사이즈 이하 미디어쿼리 끝 */
+
+/* 400px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 400px) {
+    .abtn{
+        top: 80%;
+    }
+}
+/* 400px 사이즈 이하 미디어쿼리 끝 */
