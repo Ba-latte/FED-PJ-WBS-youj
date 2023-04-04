@@ -23,6 +23,8 @@ font-family: 'Noto Sans KR', sans-serif;
 @import url(./sub_seoulMarché.css);
 @import url(./sub_seoulFoodCinema.css);
 @import url(./sub_open.css);
+@import url(./sub_PrivacyPolicy.css);
+@import url(./sub_RejectionEmail.css);
 
 
 /* 섹션 컨텐츠 겉박스 */
