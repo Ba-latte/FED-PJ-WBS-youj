@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* 인트로 사이트 메인 CSS - main.css */
+
+div#p1{
+    /* background-color: #ff6347; */
+    background-color: antiquewhite;
+    /* background-color: cornsilk; */
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    /* outline: 1px solid red; */
+}
+div#p2{
+    background-color: #fdfcfa;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+.svg1{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.svg2{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
