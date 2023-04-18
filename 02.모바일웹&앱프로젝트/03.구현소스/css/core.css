@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* 불가리 PJ 공통핵심 CSS - core.css */
+/* 웹폰트, 공용클래스 */
+
+/*********** 1. 웹폰트 ***********/
+
+
+/* 
+    [ 공통 클래스 이름정의 ]
+    1. ibx - inside box 속박스
+*/
+
+/* 공사중 표시 */
+body * {
+    outline: 1px dashed gray;
+}
+
+
+/* 구글 심볼 기본 세팅 */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' -25,
+    'opsz' 40
+}
+
+
+/************* 2. 공통 class *************/
+
+/* 2-1. 중앙 속박스 */
+.ibx {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+
+
+/* 글자 숨김 클래스(IR배경이미지 설명 등  숨기기) */
+.ir {
+
+}
