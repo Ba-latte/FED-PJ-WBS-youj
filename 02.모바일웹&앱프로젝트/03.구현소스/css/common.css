@@ -3,12 +3,20 @@
 /* 불가리 PJ 공통 모듈 CSS - common.css */
 
 
+/* 공통 변수 선언 */
+:root {
+	--black: #1f1f1f;
+    --font_beige: #f0ede8;
+    --bg_beige: #f1ede8;
+}
+
+
 /******************************************* 상단 영역 *******************************************/
 
 
 /* 로고 svg 세팅 */
 .svgBx{
-    width: 400px;
+    width: 385px;
     margin: 0 auto;
 }
 
