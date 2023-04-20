@@ -14,6 +14,8 @@
 /******************************************* 상단 영역 *******************************************/
 /* 상단 영역 공통 세팅 */
 #top{
+    position: relative;
+    /* 부모자격 - lnb박스 */
     box-shadow: inset 0px -0.8px 0px 0px silver;
 }
 /* 상단 탑메뉴 */
@@ -59,14 +61,12 @@
 
 /* GNB메뉴 */
 .dt .gnb>.list{
-    position: relative;
-    /* 부모자격 - lnb박스 */
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 /* GNB메뉴 하위 li들 공통 세팅 */
-.dt .gnb li{
+.dt .gnb>.list>li{
     padding-bottom: 10px;
     border-bottom: 2px solid transparent;
 }
@@ -95,16 +95,110 @@
 /* LNB메뉴 박스 세팅 */
 .dt .lnb{
     position: absolute;
-    /* 부모는? GNB메뉴의 .list */
+    /* 부모는? GNB메뉴의 #top */
+    /* z-index: -1; */
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 500px;
     padding-top: 20px;
-    background-color: var(--bg_beige);
+    /* background-color: var(--bg_beige); */
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.041);
 }
 /* LNB메뉴 하위 .list */
 .dt .lnb>.list{
     display: flex;
-    /* width: 1400px; */
+    justify-content: center;
+    gap: 15px;
+    min-width: 1400px;
+}
+/* 썸네일 이미지 겉박스 */
+.dt .lnb .thumbnail_img{
+    position: relative;
+    /* 부모자격 */
+    display: flex;
+    flex-direction: column;
+}
+/* 썸네일 이미지 타이틀과 버튼 공통 속성 */
+.dt .lnb .thumbnail_img .tit,
+.dt .lnb .thumbnail_img .btn{
+    position: absolute;
+}
+/* 썸네일 이미지 타이틀 공통 속성 */
+.dt .lnb .thumbnail_img .tit{
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+    white-space: nowrap;
+}
+/* 썸네일 이미지 버튼 공통 속성 */
+.dt .lnb .thumbnail_img .btn{
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    background-color: #fff;
+
+    font-size: 12px;
+    white-space: nowrap;
+}
+/* 썸네일 이미지 타이틀 개별 속성 */
+.dt .lnb.high_jewellery .tit3{
+    color: #fff;
+}
+.dt .lnb.the_maison img{
+    width: 406px;
+    height: 460px;
+    object-fit: cover;
+}
+.dt .lnb.the_maison .th_img1{
+    object-position: 0 -150px;
+}
+
+/******************************* 주얼리, 인게이지먼트&웨딩 메뉴 *******************************/
+/* 카테고리별 리스트박스 공통 세팅 */
+.dt .list.category{
+
+}
+/* 카테고리별 리스트 버튼 공통 세팅 */
+.dt .list.category .btn{
+    display: block;
+    padding: 6px 10px;
+    border: 1px solid var(--black);
+
+    font-size: 13px;
+}
+/* 추천상품 리스트박스 공통 세팅 */
+.dt .list.recommended{
+    margin-top: 50px;
+}
+/* 추천상품 리스트의 li 하위 a요소 세팅 */
+.dt .list.recommended li img{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg_beige);
+}
+/* 추천상품 리스트의 제품 이름 */
+.dt .list.recommended .product_tit{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+/* 서브 메뉴들 일단 숨겨두기 */
+.dt .lnb.high_jewellery,
+.dt .lnb.the_maison
+{
+    display: none !important;
+}
+
+.lnb.engagement_and_wedding .category{
+    display: flex;
 }
 
 
