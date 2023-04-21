@@ -104,7 +104,7 @@
     height: 500px;
     padding-top: 20px;
     /* background-color: var(--bg_beige); */
-    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.041);
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.068);
 }
 /* LNB메뉴 하위 .list */
 .dt .lnb>.list{
@@ -192,7 +192,8 @@
 
 /* 서브 메뉴들 일단 숨겨두기 */
 .dt .lnb.high_jewellery,
-.dt .lnb.the_maison
+.dt .lnb.the_maison,
+.dt .lnb.engagement_and_wedding
 {
     display: none !important;
 }
@@ -208,10 +209,39 @@
 
 
 
-
+/* 🔥🔥dt버전 일단 숨겨두기🔥🔥 */
+header.dt{
+    display: none;
+}
 /***************************************************
-    모바일 공통 스타일 코드
+    [ 모바일 버전 ]
 ***************************************************/
+/* 모바일 상단 영역 공통 세팅 */
+.mob{
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+/* 왼쪽 메뉴 공통 세팅 */
+.mob>.lmenu>.list{
+    display: flex;
+    gap: 5px;
+    
+}
+/* 왼쪽 메뉴 검색박스 */
+.search_container{
+    display: none;
+}
+/* 오른쪽 메뉴 공통 세팅 */
+.mob>.rmenu>.list{
+    display: flex;
+    gap: 5px;
+}
 
+/* 로고 svg 세팅 */
+.mob .svgBx{
+    width: 150px;
+    margin: 15px auto;
+}
 
 
