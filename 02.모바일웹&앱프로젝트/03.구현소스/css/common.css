@@ -5,9 +5,12 @@
 
 /* 공통 변수 선언 */
 :root {
-	--black: #1f1f1f;
+	--bg_black: #1f1f1f;
     --bg_beige: #f0ede8;
     --beige: #f1ede8;
+    --black: #000;
+    --white: #fff;
+    --silver: #c0c0c0;
 }
 
 
@@ -16,7 +19,7 @@
 #top{
     position: relative;
     /* 부모자격 - lnb박스 */
-    box-shadow: inset 0px -0.8px 0px 0px silver;
+    box-shadow: inset 0px -0.8px 0px 0px var(--silver);
 }
 /* 상단 탑메뉴 */
 .dt .tmenu{
@@ -35,15 +38,7 @@
     padding-right: 10px;
     align-items: center;
 }
-/* 검색 input박스 */
-.dt .tmenu .search_input{
-    border: 0;
-    border-bottom: 1px solid var(--black);
-    margin-left: 5px;
-    padding-left: 5px;
-    /* 클릭시 발생하는 테두리 없애기 */
-    outline: none;
-}
+
 /* 상단 좌/우 메뉴의 하위 메뉴텍스트 공통 세팅 */
 .dt .tmenu .menu_txt{
     font-size: 12px;
@@ -72,7 +67,7 @@
 }
 /* GNB메뉴 하위 li에 마우스오버시 아래에 밑줄 생김 */
 .dt .gnb>.list>li:hover{
-    border-bottom-color: var(--black);
+    border-bottom-color: var(--bg_black);
 }
 /* GNB메뉴 하위 a요소들 공통 세팅 */
 .dt .gnb a{
@@ -141,14 +136,14 @@
     left: 50%;
     transform: translateX(-50%);
     padding: 12px 30px;
-    background-color: #fff;
+    background-color: var(--white);
 
     font-size: 12px;
     white-space: nowrap;
 }
 /* 썸네일 이미지 타이틀 개별 속성 */
 .dt .lnb.high_jewellery .tit3{
-    color: #fff;
+    color: var(--white);
 }
 .dt .lnb.the_maison img{
     width: 406px;
@@ -168,7 +163,7 @@
 .dt .list.category .btn{
     display: block;
     padding: 6px 10px;
-    border: 1px solid var(--black);
+    border: 1px solid var(--bg_black);
 
     font-size: 13px;
 }
@@ -190,7 +185,7 @@
     font-size: 13px;
 }
 
-/* 서브 메뉴들 일단 숨겨두기 */
+/* 🔥🔥서브 메뉴들 일단 숨겨두기🔥🔥 */
 .dt .lnb.high_jewellery,
 .dt .lnb.the_maison,
 .dt .lnb.engagement_and_wedding
@@ -217,10 +212,17 @@ header.dt{
     [ 모바일 버전 ]
 ***************************************************/
 /* 모바일 상단 영역 공통 세팅 */
-.mob{
+header.top.mob{
+    position: relative;
+    /* 부모자격 - .search_container */
     padding: 15px 10px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    
+    /* 🔥🔥일단 숨겨두기🔥🔥 */
+    display: none;
 }
 /* 왼쪽 메뉴 공통 세팅 */
 .mob>.lmenu>.list{
@@ -228,9 +230,44 @@ header.dt{
     gap: 5px;
     
 }
-/* 왼쪽 메뉴 검색박스 */
+/* 왼쪽 메뉴를 클릭시 등장하는 검색박스 */
 .search_container{
+    /* display: none; */
+    position: absolute;
+    /* 부모는? header.mob */
+    top: 0;
+    padding: 15px 10px;
+    width: 98%;
+    /* .mob의 가상요소보다 위에 위치위함 */
+    z-index: 1;
+}
+/* 왼쪽 메뉴 검색박스 하위 form요소 */
+.mob_search_form{
+    display: flex;
+    align-items: center;
+}
+/* 검색 input박스 */
+.mob .search_input{
+    /* border: 0; */
+    border-bottom: 1px solid var(--bg_black);
+    width: 100%;
+}
+/* 왼쪽 메뉴를 클릭시 등장하는 검색 박스의 배경*/
+.mob .search.wrap{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 54px;
+    /* background-color: cadetblue; */
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.068);
+
+    /* 일단 박스 숨겨두기 */
     display: none;
+}
+.mob .search.wrap.on{
+    display: block;
 }
 /* 오른쪽 메뉴 공통 세팅 */
 .mob>.rmenu>.list{
@@ -239,9 +276,134 @@ header.dt{
 }
 
 /* 로고 svg 세팅 */
-.mob .svgBx{
+.mob h1.svgBx{
     width: 150px;
-    margin: 15px auto;
+    margin: 0 auto;
+}
+
+/* GNB 메뉴 겉박스 세팅 */
+.mob.gnb_wrap{
+    background-color: var(--white);
+}
+
+/* GNB 메뉴 하위 a요소들 공통 세팅 */
+.mob>.gnb .list .lnk{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 17px;
+    font-size: 13px;
+}
+/* GNB 메뉴 속 탑 섹션 */
+.mob>.gnb>.top_section{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--bg_black);
+    padding: 15px;
+    height: 50px;
+}
+/* GNB 메뉴 속 상단의 닫기 버튼 */
+.mob>.gnb .close{
+    
+}
+/* GNB 메뉴 속 svg로고 세팅 */
+.mob>.gnb div.svgBx{
+    width: 150px;
+    margin: 0 auto;
+}
+/* GNB 메뉴의 ul, ol 리스트들 공통 세팅 */
+.mob>.gnb .l1,
+.mob>.gnb .l2{
+    /* border: 1px solid red; */
+    padding: 20px;
+}
+
+/* GNB 메뉴의 하위 li들 공통 세팅 */
+.mob>.gnb li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* GNB 메뉴 첫번째 리스트(ul) 세팅 */
+.mob>.gnb .l1{
+    /* 높이 강제 부과해서 두번째 리스트 밀어내어 윈도우 아래쪽에 붙게 만들기 */
+    height: 60vh;
+}
+/* GNB 메뉴 첫번째 리스트(ul) 하위 li 속 >/< 버튼 세팅(평소) */
+.mob>.gnb .arrow_forward{
+    display: none;
+}
+.mob>.gnb .arrow_forward.on{
+    display: block;
+}
+/* 닫기(<)버튼 평소 세팅 */
+.mob>.gnb .arrow_back{
+    /* 숨겨져있기 */
+    display: none;
+}
+/* 닫기(<)버튼 .on 주면 보이기 */
+.mob>.gnb .arrow_back.on{
+    display: block;
+}
+
+/* GNB 메뉴 두번째 리스트(ol) 세팅 */
+.mob>.gnb .l2{
+    background-color: var(--black);
+}
+/* GNB 메뉴 두번째 리스트(ol) 하위 a요소 개별 세팅 */
+.mob>.gnb .l2.personal .lnk{
+    color: var(--white);
+}
+
+
+/****************************************** LNB 메뉴 ******************************************/
+.mob .lists_wrap{
+    /* position: relative; */
+    /* 부모자격 - lnb박스들 */
+}
+/* LNB 메뉴 겉박스 세팅 */
+.mob .lnb{
+    position: absolute;
+    /* 부모는? #top */
+    top: 81px;
+    left: 0;
+    right: 0;
+    /* 상단 로고와 닫기 버튼이 있는 섹션 바로 아래쪽에 위치해야하므로 약간 위치조정함*/
+    
+    background-color: var(--white);
+}
+
+/* LNB 메뉴 상단 top_area 겉박스 */
+.mob .top_area{
+    display: flex;
+    align-items: center;
+}
+/* LNB 메뉴 상단 top_area 하위 .lnk 요소*/
+.mob .lnb .top_area .lnk{
+    width: 100%;
+    border-bottom: 1px solid var(--silver);
+}
+/* LNB 메뉴의 카테고리 리스트 박스 세팅 */
+.mob .lnb .list.category{
+    padding: 30px;
+}
+/* LNB 메뉴의 카테고리 리스트 하위 li들 세팅 */
+.mob .lnb .list.category>li{
+    justify-content: center;
+    margin-bottom: 15px;
+}
+/* LNB 메뉴의 카테고리 리스트 하위 썸네일 이미지 박스의 이미지 세팅 */
+.mob .lnb .thumbnail_img>img{
+    width: 100%;
+    aspect-ratio: 460/215;
+    object-fit: cover;
+}
+/* LNB 메뉴의 카테고리 리스트 하위 썸네일 이미지 박스의 글자 세팅 */
+.mob .lnb .thumbnail_img>.tit{
+    display: block;
+    padding: 5px 0;
+    font-size: 13px;
+    color: var(--bg_black);
 }
 
 
