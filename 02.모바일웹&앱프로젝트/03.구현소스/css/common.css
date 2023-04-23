@@ -11,6 +11,7 @@
     --black: #000;
     --white: #fff;
     --silver: #c0c0c0;
+    --swiper-theme-color: #1f1f1f;
 }
 
 
@@ -185,14 +186,6 @@
     font-size: 13px;
 }
 
-/* 🔥🔥서브 메뉴들 일단 숨겨두기🔥🔥 */
-.dt .lnb.high_jewellery,
-.dt .lnb.the_maison,
-.dt .lnb.engagement_and_wedding
-{
-    display: none !important;
-}
-
 .lnb.engagement_and_wedding .category{
     display: flex;
 }
@@ -204,10 +197,7 @@
 
 
 
-/* 🔥🔥dt버전 일단 숨겨두기🔥🔥 */
-header.dt{
-    display: none;
-}
+
 /***************************************************
     [ 모바일 버전 ]
 ***************************************************/
@@ -220,9 +210,6 @@ header.top.mob{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    /* 🔥🔥일단 숨겨두기🔥🔥 */
-    display: none;
 }
 /* 왼쪽 메뉴 공통 세팅 */
 .mob>.lmenu>.list{
@@ -312,8 +299,8 @@ header.top.mob{
     margin: 0 auto;
 }
 /* GNB 메뉴의 ul, ol 리스트들 공통 세팅 */
-.mob>.gnb .l1,
-.mob>.gnb .l2{
+.mob>.gnb .entire,
+.mob>.gnb .personal{
     /* border: 1px solid red; */
     padding: 20px;
 }
@@ -361,7 +348,7 @@ header.top.mob{
     /* position: relative; */
     /* 부모자격 - lnb박스들 */
 }
-/* LNB 메뉴 겉박스 세팅 */
+/* LNB 메뉴 겉박스들 세팅 */
 .mob .lnb{
     position: absolute;
     /* 부모는? #top */
@@ -392,13 +379,13 @@ header.top.mob{
     justify-content: center;
     margin-bottom: 15px;
 }
-/* LNB 메뉴의 카테고리 리스트 하위 썸네일 이미지 박스의 이미지 세팅 */
+/* LNB 메뉴의 카테고리 리스트 하위 썸네일 이미지 박스의 이미지 세팅 (하이주얼리, 브랜드) */
 .mob .lnb .thumbnail_img>img{
     width: 100%;
     aspect-ratio: 460/215;
     object-fit: cover;
 }
-/* LNB 메뉴의 카테고리 리스트 하위 썸네일 이미지 박스의 글자 세팅 */
+/* LNB 메뉴의 카테고리 리스트 하위 썸네일 이미지 박스의 글자 세팅 (하이주얼리, 브랜드) */
 .mob .lnb .thumbnail_img>.tit{
     display: block;
     padding: 5px 0;
@@ -406,4 +393,158 @@ header.top.mob{
     color: var(--bg_black);
 }
 
+/* LNB 메뉴의 카테고리 리스트 하위 li들 공통 세팅  */
+.mob .lnb.jewellery .list.category>li,
+.mob .lnb.engagement_and_wedding .list.category>li{
+    justify-content: space-between;
+}
+.mob .lnb.jewellery .list.category .tit,
+.mob .lnb.engagement_and_wedding .list.category .tit{
+    font-size: 13px;
+}
 
+/* LNB 메뉴의 추천 리스트 겉박스 세팅 */
+.mob .lnb.jewellery .list.recommended,
+.mob .lnb.engagement_and_wedding .list.recommended{
+    padding: 30px;
+}
+
+
+/* 추천 제품 스와이퍼 개별 세팅 CSS */
+.recommended_Swiper {
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto 30px;
+}
+
+.recommended_Swiper.swiper-slide {
+    text-align: center;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommended_Swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* top버튼 겉박스 */
+#top_btn>.top_btn_bx{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid var(--bg_black);
+    box-shadow: none;
+
+    position: sticky;
+    top: 0;
+    left: 85%;
+}
+/* top버튼 button요소 내부 구글 심볼 개별 세팅 */
+#top_btn>.top_btn_bx>.keyboard_arrow_up{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
+
+
+/****************************************** 하단 영역 ******************************************/
+/* 하단 영역 겉박스 세팅 */
+#info{
+    background-color: var(--bg_beige);
+}
+/* 하단 영역의 로고 개별 세팅 */
+.dt.info>.logo .svgBx{
+    margin: 0 auto;
+    padding: 30px 0 50px;
+}
+
+/* 회사 정보 섹션의 상위카테고리 리스트 공통 세팅 */
+.dt.info>.info_section>.list.category{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-bottom: 30px;
+    
+    font-size: 13px;
+    line-height: 2.3;
+}
+/* 회사 정보 섹션의 상위 카테고리 하위의 헤드라인 세팅 */
+.dt.info .headline{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+/* info_section의 카테고리 리스트 중 문의 메뉴 하위의 li 세팅 */
+.dt.info .info_section .inquiry .sub_category>li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* 하단 영역의 현재 위치 겉박스 세팅 */
+.dt.info .the_present_region{
+    display: flex;
+    justify-content: right;
+    width: 1300px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--bg_black);
+
+}
+.dt.info .country_and_language_selection{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    /* 버튼 요소 기본값 해제 */
+    border: 0;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+/* 🔥🔥🔥🔥🔥일단 숨겨두기🔥🔥🔥🔥🔥 */
+/* dt버전 상단영역 일단 숨겨두기 */
+header.dt{
+    /* display: none; */
+}
+/* dt버전 서브 메뉴들 일단 숨겨두기*/
+.dt .lnb.high_jewellery,
+.dt .lnb.jewellery,
+.dt .lnb.engagement_and_wedding,
+.dt .lnb.the_maison
+{
+    display: none !important;
+}
+
+
+
+/* mob버전 상단영역 일단 숨겨두기 */
+header.top.mob{
+    display: none;
+}
+/* 모바일 버전에서 햄버거버튼 클릭시 나타나는 gnb들 */
+.mob.gnb_wrap{
+    display: none;
+}
+/* 모바일 버전에서 햄버거버튼 클릭시 나타나는 lnb들 */
+.mob .lnb.high_jewellery,
+.mob .lnb.jewellery,
+.mob .lnb.engagement_and_wedding,
+.mob .lnb.the_maison{
+    display: flex;
+    display: none;
+}

@@ -8,16 +8,93 @@
 @import url(./common.css);
 
 
-/******************************************* 상단 영역 *******************************************/
-
-
-
-
-
-
-
 /******************************************* 메인 영역 *******************************************/
+/* 섹션1 */
+/* 섹션1 전체 겉박스 세팅 */
+.section1.main_video{
+    position: relative;
+    /* 부모자격 - .headline */
+}
+/* 섹션1 전체 화면 동영상 겉박스 세팅 */
+.section1.main_video>.video_bx.wrap{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+/* 섹션1 전체 화면 동영상 아이프레임 세팅 */
+.section1.main_video #serpenti_main{
+    /* aspect-ratio: 16/9; */
+    width: 100%;
+    height: 100%;
+    /* 아이프레임 기본값(bd) 해제 */
+    border: none;
 
+    filter: brightness(60%);
+}
+/* 섹션1 동영상의 타이틀과 슬로건 겉박스 세팅 */
+.section1.main_video>.txt{
+    width: 300px;
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--white);
+    text-shadow: 1px 1px var(--black);
+    /* 양끝 정렬 */
+    text-align: justify;
+}
+/* 섹션1 동영상의 타이틀 세팅 */
+.section1.main_video>.txt>.headline{
+    display: block;
+
+    font-size: 40px;
+    font-weight: bold;
+}
+/* 섹션1 동영상의 슬로건 세팅 */
+.section1.main_video>.txt>.catchphrase{
+    display: block;
+    /* 단어 줄바꿈 */
+    /* word-break: keep-all; */
+
+    font-size: 17px;
+}
+
+
+/* 섹션2 */
+/* 추천 제품 타이틀 세팅 */
+.section2>.title_wrap>.txt{
+    display: block;
+    padding: 30px;
+    color: var(--bg_black);
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+/* 추천 제품 스와이퍼 개별 세팅 CSS */
+.cont>.recommended_product>.recommended_Swiper{
+    max-width: 1260px;
+    height: auto;
+    margin: 0 auto 30px;
+}
+.cont>.recommended_product>.recommended_Swiper .swiper-slide {
+    text-align: center;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont>.recommended_product>.recommended_Swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 섹션3 */
+/* 세르펜티 컬렉션 특징 - 타이틀 세팅 */
 
 
 
