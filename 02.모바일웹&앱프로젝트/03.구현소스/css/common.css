@@ -15,7 +15,7 @@
 }
 
 
-/******************************************* 상단 영역 *******************************************/
+/******************************************* 상단 영역 시작 *******************************************/
 /* 상단 영역 공통 세팅 */
 #top{
     position: relative;
@@ -88,7 +88,7 @@
     box-shadow: 0 0.3125rem 0.625rem 0 rgba(31,31,31,.15);
 }
 
-/* LNB메뉴 박스 세팅 */
+/* LNB메뉴 겉박스 세팅 */
 .dt .lnb{
     position: absolute;
     /* 부모는? GNB메뉴의 #top */
@@ -99,9 +99,13 @@
     width: 100%;
     height: 500px;
     padding-top: 20px;
-    /* background-color: var(--bg_beige); */
+    background-color: var(--white);
     box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.068);
+
+    /* ⭐처음에 LNB 메뉴 안 보이게 숨겨놓기⭐ */
+    display: none;
 }
+
 /* LNB메뉴 하위 .list */
 .dt .lnb>.list{
     display: flex;
@@ -109,6 +113,14 @@
     gap: 15px;
     min-width: 1400px;
 }
+
+.dt .gnb>ul>li>a{
+    display: block;
+    /* padding: 10px; */
+    outline: 1px dashed red;
+}
+
+/******************************* 하이주얼리, 브랜드 메뉴 *******************************/
 /* 썸네일 이미지 겉박스 */
 .dt .lnb .thumbnail_img{
     position: relative;
@@ -190,16 +202,103 @@
     display: flex;
 }
 
+/* GNB 메뉴 li에 마우스오버시 LNB메뉴 보이기 */
+.dt>.gnb>.list>li:hover .lnb{
+    display: block;
+}
+
+/******************************************* 상단 영역 끝 *******************************************/
 
 
-/******************************************* 하단 영역 *******************************************/
+
+/******************************************* 메인 영역 시작 *******************************************/
+/* 메인 영역 전체 겉박스 세팅 */
+#cont>.cont{
+    position: relative;
+    /* 부모 자격 - top버튼 */
+}
+
+/* top버튼 겉박스 */
+.top_btn_bx{
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid var(--silver);
+    box-shadow: 0px 1px 3px #77777738;
+
+    position: sticky;
+    top: 85%;
+    left: 93%;
+}
+/* top버튼 button요소 내부 구글 심볼 개별 세팅 */
+.top_btn_bx>.keyboard_arrow_up{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/******************************************* 메인 영역 끝 *******************************************/
 
 
+
+/****************************************** 하단 영역 시작 ******************************************/
+/* 하단 영역 겉박스 세팅 */
+#info{
+    background-color: var(--bg_beige);
+    padding-bottom: 10px;
+}
+/* 하단 영역의 로고 개별 세팅 */
+.dt.info>.logo .svgBx{
+    margin: 0 auto;
+    padding: 30px 0 50px;
+}
+
+/* 회사 정보 섹션의 상위카테고리 리스트 공통 세팅 */
+.dt.info>.info_section>.list.category{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-bottom: 30px;
+    
+    font-size: 13px;
+    line-height: 2.3;
+}
+/* 회사 정보 섹션의 상위 카테고리 하위의 헤드라인 세팅 */
+.dt.info .headline{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+/* info_section의 카테고리 리스트 중 문의 메뉴 하위의 li 세팅 */
+.dt.info .info_section .inquiry .sub_category>li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* 하단 영역의 현재 위치 겉박스 세팅 */
+.dt.info .the_present_region{
+    display: flex;
+    justify-content: right;
+    max-width: 1300px;
+    margin: 0 auto 10px;
+    border-bottom: 1px solid var(--bg_black);
+
+}
+.dt.info .country_and_language_selection{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    /* 버튼 요소 기본값 해제 */
+    border: 0;
+    background-color: transparent;
+}
+/******************************************* 하단 영역 끝 *******************************************/
 
 
 
 /***************************************************
-    [ 모바일 버전 ]
+    [ 모바일 버전 시작 ]
 ***************************************************/
 /* 모바일 상단 영역 공통 세팅 */
 header.top.mob{
@@ -432,83 +531,9 @@ header.top.mob{
     object-fit: cover;
 }
 
-/* top버튼 겉박스 */
-#top_btn>.top_btn_bx{
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border: 1px solid var(--bg_black);
-    box-shadow: none;
-
-    position: sticky;
-    top: 0;
-    left: 85%;
-}
-/* top버튼 button요소 내부 구글 심볼 개별 세팅 */
-#top_btn>.top_btn_bx>.keyboard_arrow_up{
-    font-size: 35px;
-    font-weight: bold;
-    text-align: center;
-}
-
-
-
-
-
-
-/****************************************** 하단 영역 ******************************************/
-/* 하단 영역 겉박스 세팅 */
-#info{
-    background-color: var(--bg_beige);
-}
-/* 하단 영역의 로고 개별 세팅 */
-.dt.info>.logo .svgBx{
-    margin: 0 auto;
-    padding: 30px 0 50px;
-}
-
-/* 회사 정보 섹션의 상위카테고리 리스트 공통 세팅 */
-.dt.info>.info_section>.list.category{
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    padding-bottom: 30px;
-    
-    font-size: 13px;
-    line-height: 2.3;
-}
-/* 회사 정보 섹션의 상위 카테고리 하위의 헤드라인 세팅 */
-.dt.info .headline{
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-/* info_section의 카테고리 리스트 중 문의 메뉴 하위의 li 세팅 */
-.dt.info .info_section .inquiry .sub_category>li{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-/* 하단 영역의 현재 위치 겉박스 세팅 */
-.dt.info .the_present_region{
-    display: flex;
-    justify-content: right;
-    width: 1300px;
-    margin: 0 auto;
-    border-bottom: 1px solid var(--bg_black);
-
-}
-.dt.info .country_and_language_selection{
-    display: flex;
-    align-items: center;
-    margin: 10px;
-
-    /* 버튼 요소 기본값 해제 */
-    border: 0;
-    background-color: transparent;
-}
-
-
+/***************************************************
+    [ 모바일 버전 끝 ]
+***************************************************/
 
 
 
@@ -522,12 +547,12 @@ header.dt{
     /* display: none; */
 }
 /* dt버전 서브 메뉴들 일단 숨겨두기*/
-.dt .lnb.high_jewellery,
+/* .dt .lnb.high_jewellery, */
 .dt .lnb.jewellery,
 .dt .lnb.engagement_and_wedding,
 .dt .lnb.the_maison
 {
-    display: none !important;
+    /* display: none; */
 }
 
 

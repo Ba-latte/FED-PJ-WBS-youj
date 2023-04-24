@@ -9,11 +9,14 @@
 
 
 /******************************************* 메인 영역 *******************************************/
+
+
 /* 섹션1 */
 /* 섹션1 전체 겉박스 세팅 */
 .section1.main_video{
     position: relative;
     /* 부모자격 - .headline */
+    z-index: -2;
 }
 /* 섹션1 전체 화면 동영상 겉박스 세팅 */
 .section1.main_video>.video_bx.wrap{
@@ -31,8 +34,8 @@
     
     filter: brightness(60%);
 }
-/* 섹션1 전체 화면 동영상에 마우스오버 안되게 가리는 유리판 세팅 */
-.section1.main_video>.video_bx.wrap::after{
+/* 섹션1 전체 화면 동영상에 마우스오버 안되게 가리는 유리판 세팅 ->> 섹션1 전체의 z인덱스를 -2를 줘서 못 만지게 숨겨버렸음 */
+/* .section1.main_video>.video_bx.wrap::after{
     content: '';
     position: absolute;
     z-index: 1;
@@ -40,7 +43,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-}
+} */
 
 
 /* 섹션1 동영상의 타이틀과 슬로건 겉박스 세팅 */
@@ -76,8 +79,12 @@
 
 
 /* 섹션2 */
-/* 추천 제품 타이틀 세팅 */
-.section2>.title_wrap>.txt{
+/* 섹션2 전체 겉박스 세팅 */
+.section2.recommended_product{
+    margin-top: 200px;
+}
+/* 추천 제품 전체 타이틀 세팅 */
+.section2.recommended_product>.title_wrap>.headline{
     display: block;
     padding: 30px;
     color: var(--bg_black);
@@ -86,11 +93,14 @@
     text-align: center;
 }
 /* 추천 제품 스와이퍼 개별 세팅 CSS */
+/* 스와이퍼 겉박스 세팅 */
 .cont>.recommended_product>.recommended_Swiper{
-    max-width: 1260px;
+    max-width: 940px;
+    /* max-width: 1300px; */
     height: auto;
     margin: 0 auto 30px;
 }
+/* 스와이퍼 슬라이드 공통 세팅 */
 .cont>.recommended_product>.recommended_Swiper .swiper-slide {
     text-align: center;
     font-size: 13px;
@@ -98,25 +108,112 @@
     justify-content: center;
     align-items: center;
 
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
+/* 스와이퍼 슬라이드 내부의 img 요소 세팅 */
 .cont>.recommended_product>.recommended_Swiper .swiper-slide img {
-    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* background-color: var(--bg_beige); */
+}
+
+
+/* 섹션3 */
+/* 섹션3 세르펜티 컬렉션 전체 겉박스 세팅 */
+.section3.serpenti_characteristic{
+    margin: 200px auto;
+}
+/* 섹션3 세르펜티 컬렉션 전체 타이틀 세팅 */
+.section3.serpenti_characteristic>.title_wrap>.headline{
+    padding-bottom: 100px;
+    font-size: 30px;
+    text-align: center;
+}
+/* 섹션3 - characteristics리스트 그리드 박스 세팅 */
+.section3.serpenti_characteristic>.grid{
+    display: grid;
+    max-width: 1300px;
+    margin: 0 auto;
+    /* 가로 그리드 템플릿 */
+    grid-template-columns: repeat(12, 1fr);
+    /* 간격 설정 */
+    grid-column-gap: 20px;
+    grid-row-gap: 50px;
+}
+/* 그리드 박스 내부 모든 img 요소 공통 세팅 */
+.section3.serpenti_characteristic>.characteristics.grid .image>img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-/* 섹션3 */
-.section3.serpenti_characteristic .list.articles{
+/* 그리드 박스 내부 모든 txt_bx(텍스트요소들의 겉박스) 공통 세팅 */
+.section3.serpenti_characteristic>.characteristics.grid .txt_bx{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px;
 }
-/* 세르펜티 컬렉션 특징 - 타이틀 세팅 */
-.section3.serpenti_characteristic .list.articles .title{
+/* 그리드 박스 내부 모든 title 요소 공통 세팅 */
+.section3.serpenti_characteristic>.characteristics.grid .txt_bx>.title{
     font-size: 27px;
 }
-.section3.serpenti_characteristic .list.articles>li:has{
-    aspect-ratio: 840/500;
+/* 그리드 박스 내부 모든 txt 요소 공통 세팅 */
+.section3.serpenti_characteristic>.characteristics.grid .txt_bx>.txt{
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.7;
+}
+/* 첫번째 줄 - 이미지 영역 */
+.rw1.image{
+    grid-column: 1/8;
+}
+/* 첫번쨰 줄 - 텍스트 영역 */
+.rw1.txt_bx{
+    grid-column: 8/13;
+}
+/* 두번쨰 줄 - 텍스트 영역 */
+.rw2.txt_bx{
+    grid-column: 1/6;
+}
+/* 두번쨰 줄 - 이미지 영역 */
+.rw2.image{
+    grid-column: 6/13;
+}
+/* 세번째 줄 - 이미지 영역 */
+.rw3.image{
+    grid-column: 1/8;
+}
+/* 세번쨰 줄 - 텍스트 영역 */
+.rw3.txt_bx{
+    grid-column: 8/13;
+}
+
+
+/* 섹션4 */
+.section4.newsletter{
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: url(../../00.자료수집/02.이미지데이터/sc_characteristic5.jpg) no-repeat 60% 0/cover;
+}
+/* 섹션4 - 뉴스레터 구독 전체 타이틀 세팅 */
+.section4.newsletter>.title_wrap>.headline{
+    font-size: 30px;
+}
+/* 섹션4 - 뉴스레터 구독 버튼 세팅 */
+.section4.newsletter .subscription{
+    padding: 12px 60px;
+    background-color: var(--bg_black);
+    border: 1px solid var(--bg_black);
+
+    font-size: 16px;
+    color: var(--white);
 }
 
 
