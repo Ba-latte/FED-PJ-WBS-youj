@@ -17,20 +17,32 @@
 }
 /* 섹션1 전체 화면 동영상 겉박스 세팅 */
 .section1.main_video>.video_bx.wrap{
+    /* position: relative; */
+    aspect-ratio: 16/9;
+    /* 부모 박스에 비율유지를 주고 자식 박스의 가로/세로값을 100p로 주어서 부모 사이즈 기준하여 커지게 만들면 비율 유지가 됨 */
     width: 100%;
-    height: 100vh;
-    object-fit: cover;
+    overflow: hidden;
 }
 /* 섹션1 전체 화면 동영상 아이프레임 세팅 */
-.section1.main_video #serpenti_main{
-    /* aspect-ratio: 16/9; */
+.section1.main_video iframe#serpenti_main{
     width: 100%;
     height: 100%;
-    /* 아이프레임 기본값(bd) 해제 */
     border: none;
-
+    
     filter: brightness(60%);
 }
+/* 섹션1 전체 화면 동영상에 마우스오버 안되게 가리는 유리판 세팅 */
+.section1.main_video>.video_bx.wrap::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
 /* 섹션1 동영상의 타이틀과 슬로건 겉박스 세팅 */
 .section1.main_video>.txt{
     width: 300px;
@@ -85,6 +97,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    outline: 1px solid red;
 }
 .cont>.recommended_product>.recommended_Swiper .swiper-slide img {
     display: block;
@@ -94,8 +108,16 @@
 }
 
 /* 섹션3 */
+.section3.serpenti_characteristic .list.articles{
+    display: flex;
+}
 /* 세르펜티 컬렉션 특징 - 타이틀 세팅 */
-
+.section3.serpenti_characteristic .list.articles .title{
+    font-size: 27px;
+}
+.section3.serpenti_characteristic .list.articles>li:has{
+    aspect-ratio: 840/500;
+}
 
 
 
