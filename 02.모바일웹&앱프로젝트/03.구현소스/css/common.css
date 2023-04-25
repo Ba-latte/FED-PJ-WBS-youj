@@ -77,7 +77,7 @@
 
 /* GNB메뉴 하위 li에 마우스오버시 아래에 밑줄 생김 */
 .dt .gnb>.list>li a:hover::after{
-    background-color: red;
+    background-color: var(--bg_black);
 }
 /* GNB메뉴 하위 a요소들 공통 세팅 */
 .dt .gnb>.list a{
