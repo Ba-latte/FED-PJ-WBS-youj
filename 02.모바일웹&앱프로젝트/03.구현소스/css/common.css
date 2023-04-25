@@ -67,16 +67,20 @@
     border-bottom: 2px solid transparent;
 }
 /* GNB메뉴 하위 li들 공통 가상요소 세팅 */
-.dt .gnb>.list>li::after{
+.dt .gnb>.list>li a::after{
     content: '';
-    display: block;
-    /* height: 2px; */
-    border-bottom: 2px solid transparent;
+    /* display: block; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    /* border-bottom: 2px solid transparent; */
 }
 
 /* GNB메뉴 하위 li에 마우스오버시 아래에 밑줄 생김 */
-.dt .gnb>.list>li:hover::after{
-    border-bottom-color: var(--bg_black);
+.dt .gnb>.list>li a:hover::after{
+    background-color: red;
+    /* border-bottom-color: var(--bg_black); */
 }
 /* GNB메뉴 하위 a요소들 공통 세팅 */
 .dt .gnb>.list a{
@@ -103,7 +107,8 @@
 .dt .lnb{
     position: absolute;
     /* 부모는? GNB메뉴의 #top */
-    /* z-index: -1; */
+    z-index: 1;
+    /* z인덱스 줘야 만질 수 있음 */
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
