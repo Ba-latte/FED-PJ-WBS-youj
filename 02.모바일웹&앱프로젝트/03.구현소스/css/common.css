@@ -66,12 +66,23 @@
     padding-bottom: 10px;
     border-bottom: 2px solid transparent;
 }
+/* GNB메뉴 하위 li들 공통 가상요소 세팅 */
+.dt .gnb>.list>li::after{
+    content: '';
+    display: block;
+    /* height: 2px; */
+    border-bottom: 2px solid transparent;
+}
+
 /* GNB메뉴 하위 li에 마우스오버시 아래에 밑줄 생김 */
-.dt .gnb>.list>li:hover{
+.dt .gnb>.list>li:hover::after{
     border-bottom-color: var(--bg_black);
 }
 /* GNB메뉴 하위 a요소들 공통 세팅 */
-.dt .gnb a{
+.dt .gnb>.list a{
+    display: block;
+    width: 100%;
+    height: 100%;
     font-size: 13px;
 }
 
