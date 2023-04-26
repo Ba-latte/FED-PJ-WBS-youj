@@ -220,9 +220,9 @@
     font-size: 13px;
 }
 
-.lnb.engagement_and_wedding .category{
+/* .lnb.engagement_and_wedding .category{
     display: flex;
-}
+} */
 /******************************* 주얼리, 인게이지먼트&웨딩 메뉴 끝 *******************************/
 
 
@@ -323,7 +323,7 @@
     [ 모바일 버전 시작 ]
 ***************************************************/
 /* 모바일 상단 영역 공통 세팅 */
-header.top.mob{
+header.mob.top{
     position: relative;
     /* 부모자격 - .search_container */
     padding: 15px 10px;
@@ -331,9 +331,19 @@ header.top.mob{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.068);
 
     /* 🔥일단 숨겨두기🔥 */
     display: none;
+}
+/* 모바일 상단 영역 - 스크롤 내리면 fixed로 바뀌기 */
+header.mob.top.fixed{
+    position: fixed;
+    background-color: var(--white);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 /* 왼쪽 메뉴 공통 세팅 */
 .mob>.lmenu>.list{
@@ -392,15 +402,26 @@ header.top.mob{
 }
 
 /* GNB 메뉴 겉박스 세팅 */
-.mob.gnb_wrap{
+.mob .gnb{
     background-color: var(--white);
+    overflow-y: scroll;
 
     /* 🔥일단 숨겨두기🔥 */
     display: none;
 }
 /* 클래스 on을 주면 등장함 */
-.mob.gnb_wrap.on{
+.mob .gnb.on{
     display: block;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+
+    /* lnb메뉴 슬라이딩애니메이션때문에 오른쪽에 나가있어서 가로스크롤 발생함 */
+    overflow-x: hidden;
 }
 
 /* GNB 메뉴 하위 a요소들 공통 세팅 */
@@ -442,9 +463,9 @@ header.top.mob{
     justify-content: space-between;
 }
 /* GNB 메뉴 첫번째 리스트(ul) 세팅 */
-.mob>.gnb .l1{
+.mob>.gnb .entire{
     /* 높이 강제 부과해서 두번째 리스트 밀어내어 윈도우 아래쪽에 붙게 만들기 */
-    height: 60vh;
+    /* height: 60vh; */
 }
 /* GNB 메뉴 첫번째 리스트(ul) 하위 li 속 >/< 버튼 세팅(평소) */
 .mob>.gnb .arrow_forward{
@@ -466,6 +487,12 @@ header.top.mob{
 /* GNB 메뉴 두번째 리스트(ol) 세팅 */
 .mob>.gnb .l2{
     background-color: var(--black);
+
+    /* 📢화면 바닥에 붙이기 위한 노력 ㅠㅠ📢 */
+    /* position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px; */
 }
 /* GNB 메뉴 두번째 리스트(ol) 하위 a요소 개별 세팅 */
 .mob>.gnb .l2.personal .lnk{
@@ -565,11 +592,14 @@ header.top.mob{
 /* lnb메뉴들 전체 세팅 */
 .mob .gnb .lnb{
     display: block;
+    height: 0;
+    overflow: hidden;
     transform: translateX(110%);
     transition: 0.5s ease-out;
 }
 .mob .gnb .lnb.on{
     transform: translateX(0);
+    height: auto;
 }
 /* LNB메뉴 중 '하이 주얼리' 메뉴 개별 세팅 */
 

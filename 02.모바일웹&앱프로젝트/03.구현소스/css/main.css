@@ -34,16 +34,6 @@
     
     filter: brightness(60%);
 }
-/* 섹션1 전체 화면 동영상에 마우스오버 안되게 가리는 유리판 세팅 ->> 섹션1 전체의 z인덱스를 -2를 줘서 못 만지게 숨겨버렸음 */
-/* .section1.main_video>.video_bx.wrap::after{
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-} */
 
 
 /* 섹션1 동영상의 타이틀과 슬로건 겉박스 세팅 */
