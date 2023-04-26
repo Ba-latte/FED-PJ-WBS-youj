@@ -7,7 +7,7 @@
 :root {
 	--bg_black: #1f1f1f;
     --bg_beige: #f0ede8;
-    --beige: #f1ede8;
+    --beige: #f7f7f7;
     --black: #000;
     --white: #fff;
     --silver: #c0c0c0;
@@ -110,8 +110,8 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    height: 500px;
-    padding-top: 20px;
+    /* height: 500px; */
+    padding: 20px 0;
     background-color: var(--white);
     box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.068);
 
@@ -124,17 +124,30 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    min-width: 1400px;
+    /* min-width: 1400px; */
 }
 
 
-/******************************* 하이주얼리, 브랜드 메뉴 *******************************/
+/* GNB 메뉴 li에 마우스오버시 LNB메뉴 보이기 */
+.dt>.gnb>.list>li:hover .lnb{
+    display: block;
+}
+
+
+/******************************* 하이주얼리, 브랜드 메뉴 시작 *******************************/
 /* 썸네일 이미지 겉박스 */
 .dt .lnb .thumbnail_img{
     position: relative;
     /* 부모자격 */
     display: flex;
     flex-direction: column;
+    /* 하위 이미지 요소들 비율 유지하며 반응형으로 만들기 */
+    aspect-ratio: 406/460;
+}
+/* 썸네일 하위의 이미지 태그 공통 속성 */
+.dt .lnb .thumbnail_img>img{
+    width: 100%;
+    height: 100%;
 }
 /* 썸네일 이미지 타이틀과 버튼 공통 속성 */
 .dt .lnb .thumbnail_img .tit,
@@ -174,8 +187,9 @@
 .dt .lnb.the_maison .th_img1{
     object-position: 0 -150px;
 }
+/******************************* 하이주얼리, 브랜드 메뉴 끝 *******************************/
 
-/******************************* 주얼리, 인게이지먼트&웨딩 메뉴 *******************************/
+/******************************* 주얼리, 인게이지먼트&웨딩 메뉴 시작 *******************************/
 /* 카테고리별 리스트박스 공통 세팅 */
 .dt .list.category{
 
@@ -209,11 +223,9 @@
 .lnb.engagement_and_wedding .category{
     display: flex;
 }
+/******************************* 주얼리, 인게이지먼트&웨딩 메뉴 끝 *******************************/
 
-/* GNB 메뉴 li에 마우스오버시 LNB메뉴 보이기 */
-.dt>.gnb>.list>li:hover .lnb{
-    display: block;
-}
+
 
 /******************************************* 상단 영역 끝 *******************************************/
 
@@ -237,6 +249,8 @@
     position: sticky;
     top: 85%;
     left: 93%;
+
+    cursor: pointer;
 }
 /* top버튼 button요소 내부 구글 심볼 개별 세팅 */
 .top_btn_bx>.keyboard_arrow_up{
@@ -317,6 +331,9 @@ header.top.mob{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* 🔥일단 숨겨두기🔥 */
+    display: none;
 }
 /* 왼쪽 메뉴 공통 세팅 */
 .mob>.lmenu>.list{
@@ -348,16 +365,15 @@ header.top.mob{
 }
 /* 왼쪽 메뉴를 클릭시 등장하는 검색 박스의 배경*/
 .mob .search.wrap{
-    content: '';
     position: absolute;
     left: 0;
     top: 100%;
     width: 100%;
     height: 54px;
-    /* background-color: cadetblue; */
+    background-color: #fff;
     box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.068);
 
-    /* 일단 박스 숨겨두기 */
+    /* 🔥일단 박스 숨겨두기🔥 */
     display: none;
 }
 .mob .search.wrap.on{
@@ -378,6 +394,13 @@ header.top.mob{
 /* GNB 메뉴 겉박스 세팅 */
 .mob.gnb_wrap{
     background-color: var(--white);
+
+    /* 🔥일단 숨겨두기🔥 */
+    display: none;
+}
+/* 클래스 on을 주면 등장함 */
+.mob.gnb_wrap.on{
+    display: block;
 }
 
 /* GNB 메뉴 하위 a요소들 공통 세팅 */
@@ -455,8 +478,8 @@ header.top.mob{
     /* position: relative; */
     /* 부모자격 - lnb박스들 */
 }
-/* LNB 메뉴 겉박스들 세팅 */
-.mob .lnb{
+/* LNB 메뉴 겉박스들 공통 세팅 */
+.mob>.gnb .lnb{
     position: absolute;
     /* 부모는? #top */
     top: 81px;
@@ -539,6 +562,17 @@ header.top.mob{
     object-fit: cover;
 }
 
+/* lnb메뉴들 전체 세팅 */
+.mob .gnb .lnb{
+    display: block;
+    transform: translateX(110%);
+    transition: 0.5s ease-out;
+}
+.mob .gnb .lnb.on{
+    transform: translateX(0);
+}
+/* LNB메뉴 중 '하이 주얼리' 메뉴 개별 세팅 */
+
 /***************************************************
     [ 모바일 버전 끝 ]
 ***************************************************/
@@ -550,34 +584,14 @@ header.top.mob{
 
 
 /* 🔥🔥🔥🔥🔥일단 숨겨두기🔥🔥🔥🔥🔥 */
-/* dt버전 상단영역 일단 숨겨두기 */
-header.dt{
-    /* display: none; */
-}
-/* dt버전 서브 메뉴들 일단 숨겨두기*/
-/* .dt .lnb.high_jewellery, */
-.dt .lnb.jewellery,
-.dt .lnb.engagement_and_wedding,
-.dt .lnb.the_maison
-{
-    /* display: none; */
-}
 
 
 
-/* mob버전 상단영역 일단 숨겨두기 */
-header.top.mob{
-    display: none;
-}
-/* 모바일 버전에서 햄버거버튼 클릭시 나타나는 gnb들 */
-.mob.gnb_wrap{
-    display: none;
-}
 /* 모바일 버전에서 햄버거버튼 클릭시 나타나는 lnb들 */
 .mob .lnb.high_jewellery,
 .mob .lnb.jewellery,
 .mob .lnb.engagement_and_wedding,
 .mob .lnb.the_maison{
-    display: flex;
-    display: none;
+    /* display: flex; */
+    /* display: none; */
 }

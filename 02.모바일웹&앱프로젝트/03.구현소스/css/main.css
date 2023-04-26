@@ -92,6 +92,14 @@
     font-weight: bold;
     text-align: center;
 }
+/* 추천 제품 전체 소개문구 세팅 */
+.section2.recommended_product>.title_wrap .txt{
+    margin: 0 auto;
+    padding: 10px 10px 50px;
+    width: 630px;
+    text-align: justify;
+    font-size: 16px;
+}
 /* 추천 제품 스와이퍼 개별 세팅 CSS */
 /* 스와이퍼 겉박스 세팅 */
 .cont>.recommended_product>.recommended_Swiper{

@@ -15,6 +15,7 @@
 	<!-- 외부 CSS -->
 	<link rel="stylesheet" href="./css/main.css">
 	<!-- 미디어쿼리 CSS -->
+	<link rel="stylesheet" href="./css/media.css">
 	<!-- 제이쿼리 라이브러리 + UI -->
 	<script src="./js/jquery-3.6.3.min.js"></script>
 	<script src="./js/jquery-ui.min.js"></script>
@@ -159,9 +160,6 @@
 										<span class="btn">하이 주얼리 아트 자세히 보기</span>
 									</figure>
 								</li>
-								<li>
-									<span class="material-symbols-outlined close">close</span>
-								</li>
 							</ol>
 						</div>
 					</li>
@@ -188,9 +186,6 @@
 									<a href="#">
 										<span class="btn">이어링</span>
 									</a>
-								</li>
-								<li>
-									<span class="material-symbols-outlined close">close</span>
 								</li>
 							</ol>
 							<ul class="list recommended">
@@ -240,9 +235,6 @@
 									<a href="#">
 										<span class="btn">커플링</span>
 									</a>
-								</li>
-								<li>
-									<span class="material-symbols-outlined close">close</span>
 								</li>
 							</ol>
 							<ul class="list recommended">
@@ -294,9 +286,6 @@
 										<span class="btn">자세히 보기</span>
 									</figure>
 								</li>
-								<li>
-									<span class="material-symbols-outlined close">close</span>
-								</li>
 							</ol>
 						</div>
 					</li>
@@ -309,13 +298,13 @@
 		<header class="top mob">
 			<section class="lmenu">
 				<ul class="list">
-					<li>
+					<li class="ham_btn">
 						<a href="#">
-							<span class="material-symbols-outlined">menu</span>
+							<span class="material-symbols-outlined menu">menu</span>
 
 						</a>
 					</li>
-					<li>
+					<li class="search_btn">
 						<a href="#">
 							<span class="material-symbols-outlined search">search</span>
 						</a>
@@ -384,11 +373,14 @@
 				</ul>
 			</section>
 		</header>
+		<!-- 모바일버전 gnb메뉴 박스 -->
 		<div class="mob gnb_wrap">
 			<section class="gnb">
 				<div class="top_section">
 					<!-- 닫기 버튼 -->
-					<span class="material-symbols-outlined close">close</span>
+					<a href="#">
+						<span class="material-symbols-outlined close">close</span>
+					</a>
 					<div class="svgBx">
 						<!-- 불가리 로고 svg -->
 						<svg class="logo_svg" viewBox="0 0 625.96 63.37">
@@ -760,6 +752,10 @@
 				<!-- 섹션2의 전체 타이틀 -->
 				<div class="title_wrap">
 					<h2 class="headline">추천 제품</h2>
+					<p class="txt">
+						시선을 사로잡는 세르펜티의 매력 <br>
+						모던한 매력의 세르펜티는 지난 75년간 불가리의 독창성과 비전으로 수없이 많은 형태와 디자인으로 새롭게 태어났습니다. 시대를 초월한 매력으로 오래도록 사랑받아 온 스타일 아이콘은 끊임없는 변화와 매혹적인 변신의 상징으로서 늘 당당한 매력을 발산하는 여성과 함께해 왔습니다.
+					</p>
 				</div>
 				<!-- 스와이퍼 -->
 				<div class="swiper recommended_Swiper">
