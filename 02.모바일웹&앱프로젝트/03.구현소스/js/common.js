@@ -32,8 +32,8 @@ $(()=>{
     mob_ham_btn.click(function(e){
         e.preventDefault();
 
+        $("body").css({overflowY: "hidden"});
         mob_gnb_menu.addClass("on");
-        // $("html, body").css({overflowY: "hidden"});
     });
 
     /* 👉모바일 버전) 닫기 버튼 클릭하면 gnb메뉴박스가 닫히고 상단영역 보이게 만들기 */
@@ -41,27 +41,35 @@ $(()=>{
         e.preventDefault();
 
         mob_gnb_menu.removeClass("on");
-        // $("html, body").css({overflowY: "visible"});
+        $("body").css({overflowY: "visible"});
 
         /* lnb메뉴도 닫아주기 */
-        if($(".mob .gnb .lnb").hasClass("on")){
-            $(".mob .gnb .lnb").removeClass("on");
-        }
+        // if($(".mob .gnb .lnb").hasClass("on")){
+        //     $(".mob .gnb .lnb").removeClass("on");
+        // }
     });
 
     /* 👉모바일 버전) gnb박스의 li들을 클릭하면 lnb박스가 오른쪽에서부터 등장하기 */
     gnb_lists.click(function(){
-        console.log("클릭했어?");
-        
+        // console.log("클릭했어?");
         const mob_lnb_menu = $(this).find(".lnb");
-        mob_lnb_menu.click(e=>e.stopPropagation())
+        // 이벤트 버블링 막기
+        mob_lnb_menu.click(e=>e.stopPropagation());
         /* 만약에 lnb메뉴에 클래스 on을 가지고 있다면 지우고, 없다면 on을 추가하도록 하기  */
-        if(mob_lnb_menu.hasClass("on")){
-            mob_lnb_menu.removeClass("on");
-        }
-        else{
-            mob_lnb_menu.addClass("on");
-        }
+        mob_lnb_menu.animate({
+            right: "0%",
+        }, 1000)
+        
+        
+    });
+
+    /* 👉모바일 버전) lnb박스에서 gnb메뉴를 클릭하면 lnb박스가 오른쪽으로 되돌아가기 */
+    const mob_lnb_backLnk = $(".mob>.gnb .lnb>.top_area>.lnk");
+    mob_lnb_backLnk.click(function(){
+        // console.log("클릭했어?");
+        // $(this).parents(".lnb").removeClass("on"); <<- 원래는 on으로 했었음,,
+        $(this).parents(".lnb").animate({right: "-120%"}, 1000);
+        
     });
 
     /* 👉모바일 버전) 상단영역에 있는 돋보기 아이콘 클릭하면 검색박스 나타나게 만들기 */
@@ -89,9 +97,36 @@ $(()=>{
         else if(window_scl_top < 20){
             header_section.removeClass("fixed");
         }
-    })
+    });
+
+    /* 👉모바일 버전) 하단영역 아코디언 기능 적용하기 */
+    const accordionFn = function (){
+        // 모바일버전 하단영역 서브카테고리 박스
+        const mob_info_sub_ctg = $(".mob>.info_section .sub_category");
+        // 모바일버전 하단영역 헤드라인
+        const mob_info_headline = $(".mob>.info_section .headline");
+        
+        mob_info_sub_ctg.hide();
+
+        mob_info_headline.click(function(){
+            /* +아이콘 -아이콘으로 바꾸기 */
+            console.log("리무브있어?: ",$(this).children(".remove"));
+            $(this).children(".add").hide().siblings().show();
+            $(this).next().slideToggle(300);
+            /* 다른 헤드라인 클릭시 기존에 펼쳐진 내용 접히게 하기 */
+            mob_info_headline.not(this).next().slideUp(300)
+            .prev().children(".remove").hide().siblings().show();
+        });
 
 
+
+    } ///////////////////// accordionFn 함수 //////////////////////////
+
+    // 아코디언함수 최초 호출하기
+    accordionFn();
+
+    /* 👉모바일 버전) 하단영역의 카테고리 li들 클릭하면 +아이콘 숨기고 -아이콘으로 바꾸기 */
+    
 
 
 

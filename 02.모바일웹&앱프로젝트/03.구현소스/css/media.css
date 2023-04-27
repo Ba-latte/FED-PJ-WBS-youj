@@ -21,5 +21,13 @@
     #top>.mob.top{
         display: flex;
     }
+    /* dt용 하단 영역 박스 숨기기 */
+    #info>.dt.info{
+        display: none;
+    }
+    /* mob용 하단 영역 박스 보이기 */
+    #info>.mob.info{
+        display: block;
+    }
 }
 /* 1100px 사이즈 이하 미디어쿼리 끝 */

@@ -415,16 +415,22 @@ header.mob.top.fixed{
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 3;
     background-color: var(--white);
     overflow-y: scroll;
 
     /* 🔥일단 숨겨두기🔥 */
     height: 0;
     transition: .4s ease-out;
+
+    /* lnb메뉴 슬라이딩애니메이션때문에 오른쪽에 나가있어서 가로스크롤 발생함 */
+    overflow-x: hidden;
 }
 /* 클래스 on을 주면 등장함 */
 .mob .gnb.on{
-    height: 100%;
+    /* height: 100%; */
+    height: 100vh;
+    /* ⭐4/27 수정⭐ */
 
     position: fixed;
     top: 0;
@@ -433,8 +439,6 @@ header.mob.top.fixed{
     bottom: 0;
     z-index: 3;
 
-    /* lnb메뉴 슬라이딩애니메이션때문에 오른쪽에 나가있어서 가로스크롤 발생함 */
-    /* overflow-x: hidden; */
 }
 
 /* GNB 메뉴 하위 a요소들 공통 세팅 */
@@ -462,14 +466,6 @@ header.mob.top.fixed{
     width: 150px;
     margin: 0 auto;
 }
-/* GNB 메뉴의 ul, ol 리스트들 공통 세팅 */
-.mob>.gnb .entire,
-.mob>.gnb .personal{
-    /* border: 1px solid red; */
-    padding: 20px;
-    /* height: calc(100% - 81px); */
-}
-
 /* GNB 메뉴의 하위 li들 공통 세팅 */
 .mob>.gnb li{
     display: flex;
@@ -479,7 +475,8 @@ header.mob.top.fixed{
 /* GNB 메뉴 첫번째 리스트(ul) 세팅 */
 .mob>.gnb .entire{
     /* 높이 강제 부과해서 두번째 리스트 밀어내어 윈도우 아래쪽에 붙게 만들기 */
-    /* height: 60vh; */
+    height: calc(100% - 81px);
+    padding: 20px;
 }
 /* GNB 메뉴 첫번째 리스트(ul) 하위 li 속 >/< 버튼 세팅(평소) */
 .mob>.gnb .arrow_forward{
@@ -499,7 +496,8 @@ header.mob.top.fixed{
 }
 
 /* GNB 메뉴 두번째 리스트(ol) 세팅 */
-.mob>.gnb .l2{
+.mob>.gnb>.lists_wrap>.personal{
+    padding: 20px;
     background-color: var(--black);
 
     /* 📢화면 바닥에 붙이기 위한 노력 ㅠㅠ📢 */
@@ -514,20 +512,27 @@ header.mob.top.fixed{
 
 
 /****************************************** LNB 메뉴 ******************************************/
-.mob .lists_wrap{
-    /* position: relative; */
-    /* 부모자격 - lnb박스들 */
-}
 /* LNB 메뉴 겉박스들 공통 세팅 */
 .mob>.gnb .lnb{
     position: absolute;
     /* 부모는? #top */
+    width: 100%;
+    height: auto;
     top: 81px;
-    left: 0;
-    right: 0;
     /* 상단 로고와 닫기 버튼이 있는 섹션 바로 아래쪽에 위치해야하므로 약간 위치조정함*/
+    right: -120%;
+
+    /* transform: translateX(110%); */
+    /* transition: 3s ease-out; */
     
-    background-color: var(--white);
+    overflow: hidden;
+    /* 숨겨두지 않으면 gnb박스에 스크롤바와 아래쪽 공간이 생김 */
+    z-index: 1;
+    /* gnb박스의 컨텐츠들보다 위에 있어야 함 */
+    /* background-color: var(--white); */
+
+    /* ⭐확인용⭐ */
+    background-color: lightblue;
 }
 
 /* LNB 메뉴 상단 top_area 겉박스 */
@@ -572,21 +577,24 @@ header.mob.top.fixed{
 .mob .lnb.engagement_and_wedding .list.category .tit{
     font-size: 13px;
 }
-
-/* LNB 메뉴의 추천 리스트 겉박스 세팅 */
+/* LNB 메뉴의 카테고리 리스트 하위 추천 리스트 겉박스 세팅 */
 .mob .lnb.jewellery .list.recommended,
 .mob .lnb.engagement_and_wedding .list.recommended{
     padding: 30px;
 }
 
+/* LNB 메뉴의 개인서비스 리스트 공통 세팅 */
+.mob>.gnb>.lists_wrap>.entire .personal{
+    padding: 20px;
+    background-color: red;
+}
 
-/* 추천 제품 스와이퍼 개별 세팅 CSS */
+/* 추천 제품 스와이퍼 공통 세팅 CSS */
 .recommended_Swiper {
     max-width: 300px;
     height: auto;
     margin: 0 auto 30px;
 }
-
 .recommended_Swiper.swiper-slide {
     text-align: center;
     font-size: 13px;
@@ -594,7 +602,6 @@ header.mob.top.fixed{
     justify-content: center;
     align-items: center;
 }
-
 .recommended_Swiper .swiper-slide img {
     display: block;
     width: 100%;
@@ -602,19 +609,12 @@ header.mob.top.fixed{
     object-fit: cover;
 }
 
-/* lnb메뉴들 전체 세팅 */
-.mob .gnb .lnb{
-    display: block;
-    height: 0;
-    overflow: hidden;
-    transform: translateX(110%);
-    transition: 0.5s ease-out;
+
+/* LNB메뉴 중 주얼리, 인게이지먼트&웨딩 메뉴 개별 세팅 */
+.mob>.gnb .entire>li>.lnb.jewellery,
+.mob>.gnb .entire>li>.lnb.engagement_and_wedding{
+    /* height: calc(100% - 81px); */
 }
-.mob .gnb .lnb.on{
-    transform: translateX(0);
-    height: auto;
-}
-/* LNB메뉴 중 '하이 주얼리' 메뉴 개별 세팅 */
 
 
 
@@ -622,22 +622,39 @@ header.mob.top.fixed{
 
 /* 겉박스 세팅 */
 .mob.info{
-    padding-top: 15px;
+    padding: 15px 10px 0;
+
+    /* 🔥처음에 숨기기🔥 */
+    display: none;
 }
 
 /* 회사 정보 섹션의 상위카테고리 리스트 공통 세팅 */
 .mob.info>.info_section>.list.category{
     display: flex;
     flex-direction: column;
-    gap: 5vw;
+    gap: 1vw;
     font-size: 13px;
     line-height: 2.3;
 }
 /* 회사 정보 섹션의 상위 카테고리 하위의 헤드라인 세팅 */
 .mob.info .headline{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
     font-weight: bold;
+    cursor: pointer;
+}
+/* 헤드라인 안의 내용더보기(+)아이콘 공통 세팅 */
+.mob.info .headline>.add{
+    font-size: 29px;
+}
+/* 헤드라인 안의 내용줄이기(-)아이콘 공통 세팅 */
+.mob.info .headline>.remove{
+    font-size: 29px;
+
+    /* 🔥평소에는 숨겨두기🔥 */
+    display: none;
 }
 /* info_section의 카테고리 리스트 중 문의 메뉴 하위의 li 세팅 */
 .mob.info .info_section .inquiry .sub_category>li{
@@ -677,15 +694,4 @@ header.mob.top.fixed{
 
 
 
-/* 🔥🔥🔥🔥🔥일단 숨겨두기🔥🔥🔥🔥🔥 */
 
-
-
-/* 모바일 버전에서 햄버거버튼 클릭시 나타나는 lnb들 */
-.mob .lnb.high_jewellery,
-.mob .lnb.jewellery,
-.mob .lnb.engagement_and_wedding,
-.mob .lnb.the_maison{
-    /* display: flex; */
-    /* display: none; */
-}
