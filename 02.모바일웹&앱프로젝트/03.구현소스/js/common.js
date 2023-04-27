@@ -54,6 +54,7 @@ $(()=>{
         console.log("클릭했어?");
         
         const mob_lnb_menu = $(this).find(".lnb");
+        mob_lnb_menu.click(e=>e.stopPropagation())
         /* 만약에 lnb메뉴에 클래스 on을 가지고 있다면 지우고, 없다면 on을 추가하도록 하기  */
         if(mob_lnb_menu.hasClass("on")){
             mob_lnb_menu.removeClass("on");
