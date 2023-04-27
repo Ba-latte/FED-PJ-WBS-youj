@@ -8,13 +8,10 @@ html,body,h1,h2,h3,h4,h5,h6,ul,ol,dt,dd,p,figure{
     padding: 0;
 }
 
-/* 가로스크롤 생김 방지!(특히 모바일) */
-html, body{
-    overflow-x: hidden;
-}
-
 /* 폰트 사이즈 루트 */
 body{
+    overflow-x: hidden;
+    /* 가로스크롤 생김 방지!(특히 모바일) */
     font-size: 10px;
 }
 

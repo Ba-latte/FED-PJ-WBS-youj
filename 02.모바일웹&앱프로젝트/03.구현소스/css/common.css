@@ -409,6 +409,12 @@ header.mob.top.fixed{
 
 /* GNB 메뉴 겉박스 세팅 */
 .mob .gnb{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--white);
     overflow-y: scroll;
 
@@ -428,7 +434,7 @@ header.mob.top.fixed{
     z-index: 3;
 
     /* lnb메뉴 슬라이딩애니메이션때문에 오른쪽에 나가있어서 가로스크롤 발생함 */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 /* GNB 메뉴 하위 a요소들 공통 세팅 */
@@ -461,6 +467,7 @@ header.mob.top.fixed{
 .mob>.gnb .personal{
     /* border: 1px solid red; */
     padding: 20px;
+    /* height: calc(100% - 81px); */
 }
 
 /* GNB 메뉴의 하위 li들 공통 세팅 */
@@ -496,10 +503,9 @@ header.mob.top.fixed{
     background-color: var(--black);
 
     /* 📢화면 바닥에 붙이기 위한 노력 ㅠㅠ📢 */
-    /* position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0px; */
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 /* GNB 메뉴 두번째 리스트(ol) 하위 a요소 개별 세팅 */
 .mob>.gnb .l2.personal .lnk{

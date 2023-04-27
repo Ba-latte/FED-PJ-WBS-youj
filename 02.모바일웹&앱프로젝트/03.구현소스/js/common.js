@@ -32,16 +32,16 @@ $(()=>{
     mob_ham_btn.click(function(e){
         e.preventDefault();
 
-        $(this).parents(".mob.top").hide();
         mob_gnb_menu.addClass("on");
-        $("html, body").css({overflowY: "hidden"});
+        // $("html, body").css({overflowY: "hidden"});
     });
 
     /* 👉모바일 버전) 닫기 버튼 클릭하면 gnb메뉴박스가 닫히고 상단영역 보이게 만들기 */
-    mob_close_btn.click(function(){
+    mob_close_btn.click(function(e){
+        e.preventDefault();
+
         mob_gnb_menu.removeClass("on");
-        mob_ham_btn.parents(".mob.top").show();
-        $("html, body").css({overflowY: "visible"});
+        // $("html, body").css({overflowY: "visible"});
 
         /* lnb메뉴도 닫아주기 */
         if($(".mob .gnb .lnb").hasClass("on")){
