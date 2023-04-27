@@ -610,6 +610,57 @@ header.mob.top.fixed{
 }
 /* LNB메뉴 중 '하이 주얼리' 메뉴 개별 세팅 */
 
+
+
+/**************************** 모바일 하단 영역 ****************************/
+
+/* 겉박스 세팅 */
+.mob.info{
+    padding-top: 15px;
+}
+
+/* 회사 정보 섹션의 상위카테고리 리스트 공통 세팅 */
+.mob.info>.info_section>.list.category{
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    font-size: 13px;
+    line-height: 2.3;
+}
+/* 회사 정보 섹션의 상위 카테고리 하위의 헤드라인 세팅 */
+.mob.info .headline{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+/* info_section의 카테고리 리스트 중 문의 메뉴 하위의 li 세팅 */
+.mob.info .info_section .inquiry .sub_category>li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* 하단 영역의 현재 위치 겉박스 세팅 */
+.mob.info .the_present_region{
+    display: flex;
+    justify-content: right;
+    max-width: 1300px;
+    margin: 0 auto 10px;
+    border-bottom: 1px solid var(--bg_black);
+
+}
+.mob.info .country_and_language_selection{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+    /* 버튼 요소 기본값 해제 */
+    border: 0;
+    background-color: transparent;
+}
+
+
+
+
 /***************************************************
     [ 모바일 버전 끝 ]
 ***************************************************/
