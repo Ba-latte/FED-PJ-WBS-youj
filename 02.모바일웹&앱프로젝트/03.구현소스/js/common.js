@@ -17,25 +17,18 @@ $(()=>{
     const main_top_btn = $("#cont .top_btn_bx");
     /* 모바일 버전) 상단영역의 header태그 */
     const header_section = $(".mob.top");
+    /* 모바일버전) gnb메뉴의 li들 */
+    const gnb_lists = $(".mob .entire.list>li");
+    const top_logo_bx = $("#top .svgBx");
     // console.log(main_top_btn);
 
-    const my = $(".mob .entire.list>li");
-    console.log("나야", my);
-    my.click(function(){
-        console.log("클릭했어?");
-        
-        const mob_lnb_menu = $(this).find(".lnb");
-
-        if(mob_lnb_menu.hasClass("on")){
-            mob_lnb_menu.removeClass("on");
-        }
-        else{
-            mob_lnb_menu.addClass("on");
-        }
+    /* 👉상단 영역의 모든 svg로고 클릭하면 메인페이지로 이동하기 */
+    top_logo_bx.click(function(){
+        console.log("이동!");
+        location.href="index.html";
     })
 
-
-    /* 모바일 버전) 햄버거 버튼 클릭하면 gnb메뉴박스 보이고 상단영역 안보이게 만들기 */
+    /* 👉모바일 버전) 햄버거 버튼 클릭하면 gnb메뉴박스 보이고 상단영역 안보이게 만들기 */
     mob_ham_btn.click(function(e){
         e.preventDefault();
 
@@ -44,26 +37,46 @@ $(()=>{
         $("html, body").css({overflowY: "hidden"});
     });
 
-    /* 모바일 버전) 닫기 버튼 클릭하면 gnb메뉴박스가 닫히고 상단영역 보이게 만들기 */
+    /* 👉모바일 버전) 닫기 버튼 클릭하면 gnb메뉴박스가 닫히고 상단영역 보이게 만들기 */
     mob_close_btn.click(function(){
         mob_gnb_menu.removeClass("on");
         mob_ham_btn.parents(".mob.top").show();
         $("html, body").css({overflowY: "visible"});
-    })
 
-    /* 모바일 버전) 상단영역에 있는 검색버튼 클릭하면 검색박스 나타나게 만들기 */
-    mob_search_btn.click(function(){
-        console.log("야!");
+        /* lnb메뉴도 닫아주기 */
+        if($(".mob .gnb .lnb").hasClass("on")){
+            $(".mob .gnb .lnb").removeClass("on");
+        }
+    });
+
+    /* 👉모바일 버전) gnb박스의 li들을 클릭하면 lnb박스가 오른쪽에서부터 등장하기 */
+    gnb_lists.click(function(){
+        console.log("클릭했어?");
+        
+        const mob_lnb_menu = $(this).find(".lnb");
+        /* 만약에 lnb메뉴에 클래스 on을 가지고 있다면 지우고, 없다면 on을 추가하도록 하기  */
+        if(mob_lnb_menu.hasClass("on")){
+            mob_lnb_menu.removeClass("on");
+        }
+        else{
+            mob_lnb_menu.addClass("on");
+        }
+    });
+
+    /* 👉모바일 버전) 상단영역에 있는 돋보기 아이콘 클릭하면 검색박스 나타나게 만들기 */
+    mob_search_btn.click(function(e){
+        // console.log("상단 돋보기!");
+        e.preventDefault();
         $(this).parents(".lmenu").find(".search.wrap")
-        .toggle();
+        .toggleClass("on");
     })
 
-    /* 상단으로 향하는 top버튼 클릭시 맨위로 이동하기 */
+    /* 👉상단으로 향하는 top버튼 클릭시 맨위로 이동하기 */
     main_top_btn.click(function(){
         $("html, body").animate({scrollTop: 0 }, 'slow');
     });
 
-    /* 모바일 버전) 스크롤 내리면 상단 영역 박스의 포지션이 fixed로 바뀌어 상단에 고정되게 하기 */
+    /* 👉모바일 버전) 스크롤 내리면 상단 영역 박스의 포지션이 fixed로 바뀌어 상단에 고정되게 하기 */
     $(window).scroll(function(){
         let window_scl_top = $(document).scrollTop();
         // console.log(window_scl_top);

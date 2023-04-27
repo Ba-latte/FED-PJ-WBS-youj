@@ -49,10 +49,11 @@
     text-decoration: underline;
 }
 
-/* 로고 svg 세팅 */
+/* 상단영역의 로고 svg 세팅 */
 .dt .svgBx{
     width: 350px;
     margin: 15px auto;
+    cursor: pointer;
 }
 
 /* GNB메뉴 */
@@ -269,6 +270,9 @@
     background-color: var(--bg_beige);
     padding-bottom: 10px;
 }
+
+
+
 /* 하단 영역의 로고 개별 세팅 */
 .dt.info>.logo .svgBx{
     margin: 0 auto;
@@ -279,7 +283,7 @@
 .dt.info>.info_section>.list.category{
     display: flex;
     justify-content: center;
-    gap: 100px;
+    gap: 5vw;
     padding-bottom: 30px;
     
     font-size: 13px;
@@ -379,15 +383,16 @@ header.mob.top.fixed{
     left: 0;
     top: 100%;
     width: 100%;
-    height: 54px;
     background-color: #fff;
     box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.068);
-
+    
     /* 🔥일단 박스 숨겨두기🔥 */
-    display: none;
+    overflow: hidden;
+    height: 0px;
+    transition: .4s ease-out;
 }
 .mob .search.wrap.on{
-    display: block;
+    height: 54px;
 }
 /* 오른쪽 메뉴 공통 세팅 */
 .mob>.rmenu>.list{
@@ -399,6 +404,7 @@ header.mob.top.fixed{
 .mob h1.svgBx{
     width: 150px;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 /* GNB 메뉴 겉박스 세팅 */
@@ -407,11 +413,12 @@ header.mob.top.fixed{
     overflow-y: scroll;
 
     /* 🔥일단 숨겨두기🔥 */
-    display: none;
+    height: 0;
+    transition: .4s ease-out;
 }
 /* 클래스 on을 주면 등장함 */
 .mob .gnb.on{
-    display: block;
+    height: 100%;
 
     position: fixed;
     top: 0;

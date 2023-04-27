@@ -2,10 +2,13 @@
 
 /* 불가리 PJ 미디어쿼리 CSS - media.css */
 
-/* 1500px 사이즈 이하 미디어쿼리 시작 */
-@media screen and (max-width: 1500px) {
+/* 1300px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1300px) {
+    .section3.serpenti_characteristic>.grid {
+        margin: 0 10px;
+    }
 }
-/* 1500px 사이즈 이하 미디어쿼리 끝 */
+/* 1300px 사이즈 이하 미디어쿼리 끝 */
 
 
 /* 1100px 사이즈 이하 미디어쿼리 시작 */
