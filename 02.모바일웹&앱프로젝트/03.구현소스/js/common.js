@@ -56,9 +56,10 @@ $(()=>{
         // 이벤트 버블링 막기
         mob_lnb_menu.click(e=>e.stopPropagation());
         /* 만약에 lnb메뉴에 클래스 on을 가지고 있다면 지우고, 없다면 on을 추가하도록 하기  */
-        mob_lnb_menu.animate({
+        mob_lnb_menu.css({height:"auto"})
+        .animate({
             right: "0%",
-        }, 1000)
+        }, 1000);
         
         
     });
@@ -68,7 +69,11 @@ $(()=>{
     mob_lnb_backLnk.click(function(){
         // console.log("클릭했어?");
         // $(this).parents(".lnb").removeClass("on"); <<- 원래는 on으로 했었음,,
-        $(this).parents(".lnb").animate({right: "-120%"}, 1000);
+        $(this).parents(".lnb")
+        .animate({right: "-120%"}, 1000, 
+        function(){$(this).css({height: "0"})
+        });
+        
         
     });
 
@@ -171,21 +176,45 @@ $(()=>{
     //     gnb.find("li .lnb").removeClass("on");
     // }
 
+    /* 스와이퍼 만들기 */
+    const make_swiper = function make_swiper(cls){
+        // console.log("이거 담아서 스와이퍼만들거야!: ", cls);
+        new Swiper(cls, {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            grabCursor: true,
+        });
+    };
+
+    /* 호출해서 스와이퍼 개별 적용하기 */
+    make_swiper("test001");
+
+
     /* 모바일 lnb메뉴 속 스와이퍼 */
-    const swiper = new Swiper(".mob .entire.list .lnb.jewellery .recommended_Swiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        grabCursor: true,
-    });
+    // const lnb_swiper = 
+    // new Swiper(".mob .entire.list .lnb.jewellery .recommended_Swiper", {
+    //     slidesPerView: 1,
+    //     spaceBetween: 30,
+    //     loop: true,
+    //     pagination: {
+    //         el: ".swiper-pagination",
+    //         clickable: true,
+    //     },
+    //     navigation: {
+    //         nextEl: ".swiper-button-next",
+    //         prevEl: ".swiper-button-prev",
+    //     },
+    //     grabCursor: true,
+    // });
 
     
 

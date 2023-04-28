@@ -472,6 +472,19 @@ header.mob.top.fixed{
     align-items: center;
     justify-content: space-between;
 }
+
+.mob>.gnb .lists_wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 81px);
+}
+
+
+
+
+
+
 /* GNB 메뉴 첫번째 리스트(ul) 세팅 */
 .mob>.gnb .entire{
     /* 높이 강제 부과해서 두번째 리스트 밀어내어 윈도우 아래쪽에 붙게 만들기 */
@@ -501,8 +514,8 @@ header.mob.top.fixed{
     background-color: var(--black);
 
     /* 📢화면 바닥에 붙이기 위한 노력 ㅠㅠ📢 */
-    position: absolute;
-    width: 100%;
+    /* position: absolute; */
+    /* width: 100%; */
     bottom: 0;
 }
 /* GNB 메뉴 두번째 리스트(ol) 하위 a요소 개별 세팅 */
@@ -517,22 +530,17 @@ header.mob.top.fixed{
     position: absolute;
     /* 부모는? #top */
     width: 100%;
-    height: auto;
+    height: 0;
     top: 81px;
     /* 상단 로고와 닫기 버튼이 있는 섹션 바로 아래쪽에 위치해야하므로 약간 위치조정함*/
     right: -120%;
 
-    /* transform: translateX(110%); */
-    /* transition: 3s ease-out; */
-    
     overflow: hidden;
     /* 숨겨두지 않으면 gnb박스에 스크롤바와 아래쪽 공간이 생김 */
     z-index: 1;
     /* gnb박스의 컨텐츠들보다 위에 있어야 함 */
-    /* background-color: var(--white); */
+    background-color: var(--white);
 
-    /* ⭐확인용⭐ */
-    background-color: lightblue;
 }
 
 /* LNB 메뉴 상단 top_area 겉박스 */
@@ -586,7 +594,15 @@ header.mob.top.fixed{
 /* LNB 메뉴의 개인서비스 리스트 공통 세팅 */
 .mob>.gnb>.lists_wrap>.entire .personal{
     padding: 20px;
-    background-color: red;
+    background-color: var(--black);
+}
+
+/* 스와이퍼, 카테고리 리스트를 묶은 제품군섹션 박스 세팅 */
+.mob>.gnb .entire .product_section{
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+    height: calc(100vh - 140px);
 }
 
 /* 추천 제품 스와이퍼 공통 세팅 CSS */
