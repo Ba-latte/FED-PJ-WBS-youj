@@ -114,70 +114,65 @@ $(()=>{
         mob_info_sub_ctg.hide();
 
         mob_info_headline.click(function(){
-            /* +아이콘 -아이콘으로 바꾸기 */
-            console.log("리무브있어?: ",$(this).children(".remove"));
-            $(this).children(".add").hide().siblings().show();
+            if($(this).find(".remove").attr("data-hide") === "0"){
+                $(this).find(".remove").hide().attr("data-hide", "1").siblings().show();
+            }
+            else{
+                $(this).children(".add").hide().siblings().show().attr("data-hide", "0");
+
+            }
+
+            /* 자신의 뒷형제들 슬라이드 토글 */
             $(this).next().slideToggle(300);
-            /* 다른 헤드라인 클릭시 기존에 펼쳐진 내용 접히게 하기 */
+
+            // /* 다른 헤드라인 클릭시 기존에 펼쳐진 내용 접히게 하고, -아이콘 +로 바꾸기 */
             mob_info_headline.not(this).next().slideUp(300)
-            .prev().children(".remove").hide().siblings().show();
+            .prev().children(".remove").hide().attr("data-hide", "1").siblings().show();
         });
-
-
-
     } ///////////////////// accordionFn 함수 //////////////////////////
 
     // 아코디언함수 최초 호출하기
     accordionFn();
 
-    /* 👉모바일 버전) 하단영역의 카테고리 li들 클릭하면 +아이콘 숨기고 -아이콘으로 바꾸기 */
+
+
+
+
+
+
+
+
+
+
+
+    /* 메인 페이지 섹션2 추천 제품 - 뷰3 스와이퍼 */
+    const make_v3_swiper = function make_v3_swiper(cls){
+        new Swiper(cls, {
+            slidesPerView: 3, // 한 화면당 슬라이드 개수
+            spaceBetween: 20, // 슬라이드 사이간격(px)
+            slidesPerGroup: 1, // 슬라이드 그룹(개수단위로 넘어감!)
     
+            loop: true, // 무한루프(기본값:false)
+            loopFillGroupWithBlank: true,
+            // 한 화면 단위지정시 단위보다 그룹이 작을 경우 빈칸을 채움
+            pagination: {
+                // 블릿설정
+                el: ".swiper-pagination", // 블릿요소설정
+                clickable: false, // 클릭가능여부
+            },
+            navigation: {
+                // 양쪽이동버튼
+                nextEl: ".swiper-button-next", // 다음버튼 요소설정
+                prevEl: ".swiper-button-prev", // 이전버튼 요소설정
+            },
+        });
+
+    }; //////////////////////// make_v3_swiper 함수 //////////////////////////////
 
 
 
-
-
-
-
-
-
-
-
-    /* 메인 페이지 섹션2 추천 제품 - 스와이퍼 */
-    let test1 = new Swiper(".section2.recommended_product>.recommended_Swiper", {
-        slidesPerView: 3, // 한 화면당 슬라이드 개수
-        spaceBetween: 20, // 슬라이드 사이간격(px)
-        slidesPerGroup: 1, // 슬라이드 그룹(개수단위로 넘어감!)
-
-        loop: true, // 무한루프(기본값:false)
-        loopFillGroupWithBlank: true,
-        // 한 화면 단위지정시 단위보다 그룹이 작을 경우 빈칸을 채움
-        pagination: {
-            // 블릿설정
-            el: ".swiper-pagination", // 블릿요소설정
-            clickable: false, // 클릭가능여부
-        },
-        navigation: {
-            // 양쪽이동버튼
-            nextEl: ".swiper-button-next", // 다음버튼 요소설정
-            prevEl: ".swiper-button-prev", // 이전버튼 요소설정
-        },
-    });
-
-    // // const gnb = $(".dt>.gnb li:has(.lnb)");
-    // const gnb = $(".dt>.gnb");
-    // console.log(gnb);
-    // gnb.hover(addOnFn, removeOnFn);
-
-    // function addOnFn(){
-    //     gnb.find("li .lnb").addClass("on");
-    // }
-    // function removeOnFn(){
-    //     gnb.find("li .lnb").removeClass("on");
-    // }
-
-    /* 스와이퍼 만들기 */
-    const make_swiper = function make_swiper(cls){
+    /* 👉모바일 버전) lnb 메뉴 추천 제품 - 뷰1 스와이퍼 */
+    const make_v1_swiper = function make_v1_swiper(cls){
         // console.log("이거 담아서 스와이퍼만들거야!: ", cls);
         new Swiper(cls, {
             slidesPerView: 1,
@@ -193,30 +188,31 @@ $(()=>{
             },
             grabCursor: true,
         });
-    };
-
-    /* 호출해서 스와이퍼 개별 적용하기 */
-    make_swiper("test001");
+    }; //////////////////////// make_v1_swiper 함수 //////////////////////////////
 
 
-    /* 모바일 lnb메뉴 속 스와이퍼 */
-    // const lnb_swiper = 
-    // new Swiper(".mob .entire.list .lnb.jewellery .recommended_Swiper", {
-    //     slidesPerView: 1,
-    //     spaceBetween: 30,
-    //     loop: true,
-    //     pagination: {
-    //         el: ".swiper-pagination",
-    //         clickable: true,
-    //     },
-    //     navigation: {
-    //         nextEl: ".swiper-button-next",
-    //         prevEl: ".swiper-button-prev",
-    //     },
-    //     grabCursor: true,
-    // });
+    /* 👉서브페이지) 하이주얼리 작품 소개 스와이퍼 */
+    const make_v3_noNav_swiper = function make_v3_noNav_swiper(cls){
+        new Swiper(cls, {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }; /////////////////////// make_v3_noNav_swiper 함수 ////////////////////////
+
+
+    /* 👉호출해서 스와이퍼 개별 적용하기 */
+    make_v1_swiper(".mob_jewellery_recommended_Swiper");
+    make_v1_swiper(".mob_engagement_and_wedding_recommended_Swiper");
+    make_v3_swiper(".section2.recommended_product>.recommended_Swiper");
+    make_v3_noNav_swiper(".section3.introduction_to_works>.intro_Swiper");
+
 
     
+
 
 
 }); /////////////////////////////////// jQB //////////////////////////////////////////

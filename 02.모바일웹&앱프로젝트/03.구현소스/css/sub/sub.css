@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+/* 불가리 PJ 메인페이지 CSS - main.css */
+
+/* 외부 CSS 머징 */
+/* @import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css); */
+
+
+/******************************************** 섹션1 메인 동영상 ********************************************/
+/* 동영상 겉박스 */
+.section1.main_video>.video_bx.wrap {
+    aspect-ratio: initial;
+}
+/* 텍스트 겉박스 */
+.section1.main_video>.txt {
+    position: static;
+    width: auto;
+    margin-top: 30px;
+    padding: 20px;
+    color: var(--bg_black);
+    text-shadow: none;
+}
+
+/* 섹션2 - 불가리 에덴 그리드 박스 세팅 */
+.section2.bulgari_eden>.grid {
+    display: grid;
+    max-width: 1300px;
+    margin: 100px auto 50px;
+    /* 가로 그리드 템플릿 */
+    grid-template-columns: repeat(12, 1fr);
+    /* 간격 설정 */
+    grid-column-gap: 20px;
+    grid-row-gap: 50px;
+}
+/* 그리드 박스 내부 모든 img 요소 공통 세팅 */
+.section2.bulgari_eden>.characteristics.grid .image>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 그리드 박스 내부 모든 txt_bx(텍스트요소들의 겉박스) 공통 세팅 */
+.section2.bulgari_eden>.characteristics.grid .txt_bx{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px;
+    color: var(--bg_black);
+}
+/* 그리드 박스 내부 모든 title 요소 공통 세팅 */
+.section2.bulgari_eden>.characteristics.grid .txt_bx>.title{
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid var(--bg_black);
+    text-align: center;
+    font-size: 27px;
+    font-weight: normal;
+    background-color: var(--white);
+
+    /* 마우스오버시 트랜지션 */
+    /* transition: 
+    background-color .3s ease-in-out, 
+    color .3s ease-in-out; */
+}
+/* title에 마우스오버시 색상 변경 */
+/* .section2.bulgari_eden>.characteristics.grid .txt_bx>.title:hover{
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid var(--bg_black);
+    background-color: var(--bg_black);
+    text-align: center;
+    font-size: 27px;
+    font-weight: normal;
+    color: var(--white);
+} */
+
+/* 그리드 박스 내부 모든 txt 요소 공통 세팅 */
+.section2.bulgari_eden>.characteristics.grid .txt_bx>.txt{
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.7;
+}
+/* 첫번째 줄 - 이미지 영역 */
+.rw1.image{
+    grid-column: 1/8;
+}
+/* 첫번쨰 줄 - 텍스트 영역 */
+.rw1.txt_bx{
+    grid-column: 8/13;
+}
+/* 두번쨰 줄 - 텍스트 영역 */
+.rw2.txt_bx{
+    grid-column: 1/6;
+}
+/* 두번쨰 줄 - 이미지 영역 */
+.rw2.image{
+    grid-column: 6/13;
+}
+/* 세번째 줄 - 이미지 영역 */
+.rw3.image{
+    grid-column: 1/8;
+}
+/* 세번쨰 줄 - 텍스트 영역 */
+.rw3.txt_bx{
+    grid-column: 8/13;
+}
+
+
+/* 섹션3 불가리 에덴 시리즈 작품 소개 배너 */
+/* 제목과 설명 겉박스 */
+.section3.introduction_to_works>.txt_bx{
+    margin: 100px auto 0;
+    padding: 20px;
+    text-align: center;
+}
+/* 제목 */
+.section3.introduction_to_works .headline{
+    padding-bottom: 10px;
+    font-size: 27px;
+}
+/* 설명 */
+.section3.introduction_to_works .headline+.txt{
+    font-size: 16px;
+}
+/* 스와이퍼 겉박스*/
+.section3.introduction_to_works .intro_Swiper{
+    width: 70%;
+    margin: 0 auto 50px;
+    padding: 20px;
+}
+/* 스와이퍼 개별슬라이드 공통 세팅 */
+.section3.introduction_to_works .intro_Swiper .swiper-slide{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    /* outline: 1px solid  red; */
+}
+/* 스와이퍼 개별슬라이드 내부 텍스트박스 세팅 */
+.section3.introduction_to_works .swiper-slide>.txt_bx{
+    color: var(--bg_black);
+}
+.section3.introduction_to_works .swiper-slide>.txt_bx>.title{
+    padding: 10px;
+    border: 1px solid var(--bg_black);
+    font-weight: normal;
+}
+.section3.introduction_to_works .swiper-slide>.txt_bx>.txt{
+    padding: 10px 0 30px;
+    text-align: justify;
+}
