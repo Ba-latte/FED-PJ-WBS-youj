@@ -11,7 +11,17 @@
 /******************************************** 섹션1 메인 동영상 ********************************************/
 /* 동영상 겉박스 */
 .section1.main_video>.video_bx.wrap {
-    aspect-ratio: initial;
+    /* aspect-ratio: initial; */
+}
+/* 불가리 에덴 동영상 개별 세팅 */
+.section1.main_video>.video_bx.wrap:has(.bulgari_eden){
+    aspect-ratio: 1920/600;
+}
+/* 불가리 에덴 동영상 요소 개별 세팅 */
+.section1.main_video .bulgari_eden{
+    width: 100%;
+    height: 180%;
+    transform: translateY(-25%);
 }
 /* 텍스트 겉박스 */
 .section1.main_video>.txt {
@@ -22,9 +32,17 @@
     color: var(--bg_black);
     text-shadow: none;
 }
+/* 텍스트 헤드라인 */
+.section1.main_video .headline{
+    font-family: one_mobile_regular;
+}
+/* 텍스트 */
+.section1.main_video .catchphrase{
+    word-break: keep-all;
+}
 
 /* 섹션2 - 불가리 에덴 그리드 박스 세팅 */
-.section2.bulgari_eden>.grid {
+.section2>.grid {
     display: grid;
     max-width: 1300px;
     margin: 100px auto 50px;
@@ -35,13 +53,13 @@
     grid-row-gap: 50px;
 }
 /* 그리드 박스 내부 모든 img 요소 공통 세팅 */
-.section2.bulgari_eden>.characteristics.grid .image>img{
+.section2>.characteristics.grid .image>img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 /* 그리드 박스 내부 모든 txt_bx(텍스트요소들의 겉박스) 공통 세팅 */
-.section2.bulgari_eden>.characteristics.grid .txt_bx{
+.section2>.characteristics.grid .txt_bx{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,34 +69,20 @@
     color: var(--bg_black);
 }
 /* 그리드 박스 내부 모든 title 요소 공통 세팅 */
-.section2.bulgari_eden>.characteristics.grid .txt_bx>.title{
+.section2>.characteristics.grid .txt_bx>.title{
     width: 100%;
     padding: 10px 0;
     border: 1px solid var(--bg_black);
     text-align: center;
+
+    font-family: one_mobile_regular;
     font-size: 27px;
     font-weight: normal;
     background-color: var(--white);
-
-    /* 마우스오버시 트랜지션 */
-    /* transition: 
-    background-color .3s ease-in-out, 
-    color .3s ease-in-out; */
 }
-/* title에 마우스오버시 색상 변경 */
-/* .section2.bulgari_eden>.characteristics.grid .txt_bx>.title:hover{
-    width: 100%;
-    padding: 10px 0;
-    border: 1px solid var(--bg_black);
-    background-color: var(--bg_black);
-    text-align: center;
-    font-size: 27px;
-    font-weight: normal;
-    color: var(--white);
-} */
 
 /* 그리드 박스 내부 모든 txt 요소 공통 세팅 */
-.section2.bulgari_eden>.characteristics.grid .txt_bx>.txt{
+.section2>.characteristics.grid .txt_bx>.txt{
     padding: 10px 0;
     font-size: 16px;
     text-align: justify;
@@ -119,6 +123,7 @@
 }
 /* 제목 */
 .section3.introduction_to_works .headline{
+    font-family: one_mobile_regular;
     padding-bottom: 10px;
     font-size: 27px;
 }
@@ -128,7 +133,7 @@
 }
 /* 스와이퍼 겉박스*/
 .section3.introduction_to_works .intro_Swiper{
-    width: 70%;
+    width: 90%;
     margin: 0 auto 50px;
     padding: 20px;
 }
@@ -147,6 +152,7 @@
 .section3.introduction_to_works .swiper-slide>.txt_bx>.title{
     padding: 10px;
     border: 1px solid var(--bg_black);
+    font-family: one_mobile_regular;
     font-weight: normal;
 }
 .section3.introduction_to_works .swiper-slide>.txt_bx>.txt{

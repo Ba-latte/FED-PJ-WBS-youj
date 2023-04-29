@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+/* 불가리 PJ 서브페이지 미디어쿼리 CSS - sub_media.css */
+
+/* 1000px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1000px) {
+    
+}
+/* 1000px 사이즈 이하 미디어쿼리 끝 */
+
+/* 900px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 900px) {
+    /* top 버튼 */
+    .top_btn_bx{
+        left: 90%;
+    }
+    /* 동영상 타이틀 */
+    .section1.main_video>.txt>.headline{
+        font-size: 27px;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+    /* 그리드 겉박스 세팅 */
+    .section2.bulgari_eden>.grid{
+        padding: 0 20px;
+    }
+    /* 그리드 내부 텍스트 겉박스 세팅 */
+    .section2.bulgari_eden>.characteristics.grid .txt_bx{
+        padding: 0;
+    }
+    /* 그리드 세부 세팅 */
+    .rw1.image {
+        grid-column: 1/13;
+    }
+    .rw1.txt_bx {
+        grid-column: 1/13;
+    }
+    .rw2.image {
+        grid-column: 1/13;
+    }
+    .rw2.txt_bx {
+        grid-column: 1/13;
+    }
+    .rw3.image {
+        grid-column: 1/13;
+    }
+    .rw3.txt_bx {
+        grid-column: 1/13;
+    }
+    /* 스와이퍼 */
+    
+}
+/* 900px 사이즈 이하 미디어쿼리 끝 */
+
+/* 700px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 700px) {
+    /* top 버튼 */
+    .top_btn_bx{
+        left: 85%;
+    }
+    /* 동영상 타이틀 */
+    .section1.main_video>.txt>.headline{
+        font-size: 27px;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+    /* 그외 작품 소개 스와이퍼 배너의 헤드라인, 텍스트박스 세팅 */
+    .section3.introduction_to_works .headline{
+        word-break: keep-all;
+    }
+    .section3.introduction_to_works .headline+.txt{
+        word-break: keep-all;
+    }
+}
+/* 700px 사이즈 이하 미디어쿼리 끝 */
+
+/* 400px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 400px) {
+    .top_btn_bx{
+        left: 70%;
+    }
+    /* 메인 동영상 텍스트 겉박스 세팅 */
+    .section1.main_video>.txt{
+        gap: 25px;
+    }
+    /* 메인 동영상 헤드라인 */
+    .section1.main_video>.txt>.headline{
+        font-size: 23px;
+        line-height: 1.5;
+    }
+    /* 그리드박스 내부의 타이틀 */
+    .section2.bulgari_eden>.characteristics.grid .txt_bx>.title{
+        font-size: 20px;
+    }
+    /* 그외 작품 소개 스와이퍼 배너의 헤드라인 */
+    .section3.introduction_to_works .headline{
+        font-size: 23px;
+    }
+
+}
+/* 400px 사이즈 이하 미디어쿼리 끝 */

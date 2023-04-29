@@ -4,6 +4,22 @@
 
 /*********** 1. 웹폰트 ***********/
 
+@font-face{
+    font-family: one_mobile_light;
+    src: url(../../03.구현소스/font/ONE-Mobile-Light.woff) format("woff");
+}
+@font-face {
+    font-family: one_mobile_regular;
+    src: url(../../03.구현소스/font/ONE-Mobile-Regular.woff) format("woff");
+}
+@font-face {
+    font-family: one_mobile_bold;
+    src: url(../../03.구현소스/font/ONE-Mobile-Bold.woff) format("woff");
+}
+@font-face {
+    font-family: one_mobile_title;
+    src: url(../../03.구현소스/font/ONE-Mobile-Title.woff) format("woff");
+}
 
 /* 
     [ 공통 클래스 이름정의 ]

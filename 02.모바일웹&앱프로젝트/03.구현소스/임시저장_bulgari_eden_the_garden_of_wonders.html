@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경이로움의 에덴 컬렉션 | 불가리</title>
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" href="https://www.bulgari.com/on/demandware.static/Sites-KR-Site/-/default/dwafe1f737/images/favicons/favicon-48x48.png" sizes="48x48">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.bulgari.com/on/demandware.static/Sites-KR-Site/-/default/dw8f9292ee/images/favicons/apple-touch-icon-57x57.png">
+	<!-- 구글 심볼 CDN -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<!-- swiper CDN -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<!-- 외부 CSS -->
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/sub/sub.css">
+	<!-- 미디어쿼리 CSS -->
+	<link rel="stylesheet" href="./css/media.css">
+	<!-- 뷰JS 스탠드얼론 버전 CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<!-- 제이쿼리 라이브러리 + UI -->
+	<script src="./js/jquery-3.6.3.min.js"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+	<!-- 공통 JS -->
+	<script src="./js/common.js"></script>
+	<!-- 링크시스템 JS -->
+	<script src="./js/linksys.js"></script>
+	<!-- 외부 JS 넣기 -->
+	<script src="./js/main.js"></script>
+
+</head>
+<body>
+	<!-- 상단 영역 -->
+	<div id="top">
+		<header class="top dt ibx">
+			<div class="tmenu">
+				<section class="lmenu">
+					<ul class="list">
+						<li>
+							<a href="#" class="htl">
+								<span class="material-symbols-outlined location_on">location_on</span>
+								<span class="menu_txt">스토어 검색</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="htl">
+								<span class="material-symbols-outlined room_service">room_service</span>
+								<span class="menu_txt">서비스</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="htl">
+								<span class="material-symbols-outlined headset_mic">headset_mic</span>
+								<span class="menu_txt">문의하기</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="htl">
+								<span class="material-symbols-outlined search">search</span>
+								<span>
+									<input type="text" class="search_input" placeholder="검색" size="10">
+								</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section class="rmenu">
+					<ul class="list">
+						<li>
+							<a href="#" class="htl">
+								<span class="material-symbols-outlined mail">mail</span>
+								<span class="menu_txt">뉴스레터</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="htl">
+								<span class="material-symbols-outlined account_circle">account_circle</span>
+								<span class="menu_txt">내 계정</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="htl">
+								<span class="material-symbols-outlined favorite">favorite</span>
+								<span class="menu_txt">위시리스트</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="htl">
+								<span class="material-symbols-outlined shopping_bag">shopping_bag</span>
+								<span class="menu_txt">장바구니</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<div class="logo">
+				<div class="svgBx">
+					<!-- 불가리 로고 svg -->
+					<svg class="logo_svg" viewBox="0 0 625.96 63.37">
+						<path class="st0" d="M624.74,57.63l0.08,1.89h-20.09v-1.89c5.41,0,4.84-1.56,4.84-8.36V11.8c0-2.87,0.08-4.92-0.25-5.82
+							c-0.66-2.38-1.64-2.46-5-2.62V1.63l20.33-0.08v1.8c-5.33,0-5.16,1.72-5.16,8.45v37.47C619.49,55.5,619.25,57.63,624.74,57.63
+							L624.74,57.63z M564.64,60.17c-21.48,0-20.01-3.2-23.37-8.45c-4.02-6.23-7.46-15.09-14.92-15.09c-1.97,0.08-8.53,0-9.76,0
+							c-3.44,0-5.41,0.16-7.63,0c0,6.56,0,10.58,0,17.05c0.08,4.02,2.05,4.35,5.41,4.35v2.13h-20.5v-2.13c2.79,0.08,5.08,0.16,5.08-2.95
+							c0-1.07,0-6.72,0-10V13.76c0-3.69,0-2.46,0-4.35c0-4.18-1.48-5.25-5.08-5.25v-1.8h26.24c8.53,0,14.76-0.25,18.78,0.66
+							c9.1,2.05,14.68,6.72,14.76,14.27c0,7.46-3.77,14.02-18.2,16.73c9.51,1.07,10.49,5.25,14.18,11.64
+							c3.94,7.05,5.66,12.54,14.84,12.46C564.48,58.61,564.64,59.68,564.64,60.17L564.64,60.17z M508.97,30.9
+							c7.46-0.08,18.37,0.49,25.01-1.23c3.77-1.39,8.77-3.53,8.77-11.64c0-5.74-2.87-7.63-6.31-9.26c-6.48-3.12-18.94-2.05-27.47-2.05
+							V30.9L508.97,30.9z M437.96,45.41h-34.44l-3.36,5.9c-1.23,2.21-2.05,3.69-2.05,4.59c0.08,2.87,1.48,3.12,4.67,3.03l-0.08,1.89
+							h-17.79v-1.64c3.94-0.08,4.59-1.39,5.74-3.36c0.98-1.89,1.8-3.28,3.94-7.38l23.86-45.42h7.54l25.17,45.91
+							c4.51,8.28,4.26,9.67,9.35,9.67v2.21h-21.32v-2.05c4.84-0.25,5.57-1.89,2.87-6.4L437.96,45.41L437.96,45.41z M434.93,38.94
+							l-14.51-27.22l-13.77,27.22H434.93L434.93,38.94z M360.24,35.98c-5.9,0.08-6.31,0.33-6.15,6.07l0.16,8.28
+							c-2.54,5.58-10.9,9.35-17.22,10.99c-4.26,1.15-9.92,2.05-15.41,2.05c-13.12,0-23.78-2.95-31.48-9.51
+							c-6.4-5.41-10.33-12.3-10.33-19.84c0-9.18,3.94-16.56,11.89-22.63c7.87-6.07,17.63-9.18,29.68-9.1c4.59,0.08,9.51,0.57,14.35,1.72
+							c4.43,1.07,9.1,2.71,12.87,5l3.03,12.87l-1.89,0.74c-1.89-3.94-6.97-9.27-11.73-11.89c-4.18-2.38-9.92-3.85-16.07-3.94
+							c-7.13-0.08-14.35,2.46-18.61,5.41c-6.56,4.51-12.14,11.72-12.14,20.5c0,9.1,5.25,16.4,10.66,19.92
+							c5.33,3.36,11.72,5.66,19.92,5.57c4.92-0.08,10.17-1.31,13.04-2.46c3.12-1.23,7.46-3.2,9.35-6.81l0.08-5
+							c0-1.72,0.33-6.15-0.98-7.13c-1.39-0.9-2.95-0.82-5.25-0.82v-1.97c11.48,0,10.66,0,22.22,0V35.98L360.24,35.98z M220.36,4.5v1.8
+							c-2.54,0.08-3.03-0.08-4.02,0.74c-0.66,0.66-1.15,1.48-1.15,4.18v44.69c5.49,0,8.04,0,12.22,0c2.46,0,12.79,0,14.92,0
+							c7.13,0,11.64-3.12,13.61-6.31l1.88,0.74l-5.99,11.97h-51.57v-1.89c3.53-0.08,5-0.74,5-4.51c0-23.78,0-11.48,0-14.35V13.76
+							c0-3.2,0-5-0.82-6.07c-0.82-1.15-1.64-1.39-4.51-1.39V4.5H220.36L220.36,4.5z M113.61,4.99v2.13c-3.28,0-5.66,0.74-4.1,4.43
+							c0.57,1.56,1.72,3.53,3.12,6.15l19.1,35.99c2.38-5.74,21.56-41.65,21.97-44.11c0.49-3.12-4.35-2.46-4.51-2.46V5.07l17.22-0.08v2.13
+							c-1.31,0-3.36-0.33-4.1,0.57c-1.23,1.56-4.35,8.12-8.61,16.32c-6.31,12.38-14.51,28.78-19.6,38.86h-8.28l-24.6-46.57
+							c-1.97-3.85-3.61-7.63-4.92-8.44c-1.15-0.66-1.97-0.74-3.94-0.74V4.99H113.61L113.61,4.99z M48.84,32.21
+							c5,0.82,9.27,1.97,11.97,3.44c3.03,1.72,6.4,4.1,6.4,11.89c0.08,6.39-3.94,10.17-6.15,11.4c-5.74,4.51-19.76,4.76-28.29,4.76H1.61
+							v-1.97c2.62,0.08,3.36-0.16,4.43-1.39c0.74-0.9,0.49-4.26,0.49-7.54V14.17c0-3.61-0.16-4.67-1.31-5.66
+							c-1.23-0.98-1.97-0.9-4.02-0.9l0.08-1.89c20.17,0.08,28.29-0.16,40.5-0.08c8.2,0.41,18.86,3.53,18.86,13.36
+							c0,3.77-1.72,7.54-4.35,9.43C53.76,30.41,52.85,30.82,48.84,32.21L48.84,32.21z M16.29,30.65c8.61,0,8.69,0,13.53,0
+							c5.66,0,13.28-0.16,17.55-3.61c1.8-1.39,3.53-5.08,3.53-7.22c0-3.44-0.82-5.08-4.35-7.38c-3.61-2.3-11.15-1.89-17.63-1.89
+							c-3.61,0-10.08,0-12.63,0V30.65L16.29,30.65z M16.29,57.3c5.58,0,10.08,0,16.32,0c11.73,0,23.61-0.66,23.61-10.17
+							c0-3.44-2.13-6.31-4.35-7.95c-4.76-3.53-11.81-3.44-22.14-3.36c-4.43,0.08-9.02,0-13.45,0V57.3L16.29,57.3z">
+						</path>
+					</svg>
+				</div>
+			</div>
+			<nav class="gnb">
+				<ul class="list">
+					<li>
+						<a href="#">75년간 함께한 세르펜티</a>
+					</li>
+					<li>
+						<a href="#">하이 주얼리</a>
+						<div class="lnb high_jewellery">
+							<ol class="list category">
+								<li>
+									<figure class="thumbnail_img">
+										<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
+										<img src="../00.자료수집/02.이미지데이터/menu/hj_1.jpg" alt="the garden of wonders 이미지">
+										<span class="btn">하이 주얼리 컬렉션 자세히 보기</span>
+									</figure>
+								</li>
+								<li>
+									<figure class="thumbnail_img">
+										<span class="tit tit2">매혹적인 작품</span>
+										<img src="../00.자료수집/02.이미지데이터/menu/hj_2.jpg" alt="매혹적인 작품 이미지">
+										<span class="btn">시대를 초월하는 매력의 작품을 만나보세요</span>
+									</figure>
+								</li>
+								<li>
+									<figure class="thumbnail_img">
+										<span class="tit tit3">로만 하이주얼러</span>
+										<img src="../00.자료수집/02.이미지데이터/menu/hj_3.jpg" alt="로만 하이주얼러 이미지">
+										<span class="btn">하이 주얼리 아트 자세히 보기</span>
+									</figure>
+								</li>
+							</ol>
+						</div>
+					</li>
+					<li>
+						<a href="#">주얼리</a>
+						<div class="lnb jewellery">
+							<ol class="list category">
+								<li>
+									<a href="#">
+										<span class="btn">링</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="btn">네크리스</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="btn">브레이슬릿</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="btn">이어링</span>
+									</a>
+								</li>
+							</ol>
+							<ul class="list recommended">
+								<li>
+									<a href="#">
+										<img src="../00.자료수집/02.이미지데이터/products/necklaces/" alt="추천 상품 이미지">
+										<span class="product_tit">세르펜티 바이퍼 네크리스</span>
+									</a>
+									
+								</li>
+								<li>
+									<a href="#">
+										<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+										<span class="product_tit">세르펜티 링</span>
+									</a>
+									
+								</li>
+								<li>
+									<a href="#">
+										<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+										<span class="product_tit">세르펜티 바이퍼 이어링</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">인게이지먼트 &amp; 웨딩</a>
+						<div class="lnb engagement_and_wedding">
+							<ol class="list category">
+								<li>
+									<a href="#">
+										<span class="btn">인게이지먼트 링</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="btn">여성용 웨딩밴드</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="btn">남성용 웨딩밴드</span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<span class="btn">커플링</span>
+									</a>
+								</li>
+							</ol>
+							<ul class="list recommended">
+								<li>
+									<a href="#">
+										<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+										<span class="product_tit">로마 아모르</span>
+									</a>
+									
+								</li>
+								<li>
+									<a href="#">
+										<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+										<span class="product_tit">인피니토</span>
+									</a>
+									
+								</li>
+								<li>
+									<a href="#">
+										<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+										<span class="product_tit">페디</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">브랜드</a>
+						<div class="lnb the_maison">
+							<ol class="list category">
+								<li>
+									<figure class="thumbnail_img">
+										<span class="tit tit1">불가리 역사</span>
+										<img class="th_img1" src="../00.자료수집/02.이미지데이터/menu/tm_1.jpg" alt="불가리 역사 이미지">
+										<span class="btn">자세히 보기</span>
+									</figure>
+								</li>
+								<li>
+									<figure class="thumbnail_img">
+										<span class="tit tit2">불가리의 아이덴티티</span>
+										<img class="th_img2" src="../00.자료수집/02.이미지데이터/menu/tm_2.jpg" alt="불가리의 아이덴티티 이미지">
+										<span class="btn">자세히 보기</span>
+									</figure>
+								</li>
+								<li>
+									<figure class="thumbnail_img">
+										<span class="tit tit3">불가리의 혁신</span>
+										<img class="th_img3" src="../00.자료수집/02.이미지데이터/menu/tm_3.jpg" alt="불가리의 혁신 이미지">
+										<span class="btn">자세히 보기</span>
+									</figure>
+								</li>
+							</ol>
+						</div>
+					</li>
+					<li>
+						<a href="#">호텔 &amp; 리조트</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<header class="top mob">
+			<section class="lmenu">
+				<ul class="list">
+					<li class="ham_btn">
+						<a href="#">
+							<span class="material-symbols-outlined menu">menu</span>
+
+						</a>
+					</li>
+					<li class="search_btn">
+						<a href="#">
+							<span class="material-symbols-outlined search">search</span>
+						</a>
+					</li>
+				</ul>
+				<div class="search wrap">
+					<div class="search_container">
+						<form action="" class="mob_search_form">
+							<span class="material-symbols-outlined search">search</span>
+							<input type="text" class="search_input" placeholder="검색">
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="logo">
+				<h1 class="svgBx">
+					<!-- 불가리 로고 svg -->
+					<svg class="logo_svg" viewBox="0 0 625.96 63.37">
+						<path class="st0" d="M624.74,57.63l0.08,1.89h-20.09v-1.89c5.41,0,4.84-1.56,4.84-8.36V11.8c0-2.87,0.08-4.92-0.25-5.82
+							c-0.66-2.38-1.64-2.46-5-2.62V1.63l20.33-0.08v1.8c-5.33,0-5.16,1.72-5.16,8.45v37.47C619.49,55.5,619.25,57.63,624.74,57.63
+							L624.74,57.63z M564.64,60.17c-21.48,0-20.01-3.2-23.37-8.45c-4.02-6.23-7.46-15.09-14.92-15.09c-1.97,0.08-8.53,0-9.76,0
+							c-3.44,0-5.41,0.16-7.63,0c0,6.56,0,10.58,0,17.05c0.08,4.02,2.05,4.35,5.41,4.35v2.13h-20.5v-2.13c2.79,0.08,5.08,0.16,5.08-2.95
+							c0-1.07,0-6.72,0-10V13.76c0-3.69,0-2.46,0-4.35c0-4.18-1.48-5.25-5.08-5.25v-1.8h26.24c8.53,0,14.76-0.25,18.78,0.66
+							c9.1,2.05,14.68,6.72,14.76,14.27c0,7.46-3.77,14.02-18.2,16.73c9.51,1.07,10.49,5.25,14.18,11.64
+							c3.94,7.05,5.66,12.54,14.84,12.46C564.48,58.61,564.64,59.68,564.64,60.17L564.64,60.17z M508.97,30.9
+							c7.46-0.08,18.37,0.49,25.01-1.23c3.77-1.39,8.77-3.53,8.77-11.64c0-5.74-2.87-7.63-6.31-9.26c-6.48-3.12-18.94-2.05-27.47-2.05
+							V30.9L508.97,30.9z M437.96,45.41h-34.44l-3.36,5.9c-1.23,2.21-2.05,3.69-2.05,4.59c0.08,2.87,1.48,3.12,4.67,3.03l-0.08,1.89
+							h-17.79v-1.64c3.94-0.08,4.59-1.39,5.74-3.36c0.98-1.89,1.8-3.28,3.94-7.38l23.86-45.42h7.54l25.17,45.91
+							c4.51,8.28,4.26,9.67,9.35,9.67v2.21h-21.32v-2.05c4.84-0.25,5.57-1.89,2.87-6.4L437.96,45.41L437.96,45.41z M434.93,38.94
+							l-14.51-27.22l-13.77,27.22H434.93L434.93,38.94z M360.24,35.98c-5.9,0.08-6.31,0.33-6.15,6.07l0.16,8.28
+							c-2.54,5.58-10.9,9.35-17.22,10.99c-4.26,1.15-9.92,2.05-15.41,2.05c-13.12,0-23.78-2.95-31.48-9.51
+							c-6.4-5.41-10.33-12.3-10.33-19.84c0-9.18,3.94-16.56,11.89-22.63c7.87-6.07,17.63-9.18,29.68-9.1c4.59,0.08,9.51,0.57,14.35,1.72
+							c4.43,1.07,9.1,2.71,12.87,5l3.03,12.87l-1.89,0.74c-1.89-3.94-6.97-9.27-11.73-11.89c-4.18-2.38-9.92-3.85-16.07-3.94
+							c-7.13-0.08-14.35,2.46-18.61,5.41c-6.56,4.51-12.14,11.72-12.14,20.5c0,9.1,5.25,16.4,10.66,19.92
+							c5.33,3.36,11.72,5.66,19.92,5.57c4.92-0.08,10.17-1.31,13.04-2.46c3.12-1.23,7.46-3.2,9.35-6.81l0.08-5
+							c0-1.72,0.33-6.15-0.98-7.13c-1.39-0.9-2.95-0.82-5.25-0.82v-1.97c11.48,0,10.66,0,22.22,0V35.98L360.24,35.98z M220.36,4.5v1.8
+							c-2.54,0.08-3.03-0.08-4.02,0.74c-0.66,0.66-1.15,1.48-1.15,4.18v44.69c5.49,0,8.04,0,12.22,0c2.46,0,12.79,0,14.92,0
+							c7.13,0,11.64-3.12,13.61-6.31l1.88,0.74l-5.99,11.97h-51.57v-1.89c3.53-0.08,5-0.74,5-4.51c0-23.78,0-11.48,0-14.35V13.76
+							c0-3.2,0-5-0.82-6.07c-0.82-1.15-1.64-1.39-4.51-1.39V4.5H220.36L220.36,4.5z M113.61,4.99v2.13c-3.28,0-5.66,0.74-4.1,4.43
+							c0.57,1.56,1.72,3.53,3.12,6.15l19.1,35.99c2.38-5.74,21.56-41.65,21.97-44.11c0.49-3.12-4.35-2.46-4.51-2.46V5.07l17.22-0.08v2.13
+							c-1.31,0-3.36-0.33-4.1,0.57c-1.23,1.56-4.35,8.12-8.61,16.32c-6.31,12.38-14.51,28.78-19.6,38.86h-8.28l-24.6-46.57
+							c-1.97-3.85-3.61-7.63-4.92-8.44c-1.15-0.66-1.97-0.74-3.94-0.74V4.99H113.61L113.61,4.99z M48.84,32.21
+							c5,0.82,9.27,1.97,11.97,3.44c3.03,1.72,6.4,4.1,6.4,11.89c0.08,6.39-3.94,10.17-6.15,11.4c-5.74,4.51-19.76,4.76-28.29,4.76H1.61
+							v-1.97c2.62,0.08,3.36-0.16,4.43-1.39c0.74-0.9,0.49-4.26,0.49-7.54V14.17c0-3.61-0.16-4.67-1.31-5.66
+							c-1.23-0.98-1.97-0.9-4.02-0.9l0.08-1.89c20.17,0.08,28.29-0.16,40.5-0.08c8.2,0.41,18.86,3.53,18.86,13.36
+							c0,3.77-1.72,7.54-4.35,9.43C53.76,30.41,52.85,30.82,48.84,32.21L48.84,32.21z M16.29,30.65c8.61,0,8.69,0,13.53,0
+							c5.66,0,13.28-0.16,17.55-3.61c1.8-1.39,3.53-5.08,3.53-7.22c0-3.44-0.82-5.08-4.35-7.38c-3.61-2.3-11.15-1.89-17.63-1.89
+							c-3.61,0-10.08,0-12.63,0V30.65L16.29,30.65z M16.29,57.3c5.58,0,10.08,0,16.32,0c11.73,0,23.61-0.66,23.61-10.17
+							c0-3.44-2.13-6.31-4.35-7.95c-4.76-3.53-11.81-3.44-22.14-3.36c-4.43,0.08-9.02,0-13.45,0V57.3L16.29,57.3z">
+						</path>
+					</svg>
+				</h1>
+			</section>
+			<section class="rmenu">
+				<ul class="list">
+					<li>
+						<a href="#">
+							<span class="material-symbols-outlined location_on">location_on</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span class="material-symbols-outlined shopping_bag">shopping_bag</span>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</header>
+		<!-- 모바일버전 gnb메뉴 박스 -->
+		<div class="mob gnb_wrap">
+			<section class="gnb">
+				<div class="top_section">
+					<!-- 닫기 버튼 -->
+					<a href="#">
+						<span class="material-symbols-outlined close">close</span>
+					</a>
+					<div class="svgBx">
+						<!-- 불가리 로고 svg -->
+						<svg class="logo_svg" viewBox="0 0 625.96 63.37">
+							<path class="st0" d="M624.74,57.63l0.08,1.89h-20.09v-1.89c5.41,0,4.84-1.56,4.84-8.36V11.8c0-2.87,0.08-4.92-0.25-5.82
+								c-0.66-2.38-1.64-2.46-5-2.62V1.63l20.33-0.08v1.8c-5.33,0-5.16,1.72-5.16,8.45v37.47C619.49,55.5,619.25,57.63,624.74,57.63
+								L624.74,57.63z M564.64,60.17c-21.48,0-20.01-3.2-23.37-8.45c-4.02-6.23-7.46-15.09-14.92-15.09c-1.97,0.08-8.53,0-9.76,0
+								c-3.44,0-5.41,0.16-7.63,0c0,6.56,0,10.58,0,17.05c0.08,4.02,2.05,4.35,5.41,4.35v2.13h-20.5v-2.13c2.79,0.08,5.08,0.16,5.08-2.95
+								c0-1.07,0-6.72,0-10V13.76c0-3.69,0-2.46,0-4.35c0-4.18-1.48-5.25-5.08-5.25v-1.8h26.24c8.53,0,14.76-0.25,18.78,0.66
+								c9.1,2.05,14.68,6.72,14.76,14.27c0,7.46-3.77,14.02-18.2,16.73c9.51,1.07,10.49,5.25,14.18,11.64
+								c3.94,7.05,5.66,12.54,14.84,12.46C564.48,58.61,564.64,59.68,564.64,60.17L564.64,60.17z M508.97,30.9
+								c7.46-0.08,18.37,0.49,25.01-1.23c3.77-1.39,8.77-3.53,8.77-11.64c0-5.74-2.87-7.63-6.31-9.26c-6.48-3.12-18.94-2.05-27.47-2.05
+								V30.9L508.97,30.9z M437.96,45.41h-34.44l-3.36,5.9c-1.23,2.21-2.05,3.69-2.05,4.59c0.08,2.87,1.48,3.12,4.67,3.03l-0.08,1.89
+								h-17.79v-1.64c3.94-0.08,4.59-1.39,5.74-3.36c0.98-1.89,1.8-3.28,3.94-7.38l23.86-45.42h7.54l25.17,45.91
+								c4.51,8.28,4.26,9.67,9.35,9.67v2.21h-21.32v-2.05c4.84-0.25,5.57-1.89,2.87-6.4L437.96,45.41L437.96,45.41z M434.93,38.94
+								l-14.51-27.22l-13.77,27.22H434.93L434.93,38.94z M360.24,35.98c-5.9,0.08-6.31,0.33-6.15,6.07l0.16,8.28
+								c-2.54,5.58-10.9,9.35-17.22,10.99c-4.26,1.15-9.92,2.05-15.41,2.05c-13.12,0-23.78-2.95-31.48-9.51
+								c-6.4-5.41-10.33-12.3-10.33-19.84c0-9.18,3.94-16.56,11.89-22.63c7.87-6.07,17.63-9.18,29.68-9.1c4.59,0.08,9.51,0.57,14.35,1.72
+								c4.43,1.07,9.1,2.71,12.87,5l3.03,12.87l-1.89,0.74c-1.89-3.94-6.97-9.27-11.73-11.89c-4.18-2.38-9.92-3.85-16.07-3.94
+								c-7.13-0.08-14.35,2.46-18.61,5.41c-6.56,4.51-12.14,11.72-12.14,20.5c0,9.1,5.25,16.4,10.66,19.92
+								c5.33,3.36,11.72,5.66,19.92,5.57c4.92-0.08,10.17-1.31,13.04-2.46c3.12-1.23,7.46-3.2,9.35-6.81l0.08-5
+								c0-1.72,0.33-6.15-0.98-7.13c-1.39-0.9-2.95-0.82-5.25-0.82v-1.97c11.48,0,10.66,0,22.22,0V35.98L360.24,35.98z M220.36,4.5v1.8
+								c-2.54,0.08-3.03-0.08-4.02,0.74c-0.66,0.66-1.15,1.48-1.15,4.18v44.69c5.49,0,8.04,0,12.22,0c2.46,0,12.79,0,14.92,0
+								c7.13,0,11.64-3.12,13.61-6.31l1.88,0.74l-5.99,11.97h-51.57v-1.89c3.53-0.08,5-0.74,5-4.51c0-23.78,0-11.48,0-14.35V13.76
+								c0-3.2,0-5-0.82-6.07c-0.82-1.15-1.64-1.39-4.51-1.39V4.5H220.36L220.36,4.5z M113.61,4.99v2.13c-3.28,0-5.66,0.74-4.1,4.43
+								c0.57,1.56,1.72,3.53,3.12,6.15l19.1,35.99c2.38-5.74,21.56-41.65,21.97-44.11c0.49-3.12-4.35-2.46-4.51-2.46V5.07l17.22-0.08v2.13
+								c-1.31,0-3.36-0.33-4.1,0.57c-1.23,1.56-4.35,8.12-8.61,16.32c-6.31,12.38-14.51,28.78-19.6,38.86h-8.28l-24.6-46.57
+								c-1.97-3.85-3.61-7.63-4.92-8.44c-1.15-0.66-1.97-0.74-3.94-0.74V4.99H113.61L113.61,4.99z M48.84,32.21
+								c5,0.82,9.27,1.97,11.97,3.44c3.03,1.72,6.4,4.1,6.4,11.89c0.08,6.39-3.94,10.17-6.15,11.4c-5.74,4.51-19.76,4.76-28.29,4.76H1.61
+								v-1.97c2.62,0.08,3.36-0.16,4.43-1.39c0.74-0.9,0.49-4.26,0.49-7.54V14.17c0-3.61-0.16-4.67-1.31-5.66
+								c-1.23-0.98-1.97-0.9-4.02-0.9l0.08-1.89c20.17,0.08,28.29-0.16,40.5-0.08c8.2,0.41,18.86,3.53,18.86,13.36
+								c0,3.77-1.72,7.54-4.35,9.43C53.76,30.41,52.85,30.82,48.84,32.21L48.84,32.21z M16.29,30.65c8.61,0,8.69,0,13.53,0
+								c5.66,0,13.28-0.16,17.55-3.61c1.8-1.39,3.53-5.08,3.53-7.22c0-3.44-0.82-5.08-4.35-7.38c-3.61-2.3-11.15-1.89-17.63-1.89
+								c-3.61,0-10.08,0-12.63,0V30.65L16.29,30.65z M16.29,57.3c5.58,0,10.08,0,16.32,0c11.73,0,23.61-0.66,23.61-10.17
+								c0-3.44-2.13-6.31-4.35-7.95c-4.76-3.53-11.81-3.44-22.14-3.36c-4.43,0.08-9.02,0-13.45,0V57.3L16.29,57.3z">
+							</path>
+						</svg>
+					</div>
+				</div>
+				<div class="lists_wrap">
+					<ul class="list entire l1">
+						<li>
+							<a href="#" class="lnk">75년간 함께한 세르펜티</a>
+						</li>
+						<li>
+							<!-- 상위 메뉴 -->
+							<a href="#" class="lnk">하이 주얼리</a>
+							<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+							<!-- lnb 메뉴 -->
+							<div class="lnb high_jewellery">
+								<div class="top_area">
+									<a href="#" class="lnk">
+										<span class="material-symbols-outlined arrow_back on">arrow_back_ios</span>
+										하이주얼리
+									</a>
+								</div>
+								<ol class="list category">
+									<li>
+										<figure class="thumbnail_img">
+											<img src="../00.자료수집/02.이미지데이터/menu/mob_hj_1.jpg" alt="the garden of wonders 이미지">
+											<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
+										</figure>
+									</li>
+									<li>
+										<figure class="thumbnail_img">
+											<img src="../00.자료수집/02.이미지데이터/menu/mob_hj_2.jpg" alt="매혹적인 작품 이미지">
+											<span class="tit tit2">매혹적인 작품</span>
+										</figure>
+									</li>
+									<li>
+										<figure class="thumbnail_img">
+											<img src="../00.자료수집/02.이미지데이터/menu/mob_hj_3.jpg" alt="로만 하이주얼러 이미지">
+											<span class="tit tit3">로만 하이주얼러</span>
+										</figure>
+									</li>
+								</ol>
+								<ol class="list personal l2">
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined account_circle">account_circle</span>
+											<span class="menu_txt">내 계정</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined favorite">favorite</span>
+											<span class="menu_txt">위시리스트</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined room_service">room_service</span>
+											<span class="menu_txt">서비스</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined headset_mic">headset_mic</span>
+											<span class="menu_txt">문의하기</span>
+										</a>
+									</li>
+								</ol>
+							</div>
+						</li>
+						<li>
+							<!-- 상위메뉴 -->
+							<a href="#" class="lnk">주얼리</a>
+							<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+							<!-- lnb 메뉴 -->
+							<div class="lnb jewellery">
+								<div class="top_area">
+									<a href="#" class="lnk">
+										<span class="material-symbols-outlined arrow_back on">arrow_back_ios</span>
+										주얼리
+									</a>
+								</div>
+								<section class="product_section">
+									<ol class="list category">
+										<li>
+											<span class="tit tit1">링</span>
+											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+										</li>
+										<li>
+											<span class="tit tit2">네크리스</span>
+											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+										</li>
+										<li>
+											<span class="tit tit3">브레이슬릿</span>
+											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+										</li>
+										<li>
+									
+											<span class="tit tit3">이어링</span>
+											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+										</li>
+									</ol>
+									<!-- Swiper -->
+									<div class="swiper mob_jewellery_recommended_Swiper list recommended">
+										<ol class="swiper-wrapper">
+											<li class="swiper-slide">
+												<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+											</li>
+											<li class="swiper-slide">
+												<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+											</li>
+											<li class="swiper-slide">
+												<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+											</li>
+										</ol>
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-pagination"></div>
+									</div>
+								</section>
+								<ol class="list personal l2">
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined account_circle">account_circle</span>
+											<span class="menu_txt">내 계정</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined favorite">favorite</span>
+											<span class="menu_txt">위시리스트</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined room_service">room_service</span>
+											<span class="menu_txt">서비스</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined headset_mic">headset_mic</span>
+											<span class="menu_txt">문의하기</span>
+										</a>
+									</li>
+								</ol>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="lnk">인게이지먼트 &amp; 웨딩</a>
+							<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+							<!-- lnb 메뉴 -->
+							<div class="lnb engagement_and_wedding">
+								<div class="top_area">
+									<a href="#" class="lnk">
+										<span class="material-symbols-outlined arrow_back on">arrow_back_ios</span>
+										인게이지먼트 &amp; 웨딩
+									</a>
+								</div>
+								<section class="product_section">
+									<ol class="list category">
+										<li>
+											<span class="tit tit1">인게이지먼트 링</span>
+											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+										</li>
+										<li>
+											<span class="tit tit2">여성용 웨딩밴드</span>
+											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+										</li>
+										<li>
+											<span class="tit tit3">남성용 웨딩밴드</span>
+											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+										</li>
+										<li>
+									
+											<span class="tit tit3">커플링</span>
+											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+										</li>
+									</ol>
+									<!-- Swiper -->
+									<div class="swiper mob_engagement_and_wedding_recommended_Swiper list recommended">
+										<ol class="swiper-wrapper">
+											<li class="swiper-slide">
+												<img src="../00.자료수집/02.이미지데이터/products/earrings/1320513.jpg" alt="추천 상품 이미지">
+											</li>
+											<li class="swiper-slide">
+												<img src="../00.자료수집/02.이미지데이터/products/necklaces/1266500.png" alt="추천 상품 이미지">
+											</li>
+											<li class="swiper-slide">
+												<img src="../00.자료수집/02.이미지데이터/products/bracelets/1308715.png" alt="추천 상품 이미지">
+											</li>
+										</ol>
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-pagination"></div>
+									</div>
+								</section>
+								<ol class="list personal l2">
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined account_circle">account_circle</span>
+											<span class="menu_txt">내 계정</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined favorite">favorite</span>
+											<span class="menu_txt">위시리스트</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined room_service">room_service</span>
+											<span class="menu_txt">서비스</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined headset_mic">headset_mic</span>
+											<span class="menu_txt">문의하기</span>
+										</a>
+									</li>
+								</ol>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="lnk">브랜드</a>
+							<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
+							<!-- lnb 메뉴 -->
+							<div class="lnb the_maison">
+								<div class="top_area">
+									<a href="#" class="lnk">
+										<span class="material-symbols-outlined arrow_back on">arrow_back_ios</span>
+										브랜드
+									</a>
+								</div>
+								<ol class="list category">
+									<li>
+										<figure class="thumbnail_img">
+											<img src="../00.자료수집/02.이미지데이터/menu/tm_1.jpg" alt="the garden of wonders 이미지">
+											<span class="tit tit1">불가리 역사</span>
+										</figure>
+									</li>
+									<li>
+										<figure class="thumbnail_img">
+											<img src="../00.자료수집/02.이미지데이터/menu/tm_2.jpg" alt="매혹적인 작품 이미지">
+											<span class="tit tit2">불가리의 아이덴티티</span>
+										</figure>
+									</li>
+									<li>
+										<figure class="thumbnail_img">
+											<img src="../00.자료수집/02.이미지데이터/menu/tm_3.jpg" alt="로만 하이주얼러 이미지">
+											<span class="tit tit3">불가리의 혁신</span>
+										</figure>
+									</li>
+								</ol>
+								<ol class="list personal l2">
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined account_circle">account_circle</span>
+											<span class="menu_txt">내 계정</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined favorite">favorite</span>
+											<span class="menu_txt">위시리스트</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined room_service">room_service</span>
+											<span class="menu_txt">서비스</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="lnk">
+											<span class="material-symbols-outlined headset_mic">headset_mic</span>
+											<span class="menu_txt">문의하기</span>
+										</a>
+									</li>
+								</ol>
+							</div>
+						</li>
+						<li>
+							<a href="#" class="lnk">호텔 &amp; 리조트</a>
+							<!-- <span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span> -->
+							<!-- <span class="material-symbols-outlined arrow_back">arrow_back_ios</span> -->
+						</li>
+					</ul>
+					<ol class="list personal l2">
+						<li>
+							<a href="#" class="lnk">
+								<span class="material-symbols-outlined account_circle">account_circle</span>
+								<span class="menu_txt">내 계정</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="lnk">
+								<span class="material-symbols-outlined favorite">favorite</span>
+								<span class="menu_txt">위시리스트</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="lnk">
+								<span class="material-symbols-outlined room_service">room_service</span>
+								<span class="menu_txt">서비스</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="lnk">
+								<span class="material-symbols-outlined headset_mic">headset_mic</span>
+								<span class="menu_txt">문의하기</span>
+							</a>
+						</li>
+					</ol>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- 메인 영역 -->
+	<div id="cont">
+		<main class="cont">
+			<!-- 섹션1 동영상 -->
+			<section class="section1 main_video">
+				<div class="video_bx wrap">
+					<video id="bulgari_eden" src="../00.자료수집/03.동영상데이터/magnificent-creations-banner.mp4" autoplay muted loop playsinline></video>
+				</div>
+				<div class="txt">
+					<span class="headline">
+						BULGARI EDEN, THE GARDEN OF WONDERS <br>
+						경이로움의 에덴 컬렉션
+					</span>
+					<span class="catchphrase">평범한 풍경을 뒤로한 채, 경이로움이 가득한 화려한 세계를 만나보세요. 불가리가 무한한 독창성과 방대한 장인 기술이 어우러지는 에덴 하이 주얼리 컬렉션을 통해 숨이 멎을 듯 아름다운 마스터피스를 선보입니다.</span>
+				</div>
+			</section>
+			<!-- top버튼 -->
+			<button class="top_btn_bx">
+				<span class="material-symbols-outlined keyboard_arrow_up">keyboard_arrow_up</span>
+			</button>
+			<!-- 섹션2 불가리 에덴 시리즈 -->
+			<section class="section2 bulgari_eden ibx">
+				<!-- 레이아웃 겉박스 -->
+				<article class="list characteristics grid">
+					<!-- 첫번째 줄 -->
+					<div class="rw1 image">
+						<img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden1.jpg" alt="세르펜티 컬렉션 이미지">
+					</div>
+					<div class="rw1 txt_bx">
+						<h3 class="title">에메랄드 글로리 네크리스</h3>
+						<p class="txt">
+							불가리를 대표하는 탁월한 품질과 기술이 돋보이는 에메랄드 글로리 네크리스는 특별한 젬스톤, 무한한 독창성, 독보적인 장인 정신이 만난 화려한 하이 주얼리 마스터피스입니다.
+						</p>
+					</div>
+					<!-- 두번째 줄 -->
+					<div class="rw2 txt_bx">
+						<h3 class="title">에덴 인챈트먼트 네크리스</h3>
+						<p class="txt">
+							풍성하고 유쾌한 젬스톤으로 지중해의 매력적인 색조를 구성하는 컬러를 표현하는 에덴 인챈트먼트 네크리스는 불가리의 혁신적인 정신과 컬러를 향한 독자적인 접근법을 고스란히 담아낸 작품입니다.
+						</p>
+					</div>
+					<div class="rw2 image">
+						<img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden2.jpg" alt="세르펜티 컬렉션 이미지">
+					</div>
+					<!-- 세번째 줄 -->
+					<div class="rw3 image">
+						<img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden3.jpg" alt="세르펜티 컬렉션 이미지">
+					</div>
+					<div class="rw3 txt_bx">
+						<h3 class="title">주빌리 에메랄드 가든 티아라</h3>
+						<p class="txt">
+							작품을 헌정받은 전설적인 여왕만큼이나 특별한 매력을 자랑하는 주빌리 에메랄드 가든 티아라는 영국 왕실 최초로 즉위 70주년을 맞이한 엘리자베스 2세의 2022 플래티넘 주빌리를 기념합니다.
+						</p>
+					</div>
+				</article>
+			</section>
+			<!-- 섹션3 작품 소개 배너 -->
+			<section class="section3 introduction_to_works ibx">
+				<div class="txt_bx">
+					<h3 class="headline">시대를 초월하는 매력의 작품을 만나보세요</h3>
+					<p class="txt">
+						눈부신 젬스톤, 독창적인 디자인, 정교한 작업이 조화를 이뤄 놀라운 작품이 완성됩니다. <br>
+						시대를 초월하는 매력의 작품을 만나보세요.
+					</p>
+				</div>
+				<div class="swiper intro_Swiper">
+					<ol class="swiper-wrapper">
+						<li class="swiper-slide">
+							<img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn1.jpg" alt="트리뷰트 투 파리 네크리스 이미지">
+							<div class="txt_bx">
+								<h3 class="title">트리뷰트 투 파리 네크리스</h3>
+								<p class="txt">
+									화려한 자태로 빛의 도시 파리를 향해 경의를 표하는 트리뷰트 투 파리 네크리스에는 경이로운 5.53캐럿의 에메랄드와 에펠탑에서 영감을 받은 독특한 모티브가 자리하고 있습니다.
+								</p>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn2.jpg" alt="에메랄드 오드 링 이미지">
+							<div class="txt_bx">
+								<h3 class="title">에메랄드 오드 링</h3>
+								<p class="txt">
+									진귀한 에메랄드와 불가리의 오랜 인연에 찬사를 보내는 에메랄드 오드 링은 화려한 젬스톤이 지닌 본연의 아름다움을 이끌어냅니다.
+								</p>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn3.jpg" alt="세르펜티 오션 트레저 네크리스 이미지">
+							<div class="txt_bx">
+								<h3 class="title">세르펜티 오션 트레저 네크리스</h3>
+								<p class="txt">
+									끊임없는 변화를 표현하는 매혹적인 상징과 같은 세르펜티 오션 트레저 네크리스에는 콘플라워 블루 컬러로 모두의 시선을 사로잡는 61.31캐럿의 사파이어가 자리잡고 있습니다.
+								</p>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn4.jpg" alt="에메랄드 비너스 네크리스 이미지">
+							<div class="txt_bx">
+								<h3 class="title">에메랄드 비너스 네크리스</h3>
+								<p class="txt">
+									자연을 향한 서정적인 찬가와도 같은 에메랄드 비너스 네크리스는 상상력을 자극하는 디자인과 탁월한 장인 기술로 특별한 젬스톤에 우아한 품격을 불어넣습니다.
+								</p>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg" alt="메디터레니언 레브리 네크리스 이미지">
+							<div class="txt_bx">
+								<h3 class="title">메디터레니언 레브리 네크리스</h3>
+								<p class="txt">
+									메디터레니언 레브리 네크리스의 중심부에는 독특한 로얄 블루 컬러로 경이로운 매력을 자아내는 107.15캐럿의 사파이어가 자리잡고 있습니다.
+								</p>
+							</div>
+						</li>
+					</ol>
+					<!-- 스와이퍼의 불릿 -->
+					<div class="swiper-pagination"></div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<!-- 하단 영역 -->
+	<div id="info">
+		<!-- dt용 하단 영역 -->
+		<div class="dt info ibx">
+			<header class="logo">
+				<div class="svgBx">
+					<!-- 불가리 로고 svg -->
+					<svg class="logo_svg" viewBox="0 0 625.96 63.37">
+						<path class="st0" d="M624.74,57.63l0.08,1.89h-20.09v-1.89c5.41,0,4.84-1.56,4.84-8.36V11.8c0-2.87,0.08-4.92-0.25-5.82
+							c-0.66-2.38-1.64-2.46-5-2.62V1.63l20.33-0.08v1.8c-5.33,0-5.16,1.72-5.16,8.45v37.47C619.49,55.5,619.25,57.63,624.74,57.63
+							L624.74,57.63z M564.64,60.17c-21.48,0-20.01-3.2-23.37-8.45c-4.02-6.23-7.46-15.09-14.92-15.09c-1.97,0.08-8.53,0-9.76,0
+							c-3.44,0-5.41,0.16-7.63,0c0,6.56,0,10.58,0,17.05c0.08,4.02,2.05,4.35,5.41,4.35v2.13h-20.5v-2.13c2.79,0.08,5.08,0.16,5.08-2.95
+							c0-1.07,0-6.72,0-10V13.76c0-3.69,0-2.46,0-4.35c0-4.18-1.48-5.25-5.08-5.25v-1.8h26.24c8.53,0,14.76-0.25,18.78,0.66
+							c9.1,2.05,14.68,6.72,14.76,14.27c0,7.46-3.77,14.02-18.2,16.73c9.51,1.07,10.49,5.25,14.18,11.64
+							c3.94,7.05,5.66,12.54,14.84,12.46C564.48,58.61,564.64,59.68,564.64,60.17L564.64,60.17z M508.97,30.9
+							c7.46-0.08,18.37,0.49,25.01-1.23c3.77-1.39,8.77-3.53,8.77-11.64c0-5.74-2.87-7.63-6.31-9.26c-6.48-3.12-18.94-2.05-27.47-2.05
+							V30.9L508.97,30.9z M437.96,45.41h-34.44l-3.36,5.9c-1.23,2.21-2.05,3.69-2.05,4.59c0.08,2.87,1.48,3.12,4.67,3.03l-0.08,1.89
+							h-17.79v-1.64c3.94-0.08,4.59-1.39,5.74-3.36c0.98-1.89,1.8-3.28,3.94-7.38l23.86-45.42h7.54l25.17,45.91
+							c4.51,8.28,4.26,9.67,9.35,9.67v2.21h-21.32v-2.05c4.84-0.25,5.57-1.89,2.87-6.4L437.96,45.41L437.96,45.41z M434.93,38.94
+							l-14.51-27.22l-13.77,27.22H434.93L434.93,38.94z M360.24,35.98c-5.9,0.08-6.31,0.33-6.15,6.07l0.16,8.28
+							c-2.54,5.58-10.9,9.35-17.22,10.99c-4.26,1.15-9.92,2.05-15.41,2.05c-13.12,0-23.78-2.95-31.48-9.51
+							c-6.4-5.41-10.33-12.3-10.33-19.84c0-9.18,3.94-16.56,11.89-22.63c7.87-6.07,17.63-9.18,29.68-9.1c4.59,0.08,9.51,0.57,14.35,1.72
+							c4.43,1.07,9.1,2.71,12.87,5l3.03,12.87l-1.89,0.74c-1.89-3.94-6.97-9.27-11.73-11.89c-4.18-2.38-9.92-3.85-16.07-3.94
+							c-7.13-0.08-14.35,2.46-18.61,5.41c-6.56,4.51-12.14,11.72-12.14,20.5c0,9.1,5.25,16.4,10.66,19.92
+							c5.33,3.36,11.72,5.66,19.92,5.57c4.92-0.08,10.17-1.31,13.04-2.46c3.12-1.23,7.46-3.2,9.35-6.81l0.08-5
+							c0-1.72,0.33-6.15-0.98-7.13c-1.39-0.9-2.95-0.82-5.25-0.82v-1.97c11.48,0,10.66,0,22.22,0V35.98L360.24,35.98z M220.36,4.5v1.8
+							c-2.54,0.08-3.03-0.08-4.02,0.74c-0.66,0.66-1.15,1.48-1.15,4.18v44.69c5.49,0,8.04,0,12.22,0c2.46,0,12.79,0,14.92,0
+							c7.13,0,11.64-3.12,13.61-6.31l1.88,0.74l-5.99,11.97h-51.57v-1.89c3.53-0.08,5-0.74,5-4.51c0-23.78,0-11.48,0-14.35V13.76
+							c0-3.2,0-5-0.82-6.07c-0.82-1.15-1.64-1.39-4.51-1.39V4.5H220.36L220.36,4.5z M113.61,4.99v2.13c-3.28,0-5.66,0.74-4.1,4.43
+							c0.57,1.56,1.72,3.53,3.12,6.15l19.1,35.99c2.38-5.74,21.56-41.65,21.97-44.11c0.49-3.12-4.35-2.46-4.51-2.46V5.07l17.22-0.08v2.13
+							c-1.31,0-3.36-0.33-4.1,0.57c-1.23,1.56-4.35,8.12-8.61,16.32c-6.31,12.38-14.51,28.78-19.6,38.86h-8.28l-24.6-46.57
+							c-1.97-3.85-3.61-7.63-4.92-8.44c-1.15-0.66-1.97-0.74-3.94-0.74V4.99H113.61L113.61,4.99z M48.84,32.21
+							c5,0.82,9.27,1.97,11.97,3.44c3.03,1.72,6.4,4.1,6.4,11.89c0.08,6.39-3.94,10.17-6.15,11.4c-5.74,4.51-19.76,4.76-28.29,4.76H1.61
+							v-1.97c2.62,0.08,3.36-0.16,4.43-1.39c0.74-0.9,0.49-4.26,0.49-7.54V14.17c0-3.61-0.16-4.67-1.31-5.66
+							c-1.23-0.98-1.97-0.9-4.02-0.9l0.08-1.89c20.17,0.08,28.29-0.16,40.5-0.08c8.2,0.41,18.86,3.53,18.86,13.36
+							c0,3.77-1.72,7.54-4.35,9.43C53.76,30.41,52.85,30.82,48.84,32.21L48.84,32.21z M16.29,30.65c8.61,0,8.69,0,13.53,0
+							c5.66,0,13.28-0.16,17.55-3.61c1.8-1.39,3.53-5.08,3.53-7.22c0-3.44-0.82-5.08-4.35-7.38c-3.61-2.3-11.15-1.89-17.63-1.89
+							c-3.61,0-10.08,0-12.63,0V30.65L16.29,30.65z M16.29,57.3c5.58,0,10.08,0,16.32,0c11.73,0,23.61-0.66,23.61-10.17
+							c0-3.44-2.13-6.31-4.35-7.95c-4.76-3.53-11.81-3.44-22.14-3.36c-4.43,0.08-9.02,0-13.45,0V57.3L16.29,57.3z">
+						</path>
+					</svg>
+				</div>
+			</header>
+			<section class="info_section">
+				<ul class="list category">
+					<li class="customer_management">
+						<span class="headline">고객 관리</span>
+						<ol class="list sub_category">
+							<li><a href="#">스토어 방문 예약 서비스</a></li>
+							<li><a href="#">주문 정보</a></li>
+							<li><a href="#">교환 및 반품 신청</a></li>
+							<li><a href="#">자주 묻는 질문(FAQ)</a></li>
+							<li><a href="#">배송 조회</a></li>
+							<li><a href="#">고객 서비스</a></li>
+						</ol>
+					</li>
+					<li class="company_introduction">
+						<span class="headline">불가리 소개</span>
+						<ol class="list sub_category">
+							<li><a href="#">사회 공헌 활동</a></li>
+							<li><a href="#">인재 채용</a></li>
+							<li><a href="#">브랜드 보호</a></li>
+							<li><a href="#">호텔 &amp; 리조트</a></li>
+							<li><a href="#">역사</a></li>
+							<li><a href="#">불가리 컬렉션</a></li>
+							<li><a href="#">스토어 위치</a></li>
+						</ol>
+					</li>
+					<li class="legal_notice">
+						<span class="headline">법적 고지</span>
+						<ol class="list sub_category">
+							<li><a href="#">판매 약관</a></li>
+							<li><a href="#">이용 약관</a></li>
+							<li><a href="#">쿠키 설정</a></li>
+							<li><a href="#">쿠키 정책</a></li>
+							<li><a href="#">개인정보 처리방침</a></li>
+							<li><a href="#">지원자 개인정보 보호 정책</a></li>
+							<li><a href="#">데이터 보호 인증(BS10012)</a></li>
+						</ol>
+					</li>
+					<li class="inquiry">
+						<span class="headline">문의하기</span>
+						<ol class="list sub_category">
+							<li>
+								<span class="material-symbols-outlined call">call</span>
+								<a href="#">전화 문의</a>
+							</li>
+							<li>
+								<span class="material-symbols-outlined">mail</span>
+								<a href="#">이메일 보내기</a>
+							</li>
+							<li>
+								<span class="material-symbols-outlined">lift_to_talk</span>
+								<a href="#">채팅 문의 카카오 상담</a>
+							</li>
+							<li>
+								<span class="material-symbols-outlined">calendar_month</span>
+								<a href="#">스토어 방문 예약</a>
+							</li>
+						</ol>
+					</li>
+					<li class="follow">
+						<span class="headline">팔로우</span>
+						<ol class="list sub_category">
+							<li><a href="#">유튜브</a></li>
+							<li><a href="#">인스타그램</a></li>
+							<li><a href="#">페이스북</a></li>
+							<li><a href="#">카카오톡</a></li>
+							<li><a href="#">핀터레스트</a></li>
+							<li><a href="#">링크드인</a></li>
+						</ol>
+					</li>
+				</ul>
+			</section>
+			<section class="the_present_region">
+				<button class="country_and_language_selection">
+					<span class="country_txt">배송지: 한국</span>
+					<span class="material-symbols-outlined expand_more">expand_more</span>
+					<!-- <span class="language_txt">한국어</span> -->
+				</button>
+			</section>
+		</div>
+		<!-- mob용 하단 영역 -->
+		<div class="mob info ibx">
+			<section class="info_section">
+				<ul class="list category">
+					<li class="customer_management">
+						<span class="headline">
+							고객 관리
+							<span class="material-symbols-outlined add">add</span>
+							<span class="material-symbols-outlined remove" data-hide="1">remove</span>
+						</span>
+						<ol class="list sub_category">
+							<li><a href="#">스토어 방문 예약 서비스</a></li>
+							<li><a href="#">주문 정보</a></li>
+							<li><a href="#">교환 및 반품 신청</a></li>
+							<li><a href="#">자주 묻는 질문(FAQ)</a></li>
+							<li><a href="#">배송 조회</a></li>
+							<li><a href="#">고객 서비스</a></li>
+						</ol>
+					</li>
+					<li class="company_introduction">
+						<span class="headline">
+							불가리 소개
+							<span class="material-symbols-outlined add">add</span>
+							<span class="material-symbols-outlined remove" data-hide="1">remove</span>
+						</span>
+						<ol class="list sub_category">
+							<li><a href="#">사회 공헌 활동</a></li>
+							<li><a href="#">인재 채용</a></li>
+							<li><a href="#">브랜드 보호</a></li>
+							<li><a href="#">호텔 &amp; 리조트</a></li>
+							<li><a href="#">역사</a></li>
+							<li><a href="#">불가리 컬렉션</a></li>
+							<li><a href="#">스토어 위치</a></li>
+						</ol>
+					</li>
+					<li class="legal_notice">
+						<span class="headline">
+							법적 고지
+							<span class="material-symbols-outlined add">add</span>
+							<span class="material-symbols-outlined remove" data-hide="1">remove</span>
+						</span>
+						<ol class="list sub_category">
+							<li><a href="#">판매 약관</a></li>
+							<li><a href="#">이용 약관</a></li>
+							<li><a href="#">쿠키 설정</a></li>
+							<li><a href="#">쿠키 정책</a></li>
+							<li><a href="#">개인정보 처리방침</a></li>
+							<li><a href="#">지원자 개인정보 보호 정책</a></li>
+							<li><a href="#">데이터 보호 인증(BS10012)</a></li>
+						</ol>
+					</li>
+					<li class="inquiry">
+						<span class="headline">
+							문의하기
+							<span class="material-symbols-outlined add">add</span>
+							<span class="material-symbols-outlined remove" data-hide="1">remove</span>
+						</span>
+						<ol class="list sub_category">
+							<li>
+								<span class="material-symbols-outlined call">call</span>
+								<a href="#">전화 문의</a>
+							</li>
+							<li>
+								<span class="material-symbols-outlined">mail</span>
+								<a href="#">이메일 보내기</a>
+							</li>
+							<li>
+								<span class="material-symbols-outlined">lift_to_talk</span>
+								<a href="#">채팅 문의 카카오 상담</a>
+							</li>
+							<li>
+								<span class="material-symbols-outlined">calendar_month</span>
+								<a href="#">스토어 방문 예약</a>
+							</li>
+						</ol>
+					</li>
+					<li class="follow">
+						<span class="headline">
+							팔로우
+							<span class="material-symbols-outlined add">add</span>
+							<span class="material-symbols-outlined remove" data-hide="1">remove</span>
+						</span>
+						<ol class="list sub_category">
+							<li><a href="#">유튜브</a></li>
+							<li><a href="#">인스타그램</a></li>
+							<li><a href="#">페이스북</a></li>
+							<li><a href="#">카카오톡</a></li>
+							<li><a href="#">핀터레스트</a></li>
+							<li><a href="#">링크드인</a></li>
+						</ol>
+					</li>
+				</ul>
+			</section>
+			<section class="the_present_region">
+				<button class="country_and_language_selection">
+					<span class="country_txt">배송지: 한국</span>
+					<span class="material-symbols-outlined expand_more">expand_more</span>
+					<!-- <span class="language_txt">한국어</span> -->
+				</button>
+			</section>
+		</div>
+	</div>
+
+</body>
+</html>

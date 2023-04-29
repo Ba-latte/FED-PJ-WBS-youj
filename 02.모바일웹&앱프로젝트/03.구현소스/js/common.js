@@ -191,24 +191,14 @@ $(()=>{
     }; //////////////////////// make_v1_swiper 함수 //////////////////////////////
 
 
-    /* 👉서브페이지) 하이주얼리 작품 소개 스와이퍼 */
-    const make_v3_noNav_swiper = function make_v3_noNav_swiper(cls){
-        new Swiper(cls, {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-    }; /////////////////////// make_v3_noNav_swiper 함수 ////////////////////////
+
 
 
     /* 👉호출해서 스와이퍼 개별 적용하기 */
     make_v1_swiper(".mob_jewellery_recommended_Swiper");
     make_v1_swiper(".mob_engagement_and_wedding_recommended_Swiper");
     make_v3_swiper(".section2.recommended_product>.recommended_Swiper");
-    make_v3_noNav_swiper(".section3.introduction_to_works>.intro_Swiper");
+
 
 
     

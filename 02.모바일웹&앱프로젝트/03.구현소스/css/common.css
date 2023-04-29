@@ -60,12 +60,10 @@
 .dt .gnb>.list{
     display: flex;
     justify-content: center;
-    /* gap: 20px; */
 }
 /* GNB메뉴 하위 li들 공통 세팅 */
 .dt .gnb>.list>li{
     padding: 0 15px 10px;
-    /* border-bottom: 2px solid transparent; */
 }
 /* GNB메뉴 하위 li들 공통 가상요소 세팅 */
 .dt .gnb>.list>li>a::after{
@@ -191,10 +189,6 @@
 /******************************* 하이주얼리, 브랜드 메뉴 끝 *******************************/
 
 /******************************* 주얼리, 인게이지먼트&웨딩 메뉴 시작 *******************************/
-/* 카테고리별 리스트박스 공통 세팅 */
-.dt .list.category{
-
-}
 /* 카테고리별 리스트 버튼 공통 세팅 */
 .dt .list.category .btn{
     display: block;
@@ -250,6 +244,7 @@
     position: sticky;
     top: 85%;
     left: 93%;
+    z-index: 2;
 
     cursor: pointer;
 }
