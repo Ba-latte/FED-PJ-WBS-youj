@@ -26,6 +26,28 @@ $(()=>{
     const dt_top_fixed_bx = $(".top.dt.fixedBx");
     // console.log(main_top_btn);
 
+    /* 👉윈도우 리사이즈 이벤트 등록하기 - mob / dt 버전 나누기 */
+    // 모바일 구분 코드
+    let mob = 0;
+    // 0 : DT, 1 : 모바일
+
+    // 화면 크기에 따른 모바일 코드 변경함수
+    const chk_w = ()=>{
+        if($(window).width() <= 1100) mob = 1;
+        else mob = 0;
+
+        console.log("모바일여부 : ", mob);
+    }; ///////// chk_w 함수 ////////////////
+
+    // 화면체크 함수 최초 호출
+    chk_w();
+
+    // 화면 리사이즈시 화면체크 함수 호출
+    $(window).resize(chk_w);
+
+
+
+
     /* 👉상단 영역의 모든 svg로고 클릭하면 메인페이지로 이동하기 */
     top_logo_bx.click(function(){
         console.log("이동!");
@@ -58,7 +80,7 @@ $(()=>{
                     display: "none"
                 }, 10, function(){
                     dt_top_fixed_bx.css({display: "block"});
-                })
+                });
             }
             else if(window_scl_top < 20){
                 dt_top_fixed_bx.animate({
