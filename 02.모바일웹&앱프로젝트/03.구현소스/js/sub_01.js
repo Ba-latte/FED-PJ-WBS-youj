@@ -47,15 +47,21 @@ Vue.component("sec3-comp", {
 const menuData = [
         {
             tit:`BULGARI EDEN, <br> THE GARDEN OF WONDERS`,
-            isrc:`../00.자료수집/02.이미지데이터/menu/hj_1.jpg`,
+            isrc:`../00.자료수집/02.이미지데이터/menu/dt/hj_1.jpg`,
             desc:`the garden of wonders 이미지`,
             btns:`하이 주얼리 컬렉션 자세히 보기`
         },
         {
             tit:`매혹적인 작품`,
-            isrc:`../00.자료수집/02.이미지데이터/menu/hj_2.jpg`,
-            desc:`the garden of wonders 이미지`,
+            isrc:`../00.자료수집/02.이미지데이터/menu/dt/hj_2.jpg`,
+            desc:`매혹적인 작품 이미지`,
             btns:`시대를 초월하는 매력의 작품을 만나보세요`
+        },
+        {
+            tit:`로만 하이주얼러`,
+            isrc:`../00.자료수집/02.이미지데이터/menu/dt/hj_3.jpg`,
+            desc:`로만 하이주얼러 이미지`,
+            btns:`하이 주얼리 아트 자세히 보기`
         },
     ];
 

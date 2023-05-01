@@ -32,18 +32,18 @@ $(()=>{
     // 0 : DT, 1 : 모바일
 
     // 화면 크기에 따른 모바일 코드 변경함수
-    const chk_w = ()=>{
+    const chk_width = ()=>{
         if($(window).width() <= 1100) mob = 1;
         else mob = 0;
 
         console.log("모바일여부 : ", mob);
-    }; ///////// chk_w 함수 ////////////////
+    }; ///////// chk_width 함수 ////////////////
 
     // 화면체크 함수 최초 호출
-    chk_w();
+    chk_width();
 
     // 화면 리사이즈시 화면체크 함수 호출
-    $(window).resize(chk_w);
+    $(window).resize(chk_width);
 
 
 
@@ -60,10 +60,12 @@ $(()=>{
     $(window).scroll(function(){
 
         let window_scl_top = $(document).scrollTop();
+        // console.log("모바일이니?", mob);
         // console.log(window_scl_top);
 
         // mob버전일 때
         if(mob){
+            // console.log("모바일버전이야!");
             /* 상단영역 박스의 높이값은 80px인데, 부드럽게 변화하는 모습을 보이기 위해서 기준값을 20으로 잡음 */
             if(window_scl_top > 20){
                 header_section.addClass("fixed");
@@ -75,19 +77,18 @@ $(()=>{
         }
         // dt버전일 때
         else{
+            // console.log("dt버전이야!");
             if(window_scl_top > 20){
-                dt_top_block_bx.animate({
-                    display: "none"
-                }, 10, function(){
-                    dt_top_fixed_bx.css({display: "block"});
-                });
+                // console.log("20보다 클때!");
+
+                dt_top_block_bx.css({display: "none"});
+                dt_top_fixed_bx.css({display: "block"});
             }
-            else if(window_scl_top < 20){
-                dt_top_fixed_bx.animate({
-                    display: "block"
-                }, 10, function(){
-                    dt_top_fixed_bx.css({display: "none"});
-                });
+            else if(window_scl_top <= 20){
+                // console.log("20보다 같거나 작을때!");
+
+                dt_top_fixed_bx.css({display: "none"});
+                dt_top_block_bx.css({display: "block"});
             }
             
         }

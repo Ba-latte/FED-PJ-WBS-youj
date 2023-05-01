@@ -204,7 +204,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background: url(../../00.자료수집/02.이미지데이터/main_page/sc_characteristic5.jpg) no-repeat 60% 0/cover;
+    background: url(../../00.자료수집/02.이미지데이터/main_page/dt/sc_characteristic5.jpg) no-repeat 60% 0/cover;
 }
 /* 섹션4 - 뉴스레터 구독 전체 타이틀 세팅 */
 .section4.newsletter>.title_wrap>.headline{

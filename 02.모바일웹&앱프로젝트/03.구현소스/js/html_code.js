@@ -31,7 +31,7 @@ const html_code = {
         <article class="list characteristics grid">
             <!-- 첫번째 줄 -->
             <div class="rw1 image" data-aos="fade-right" data-aos-duration="1300">
-                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden1.jpg" alt="에메랄드 글로리 네크리스 이미지">
+                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden1.jpg" alt="에메랄드 글로리 네크리스">
             </div>
             <div class="rw1 txt_bx" data-aos="fade-right" data-aos-duration="1300">
                 <h3 class="title">에메랄드 글로리 네크리스</h3>
@@ -47,11 +47,11 @@ const html_code = {
                 </p>
             </div>
             <div class="rw2 image" data-aos="fade-left" data-aos-duration="1300">
-                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden2.jpg" alt="세르펜티 컬렉션 이미지">
+                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden2.jpg" alt="에덴 인챈트먼트 네크리스">
             </div>
             <!-- 세번째 줄 -->
             <div class="rw3 image" data-aos="fade-right" data-aos-duration="1300">
-                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden3.jpg" alt="세르펜티 컬렉션 이미지">
+                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden3.jpg" alt="주빌리 에메랄드 가든 티아라">
             </div>
             <div class="rw3 txt_bx" data-aos="fade-right" data-aos-duration="1300">
                 <h3 class="title">주빌리 에메랄드 가든 티아라</h3>
@@ -75,7 +75,7 @@ const html_code = {
         <div class="swiper intro_Swiper">
             <ol class="swiper-wrapper">
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn1.jpg" alt="트리뷰트 투 파리 네크리스 이미지">
+                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn1.jpg" alt="트리뷰트 투 파리 네크리스">
                     <div class="txt_bx">
                         <h3 class="title">트리뷰트 투 파리 네크리스</h3>
                         <p class="txt">
@@ -84,7 +84,7 @@ const html_code = {
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn2.jpg" alt="에메랄드 오드 링 이미지">
+                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn2.jpg" alt="에메랄드 오드 링">
                     <div class="txt_bx">
                         <h3 class="title">에메랄드 오드 링</h3>
                         <p class="txt">
@@ -93,7 +93,7 @@ const html_code = {
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn3.jpg" alt="세르펜티 오션 트레저 네크리스 이미지">
+                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn3.jpg" alt="세르펜티 오션 트레저 네크리스">
                     <div class="txt_bx">
                         <h3 class="title">세르펜티 오션 트레저 네크리스</h3>
                         <p class="txt">
@@ -102,7 +102,7 @@ const html_code = {
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn4.jpg" alt="에메랄드 비너스 네크리스 이미지">
+                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn4.jpg" alt="에메랄드 비너스 네크리스">
                     <div class="txt_bx">
                         <h3 class="title">에메랄드 비너스 네크리스</h3>
                         <p class="txt">
@@ -111,7 +111,7 @@ const html_code = {
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg" alt="메디터레니언 레브리 네크리스 이미지">
+                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg" alt="메디터레니언 레브리 네크리스">
                     <div class="txt_bx">
                         <h3 class="title">메디터레니언 레브리 네크리스</h3>
                         <p class="txt">
@@ -120,7 +120,7 @@ const html_code = {
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg" alt="메디터레니언 레브리 네크리스 이미지">
+                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg" alt="메디터레니언 레브리 네크리스">
                     <div class="txt_bx">
                         <h3 class="title">메디터레니언 레브리 네크리스</h3>
                         <p class="txt">
