@@ -138,7 +138,7 @@
 					</svg>
 				</div>
 			</div>
-			<nav class="gnb">
+			<nav class="gnb" id="gnb">
 				<ul class="list">
 					<li>
 						<a href="#">75년간 함께한 세르펜티</a>
@@ -146,8 +146,18 @@
 					<li>
 						<a href="#">하이 주얼리</a>
 						<div class="lnb high_jewellery">
-							<ol class="list category">
-								<li>
+							<ol class="list category" id="mym">
+								<li v-for="(v,n) in mydata" v-on:click="myFn(n)">
+									<figure class="thumbnail_img">
+										<span class="tit tit1" v-html="v.tit"></span>
+										<img v-bind:src="v.isrc" v-bind:alt="v.desc">
+										<span class="btn" v-text="v.btns"></span>
+									</figure>
+									</li>
+								<!-- <li v-for="(v,n) in mydata.data">
+									
+								</li> -->
+								<!-- <li>
 									<figure class="thumbnail_img">
 										<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
 										<img src="../00.자료수집/02.이미지데이터/menu/hj_1.jpg" alt="the garden of wonders 이미지">
@@ -167,7 +177,7 @@
 										<img src="../00.자료수집/02.이미지데이터/menu/hj_3.jpg" alt="로만 하이주얼러 이미지">
 										<span class="btn">하이 주얼리 아트 자세히 보기</span>
 									</figure>
-								</li>
+								</li> -->
 							</ol>
 						</div>
 					</li>
@@ -746,7 +756,7 @@
 	<div id="cont">
 		<main class="cont">
 			<!-- 섹션1 동영상 -->
-			<sec1-comp></sec1-comp>
+			<sec1-comp v-bind:vnum="vidnum"></sec1-comp>
 			<!-- top버튼 -->
 			<topbtn-comp></topbtn-comp>
 			<!-- 섹션2 불가리 에덴 시리즈 -->

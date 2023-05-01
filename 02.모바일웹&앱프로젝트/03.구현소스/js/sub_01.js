@@ -12,14 +12,20 @@ Vue.component("sec1-comp", {
     data: function(){
         return{
             main_video_class: [`bulgari_eden`, `magnificent_creations`, `roman_high`],
-            main_video_src: `../00.자료수집/03.동영상데이터/high_jewelry_sub_${this.setNum()}.mp4`
+            main_video_src: `../00.자료수집/03.동영상데이터/high_jewelry_sub_${this.vnum}.mp4`
         }
     },
+    props:["vnum"],
     methods:{
         setNum(){
             num+=1;
             return num;
+        },
+        chgMenu(){
+            this.main_video_src = 1;
+
         }
+        
     }
 }); ///////////////// sec1-comp 전역 컴포넌트 /////////////////////////
 
@@ -38,10 +44,53 @@ Vue.component("sec3-comp", {
     template: html_code.section_3,
 }); ///////////////////// sec3-comp 전역 컴포넌트 //////////////////////////////
 
+const menuData = [
+        {
+            tit:`BULGARI EDEN, <br> THE GARDEN OF WONDERS`,
+            isrc:`../00.자료수집/02.이미지데이터/menu/hj_1.jpg`,
+            desc:`the garden of wonders 이미지`,
+            btns:`하이 주얼리 컬렉션 자세히 보기`
+        },
+        {
+            tit:`매혹적인 작품`,
+            isrc:`../00.자료수집/02.이미지데이터/menu/hj_2.jpg`,
+            desc:`the garden of wonders 이미지`,
+            btns:`시대를 초월하는 매력의 작품을 만나보세요`
+        },
+    ];
+
+new Vue({
+    el:"#mym",
+    data:{
+        mydata : menuData
+    },
+    methods:{
+        myFn(n){
+            console.log("처리",n);
+            contVue.setVid(n);
+        }
+    },
+    moundted:function(){
+        this.myFn();
+        console.log(myFn);
+    }
+})
+
+
 
 // 뷰 인스턴스 생성하기
-new Vue({
-    el: ".cont"
+const contVue = new Vue({
+    el: ".cont",
+    data:{
+        vidnum : 1,
+    },
+    methods:{
+        setVid(n){
+            console.log("요기",n);
+            this.vidnum = n+1;
+            console.log("다음",this.vidnum);
+        }
+    }
 });
 
 
