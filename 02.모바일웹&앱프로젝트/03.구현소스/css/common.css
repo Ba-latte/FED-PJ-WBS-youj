@@ -26,6 +26,7 @@
 .dt .tmenu{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 30px;
 }
 /* 상단 좌/우 메뉴 공통 세팅 */
@@ -221,6 +222,22 @@
 /******************************* 주얼리, 인게이지먼트&웨딩 메뉴 끝 *******************************/
 
 
+/* fixed버전 박스 세팅 */
+.dt.top.fixedBx .svgBx{
+    width: 220px;
+}
+.dt.top.fixedBx{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    z-index: 9;
+    box-shadow: inset 0px -0.8px 0px 0px var(--silver);
+
+    /* 🔥일단 숨겨두기🔥 */
+    display: none;
+}
 
 /******************************************* 상단 영역 끝 *******************************************/
 

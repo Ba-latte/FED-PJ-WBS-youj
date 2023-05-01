@@ -10,6 +10,12 @@
 
 /******************************************* 메인 영역 *******************************************/
 
+/* [ 공통 세팅 ] */
+/* [1] 모든 섹션의 h2요소 헤드라인 폰트 세팅 */
+.cont h2.headline{
+    font-family: one_mobile_regular;
+    letter-spacing: 2px;
+}
 
 /* 섹션1 */
 /* 섹션1 전체 겉박스 세팅 */
@@ -54,9 +60,9 @@
 /* 섹션1 동영상의 타이틀 세팅 */
 .section1.main_video>.txt>.headline{
     display: block;
-
+    letter-spacing: 2px;
+    font-family: one_mobile_regular;
     font-size: 40px;
-    font-weight: bold;
 }
 /* 섹션1 동영상의 슬로건 세팅 */
 .section1.main_video>.txt>.catchphrase{

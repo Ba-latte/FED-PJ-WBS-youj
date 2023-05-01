@@ -35,6 +35,7 @@
 /* 텍스트 헤드라인 */
 .section1.main_video .headline{
     font-family: one_mobile_regular;
+    letter-spacing: 2px;
 }
 /* 텍스트 */
 .section1.main_video .catchphrase{

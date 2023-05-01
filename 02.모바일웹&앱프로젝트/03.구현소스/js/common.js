@@ -19,7 +19,11 @@ $(()=>{
     const header_section = $(".mob.top");
     /* 모바일버전) gnb메뉴의 li들 */
     const gnb_lists = $(".mob .entire.list>li");
+    /* 상단의 모든 svg겉박스 */
     const top_logo_bx = $("#top .svgBx");
+    /* dt버전) 고정되어 있는 상단박스 */
+    const dt_top_block_bx = $(".top.dt.blockBx");
+    const dt_top_fixed_bx = $(".top.dt.fixedBx");
     // console.log(main_top_btn);
 
     /* 👉상단 영역의 모든 svg로고 클릭하면 메인페이지로 이동하기 */
@@ -27,6 +31,52 @@ $(()=>{
         console.log("이동!");
         location.href="index.html";
     })
+
+    
+
+    /* 👉공통) 스크롤 내리면 상단 영역 박스가 바뀌어 상단에 고정되게 하기 */
+    $(window).scroll(function(){
+
+        let window_scl_top = $(document).scrollTop();
+        // console.log(window_scl_top);
+
+        // mob버전일 때
+        if(mob){
+            /* 상단영역 박스의 높이값은 80px인데, 부드럽게 변화하는 모습을 보이기 위해서 기준값을 20으로 잡음 */
+            if(window_scl_top > 20){
+                header_section.addClass("fixed");
+            }
+            else if(window_scl_top < 20){
+                header_section.removeClass("fixed");
+            }
+            
+        }
+        // dt버전일 때
+        else{
+            if(window_scl_top > 20){
+                dt_top_block_bx.animate({
+                    display: "none"
+                }, 10, function(){
+                    dt_top_fixed_bx.css({display: "block"});
+                })
+            }
+            else if(window_scl_top < 20){
+                dt_top_fixed_bx.animate({
+                    display: "block"
+                }, 10, function(){
+                    dt_top_fixed_bx.css({display: "none"});
+                });
+            }
+            
+        }
+
+        
+
+    });
+
+
+
+
 
     /* 👉모바일 버전) 햄버거 버튼 클릭하면 gnb메뉴박스 보이고 상단영역 안보이게 만들기 */
     mob_ham_btn.click(function(e){
@@ -90,19 +140,7 @@ $(()=>{
         $("html, body").animate({scrollTop: 0 }, 'slow');
     });
 
-    /* 👉모바일 버전) 스크롤 내리면 상단 영역 박스의 포지션이 fixed로 바뀌어 상단에 고정되게 하기 */
-    $(window).scroll(function(){
-        let window_scl_top = $(document).scrollTop();
-        // console.log(window_scl_top);
-
-        /* 상단영역 박스의 높이값은 80px인데, 부드럽게 변화하는 모습을 보이기 위해서 기준값을 20으로 잡음 */
-        if(window_scl_top > 20){
-            header_section.addClass("fixed");
-        }
-        else if(window_scl_top < 20){
-            header_section.removeClass("fixed");
-        }
-    });
+    
 
     /* 👉모바일 버전) 하단영역 아코디언 기능 적용하기 */
     const accordionFn = function (){
@@ -138,39 +176,6 @@ $(()=>{
 
 
 
-
-
-
-
-
-
-
-    /* 메인 페이지 섹션2 추천 제품 - 뷰3 스와이퍼 */
-    const make_v3_swiper = function make_v3_swiper(cls){
-        new Swiper(cls, {
-            slidesPerView: 3, // 한 화면당 슬라이드 개수
-            spaceBetween: 20, // 슬라이드 사이간격(px)
-            slidesPerGroup: 1, // 슬라이드 그룹(개수단위로 넘어감!)
-    
-            loop: true, // 무한루프(기본값:false)
-            loopFillGroupWithBlank: true,
-            // 한 화면 단위지정시 단위보다 그룹이 작을 경우 빈칸을 채움
-            pagination: {
-                // 블릿설정
-                el: ".swiper-pagination", // 블릿요소설정
-                clickable: false, // 클릭가능여부
-            },
-            navigation: {
-                // 양쪽이동버튼
-                nextEl: ".swiper-button-next", // 다음버튼 요소설정
-                prevEl: ".swiper-button-prev", // 이전버튼 요소설정
-            },
-        });
-
-    }; //////////////////////// make_v3_swiper 함수 //////////////////////////////
-
-
-
     /* 👉모바일 버전) lnb 메뉴 추천 제품 - 뷰1 스와이퍼 */
     const make_v1_swiper = function make_v1_swiper(cls){
         // console.log("이거 담아서 스와이퍼만들거야!: ", cls);
@@ -197,7 +202,6 @@ $(()=>{
     /* 👉호출해서 스와이퍼 개별 적용하기 */
     make_v1_swiper(".mob_jewellery_recommended_Swiper");
     make_v1_swiper(".mob_engagement_and_wedding_recommended_Swiper");
-    make_v3_swiper(".section2.recommended_product>.recommended_Swiper");
 
 
 
