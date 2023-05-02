@@ -11,7 +11,7 @@ const html_code = {
     section_1: `
     <section class="section1 main_video">
         <div class="video_bx wrap">
-            <video v-bind:class="main_video_class" v-bind:src="main_video_src" autoplay muted loop playsinline></video>
+            <video v-bind:class="main_video_class" v-bind:src="'../00.자료수집/03.동영상데이터/high_jewelry_sub_'+vnum+'.mp4'" v-bind:mynum="vnum" autoplay muted loop playsinline></video>
         </div>
         <div class="txt">
             <span class="headline">

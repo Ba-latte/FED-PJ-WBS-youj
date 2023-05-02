@@ -1,27 +1,37 @@
 @charset "utf-8";
 
-/* 불가리 PJ 메인페이지 CSS - main.css */
+/* 불가리 PJ 서브페이지 CSS - sub.css */
 
 /* 외부 CSS 머징 */
-/* @import url(./reset.css);
-@import url(./core.css);
-@import url(./common.css); */
+@import url(../reset.css);
+@import url(../core.css);
+@import url(../common.css);
 
 
 /******************************************** 섹션1 메인 동영상 ********************************************/
 /* 동영상 겉박스 */
-.section1.main_video>.video_bx.wrap {
-    /* aspect-ratio: initial; */
+.section1.main_video{
+    position: relative;
+    z-index: -2;
 }
-/* 불가리 에덴 동영상 개별 세팅 */
-.section1.main_video>.video_bx.wrap:has(.bulgari_eden){
+/* 메인 동영상 개별 세팅 */
+.section1.main_video>.video_bx.wrap:has(.bulgari_eden),
+.section1.main_video>.video_bx.wrap:has(.serpenti_74){
     aspect-ratio: 1920/600;
+    width: 100%;
+    overflow: hidden;
 }
-/* 불가리 에덴 동영상 요소 개별 세팅 */
-.section1.main_video .bulgari_eden{
+/* 메인 동영상 요소 개별 세팅 */
+.section1.main_video .bulgari_eden
+{
     width: 100%;
     height: 180%;
     transform: translateY(-25%);
+}
+.section1.main_video .serpenti_74{
+    width: 100%;
+    height: 180%;
+    transform: translateY(-18%);
 }
 /* 텍스트 겉박스 */
 .section1.main_video>.txt {
@@ -29,16 +39,24 @@
     width: auto;
     margin-top: 30px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
     color: var(--bg_black);
     text-shadow: none;
 }
 /* 텍스트 헤드라인 */
 .section1.main_video .headline{
+    display: block;
     font-family: one_mobile_regular;
+    font-size: 40px;
     letter-spacing: 2px;
 }
 /* 텍스트 */
 .section1.main_video .catchphrase{
+    display: block;
+    font-size: 17px;
     word-break: keep-all;
 }
 
@@ -159,4 +177,28 @@
 .section3.introduction_to_works .swiper-slide>.txt_bx>.txt{
     padding: 10px 0 30px;
     text-align: justify;
+}
+
+
+/* 서브 동영상 섹션 */
+/* 텍스트 겉박스 */
+.section3.sub_video>.txt {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* 헤드라인 세팅 */
+.section3.sub_video .headline{
+    display: block;
+    font-family: one_mobile_regular;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+/* 텍스트 */
+.section3.sub_video .catchphrase{
+    display: block;
+    font-size: 17px;
+    word-break: keep-all;
 }
