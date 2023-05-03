@@ -157,7 +157,7 @@
     padding: 20px;
 }
 /* 스와이퍼 개별슬라이드 공통 세팅 */
-.section3.introduction_to_works .intro_Swiper .swiper-slide{
+.section3.introduction_to_works .intro_Swiper>ol>.swiper-slide{
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -239,4 +239,34 @@
 /* 슬라이드에 마우스오버시 세팅 */
 .flex_grow_banner>ol>li:hover {
     flex-grow: 2;
+}
+
+
+/* 여성의 힘 섹션 텍스트 세팅 */
+/* 텍스트 겉박스 */
+.power_of_women>.txt {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* 헤드라인 세팅 */
+.power_of_women .headline{
+    display: block;
+    font-family: one_mobile_regular;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+/* 텍스트 */
+.power_of_women .catchphrase{
+    display: block;
+    font-size: 17px;
+    word-break: keep-all;
+}
+/* 여성의 힘 섹션 배너 세팅 */
+.power_of_women>.power_of_women_banner{
+    width: 90%;
+    padding: 20px;
+    margin: 0 auto 50px;
 }

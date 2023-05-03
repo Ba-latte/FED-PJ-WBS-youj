@@ -99,8 +99,8 @@
 /* 추천 제품 스와이퍼 개별 세팅 CSS */
 /* 스와이퍼 겉박스 세팅 */
 .cont>.recommended_product>.recommended_Swiper{
-    max-width: 940px;
-    /* max-width: 1300px; */
+    /* width: 100%; */
+    max-width: 1300px;
     height: auto;
     margin: 0 auto 30px;
 }
