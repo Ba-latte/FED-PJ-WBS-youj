@@ -74,6 +74,12 @@
 }
 /* 700px 사이즈 이하 미디어쿼리 끝 */
 
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    
+}
+/* 600px 사이즈 이하 미디어쿼리 끝 */
+
 /* 400px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 400px) {
     .top_btn_bx{

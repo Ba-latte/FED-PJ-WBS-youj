@@ -31,7 +31,7 @@
 .section1.main_video .serpenti_74{
     width: 100%;
     height: 180%;
-    transform: translateY(-18%);
+    transform: translateY(-13%);
 }
 /* 텍스트 겉박스 */
 .section1.main_video>.txt {
@@ -133,7 +133,7 @@
 }
 
 
-/* 섹션3 불가리 에덴 시리즈 작품 소개 배너 */
+/* 불가리 에덴 시리즈 작품 소개 배너 */
 /* 제목과 설명 겉박스 */
 .section3.introduction_to_works>.txt_bx{
     margin: 100px auto 0;
@@ -201,4 +201,42 @@
     display: block;
     font-size: 17px;
     word-break: keep-all;
+}
+.sub_video>.video_bx{
+    aspect-ratio: 1920 / 650;
+    padding: 20px 20px 50px;
+}
+.video_bx>.serpenti_change{
+    width: 100%;
+}
+
+
+/* 🌈플렉스 그로우 배너 세팅🌈 */
+/* 겉박스(ol) 세팅 */
+.flex_grow_banner>ol{
+    height: 600px;
+    padding: 20px;
+    display: flex;
+}
+/* 슬라이드(li) 공통 세팅 */
+.flex_grow_banner>ol>li{
+    flex-grow: 1;
+    transition: .4s ease-out;
+}
+/* 슬라이드(li) 개별 세팅 */
+.flex_grow_banner>ol>li:nth-child(1){
+    background: url(../../images/sub_page/serpenti_75years/serpenti_75years1.jpg) no-repeat center/cover;
+}
+.flex_grow_banner>ol>li:nth-child(2){
+    background: url(../../images/sub_page/serpenti_75years/serpenti_75years2.jpg) no-repeat center/cover;
+}
+.flex_grow_banner>ol>li:nth-child(3){
+    background: url(../../images/sub_page/serpenti_75years/serpenti_75years3.jpg) no-repeat center/cover;
+}
+.flex_grow_banner>ol>li:nth-child(4){
+    background: url(../../images/sub_page/serpenti_75years/serpenti_75years4.jpg) no-repeat center/cover;
+}
+/* 슬라이드에 마우스오버시 세팅 */
+.flex_grow_banner>ol>li:hover {
+    flex-grow: 2;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>불가리 공식 온라인 스토어</title>
+    <title>경이로움의 에덴 컬렉션 | 불가리</title>
     <!-- 파비콘 -->
     <link rel="icon" type="image/png" href="https://www.bulgari.com/on/demandware.static/Sites-KR-Site/-/default/dwafe1f737/images/favicons/favicon-48x48.png" sizes="48x48">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.bulgari.com/on/demandware.static/Sites-KR-Site/-/default/dw8f9292ee/images/favicons/apple-touch-icon-57x57.png">
@@ -13,25 +13,32 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 	<!-- 외부 CSS -->
-	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/sub/sub.css">
 	<!-- 미디어쿼리 CSS -->
 	<link rel="stylesheet" href="./css/media.css">
+	<link rel="stylesheet" href="./css/sub/sub_media.css">
+	<!-- 뷰JS 스탠드얼론 버전 CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 	<!-- 제이쿼리 라이브러리 + UI -->
 	<script src="./js/jquery-3.6.3.min.js"></script>
 	<script src="./js/jquery-ui.min.js"></script>
+	<!-- AOS 라이브러리 불러오기 -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<!-- 공통 JS -->
 	<script src="./js/common.js"></script>
 	<!-- 링크시스템 JS -->
 	<script src="./js/linksys.js"></script>
 	<!-- 외부 JS 넣기 -->
-	<script src="./js/main.js"></script>
+	<!-- <script src="./js/main.js"></script> -->
+	<script src="./js/sub_01.js" type="module"></script>
 
 </head>
 <body>
 	<!-- 상단 영역 -->
 	<div id="top">
-		<!-- dt버전) 상단block박스 -->
-		<header class="top dt ibx">
+		<!-- dt버전) 상단 block박스 -->
+		<header class="top dt blockBx ibx">
 			<div class="tmenu">
 				<section class="lmenu">
 					<ul class="list">
@@ -143,21 +150,21 @@
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
-										<img src="../00.자료수집/02.이미지데이터/menu/hj_1.jpg" alt="the garden of wonders 이미지">
+										<img src="./images/menu/dt/hj_1.jpg" alt="the garden of wonders 이미지">
 										<span class="btn">하이 주얼리 컬렉션 자세히 보기</span>
 									</figure>
 								</li>
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit2">매혹적인 작품</span>
-										<img src="../00.자료수집/02.이미지데이터/menu/hj_2.jpg" alt="매혹적인 작품 이미지">
+										<img src="./images/menu/dt/hj_2.jpg" alt="매혹적인 작품 이미지">
 										<span class="btn">시대를 초월하는 매력의 작품을 만나보세요</span>
 									</figure>
 								</li>
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit3">로만 하이주얼러</span>
-										<img src="../00.자료수집/02.이미지데이터/menu/hj_3.jpg" alt="로만 하이주얼러 이미지">
+										<img src="./images/menu/dt/hj_3.jpg" alt="로만 하이주얼러 이미지">
 										<span class="btn">하이 주얼리 아트 자세히 보기</span>
 									</figure>
 								</li>
@@ -192,21 +199,21 @@
 							<ul class="list recommended">
 								<li>
 									<a href="#">
-										<img src="../00.자료수집/02.이미지데이터/products/necklaces/" alt="추천 상품 이미지">
+										<img src="./images/products/necklaces/" alt="추천 상품 이미지">
 										<span class="product_tit">세르펜티 바이퍼 네크리스</span>
 									</a>
 									
 								</li>
 								<li>
 									<a href="#">
-										<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+										<img src="./images/1266503.png" alt="추천 상품 이미지">
 										<span class="product_tit">세르펜티 링</span>
 									</a>
 									
 								</li>
 								<li>
 									<a href="#">
-										<img src="../00.자료수집/02.이미지데이터/1266503.png" alt="추천 상품 이미지">
+										<img src="./images/1266503.png" alt="추천 상품 이미지">
 										<span class="product_tit">세르펜티 바이퍼 이어링</span>
 									</a>
 								</li>
@@ -269,21 +276,21 @@
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit1">불가리 역사</span>
-										<img class="th_img1" src="../00.자료수집/02.이미지데이터/menu/tm_1.jpg" alt="불가리 역사 이미지">
+										<img class="th_img1" src="./images/menu/dt/tm_1.jpg" alt="불가리 역사 이미지">
 										<span class="btn">자세히 보기</span>
 									</figure>
 								</li>
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit2">불가리의 아이덴티티</span>
-										<img class="th_img2" src="../00.자료수집/02.이미지데이터/menu/tm_2.jpg" alt="불가리의 아이덴티티 이미지">
+										<img class="th_img2" src="./images/menu/dt/tm_2.jpg" alt="불가리의 아이덴티티 이미지">
 										<span class="btn">자세히 보기</span>
 									</figure>
 								</li>
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit3">불가리의 혁신</span>
-										<img class="th_img3" src="../00.자료수집/02.이미지데이터/menu/tm_3.jpg" alt="불가리의 혁신 이미지">
+										<img class="th_img3" src="./images/menu/dt/tm_3.jpg" alt="불가리의 혁신 이미지">
 										<span class="btn">자세히 보기</span>
 									</figure>
 								</li>
@@ -393,21 +400,21 @@
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
-										<img src="../00.자료수집/02.이미지데이터/menu/hj_1.jpg" alt="the garden of wonders 이미지">
+										<img src="./images/menu/dt/hj_1.jpg" alt="the garden of wonders 이미지">
 										<span class="btn">하이 주얼리 컬렉션 자세히 보기</span>
 									</figure>
 								</li>
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit2">매혹적인 작품</span>
-										<img src="../00.자료수집/02.이미지데이터/menu/hj_2.jpg" alt="매혹적인 작품 이미지">
+										<img src="./images/menu/dt/hj_2.jpg" alt="매혹적인 작품 이미지">
 										<span class="btn">시대를 초월하는 매력의 작품을 만나보세요</span>
 									</figure>
 								</li>
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit3">로만 하이주얼러</span>
-										<img src="../00.자료수집/02.이미지데이터/menu/hj_3.jpg" alt="로만 하이주얼러 이미지">
+										<img src="./images/menu/dt/hj_3.jpg" alt="로만 하이주얼러 이미지">
 										<span class="btn">하이 주얼리 아트 자세히 보기</span>
 									</figure>
 								</li>
@@ -519,21 +526,21 @@
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit1">불가리 역사</span>
-										<img class="th_img1" src="../00.자료수집/02.이미지데이터/menu/tm_1.jpg" alt="불가리 역사 이미지">
+										<img class="th_img1" src="./images/menu/dt/tm_1.jpg" alt="불가리 역사 이미지">
 										<span class="btn">자세히 보기</span>
 									</figure>
 								</li>
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit2">불가리의 아이덴티티</span>
-										<img class="th_img2" src="../00.자료수집/02.이미지데이터/menu/tm_2.jpg" alt="불가리의 아이덴티티 이미지">
+										<img class="th_img2" src="./images/menu/dt/tm_2.jpg" alt="불가리의 아이덴티티 이미지">
 										<span class="btn">자세히 보기</span>
 									</figure>
 								</li>
 								<li>
 									<figure class="thumbnail_img">
 										<span class="tit tit3">불가리의 혁신</span>
-										<img class="th_img3" src="../00.자료수집/02.이미지데이터/menu/tm_3.jpg" alt="불가리의 혁신 이미지">
+										<img class="th_img3" src="./images/menu/dt/tm_3.jpg" alt="불가리의 혁신 이미지">
 										<span class="btn">자세히 보기</span>
 									</figure>
 								</li>
@@ -552,13 +559,13 @@
 				<ul class="list">
 					<li class="ham_btn">
 						<a href="#">
-							<span class="material-symbols-outlined menu">menu</span>
+							<span class="material-symbols-outlined menu" title="메뉴">menu</span>
 
 						</a>
 					</li>
 					<li class="search_btn">
 						<a href="#">
-							<span class="material-symbols-outlined search">search</span>
+							<span class="material-symbols-outlined search" title="검색">search</span>
 						</a>
 					</li>
 				</ul>
@@ -614,12 +621,12 @@
 				<ul class="list">
 					<li>
 						<a href="#">
-							<span class="material-symbols-outlined location_on">location_on</span>
+							<span class="material-symbols-outlined location_on" title="스토어 검색">location_on</span>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<span class="material-symbols-outlined shopping_bag">shopping_bag</span>
+							<span class="material-symbols-outlined shopping_bag" title="장바구니">shopping_bag</span>
 						</a>
 					</li>
 				</ul>
@@ -691,19 +698,19 @@
 								<ol class="list category">
 									<li>
 										<figure class="thumbnail_img">
-											<img src="../00.자료수집/02.이미지데이터/menu/mob_hj_1.jpg" alt="the garden of wonders 이미지">
+											<img src="./images/menu/mob/mob_hj_1.jpg" alt="the garden of wonders 이미지">
 											<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
 										</figure>
 									</li>
 									<li>
 										<figure class="thumbnail_img">
-											<img src="../00.자료수집/02.이미지데이터/menu/mob_hj_2.jpg" alt="매혹적인 작품 이미지">
+											<img src="./images/menu/mob/mob_hj_2.jpg" alt="매혹적인 작품 이미지">
 											<span class="tit tit2">매혹적인 작품</span>
 										</figure>
 									</li>
 									<li>
 										<figure class="thumbnail_img">
-											<img src="../00.자료수집/02.이미지데이터/menu/mob_hj_3.jpg" alt="로만 하이주얼러 이미지">
+											<img src="./images/menu/mob/mob_hj_3.jpg" alt="로만 하이주얼러 이미지">
 											<span class="tit tit3">로만 하이주얼러</span>
 										</figure>
 									</li>
@@ -905,19 +912,19 @@
 								<ol class="list category">
 									<li>
 										<figure class="thumbnail_img">
-											<img src="../00.자료수집/02.이미지데이터/menu/tm_1.jpg" alt="the garden of wonders 이미지">
+											<img src="../00.자료수집/02.이미지데이터/menu/dt/tm_1.jpg" alt="the garden of wonders 이미지">
 											<span class="tit tit1">불가리 역사</span>
 										</figure>
 									</li>
 									<li>
 										<figure class="thumbnail_img">
-											<img src="../00.자료수집/02.이미지데이터/menu/tm_2.jpg" alt="매혹적인 작품 이미지">
+											<img src="../00.자료수집/02.이미지데이터/menu/dt/tm_2.jpg" alt="매혹적인 작품 이미지">
 											<span class="tit tit2">불가리의 아이덴티티</span>
 										</figure>
 									</li>
 									<li>
 										<figure class="thumbnail_img">
-											<img src="../00.자료수집/02.이미지데이터/menu/tm_3.jpg" alt="로만 하이주얼러 이미지">
+											<img src="../00.자료수집/02.이미지데이터/menu/dt/tm_3.jpg" alt="로만 하이주얼러 이미지">
 											<span class="tit tit3">불가리의 혁신</span>
 										</figure>
 									</li>
@@ -989,7 +996,14 @@
 	<!-- 메인 영역 -->
 	<div id="cont">
 		<main class="cont">
-			
+			<!-- 섹션1 동영상 -->
+			<sec1-comp v-bind:vnum="vidnum"></sec1-comp>
+			<!-- top버튼 -->
+			<topbtn-comp></topbtn-comp>
+			<!-- 섹션2 불가리 에덴 시리즈 -->
+			<sec2-comp></sec2-comp>
+			<!-- 섹션3 작품 소개 배너 -->
+			<sec3-comp></sec3-comp>
 		</main>
 	</div>
 
