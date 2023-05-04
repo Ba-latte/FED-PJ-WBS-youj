@@ -124,7 +124,10 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    /* min-width: 1400px; */
+}
+/* li들 마우스 포인터 만들기 */
+.dt .lnb>.list>li{
+    cursor: pointer;
 }
 
 
@@ -200,13 +203,19 @@
 }
 /* 추천상품 리스트박스 공통 세팅 */
 .dt .list.recommended{
-    margin-top: 50px;
+    /* margin-top: 50px;
+    padding: 0px 100px; */
+    width: 60%;
+    margin: 0 auto;
+    padding: 40px 20px 20px;
 }
 /* 추천상품 리스트의 li 하위 a요소 세팅 */
 .dt .list.recommended li img{
     display: flex;
     flex-direction: column;
     background-color: var(--bg_beige);
+    width: 90%;
+    margin: 0 auto;
 }
 /* 추천상품 리스트의 제품 이름 */
 .dt .list.recommended .product_tit{
@@ -600,7 +609,8 @@ header.mob.top.fixed{
 /* LNB 메뉴의 카테고리 리스트 하위 추천 리스트 겉박스 세팅 */
 .mob .lnb.jewellery .list.recommended,
 .mob .lnb.engagement_and_wedding .list.recommended{
-    padding: 30px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 /* LNB 메뉴의 개인서비스 리스트 공통 세팅 */
@@ -611,15 +621,16 @@ header.mob.top.fixed{
 
 /* 스와이퍼, 카테고리 리스트를 묶은 제품군섹션 박스 세팅 */
 .mob>.gnb .entire .product_section{
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
-    gap: 20vh;
+    gap: 10vh;
     height: calc(100vh - 140px);
 }
 
 /* 추천 제품 스와이퍼 공통 세팅 CSS */
-.recommended_Swiper {
-    max-width: 300px;
+#top .recommended_Swiper {
+    /* max-width: 300px; */
     height: auto;
     margin: 0 auto 30px;
 }
@@ -630,7 +641,7 @@ header.mob.top.fixed{
     justify-content: center;
     align-items: center;
 }
-.recommended_Swiper .swiper-slide img {
+#top .recommended_Swiper .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
