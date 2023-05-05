@@ -1,0 +1,305 @@
+@charset "utf-8";
+
+/* 보그 PJ 로그인 페이지 CSS - login.css */
+
+/* 외부CSS 머징 (합치기) */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+
+
+
+/* 공사중 */
+.member *{
+    /* outline: 1px dashed red; */
+}
+
+/* 1.타이틀 영역 겉박스 */
+.title{
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 20px 50px;
+
+    word-break: keep-all;
+}
+/* 제목 */
+.title .headline{
+    padding: 10px 0px;
+    font-size: 27px;
+}
+/* 텍스트 */
+.catchphrase{
+    font-size: 16px;
+}
+
+
+
+/* 로그인, 회원가입 선택하는 탭 박스 */
+.tab_bx{
+    max-width: 600px;
+    padding: 50px 20px 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+/* 탭박스 - 타이틀 겉박스 */
+.tit_tab{
+    /* width: auto; */
+    margin: 0 auto;
+    /* background-color: #ccc; */
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--black);
+}
+/* 탭박스 - 타이틀 같은 부분 세팅 */
+.login_tab,
+.member_tab{
+    width: 50%;
+    cursor: pointer;
+}
+.login_tab{
+    border-bottom: 3px solid var(--black);
+}
+/* 탭박스 - 타이틀 하위의 모든 a요소 공통 세팅 */
+.tit_tab a{
+    font-size: 16px;
+    line-height: 2.7;
+    letter-spacing: 2px;
+}
+
+
+
+/******************************************** [ 로그인 ] ********************************************/
+
+
+/* 2.로그인 컨텐츠 영역 속박스 */
+.login{
+    max-width: 600px;
+    min-height: 600px;
+    padding: 10px 20px 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+/* 입력창 겉박스 */
+.minput{
+    display: flex;
+    flex-direction: column;
+    text-align-last: left;
+    font-size: 16px;
+}
+/* 입력창 라벨 */
+.minput label{
+    padding: 15px 0 10px;
+}
+/* 입력창의 입력양식 공통 */
+.minput input{
+    width: auto;
+    height: 36px;
+}
+
+/* 서브밋 버튼 (로그인버튼) */
+#login_btn {
+    width: 100%;
+    height: 70px;
+    margin: 40px 0 10px;
+    background-color: var(--black);
+    border: none;
+    font-size: 16px;
+    color: var(--white);
+    cursor: pointer;
+}
+/* 기타 링크 겉박스 */
+.addbx{
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    gap: 10px;
+}
+.addbx>span{
+    display: flex;
+    align-items: center;
+}
+.addbx b{
+    font-weight: normal;
+}
+
+/* 포커스 아웃라인 제거 : 모든 브라우저에 기본 포커스 아웃라인 셋팅됨! */
+input:focus {
+    outline: none;
+}
+
+
+
+/******************************************** [ 회원가입 ] ********************************************/
+
+.member{
+    /* 처음에 안보임 - 동의박스가 보여야함 */
+    display: none;
+
+    max-width: 600px;
+    min-height: 600px;
+    padding: 10px 20px 50px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+/* 포커스 아웃라인 제거 : 모든 브라우저에 기본 포커스 아웃라인 셋팅됨! */
+input:focus,
+select:focus {
+    outline: none;
+}
+
+/* 공통 메시지 박스 */
+.msg {
+    display: block;
+    text-align-last: left;
+    font-size: 11px;
+    color: var(--red);
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+}
+
+/* 메시지 글자색 변경 */
+.msg.on {
+    color: var(--green);
+}
+
+
+/* 리스트 ul */
+.member ul {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #333;
+}
+
+/* 리스트 li */
+.member ul>li {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 라벨공통 타이틀(.itit) */
+.itit {
+    padding: 15px 0 10px;
+    text-align: left;
+}
+
+/*  입력박스 공통 */
+/* []는 속성(attribute)선택자 */
+.member input[type=text],
+.member input[type=password] {
+    height: 36px;
+    margin: 2px 0;
+    font-size: 16px;
+}
+/* 성별 선택 박스 */
+.gen_bx{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* 라디오버튼 */
+.member input[type=radio] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+/* 이메일 전체 박스 */
+.email_bx{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* 이메일 앞주소 */
+#email1 {
+    width: 45%;
+}
+
+/* 이메일 선택박스 (=드롭다운박스=콤보박스) */
+#seleml {
+    width: 50%;
+    height: 42px;
+}
+
+/* 이메일 뒷주소 부모li */
+.member li:nth-child(7) {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* 이메일 뒷주소 (직접 입력창) */
+#email2 {
+    width: 47.5%;
+    margin-top: 4px;
+    /* 처음에 안보임 */
+    display: none;
+}
+
+/* 가입하기 버튼 */
+#btnj {
+    width: 100%;
+    height: 70px;
+    margin: 40px 0 10px;
+    background-color: var(--black);
+    border: none;
+    font-size: 16px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+
+/******************************************** [ 약관 동의 ] ********************************************/
+
+
+
+/* 약관동의 박스 */
+#terms {
+    max-width: 600px;
+    min-height: 600px;
+    padding: 10px 20px 50px;
+    margin: 0 auto;
+    text-align: center;
+
+    /* 처음에 숨겨두기 */
+    display: none;
+}
+
+/* 동의/비동의 버튼박스 */
+.YNbox {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+/* 버튼공통 */
+.YNbox button {
+    width: 100%;
+    height: 40px;
+    background-color: var(--black);
+    border: none;
+
+    color: var(--white);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+/******************************************** [ 미디어쿼리 ] ********************************************/
+
+/* 미디어쿼리 400 이하 시작 */
+@media screen and (max-width:400px) {
+    .addbx{
+        flex-wrap: wrap;
+    }
+    /* 회원가입 - 이메일 입력 전체 박스 */
+    .email_bx {
+        /* flex-wrap: wrap; */
+    }
+    /* 회원가입 - 이메일 뒷주소 */
+    .member li:nth-child(7) {
+        /* flex-direction: row; */
+    }
+} /* 미디어쿼리 400 이하 끝 */

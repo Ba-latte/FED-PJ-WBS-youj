@@ -11,6 +11,8 @@
     --black: #000;
     --white: #fff;
     --silver: #c0c0c0;
+    --green: #008000;
+    --red: #ff0000;
     --swiper-theme-color: #1f1f1f;
 }
 
@@ -241,7 +243,7 @@
     top: 0;
     left: 0;
     background-color: var(--white);
-    z-index: 9;
+    z-index: 11;
     box-shadow: inset 0px -0.8px 0px 0px var(--silver);
 
     /* 🔥일단 숨겨두기🔥 */
