@@ -47,7 +47,8 @@ $(()=>{
         chk_width();
         console.log("모바일 여부: ", mob);
         if(mob){
-            // dt_top_block_bx.hide();
+            dt_top_block_bx.attr("style", "");
+            dt_top_fixed_bx.attr("style", "");
         }
     });
 

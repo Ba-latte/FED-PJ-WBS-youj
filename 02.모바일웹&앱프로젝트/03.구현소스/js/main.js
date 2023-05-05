@@ -49,6 +49,7 @@ const make_v3_swiper = function make_v3_swiper(cls){
 /* 👉호출해서 스와이퍼 개별 적용하기 */
 make_v3_swiper(".section2.recommended_product>.recommended_Swiper");
 
+
 /* 👉AOS라이브러리 호출하기 */
 AOS.init();
 
