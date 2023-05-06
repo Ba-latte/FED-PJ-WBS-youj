@@ -1,0 +1,365 @@
+@charset "utf-8";
+
+/* 불가리 PJ 서브 - 제품페이지 CSS - sub_product.css */
+
+/* 외부 CSS 머징 */
+@import url(../reset.css);
+@import url(../core.css);
+@import url(../common.css);
+
+/* 공사중 */
+body .cont * {
+    outline: 1px dashed black;
+}
+
+/* 변수 세팅 */
+:root {
+    /* 영역별 높이값 */
+    --ht300: 300px;
+    /* 그리드 갭 */
+    --gridGap: 20px;
+}
+
+
+/* 네비게이션바 */
+.nav_bar{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 50px 20px 20px;
+}
+.nav_bar ol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.nav_bar ol a,
+.nav_bar ol li{
+    font-size: 14px;
+    color: var(--gray);
+}
+
+/* 표제 */
+.filter_bx .headline{
+    text-align: center;
+    font-size: 27px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+}
+/* 1-3.총 재고, 정렬 기준, 필터바 - 겉박스 */
+.classification .sort_bar{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 16px;
+}
+
+.sort_bar .sort{
+    display: flex;
+    gap: 10px;
+
+}
+
+.filter_bar{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+.filter_bar>.filter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+/******************************************* 메인 영역 *******************************************/
+
+/* 그리드 박스 */
+.grid {
+    display: grid;
+    /* 가로방향 12그리드 셋팅 */
+    grid-template-columns: repeat(12, 1fr);
+    /* 세로방향 높이값 셋팅 : auto는 횟수 지정해서 반복할 필요 없이 알아서 row 개수 처리함 */
+    /* grid-auto-rows: minmax(300px, auto); */
+    /* 상하갭 */
+    grid-row-gap: var(--gridGap);
+    /* 좌우갭 */
+    grid-column-gap: var(--gridGap);
+
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 50px 20px 0;
+    
+}
+
+/* 1번째줄 */
+.rw1 {
+    background-color: lightblue;
+}
+/* 2번째줄 */
+.rw2 {
+    background-color: lightcoral;
+}
+/* 3번째줄 */
+.rw3 {
+    background-color: lightgreen;
+}
+/* 4번째줄 */
+.rw4 {
+    background-color: lightgoldenrodyellow;
+}
+/* 5번째줄 */
+.rw5 {
+    background-color: lightsteelblue;
+}
+/* 6번째줄 */
+.rw6 {
+    background-color: lightpink;
+}
+
+/* 각 컨텐츠 박스의 그리드 위치영역 설정하기 */
+/* 1번째 줄 */
+.rw1.imgbx {
+    grid-column: 1/7;
+    /* 세로 영역은 아래쪽으로 설정! */
+    grid-row: 1/3;
+    /* : 영역 잡으면 아무도 못옴! 거기에 있던 나머지애들은 다 쫓겨남! */
+}
+.rw1.productbx[data-pnum="1"] {
+    grid-column: 7/10;
+}
+.rw1.productbx[data-pnum="2"] {
+    grid-column: 10/13;
+}
+/* 2번째 줄 */
+.rw2.productbx[data-pnum="3"] {
+    grid-column: 7/10;
+}
+.rw2.productbx[data-pnum="4"] {
+    grid-column: 10/13;
+}
+/* 3번째 줄 */
+.rw3.productbx[data-pnum="5"] {
+    grid-column: 1/4;
+}
+.rw3.productbx[data-pnum="6"] {
+    grid-column: 4/7;
+}
+.rw3.imgbx {
+    grid-column: 7/13;
+    /* 세로 영역은 아래쪽으로 설정! */
+    grid-row: 3/5;
+}
+/* 4번째 줄 */
+.rw4.productbx[data-pnum="7"] {
+    grid-column: 1/4;
+}
+.rw4.productbx[data-pnum="8"] {
+    grid-column: 4/7;
+}
+/* 5번째 줄 */
+.rw5.productbx[data-pnum="9"] {
+    grid-column: 1/4;
+}
+.rw5.productbx[data-pnum="10"] {
+    grid-column: 4/7;
+}
+.rw5.productbx[data-pnum="11"] {
+    grid-column: 7/10;
+}
+.rw5.productbx[data-pnum="12"] {
+    grid-column: 10/13;
+}
+/* 6번째 줄 */
+.rw6.productbx[data-pnum="13"] {
+    grid-column: 1/4;
+}
+.rw6.productbx[data-pnum="14"] {
+    grid-column: 4/7;
+}
+.rw6.productbx[data-pnum="15"] {
+    grid-column: 7/10;
+}
+.rw6.productbx[data-pnum="16"] {
+    grid-column: 10/13;
+}
+
+
+/* 그리드 박스 내부 디자인 */
+/* 그리드 직계 div박스 */
+.grid>div{
+    cursor: pointer;
+}
+/* 그리드 내부 img 태그 공통 세팅 */
+.grid>div img{
+    background-color: var(--bg_beige);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 그리드 박스 내부의 홍보 이미지 공통 세팅 */
+.grid>.imgbx{
+    position: relative;
+    /* 부모자격 - 직계 span 요소들 */
+}
+/* 그리드 박스 내 홍보 이미지 - 직계 span 공통 세팅 */
+.grid>.imgbx>span{
+    position: absolute;
+}
+/* 홍보 이미지 - 직계 span 요소들 개별 세팅 */
+/* 타이틀 */
+.imgbx>.tit{
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+}
+/* 자세히 보기 버튼 */
+.imgbx>.btn{
+    bottom: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    background-color: var(--black);
+
+    font-size: 14px;
+    color: var(--white);
+}
+
+/* 제품 이미지 하단의 간단한 설명 박스 디자인 */
+.productbx>.imgbx{
+    overflow: hidden;
+    /* 넘치는 자식요소 숨기기 */
+}
+/* 제품 착용샷 숨겨두기 */
+.productbx>.imgbx>.hover{
+    display: none;
+}
+/* 제품 설명 박스 - 겉박스 세팅 */
+.productbx>.descbx{
+    padding: 10px 0;
+    color: var(--bg_black);
+    line-height: 1.7;
+}
+/* 제품 설명 박스 - 타이틀 */
+.productbx>.descbx .tit{
+    font-size: 16px;
+}
+/* 제품 설명 박스 - 가격 */
+.productbx>.descbx .price{
+    font-size: 14px;
+}
+/* 제품 설명 박스  - 소재, 젬스톤 */
+.productbx>.descbx span{
+    font-size: 14px;
+}
+
+
+/* 제품 더보기 박스 - 겉박스 */
+.morebx{
+    padding: 50px 0 100px;
+    text-align: center;
+    line-height: 1.7;
+}
+/* 제품 더보기 박스 - 텍스트박스 */
+.morebx>.txt{
+    padding: 20px 0;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+/* 제품 더보기 박스 - 더 보기 버튼 */
+.morebx>.morebtn{
+    width: 420px;
+    padding: 12px 30px;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: 
+    background-color .4s ease-in-out, 
+    color .4s ease-in-out;
+}
+.morebx>.morebtn:hover{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+
+
+
+/* 600px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 600px) {
+    /* 1번째 줄 */
+    .rw1.imgbx {
+        grid-column: 1/13;
+        grid-row: 3/5;
+    }
+    .rw1.productbx[data-pnum="1"] {
+        grid-column: 1/7;
+    }
+    .rw1.productbx[data-pnum="2"] {
+        grid-column: 7/13;
+    }
+    /* 2번째 줄 */
+    .rw2.productbx[data-pnum="3"] {
+        grid-column: 1/7;
+    }
+    .rw2.productbx[data-pnum="4"] {
+        grid-column: 7/13;
+    }
+    /* 3번째 줄 */
+    .rw3.productbx[data-pnum="5"] {
+        grid-column: 1/7;
+    }
+    .rw3.productbx[data-pnum="6"] {
+        grid-column: 7/13;
+    }
+    .rw3.imgbx {
+        grid-column: 1/13;
+        grid-row: 7/9;
+    }
+    /* 4번째 줄 */
+    .rw4.productbx[data-pnum="7"] {
+        grid-column: 1/7;
+    }
+    .rw4.productbx[data-pnum="8"] {
+        grid-column: 7/13;
+    }
+    /* 5번째 줄 */
+    .rw5.productbx[data-pnum="9"] {
+        grid-column: 1/7;
+    }
+    .rw5.productbx[data-pnum="10"] {
+        grid-column: 7/13;
+    }
+    .rw5.productbx[data-pnum="11"] {
+        grid-column: 1/7;
+    }
+    .rw5.productbx[data-pnum="12"] {
+        grid-column: 7/13;
+    }
+    /* 6번째 줄 */
+    .rw6.productbx[data-pnum="13"] {
+        grid-column: 1/7;
+    }
+    .rw6.productbx[data-pnum="14"] {
+        grid-column: 7/13;
+    }
+    .rw6.productbx[data-pnum="15"] {
+        grid-column: 1/7;
+    }
+    .rw6.productbx[data-pnum="16"] {
+        grid-column: 7/13;
+    }
+}
+/* 600px 사이즈 이하 미디어쿼리 끝 */

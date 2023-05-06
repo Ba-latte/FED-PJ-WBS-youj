@@ -47,21 +47,27 @@
     /* 그리드 세부 세팅 */
     .rw1.image {
         grid-column: 1/13;
+        order: 1;
     }
     .rw1.txt_bx {
         grid-column: 1/13;
+        order: 2;
     }
     .rw2.image {
         grid-column: 1/13;
+        order: 3;
     }
     .rw2.txt_bx {
         grid-column: 1/13;
+        order: 4;
     }
     .rw3.image {
         grid-column: 1/13;
+        order: 5;
     }
     .rw3.txt_bx {
         grid-column: 1/13;
+        order: 6;
     }
 }
 /* 900px 사이즈 이하 미디어쿼리 끝 */
