@@ -9,7 +9,7 @@
 
 /* 공사중 */
 body .cont * {
-    outline: 1px dashed black;
+    /* outline: 1px dashed black; */
 }
 
 /* 변수 세팅 */
@@ -47,6 +47,10 @@ body .cont * {
     letter-spacing: 1px;
 }
 /* 1-3.총 재고, 정렬 기준, 필터바 - 겉박스 */
+.classification{
+    border-bottom: 1px solid #000;
+}
+/* 정렬 기준 겉박스 */
 .classification .sort_bar{
     max-width: 1300px;
     margin: 0 auto;
@@ -70,35 +74,68 @@ body .cont * {
     padding: 10px 20px;
     font-size: 16px;
 }
-
-.filter_bar .filter{
+/* 필터 바 - 필터 제목들만 */
+.filter_bar ul.filter{
     display: flex;
     align-items: center;
     gap: 10px;
 }
+
+/* 필터 바 - 분류 기준들 (카테고리, 소재, 젬스톤, 가격) */
 .filter>ul{
     display: flex;
     gap: 50px;
 }
-/* 필터의 각 옵션박스 전체 디자인 */
+/* 분류 기준들 세로 정렬 가운데로 맞추기 */
+.filter>ul>li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+/* 더보기 아이콘만 냅두고 줄이기 아이콘은 숨겨두기 */
+.filter>ul>li>.expand_less{
+    display: none;
+}
+
+/* 필터 옵션 바 - 겉박스 폼태그 */
+.filterFn{
+    border-bottom: 1px solid #000;
+}
+/* 필터 옵션 바 */
+.filter_opt{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+/* 필터의 각 옵션박스 전체 공통 디자인 */
 .filter_opt>.sel_opt{
     display: flex;
     gap: 30px;
 }
+/* 필터의 각 옵션박스의 라벨 전체 공통 디자인 - 커서바꾸기 */
+.filter_opt>.sel_opt label{
+    cursor: pointer;
+}
+/* 젬스톤 옵션 선택 박스의 라벨 설정 */
 .filter_opt .sel_opt.gemstone label{
     display: flex;
     gap: 3px;
 }
+/* 젬스톤 옵션 선택 박스의 이미지 설정 */
 .filter_opt .sel_opt.gemstone .gemimg{
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    cursor: pointer;
+    /* 넘치는 자식 img요소 숨기기 */
     overflow: hidden;
 }
+/* 젬스톤 옵션 선택 박스의 사이 간격 설정 */
 .filter .gemstone input+label{
     padding-right: 15px;
 }
-
+/* 젬스톤 옵션 선택 박스의 하위 li 설정 */
 .filter_opt>.sel_opt.gemstone>li{
     display: flex;
     gap: 5px;
