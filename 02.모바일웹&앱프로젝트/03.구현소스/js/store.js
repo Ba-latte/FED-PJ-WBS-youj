@@ -10,7 +10,7 @@ const store = new Vuex.Store({
     // (1)데이터 세팅 구역
     state:{
         // 하이주얼리 하위메뉴와 브랜드 하위메뉴 데이터 셋업
-        cityData:{high_jewelry_menu_data},
+        section1Data:{high_jewelry_menu_data},
         // 섹션1 데이터 셋업 변수
         sec1_vdsrc:"",
         sec1_tit:"",
