@@ -5,8 +5,8 @@
 ///////////////////////////// [ 제이쿼리 로드 구역 ] /////////////////////////////
 $(()=>{
     console.log("링크시스템 JS - 로딩 완료");
+
     /***************************************************
-        sns 메뉴 파트 링크 세팅하기 (DT + Mobile)
         !!주의!! 항상 html DOM 변경 후에 이벤트 작업을 할 것!!
         먼저 이벤트를 걸고 DOM 변경을 하면 이벤트가 풀린다~!
     ***************************************************/
@@ -45,6 +45,41 @@ $(()=>{
 
 
 
+
+    ////////////////////////// [ GNB 메뉴 링크 기능 시작 ] //////////////////////////////
+    // 대상 선정 : dt버전) 모든 gnb메뉴의 li들 직계하위 a요소
+    const dtgnb = $(".dt>nav>ul.list>li>a");
+
+    dtgnb.click(function(e){
+        // console.log("클릭 완료!");
+        // (0) a요소 기본기능 막기
+        e.preventDefault();
+
+        // (1) 클릭된 a요소의 텍스트를 읽어오기
+        let atxt = $(this).text().trim();
+        console.log(atxt);
+
+
+        // (2) 서브 페이지로 이동하기
+        if(atxt === "하이 주얼리" || atxt === "브랜드"){
+            console.log("하이 주얼리, 브랜드 페이지로 이동!");
+            location.href = "sub_category.html?cat=" + encodeURIComponent(atxt);
+            // encodeURIComponent() : 2byte문자나 특수문자가 있을 경우, 인코딩해줘야함! -> 받아가는 곳에서도 디코딩 해줘야 정확히 나옴
+        }
+        else if(atxt === "75년간 함께한 세르펜티"){
+            console.log("세르펜티 75주년 페이지로 이동!");
+            location.href = "sub_serpent.html?cat=" + encodeURIComponent(atxt);
+        }
+        else if(atxt === "주얼리" || atxt === "인게이지먼트 & 웨딩"){
+            console.log("주얼리, 인게이지먼트 페이지로 이동!");
+        }
+        else if(atxt === "호텔 & 리조트"){
+            window.open("https://www.bulgarihotels.com/");
+        }
+    });
+    ////////////////////////// [ GNB 메뉴 링크 기능 끝 ] //////////////////////////////
+
+
 }); ////////////////////////////////////// jQB ///////////////////////////////////////
 
 
@@ -56,43 +91,38 @@ $(()=>{
 
 
 
-////////////////////////////////////// 로딩 구역 ////////////////////////////////////////
-// window.addEventListener("DOMContentLoaded", linkFn);
-
-////////////////////////// 링크시스템 로드 함수 //////////////////////////////
+////////////////////////// [ GNB 메뉴 링크 함수 ] //////////////////////////////
 function linkFn(){
 
-    console.log("링크 로딩완료!");
 
     // 1.링크 대상 선정
-    // (1) GNB : .gnb a
-    const gnb = document.querySelectorAll(".gnb a, .mognb a");
-    // console.log(gnb);
+    // (1) gnb : nav>ul.list>li
+
     // (2) 로고 : .logo a
-    const logo = document.querySelector(".logo a");
+    // const logo = document.querySelector(".logo a");
 
     
     // 2.클릭 이벤트 설정하기
     // (1) GNB 클릭 설정
-    for(let x of gnb){
-        x.onclick = (e)=>{
-            // (0) 클릭 이동기능 막기
-            e.preventDefault();
+    // for(let x of gnb){
+    //     x.onclick = (e)=>{
+    //         // (0) 클릭 이동기능 막기
+    //         e.preventDefault();
 
-            // (1) 클릭된 a요소의 텍스트를 읽어오기 + 소문자로 텍스트 바꾸기
-            let atxt = x.innerText.toLowerCase().trim();
-            // toLowerCase() : 소문자로 바꾸기
-            // toUpperCase() : 대문자로 바꾸기
-            // trim() : 앞/뒤 공백 제거하기
+    //         // (1) 클릭된 a요소의 텍스트를 읽어오기 + 소문자로 텍스트 바꾸기
+    //         let atxt = x.innerText.toLowerCase().trim();
+    //         // toLowerCase() : 소문자로 바꾸기
+    //         // toUpperCase() : 대문자로 바꾸기
+    //         // trim() : 앞/뒤 공백 제거하기
 
-            console.log(atxt);
+    //         console.log(atxt);
 
-            // (2) 서브 페이지 이동하기 : "search"가 아니면 서브페이지로 이동하라는 뜻!
-            if(atxt !== "search") location.href = "category.html?cat=" + encodeURIComponent(atxt);
-            // encodeURIComponent() : 2byte문자나 특수문자가 있을 경우, 인코딩해줘야함! -> 받아가는 곳에서도 디코딩 해줘야 정확히 나옴
+    //         // (2) 서브 페이지 이동하기 : "search"가 아니면 서브페이지로 이동하라는 뜻!
+    //         if(atxt !== "search") location.href = "category.html?cat=" + encodeURIComponent(atxt);
+    //         // encodeURIComponent() : 2byte문자나 특수문자가 있을 경우, 인코딩해줘야함! -> 받아가는 곳에서도 디코딩 해줘야 정확히 나옴
 
-        }; /////////////////// onclick 이벤트 끝 ///////////////////
-    } //////////////////// for of문 끝 ////////////////////////
+    //     }; /////////////////// onclick 이벤트 끝 ///////////////////
+    // } //////////////////// for of문 끝 ////////////////////////
 
 
 
