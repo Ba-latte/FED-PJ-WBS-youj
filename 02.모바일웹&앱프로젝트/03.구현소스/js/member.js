@@ -112,8 +112,8 @@ $(()=>{
         != 같지않다(제이쿼리전용)
 
     *********************************************/
-    $(`input[type=text][id!=email2][class!=search],
-    input[type=password]`)
+    $(`.member input[type=text][id!=email2][class!=search],
+    .member input[type=password]`)
     .blur(function(){
         // console.log("블러!");
 

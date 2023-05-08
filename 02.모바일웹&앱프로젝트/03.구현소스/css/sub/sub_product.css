@@ -117,9 +117,15 @@ body .cont * {
 .filter_opt>.sel_opt label{
     cursor: pointer;
 }
+/* 필터의 각 옵션박스 중 젬스톤 옵션의 박스 설정 */
+.filter_opt>.sel_opt.gemstone{
+    flex-wrap: wrap;
+    gap: 10px;
+}
 /* 젬스톤 옵션 선택 박스의 라벨 설정 */
 .filter_opt .sel_opt.gemstone label{
     display: flex;
+    align-items: center;
     gap: 3px;
 }
 /* 젬스톤 옵션 선택 박스의 이미지 설정 */
@@ -364,11 +370,29 @@ body .cont * {
 
 
 
+/* 1100px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1100px) {
+    /* 필터의 각 옵션박스 중 젬스톤 옵션의 박스 설정 */
+    .filter_opt>.sel_opt.gemstone{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+/* 1100px 사이즈 이하 미디어쿼리 끝 */
 
 
 
 /* 600px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 600px) {
+    /* 필터 - 제목 박스 */
+    .filter>ul {
+        display: flex;
+        row-gap: 0;
+        column-gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* 제품 리스트 - 그리드 박스 */
     /* 1번째 줄 */
     .rw1.imgbx {
         grid-column: 1/13;
