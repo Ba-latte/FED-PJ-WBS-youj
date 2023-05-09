@@ -21,7 +21,7 @@ const store = new Vuex.Store({
     mutations:{
         // 초기 데이터 셋업 메서드
         initSet(헐, param){
-            console.log("데이터변경! 초기화 : ", 헐);
+            console.log("데이터변경! 초기화 : ", 헐,param);
 
             // 섹션1 데이터 셋업 변수
             헐.sec1_vdsrc = param.vdsrc;
@@ -29,6 +29,13 @@ const store = new Vuex.Store({
             헐.sec1_desc = param.desc;
 
         }, ///////////////// initSet 메서드 /////////////////////
+
+        chgData(헐,슉){
+            console.log("데이터변경! 클릭시! : ", 헐,슉);
+            헐.sec1_vdsrc = 헐.section1Data.high_jewelry_menu_data[슉].section1.video_src;
+            헐.sec1_tit = 헐.section1Data.high_jewelry_menu_data[슉].section1.tit;
+            헐.sec1_desc = 헐.section1Data.high_jewelry_menu_data[슉].section1.desc;
+        }
     },
     
 }); /////////////////////////// 뷰엑스 스토어 인스턴스 /////////////////////////////////////

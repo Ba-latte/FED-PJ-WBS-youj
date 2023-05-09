@@ -53,11 +53,13 @@ Vue.component("lnb-comp",{
         // 스토어 변수 업데이트 메서드
         chgData(pm){
             console.log("업데이트!", pm);
+            // console.log(store.state.sec1_desc);
             // 이자리에서 바로 스토어 변수를 업데이트한다!!
             //  섹션1 데이터 변수
-            store.state.sec1_vdsrc = store.state.section1Data.high_jewelry_menu_data[pm].section1.video_src;
-            store.state.sec1_tit = store.state.section1Data.high_jewelry_menu_data[pm].section1.tit;
-            store.state.sec1_desc = store.state.section1Data.high_jewelry_menu_data[pm].section1.desc;
+            // store.state.sec1_vdsrc = store.state.section1Data.high_jewelry_menu_data[pm].section1.video_src;
+            // store.state.sec1_tit = store.state.section1Data.high_jewelry_menu_data[pm].section1.tit;
+            // store.state.sec1_desc = store.state.section1Data.high_jewelry_menu_data[pm].section1.desc;
+            store.commit('chgData',pm);
         }
     }
 }); /////////////////// lnb-comp 전역 컴포넌트 //////////////////////
@@ -69,11 +71,11 @@ Vue.component("sec1-comp", {
     template: `
     <section class="section1 main_video">
         <div class="video_bx wrap">
-            <video class="main_video_class bulgari_eden" src="$store.state.sec1_vdsrc" autoplay muted loop playsinline></video>
+            <video class="main_video_class bulgari_eden" v-bind:src="$store.state.sec1_vdsrc" autoplay muted loop playsinline></video>
         </div>
         <div class="txt">
-            <span class="headline" v-html="$store.stae.sec1_tit"></span>
-            <span class="catchphrase" v-text="$store.stae.sec1_desc"></span>
+            <span class="headline" v-html="$store.state.sec1_tit"></span>
+            <span class="catchphrase" v-text="$store.state.sec1_desc"></span>
         </div>
     </section>
     `,
@@ -232,6 +234,7 @@ const contVue = new Vue({
     }, //////////////// created 구역 ///////////////////
     // jQB 구역
     mounted(){
+        console.log(store.state.section1Data);
     }, //////////////// mounted 구역 ///////////////////
 
 }); ////////////////// contVue 인스턴스 ////////////////////
