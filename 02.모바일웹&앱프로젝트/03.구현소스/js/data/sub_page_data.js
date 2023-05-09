@@ -6,6 +6,8 @@
 
 ////////////////////// [ 🔥세르펜티 메뉴의 서브페이지 데이터🔥 ] /////////////////////////////
 const serpenti_75years_menu_data={
+    // 해당 페이지명
+    pgName: "serpenti_75years",
     // 섹션1 메인 동영상
     section1: {
         video_src: `serpenti_75years.mp4`,
@@ -46,6 +48,8 @@ const serpenti_75years_menu_data={
 const high_jewelry_menu_data={
     // 서브1 - 불가리 에덴 페이지
     bulgari_eden: {
+        // 해당 페이지명
+        pgName: "bulgari_eden",
         // 섹션1 메인 동영상
         section1: {
             video_src: `./videos/high_jewelry_sub_1.mp4`,
@@ -109,6 +113,8 @@ const high_jewelry_menu_data={
     },
     // 서브2 - 매그니피카 컬렉션
     magnifica_creations: {
+        // 해당 페이지명
+        pgName: "magnifica_creations",
         // 섹션1 메인 동영상
         section1: {
             video_src: `./videos/high_jewelry_sub_2.mp4`,
@@ -172,6 +178,8 @@ const high_jewelry_menu_data={
     },
     // 서브3 - 로만 하이주얼러
     roman_high_jeweller: {
+        // 해당 페이지명
+        pgName: "roman_high_jeweller",
         // 섹션1 메인 동영상
         section1: {
             video_src: `./videos/high_jewelry_sub_3.mp4`,
@@ -239,6 +247,8 @@ const high_jewelry_menu_data={
 const brand_menu_data={
     // 서브1 - 불가리 역사 페이지
     bulgari_history: {
+        // 해당 페이지명
+        pgName: "bulgari_history",
         // 섹션1 전체 소개
         section1: {
             tit: `불가리 역사`,
@@ -264,7 +274,9 @@ const brand_menu_data={
         },
     },
     // 서브2 - 불가리의 아이덴티티 페이지
-    bulgari_history: {
+    bulgari_identity: {
+        // 해당 페이지명
+        pgName: "bulgari_identity",
         // 섹션1 전체 소개
         section1: {
             tit: `불가리의 아이덴티티`,
@@ -379,6 +391,8 @@ const brand_menu_data={
     },
     // 서브3 - 불가리의 혁신
     bulgari_innovation: {
+        // 해당 페이지명
+        pgName: "bulgari_innovation",
         // 섹션1 메인 동영상
         section1: {
             video_src: `../00.자료수집/03.동영상데이터/bulgari_innovation.mp4`,

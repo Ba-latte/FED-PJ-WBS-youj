@@ -15,6 +15,8 @@ const store = new Vuex.Store({
         sec1_vdsrc:"",
         sec1_tit:"",
         sec1_desc:"",
+        // 페이지의 title 요소 데이터 변경 셋업 변수
+        pg_tit:"",
 
     }, /////////// state 구역 ///////////
     // (2)데이터 변경 메서드 구역 : 호출시 commit() 사용!
@@ -35,6 +37,12 @@ const store = new Vuex.Store({
             헐.sec1_vdsrc = 헐.section1Data.high_jewelry_menu_data[슉].section1.video_src;
             헐.sec1_tit = 헐.section1Data.high_jewelry_menu_data[슉].section1.tit;
             헐.sec1_desc = 헐.section1Data.high_jewelry_menu_data[슉].section1.desc;
+        },
+
+        chgtit(state, pm){
+            state.pg_tit = state.section1Data.high_jewelry_menu_data[pm].pgName;
+            console.log("해당 페이지 title요소의 데이터 변경! : ", pm);
+            $("title").text(state.pg_tit.replaceAll("_", " ").toUpperCase() + " | 불가리");
         }
     },
     
