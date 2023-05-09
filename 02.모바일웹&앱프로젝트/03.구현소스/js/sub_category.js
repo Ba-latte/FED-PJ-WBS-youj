@@ -54,12 +54,10 @@ Vue.component("lnb-comp",{
         chgData(pm){
             console.log("업데이트!", pm);
             // console.log(store.state.sec1_desc);
-            // 이자리에서 바로 스토어 변수를 업데이트한다!!
-            //  섹션1 데이터 변수
-            // store.state.sec1_vdsrc = store.state.section1Data.high_jewelry_menu_data[pm].section1.video_src;
-            // store.state.sec1_tit = store.state.section1Data.high_jewelry_menu_data[pm].section1.tit;
-            // store.state.sec1_desc = store.state.section1Data.high_jewelry_menu_data[pm].section1.desc;
+            // 스토어 변수를 업데이트한다!!
             store.commit('chgData',pm);
+            
+            
         }
     }
 }); /////////////////// lnb-comp 전역 컴포넌트 //////////////////////
@@ -234,7 +232,16 @@ const contVue = new Vue({
     }, //////////////// created 구역 ///////////////////
     // jQB 구역
     mounted(){
-        console.log(store.state.section1Data);
+        // 클릭된 lnb메뉴 박스 닫기
+        $("figure").click(
+            function closeFn(){
+                console.log("닫아!");
+                setTimeout(() => {
+                    $(this).parents(".lnb").hide();
+                }, 10, funtion(){$(this).parents(".lnb")});
+            
+        });
+
     }, //////////////// mounted 구역 ///////////////////
 
 }); ////////////////// contVue 인스턴스 ////////////////////
