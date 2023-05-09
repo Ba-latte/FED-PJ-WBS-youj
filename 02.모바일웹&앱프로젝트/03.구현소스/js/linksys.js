@@ -72,6 +72,7 @@ $(()=>{
         }
         else if(atxt === "주얼리" || atxt === "인게이지먼트 & 웨딩"){
             console.log("주얼리, 인게이지먼트 페이지로 이동!");
+            location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
         }
         else if(atxt === "호텔 & 리조트"){
             window.open("https://www.bulgarihotels.com/");

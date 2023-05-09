@@ -55,9 +55,9 @@ Vue.component("lnb-comp",{
             console.log("업데이트!", pm);
             // 이자리에서 바로 스토어 변수를 업데이트한다!!
             //  섹션1 데이터 변수
-            store.state.sec1_vdsrc = store.state.high_jewelry_menu_data[pm].section1.video_src;
-            store.state.sec1_tit = store.state.high_jewelry_menu_data[pm].section1.tit;
-            store.state.sec1_desc = store.state.high_jewelry_menu_data[pm].section1.desc;
+            store.state.sec1_vdsrc = store.state.section1Data.high_jewelry_menu_data[pm].section1.video_src;
+            store.state.sec1_tit = store.state.section1Data.high_jewelry_menu_data[pm].section1.tit;
+            store.state.sec1_desc = store.state.section1Data.high_jewelry_menu_data[pm].section1.desc;
         }
     }
 }); /////////////////// lnb-comp 전역 컴포넌트 //////////////////////
@@ -245,6 +245,7 @@ import make_v3_noNav_swiper from "./swiper_banner.js";
 make_v3_noNav_swiper(".section3.introduction_to_works>.intro_Swiper");
 
 make_v3_noNav_swiper(".power_of_women .power_of_women_banner");
+
 
 
 

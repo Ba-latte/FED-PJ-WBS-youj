@@ -167,7 +167,7 @@ $(()=>{
 
     /* 👉상단으로 향하는 top버튼 클릭시 맨위로 이동하기 */
     main_top_btn.click(function(){
-        $("html, body").animate({scrollTop: 0 }, 'slow');
+        $("html, body").stop().animate({scrollTop: 0 }, 'slow');
     });
 
     
