@@ -13,15 +13,15 @@ $(()=>{
 
     dtgnb.click(function(e){
         // console.log("클릭 완료!");
-        // (0) a요소 기본기능 막기
+        // 1. a요소 기본기능 막기
         e.preventDefault();
 
-        // (1) 클릭된 a요소의 텍스트를 읽어오기
+        // 2. 클릭된 a요소의 텍스트를 읽어오기
         let atxt = $(this).text().trim();
         console.log(atxt);
 
 
-        // (2) 서브 페이지로 이동하기
+        // 3. 서브 페이지로 이동하기
         if(atxt === "하이 주얼리" || atxt === "브랜드"){
             console.log("하이 주얼리, 브랜드 페이지로 이동!");
             location.href = "sub_category.html?cat=" + encodeURIComponent(atxt);
