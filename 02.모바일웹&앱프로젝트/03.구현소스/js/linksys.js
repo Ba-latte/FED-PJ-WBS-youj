@@ -6,6 +6,48 @@
 $(()=>{
     console.log("링크시스템 JS - 로딩 완료");
 
+
+    ////////////////////////// [ GNB 메뉴 링크 기능 시작 ] //////////////////////////////
+    // 대상 선정 : dt버전) 모든 gnb메뉴의 li들 직계하위 a요소
+    const dtgnb = $(".dt>nav>ul.list>li>a");
+
+    dtgnb.click(function(e){
+        // console.log("클릭 완료!");
+        // (0) a요소 기본기능 막기
+        e.preventDefault();
+
+        // (1) 클릭된 a요소의 텍스트를 읽어오기
+        let atxt = $(this).text().trim();
+        console.log(atxt);
+
+
+        // (2) 서브 페이지로 이동하기
+        if(atxt === "하이 주얼리" || atxt === "브랜드"){
+            console.log("하이 주얼리, 브랜드 페이지로 이동!");
+            location.href = "sub_category.html?cat=" + encodeURIComponent(atxt);
+            // encodeURIComponent() : 2byte문자나 특수문자가 있을 경우, 인코딩해줘야함! -> 받아가는 곳에서도 디코딩 해줘야 정확히 나옴
+        }
+        else if(atxt === "75년간 함께한 세르펜티"){
+            console.log("세르펜티 75주년 페이지로 이동!");
+            location.href = "sub_serpent.html?cat=" + encodeURIComponent(atxt);
+        }
+        else if(atxt === "주얼리" || atxt === "인게이지먼트 & 웨딩"){
+            console.log("주얼리, 인게이지먼트 페이지로 이동!");
+            location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
+        }
+        else if(atxt === "호텔 & 리조트"){
+            window.open("https://www.bulgarihotels.com/");
+        }
+    });
+    ////////////////////////// [ GNB 메뉴 링크 기능 끝 ] //////////////////////////////
+
+
+
+
+
+
+
+    ///////////////////////////// [ 로그인/회원가입 페이지 시작 ] /////////////////////////////
     /***************************************************
         !!주의!! 항상 html DOM 변경 후에 이벤트 작업을 할 것!!
         먼저 이벤트를 걸고 DOM 변경을 하면 이벤트가 풀린다~!
@@ -42,43 +84,12 @@ $(()=>{
 
 
     }); ////////////////// click ///////////////////
+    ///////////////////////////// [ 로그인/회원가입 페이지 끝 ] /////////////////////////////
 
 
 
 
-    ////////////////////////// [ GNB 메뉴 링크 기능 시작 ] //////////////////////////////
-    // 대상 선정 : dt버전) 모든 gnb메뉴의 li들 직계하위 a요소
-    const dtgnb = $(".dt>nav>ul.list>li>a");
-
-    dtgnb.click(function(e){
-        // console.log("클릭 완료!");
-        // (0) a요소 기본기능 막기
-        e.preventDefault();
-
-        // (1) 클릭된 a요소의 텍스트를 읽어오기
-        let atxt = $(this).text().trim();
-        console.log(atxt);
-
-
-        // (2) 서브 페이지로 이동하기
-        if(atxt === "하이 주얼리" || atxt === "브랜드"){
-            console.log("하이 주얼리, 브랜드 페이지로 이동!");
-            location.href = "sub_category.html?cat=" + encodeURIComponent(atxt);
-            // encodeURIComponent() : 2byte문자나 특수문자가 있을 경우, 인코딩해줘야함! -> 받아가는 곳에서도 디코딩 해줘야 정확히 나옴
-        }
-        else if(atxt === "75년간 함께한 세르펜티"){
-            console.log("세르펜티 75주년 페이지로 이동!");
-            location.href = "sub_serpent.html?cat=" + encodeURIComponent(atxt);
-        }
-        else if(atxt === "주얼리" || atxt === "인게이지먼트 & 웨딩"){
-            console.log("주얼리, 인게이지먼트 페이지로 이동!");
-            location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
-        }
-        else if(atxt === "호텔 & 리조트"){
-            window.open("https://www.bulgarihotels.com/");
-        }
-    });
-    ////////////////////////// [ GNB 메뉴 링크 기능 끝 ] //////////////////////////////
+    
 
 
 }); ////////////////////////////////////// jQB ///////////////////////////////////////
