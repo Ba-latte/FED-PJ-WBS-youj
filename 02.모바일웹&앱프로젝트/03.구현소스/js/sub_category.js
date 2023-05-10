@@ -3,26 +3,8 @@
 // 뷰엑스 스토어 객체 JS 가져오기
 import store from "./store.js";
 // 서브페이지 데이터 객체 JS 가져오기
-import {serpenti_75years_menu_data, high_jewelry_menu_data, brand_menu_data} from "./data/sub_page_data.js";
+// import {serpenti_75years_menu_data, high_jewelry_menu_data, brand_menu_data} from "./data/sub_page_data.js";
 
-
-
-// // 🌷1.넘어온 url 받기 : 넘어온 url은 로딩구역 밖에서 받아도 된다!
-// let pm = location.href;
-// // 2.문자열 잘라서 값으로 읽어오기
-// pm = pm.split("?")[1].split("=")[1];
-// // 3.pm값 특수문자 복원하기 : 디코딩하기!
-// pm = decodeURIComponent(pm);
-// console.log("넘어온 url받은 pm변수의 값은? : ",pm);
-// // 4. 메뉴 데이터 (sinfo 변수)객체에서 카테고리값 선택하기
-// if(pm === high_jewelry_menu_data[pm].pgName){
-//     console.log("하이주얼리쪽이야");
-// }
-// const mdata = high_jewelry_menu_data[pm].pgName.replaceAll("_", " ").toUpperCase();
-// console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
-// // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
-// const sub_pg_tit = $("title");
-// sub_pg_tit.text(mdata + " | 불가리");
 
 
 // 하이주얼리, 브랜드의 lnb메뉴 컴포넌트로 만들기

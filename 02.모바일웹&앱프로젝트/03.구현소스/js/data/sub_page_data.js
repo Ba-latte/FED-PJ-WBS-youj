@@ -4,6 +4,14 @@
 
 // 각 서브 페이지별 데이터 세팅하기
 
+const lnb_menu_data = {
+    bulgari_eden:{
+        tit: `BULGARI EDEN, <br> THE GARDEN OF WONDERS`,
+        img_src:`./images/menu/dt/hj_1.jpg`,
+        desc:`하이 주얼리 컬렉션 자세히 보기`,
+    }
+};
+
 ////////////////////// [ 🔥세르펜티 메뉴의 서브페이지 데이터🔥 ] /////////////////////////////
 const serpenti_75years_menu_data={
     // 세르펜티 75주년 페이지
@@ -427,5 +435,5 @@ const brand_menu_data={
 
 
 // 객체 내보내기 ////////////////////////////////////////
-export {serpenti_75years_menu_data, high_jewelry_menu_data, brand_menu_data};
+export {lnb_menu_data, serpenti_75years_menu_data, high_jewelry_menu_data, brand_menu_data};
 
