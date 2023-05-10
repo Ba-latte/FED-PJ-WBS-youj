@@ -12,19 +12,26 @@
 	<!-- swiper CDN -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
 	<!-- 외부 CSS -->
 	<link rel="stylesheet" href="./css/sub/sub_product.css">
 	<!-- 미디어쿼리 CSS -->
 	<link rel="stylesheet" href="./css/media.css">
 	<link rel="stylesheet" href="./css/sub/sub_media.css">
+
 	<!-- 뷰JS 스탠드얼론 버전 CDN -->
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<!-- 뷰JS vuex CDN -->
+    <script src="https://unpkg.com/vuex@3.0.0"></script> 
+
 	<!-- 제이쿼리 라이브러리 + UI -->
 	<script src="./js/jquery-3.6.3.min.js"></script>
 	<script src="./js/jquery-ui.min.js"></script>
+
 	<!-- AOS 라이브러리 불러오기 -->
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	
 	<!-- 공통 JS -->
 	<script src="./js/common.js"></script>
 	<!-- 링크시스템 JS -->
@@ -140,38 +147,16 @@
 			<nav class="gnb">
 				<ul class="list">
 					<li>
-						<a href="#">75년간 함께한 세르펜티</a>
+						<a href="#" class="serpenti_75years">75년간 함께한 세르펜티</a>
 					</li>
 					<li>
-						<a href="#">하이 주얼리</a>
+						<a href="#" class="bulgari_eden">하이 주얼리</a>
 						<div class="lnb high_jewellery">
-							<ol class="list category">
-								<li>
-									<figure class="thumbnail_img">
-										<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
-										<img src="./images/menu/dt/hj_1.jpg" alt="the garden of wonders 이미지">
-										<span class="btn">하이 주얼리 컬렉션 자세히 보기</span>
-									</figure>
-								</li>
-								<li>
-									<figure class="thumbnail_img">
-										<span class="tit tit2">매혹적인 작품</span>
-										<img src="./images/menu/dt/hj_2.jpg" alt="매혹적인 작품 이미지">
-										<span class="btn">시대를 초월하는 매력의 작품을 만나보세요</span>
-									</figure>
-								</li>
-								<li>
-									<figure class="thumbnail_img">
-										<span class="tit tit3">로만 하이주얼러</span>
-										<img src="./images/menu/dt/hj_3.jpg" alt="로만 하이주얼러 이미지">
-										<span class="btn">하이 주얼리 아트 자세히 보기</span>
-									</figure>
-								</li>
-							</ol>
+							<lnb-comp></lnb-comp>
 						</div>
 					</li>
 					<li>
-						<a href="#">주얼리</a>
+						<a href="#" class="jewellery">주얼리</a>
 						<div class="lnb jewellery">
 							<ol class="list category">
 								<li>
@@ -201,14 +186,14 @@
 										<img src="./images/products/bracelets/shrinkage/sb1_rg_ap.png" alt="추천 상품 이미지">
 										<span class="product_tit">세르펜티 바이퍼 브레이슬릿</span>
 									</a>
-									
+	
 								</li>
 								<li>
 									<a href="#">
 										<img src="./images/products/bracelets/shrinkage/sb2_wg_ap.png" alt="추천 상품 이미지">
 										<span class="product_tit">세르펜티 링</span>
 									</a>
-									
+	
 								</li>
 								<li>
 									<a href="#">
@@ -220,7 +205,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="#">인게이지먼트 &amp; 웨딩</a>
+						<a href="#" class="engagement_and_wedding">인게이지먼트 &amp; 웨딩</a>
 						<div class="lnb engagement_and_wedding">
 							<ol class="list category">
 								<li>
@@ -250,14 +235,14 @@
 										<img src="./images/products/bracelets/shrinkage/sb2_wg_ap.png" alt="추천 상품 이미지">
 										<span class="product_tit">로마 아모르</span>
 									</a>
-									
+	
 								</li>
 								<li>
 									<a href="#">
 										<img src="./images/products/bracelets/shrinkage/sp2_rg_ap.png" alt="추천 상품 이미지">
 										<span class="product_tit">인피니토</span>
 									</a>
-									
+	
 								</li>
 								<li>
 									<a href="#">
@@ -269,7 +254,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="#">브랜드</a>
+						<a href="#" class="bulgari_history">브랜드</a>
 						<div class="lnb the_maison">
 							<ol class="list category">
 								<li>
@@ -297,7 +282,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="#">호텔 &amp; 리조트</a>
+						<a href="#" class="hotel_resort">호텔 &amp; 리조트</a>
 					</li>
 				</ul>
 			</nav>
@@ -386,42 +371,19 @@
 					</ul>
 				</section>
 			</div>
-			
 			<nav class="gnb">
 				<ul class="list">
 					<li>
-						<a href="#">75년간 함께한 세르펜티</a>
+						<a href="#" class="serpenti_75years">75년간 함께한 세르펜티</a>
 					</li>
 					<li>
-						<a href="#">하이 주얼리</a>
+						<a href="#" class="bulgari_eden">하이 주얼리</a>
 						<div class="lnb high_jewellery">
-							<ol class="list category">
-								<li>
-									<figure class="thumbnail_img">
-										<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
-										<img src="./images/menu/dt/hj_1.jpg" alt="the garden of wonders 이미지">
-										<span class="btn">하이 주얼리 컬렉션 자세히 보기</span>
-									</figure>
-								</li>
-								<li>
-									<figure class="thumbnail_img">
-										<span class="tit tit2">매혹적인 작품</span>
-										<img src="./images/menu/dt/hj_2.jpg" alt="매혹적인 작품 이미지">
-										<span class="btn">시대를 초월하는 매력의 작품을 만나보세요</span>
-									</figure>
-								</li>
-								<li>
-									<figure class="thumbnail_img">
-										<span class="tit tit3">로만 하이주얼러</span>
-										<img src="./images/menu/dt/hj_3.jpg" alt="로만 하이주얼러 이미지">
-										<span class="btn">하이 주얼리 아트 자세히 보기</span>
-									</figure>
-								</li>
-							</ol>
+							<lnb-comp></lnb-comp>
 						</div>
 					</li>
 					<li>
-						<a href="#">주얼리</a>
+						<a href="#" class="jewellery">주얼리</a>
 						<div class="lnb jewellery">
 							<ol class="list category">
 								<li>
@@ -451,14 +413,14 @@
 										<img src="./images/products/bracelets/shrinkage/sb1_rg_ap.png" alt="추천 상품 이미지">
 										<span class="product_tit">세르펜티 바이퍼 브레이슬릿</span>
 									</a>
-									
+	
 								</li>
 								<li>
 									<a href="#">
 										<img src="./images/products/bracelets/shrinkage/sb2_wg_ap.png" alt="추천 상품 이미지">
 										<span class="product_tit">세르펜티 링</span>
 									</a>
-									
+	
 								</li>
 								<li>
 									<a href="#">
@@ -470,7 +432,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="#">인게이지먼트 &amp; 웨딩</a>
+						<a href="#" class="engagement_and_wedding">인게이지먼트 &amp; 웨딩</a>
 						<div class="lnb engagement_and_wedding">
 							<ol class="list category">
 								<li>
@@ -500,14 +462,14 @@
 										<img src="./images/products/bracelets/shrinkage/sb2_wg_ap.png" alt="추천 상품 이미지">
 										<span class="product_tit">로마 아모르</span>
 									</a>
-									
+	
 								</li>
 								<li>
 									<a href="#">
 										<img src="./images/products/bracelets/shrinkage/sp2_rg_ap.png" alt="추천 상품 이미지">
 										<span class="product_tit">인피니토</span>
 									</a>
-									
+	
 								</li>
 								<li>
 									<a href="#">
@@ -519,7 +481,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="#">브랜드</a>
+						<a href="#" class="bulgari_history">브랜드</a>
 						<div class="lnb the_maison">
 							<ol class="list category">
 								<li>
@@ -547,7 +509,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="#">호텔 &amp; 리조트</a>
+						<a href="#" class="hotel_resort">호텔 &amp; 리조트</a>
 					</li>
 				</ul>
 			</nav>
@@ -559,7 +521,6 @@
 					<li class="ham_btn">
 						<a href="#">
 							<span class="material-symbols-outlined menu" title="메뉴">menu</span>
-
 						</a>
 					</li>
 					<li class="search_btn">
@@ -677,7 +638,7 @@
 						</svg>
 					</div>
 				</div>
-				<div class="lists_wrap">
+				<nav class="lists_wrap">
 					<ul class="list entire l1">
 						<li>
 							<a href="#" class="lnk">75년간 함께한 세르펜티</a>
@@ -769,7 +730,7 @@
 											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
 										</li>
 										<li>
-									
+	
 											<span class="tit tit3">이어링</span>
 											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
 										</li>
@@ -846,7 +807,7 @@
 											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
 										</li>
 										<li>
-									
+	
 											<span class="tit tit3">커플링</span>
 											<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
 										</li>
@@ -988,7 +949,7 @@
 							</a>
 						</li>
 					</ol>
-				</div>
+				</nav>
 			</section>
 		</div>
 	</div>

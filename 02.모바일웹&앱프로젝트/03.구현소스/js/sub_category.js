@@ -3,23 +3,26 @@
 // 뷰엑스 스토어 객체 JS 가져오기
 import store from "./store.js";
 // 서브페이지 데이터 객체 JS 가져오기
-import {high_jewelry_menu_data, brand_menu_data} from "./data/sub_page_data.js";
+import {serpenti_75years_menu_data, high_jewelry_menu_data, brand_menu_data} from "./data/sub_page_data.js";
 
 
 
-// 🌷1.넘어온 url 받기 : 넘어온 url은 로딩구역 밖에서 받아도 된다!
-let pm = location.href;
-// 2.문자열 잘라서 값으로 읽어오기
-pm = pm.split("?")[1].split("=")[1];
-// 3.pm값 특수문자 복원하기 : 디코딩하기!
-pm = decodeURIComponent(pm);
-console.log("넘어온 url받은 pm변수의 값은? : ",pm);
-// 4. 메뉴 데이터 (sinfo 변수)객체에서 카테고리값 선택하기
-const mdata = high_jewelry_menu_data[pm].pgName.replaceAll("_", " ").toUpperCase();
-console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
-// 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
-const sub_pg_tit = $("title");
-sub_pg_tit.text(mdata + " | 불가리");
+// // 🌷1.넘어온 url 받기 : 넘어온 url은 로딩구역 밖에서 받아도 된다!
+// let pm = location.href;
+// // 2.문자열 잘라서 값으로 읽어오기
+// pm = pm.split("?")[1].split("=")[1];
+// // 3.pm값 특수문자 복원하기 : 디코딩하기!
+// pm = decodeURIComponent(pm);
+// console.log("넘어온 url받은 pm변수의 값은? : ",pm);
+// // 4. 메뉴 데이터 (sinfo 변수)객체에서 카테고리값 선택하기
+// if(pm === high_jewelry_menu_data[pm].pgName){
+//     console.log("하이주얼리쪽이야");
+// }
+// const mdata = high_jewelry_menu_data[pm].pgName.replaceAll("_", " ").toUpperCase();
+// console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+// // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+// const sub_pg_tit = $("title");
+// sub_pg_tit.text(mdata + " | 불가리");
 
 
 // 하이주얼리, 브랜드의 lnb메뉴 컴포넌트로 만들기
@@ -101,31 +104,31 @@ Vue.component("sec2-comp", {
         <article class="list characteristics grid">
             <!-- 첫번째 줄 -->
             <div class="rw1 image" data-aos="fade-right" data-aos-duration="1300">
-                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden1.jpg" alt="에메랄드 글로리 네크리스">
+                <img v-bind:src="$store.state.sec2_rw1_img_src" v-bind:alt="$store.state.sec2_rw1_tit">
             </div>
             <div class="rw1 txt_bx" data-aos="fade-right" data-aos-duration="1300">
-                <h3 class="title">에메랄드 글로리 네크리스</h3>
-                <p class="txt">
+                <h3 class="title" v-text="$store.state.sec2_rw1_tit"></h3>
+                <p class="txt" v-text="$store.state.sec2_rw1_desc">
                     불가리를 대표하는 탁월한 품질과 기술이 돋보이는 에메랄드 글로리 네크리스는 특별한 젬스톤, 무한한 독창성, 독보적인 장인 정신이 만난 화려한 하이 주얼리 마스터피스입니다.
                 </p>
             </div>
             <!-- 두번째 줄 -->
             <div class="rw2 txt_bx" data-aos="fade-left" data-aos-duration="1300">
-                <h3 class="title">에덴 인챈트먼트 네크리스</h3>
-                <p class="txt">
+                <h3 class="title" v-text="$store.state.sec2_rw2_tit">에덴 인챈트먼트 네크리스</h3>
+                <p class="txt" v-text="$store.state.sec2_rw2_desc">
                     풍성하고 유쾌한 젬스톤으로 지중해의 매력적인 색조를 구성하는 컬러를 표현하는 에덴 인챈트먼트 네크리스는 불가리의 혁신적인 정신과 컬러를 향한 독자적인 접근법을 고스란히 담아낸 작품입니다.
                 </p>
             </div>
             <div class="rw2 image" data-aos="fade-left" data-aos-duration="1300">
-                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden2.jpg" alt="에덴 인챈트먼트 네크리스">
+                <img v-bind:src="$store.state.sec2_rw2_img_src" v-bind:alt="$store.state.sec2_rw2_tit">
             </div>
             <!-- 세번째 줄 -->
             <div class="rw3 image" data-aos="fade-right" data-aos-duration="1300">
-                <img src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden3.jpg" alt="주빌리 에메랄드 가든 티아라">
+                <img v-bind:src="$store.state.sec2_rw3_img_src" v-bind:alt="$store.state.sec2_rw3_tit">
             </div>
             <div class="rw3 txt_bx" data-aos="fade-right" data-aos-duration="1300">
-                <h3 class="title">주빌리 에메랄드 가든 티아라</h3>
-                <p class="txt">
+                <h3 class="title" v-text="$store.state.sec2_rw3_tit">주빌리 에메랄드 가든 티아라</h3>
+                <p class="txt" v-text="$store.state.sec2_rw3_desc">
                     작품을 헌정받은 전설적인 여왕만큼이나 특별한 매력을 자랑하는 주빌리 에메랄드 가든 티아라는 영국 왕실 최초로 즉위 70주년을 맞이한 엘리자베스 2세의 2022 플래티넘 주빌리를 기념합니다.
                 </p>
             </div>
@@ -139,8 +142,8 @@ Vue.component("sec3-comp", {
     template: `
     <section class="section3 introduction_to_works ibx">
         <div class="txt_bx">
-            <h3 class="headline">시대를 초월하는 매력의 작품을 만나보세요</h3>
-            <p class="txt">
+            <h3 class="headline" v-text="$store.state.sec3_tit">시대를 초월하는 매력의 작품을 만나보세요</h3>
+            <p class="txt" v-html="$store.state.sec3_desc">
                 눈부신 젬스톤, 독창적인 디자인, 정교한 작업이 조화를 이뤄 놀라운 작품이 완성됩니다. <br>
                 시대를 초월하는 매력의 작품을 만나보세요.
             </p>
@@ -148,55 +151,55 @@ Vue.component("sec3-comp", {
         <div class="swiper intro_Swiper">
             <ol class="swiper-wrapper">
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn1.jpg" alt="트리뷰트 투 파리 네크리스">
+                    <img class="img" v-bind:src="$store.state.sec3_slide_1_slide_img_src" v-bind:alt="$store.state.sec3_slide_1_slide_tit">
                     <div class="txt_bx">
-                        <h3 class="title">트리뷰트 투 파리 네크리스</h3>
-                        <p class="txt">
+                        <h3 class="title" v-text="$store.state.sec3_slide_1_slide_tit">트리뷰트 투 파리 네크리스</h3>
+                        <p class="txt" v-text="$store.state.sec3_slide_1_slide_desc">
                             화려한 자태로 빛의 도시 파리를 향해 경의를 표하는 트리뷰트 투 파리 네크리스에는 경이로운 5.53캐럿의 에메랄드와 에펠탑에서 영감을 받은 독특한 모티브가 자리하고 있습니다.
                         </p>
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn2.jpg" alt="에메랄드 오드 링">
+                    <img class="img" v-bind:src="$store.state.sec3_slide_2_slide_img_src" v-bind:alt="$store.state.sec3_slide_2_slide_tit">
                     <div class="txt_bx">
-                        <h3 class="title">에메랄드 오드 링</h3>
-                        <p class="txt">
+                        <h3 class="title" v-text="$store.state.sec3_slide_2_slide_tit">에메랄드 오드 링</h3>
+                        <p class="txt" v-text="$store.state.sec3_slide_2_slide_desc">
                             진귀한 에메랄드와 불가리의 오랜 인연에 찬사를 보내는 에메랄드 오드 링은 화려한 젬스톤이 지닌 본연의 아름다움을 이끌어냅니다.
                         </p>
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn3.jpg" alt="세르펜티 오션 트레저 네크리스">
+                    <img class="img" v-bind:src="$store.state.sec3_slide_3_slide_img_src" v-bind:alt="$store.state.sec3_slide_3_slide_tit">
                     <div class="txt_bx">
-                        <h3 class="title">세르펜티 오션 트레저 네크리스</h3>
-                        <p class="txt">
+                        <h3 class="title" v-text="$store.state.sec3_slide_3_slide_tit">세르펜티 오션 트레저 네크리스</h3>
+                        <p class="txt" v-text="$store.state.sec3_slide_3_slide_desc">
                             끊임없는 변화를 표현하는 매혹적인 상징과 같은 세르펜티 오션 트레저 네크리스에는 콘플라워 블루 컬러로 모두의 시선을 사로잡는 61.31캐럿의 사파이어가 자리잡고 있습니다.
                         </p>
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn4.jpg" alt="에메랄드 비너스 네크리스">
+                    <img class="img" v-bind:src="$store.state.sec3_slide_4_slide_img_src" v-bind:alt="$store.state.sec3_slide_4_slide_tit">
                     <div class="txt_bx">
-                        <h3 class="title">에메랄드 비너스 네크리스</h3>
-                        <p class="txt">
+                        <h3 class="title" v-text="$store.state.sec3_slide_4_slide_tit">에메랄드 비너스 네크리스</h3>
+                        <p class="txt" v-text="$store.state.sec3_slide_4_slide_desc">
                             자연을 향한 서정적인 찬가와도 같은 에메랄드 비너스 네크리스는 상상력을 자극하는 디자인과 탁월한 장인 기술로 특별한 젬스톤에 우아한 품격을 불어넣습니다.
                         </p>
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg" alt="메디터레니언 레브리 네크리스">
+                    <img class="img" v-bind:src="$store.state.sec3_slide_5_slide_img_src" v-bind:alt="$store.state.sec3_slide_5_slide_tit">
                     <div class="txt_bx">
-                        <h3 class="title">메디터레니언 레브리 네크리스</h3>
-                        <p class="txt">
+                        <h3 class="title" v-text="$store.state.sec3_slide_5_slide_tit">메디터레니언 레브리 네크리스</h3>
+                        <p class="txt" v-text="$store.state.sec3_slide_5_slide_desc">
                             메디터레니언 레브리 네크리스의 중심부에는 독특한 로얄 블루 컬러로 경이로운 매력을 자아내는 107.15캐럿의 사파이어가 자리잡고 있습니다.
                         </p>
                     </div>
                 </li>
                 <li class="swiper-slide">
-                    <img class="img" src="../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg" alt="메디터레니언 레브리 네크리스">
+                    <img class="img" v-bind:src="$store.state.sec3_slide_6_slide_img_src" v-bind:alt="$store.state.sec3_slide_6_slide_tit">
                     <div class="txt_bx">
-                        <h3 class="title">메디터레니언 레브리 네크리스</h3>
-                        <p class="txt">
+                        <h3 class="title" v-text="$store.state.sec3_slide_6_slide_tit">메디터레니언 레브리 네크리스</h3>
+                        <p class="txt" v-text="$store.state.sec3_slide_6_slide_desc">
                             메디터레니언 레브리 네크리스의 중심부에는 독특한 로얄 블루 컬러로 경이로운 매력을 자아내는 107.15캐럿의 사파이어가 자리잡고 있습니다.
                         </p>
                     </div>
@@ -227,22 +230,36 @@ const contVue = new Vue({
             vdsrc: `./videos/high_jewelry_sub_1.mp4`,
             tit: `BULGARI EDEN, THE GARDEN OF WONDERS <br> 경이로움의 에덴 컬렉션`,
             desc: `평범한 풍경을 뒤로한 채, 경이로움이 가득한 화려한 세계를 만나보세요. 불가리가 무한한 독창성과 방대한 장인 기술이 어우러지는 에덴 하이 주얼리 컬렉션을 통해 숨이 멎을 듯 아름다운 마스터피스를 선보입니다.`,
+
         });
+
+        
 
     }, //////////////// created 구역 ///////////////////
     // jQB 구역
     mounted(){
-        // 클릭된 lnb메뉴 박스 닫기
-        // $("figure").click(function closeFn(){
-        //     console.log("닫아!");
-        //     $(this).parents(".lnb").hide().delay(300).show();
-            
-        // });
-
         // 클릭된 lnb메뉴의 이름으로 title요소 데이터값 바꾸기
-        
-        
-    }, //////////////// mounted 구역 ///////////////////
+        // 🌷1.넘어온 url 받기 : 넘어온 url은 로딩구역 밖에서 받아도 된다!
+        let pm = location.href;
+        // 2.문자열 잘라서 값으로 읽어오기
+        pm = pm.split("?")[1].split("=")[1];
+        // 3.pm값 특수문자 복원하기 : 디코딩하기!
+        pm = decodeURIComponent(pm);
+        console.log("넘어온 url받은 pm변수의 값은? : ",pm);
+        // 4. 메뉴 데이터 (sinfo 변수)객체에서 카테고리값 선택하기
+        if(pm === high_jewelry_menu_data[pm].pgName){
+            console.log("하이주얼리쪽이야");
+        }
+        else if(pm === serpenti_75years_menu_data[pm].pgName){
+            console.log("세르펜티 75주년이야");
+        }
+        const mdata = high_jewelry_menu_data[pm].pgName.replaceAll("_", " ").toUpperCase();
+        console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+        // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+        const sub_pg_tit = $("title");
+        sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
+
+        }, //////////////// mounted 구역 ///////////////////
 
 }); ////////////////// contVue 인스턴스 ////////////////////
 ///////////////////////////////////// [ 뷰 인스턴스 생성하기 ] /////////////////////////////////////

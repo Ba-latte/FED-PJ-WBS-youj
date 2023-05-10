@@ -18,30 +18,44 @@ $(()=>{
 
         // 2. 클릭된 a요소의 텍스트를 읽어오기
         let atxt = $(this).attr("class");
-        console.log("클릭된 a요소의 클래스 가져오기 : ", atxt);
+        // console.log("클릭된 a요소의 클래스 가져오기 : ", atxt);
 
 
         // 3. 서브 페이지로 이동하기
         if(atxt === "bulgari_eden" || atxt === "bulgari_history"){
-            console.log("하이 주얼리, 브랜드 페이지로 이동!");
+            // console.log("하이 주얼리, 브랜드 페이지로 이동!");
             location.href = "sub_category.html?cat=" + encodeURIComponent(atxt);
             // encodeURIComponent() : 2byte문자나 특수문자가 있을 경우, 인코딩해줘야함! -> 받아가는 곳에서도 디코딩 해줘야 정확히 나옴
         }
         else if(atxt === "serpenti_75years"){
-            console.log("세르펜티 75주년 페이지로 이동!");
+            // console.log("세르펜티 75주년 페이지로 이동!");
             location.href = "sub_serpent.html?cat=" + encodeURIComponent(atxt);
         }
-        else if(atxt === "주얼리" || atxt === "인게이지먼트 & 웨딩"){
-            console.log("주얼리, 인게이지먼트 페이지로 이동!");
+        else if(atxt === "jewellery" || atxt === "engagement_and_wedding"){
+            // console.log("주얼리, 인게이지먼트 페이지로 이동!");
             location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
         }
-        else if(atxt === "호텔 & 리조트"){
+        else if(atxt === "hotel_resort"){
             window.open("https://www.bulgarihotels.com/");
         }
     });
     ////////////////////////// [ GNB 메뉴 링크 기능 끝 ] //////////////////////////////
 
+    ////////////////////////// [ 인덱스 페이지의 LNB 메뉴 링크 기능 시작 ] //////////////////////////////
+    const dtlnb = $(".dt .lnb>.list>li");
+    dtlnb.click(function(){
+        console.log("하위메뉴 클릭했음!");
+    });
+    ////////////////////////// [ 인덱스 페이지의 LNB 메뉴 링크 기능 끝 ] //////////////////////////////
 
+
+
+    ////////////////////////// [ 로그인/회원가입 아이콘 클릭시 해당 페이지로 넘어가기 시작 ] //////////////////////////////
+    $(".account_circle").parent().click(function(){
+        console.log("로그인 아이콘 클릭!");
+        location.href = "login.html";
+    });
+    ////////////////////////// [ 로그인/회원가입 아이콘 클릭시 해당 페이지로 넘어가기 시작 ] //////////////////////////////
 
 
 
