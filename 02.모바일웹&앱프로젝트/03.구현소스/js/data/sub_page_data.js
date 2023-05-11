@@ -301,7 +301,7 @@ const brand_menu_data={
         // 섹션2 주요 소개 박스
         section2: {
             rw1: {
-                video_src: `./images/sub_page/bulgari_history/1.png`,
+                img_src: `./images/sub_page/bulgari_history/1.png`,
                 tit: `실버에서 골드까지`,
                 desc: `소티리오 불가리가 세공한 정교한 은공예품은 17-18세기에 유행한 그랜드 투어(Grand Tour)를 즐기던 영국 여행객들에게 큰 사랑을 받았으며 사업은 놀라울 정도로 호황을 맞이합니다. 소티리오 불가리는 로마의 시스티나 거리(Via Sistina )에 첫 번째 스토어를 오픈한 데 이어, 콘도티 거리(Via Condotti)와 관광객들의 방문이 잦은 지역에도 스토어를 오픈했습니다. 그 후, 그의 아들 조르지오(Giorgio)와 코스탄티노(Costantino)가 경영에 합류하면서 불가리는 패밀리 비지니스로 운영되기 시작하였습니다. 그리고 그 무렵 뛰어난 은공예 전문지식을 기반으로, 하이주얼리 비지니스의 성장에 몰두하기 시작하였습니다.`,
             },

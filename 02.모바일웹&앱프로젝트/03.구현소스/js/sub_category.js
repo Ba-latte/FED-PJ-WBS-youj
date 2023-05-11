@@ -91,7 +91,7 @@ Vue.component("lnb2-comp",{
 Vue.component("sec1-comp", {
     template: `
     <section class="section1 main_video">
-        <div class="video_bx wrap">
+        <div class="video_bx wrap" >
             <video class="main_video_class bulgari_eden" v-bind:src="$store.state.sec1_vdsrc" autoplay muted loop playsinline></video>
         </div>
         <div class="txt">
