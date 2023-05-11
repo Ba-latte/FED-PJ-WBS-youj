@@ -70,12 +70,12 @@ const store = new Vuex.Store({
             헐.rw1_img_src = param.section2.rw1.img_src;
             헐.rw1_tit = param.section2.rw1.tit;
             헐.rw1_desc = param.section2.rw1.desc;
-            // 헐.sec2_rw2_img_src = param.section2.rw2.img_src;
-            // 헐.sec2_rw2_tit = param.section2.rw2.tit;
-            // 헐.sec2_rw2_desc = param.section2.rw2.desc;
-            // 헐.sec2_rw3_img_src = param.section2.rw3.img_src;
-            // 헐.sec2_rw3_tit = param.section2.rw3.tit;
-            // 헐.sec2_rw3_desc = param.section2.rw3.desc;
+            헐.sec2_rw2_img_src = param.section2.rw2.img_src;
+            헐.sec2_rw2_tit = param.section2.rw2.tit;
+            헐.sec2_rw2_desc = param.section2.rw2.desc;
+            헐.sec2_rw3_img_src = param.section2.rw3.img_src;
+            헐.sec2_rw3_tit = param.section2.rw3.tit;
+            헐.sec2_rw3_desc = param.section2.rw3.desc;
 
 
 
@@ -133,6 +133,17 @@ const store = new Vuex.Store({
             else if(슉==="bulgari_history" || 슉==="bulgari_identity" || 슉==="bulgari_innovation"){
                 console.log("브랜드 하위 메뉴들이야!!");
                 헐.sec1_tit = bulgari_brand_Obj.section1.tit;
+                헐.sec1_desc = bulgari_brand_Obj.section1.desc;
+
+                헐.sec2_rw1_img_src = bulgari_brand_Obj.section2.rw1.img_src;
+                헐.sec2_rw1_tit = bulgari_brand_Obj.section2.rw1.tit;
+                헐.sec2_rw1_desc = bulgari_brand_Obj.section2.rw1.desc;
+                헐.sec2_rw2_img_src = bulgari_brand_Obj.section2.rw2.img_src;
+                헐.sec2_rw2_tit = bulgari_brand_Obj.section2.rw2.tit;
+                헐.sec2_rw2_desc = bulgari_brand_Obj.section2.rw2.desc;
+                헐.sec2_rw3_img_src = bulgari_brand_Obj.section2.rw3.img_src;
+                헐.sec2_rw3_tit = bulgari_brand_Obj.section2.rw3.tit;
+                헐.sec2_rw3_desc = bulgari_brand_Obj.section2.rw3.desc;
             }
 
 

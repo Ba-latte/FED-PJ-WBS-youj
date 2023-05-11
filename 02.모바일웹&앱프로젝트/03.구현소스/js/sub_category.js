@@ -269,19 +269,14 @@ const contVue = new Vue({
         // 3.pm값 특수문자 복원하기 : 디코딩하기!
         pm = decodeURIComponent(pm);
         console.log("넘어온 url받은 pm변수의 값은? : ",pm);
-        // 4. 메뉴 데이터 (sinfo 변수)객체에서 카테고리값 선택하기
-        if(pm === high_jewelry_menu_data[pm].pgName){
-            console.log("하이주얼리쪽이야");
-        }
-        else if(pm === serpenti_75years_menu_data[pm].pgName){
-            console.log("세르펜티 75주년이야");
-        }
+        // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
         const mdata = high_jewelry_menu_data[pm].pgName.replaceAll("_", " ").toUpperCase();
         console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
         // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
         const sub_pg_tit = $("title");
         sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
 
+        
         }, //////////////// mounted 구역 ///////////////////
 
 }); ////////////////// contVue 인스턴스 ////////////////////

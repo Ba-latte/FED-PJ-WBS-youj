@@ -147,7 +147,7 @@ const high_jewelry_menu_data={
                 slide_tit: `메디터레니언 레브리 네크리스`,
                 slide_desc: `메디터레니언 레브리 네크리스의 중심부에는 독특한 로얄 블루 컬러로 경이로운 매력을 자아내는 107.15캐럿의 사파이어가 자리잡고 있습니다.`,
             },
-            slide_3: {
+            slide_6: {
                 slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn3.jpg`,
                 slide_tit: `세르펜티 오션 트레저 네크리스`,
                 slide_desc: `끊임없는 변화를 표현하는 매혹적인 상징과 같은 세르펜티 오션 트레저 네크리스에는 콘플라워 블루 컬러로 모두의 시선을 사로잡는 61.31캐럿의 사파이어가 자리잡고 있습니다.`,
@@ -301,17 +301,17 @@ const brand_menu_data={
         // 섹션2 주요 소개 박스
         section2: {
             rw1: {
-                video_src: ``,
+                video_src: `./images/sub_page/bulgari_history/1.png`,
                 tit: `실버에서 골드까지`,
                 desc: `소티리오 불가리가 세공한 정교한 은공예품은 17-18세기에 유행한 그랜드 투어(Grand Tour)를 즐기던 영국 여행객들에게 큰 사랑을 받았으며 사업은 놀라울 정도로 호황을 맞이합니다. 소티리오 불가리는 로마의 시스티나 거리(Via Sistina )에 첫 번째 스토어를 오픈한 데 이어, 콘도티 거리(Via Condotti)와 관광객들의 방문이 잦은 지역에도 스토어를 오픈했습니다. 그 후, 그의 아들 조르지오(Giorgio)와 코스탄티노(Costantino)가 경영에 합류하면서 불가리는 패밀리 비지니스로 운영되기 시작하였습니다. 그리고 그 무렵 뛰어난 은공예 전문지식을 기반으로, 하이주얼리 비지니스의 성장에 몰두하기 시작하였습니다.`,
             },
             rw2: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/roman_high_jeweller/roman_high_jeweller2.jpg`,
+                img_src: `./images/sub_page/bulgari_history/2.png`,
                 tit: `화려한 컬러와 다채로운 매력`,
                 desc: `1950년대 중반, 불가리는 진귀한 스톤들의 다양한 컬러를 완벽히 어우르는 조화로운 주얼리를 선보이며 다시 한 번 도약합니다. 로마 건축물의 둥근 지붕을 연상시키는 카보숑컷을 통해 보석 본연의 컬러를 극대화하였으며, 이는 브랜드를 대표하는 시그니처가 되었습니다.`,
             },
             rw3: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/roman_high_jeweller/roman_high_jeweller3.jpg`,
+                img_src: `./images/sub_page/bulgari_history/3.png`,
                 tit: `모듈식 주얼리와 유니크한 소재`,
                 desc: `1980년대와 1990년대에 걸쳐 불가리는 브랜드만의 매력을 간직하면서 어느 자리에나 어울리는, 매혹적인 주얼리를 선보였습니다. 모듈식 주얼리는 새로운 센세이션을 불러일으켰습니다. 특히, 강렬한 디자인의 싱글 피스는, 첫 선을 보인 이래 헤마타이트에서부터 코랄, 스틸부터 파베 세팅 다이아몬드까지 다양한 소재로 다채로운 스타일로 선보였습니다.`,
             },

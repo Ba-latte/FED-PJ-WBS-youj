@@ -37,7 +37,7 @@
 	<!-- 링크시스템 JS -->
 	<script src="./js/linksys.js"></script>
 	<!-- 외부 JS 넣기 -->
-	<script src="./js/sub_category.js" type="module"></script>
+	<!-- <script src="./js/sub_category.js" type="module"></script> -->
 
 </head>
 <body>
@@ -154,29 +154,51 @@
 							<li>
 								<a href="#" class="bulgari_eden">하이 주얼리</a>
 								<div class="lnb high_jewellery">
-									<lnb-comp></lnb-comp>
+									<ol class="list category">
+										<li class="bulgari_eden">
+											<figure class="thumbnail_img">
+												<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
+												<img src="./images/menu/dt/hj_1.jpg" alt="the garden of wonders 이미지">
+												<span class="btn">하이 주얼리 컬렉션 자세히 보기</span>
+											</figure>
+										</li>
+										<li class="magnifica_creations">
+											<figure class="thumbnail_img">
+												<span class="tit tit2">매혹적인 작품</span>
+												<img src="./images/menu/dt/hj_2.jpg" alt="매혹적인 작품 이미지">
+												<span class="btn">시대를 초월하는 매력의 작품을 만나보세요</span>
+											</figure>
+										</li>
+										<li class="roman_high_jeweller">
+											<figure class="thumbnail_img">
+												<span class="tit tit3">로만 하이주얼러</span>
+												<img src="./images/menu/dt/hj_3.jpg" alt="로만 하이주얼러 이미지">
+												<span class="btn">하이 주얼리 아트 자세히 보기</span>
+											</figure>
+										</li>
+									</ol>
 								</div>
 							</li>
 							<li>
 								<a href="#" class="jewellery">주얼리</a>
 								<div class="lnb jewellery">
 									<ol class="list category">
-										<li>
+										<li class="rings">
 											<a href="#">
 												<span class="btn">링</span>
 											</a>
 										</li>
-										<li>
+										<li class="necklaces">
 											<a href="#">
 												<span class="btn">네크리스</span>
 											</a>
 										</li>
-										<li>
+										<li class="bracelets">
 											<a href="#">
 												<span class="btn">브레이슬릿</span>
 											</a>
 										</li>
-										<li>
+										<li class="earrings">
 											<a href="#">
 												<span class="btn">이어링</span>
 											</a>
@@ -188,12 +210,14 @@
 												<img src="./images/products/bracelets/shrinkage/sum1/1.png" alt="추천 상품 이미지">
 												<span class="product_tit">세르펜티 바이퍼 브레이슬릿</span>
 											</a>
+				
 										</li>
 										<li>
 											<a href="#">
 												<img src="./images/products/bracelets/shrinkage/sum1/2.png" alt="추천 상품 이미지">
 												<span class="product_tit">세르펜티 링</span>
 											</a>
+				
 										</li>
 										<li>
 											<a href="#">
@@ -208,22 +232,22 @@
 								<a href="#" class="engagement_and_wedding">인게이지먼트 &amp; 웨딩</a>
 								<div class="lnb engagement_and_wedding">
 									<ol class="list category">
-										<li>
+										<li class="engagement_rings">
 											<a href="#">
 												<span class="btn">인게이지먼트 링</span>
 											</a>
 										</li>
-										<li>
+										<li class="women's_wedding_bands">
 											<a href="#">
 												<span class="btn">여성용 웨딩밴드</span>
 											</a>
 										</li>
-										<li>
+										<li class="men's_wedding_bands">
 											<a href="#">
 												<span class="btn">남성용 웨딩밴드</span>
 											</a>
 										</li>
-										<li>
+										<li class="couple_rings">
 											<a href="#">
 												<span class="btn">커플링</span>
 											</a>
@@ -235,12 +259,14 @@
 												<img src="./images/products/bracelets/shrinkage/sum1/4.png" alt="추천 상품 이미지">
 												<span class="product_tit">로마 아모르</span>
 											</a>
+				
 										</li>
 										<li>
 											<a href="#">
 												<img src="./images/products/bracelets/shrinkage/sum1/5.png" alt="추천 상품 이미지">
 												<span class="product_tit">인피니토</span>
 											</a>
+				
 										</li>
 										<li>
 											<a href="#">
@@ -255,21 +281,21 @@
 								<a href="#" class="bulgari_history">브랜드</a>
 								<div class="lnb the_maison">
 									<ol class="list category">
-										<li>
+										<li class="bulgari_history">
 											<figure class="thumbnail_img">
 												<span class="tit tit1">불가리 역사</span>
 												<img class="th_img1" src="./images/menu/dt/tm_1.jpg" alt="불가리 역사 이미지">
 												<span class="btn">자세히 보기</span>
 											</figure>
 										</li>
-										<li>
+										<li class="bulgari_identity">
 											<figure class="thumbnail_img">
 												<span class="tit tit2">불가리의 아이덴티티</span>
 												<img class="th_img2" src="./images/menu/dt/tm_2.jpg" alt="불가리의 아이덴티티 이미지">
 												<span class="btn">자세히 보기</span>
 											</figure>
 										</li>
-										<li>
+										<li class="bulgari_innovation">
 											<figure class="thumbnail_img">
 												<span class="tit tit3">불가리의 혁신</span>
 												<img class="th_img3" src="./images/menu/dt/tm_3.jpg" alt="불가리의 혁신 이미지">
@@ -369,6 +395,7 @@
 							</ul>
 						</section>
 					</div>
+				
 					<nav class="gnb">
 						<ul class="list">
 							<li>
@@ -377,7 +404,29 @@
 							<li>
 								<a href="#" class="bulgari_eden">하이 주얼리</a>
 								<div class="lnb high_jewellery">
-									<lnb-comp></lnb-comp>
+									<ol class="list category">
+										<li>
+											<figure class="thumbnail_img">
+												<span class="tit tit1">BULGARI EDEN, <br> THE GARDEN OF WONDERS</span>
+												<img src="./images/menu/dt/hj_1.jpg" alt="the garden of wonders 이미지">
+												<span class="btn">하이 주얼리 컬렉션 자세히 보기</span>
+											</figure>
+										</li>
+										<li>
+											<figure class="thumbnail_img">
+												<span class="tit tit2">매혹적인 작품</span>
+												<img src="./images/menu/dt/hj_2.jpg" alt="매혹적인 작품 이미지">
+												<span class="btn">시대를 초월하는 매력의 작품을 만나보세요</span>
+											</figure>
+										</li>
+										<li>
+											<figure class="thumbnail_img">
+												<span class="tit tit3">로만 하이주얼러</span>
+												<img src="./images/menu/dt/hj_3.jpg" alt="로만 하이주얼러 이미지">
+												<span class="btn">하이 주얼리 아트 자세히 보기</span>
+											</figure>
+										</li>
+									</ol>
 								</div>
 							</li>
 							<li>
@@ -411,12 +460,14 @@
 												<img src="./images/products/bracelets/shrinkage/sum1/1.png" alt="추천 상품 이미지">
 												<span class="product_tit">세르펜티 바이퍼 브레이슬릿</span>
 											</a>
+				
 										</li>
 										<li>
 											<a href="#">
 												<img src="./images/products/bracelets/shrinkage/sum1/2.png" alt="추천 상품 이미지">
-												<span class="product_tit">세르펜티 링</span>
+												<span class="product_tit">세르펜티 이어링</span>
 											</a>
+				
 										</li>
 										<li>
 											<a href="#">
@@ -458,12 +509,14 @@
 												<img src="./images/products/bracelets/shrinkage/sum1/4.png" alt="추천 상품 이미지">
 												<span class="product_tit">로마 아모르</span>
 											</a>
+				
 										</li>
 										<li>
 											<a href="#">
 												<img src="./images/products/bracelets/shrinkage/sum1/5.png" alt="추천 상품 이미지">
 												<span class="product_tit">인피니토</span>
 											</a>
+				
 										</li>
 										<li>
 											<a href="#">
@@ -516,6 +569,7 @@
 						<li class="ham_btn">
 							<a href="#">
 								<span class="material-symbols-outlined menu" title="메뉴">menu</span>
+	
 							</a>
 						</li>
 						<li class="search_btn">
@@ -636,7 +690,7 @@
 					<nav class="lists_wrap">
 						<ul class="list entire l1">
 							<li>
-								<a href="#" class="lnk">75년간 함께한 세르펜티</a>
+								<a href="#" class="lnk serpenti_75years">75년간 함께한 세르펜티</a>
 							</li>
 							<li>
 								<!-- 상위 메뉴 -->
@@ -725,7 +779,7 @@
 												<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
 											</li>
 											<li>
-		
+										
 												<span class="tit tit3">이어링</span>
 												<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
 											</li>
@@ -802,7 +856,7 @@
 												<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
 											</li>
 											<li>
-		
+										
 												<span class="tit tit3">커플링</span>
 												<span class="material-symbols-outlined arrow_forward on">arrow_forward_ios</span>
 											</li>
