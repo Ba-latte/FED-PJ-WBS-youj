@@ -4,13 +4,46 @@
 
 // 각 서브 페이지별 데이터 세팅하기
 
-const lnb_menu_data = {
-    bulgari_eden:{
+const lnb_menu_data = [
+    {
+        pg: `bulgari_eden`,
         tit: `BULGARI EDEN, <br> THE GARDEN OF WONDERS`,
-        img_src:`./images/menu/dt/hj_1.jpg`,
+        cnt: 1,
         desc:`하이 주얼리 컬렉션 자세히 보기`,
-    }
-};
+    },
+    {
+        pg: `magnifica_creations`,
+        tit: `매혹적인 작품`,
+        cnt: 2,
+        desc:`시대를 초월하는 매력의 작품을 만나보세요`,
+    },
+    {
+        pg: `roman_high_jeweller`,
+        tit: `로만 하이주얼러`,
+        cnt: 3,
+        desc:`하이 주얼리 아트 자세히 보기`,
+    },
+    {
+        pg: `bulgari_history`,
+        tit: `불가리 역사`,
+        cnt: `tm_1.jpg`,
+        desc: `자세히 보기`,
+    },
+    {
+        pg: `bulgari_identity`,
+        tit: `불가리의 아이덴티티`,
+        cnt: `tm_2.jpg`,
+        desc: `자세히 보기`,
+    },
+    {
+        pg: `bulgari_innovation`,
+        tit: `불가리의 혁신`,
+        cnt: `tm_3.jpg`,
+        desc: `자세히 보기`,
+    },
+];
+
+
 
 ////////////////////// [ 🔥세르펜티 메뉴의 서브페이지 데이터🔥 ] /////////////////////////////
 const serpenti_75years_menu_data={
@@ -70,17 +103,17 @@ const high_jewelry_menu_data={
         // 섹션2 주요 작품 소개 그리드 박스
         section2: {
             rw1: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden1.jpg`,
+                img_src: `./images/sub_page/bulgari_eden/bulgari_eden1.jpg`,
                 tit: `에메랄드 글로리 네크리스`,
                 desc: `불가리를 대표하는 탁월한 품질과 기술이 돋보이는 에메랄드 글로리 네크리스는 특별한 젬스톤, 무한한 독창성, 독보적인 장인 정신이 만난 화려한 하이 주얼리 마스터피스입니다.`,
             },
             rw2: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden2.jpg`,
+                img_src: `./images/sub_page/bulgari_eden/bulgari_eden2.jpg`,
                 tit: `에덴 인챈트먼트 네크리스`,
                 desc: `풍성하고 유쾌한 젬스톤으로 지중해의 매력적인 색조를 구성하는 컬러를 표현하는 에덴 인챈트먼트 네크리스는 불가리의 혁신적인 정신과 컬러를 향한 독자적인 접근법을 고스란히 담아낸 작품입니다.`,
             },
             rw3: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden3.jpg`,
+                img_src: `./images/sub_page/bulgari_eden/bulgari_eden3.jpg`,
                 tit: `주빌리 에메랄드 가든 티아라`,
                 desc: `작품을 헌정받은 전설적인 여왕만큼이나 특별한 매력을 자랑하는 주빌리 에메랄드 가든 티아라는 영국 왕실 최초로 즉위 70주년을 맞이한 엘리자베스 2세의 2022 플래티넘 주빌리를 기념합니다.`,
             },
@@ -90,34 +123,34 @@ const high_jewelry_menu_data={
             tit: `시대를 초월하는 매력의 작품을 만나보세요`,
             desc: `눈부신 젬스톤, 독창적인 디자인, 정교한 작업이 조화를 이뤄 놀라운 작품이 완성됩니다. <br> 시대를 초월하는 매력의 작품을 만나보세요.`,
             slide_1: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn1.jpg`,
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn1.jpg`,
                 slide_tit: `트리뷰트 투 파리 네크리스`,
                 slide_desc: `화려한 자태로 빛의 도시 파리를 향해 경의를 표하는 트리뷰트 투 파리 네크리스에는 경이로운 5.53캐럿의 에메랄드와 에펠탑에서 영감을 받은 독특한 모티브가 자리하고 있습니다.`,
             },
             slide_2: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn2.jpg`,
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn2.jpg`,
                 slide_tit: `에메랄드 오드 링`,
                 slide_desc: `진귀한 에메랄드와 불가리의 오랜 인연에 찬사를 보내는 에메랄드 오드 링은 화려한 젬스톤이 지닌 본연의 아름다움을 이끌어냅니다.`,
             },
             slide_3: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn3.jpg`,
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn3.jpg`,
                 slide_tit: `세르펜티 오션 트레저 네크리스`,
                 slide_desc: `끊임없는 변화를 표현하는 매혹적인 상징과 같은 세르펜티 오션 트레저 네크리스에는 콘플라워 블루 컬러로 모두의 시선을 사로잡는 61.31캐럿의 사파이어가 자리잡고 있습니다.`,
             },
             slide_4: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn4.jpg`,
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn4.jpg`,
                 slide_tit: `에메랄드 비너스 네크리스`,
                 slide_desc: `자연을 향한 서정적인 찬가와도 같은 에메랄드 비너스 네크리스는 상상력을 자극하는 디자인과 탁월한 장인 기술로 특별한 젬스톤에 우아한 품격을 불어넣습니다.`,
             },
             slide_5: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg`,
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn5.jpg`,
                 slide_tit: `메디터레니언 레브리 네크리스`,
                 slide_desc: `메디터레니언 레브리 네크리스의 중심부에는 독특한 로얄 블루 컬러로 경이로운 매력을 자아내는 107.15캐럿의 사파이어가 자리잡고 있습니다.`,
             },
-            slide_6: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/bulgari_eden/bulgari_eden_bn5.jpg`,
-                slide_tit: `메디터레니언 레브리 네크리스`,
-                slide_desc: `메디터레니언 레브리 네크리스의 중심부에는 독특한 로얄 블루 컬러로 경이로운 매력을 자아내는 107.15캐럿의 사파이어가 자리잡고 있습니다.`,
+            slide_3: {
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn3.jpg`,
+                slide_tit: `세르펜티 오션 트레저 네크리스`,
+                slide_desc: `끊임없는 변화를 표현하는 매혹적인 상징과 같은 세르펜티 오션 트레저 네크리스에는 콘플라워 블루 컬러로 모두의 시선을 사로잡는 61.31캐럿의 사파이어가 자리잡고 있습니다.`,
             },
 
         },
@@ -135,17 +168,17 @@ const high_jewelry_menu_data={
         // 섹션2 주요 작품 소개 그리드 박스
         section2: {
             rw1: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations1.jpg`,
+                img_src: `./images/sub_page/magnifica_creations/magnifica_creations1.jpg`,
                 tit: `루비 메타모포시스 링`,
                 desc: `품격 있는 루비 메타모포시스 링의 중심에서 6.80캐럿의 매혹적인 피전 블러드 루비가 눈부시게 빛나며 아름다움과 풍성함에 찬사를 보냅니다. 작지만 매혹적인 작품 속에 예술에 대한 기나긴 스토리를 담아 탁월한 장인 정신을 기품 있게 표현했습니다.`,
             },
             rw2: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations2.jpg`,
+                img_src: `./images/sub_page/magnifica_creations/magnifica_creations2.jpg`,
                 tit: `블루 판타지 네크리스`,
                 desc: `불가리의 고귀한 컬러 젬스톤을 향한 애정과 숭고한 장인 정신을 향한 헌신을 보여주는 블루 판타지 네크리스는 눈을 뗄 수 없는 매혹적인 47.57캐럿의 사파이어로 완성된 독창적이고 매력적인 디자인을 선보입니다. 아름다움과 고귀함을 통해 감정과 열정을 드러내는 독창적이고 매혹적인 작품이 상상 그 이상의 놀라움을 선사합니다.`,
             },
             rw3: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations3.jpg`,
+                img_src: `./images/sub_page/magnifica_creations/magnifica_creations3.jpg`,
                 tit: `지중해의 여왕 네크리스`,
                 desc: `놀라운 473.82캐럿의 무게를 지닌 5개의 독특한 쿠션 컷 타원형 파라이바 토르말린이 이 아름다운 지중해 여왕의 하이 주얼리 네크리스의 심장부에 세팅되어 있습니다. 끝없는 인내, 열정적인 끈기, 그리고 우아한 보석을 선택하는 불가리의 독특한 안목이 결합되어 완벽한 예술 작품이 탄생합니다.`,
             },
@@ -155,32 +188,32 @@ const high_jewelry_menu_data={
             tit: `하나의 예술 작품으로 승화된 꿈을 만나보세요`,
             desc: `불가리 고유의 품격 있는 매력은 다양한 아이디어를 길이 남을 작품으로 거듭나게 하는 숙련된 불가리 장인의 손길을 거쳐야만 담아낼 수 있습니다. <br> 불가리 장인들은 정교한 장인 기술을 적용하여 탁월한 유연함, 섬세한 인레이, 작품과 어우러지는 유려한 부품을 완성합니다.`,
             slide_1: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations_bn1.jpg`,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn1.jpg`,
                 slide_tit: `사파이어 페탈 네크리스`,
                 slide_desc: `불가리의 가치를 모두 담고 있는 사파이어 페탈 네크리스는 눈으로 보이는 소재뿐 아니라 무형의 풍요로움, 고대의 금세공 전통, 미래를 향한 비전을 독특하게 조합하여 선보입니다.`,
             },
             slide_2: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations_bn2.jpg`,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn2.jpg`,
                 slide_tit: `바로크 스파이럴 네크리스`,
                 slide_desc: `로마, 그리고 로마의 강인한 여성 아이콘에게서 영감을 받은 바로크 스파이럴 네크리스는 역사상 최초의 여성 화가로서 성공적인 커리어를 영위한 이탈리아 예술가 아르테미시아 젠틸레스키를 향한 찬사와도 같습니다.`,
             },
             slide_3: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations_bn3.jpg`,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn3.jpg`,
                 slide_tit: `에메랄드 일립스 네크리스`,
                 slide_desc: `숙련된 장인의 뛰어난 손길을 거쳐 눈부신 젬스톤이 품격 있는 마스터피스로 거듭납니다. 에메랄드 일립스 네크리스는 중앙에 자리잡은 64.03캐럿의 에메랄드에서 뻗어 나오는 매혹적인 나선형으로 시선을 사로잡습니다.`,
             },
             slide_4: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations_bn4.jpg`,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn4.jpg`,
                 slide_tit: `프로디지어스 컬러 네크리스`,
                 slide_desc: `5개의 감탄을 자아내는 카보숑컷 젬스톤이 완벽하게 배치된 프로디지어스 컬러 네크리스는 생동감 넘치는 젬스톤, 놀라운 조합, 과감한 볼륨감을 향한 불가리의 무한한 애정을 드러냅니다.`,
             },
             slide_5: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations_bn5.jpg`,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn5.jpg`,
                 slide_tit: `임페리얼 스피넬 네크리스`,
                 slide_desc: `컬러와 광채를 향한 화려한 찬사와도 같은 임페리얼 스피넬 네크리스는 131.21캐럿의 스피넬이 간직한 독특한 아름다움을 드러내며, 자연에서 만날 수 있는 희귀한 경이로움 속에 담긴 특별한 광채에 생기를 불어넣습니다.`,
             },
             slide_6: {
-                slide_img_src: `../00.자료수집/02.이미지데이터/sub_page/magnifica_creations/magnifica_creations_bn6.jpg`,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn6.jpg`,
                 slide_tit: `루비 메타모포시스 네크리스`,
                 slide_desc: `탁월한 젬스톤, 강렬한 움직임, 다채로운 착용 방식이 돋보이는 루비 메타모포시스 네크리스는 뛰어난 미적 아름다움을 숭배하는 예술성을 담은 매혹적인 작품입니다.`,
             },
@@ -200,18 +233,18 @@ const high_jewelry_menu_data={
         // 섹션2 주요 작품 소개 그리드 박스
         section2: {
             rw1: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/roman_high_jeweller/roman_high_jeweller1.jpg`,
+                img_src: `./images/sub_page/roman_high_jeweller/roman_high_jeweller1.jpg`,
                 tit: `독특한 디자인`,
                 desc: `생동감 넘치는 진귀한 젬스톤에 대한 심미안, 독창적인 컬러 조합, 독보적인 볼륨감이 어우러져 로마의 화려한 유산에서 영감을 받은 유쾌하고 독특한 디자인이 탄생했습니다.
                 불가리는 젬스톤과 컬러, 커팅에 대한 독창적인 접근법과 혁신적인 정신을 바탕으로 하이 주얼리 분야에서 창의적인 행보를 이어왔습니다. 불가리의 시그니처 스타일을 고스란히 재현한 카보숑컷은 로마의 기념비적인 돔 형태를 연상시키는 우아하고 여유로운 곡선미를 강조합니다.`,
             },
             rw2: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/roman_high_jeweller/roman_high_jeweller2.jpg`,
+                img_src: `./images/sub_page/roman_high_jeweller/roman_high_jeweller2.jpg`,
                 tit: `로마의 열정`,
                 desc: `불가리의 모든 주얼리는 열정, 인내, 참을성 그리고 광기(Pazzia)와 같은 요소들을 완벽하게 구현합니다. 로마가 추구한 삶의 즐거움에 활기를 불어넣는 열정은 불가리 디자이너와 장인들에게 풍부한 영감을 선사합니다. 완벽한 보석을 찾아내는 데는 항상 인내가 필요하고, 탁월한 컷팅과 세팅, 결과물을 위해서는 참을성이 요구됩니다. “광기(Pazzia)”에 가까운 에너지가 있어야만 궁극의 독창성에 이르는 마법과도 같은 과정을 거칠 수 있습니다.`,
             },
             rw3: {
-                img_src: `../00.자료수집/02.이미지데이터/sub_page/roman_high_jeweller/roman_high_jeweller3.jpg`,
+                img_src: `./images/sub_page/roman_high_jeweller/roman_high_jeweller3.jpg`,
                 tit: `장인의 손길`,
                 desc: `로마 공방에서 작업하는 숙련된 장인들은 극도로 복잡한 디자인을 현실로 불러내며 상상력을 마음껏 발휘하고 있습니다. 불가리 주얼리의 탁월한 촉감은 여러 세대를 거쳐 계승되어온 뛰어난 노하우와 최고 수준의 독창성으로부터 탄생합니다. 첫 번째 스케치부터 폴리싱, 스톤 선택 및 세팅에 이르는 모든 단계에는 기술적인 스킬 그 이상이 요구됩니다. 전통과 혁신, 독보적인 노하우 사이의 보이지 않는 균형을 이뤄야 하기 때문입니다.`,
             },
@@ -221,34 +254,34 @@ const high_jewelry_menu_data={
             tit: ``,
             desc: ``,
             slide_1: {
-                slide_img_src: ``,
-                slide_tit: ``,
-                slide_desc: ``,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn1.jpg`,
+                slide_tit: `사파이어 페탈 네크리스`,
+                slide_desc: `불가리의 가치를 모두 담고 있는 사파이어 페탈 네크리스는 눈으로 보이는 소재뿐 아니라 무형의 풍요로움, 고대의 금세공 전통, 미래를 향한 비전을 독특하게 조합하여 선보입니다.`,
             },
             slide_2: {
-                slide_img_src: ``,
-                slide_tit: ``,
-                slide_desc: ``,
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn1.jpg`,
+                slide_tit: `트리뷰트 투 파리 네크리스`,
+                slide_desc: `화려한 자태로 빛의 도시 파리를 향해 경의를 표하는 트리뷰트 투 파리 네크리스에는 경이로운 5.53캐럿의 에메랄드와 에펠탑에서 영감을 받은 독특한 모티브가 자리하고 있습니다.`,
             },
             slide_3: {
-                slide_img_src: ``,
-                slide_tit: ``,
-                slide_desc: ``,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn2.jpg`,
+                slide_tit: `바로크 스파이럴 네크리스`,
+                slide_desc: `로마, 그리고 로마의 강인한 여성 아이콘에게서 영감을 받은 바로크 스파이럴 네크리스는 역사상 최초의 여성 화가로서 성공적인 커리어를 영위한 이탈리아 예술가 아르테미시아 젠틸레스키를 향한 찬사와도 같습니다.`,
             },
             slide_4: {
-                slide_img_src: ``,
-                slide_tit: ``,
-                slide_desc: ``,
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn3.jpg`,
+                slide_tit: `세르펜티 오션 트레저 네크리스`,
+                slide_desc: `끊임없는 변화를 표현하는 매혹적인 상징과 같은 세르펜티 오션 트레저 네크리스에는 콘플라워 블루 컬러로 모두의 시선을 사로잡는 61.31캐럿의 사파이어가 자리잡고 있습니다.`,
             },
             slide_5: {
-                slide_img_src: ``,
-                slide_tit: ``,
-                slide_desc: ``,
+                slide_img_src: `./images/sub_page/bulgari_eden/bulgari_eden_bn5.jpg`,
+                slide_tit: `메디터레니언 레브리 네크리스`,
+                slide_desc: `메디터레니언 레브리 네크리스의 중심부에는 독특한 로얄 블루 컬러로 경이로운 매력을 자아내는 107.15캐럿의 사파이어가 자리잡고 있습니다.`,
             },
             slide_6: {
-                slide_img_src: ``,
-                slide_tit: ``,
-                slide_desc: ``,
+                slide_img_src: `./images/sub_page/magnifica_creations/magnifica_creations_bn4.jpg`,
+                slide_tit: `프로디지어스 컬러 네크리스`,
+                slide_desc: `5개의 감탄을 자아내는 카보숑컷 젬스톤이 완벽하게 배치된 프로디지어스 컬러 네크리스는 생동감 넘치는 젬스톤, 놀라운 조합, 과감한 볼륨감을 향한 불가리의 무한한 애정을 드러냅니다.`,
             },
         },
     },

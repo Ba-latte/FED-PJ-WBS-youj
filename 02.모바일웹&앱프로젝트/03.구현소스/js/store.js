@@ -67,6 +67,16 @@ const store = new Vuex.Store({
             헐.sec1_tit = param.tit;
             헐.sec1_desc = param.desc;
 
+            헐.rw1_img_src = param.section2.rw1.img_src;
+            헐.rw1_tit = param.section2.rw1.tit;
+            헐.rw1_desc = param.section2.rw1.desc;
+            // 헐.sec2_rw2_img_src = param.section2.rw2.img_src;
+            // 헐.sec2_rw2_tit = param.section2.rw2.tit;
+            // 헐.sec2_rw2_desc = param.section2.rw2.desc;
+            // 헐.sec2_rw3_img_src = param.section2.rw3.img_src;
+            // 헐.sec2_rw3_tit = param.section2.rw3.tit;
+            // 헐.sec2_rw3_desc = param.section2.rw3.desc;
+
 
 
         }, ///////////////// initSet 메서드 /////////////////////

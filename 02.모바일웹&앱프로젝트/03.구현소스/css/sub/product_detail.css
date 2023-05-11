@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/* 불가리 PJ 제품 상세 페이지 CSS - product_detail.css */
+
+/* 외부 CSS 머징 */
+@import url(../reset.css);
+@import url(../core.css);
+@import url(../common.css);
+
+body #cont * {
+    /* outline: 1px dashed red; */
+}
+
+#cont {
+    padding: 100px 20px;
+}
+/* 섹션1 제품 상세사항 겉박스 */
+.pd_detail_bx{
+    display: flex;
+    justify-content: center;
+}
+/* 이미지 배너 겉박스 */
+.img_ban_bx{
+    width: 630px;
+    height: 630px;
+    /* background-color: var(--black); */
+}
+/* 썸네일 갤러리 스와이퍼 배너 디자인 세팅 */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+.mySwiper2 {
+    height: 80%;
+    width: 100%;
+}
+.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+.mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+    cursor: pointer;
+}
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 제품 상세 설명 겉박스 */
+.desc_bx{
+    padding: 10px 5px;
+    font-size: 16px;
+}
+.desc_bx>*{
+    padding-bottom: 10px;
+}
+.desc_bx .title{
+    font-size: 27px;
+}
+.desc_bx #size-selec{
+    width: 100%;
+    height: 30px;
+}
+.desc_bx .shoppingback,
+.desc_bx .reservation,
+.desc_bx .store_find{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px 10px;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    color: var(--black);
+    line-height: 1.5;
+    transition: 
+    background-color .3s ease-in-out,
+    color .3s ease-in-out;
+}
+
+.desc_bx .shoppingback:hover,
+.desc_bx .reservation:hover,
+.desc_bx .store_find:hover{
+    background-color: var(--black);
+    color: var(--white);
+}

@@ -3,12 +3,12 @@
 // 뷰엑스 스토어 객체 JS 가져오기
 import store from "./store.js";
 // 서브페이지 데이터 객체 JS 가져오기
-// import {serpenti_75years_menu_data, high_jewelry_menu_data, brand_menu_data} from "./data/sub_page_data.js";
+import {serpenti_75years_menu_data, high_jewelry_menu_data, brand_menu_data} from "./data/sub_page_data.js";
 
 
 
 // 하이주얼리, 브랜드의 lnb메뉴 컴포넌트로 만들기
-Vue.component("lnb-comp",{
+Vue.component("lnb1-comp",{
     template: `
     <ol class="list category">
         <li>
@@ -30,6 +30,45 @@ Vue.component("lnb-comp",{
                 <span class="tit tit3">로만 하이주얼러</span>
                 <img src="./images/menu/dt/hj_3.jpg" alt="로만 하이주얼러 이미지">
                 <span class="btn">하이 주얼리 아트 자세히 보기</span>
+            </figure>
+        </li>
+    </ol>
+    `,
+    methods: {
+        // 스토어 변수 업데이트 메서드
+        chgData(pm){
+            console.log("업데이트!", pm);
+            // console.log(store.state.sec1_desc);
+            // 스토어 변수를 업데이트한다!!
+            store.commit('chgData',pm);
+            store.commit("chgtit",pm);
+        }
+    }
+}); /////////////////// lnb-comp 전역 컴포넌트 //////////////////////
+
+// 브랜드의 lnb메뉴 컴포넌트로 만들기
+Vue.component("lnb2-comp",{
+    template: `
+    <ol class="list category">
+        <li>
+            <figure class="thumbnail_img" v-on:click="chgData('bulgari_history')">
+                <span class="tit tit1">불가리 역사</span>
+                <img class="th_img1" src="./images/menu/dt/tm_1.jpg" alt="불가리 역사 이미지">
+                <span class="btn">자세히 보기</span>
+            </figure>
+        </li>
+        <li>
+            <figure class="thumbnail_img" v-on:click="chgData('bulgari_identity')">
+                <span class="tit tit2">불가리의 아이덴티티</span>
+                <img class="th_img2" src="./images/menu/dt/tm_2.jpg" alt="불가리의 아이덴티티 이미지">
+                <span class="btn">자세히 보기</span>
+            </figure>
+        </li>
+        <li>
+            <figure class="thumbnail_img" v-on:click="chgData('bulgari_innovation')">
+                <span class="tit tit3">불가리의 혁신</span>
+                <img class="th_img3" src="./images/menu/dt/tm_3.jpg" alt="불가리의 혁신 이미지">
+                <span class="btn">자세히 보기</span>
             </figure>
         </li>
     </ol>
@@ -212,10 +251,12 @@ const contVue = new Vue({
             vdsrc: `./videos/high_jewelry_sub_1.mp4`,
             tit: `BULGARI EDEN, THE GARDEN OF WONDERS <br> 경이로움의 에덴 컬렉션`,
             desc: `평범한 풍경을 뒤로한 채, 경이로움이 가득한 화려한 세계를 만나보세요. 불가리가 무한한 독창성과 방대한 장인 기술이 어우러지는 에덴 하이 주얼리 컬렉션을 통해 숨이 멎을 듯 아름다운 마스터피스를 선보입니다.`,
+            rw1_img_src: `./images/sub_page/bulgari_eden/bulgari_eden1.jpg`,
+            rw1_tit: `에메랄드 글로리 네크리스`,
+            rw1_desc: `불가리를 대표하는 탁월한 품질과 기술이 돋보이는 에메랄드 글로리 네크리스는 특별한 젬스톤, 무한한 독창성, 독보적인 장인 정신이 만난 화려한 하이 주얼리 마스터피스입니다.`,
 
         });
 
-        
 
     }, //////////////// created 구역 ///////////////////
     // jQB 구역

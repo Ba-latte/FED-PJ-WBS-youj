@@ -25,6 +25,11 @@
     /* 부모자격 - lnb박스 */
     box-shadow: inset 0px -0.8px 0px 0px var(--silver);
 }
+/* 상단 블록, 픽스드 겉박스 */
+#dt_wrap{
+    height: 150px;
+}
+
 /* 상단 탑메뉴 */
 .dt .tmenu{
     display: flex;
@@ -107,7 +112,7 @@
 .dt .lnb{
     position: absolute;
     /* 부모는? GNB메뉴의 #top */
-    z-index: 1;
+    z-index: 2;
     /* z인덱스 줘야 만질 수 있음 */
     top: 100%;
     left: 50%;
