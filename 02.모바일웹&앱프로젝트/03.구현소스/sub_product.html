@@ -37,7 +37,7 @@
 	<!-- 링크시스템 JS -->
 	<script src="./js/linksys.js"></script>
 	<!-- 외부 JS 넣기 -->
-	<!-- <script src="./js/sub_category.js" type="module"></script> -->
+	<script src="./js/sub_product.js" type="module"></script>
 
 </head>
 <body>
@@ -1046,22 +1046,22 @@
 								<ul>
 									<li class="category">
 										<span class="category_name">카테고리</span>
-										<span class="material-symbols-outlined expand_more">expand_more</span>
+										<span class="material-symbols-outlined expand_more icon">expand_more</span>
 										<span class="material-symbols-outlined expand_less">expand_less</span>
 									</li>
 									<li class="material">
 										<span class="category_name">소재</span>
-										<span class="material-symbols-outlined expand_more">expand_more</span>
+										<span class="material-symbols-outlined expand_more icon">expand_more</span>
 										<span class="material-symbols-outlined expand_less">expand_less</span>
 									</li>
 									<li class="gemstone">
 										<span class="category_name">젬스톤</span>
-										<span class="material-symbols-outlined expand_more">expand_more</span>
+										<span class="material-symbols-outlined expand_more icon">expand_more</span>
 										<span class="material-symbols-outlined expand_less">expand_less</span>
 									</li>
 									<li class="price">
 										<span class="category_name">가격</span>
-										<span class="material-symbols-outlined expand_more">expand_more</span>
+										<span class="material-symbols-outlined expand_more icon">expand_more</span>
 										<span class="material-symbols-outlined expand_less">expand_less</span>
 									</li>
 								</ul>
@@ -1071,8 +1071,10 @@
 					</div>
 					<!-- 필터 옵션들 -->
 					<form action="" method="post" class="filterFn">
+						<!-- 필터 옵션 선택 겉박스 -->
 						<div class="filter_opt">
-							<ul class="sel_opt">
+							<!-- 카테고리 선택 -->
+							<ul class="sel_opt category">
 								<li>
 									<input type="checkbox" name="category" id="rings" />
 									<label for="rings">링</label>
@@ -1090,7 +1092,8 @@
 									<label for="earrings">이어링</label>
 								</li>
 							</ul>
-							<ul class="sel_opt">
+							<!-- 소재 선택 -->
+							<ul class="sel_opt material">
 								<li>
 									<input type="checkbox" name="material" id="rg" />
 									<label for="rg">로즈 골드</label>
@@ -1104,6 +1107,7 @@
 									<label for="wg">화이트 골드</label>
 								</li>
 							</ul>
+							<!-- 젬스톤 선택 -->
 							<ul class="sel_opt gemstone">
 								<!-- 1.다이아몬드 -->
 								<li>

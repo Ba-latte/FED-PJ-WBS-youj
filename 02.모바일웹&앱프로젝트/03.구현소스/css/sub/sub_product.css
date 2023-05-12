@@ -102,7 +102,15 @@ select#selecbx:focus{
 /* 필터 옵션 바 - 겉박스 폼태그 */
 .filterFn{
     box-shadow: inset 0px -0.8px 0px 0px var(--silver);
+
+    /* 처음에 안보이게 숨겨두기 */
+    display: none;
 }
+/* 클래스 on 추가시 보이게 만들기 */
+.filterFn.on{
+    display: block;
+}
+
 /* 필터 옵션 바 */
 .filter_opt{
     max-width: 1300px;
@@ -114,7 +122,18 @@ select#selecbx:focus{
 .filter_opt>.sel_opt{
     display: flex;
     gap: 30px;
+
+    /* 처음에 모든 옵션 박스 숨겨두기 */
+    display: none;
 }
+/* 각 옵션박스에 클래스 on 추가시 보이게 만들기 */
+.filter_opt>.sel_opt.category.on,
+.filter_opt>.sel_opt.material.on,
+.filter_opt>.sel_opt.gemstone.on{
+    display: flex;
+}
+
+
 /* 필터의 각 옵션박스의 라벨 전체 공통 디자인 - 커서바꾸기 */
 .filter_opt>.sel_opt label{
     cursor: pointer;
