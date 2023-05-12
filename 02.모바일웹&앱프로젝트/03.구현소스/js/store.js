@@ -61,21 +61,22 @@ const store = new Vuex.Store({
         // 초기 데이터 셋업 메서드
         initSet(헐, param){
             console.log("데이터변경! 초기화 : ", 헐,param);
+            
 
             // 섹션1 데이터 셋업 변수
-            헐.sec1_vdsrc = param.vdsrc;
-            헐.sec1_tit = param.tit;
-            헐.sec1_desc = param.desc;
+            // 헐.sec1_vdsrc = param.vdsrc;
+            // 헐.sec1_tit = param.tit;
+            // 헐.sec1_desc = param.desc;
 
-            헐.rw1_img_src = param.section2.rw1.img_src;
-            헐.rw1_tit = param.section2.rw1.tit;
-            헐.rw1_desc = param.section2.rw1.desc;
-            헐.sec2_rw2_img_src = param.section2.rw2.img_src;
-            헐.sec2_rw2_tit = param.section2.rw2.tit;
-            헐.sec2_rw2_desc = param.section2.rw2.desc;
-            헐.sec2_rw3_img_src = param.section2.rw3.img_src;
-            헐.sec2_rw3_tit = param.section2.rw3.tit;
-            헐.sec2_rw3_desc = param.section2.rw3.desc;
+            // 헐.rw1_img_src = param.section2.rw1.img_src;
+            // 헐.rw1_tit = param.section2.rw1.tit;
+            // 헐.rw1_desc = param.section2.rw1.desc;
+            // 헐.sec2_rw2_img_src = param.section2.rw2.img_src;
+            // 헐.sec2_rw2_tit = param.section2.rw2.tit;
+            // 헐.sec2_rw2_desc = param.section2.rw2.desc;
+            // 헐.sec2_rw3_img_src = param.section2.rw3.img_src;
+            // 헐.sec2_rw3_tit = param.section2.rw3.tit;
+            // 헐.sec2_rw3_desc = param.section2.rw3.desc;
 
 
 
@@ -83,9 +84,23 @@ const store = new Vuex.Store({
 
         // 각 페이지의 타이틀요소 바꾸는 메서드
         chgtit(state, pm){
-            state.pg_tit = state.subPgData.high_jewelry_menu_data[pm].pgName;
-            console.log("해당 페이지 title요소의 데이터 변경! : ", pm);
-            $("title").text(state.pg_tit.replaceAll("_", " ").toUpperCase() + " | 불가리 공식 온라인 스토어");
+            let subCat = ["bulgari_history","bulgari_identity","bulgari_innovation"];
+            let catName = [high_jewelry_menu_data,brand_menu_data];
+            let cnum = subCat.indexOf(pm)!=-1?1:0;
+
+             // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
+             const mdata = catName[cnum][pm].pgName.replaceAll("_", " ").toUpperCase();
+             console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+             // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+             const sub_pg_tit = $("title");
+             sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
+
+              // cnum 이 1이면 브랜드 이므로 상단, 하단 안보이게 처리함!
+            if(cnum===1)
+            $(".video_bx").hide();
+            else
+            $(".video_bx").show();
+
         },
 
         // 각 페이지의 데이터 바꾸는 메서드
@@ -135,7 +150,9 @@ const store = new Vuex.Store({
                 헐.sec1_tit = bulgari_brand_Obj.section1.tit;
                 헐.sec1_desc = bulgari_brand_Obj.section1.desc;
 
-                헐.sec2_rw1_img_src = bulgari_brand_Obj.section2.rw1.img_src;
+                if(슉==="bulgari_history"){
+                    헐.sec2_rw1_img_src = bulgari_brand_Obj.section2.rw1.img_src;
+
                 헐.sec2_rw1_tit = bulgari_brand_Obj.section2.rw1.tit;
                 헐.sec2_rw1_desc = bulgari_brand_Obj.section2.rw1.desc;
                 헐.sec2_rw2_img_src = bulgari_brand_Obj.section2.rw2.img_src;
@@ -144,6 +161,8 @@ const store = new Vuex.Store({
                 헐.sec2_rw3_img_src = bulgari_brand_Obj.section2.rw3.img_src;
                 헐.sec2_rw3_tit = bulgari_brand_Obj.section2.rw3.tit;
                 헐.sec2_rw3_desc = bulgari_brand_Obj.section2.rw3.desc;
+
+                }
             }
 
 

@@ -51,7 +51,7 @@ Vue.component("lnb2-comp",{
     template: `
     <ol class="list category">
         <li>
-            <figure class="thumbnail_img" v-on:click="chgData('bulgari_history')">
+            <figure class="thumbnail_img" v-on:click="chgData('bulgari_history');">
                 <span class="tit tit1">불가리 역사</span>
                 <img class="th_img1" src="./images/menu/dt/tm_1.jpg" alt="불가리 역사 이미지">
                 <span class="btn">자세히 보기</span>
@@ -76,12 +76,37 @@ Vue.component("lnb2-comp",{
     methods: {
         // 스토어 변수 업데이트 메서드
         chgData(pm){
+            this.setFirst(pm);
             console.log("업데이트!", pm);
             // console.log(store.state.sec1_desc);
             // 스토어 변수를 업데이트한다!!
             store.commit('chgData',pm);
             store.commit("chgtit",pm);
-        }
+        },
+        setFirst(pm){
+            console.log("자식에게 있는것!");
+            let subCat = ["bulgari_history","bulgari_identity","bulgari_innovation"];
+            let catName = [high_jewelry_menu_data,brand_menu_data];
+            let cnum = subCat.indexOf(pm)!=-1?1:0;
+    
+            console.log("검사:",subCat.indexOf(pm));
+    
+           
+            // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
+            const mdata = catName[cnum][pm].pgName.replaceAll("_", " ").toUpperCase();
+            console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+            // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+            const sub_pg_tit = $("title");
+            sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
+    
+            store.commit('chgData',pm);
+    
+            // cnum 이 1이면 브랜드 이므로 상단, 하단 안보이게 처리함!
+            if(cnum===1)
+            $(".video_bx").hide();
+            else
+            $(".video_bx").show();
+        },
     }
 }); /////////////////// lnb-comp 전역 컴포넌트 //////////////////////
 
@@ -242,39 +267,62 @@ const contVue = new Vue({
     el: "#test",
     store,
     data:{
+        param:"",
     },
     methods:{
+        setFirst(){
+            let subCat = ["bulgari_history","bulgari_identity","bulgari_innovation"];
+            let catName = [high_jewelry_menu_data,brand_menu_data];
+            let cnum = subCat.indexOf(this.param)!=-1?1:0;
+    
+            console.log("검사:",subCat.indexOf(this.param));
+    
+           
+            // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
+            const mdata = catName[cnum][this.param].pgName.replaceAll("_", " ").toUpperCase();
+            console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+            // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+            const sub_pg_tit = $("title");
+            sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
+    
+            store.commit('chgData',this.param);
+    
+            // cnum 이 1이면 브랜드 이므로 상단, 하단 안보이게 처리함!
+            if(cnum===1)
+            $(".video_bx").hide();
+            else
+            $(".video_bx").show();
+        },
+        takeThis(){
+            console.log("여기요");
+        }
     },
     // 데이터 세팅하기
     created(){
-        store.commit("initSet",{
-            vdsrc: `./videos/high_jewelry_sub_1.mp4`,
-            tit: `BULGARI EDEN, THE GARDEN OF WONDERS <br> 경이로움의 에덴 컬렉션`,
-            desc: `평범한 풍경을 뒤로한 채, 경이로움이 가득한 화려한 세계를 만나보세요. 불가리가 무한한 독창성과 방대한 장인 기술이 어우러지는 에덴 하이 주얼리 컬렉션을 통해 숨이 멎을 듯 아름다운 마스터피스를 선보입니다.`,
-            rw1_img_src: `./images/sub_page/bulgari_eden/bulgari_eden1.jpg`,
-            rw1_tit: `에메랄드 글로리 네크리스`,
-            rw1_desc: `불가리를 대표하는 탁월한 품질과 기술이 돋보이는 에메랄드 글로리 네크리스는 특별한 젬스톤, 무한한 독창성, 독보적인 장인 정신이 만난 화려한 하이 주얼리 마스터피스입니다.`,
+        store.commit('chgData','bulgari_eden')
+        
 
-        });
-
-
-    }, //////////////// created 구역 ///////////////////
-    // jQB 구역
-    mounted(){
         // 클릭된 lnb메뉴의 이름으로 title요소 데이터값 바꾸기
         // 🌷1.넘어온 url 받기 : 넘어온 url은 로딩구역 밖에서 받아도 된다!
         let pm = location.href;
         // 2.문자열 잘라서 값으로 읽어오기
         pm = pm.split("?")[1].split("=")[1];
+
+        
         // 3.pm값 특수문자 복원하기 : 디코딩하기!
         pm = decodeURIComponent(pm);
         console.log("넘어온 url받은 pm변수의 값은? : ",pm);
-        // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
-        const mdata = high_jewelry_menu_data[pm].pgName.replaceAll("_", " ").toUpperCase();
-        console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
-        // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
-        const sub_pg_tit = $("title");
-        sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
+        
+        this.param = pm;
+        
+        console.log("여기요~!!",this.param);
+
+
+    }, //////////////// created 구역 ///////////////////
+    // jQB 구역
+    mounted(){
+
+        this.setFirst();
 
         
         }, //////////////// mounted 구역 ///////////////////
