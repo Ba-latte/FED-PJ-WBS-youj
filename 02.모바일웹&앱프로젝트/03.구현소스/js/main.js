@@ -1,10 +1,8 @@
 // 불가리 PJ 메인 JS - main.js
 
-// 템플릿 html 코드 객체 JS 가져오기
 
-
-
-
+// 스와이퍼 모음 JS 불러오기
+// import make_v3_swiper from "./swiper_banner.js";
 
 /* 메인 페이지 섹션2 추천 제품 - 뷰3 스와이퍼 */
 const make_v3_swiper = function make_v3_swiper(cls){
@@ -44,7 +42,6 @@ const make_v3_swiper = function make_v3_swiper(cls){
     });
 
 }; //////////////////////// make_v3_swiper 함수 //////////////////////////////
-
 
 /* 👉호출해서 스와이퍼 개별 적용하기 */
 make_v3_swiper(".section2.recommended_product>.recommended_Swiper");

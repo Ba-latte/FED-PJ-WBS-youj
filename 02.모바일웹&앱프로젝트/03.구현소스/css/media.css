@@ -14,7 +14,7 @@
 /* 1100px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1100px) {
     /* dt용 상단 영역 박스 숨기기 */
-    #top>.dt.top{
+    #top>#dt_wrap{
         display: none;
     }
     /* mob용 상단 영역 박스 보이기 */

@@ -1,6 +1,4 @@
-
-
-
+// 스와이퍼 배너 모음 JS - swiper_banner.js
 
 
 

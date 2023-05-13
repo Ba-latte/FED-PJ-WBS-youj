@@ -151,8 +151,7 @@ const store = new Vuex.Store({
                 헐.sec1_desc = bulgari_brand_Obj.section1.desc;
 
                 if(슉==="bulgari_history"){
-                    헐.sec2_rw1_img_src = bulgari_brand_Obj.section2.rw1.img_src;
-
+                헐.sec2_rw1_img_src = bulgari_brand_Obj.section2.rw1.img_src;
                 헐.sec2_rw1_tit = bulgari_brand_Obj.section2.rw1.tit;
                 헐.sec2_rw1_desc = bulgari_brand_Obj.section2.rw1.desc;
                 헐.sec2_rw2_img_src = bulgari_brand_Obj.section2.rw2.img_src;

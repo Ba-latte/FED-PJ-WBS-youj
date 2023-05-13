@@ -45,7 +45,7 @@ $(()=>{
     // 화면 리사이즈시 화면체크 함수 호출
     $(window).resize(function(){
         chk_width();
-        console.log("모바일 여부: ", mob);
+        // console.log("모바일 여부: ", mob);
         if(mob){
             dt_top_block_bx.attr("style", "");
             dt_top_fixed_bx.attr("style", "");

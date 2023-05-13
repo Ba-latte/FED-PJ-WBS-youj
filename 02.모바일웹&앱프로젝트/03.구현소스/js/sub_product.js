@@ -1,6 +1,32 @@
 // 불가리 PJ 주얼리,인게이지먼트 메뉴의 제품 리스트 페이지 JS - sub_product.js
 
 
+
+// 각 제품 박스 컴포넌트 만들기
+Vue.component("product-comp",{
+    template:`
+    <div class="wrap">
+        <div class="rw1 productbx" v-bind:data-pnum="1">
+            <div class="imgbx">
+                <img v-bind:src="'./images/products/bracelets/shrinkage/sum1/' + pnum + '.png'" alt="브레이슬릿">
+                <img class="hover" v-bind:src="'./images/products/bracelets/shrinkage/sum2/' + pnum + '.png'" alt="브레이슬릿">
+            </div>
+            <div class="descbx">
+                <h6 class="tit">세르펜티 바이퍼 브레이슬릿</h6>
+                <div class="desc">
+                    <p class="price">6650000</p>
+                    <span class="material">로즈 골드</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">다이아몬드</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    `,
+})
+
+
+
 //////////////////////// [ 메인영역 필터바의 필터명 클릭시 필터옵션 박스에 클래스 추가해서 보이게 만들기 - 시작] ////////////////////////
 $(".classification ul>ul>li").click(function(){
     const clsName = $(this).attr("class");
