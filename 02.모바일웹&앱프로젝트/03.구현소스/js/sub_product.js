@@ -1,29 +1,65 @@
 // 불가리 PJ 주얼리,인게이지먼트 메뉴의 제품 리스트 페이지 JS - sub_product.js
 
 
+// 뷰엑스 스토어 불러오기
+import store from "./product_store.js";
 
 // 각 제품 박스 컴포넌트 만들기
-Vue.component("product-comp",{
+Vue.component("product2-comp",{
     template:`
     <div class="wrap">
-        <div class="rw1 productbx" v-bind:data-pnum="1">
+        <div v-bind:class="
+        
+        'rw' + (v.idx>4?v.idx:5) + ' productbx'" v-bind:data-pnum="v.idx" v-for="(v,i) in $store.state.items" v-bind:key="v.idx">
             <div class="imgbx">
-                <img v-bind:src="'./images/products/bracelets/shrinkage/sum1/' + pnum + '.png'" alt="브레이슬릿">
-                <img class="hover" v-bind:src="'./images/products/bracelets/shrinkage/sum2/' + pnum + '.png'" alt="브레이슬릿">
+                <img v-bind:src="'./images/products/bracelets/shrinkage/sum1/' + (v.gname) + '.png'" v-bind:alt="v.gname + '_' + v.category">
+                <img class="hover" v-bind:src="'./images/products/bracelets/shrinkage/sum2/' + (v.idx) + '.png'" alt="브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">세르펜티 바이퍼 브레이슬릿</h6>
+                <h6 class="tit">{{v.gname}}</h6>
                 <div class="desc">
-                    <p class="price">6650000</p>
-                    <span class="material">로즈 골드</span>
-                    <span class="bar"> / </span>
-                    <span class="gemstone">다이아몬드</span>
+                    <p class="price">{{v.gprice}}</p>
+                    <span class="material">{{v.material}}</span>
+                    <div class="gem_opt_bx" v-if="v.gemstone!==''">
+                        <span class="bar"> / </span>
+                        <span class="gemstone">{{v.gemstone}}</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     `,
-})
+
+});
+
+
+// 뷰 인스턴스 생성하기
+new Vue({
+    el:"#gbx2",
+    store,
+    // 뷰 인스턴스에서 사용할 데이터 구역
+    data:{
+        // 제이슨 데이터 담을 변수
+        items:{},
+
+    },
+    // 뷰 인스턴스 생성 직후의 구역
+    created(){
+        // 뷰엑스 스토어 액션스 구역 메서드인 initData() 호출하기
+        store.dispatch("initData");
+    },
+    // 돔 연결 후 구역
+    mounted(){
+        
+    },
+});
+
+// 클래스 바꾸는 메서드
+function chgCls(idx){
+    if(idx){
+        
+    }
+}
 
 
 

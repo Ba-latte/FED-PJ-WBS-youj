@@ -54,7 +54,6 @@ const store = new Vuex.Store({
         sec3_slide_6_slide_desc:"",
         
 
-
     }, /////////// state 구역 ///////////
     // (2)데이터 변경 메서드 구역 : 호출시 commit() 사용!
     mutations:{
@@ -88,20 +87,19 @@ const store = new Vuex.Store({
             let catName = [high_jewelry_menu_data,brand_menu_data];
             let cnum = subCat.indexOf(pm)!=-1?1:0;
 
-             // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
-             const mdata = catName[cnum][pm].pgName.replaceAll("_", " ").toUpperCase();
-             console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
-             // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
-             const sub_pg_tit = $("title");
-             sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
+            // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
+            const mdata = catName[cnum][pm].pgName.replaceAll("_", " ").toUpperCase();
+            console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+            // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+            const sub_pg_tit = $("title");
+            sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
 
-              // cnum 이 1이면 브랜드 이므로 상단, 하단 안보이게 처리함!
+            // cnum 이 1이면 브랜드 이므로 상단, 하단 안보이게 처리함!
             if(cnum===1)
             $(".video_bx").hide();
             else
             $(".video_bx").show();
-
-        },
+        }, ///////////////////// chgtit() /////////////////////////////
 
         // 각 페이지의 데이터 바꾸는 메서드
         chgData(헐,슉){
@@ -163,12 +161,11 @@ const store = new Vuex.Store({
 
                 }
             }
-
-
-
-        },
+        }, ///////////// chgData() /////////////
         
-    },
+
+    }, ////////////// mutations 구역 ////////////////////
+
     
 }); /////////////////////////// 뷰엑스 스토어 인스턴스 /////////////////////////////////////
 
