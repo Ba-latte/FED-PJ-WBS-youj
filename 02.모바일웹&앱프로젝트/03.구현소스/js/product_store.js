@@ -9,7 +9,13 @@ const store = new Vuex.Store({
     // [ 데이터 세팅 구역 ]
     state:{
         // 제이슨 데이터를 담을 변수
-        items: {},
+        items: [],
+
+        // 카테고리 변수
+        categorys: ["bracelets", "earrings", "necklaces", "rings"],
+
+        // 공통 처리 카테고리명 변수
+        cat:"",
     },
 
     // [ 데이터 변경 메서드 구역 ] : 여기에 있는 것 호출 시 commit()사용하기

@@ -4,21 +4,216 @@
 // 뷰엑스 스토어 불러오기
 import store from "./product_store.js";
 
-// 각 제품 박스 컴포넌트 만들기
-Vue.component("product2-comp",{
+
+
+
+////////////////////// (호출하지 않고도) 바로 실행 함수 구역 /////////////////////////////////////
+(()=>{
+    // 파라미터 변수
+    let pm;
+
+    // GET 방식으로 넘어온 데이터 처리하여 분류별 서브 페이지 구성하기
+    // location.href : 상단 url 읽어옴
+    // indexOf("?")!== -1 : 물음표가 없는 게 아니면 = 물음표가 있으면!
+    if(location.href.indexOf("?")!== -1)
+        pm = location.href.split("?")[1].split("=")[1];
+        // 물음표로 잘라내서 뒤의 것, 이퀄로 잘라내서 뒤의 것 값(파라미터값)만 추출함! split()
+    // pm에 할당이 되었다면 undefined가 아니므로 true가 나옴!
+    if(pm)
+        store.commit("setData", decodeURI(pm));
+    // 👇메뉴를 선택해서 파라미터로 들어오지 않고! 그냥 들어갔을 때의 첫 화면은 '남성'데이터가 뿌려지도록 하기
+    else
+        store.commit("setData", "rings");
+    // URI/URIComponent의 차이점
+    // decodeURI() : 딱 변경할 문자열만 있어야 변환됨
+    // decodeURIComponent() : url 전체에 섞여 있어도 모두 변환해줌
+})(); ////////////////////// (호출하지 않고도) 바로 실행 함수 구역 /////////////////////////////////////
+
+
+
+//////////////////////// 1번째 그리드박스 컴포넌트 만들기 /////////////////////////////////
+Vue.component("product1-comp",{
     template:`
-    <div class="wrap">
-        <div v-bind:class="
-        
-        'rw' + (v.idx>4?v.idx:5) + ' productbx'" v-bind:data-pnum="v.idx" v-for="(v,i) in $store.state.items" v-bind:key="v.idx">
+    <div class="grid grid1">
+        <!-- 1번째 줄 -->
+        <div class="rw1 imgbx">
+            <span class="tit">끝없는 변모</span>
+            <img src="./images/sub_page/jewelry/grid_jew_1.jpg" alt="주얼리 그리드 이미지">
+            <span class="btn">자세히 보기</span>
+        </div>
+        <div class="rw1 productbx" data-pnum="1">
             <div class="imgbx">
-                <img v-bind:src="'./images/products/bracelets/shrinkage/sum1/' + (v.gname) + '.png'" v-bind:alt="v.gname + '_' + v.category">
-                <img class="hover" v-bind:src="'./images/products/bracelets/shrinkage/sum2/' + (v.idx) + '.png'" alt="브레이슬릿">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name1.png" alt="세르펜티 바이퍼 브레이슬릿">
+                <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name1.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{v.gname}}</h6>
+                <h6 class="tit">{{$store.state.items[0]["gname"]}}</h6>
                 <div class="desc">
-                    <p class="price">{{v.gprice}}</p>
+                    <p class="price" v-if="$store.state.items[0].gprice!==''" v-text="'￦ ' + insComma($store.state.items[0].gprice)"></p>
+                    <span class="material">{{$store.state.items[0]["material"]}}</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">{{$store.state.items[0]["gemstone"]}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="rw1 productbx" data-pnum="2">
+            <div class="imgbx">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name2.png" alt="세르펜티 바이퍼 브레이슬릿">
+                <img class="hover" src="./images/products/'+$state.store.categorys[0]+'/shrinkage/sum2/goods_name2.png" alt="세르펜티 바이퍼 브레이슬릿">
+            </div>
+            <div class="descbx">
+                <h6 class="tit">{{$store.state.items[1]["gname"]}}</h6>
+                <div class="desc">
+                    <p class="price" v-if="$store.state.items[1].gprice!==''" v-text="'￦ ' + insComma($store.state.items[1].gprice)"></p>
+                    <span class="material">{{$store.state.items[1]["material"]}}</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">{{$store.state.items[1]["gemstone"]}}</span>
+                </div>
+            </div>
+        </div>
+        <!-- 2번째 줄 -->
+        <div class="rw2 productbx" data-pnum="3">
+            <div class="imgbx">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name3.png" alt="세르펜티 바이퍼 브레이슬릿">
+                <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name3.png" alt="세르펜티 바이퍼 브레이슬릿">
+            </div>
+            <div class="descbx">
+                <h6 class="tit">{{$store.state.items[2]["gname"]}}</h6>
+                <div class="desc">
+                    <p class="price" v-if="$store.state.items[2].gprice!==''" v-text="'￦ ' + insComma($store.state.items[2].gprice)"></p>
+                    <span class="material">{{$store.state.items[2]["material"]}}</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">{{$store.state.items[2]["gemstone"]}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="rw2 productbx" data-pnum="4">
+            <div class="imgbx">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name4.png" alt="세르펜티 바이퍼 브레이슬릿">
+                <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name4.png" alt="세르펜티 바이퍼 브레이슬릿">
+            </div>
+            <div class="descbx">
+                <h6 class="tit">{{$store.state.items[3]["gname"]}}</h6>
+                <div class="desc">
+                    <p class="price" v-if="$store.state.items[3].gprice!==''" v-text="'￦ ' + insComma($store.state.items[0].gprice)"></p>
+                    <span class="material">{{$store.state.items[3]["material"]}}</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">{{$store.state.items[3]["gemstone"]}}</span>
+                </div>
+            </div>
+        </div>
+        <!-- 3번째 줄 -->
+        <div class="rw3 productbx" data-pnum="5">
+            <div class="imgbx">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name5.png" alt="세르펜티 바이퍼 브레이슬릿">
+                <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name5.png" alt="세르펜티 바이퍼 브레이슬릿">
+            </div>
+            <div class="descbx">
+                <h6 class="tit">{{$store.state.items[4]["gname"]}}</h6>
+                <div class="desc">
+                    <p class="price" v-if="$store.state.items[4].gprice!==''" v-text="'￦ ' + insComma($store.state.items[3].gprice)"></p>
+                    <span class="material">{{$store.state.items[4]["material"]}}</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">{{$store.state.items[4]["gemstone"]}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="rw3 productbx" data-pnum="6">
+            <div class="imgbx">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name6.png" alt="세르펜티 바이퍼 브레이슬릿">
+                <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name6.png" alt="세르펜티 바이퍼 브레이슬릿">
+            </div>
+            <div class="descbx">
+                <h6 class="tit">{{$store.state.items[5]["gname"]}}</h6>
+                <div class="desc">
+                    <p class="price" v-if="$store.state.items[5].gprice!==''" v-text="'￦ ' + insComma($store.state.items[4].gprice)"></p>
+                    <span class="material">{{$store.state.items[5]["material"]}}</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">{{$store.state.items[5]["gemstone"]}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="rw3 imgbx">
+            <span class="tit">매혹의 아이콘</span>
+            <img src="./images/sub_page/jewelry/grid_jew_2.jpg" alt="주얼리 그리드 이미지">
+            <span class="btn">자세히 보기</span>
+        </div>
+        <!-- 4번째 줄 -->
+        <div class="rw4 productbx" data-pnum="7">
+            <div class="imgbx">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name7.png" alt="세르펜티 바이퍼 브레이슬릿">
+                <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name7.png" alt="세르펜티 바이퍼 브레이슬릿">
+            </div>
+            <div class="descbx">
+                <h6 class="tit">{{$store.state.items[6]["gname"]}}</h6>
+                <div class="desc">
+                    <p class="price" v-if="$store.state.items[6].gprice!==''" v-text="'￦ ' + insComma($store.state.items[5].gprice)"></p>
+                    <span class="material">{{$store.state.items[6]["material"]}}</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">{{$store.state.items[6]["gemstone"]}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="rw4 productbx" data-pnum="8">
+            <div class="imgbx">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name8.png" alt="세르펜티 바이퍼 브레이슬릿">
+                <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name8.png" alt="세르펜티 바이퍼 브레이슬릿">
+            </div>
+            <div class="descbx">
+                <h6 class="tit">{{$store.state.items[7]["gname"]}}</h6>
+                <div class="desc">
+                    <p class="price" v-if="$store.state.items[7].gprice!==''" v-text="'￦ ' + insComma($store.state.items[6].gprice)"></p>
+                    <span class="material">{{$store.state.items[7]["material"]}}</span>
+                    <span class="bar"> / </span>
+                    <span class="gemstone">{{$store.state.items[7]["gemstone"]}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    `,
+    methods:{
+        // 가격 3자리마다 콤마 붙이는 메서드
+        insComma(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+    },
+}); /////////////////////////////// 1번째 그리드박스 컴포넌트 만들기 ///////////////////////////////
+
+
+////////////////////////// 1번째 그리드박스 뷰 인스턴스 만들기 //////////////////
+new Vue({
+    el:"#gbx1",
+    store,
+    data:{
+        items:[],
+        categorys:[],
+    },
+    mounted(){
+        $(".productbx").mouseover(function(){
+            console.log("마우오버!");
+        });
+    },
+}); //////////////////// 1번째 그리드박스 뷰 인스턴스 만들기 //////////////////
+
+
+
+/////////////////////// 2번째 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
+Vue.component("product2-comp",{
+    template:`
+    <div class="grid grid2">
+        <div v-bind:class="'productbx'" v-bind:data-pnum="v.idx" v-for="(v,i) in $store.state.items" v-if="v.idx>8">
+            <div class="imgbx">
+                <img
+                    v-bind:src="'./images/products/'+v.category+'/shrinkage/sum1/goods_name' + (v.idx) + '.png'"
+                    v-bind:alt="'goods_name' + (v.idx) + '_' + v.category">
+                <img class="hover"
+                    v-bind:src="'./images/products/'+v.category+'/shrinkage/sum2/goods_name' + (v.idx) + '.png'" 
+                    v-bind:alt="'goods_name' + (v.idx) + '_' + v.category">
+            </div>
+            <div class="descbx">
+                <h6 class="tit" v-text="v.gname"></h6>
+                <div class="desc">
+                    <p class="price" v-if="v.gprice!==''" v-text="'￦ ' + insComma(v.gprice)"></p>
                     <span class="material">{{v.material}}</span>
                     <div class="gem_opt_bx" v-if="v.gemstone!==''">
                         <span class="bar"> / </span>
@@ -29,11 +224,19 @@ Vue.component("product2-comp",{
         </div>
     </div>
     `,
+    methods:{
+        // 가격 3자리마다 콤마 붙이는 메서드
+        insComma(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+        chgCtg(x){
 
-});
+        },
+    },
+}); ///////////////////// 2번째 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
 
 
-// 뷰 인스턴스 생성하기
+//////////////// 2번째 그리드박스 뷰 인스턴스 생성하기 ////////////////////////////////
 new Vue({
     el:"#gbx2",
     store,
@@ -41,7 +244,7 @@ new Vue({
     data:{
         // 제이슨 데이터 담을 변수
         items:{},
-
+        categorys:{},
     },
     // 뷰 인스턴스 생성 직후의 구역
     created(){
@@ -52,14 +255,36 @@ new Vue({
     mounted(){
         
     },
-});
+}); ///////////////// 2번째 그리드박스 뷰 인스턴스 생성하기 ////////////////////////////////
 
-// 클래스 바꾸는 메서드
-function chgCls(idx){
-    if(idx){
-        
-    }
-}
+
+/////////////////// 더보기 박스 컴포넌트 만들기 ///////////////////////
+Vue.component("more-comp", {
+    template:`
+    <div class="morebx">
+        <div class="txt">
+            <span class="product_count">{{$store.state.items.length}}</span>개의 제품 중 <span class="product_count">{{$store.state.items.length}}</span>개
+        </div>
+        <button class="morebtn">더 보기</button>
+    </div>
+    `,
+}); //////////////// 더보기 박스 컴포넌트 만들기 ///////////////////////
+
+
+////////////////// 더보기 박스 뷰 인스턴스 만들기 /////////////////////////
+new Vue({
+    el:"#morebx",
+    store,
+    data:{
+        items:{},
+    },
+}); ////////////////// 더보기 박스 뷰 인스턴스 만들기 ////////////////////////
+
+
+
+
+
+
 
 
 
@@ -80,26 +305,18 @@ $(".classification ul>ul>li").click(function(){
         $(this).parents(".classification").siblings(".filterFn").addClass("on")
         .find(`.${clsName}`).addClass("on");
     }
-    else{
-        console.log("나말고!: ", $(this).siblings().find(".icon").text());
+    else {
+        console.log("나말고!: ");
 
         // 만약 다른 요소들의 아이콘 모양이 "더보기"인 경우 자신의 옵션 선택 박스만 닫기
-        if($(this).siblings().find(".icon").text() === "expand_more"){
-            console.log("나말고 다른 옵션 더보기중!");
-            // icon.text("expand_more");
-            // $(this).parents(".classification").siblings(".filterFn").removeClass("on")
-            // .find(`.${clsName}`).removeClass("on");
-        }
         isMore = 1;
         console.log("더보기상태야?: ", isMore);
 
-
-
         icon.text("expand_more");
-        // $().removeClass("on");
-        // $(this).parents(".classification").siblings(".filterFn").removeClass("on")
-        // .find(`.${clsName}`).removeClass("on");
+        $(this).parents(".classification").siblings(".filterFn").removeClass("on")
+        .find(`.${clsName}`).removeClass("on");
     }
+
 });
 
 //////////////////////// [ 메인영역 필터바의 필터명 클릭시 필터옵션 박스에 클래스 추가해서 보이게 만들기 - 끝] ////////////////////////

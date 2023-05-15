@@ -172,7 +172,7 @@ select#selecbx:focus{
 
 /******************************************* 메인 영역 *******************************************/
 
-/* 그리드 박스 */
+/* 그리드 박스 공통 세팅 */
 .grid {
     display: grid;
     /* 가로방향 12그리드 셋팅 */
@@ -190,31 +190,16 @@ select#selecbx:focus{
     padding: 50px 20px 0;
     
 }
+/* 1번째 그리드박스 세팅 */
+.grid.grid1{
+    margin-bottom: 20px;
+}
+/* 2번째 그리드박스 세팅 */
+.grid.grid2{
+    padding-top: 0;
+    grid-template-columns: repeat(4, 1fr);
+}
 
-/* 1번째줄 */
-.rw1 {
-    background-color: lightblue;
-}
-/* 2번째줄 */
-.rw2 {
-    background-color: lightcoral;
-}
-/* 3번째줄 */
-.rw3 {
-    background-color: lightgreen;
-}
-/* 4번째줄 */
-.rw4 {
-    background-color: lightgoldenrodyellow;
-}
-/* 5번째줄 */
-.rw5 {
-    background-color: lightsteelblue;
-}
-/* 6번째줄 */
-.rw6 {
-    background-color: lightpink;
-}
 
 /* 각 컨텐츠 박스의 그리드 위치영역 설정하기 */
 /* 1번째 줄 */
@@ -256,33 +241,6 @@ select#selecbx:focus{
 .rw4.productbx[data-pnum="8"] {
     grid-column: 4/7;
 }
-/* 5번째 줄 */
-.rw5.productbx[data-pnum="9"] {
-    grid-column: 1/4;
-}
-.rw5.productbx[data-pnum="10"] {
-    grid-column: 4/7;
-}
-.rw5.productbx[data-pnum="11"] {
-    grid-column: 7/10;
-}
-.rw5.productbx[data-pnum="12"] {
-    grid-column: 10/13;
-}
-/* 6번째 줄 */
-.rw6.productbx[data-pnum="13"] {
-    grid-column: 1/4;
-}
-.rw6.productbx[data-pnum="14"] {
-    grid-column: 4/7;
-}
-.rw6.productbx[data-pnum="15"] {
-    grid-column: 7/10;
-}
-.rw6.productbx[data-pnum="16"] {
-    grid-column: 10/13;
-}
-
 
 /* 그리드 박스 내부 디자인 */
 /* 그리드 직계 div박스 */
@@ -334,6 +292,8 @@ select#selecbx:focus{
 .productbx>.imgbx>.hover{
     display: none;
 }
+
+
 /* 제품 설명 박스 - 겉박스 세팅 */
 .productbx>.descbx{
     padding: 10px 0;
@@ -351,6 +311,9 @@ select#selecbx:focus{
 /* 제품 설명 박스  - 소재, 젬스톤 */
 .productbx>.descbx span{
     font-size: 14px;
+}
+.gem_opt_bx{
+    display: inline-block;
 }
 
 
@@ -455,31 +418,10 @@ select#selecbx:focus{
     .rw4.productbx[data-pnum="8"] {
         grid-column: 7/13;
     }
-    /* 5번째 줄 */
-    .rw5.productbx[data-pnum="9"] {
-        grid-column: 1/7;
-    }
-    .rw5.productbx[data-pnum="10"] {
-        grid-column: 7/13;
-    }
-    .rw5.productbx[data-pnum="11"] {
-        grid-column: 1/7;
-    }
-    .rw5.productbx[data-pnum="12"] {
-        grid-column: 7/13;
-    }
-    /* 6번째 줄 */
-    .rw6.productbx[data-pnum="13"] {
-        grid-column: 1/7;
-    }
-    .rw6.productbx[data-pnum="14"] {
-        grid-column: 7/13;
-    }
-    .rw6.productbx[data-pnum="15"] {
-        grid-column: 1/7;
-    }
-    .rw6.productbx[data-pnum="16"] {
-        grid-column: 7/13;
+
+    /* 2번째 그리드박스 */
+    .grid.grid2{
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 /* 600px 사이즈 이하 미디어쿼리 끝 */
