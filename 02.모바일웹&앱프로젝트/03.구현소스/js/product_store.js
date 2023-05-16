@@ -2,23 +2,27 @@
 
 
 // 제품 데이터 json 가져오기
-import goods_bracelets from "./data/goods-bracelets.json" assert{type:"json"};
-import goods_necklaces from "./data/goods-necklaces.json" assert{type:"json"};
-import goods_earrings from "./data/goods-earrings.json" assert{type:"json"};
+import goods_bracelets from "./data/goods-bracelets.js";
+import goods_necklaces from "./data/goods-necklaces.js";
+import goods_earrings from "./data/goods-earrings.js";
 
 ///////////////////////////// [ 뷰엑스 스토어를 활용한 변수 세팅하기 ] /////////////////////////////
 const store = new Vuex.Store({
     // [ 데이터 세팅 구역 ]
     state:{
-        // 제이슨 데이터를 담을 변수
-        items: [],
+        // 제품 데이터를 담을 변수
+        items: {goods_bracelets, goods_necklaces, goods_earrings},
 
-        // 공통 처리 카테고리 변수
-        // categorys: ["bracelets", "earrings", "necklaces", "rings"],
-        categorys:"",
-
+        // 공통 처리 제품명 변수
+        name:"",
+        // 공통 처리 가격 변수
+        price:"",
         // 공통 처리 카테고리명 변수
         cat:"",
+        // 공통 처리 재질 변수
+        metarial:"",
+        // 공통 처리 젬스톤 변수
+        gemstone:"",
     },
 
     // [ 데이터 변경 메서드 구역 ] : 여기에 있는 것 호출 시 commit()사용하기
@@ -46,12 +50,8 @@ const store = new Vuex.Store({
             st.stcategorys = x;
             console.log("카테고리좀 바꾸자ㅠㅠ: ", st.stcategorys);
         },
-    },
-
-    // [ 백엔드 관련 코딩 비동기 처리 메서드 구역 ] : 호출시 dispatch() 사용하기
-    actions:{
-        // 제이슨 데이터 로드하는 메서드
-        initData({commit}){
+        // 제품 데이터 초기화하는 메서드
+        initData(){
             // 제이슨 데이터를 변수에 할당하기
             const result = goods_bracelets;
 
@@ -61,6 +61,11 @@ const store = new Vuex.Store({
             commit("setData", result);
         }
     },
+
+    // // [ 백엔드 관련 코딩 비동기 처리 메서드 구역 ] : 호출시 dispatch() 사용하기
+    // actions:{
+    //     
+    // },
 });
 
 

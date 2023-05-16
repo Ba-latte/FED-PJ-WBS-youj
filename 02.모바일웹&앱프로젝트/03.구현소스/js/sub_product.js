@@ -82,7 +82,7 @@ Vue.component("product1-comp",{
         </div>
         <div class="rw1 productbx" data-pnum="1">
             <div class="imgbx">
-                <img :src="'./images/products/'+$store.state.categorys+'/shrinkage/sum1/goods_name1.png'" alt="세르펜티 바이퍼 브레이슬릿">
+                <img src="./images/products/bracelets/shrinkage/sum1/goods_name1.png" alt="세르펜티 바이퍼 브레이슬릿">
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name1.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
@@ -288,7 +288,7 @@ new Vue({
     // 뷰 인스턴스 생성 직후의 구역
     created(){
         // 뷰엑스 스토어 액션스 구역 메서드인 initData() 호출하기
-        store.dispatch("initData");
+        // store.commit("initData");
     },
     // 돔 연결 후 구역
     mounted(){
@@ -328,7 +328,7 @@ new Vue({
     // 뷰 인스턴스 생성 직후의 구역
     created(){
         // 뷰엑스 스토어 액션스 구역 메서드인 initData() 호출하기
-        store.dispatch("initData");
+        .commit("initData");
     },
     // 돔 연결 후 구역
     mounted(){
