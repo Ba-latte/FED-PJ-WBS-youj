@@ -19,11 +19,13 @@ import store from "./product_store.js";
         pm = location.href.split("?")[1].split("=")[1];
         // 물음표로 잘라내서 뒤의 것, 이퀄로 잘라내서 뒤의 것 값(파라미터값)만 추출함! split()
     // pm에 할당이 되었다면 undefined가 아니므로 true가 나옴!
-    if(pm)
+    if(pm){
         store.commit("setData", decodeURI(pm));
+    }
     // 👇메뉴를 선택해서 파라미터로 들어오지 않고! 그냥 들어갔을 때의 첫 화면은 아래 데이터가 뿌려지게 하기
-    else
-        store.commit("setData", pm);
+    else{
+        // store.commit("initData");
+    }
     // URI/URIComponent의 차이점
     // decodeURI() : 딱 변경할 문자열만 있어야 변환됨
     // decodeURIComponent() : url 전체에 섞여 있어도 모두 변환해줌
@@ -36,27 +38,35 @@ Vue.component("lmenu-comp", {
     template:`
     <ol class="list category">
         <li class="rings">
-            <a href="#" v-on:click="$store.commit('setData','rings')">
+            <a href="#" v-on:click="setData('rings')">
                 <span class="btn">링</span>
             </a>
         </li>
         <li class="necklaces">
-            <a href="#" v-on:click="$store.commit('setData','necklaces')">
+            <a href="#" v-on:click="setData('necklaces')">
                 <span class="btn">네크리스</span>
             </a>
         </li>
         <li class="bracelets">
-            <a href="#" v-on:click="$store.commit('setData','bracelets')">
+            <a href="#" v-on:click="setData('bracelets')">
                 <span class="btn">브레이슬릿</span>
             </a>
         </li>
         <li class="earrings">
-            <a href="#" v-on:click="$store.commit('setData','earrings')">
+            <a href="#" v-on:click="setData('earrings')">
                 <span class="btn">이어링</span>
             </a>
         </li>
     </ol>
     `,
+    methods:{
+        setData(param){
+            console.log("업데이트!", param);
+            // 스토어 변수를 업데이트한다!!
+
+            store.commit('setData',param);
+        },
+    },
 }); ////////////////////////////////// lnb메뉴 컴포넌트 ////////////////////////////////////////
 
 ////////////////////////////////// lnb메뉴 뷰 인스턴스 ////////////////////////////////////////
@@ -86,12 +96,12 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name1.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{$store.state.items[0]["gname"]}}</h6>
+                <h6 class="tit">{{$store.state.items.bracelets.bracelets1.gname}}</h6>
                 <div class="desc">
-                    <p class="price" v-if="$store.state.items[0].gprice!==''" v-text="'￦ ' + insComma($store.state.items[0].gprice)"></p>
-                    <span class="material">{{$store.state.items[0]["material"]}}</span>
+                    <p class="price" v-text="'￦ ' + insComma()"></p>
+                    <span class="material"></span>
                     <span class="bar"> / </span>
-                    <span class="gemstone">{{$store.state.items[0]["gemstone"]}}</span>
+                    <span class="gemstone"></span>
                 </div>
             </div>
         </div>
@@ -101,12 +111,12 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name2.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{$store.state.items[1]["gname"]}}</h6>
+                <h6 class="tit"></h6>
                 <div class="desc">
-                    <p class="price" v-if="$store.state.items[1].gprice!==''" v-text="'￦ ' + insComma($store.state.items[1].gprice)"></p>
-                    <span class="material">{{$store.state.items[1]["material"]}}</span>
+                    <p class="price" v-text="'￦ ' + insComma()"></p>
+                    <span class="material"></span>
                     <span class="bar"> / </span>
-                    <span class="gemstone">{{$store.state.items[1]["gemstone"]}}</span>
+                    <span class="gemstone"></span>
                 </div>
             </div>
         </div>
@@ -117,12 +127,12 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name3.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{$store.state.items[2]["gname"]}}</h6>
+                <h6 class="tit"></h6>
                 <div class="desc">
-                    <p class="price" v-if="$store.state.items[2].gprice!==''" v-text="'￦ ' + insComma($store.state.items[2].gprice)"></p>
-                    <span class="material">{{$store.state.items[2]["material"]}}</span>
+                    <p class="price" v-text="'￦ ' + insComma()"></p>
+                    <span class="material"></span>
                     <span class="bar"> / </span>
-                    <span class="gemstone">{{$store.state.items[2]["gemstone"]}}</span>
+                    <span class="gemstone"></span>
                 </div>
             </div>
         </div>
@@ -132,12 +142,12 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name4.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{$store.state.items[3]["gname"]}}</h6>
+                <h6 class="tit"></h6>
                 <div class="desc">
-                    <p class="price" v-if="$store.state.items[3].gprice!==''" v-text="'￦ ' + insComma($store.state.items[0].gprice)"></p>
-                    <span class="material">{{$store.state.items[3]["material"]}}</span>
+                    <p class="price" v-text="'￦ ' + insComma()"></p>
+                    <span class="material"></span>
                     <span class="bar"> / </span>
-                    <span class="gemstone">{{$store.state.items[3]["gemstone"]}}</span>
+                    <span class="gemstone"></span>
                 </div>
             </div>
         </div>
@@ -148,12 +158,12 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name5.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{$store.state.items[4]["gname"]}}</h6>
+                <h6 class="tit"></h6>
                 <div class="desc">
-                    <p class="price" v-if="$store.state.items[4].gprice!==''" v-text="'￦ ' + insComma($store.state.items[3].gprice)"></p>
-                    <span class="material">{{$store.state.items[4]["material"]}}</span>
+                    <p class="price" v-text="'￦ ' + insComma()"></p>
+                    <span class="material"></span>
                     <span class="bar"> / </span>
-                    <span class="gemstone">{{$store.state.items[4]["gemstone"]}}</span>
+                    <span class="gemstone"></span>
                 </div>
             </div>
         </div>
@@ -163,12 +173,12 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name6.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{$store.state.items[5]["gname"]}}</h6>
+                <h6 class="tit"></h6>
                 <div class="desc">
-                    <p class="price" v-if="$store.state.items[5].gprice!==''" v-text="'￦ ' + insComma($store.state.items[4].gprice)"></p>
-                    <span class="material">{{$store.state.items[5]["material"]}}</span>
+                    <p class="price" v-text="'￦ ' + insComma()"></p>
+                    <span class="material"></span>
                     <span class="bar"> / </span>
-                    <span class="gemstone">{{$store.state.items[5]["gemstone"]}}</span>
+                    <span class="gemstone"></span>
                 </div>
             </div>
         </div>
@@ -184,12 +194,12 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name7.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{$store.state.items[6]["gname"]}}</h6>
+                <h6 class="tit"></h6>
                 <div class="desc">
-                    <p class="price" v-if="$store.state.items[6].gprice!==''" v-text="'￦ ' + insComma($store.state.items[5].gprice)"></p>
-                    <span class="material">{{$store.state.items[6]["material"]}}</span>
+                    <p class="price" v-text="'￦ ' + insComma()"></p>
+                    <span class="material"></span>
                     <span class="bar"> / </span>
-                    <span class="gemstone">{{$store.state.items[6]["gemstone"]}}</span>
+                    <span class="gemstone"></span>
                 </div>
             </div>
         </div>
@@ -199,24 +209,30 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name8.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit">{{$store.state.items[7]["gname"]}}</h6>
+                <h6 class="tit"></h6>
                 <div class="desc">
-                    <p class="price" v-if="$store.state.items[7].gprice!==''" v-text="'￦ ' + insComma($store.state.items[6].gprice)"></p>
-                    <span class="material">{{$store.state.items[7]["material"]}}</span>
+                    <p class="price" v-text="'￦ ' + insComma()"></p>
+                    <span class="material"></span>
                     <span class="bar"> / </span>
-                    <span class="gemstone">{{$store.state.items[7]["gemstone"]}}</span>
+                    <span class="gemstone"></span>
                 </div>
             </div>
         </div>
     </div>
     `,
+    data(){
+        return{
+        }
+    },
     methods:{
+
         // 가격 3자리마다 콤마 붙이는 정규식 메서드
         insComma(x) {
             // 만약 x가 비어있으면 아무런 처리 없이 리턴하고, x에 값이 있다면 정규식으로 표현하기
             if(!x) return;
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         },
+
     },
 }); /////////////////////////////// 1번째 그리드박스 컴포넌트 만들기 ///////////////////////////////
 
@@ -226,7 +242,7 @@ new Vue({
     el:"#gbx1",
     store,
     data:{
-        items:[],
+        
     },
     mounted(){
 
@@ -267,9 +283,7 @@ Vue.component("product2-comp",{
         insComma(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         },
-        chgCtg(x){
 
-        },
     },
 }); ///////////////////// 2번째 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
 
@@ -283,59 +297,27 @@ new Vue({
     data:{
         // 제이슨 데이터 담을 변수
         items:{},
-        categorys:{},
     },
     // 뷰 인스턴스 생성 직후의 구역
     created(){
         // 뷰엑스 스토어 액션스 구역 메서드인 initData() 호출하기
         // store.commit("initData");
+        
     },
     // 돔 연결 후 구역
     mounted(){
         // 마우스오버시 이미지 변경되는 함수 호출하기
         pdHoverFn();
+
+        // lnb클릭시 a요소 기본기능 막기
+        $(".category.list>li").click(function(e){
+            e.preventDefault();
+        })
     },
 }); ///////////////// 2번째 그리드박스 뷰 인스턴스 생성하기 ////////////////////////////////
 
 
 
-/////////////////////// 3번째 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
-Vue.component("product3-comp",{
-    template:`
-    `,
-    methods:{
-        // 가격 3자리마다 콤마 붙이는 메서드
-        insComma(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        },
-        chgCtg(x){
-
-        },
-    },
-}); ///////////////////// 3번째 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
-
-
-//////////////// 3번째 그리드박스 뷰 인스턴스 생성하기 ////////////////////////////////
-new Vue({
-    el:"#gbx3",
-    store,
-    // 뷰 인스턴스에서 사용할 데이터 구역
-    data:{
-        // 제이슨 데이터 담을 변수
-        items:{},
-        categorys:{},
-    },
-    // 뷰 인스턴스 생성 직후의 구역
-    created(){
-        // 뷰엑스 스토어 액션스 구역 메서드인 initData() 호출하기
-        .commit("initData");
-    },
-    // 돔 연결 후 구역
-    mounted(){
-        // 마우스오버시 이미지 변경되는 함수 호출하기
-        pdHoverFn();
-    },
-}); ///////////////// 3번째 그리드박스 뷰 인스턴스 생성하기 ////////////////////////////////
 
 
 

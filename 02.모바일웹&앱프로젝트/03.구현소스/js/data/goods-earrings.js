@@ -1,4 +1,4 @@
-const goods_earrings = {
+const earrings = {
     earrings1: {
         idx: "1",
         category: "necklaces",
@@ -58,4 +58,4 @@ const goods_earrings = {
 };
 
 
-export default goods_earrings;
+export default earrings;
