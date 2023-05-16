@@ -46,7 +46,47 @@ Vue.component("lnb1-comp",{
             // 스토어 변수를 업데이트한다!!
             store.commit('chgData',pm);
             store.commit("chgtit",pm);
-        }
+            
+            this.setFirst(pm);
+        },
+        setFirst(pm){
+            console.log("자식에게 있는것!");
+            // 서브페이지데이터 중 브랜드 메뉴의 페이지 속성명 배열
+            let subCat = ["bulgari_history","bulgari_identity","bulgari_innovation"];
+            // 서브페이지데이터 중 각 페이지의 객체명 배열
+            let catName = [high_jewelry_menu_data,brand_menu_data];
+            // 가지고 들어온 전달변수값이 subCat 변수에 담긴 배열 중 어느 값의 순번에 해당하는지 확인 후, 이 배열 안에 해당되는게 없으면 0을 / 해당되는 게 있다면 1을 할당하도록 하기
+            let cnum = subCat.indexOf(pm)!=-1?1:0;
+
+            console.log("검사:",subCat.indexOf(pm));
+
+            // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
+            // 서브페이지데이터 중 각 페이지의 객체명 배열이 cnum에 따라서 0/1이 되고, 그 말은 하이주얼리메뉴와 브랜드메뉴로 구분되어진다는 말임
+            // ->그렇게 구분 후 각 객체의 pgName속성의 값에서 모든"_"를 " "로 바꾼 후, 전부 대문자로 바꾸기            
+            const mdata = catName[cnum][pm].pgName.replaceAll("_", " ").toUpperCase();
+
+            console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+
+            // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+            // title태그 변수에 할당하기
+            const sub_pg_tit = $("title");
+
+            // title태그의 텍스트 데이터를 바꾸기
+            sub_pg_tit.text(mdata + " 컴포| 불가리 공식 온라인 스토어");
+
+            // 데이터 바꾸기 함수 호출
+            // 가져온 전달변수의 값을 가지고 chgData로 들어가기(?)
+            store.commit('chgData',pm);
+    
+            // cnum 이 1이면 브랜드 이므로 상단, 하단 안보이게 처리함!
+            if(cnum===1)
+            $(".video_bx").hide();
+            else
+            $(".video_bx").show();
+
+            // 6.url 강제 변경하기
+            history.pushState(null,null,"sub.html?cat="+pm);
+        },
     }
 }); /////////////////// lnb-comp 전역 컴포넌트 //////////////////////
 
@@ -110,7 +150,7 @@ Vue.component("lnb2-comp",{
             const sub_pg_tit = $("title");
 
             // title태그의 텍스트 데이터를 바꾸기
-            sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
+            sub_pg_tit.text(mdata + " 컴포| 불가리 공식 온라인 스토어");
 
             // 데이터 바꾸기 함수 호출
             // 가져온 전달변수의 값을 가지고 chgData로 들어가기(?)
@@ -121,6 +161,9 @@ Vue.component("lnb2-comp",{
             $(".video_bx").hide();
             else
             $(".video_bx").show();
+
+            // 6.url 강제 변경하기
+            history.pushState(null,null,"sub.html?cat="+pm);
         },
     }
 }); /////////////////// lnb-comp 전역 컴포넌트 //////////////////////
@@ -305,7 +348,7 @@ const contVue = new Vue({
             // title태그 변수에 할당하기
             const sub_pg_tit = $("title");
             // title태그의 텍스트 데이터를 바꾸기
-            sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
+            sub_pg_tit.text(mdata + " 뷰| 불가리 공식 온라인 스토어");
     
             // 가져온 전달변수의 값을 가지고 chgData로 들어가기(?)
             store.commit('chgData',this.param);

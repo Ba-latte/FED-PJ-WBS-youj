@@ -55,7 +55,7 @@ $(()=>{
         }
         // 주얼리 하위 메뉴
         else if(atxt === "rings" || atxt === "necklaces" || atxt === "bracelets" || atxt === "earrings"){
-            location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
+            // location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
         }
         // 인게이지먼트&웨딩 하위 메뉴
         else if(atxt === "engagement_rings" || atxt === "women's_wedding_bands" || atxt === "men's_wedding_bands" || atxt === "couple_rings"){

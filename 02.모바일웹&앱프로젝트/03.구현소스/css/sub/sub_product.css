@@ -199,6 +199,11 @@ select#selecbx:focus{
     padding-top: 0;
     grid-template-columns: repeat(4, 1fr);
 }
+/* 3번째 그리드박스 세팅 */
+.grid.grid3{
+    padding-top: 0;
+    grid-template-columns: repeat(4, 1fr);
+}
 
 
 /* 각 컨텐츠 박스의 그리드 위치영역 설정하기 */
@@ -282,15 +287,24 @@ select#selecbx:focus{
     font-size: 14px;
     color: var(--white);
 }
-
+.productbx{
+    /* position: relative; */
+}
 /* 제품 이미지 하단의 간단한 설명 박스 디자인 */
 .productbx>.imgbx{
+    position: relative;
     overflow: hidden;
     /* 넘치는 자식요소 숨기기 */
 }
+.productbx>.imgbx>img:first-child{
+    /* position: absolute; */
+}
 /* 제품 착용샷 숨겨두기 */
-.productbx>.imgbx>.hover{
-    display: none;
+.productbx>.imgbx>img:last-child{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
