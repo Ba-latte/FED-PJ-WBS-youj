@@ -51,7 +51,7 @@ const goods_total_list = [
         {
             idx: "8",
             category: "bracelets",
-            ginfo:["goods_name", ""],
+            ginfo:["goods_name8", ""],
             material: "pink-gold",
             gemstone: "diamond",
         },

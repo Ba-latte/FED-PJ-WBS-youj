@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> | 불가리 공식 온라인 스토어</title>
+    <title> | 라우터로 뿌려보기</title>
     <!-- 파비콘 -->
     <link rel="icon" type="image/png" href="https://www.bulgari.com/on/demandware.static/Sites-KR-Site/-/default/dwafe1f737/images/favicons/favicon-48x48.png" sizes="48x48">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.bulgari.com/on/demandware.static/Sites-KR-Site/-/default/dw8f9292ee/images/favicons/apple-touch-icon-57x57.png">
@@ -39,8 +39,7 @@
 	<!-- 링크시스템 JS -->
 	<script src="./js/linksys.js"></script>
 	<!-- 외부 JS 넣기 -->
-	<script src="./js/sub_product.js" type="module"></script>
-	<!-- <script src="./js/sub_category.js" type="module"></script> -->
+	<script src="./js/glist.js" type="module"></script>
 
 </head>
 <body>
@@ -184,7 +183,7 @@
 							</li>
 							<li>
 								<a href="#" class="jewellery">주얼리</a>
-								<div class="lnb jewellery" id="lmenu1">
+								<div class="lnb jewellery" id="lmenu">
 									<!-- 주얼리 하위 메뉴 -->
 									<lmenu-comp></lmenu-comp>
 									<ul class="list recommended">
@@ -414,9 +413,29 @@
 							</li>
 							<li>
 								<a href="#" class="jewellery">주얼리</a>
-								<div class="lnb jewellery" id="lmenu2">
-									<!-- 주얼리 하위 메뉴 -->
-									<lmenu-comp></lmenu-comp>
+								<div class="lnb jewellery">
+									<ol class="list category">
+										<li>
+											<a href="#">
+												<span class="btn">링</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="btn">네크리스</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="btn">브레이슬릿</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="btn">이어링</span>
+											</a>
+										</li>
+									</ol>
 									<ul class="list recommended">
 										<li>
 											<a href="#">
@@ -1148,7 +1167,8 @@
 				<section class="product_list">
 					<!-- 1번째 그리드박스 : 1번째 ~ 4번째 줄 -->
 					<div id="gbx1">
-						<product1-comp></product1-comp>
+						
+						<!-- <product1-comp></product1-comp> -->
 					</div>
 					<!-- 2번째 그리드박스 : 5번째 줄 ~  -->
 					<div id="gbx2">
