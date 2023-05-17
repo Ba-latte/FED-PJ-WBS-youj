@@ -38,28 +38,34 @@ Vue.component("lmenu-comp", {
     template:`
     <ol class="list category">
         <li class="rings">
-            <a href="#" >
+            <a href="#" v-on:click="setData('rings')">
                 <span class="btn">링</span>
             </a>
         </li>
         <li class="necklaces">
-            <a href="#" >
+            <a href="#" v-on:click="setData('necklaces')">
                 <span class="btn">네크리스</span>
             </a>
         </li>
         <li class="bracelets">
-            <a href="#">
+            <a href="#" v-on:click="setData('bracelets')">
                 <span class="btn">브레이슬릿</span>
             </a>
         </li>
         <li class="earrings">
-            <a href="#">
+            <a href="#" v-on:click="setData('earrings')">
                 <span class="btn">이어링</span>
             </a>
         </li>
     </ol>
     `,
     methods:{
+        setData(param){
+            console.log("업데이트!", param);
+            // 스토어 변수를 업데이트한다!!
+
+            store.commit('setData',param);
+        },
     },
 }); ////////////////////////////////// lnb메뉴 컴포넌트 ////////////////////////////////////////
 
@@ -90,7 +96,7 @@ Vue.component("product1-comp",{
                 <img class="hover" src="./images/products/bracelets/shrinkage/sum2/goods_name1.png" alt="세르펜티 바이퍼 브레이슬릿">
             </div>
             <div class="descbx">
-                <h6 class="tit"></h6>
+                <h6 class="tit">{{$store.state.items.bracelets.bracelets1.gname}}</h6>
                 <div class="desc">
                     <p class="price" v-text="'￦ ' + insComma()"></p>
                     <span class="material"></span>
@@ -245,6 +251,71 @@ new Vue({
 
 
 
+/////////////////////// 2번째 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
+Vue.component("product2-comp",{
+    template:`
+    <div class="grid grid2">
+        <div v-bind:class="'productbx'" data-pnum="" v-for="(v,i) in $store.state.cat.goods_list" >
+            <div class="imgbx">
+                <img
+                    v-bind:src="'./images/products/'+v.category+'/shrinkage/sum1/goods_name' + (v.idx) + '.png'"
+                    v-bind:alt="'goods_name' + (v.idx) + '_' + v.category">
+                <img class="hover"
+                    v-bind:src="'./images/products/'+v.category+'/shrinkage/sum2/goods_name' + (v.idx) + '.png'" 
+                    v-bind:alt="'goods_name' + (v.idx) + '_' + v.category">
+            </div>
+            <div class="descbx">
+                <h6 class="tit" v-text="v.gname"></h6>
+                <div class="desc">
+                    <p class="price" v-if="v.gprice!==''" v-text="'￦ ' + insComma(v.gprice)"></p>
+                    <span class="material">{{v.material}}</span>
+                    <div class="gem_opt_bx" v-if="v.gemstone!==''">
+                        <span class="bar"> / </span>
+                        <span class="gemstone">{{v.gemstone}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `,
+    methods:{
+        // 가격 3자리마다 콤마 붙이는 메서드
+        insComma(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+
+    },
+}); ///////////////////// 2번째 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
+
+
+
+//////////////// 2번째 그리드박스 뷰 인스턴스 생성하기 ////////////////////////////////
+new Vue({
+    el:"#gbx2",
+    store,
+    // 뷰 인스턴스에서 사용할 데이터 구역
+    data:{
+        // 제이슨 데이터 담을 변수
+        items:{},
+    },
+    // 뷰 인스턴스 생성 직후의 구역
+    created(){
+        // 뷰엑스 스토어 액션스 구역 메서드인 initData() 호출하기
+        // store.commit("initData");
+        
+    },
+    // 돔 연결 후 구역
+    mounted(){
+        // 마우스오버시 이미지 변경되는 함수 호출하기
+        pdHoverFn();
+
+        // lnb클릭시 a요소 기본기능 막기
+        $(".category.list>li").click(function(e){
+            e.preventDefault();
+        })
+    },
+}); ///////////////// 2번째 그리드박스 뷰 인스턴스 생성하기 ////////////////////////////////
+
 
 
 
@@ -255,7 +326,7 @@ Vue.component("more-comp", {
     template:`
     <div class="morebx">
         <div class="txt">
-            <span class="product_count"></span>개의 제품 중 <span class="product_count"></span>개
+            <span class="product_count">{{$store.state.items.length}}</span>개의 제품 중 <span class="product_count">{{$store.state.items.length}}</span>개
         </div>
         <button class="morebtn">더 보기</button>
     </div>
