@@ -153,7 +153,7 @@ new Vue({
     // 뷰 인스턴스 생성 직후의 구역
     created(){
         // 뷰엑스 스토어 액션스 구역 메서드인 initData() 호출하기
-        store.commit("initData");
+        store.commit("initData", "jewellery");
         
     },
     // 돔 연결 후 구역
@@ -180,7 +180,7 @@ Vue.component("more-comp", {
     template:`
     <div class="morebx">
         <div class="txt">
-            <span class="product_count">{{}}</span>개의 제품 중 <span class="product_count">{{}}</span>개
+            <span class="product_count">{{$store.state.cnt}}</span>개의 제품 중 <span class="product_count">{{$store.state.cnt}}</span>개
         </div>
         <button class="morebtn">더 보기</button>
     </div>

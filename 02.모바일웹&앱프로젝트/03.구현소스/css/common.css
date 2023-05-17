@@ -592,6 +592,10 @@ header.mob.top.fixed{
     margin-bottom: 15px;
 }
 /* LNB 메뉴의 카테고리 리스트 하위 썸네일 이미지 박스의 이미지 세팅 (하이주얼리, 브랜드) */
+.mob .lnb .thumbnail_img{
+    width: 460px;
+}
+
 .mob .lnb .thumbnail_img>img{
     width: 100%;
     aspect-ratio: 460/215;

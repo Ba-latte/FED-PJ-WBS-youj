@@ -19,7 +19,7 @@ const fillter_data = {
             <!-- (1)정렬 기준 -->
             <div class="sort_bar">
                 <div class="total_stock">
-                    <span class="product_count">37</span>개의 제품 중 <span class="product_count">24</span>개
+                    <span class="product_count">{{$store.state.cnt}}</span>개의 제품 중 <span class="product_count">{{$store.state.cnt}}</span>개
                 </div>
                 <div class="sort">
                     <span class="txt">정렬 기준:</span>

@@ -17,6 +17,8 @@ const store = new Vuex.Store({
         price:"",
         // 공통 처리 카테고리명 변수
         cat:"",
+        // 공통 처리 갯수 변수
+        cnt:"",
         // 공통 처리 재질 변수
         material:"",
         // 공통 처리 젬스톤 변수
@@ -39,15 +41,23 @@ const store = new Vuex.Store({
             // 카테고리명 바꾸기
             st.cat = pm;
             console.log("카테고리는? : ", pm);
-            // // 재질 바꾸기
-            // st.items.forEach((v,i)=>{
-            //     console.log('재질은?', v.material);
-            // })
+
+            // 전체 갯수 세기
+            console.log("전체 길이는?", st.items.length);
+            st.cnt = st.items.filter(function(x){
+                return x.category == pm
+            }).length
+            console.log(pm, " 의 총 개수는? : ", st.cnt);
+
         },
         // 최초 화면 셋업 메서드
         initData(st, pm){
-            console.log("최초화면!");
-            this.commit("setData", "rings");
+            console.log("최초화면!", pm);
+            if(pm === "jewellery"){
+                // this.commit("setData", "rings");
+                
+            }
+            
         },
         // 가격 3자리마다 콤마 붙이는 정규식 메서드
         insComma(x) {
