@@ -2,22 +2,52 @@
 
 /* 불가리 PJ 제품 상세 페이지 CSS - product_detail.css */
 
-/* 외부 CSS 머징 */
-@import url(../reset.css);
-@import url(../core.css);
-@import url(../common.css);
 
-body #cont * {
-    /* outline: 1px dashed red; */
+
+
+/* 부모 박스에 por줘서 화면 전체 까맣게 감싸기 */
+#test {
+    position: relative;
 }
 
-#cont {
-    padding: 100px 20px;
-}
 /* 섹션1 제품 상세사항 겉박스 */
 .pd_detail_bx{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    
+    background-color: rgba(20, 20, 20, 0.712);
+
+    /* 처음에 숨겨두기 */
+    display: none;
+}
+.pd_detail_bx .close_btn_bx>.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+
+    font-size: 45px;
+    color: var(--black);
+
+    cursor: pointer;
+}
+
+.pd_detail_bx>.wrap{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1300px;
+    padding: 50px;
+
     display: flex;
     justify-content: center;
+
+    background-color: var(--white);
 }
 /* 이미지 배너 겉박스 */
 .img_ban_bx{
@@ -25,6 +55,19 @@ body #cont * {
     height: 630px;
     /* background-color: var(--black); */
 }
+
+
+/* 제품 상세 사항 설명 박스 */
+/* 제품 설명 겉박스 */
+.desc_bx{
+    line-height: 1.8;
+}
+/* 가격 */
+.pd_detail_bx .price{
+    font-size: 18px;
+    font-weight: bold;
+}
+
 /* 썸네일 갤러리 스와이퍼 배너 디자인 세팅 */
 .swiper {
     width: 100%;

@@ -55,7 +55,7 @@ $(()=>{
         }
         // 주얼리 하위 메뉴
         else if(atxt === "rings" || atxt === "necklaces" || atxt === "bracelets" || atxt === "earrings"){
-            // location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
+            location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
         }
         // 인게이지먼트&웨딩 하위 메뉴
         else if(atxt === "engagement_rings" || atxt === "women's_wedding_bands" || atxt === "men's_wedding_bands" || atxt === "couple_rings"){
@@ -76,9 +76,8 @@ $(()=>{
         location.href = "login.html";
     });
     ////////////////////////// [ 로그인/회원가입 아이콘 클릭시 해당 페이지로 넘어가기 시작 ] //////////////////////////////
-
-
-
+    
+    
 
 
     ///////////////////////////// [ 로그인/회원가입 페이지 시작 ] /////////////////////////////

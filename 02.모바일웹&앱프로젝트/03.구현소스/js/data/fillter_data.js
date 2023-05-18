@@ -70,19 +70,27 @@ const fillter_data = {
                 <!-- 카테고리 선택 -->
                 <ul class="sel_opt category">
                     <li>
-                        <input type="checkbox" name="category" id="rings" />
+                        <input type="checkbox" name="category" id="rings"
+                        v-model="$store.state.chkarr[0]"
+                        @change="$store.commit('resCheck')" />
                         <label for="rings">링</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="category" id="necklaces" />
+                        <input type="checkbox" name="category" id="necklaces"
+                        v-model="$store.state.chkarr[1]"
+                        @change="$store.commit('resCheck')" />
                         <label for="necklaces">네크리스</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="category" id="bracelets" />
+                        <input type="checkbox" name="category" id="bracelets"
+                        v-model="$store.state.chkarr[2]"
+                        @change="$store.commit('resCheck')" />
                         <label for="bracelets">브레이슬릿</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="category" id="earrings" />
+                        <input type="checkbox" name="category" id="earrings"
+                        v-model="$store.state.chkarr[3]"
+                        @change="$store.commit('resCheck')" />
                         <label for="earrings">이어링</label>
                     </li>
                 </ul>

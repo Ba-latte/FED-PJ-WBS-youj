@@ -28,9 +28,14 @@
 
 /* 공사중 표시 */
 body * {
+
     /* outline: 1px dashed gray; */
 }
 
+body #cont{
+    font-family: one_mobile_regular;
+    line-height: 1.5;
+}
 
 /* 구글 심볼 기본 세팅 */
 .material-symbols-outlined {

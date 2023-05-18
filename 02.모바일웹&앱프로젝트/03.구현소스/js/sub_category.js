@@ -72,7 +72,7 @@ Vue.component("lnb1-comp",{
             const sub_pg_tit = $("title");
 
             // title태그의 텍스트 데이터를 바꾸기
-            sub_pg_tit.text(mdata + " 컴포| 불가리 공식 온라인 스토어");
+            sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
 
             // 데이터 바꾸기 함수 호출
             // 가져온 전달변수의 값을 가지고 chgData로 들어가기(?)
@@ -150,7 +150,7 @@ Vue.component("lnb2-comp",{
             const sub_pg_tit = $("title");
 
             // title태그의 텍스트 데이터를 바꾸기
-            sub_pg_tit.text(mdata + " 컴포| 불가리 공식 온라인 스토어");
+            sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
 
             // 데이터 바꾸기 함수 호출
             // 가져온 전달변수의 값을 가지고 chgData로 들어가기(?)
@@ -348,7 +348,7 @@ const contVue = new Vue({
             // title태그 변수에 할당하기
             const sub_pg_tit = $("title");
             // title태그의 텍스트 데이터를 바꾸기
-            sub_pg_tit.text(mdata + " 뷰| 불가리 공식 온라인 스토어");
+            sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
     
             // 가져온 전달변수의 값을 가지고 chgData로 들어가기(?)
             store.commit('chgData',this.param);

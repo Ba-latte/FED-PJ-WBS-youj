@@ -6,6 +6,8 @@ import store from "./product_store.js";
 
 // 필터 박스 데이터 불러오기
 import fillter_data from "./data/fillter_data.js";
+// 제품 상세사항 데이터 불러오기
+import detail_data from "./data/sub_detail_data.js";
 
 ////////////////////// (호출하지 않고도) 바로 실행 함수 구역 /////////////////////////////////////
 (()=>{
@@ -21,10 +23,10 @@ import fillter_data from "./data/fillter_data.js";
     // pm에 할당이 되었다면 undefined가 아니므로 true가 나옴!
     if(pm){
         let temp = decodeURI(pm);
-        // if(temp === "jewellery"){
-        //     console.log("주얼리로 들어왔다니까ㅠㅠ!!");
-        //     store.commit("setData", "bracelets");
-        // }
+        if(temp === "jewellery"){
+            console.log("주얼리로 들어왔다니까ㅠㅠ!!");
+            store.commit("setData", "bracelets");
+        }
         store.commit("setData", temp);
     }
     // 👇메뉴를 선택해서 파라미터로 들어오지 않고! 그냥 들어갔을 때의 첫 화면은 아래 데이터가 뿌려지게 하기
@@ -34,6 +36,16 @@ import fillter_data from "./data/fillter_data.js";
     // URI/URIComponent의 차이점
     // decodeURI() : 딱 변경할 문자열만 있어야 변환됨
     // decodeURIComponent() : url 전체에 섞여 있어도 모두 변환해줌
+
+    // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+    // title태그 변수에 할당하기
+    const sub_pg_tit = $("title");
+
+    // title태그의 텍스트 데이터를 바꾸기
+    sub_pg_tit.text(pm.toUpperCase() + " | 불가리 공식 온라인 스토어");
+
+    
+
 })(); ////////////////////// (호출하지 않고도) 바로 실행 함수 구역 /////////////////////////////////////
 
 
@@ -74,6 +86,16 @@ Vue.component("lmenu-comp", {
 
             // lnb메뉴 클릭해서 페이지 넘어가면 마우스오버 상태 해제하기
             mouseOutFn();
+
+            // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+            // title태그 변수에 할당하기
+            const sub_pg_tit = $("title");
+
+            // title태그의 텍스트 데이터를 바꾸기
+            sub_pg_tit.text(param.toUpperCase() + " | 불가리 공식 온라인 스토어");
+
+            // 6.url 강제 변경하기
+            history.pushState(null,null,"sub_product.html?cat="+param);
         },
     },
 }); ////////////////////////////////// lnb메뉴 컴포넌트 ////////////////////////////////////////
@@ -104,15 +126,14 @@ new Vue({
 
 
 
-
+// v-if="v.category == $store.state.cat || $store.state.cat == 'jewellery'"
 /////////////////////// 제품 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
 Vue.component("product-comp",{
     template:`
     <div class="grid grid2">
-        
-        <div class="productbx" data-pnum="" v-for="(v,i) in $store.state.items" v-if="v.category == $store.state.cat" >
-            <div class="imgbx">
-                {{$store.state.material}}
+        <div class="productbx" data-pnum="" v-for="(v,i) in $store.state.items" 
+        v-if="v.category == $store.state.cat || $store.state.cat == 'jewellery'">
+            <div class="imgbx" v-on:click="$store.commit('openFn', v.idx)">
                 <img v-bind:src="'./images/products/'+v.category+'/shrinkage/sum1/'+v.ginfo[0]+'.png'" alt="제품 이미지">
                 <img class="hover" v-bind:src="'./images/products/'+v.category+'/shrinkage/sum2/'+v.ginfo[0]+'.png'" alt="제품 이미지">
             </div>
@@ -135,7 +156,6 @@ Vue.component("product-comp",{
         insComma(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         },
-
     },
 }); ///////////////////// 제품 그리드박스 컴포넌트 만들기 ///////////////////////////////////////
 
@@ -198,7 +218,25 @@ new Vue({
 }); ////////////////// 더보기 박스 뷰 인스턴스 만들기 ////////////////////////
 
 
+////////////////// 제품 상세사항 박스 컴포넌트 /////////////////////////
+Vue.component("detail-comp",{
+    template: detail_data.detail_data,
+    methods:{
+        // 가격 3자리마다 콤마 붙이는 메서드
+        insComma(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
 
+    },
+}); ////////////////// 제품 상세사항 박스 컴포넌트 /////////////////////////
+
+
+////////////////// 제품 상세사항 박스 뷰 인스턴스 /////////////////////////
+new Vue({
+    el:"#detail_bx",
+    store,
+
+}); ////////////////// 제품 상세사항 박스 뷰 인스턴스 /////////////////////////
 
 
 
@@ -257,3 +295,5 @@ function mouseOutFn(){
     console.log("마우스아웃 효과!!: ");
     $(".dt>.gnb>.list>li").mouseout();
 }
+
+
