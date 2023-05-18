@@ -41,12 +41,12 @@ $(()=>{
     });
     ////////////////////////// [ GNB 메뉴 링크 기능 끝 ] //////////////////////////////
 
-    ////////////////////////// [ 인덱스 페이지의 LNB 메뉴 링크 기능 시작 ] //////////////////////////////
+    ////////////////////////// [ dt버전) LNB 메뉴 링크 기능 시작 ] //////////////////////////////
     const dtlnb = $(".dt .lnb>.list>li");
     dtlnb.click(function(){
         // 클릭된 a요소의 텍스트를 읽어오기
         let atxt = $(this).attr("class");
-        // console.log("하위메뉴 클릭했음! : ", atxt);
+        console.log("하위메뉴 클릭했음! : ", atxt);
 
         // 분기하기
         // 하이주얼리 하위 메뉴
@@ -66,7 +66,35 @@ $(()=>{
             location.href = "sub_category.html?cat=" + encodeURIComponent(atxt);
         }
     });
-    ////////////////////////// [ 인덱스 페이지의 LNB 메뉴 링크 기능 끝 ] //////////////////////////////
+    ////////////////////////// [ dt버전) LNB 메뉴 링크 기능 끝 ] //////////////////////////////
+
+
+    ////////////////////////// [ mob버전) LNB 메뉴 링크 기능 시작 ] //////////////////////////////
+    const moblnb = $(".mob .lnb .list.category>li");
+    moblnb.click(function(){
+        // 클릭된 a요소의 텍스트를 읽어오기
+        let atxt = $(this).attr("class");
+        console.log("하위메뉴 클릭했음! : ", atxt);
+
+        // 분기하기
+        // 하이주얼리 하위 메뉴
+        if(atxt === "bulgari_eden" || atxt === "magnifica_creations" || atxt === "roman_high_jeweller"){
+            location.href = "sub_category.html?cat=" + encodeURIComponent(atxt);
+        }
+        // 주얼리 하위 메뉴
+        else if(atxt === "rings" || atxt === "necklaces" || atxt === "bracelets" || atxt === "earrings"){
+            location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
+        }
+        // 인게이지먼트&웨딩 하위 메뉴
+        else if(atxt === "engagement_rings" || atxt === "women's_wedding_bands" || atxt === "men's_wedding_bands" || atxt === "couple_rings"){
+            location.href = "sub_product.html?cat=" + encodeURIComponent(atxt);
+        }
+        // 브랜드 하위 메뉴
+        else if(atxt === "bulgari_history" || atxt === "bulgari_identity" || atxt === "bulgari_innovation"){
+            location.href = "sub_category.html?cat=" + encodeURIComponent(atxt);
+        }
+    });
+    ////////////////////////// [ mob버전) LNB 메뉴 링크 기능 끝 ] //////////////////////////////
 
 
 
