@@ -59,7 +59,7 @@ const store = new Vuex.Store({
     mutations:{
         // 초기 데이터 셋업 메서드
         initSet(헐, param){
-            console.log("데이터변경! 초기화 : ", 헐,param);
+            // console.log("데이터변경! 초기화 : ", 헐,param);
 
         }, ///////////////// initSet 메서드 /////////////////////
 
@@ -71,7 +71,7 @@ const store = new Vuex.Store({
 
             // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
             const mdata = catName[cnum][pm].pgName.replaceAll("_", " ").toUpperCase();
-            console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+            // console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
             // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
             const sub_pg_tit = $("title");
             sub_pg_tit.text(mdata + " | 불가리 공식 온라인 스토어");
@@ -85,11 +85,11 @@ const store = new Vuex.Store({
 
         // 각 페이지의 데이터 바꾸는 메서드
         chgData(헐,슉){
-            console.log("데이터변경! 클릭시!", 슉);
+            // console.log("데이터변경! 클릭시!", 슉);
             let high_jewelry_Obj = 헐.subPgData.high_jewelry_menu_data[슉];
             let bulgari_brand_Obj = 헐.subPgData.brand_menu_data[슉];
             if(슉==="bulgari_eden" || 슉==="magnifica_creations" || 슉==="roman_high_jeweller"){
-                console.log("하이주얼리 하위 메뉴들이야!!");
+                // console.log("하이주얼리 하위 메뉴들이야!!");
                 헐.sec1_vdsrc = high_jewelry_Obj.section1.video_src;
                 헐.sec1_tit = high_jewelry_Obj.section1.tit;
                 헐.sec1_desc = high_jewelry_Obj.section1.desc;
@@ -126,7 +126,7 @@ const store = new Vuex.Store({
                 헐.sec3_slide_6_slide_desc = high_jewelry_Obj.section3.slide_6.slide_desc;
             }
             else if(슉==="bulgari_history" || 슉==="bulgari_identity" || 슉==="bulgari_innovation"){
-                console.log("브랜드 하위 메뉴들이야!!");
+                // console.log("브랜드 하위 메뉴들이야!!");
                 헐.sec1_tit = bulgari_brand_Obj.section1.tit;
                 헐.sec1_desc = bulgari_brand_Obj.section1.desc;
 

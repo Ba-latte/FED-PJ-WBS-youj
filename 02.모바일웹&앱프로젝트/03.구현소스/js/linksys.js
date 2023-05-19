@@ -46,7 +46,7 @@ $(()=>{
     dtlnb.click(function(){
         // 클릭된 a요소의 텍스트를 읽어오기
         let atxt = $(this).attr("class");
-        console.log("하위메뉴 클릭했음! : ", atxt);
+        // console.log("하위메뉴 클릭했음! : ", atxt);
 
         // 분기하기
         // 하이주얼리 하위 메뉴
@@ -74,7 +74,7 @@ $(()=>{
     moblnb.click(function(){
         // 클릭된 a요소의 텍스트를 읽어오기
         let atxt = $(this).attr("class");
-        console.log("하위메뉴 클릭했음! : ", atxt);
+        // console.log("하위메뉴 클릭했음! : ", atxt);
 
         // 분기하기
         // 하이주얼리 하위 메뉴
@@ -100,7 +100,7 @@ $(()=>{
 
     ////////////////////////// [ 로그인/회원가입 아이콘 클릭시 해당 페이지로 넘어가기 시작 ] //////////////////////////////
     $(".account_circle").parent().click(function(){
-        console.log("로그인 아이콘 클릭!");
+        // console.log("로그인 아이콘 클릭!");
         location.href = "login.html";
     });
     ////////////////////////// [ 로그인/회원가입 아이콘 클릭시 해당 페이지로 넘어가기 시작 ] //////////////////////////////
@@ -119,11 +119,11 @@ $(()=>{
 
         // 1.클릭된 a요소 text 읽기 + 앞뒤공백제거(trim())
         let atxt = $(this).find("a").text().trim();
-        console.log(atxt);
+        // console.log(atxt);
 
         // 2. 클릭된 탭에 따라서 박스 골라 보여주기
         if(atxt === "로그인"){
-            console.log("로그인 탭 클릭했음");
+            // console.log("로그인 탭 클릭했음");
             // 로그인 탭의 아랫경계선 진하게 표시하기 + 형제 탭은 지우기
             $(this).css({borderBottom: "3px solid var(--black)"})
             .siblings().css({borderBottom: "none"});
@@ -133,7 +133,7 @@ $(()=>{
             .siblings("section.member, section#terms").hide();
         }
         else if(atxt === "회원가입"){
-            console.log("회원가입 탭 클릭했음");
+            // console.log("회원가입 탭 클릭했음");
             // 회원가입 탭의 아랫경계선 진하게 표시하기 + 형제 탭은 지우기
             $(this).css({borderBottom: "3px solid var(--black)"})
             .siblings().css({borderBottom: "none"});
