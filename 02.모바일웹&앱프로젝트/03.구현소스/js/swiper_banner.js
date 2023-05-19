@@ -17,12 +17,12 @@ const make_v3_noNav_swiper = function make_v3_noNav_swiper(cls){
             clickable: false,
         },
         grabCursor: true,
-        autoplay: {
-            // 자동넘김설정
-            delay: 3000, // 시간간격(1/1000초)
-            disableOnInteraction: false,
-            // 상호작용(건드리는 것)이 없으면 다시 재시작(false일때)
-        },
+        // autoplay: {
+        //     // 자동넘김설정
+        //     delay: 3000, // 시간간격(1/1000초)
+        //     disableOnInteraction: false,
+        //     // 상호작용(건드리는 것)이 없으면 다시 재시작(false일때)
+        // },
         // 사이즈별 슬라이드 개수, 간격 동적 변경 세팅하기
         breakpoints: {
             // when window width is >= 500px
