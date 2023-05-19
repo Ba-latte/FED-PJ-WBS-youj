@@ -41,7 +41,7 @@ Vue.component("lnb1-comp",{
     methods: {
         // 스토어 변수 업데이트 메서드
         chgData(pm){
-            console.log("업데이트!", pm);
+            // console.log("업데이트!", pm);
             // console.log(store.state.sec1_desc);
             // 스토어 변수를 업데이트한다!!
             store.commit('chgData',pm);
@@ -50,7 +50,7 @@ Vue.component("lnb1-comp",{
             this.setFirst(pm);
         },
         setFirst(pm){
-            console.log("자식에게 있는것!");
+            // console.log("자식에게 있는것!");
             // 서브페이지데이터 중 브랜드 메뉴의 페이지 속성명 배열
             let subCat = ["bulgari_history","bulgari_identity","bulgari_innovation"];
             // 서브페이지데이터 중 각 페이지의 객체명 배열
@@ -58,14 +58,14 @@ Vue.component("lnb1-comp",{
             // 가지고 들어온 전달변수값이 subCat 변수에 담긴 배열 중 어느 값의 순번에 해당하는지 확인 후, 이 배열 안에 해당되는게 없으면 0을 / 해당되는 게 있다면 1을 할당하도록 하기
             let cnum = subCat.indexOf(pm)!=-1?1:0;
 
-            console.log("검사:",subCat.indexOf(pm));
+            // console.log("검사:",subCat.indexOf(pm));
 
             // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
             // 서브페이지데이터 중 각 페이지의 객체명 배열이 cnum에 따라서 0/1이 되고, 그 말은 하이주얼리메뉴와 브랜드메뉴로 구분되어진다는 말임
             // ->그렇게 구분 후 각 객체의 pgName속성의 값에서 모든"_"를 " "로 바꾼 후, 전부 대문자로 바꾸기            
             const mdata = catName[cnum][pm].pgName.replaceAll("_", " ").toUpperCase();
 
-            console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+            // console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
 
             // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
             // title태그 변수에 할당하기
@@ -121,14 +121,14 @@ Vue.component("lnb2-comp",{
         // 스토어 변수 업데이트 메서드
         chgData(pm){
             this.setFirst(pm);
-            console.log("업데이트!", pm);
+            // console.log("업데이트!", pm);
             // console.log(store.state.sec1_desc);
             // 스토어 변수를 업데이트한다!!
             store.commit('chgData',pm);
             store.commit("chgtit",pm);
         },
         setFirst(pm){
-            console.log("자식에게 있는것!");
+            // console.log("자식에게 있는것!");
             // 서브페이지데이터 중 브랜드 메뉴의 페이지 속성명 배열
             let subCat = ["bulgari_history","bulgari_identity","bulgari_innovation"];
             // 서브페이지데이터 중 각 페이지의 객체명 배열
@@ -136,14 +136,14 @@ Vue.component("lnb2-comp",{
             // 가지고 들어온 전달변수값이 subCat 변수에 담긴 배열 중 어느 값의 순번에 해당하는지 확인 후, 이 배열 안에 해당되는게 없으면 0을 / 해당되는 게 있다면 1을 할당하도록 하기
             let cnum = subCat.indexOf(pm)!=-1?1:0;
 
-            console.log("검사:",subCat.indexOf(pm));
+            // console.log("검사:",subCat.indexOf(pm));
 
             // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
             // 서브페이지데이터 중 각 페이지의 객체명 배열이 cnum에 따라서 0/1이 되고, 그 말은 하이주얼리메뉴와 브랜드메뉴로 구분되어진다는 말임
             // ->그렇게 구분 후 각 객체의 pgName속성의 값에서 모든"_"를 " "로 바꾼 후, 전부 대문자로 바꾸기            
             const mdata = catName[cnum][pm].pgName.replaceAll("_", " ").toUpperCase();
 
-            console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+            // console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
 
             // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
             // title태그 변수에 할당하기
@@ -336,13 +336,13 @@ const contVue = new Vue({
             // 가지고 들어온 전달변수값이 subCat 변수에 담긴 배열 중 어느 값의 순번에 해당하는지 확인 후, 이 배열 안에 해당되는게 없으면 0을 / 해당되는 게 있다면 1을 할당하도록 하기
             let cnum = subCat.indexOf(this.param)!=-1?1:0;
     
-            console.log("검사:",subCat.indexOf(this.param));
+            // console.log("검사:",subCat.indexOf(this.param));
     
             // 4. 메뉴 데이터 객체에서 카테고리값 선택하기
             // 서브페이지데이터 중 각 페이지의 객체명 배열이 cnum에 따라서 0/1이 되고, 그 말은 하이주얼리메뉴와 브랜드메뉴로 구분되어진다는 말임
             // ->그렇게 구분 후 각 객체의 pgName속성의 값에서 모든"_"를 " "로 바꾼 후, 전부 대문자로 바꾸기
             const mdata = catName[cnum][this.param].pgName.replaceAll("_", " ").toUpperCase();
-            console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
+            // console.log("서브페이지 데이터 객체에서 해당하는 속성명 가져오기 : ", mdata);
 
             // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
             // title태그 변수에 할당하기
@@ -360,7 +360,7 @@ const contVue = new Vue({
             $(".video_bx").show();
         },
         takeThis(){
-            console.log("여기요");
+            // console.log("여기요");
         }
     },
     // 데이터 세팅하기
@@ -377,11 +377,11 @@ const contVue = new Vue({
         
         // 3.pm값 특수문자 복원하기 : 디코딩하기!
         pm = decodeURIComponent(pm);
-        console.log("넘어온 url받은 pm변수의 값은? : ",pm);
+        // console.log("넘어온 url받은 pm변수의 값은? : ",pm);
         
         this.param = pm;
         
-        console.log("여기요~!!",this.param);
+        // console.log("여기요~!!",this.param);
 
 
     }, //////////////// created 구역 ///////////////////
