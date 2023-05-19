@@ -139,7 +139,7 @@ $(()=>{
         mob_lnb_menu.css({height:"auto"})
         .animate({
             right: "0%",
-        }, 1000);
+        }, 500);
         
         
     });
@@ -150,7 +150,7 @@ $(()=>{
         // console.log("클릭했어?");
         // $(this).parents(".lnb").removeClass("on"); <<- 원래는 on으로 했었음,,
         $(this).parents(".lnb")
-        .animate({right: "-120%"}, 1000, 
+        .animate({right: "-120%"}, 500, 
         function(){$(this).css({height: "0"})
         });
         

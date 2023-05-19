@@ -2,11 +2,34 @@
 
 /* 불가리 PJ 서브페이지 미디어쿼리 CSS - sub_media.css */
 
-/* 1000px 사이즈 이하 미디어쿼리 시작 */
-@media screen and (max-width: 1000px) {
+/* 1400px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1400px) {
     
 }
-/* 1000px 사이즈 이하 미디어쿼리 끝 */
+/* 1400px 사이즈 이하 미디어쿼리 끝 */
+
+/* 1100px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1100px) {
+    /* dt용 상단 영역 박스 숨기기 */
+    #top>#dt_wrap{
+        display: none;
+    }
+    /* mob용 상단 영역 박스 보이기 */
+    #top>.mob.top{
+        display: flex;
+    }
+    
+    /* dt용 하단 영역 박스 숨기기 */
+    #info>.dt.info{
+        display: none;
+    }
+    /* mob용 하단 영역 박스 보이기 */
+    #info>.mob.info{
+        display: block;
+    }
+}
+/* 1100px 사이즈 이하 미디어쿼리 끝 */
+
 
 /* 900px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 900px) {
@@ -70,6 +93,11 @@
     }
     .section3.introduction_to_works .headline+.txt{
         word-break: keep-all;
+    }
+
+    /* 세르펜티 75주년 페이지에서 플렉스 그로우 배너 세로방향으로 바꾸기 */
+    #cont .section2.flex_grow_banner>ol{
+        flex-direction: column;
     }
 }
 /* 700px 사이즈 이하 미디어쿼리 끝 */
