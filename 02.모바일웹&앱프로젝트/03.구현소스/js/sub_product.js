@@ -17,32 +17,26 @@ import detail_data from "./data/sub_detail_data.js";
     // GET 방식으로 넘어온 데이터 처리하여 분류별 서브 페이지 구성하기
     // location.href : 상단 url 읽어옴
     // indexOf("?")!== -1 : 물음표가 없는 게 아니면 = 물음표가 있으면!
-    if(location.href.indexOf("?")!== -1)
+    if(location.href.indexOf("?")!== -1){
         pm = location.href.split("?")[1].split("=")[1];
         // 물음표로 잘라내서 뒤의 것, 이퀄로 잘라내서 뒤의 것 값(파라미터값)만 추출함! split()
-    // pm에 할당이 되었다면 undefined가 아니므로 true가 나옴!
+        // pm에 할당이 되었다면 undefined가 아니므로 true가 나옴!
+    }
     if(pm){
         let temp = decodeURI(pm);
-        if(temp === "jewellery"){
-            console.log("주얼리로 들어왔다니까ㅠㅠ!!");
-            store.commit("setData", "bracelets");
-        }
         store.commit("setData", temp);
     }
     // 👇메뉴를 선택해서 파라미터로 들어오지 않고! 그냥 들어갔을 때의 첫 화면은 아래 데이터가 뿌려지게 하기
     else{
         store.commit("initData");
     }
-    // URI/URIComponent의 차이점
-    // decodeURI() : 딱 변경할 문자열만 있어야 변환됨
-    // decodeURIComponent() : url 전체에 섞여 있어도 모두 변환해줌
 
-    // 5. 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
+    // 대상에 변경 적용하기 : 카테고리 페이지 타이틀 넣기
     // title태그 변수에 할당하기
     const sub_pg_tit = $("title");
 
     // title태그의 텍스트 데이터를 바꾸기
-    sub_pg_tit.text(pm.toUpperCase() + " | 불가리 공식 온라인 스토어");
+    sub_pg_tit.text(pm.replaceAll("_", " ").toUpperCase() + " | 불가리 공식 온라인 스토어");
 
     
 
