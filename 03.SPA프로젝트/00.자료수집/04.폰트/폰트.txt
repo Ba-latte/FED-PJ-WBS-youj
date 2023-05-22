@@ -1,0 +1,27 @@
+-구글 폰트 CDN 방식 채용
+
+1.Asap (고딕?체 : 본문용)
+-폰트 링크 주소
+https://fonts.google.com/specimen/Asap?preview.text=Citadelle%20,%20french%20gin%20%20pioneer&preview.text_type=custom&category=Sans+Serif,Display,Handwriting,Monospace
+
+
+2.Cormorant Garamond (명조?체 : 서브 타이틀용)
+-폰트 링크 주소
+https://fonts.google.com/specimen/Cormorant+Garamond?preview.text=Citadelle%20,%20french%20gin%20%20pioneer&preview.text_type=custom
+
+
+3.Dancing Script (디자인폰트체 : 메인 타이틀용)
+-폰트 링크 주소
+https://fonts.google.com/specimen/Dancing+Script?preview.text=Citadelle%20,%20french%20gin%20%20pioneer&preview.text_type=custom
+
+
+-CDN링크
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+-CSS 삽입
+font-family: 'Asap', sans-serif;
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Dancing Script', cursive;
