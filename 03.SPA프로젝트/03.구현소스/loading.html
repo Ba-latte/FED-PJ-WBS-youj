@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로딩 애니메이션</title>
+    <!-- AOS 라이브러리 불러오기 -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- CSS 불러오기 -->
     <link rel="stylesheet" href="./css/loading.css">
-    
+    <!-- JS -->
+    <script src="./js/loading.js" type="module"></script>
 </head>
 <body>
-    <!-- <svg class="loading" version="1.1" x="0px" y="0px" width="574.558px" height="190px" viewBox="0 0 574.558 120" enable-background="new 0 0 574.558 120" xml:space="preserve"> -->
     <main id="cont">
         <!-- 배경이미지 -->
         <div class="bg_wrap">
@@ -18,21 +21,19 @@
             <img src="./images/dt/main/background-right.png" alt="배경이미지">
         </div>
         <!-- SVG - 로딩 애니메이션 박스 -->
-        <div class="wrap">
-            <svg class="loading" version="1.1" x="0px" y="0px" viewBox="0 0 574.558 120" xml:space="preserve">
+        <div class="svg_wrap">
+            <svg class="loading" x="0px" y="0px" viewBox="0 0 520 120">
                 <defs>
-                    <!-- <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox"> -->
-                    <pattern id="water">
-                    <path fill="#000" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/></pattern>
-                    <!-- <text id="text">LOADING</text> -->
-                    <text id="text">Loading</text>
+                    <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+                        <path fill="#fff" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+                    </pattern>
+                    <text id="text" transform="matrix(1 0 0 1 -8.0684 116.7852)" font-size="161.047">Loading</text>
                     <mask id="text_mask">
                         <use x="0" y="0" xlink:href="#text" opacity="1" fill="#fcb900"/>
                     </mask>
                 </defs>
                 <use x="0" y="0" xlink:href="#text" fill="#fcb900"/>
-                <!-- <rect class="water-fill" mask="url(#text_mask)" fill="url(#water)" x="-400" y="0" width="1600" height="120"/> -->
-                <rect class="water-fill" mask="url(#text_mask)" fill="url(#water)" x="-400" y="0"/>
+                <rect class="water-fill" mask="url(#text_mask)" fill="url(#water)" x="-400" y="0" width="1600" height="120"/>
             </svg>
         </div>
     </main>
