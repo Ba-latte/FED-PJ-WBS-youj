@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.sns_svg a{
+    text-decoration: none;
+    fill: #faf8f5;
+    /* color: #faf8f5; */
+    fill: #f8d532;
+}
+
+.sns_svg a[aria-label="instagram"]{
+}
