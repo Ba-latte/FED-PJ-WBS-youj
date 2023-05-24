@@ -2,15 +2,7 @@
 
 /* 로딩 애니메이션 CSS - loading.css */
 
-/* 폰트 CDN */
-@import "https://fonts.googleapis.com/css?family=Oswald";
-@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400;500;600;700&display=swap");
-
-/*
-font-family: 'Asap', sans-serif;
-font-family: 'Cormorant Garamond', serif;
-font-family: 'Dancing Script', cursive;
-*/
+@import url(../css/reset.css);
 
 html,
 body {
