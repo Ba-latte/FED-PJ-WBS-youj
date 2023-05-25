@@ -7,15 +7,16 @@ html,body {
     height: 100%;
 }
 
-
+/* 햄버거 버튼 내부의 모든 요소 세팅 */
 .menu_btn * {
     box-sizing: border-box;
 }
-
+/* 햄버거 버튼 겉박스 */
 .menu_btn {
     height: 80px;
 }
 
+/* 버튼 공통 세팅 */
 .button {
     padding: 10px 15px;
     background-color: #fcb900;
@@ -33,6 +34,7 @@ html,body {
     
     transition: all 0.1s ease-out;
 }
+
 .button:hover {
     background-color: #fcb900;
     color: #fff;
@@ -40,6 +42,8 @@ html,body {
 .button:active {
     transform: scale(0.95);
 }
+
+/* 물방울 버튼 공통 세팅 */
 .button--bubble {
     position: relative;
     z-index: 2;
@@ -49,6 +53,8 @@ html,body {
 .button--bubble:hover {
     background: none;
 }
+
+/* 마우스 호버시 */
 .button--bubble:hover + .button--bubble__effect-container .circle {
     background: #fcb900;
 }
@@ -58,6 +64,8 @@ html,body {
 .button--bubble:active + .button--bubble__effect-container {
     transform: scale(0.95);
 }
+
+/* 물방울이 떨어져 나오는 메뉴 겉박스 */
 .button--bubble__container {
     position: relative;
     display: inline-block;
@@ -65,6 +73,21 @@ html,body {
     left: 50%;
     /* margin-top: -25px; */
 }
+
+/* 이펙트 겉박스 */
+.button--bubble__effect-container {
+    position: absolute;
+    display: block;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    filter: url("#goo");
+    transition: all 0.1s ease-out;
+    pointer-events: none;
+}
+
+/* 이펙트 겉박스 속 이펙트 버튼 */
 .button--bubble__container .effect-button {
     position: absolute;
     width: 50%;
@@ -77,17 +100,7 @@ html,body {
     transition: "background" 0.1s ease-out;
 }
 
-.button--bubble__effect-container {
-    position: absolute;
-    display: block;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    filter: url("#goo");
-    transition: all 0.1s ease-out;
-    pointer-events: none;
-}
+/* 이펙트 겉박스 속 작은 원형 (물방울) 공통 세팅 */
 .button--bubble__effect-container .circle {
     position: absolute;
     width: 25px;
@@ -96,15 +109,20 @@ html,body {
     background: #fcb900;
     transition: "background" 0.1s ease-out;
 }
+
+/* 이펙트 겉박스 속 작은 원형 (물방울) 중 위/왼쪽 방향 */
 .button--bubble__effect-container .circle.top-left {
     top: 30%;
     left: 27%;
 }
+
+/* 이펙트 겉박스 속 작은 원형 (물방울) 중 아래/오른쪽 방향 */
 .button--bubble__effect-container .circle.bottom-right {
     bottom: 30%;
     right: 27%;
 }
 
+/* 찐득한 물방울 SVG 요소 */
 .goo {
     position: absolute;
     visibility: hidden;

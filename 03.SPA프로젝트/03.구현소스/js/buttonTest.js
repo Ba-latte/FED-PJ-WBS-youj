@@ -46,8 +46,9 @@ $(()=>{
         );
     
         btTl.timeScale(2.6);
-    
-        $(this).on("mouseover", function () {
+
+
+        $(this).stop().on("mouseenter", function () {
             btTl.restart();
         });
     });
