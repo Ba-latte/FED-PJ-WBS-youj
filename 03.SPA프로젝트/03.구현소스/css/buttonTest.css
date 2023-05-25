@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    
+    text-align: center;
+}
+
+
+
+* {
+    box-sizing: border-box;
+    outline: 1px solid black;
+}
+
+/* 버튼 총 겉박스 */
+div {
+    display: block;
+    height: 100%;
+}
+
+.button {
+    padding: 20px 40px;
+    display: inline-block;
+    background-color: #fcb900;
+    border: none;
+
+    /* 브라우저에서 드래그나 더블 클릭을 사용한 텍스트 선택 등을 막기 */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    color: white;
+    transition: all 0.1s ease-out;
+}
+.button:hover {
+    color: #fff;
+}
+.button:active {
+    transform: scale(0.95);
+}
+
+/* 메뉴의 a요소 */
+.button--bubble {
+    position: relative;
+    z-index: 2;
+    color: white;
+    background: none;
+}
+
+/* a요소!! - a요소에 마우스오버했을 때 이펙트 발생하기 때문 */
+.ham_btn{
+    font-size: 20px;
+
+    margin: 0;
+    padding: 36px 40px;
+    font-size: 20px;
+}
+
+.button--bubble:hover {
+    background: none;
+}
+.button--bubble:hover + .button--bubble__effect-container .circle {
+    background: #fcb900;
+}
+.button--bubble:hover + .button--bubble__effect-container .button {
+    background: #fcb900;
+}
+.button--bubble:active + .button--bubble__effect-container {
+    transform: scale(0.95);
+}
+
+/* 물방울이 떨어져나오는 메뉴 겉박스 */
+.button--bubble__container {
+    width: 100px;
+    height: 100px;
+
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    /* margin-top: -25px; */
+}
+/* 물방울이 떨어져나오는 메뉴의 효과 버튼 */
+.button--bubble__container .effect-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+    background: #fcb900;
+    border-radius: 50%;
+    transition: "background" 0.1s ease-out;
+}
+
+/* 물방울이 떨어져나오는 메뉴의 효과 버튼 겉박스 */
+.button--bubble__effect-container {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 0;
+    filter: url("#goo");
+    transition: all 0.1s ease-out;
+    pointer-events: none;
+}
+.button--bubble__effect-container .circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background: #fcb900;
+    transition: "background" 0.1s ease-out;
+}
+/* 떨어져 나가는 물방울 - 위,왼쪽방향 */
+.button--bubble__effect-container .circle.top-left {
+    top: 40%;
+    left: 27%;
+}
+/* 떨어져 나가는 물방울 - 아래,오른쪽방향 */
+.button--bubble__effect-container .circle.bottom-right {
+    bottom: 40%;
+    right: 27%;
+}
+
+/* 찐득 물방울 SVG */
+.goo {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+}
+
+
+
+
