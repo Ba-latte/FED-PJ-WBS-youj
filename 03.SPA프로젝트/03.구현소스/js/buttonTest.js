@@ -9,7 +9,7 @@ $(()=>{
     
         var btTl = new TimelineLite({ paused: true });
     
-        tl.to($circlesTopLeft, 1.2, { x: -25, y: -25, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) });
+        tl.to($circlesTopLeft, 1.2, { x: -10, y: -10, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) });
         tl.to($circlesTopLeft.eq(0), 0.1, { scale: 0.2, x: "+=6", y: "-=2" });
         tl.to($circlesTopLeft.eq(1), 0.1, { scaleX: 1, scaleY: 0.8, x: "-=10", y: "-=7" }, "-=0.1");
         tl.to($circlesTopLeft.eq(2), 0.1, { scale: 0.2, x: "-=15", y: "+=6" }, "-=0.1");
@@ -24,7 +24,7 @@ $(()=>{
         tlBt1.add(tl);
     
         tl2.set($circlesBottomRight, { x: 0, y: 0 });
-        tl2.to($circlesBottomRight, 1.1, { x: 30, y: 30, ease: SlowMo.ease.config(0.1, 0.7, false) });
+        tl2.to($circlesBottomRight, 1.1, { x: 15, y: 15, ease: SlowMo.ease.config(0.1, 0.7, false) });
         tl2.to($circlesBottomRight.eq(0), 0.1, { scale: 0.2, x: "-=6", y: "+=3" });
         tl2.to($circlesBottomRight.eq(1), 0.1, { scale: 0.8, x: "+=7", y: "+=3" }, "-=0.1");
         tl2.to($circlesBottomRight.eq(2), 0.1, { scale: 0.2, x: "+=15", y: "-=6" }, "-=0.2");
