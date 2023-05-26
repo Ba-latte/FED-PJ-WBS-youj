@@ -19,7 +19,7 @@ html,body {
 /* 버튼 공통 세팅 */
 .button {
     padding: 10px 15px;
-    background-color: #fcb900;
+    background-color: #ffd732;
     /* border: none; */
     display: inline-block;
     border-radius: 50%;
@@ -36,7 +36,7 @@ html,body {
 }
 
 .button:hover {
-    background-color: #fcb900;
+    background-color: #ffd732;
     color: #fff;
 }
 .button:active {
@@ -56,10 +56,11 @@ html,body {
 
 /* 마우스 호버시 */
 .button--bubble:hover + .button--bubble__effect-container .circle {
-    background: #fcb900;
+    background: #ffd732;
+    /* color: #fef84c; */
 }
 .button--bubble:hover + .button--bubble__effect-container .button {
-    background: #fcb900;
+    background: #ffd732;
 }
 .button--bubble:active + .button--bubble__effect-container {
     transform: scale(0.95);
@@ -96,7 +97,7 @@ html,body {
     left: 25%;
     z-index: 1;
     transform: translateY(-50%);
-    background: #fcb900;
+    background: #ffd732;
     transition: "background" 0.1s ease-out;
 }
 
@@ -106,7 +107,7 @@ html,body {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #fcb900;
+    background: #ffd732;
     transition: "background" 0.1s ease-out;
 }
 
@@ -131,7 +132,14 @@ html,body {
 }
 
 
-
+.box{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: blue;
+    
+    margin: 0 auto;
+}
 
 
 
