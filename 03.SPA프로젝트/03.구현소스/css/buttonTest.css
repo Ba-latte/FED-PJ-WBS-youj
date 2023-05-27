@@ -5,15 +5,29 @@
 html,body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+header.top{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* 공사중 */
+body *{
+    outline: 1px solid gray;
 }
 
 /* 햄버거 버튼 내부의 모든 요소 세팅 */
-.menu_btn * {
+.ham_btn * {
     box-sizing: border-box;
 }
 /* 햄버거 버튼 겉박스 */
-.menu_btn {
+.ham_btn {
+    display: flex;
     height: 80px;
+    width: 80px;
 }
 
 /* 버튼 공통 세팅 */
@@ -70,8 +84,8 @@ html,body {
 .button--bubble__container {
     position: relative;
     display: inline-block;
-    top: 50%;
-    left: 50%;
+    /* top: 50%;
+    left: 50%; */
     /* margin-top: -25px; */
 }
 
@@ -131,18 +145,44 @@ html,body {
     height: 1px;
 }
 
-
-.box{
+/* 노란색 원형 메뉴와 전체 메뉴박스를 감싸는 겉박스 */
+.menu_wrap{
     position: relative;
-    top: 10%;
-    left: 10%;
+    /* 부모자격 - .nav_box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: blue;
+    background-color: #282864;
     
     margin: 0 auto;
+
+    animation: menuAni .8s cubic-bezier(0.61, 0.36, 0.38, 1.24) forwards;
+    
 }
 
+
+@keyframes menuAni {
+    0%{
+        transform: 
+        /* translate(-50%, -50%), */
+        scale(0);
+    }
+    100%{
+        transform: 
+            /* translate(-50%, -50%), */
+            scale(150);
+    }
+}
 
 
