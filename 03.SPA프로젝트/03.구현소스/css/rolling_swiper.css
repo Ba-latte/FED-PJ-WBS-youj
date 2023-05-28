@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body *{
+    outline: 1px dashed black;
+}
+
+
+
+
+.container{
+    position: relative;
+}
+
+body {
+    background: #eee;
+}
+
+
+.swiper.roller {
+    margin-top: 100px;
+
+    width: 622px;
+    height: 190px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    outline: 1px dashed red;
+}
+
+.swiper-wrapper{
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    object-fit: cover;
+}
+.swiper-slide .rolTxt{
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}
+
+
+/* 좌/우 페이드인아웃 영역 만들기 */
+.roller::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 9;
+    background: linear-gradient(to right, #ffffff 0%, #ffffffbf 51%, #ffffff28 100%);
+}
+.roller::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 9;
+    background: linear-gradient(to left, #ffffff 0%, #ffffffbf 51%, #ffffff00 100%);
+}
