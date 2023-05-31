@@ -10,18 +10,34 @@ body {
 .swiper {
     width: 100%;
     height: 100%;
+
+    /* 긁히는거 막기 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .swiper-wrapper {
     /* gap: 20px; */
     /* 사이간격 띄우려고 했는데 조금씩 뒤의 슬라이드가 밀리니까 다른 방식으로하기 */
 }
 .swiper-slide {
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #fff;
     text-align: center;
-    aspect-ratio: 583/1440;
+    /* aspect-ratio: 583/1440; */
+}
+.swiper-slide>.product_tit{
+    position: absolute;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: #282864;
 }
 
 .swiper-slide img {
