@@ -21,6 +21,7 @@ body {
     /* gap: 20px; */
     /* 사이간격 띄우려고 했는데 조금씩 뒤의 슬라이드가 밀리니까 다른 방식으로하기 */
 }
+/* 각 슬라이드(li) */
 .swiper-slide {
     position: relative;
     display: flex;
@@ -31,18 +32,23 @@ body {
     text-align: center;
     /* aspect-ratio: 583/1440; */
 }
-.swiper-slide>.product_tit{
+
+/* 제품 이미지 */
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 제품 타이틀 */
+.swiper-slide .product_tit{
     position: absolute;
 
     font-family: 'Cormorant Garamond', serif;
     font-size: 80px;
     font-weight: bold;
     color: #282864;
-}
 
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* outline: 1px solid red; */
 }

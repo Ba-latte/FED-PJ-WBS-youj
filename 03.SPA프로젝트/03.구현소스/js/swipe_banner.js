@@ -2,7 +2,9 @@
 
 
 $(()=>{
-    // 스와이퍼 배너
+    console.log("스와이프 배너 모듈 로딩 완료");
+
+    // 스와이프 배너
     let swipe_banner = new Swiper(".product_swipe", {
         slidesPerView: 4,
         spaceBetween: 30,
@@ -17,9 +19,56 @@ $(()=>{
             clickable: true,
         },
     });
-    
-    swipe_banner;
 
-    // AOS 라이브러리
-    AOS.init();
-});
+    // 제품 타이틀 등장 액션
+    function fadeUpAni(){
+        const pd_slide = $(".slide");
+        const pd_tit = $(".product_tit");
+        console.log("제품 슬라이드 : ", pd_slide);
+
+        // 맨처음에 제품 타이틀 요소 숨기기
+        // pd_tit.hide();
+        pd_tit.css({
+            display: "none",
+        });
+
+        // 제품 슬라이드에 마우스오버/아웃시 제품 타이틀 요소 등장 액션 부여하기
+        pd_slide.hover(
+            // 오버시
+            function(){
+                console.log("마우스 오버");
+                $(this).find(".product_tit").stop().slideDown(500);
+                // $(this).find(".product_tit").animate({
+                //     display:"block",
+                    
+                // }, 500, "easeOutExpo");
+            },
+            // 아웃시
+            function(){
+                    console.log("마우스 아웃");
+                    $(this).find(".product_tit").stop().slideUp(500);
+            }
+        );
+        // pd_slide.mouseover(function(){
+        //     console.log("마우스 엔터");
+        //     $(this).find(".product_tit").stop().slideDown(500);
+        // });
+        // pd_slide.mouseout(function(){
+        //     console.log("마우스 아웃");
+        //     $(this).find(".product_tit").stop().slideUp(500);
+        // });
+
+
+    }
+
+    fadeUpAni();
+}); /////////////////////// jQB /////////////////////////////
+
+
+
+lighting = [
+    {
+        
+    },
+    {},
+];
