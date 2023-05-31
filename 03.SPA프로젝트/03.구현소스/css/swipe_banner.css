@@ -7,6 +7,11 @@ body {
     position: relative;
 }
 
+.swipe_banner{
+    width: 100%;
+    height: 100%;
+}
+
 .swiper {
     width: 100%;
     height: 100%;
@@ -30,25 +35,40 @@ body {
     align-items: center;
     background: #fff;
     text-align: center;
+
+    cursor: pointer;
+
     /* aspect-ratio: 583/1440; */
 }
 
 /* 제품 이미지 */
 .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: 75%;
     object-fit: cover;
+}
+
+.swiper-slide>.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 0;
+    opacity: 0;
+
+    overflow: hidden;
 }
 
 /* 제품 타이틀 */
 .swiper-slide .product_tit{
-    position: absolute;
+    /* position: absolute; */
 
     font-family: 'Cormorant Garamond', serif;
-    font-size: 80px;
+    font-size: 130px;
     font-weight: bold;
     color: #282864;
+    text-shadow: 1px 1px 1px #000;
 
     /* outline: 1px solid red; */
 }
