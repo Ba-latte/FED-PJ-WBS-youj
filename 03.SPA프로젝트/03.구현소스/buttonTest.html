@@ -26,63 +26,68 @@
         <script src="./js/buttonTest.js"></script>
     </head>
     <body>
+        <!-- 1.상단 영역 -->
         <div id="top">
             <header class="top">
-                <!-- 상단 로고 -->
-                <div class="tlogo_bx">
-
-                </div>
-                <!-- 햄버거 버튼 -->
-                <div class="ham_btn">
-                    <!-- 찐득 물방울 SVG -->
-                    <svg class="goo">
-                        <defs>
-                            <filter id="goo">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="goo" />
-                                <feComposite in="SourceGraphic" in2="goo" />
-                            </filter>
-                        </defs>
-                    </svg>
-                    
-                    <div class="menu_wrap">
-                        <!-- 물방울이 떨어져 나오는 메뉴 박스 -->
-                        <div class="button--bubble__container">
-                            <a href="#" class="button button--bubble">
-                                <i class="fa-solid fa-bars ham_icon"></i>
-                            </a>
-                            <span class="button--bubble__effect-container">
-                                <span class="circle top-left"></span>
-                                <span class="circle top-left"></span>
-                                <span class="circle top-left"></span>
-                                <span class="button effect-button"></span>
-                                <span class="circle bottom-right"></span>
-                                <span class="circle bottom-right"></span>
-                                <span class="circle bottom-right"></span>
-                            </span>
-                        </div>
+                <div class="flx_container">
+                    <!-- 상단 로고 -->
+                    <div class="tlogo">
                     </div>
-                    <!-- 커지는 전체메뉴 박스 -->
-                    <div class="nav_container">
-                        <nav class="nav">
-                            <ul>
-                                <li>
-                                    <a href="#">Citadelle Original</a>
-                                </li>
-                                <li>
-                                    <a href="#">Jardin d’Été</a>
-                                </li>
-                                <li>
-                                    <a href="#">Citadelle Rouge</a>
-                                </li>
-                                <li>
-                                    <a href="#">Limited Editions</a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <!-- 햄버거 버튼 -->
+                    <div class="ham_btn">
+                        <!-- 찐득 물방울 SVG -->
+                        <svg class="goo">
+                            <defs>
+                                <filter id="goo">
+                                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="goo" />
+                                    <feComposite in="SourceGraphic" in2="goo" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    
+                        <div class="menu_wrap">
+                            <!-- 물방울이 떨어져 나오는 메뉴 박스 -->
+                            <div class="button--bubble__container">
+                                <a href="#" class="button button--bubble">
+                                    <i class="fa-solid fa-bars ham_icon"></i>
+                                </a>
+                                <span class="button--bubble__effect-container">
+                                    <span class="circle top-left"></span>
+                                    <span class="circle top-left"></span>
+                                    <span class="circle top-left"></span>
+                                    <span class="button effect-button"></span>
+                                    <span class="circle bottom-right"></span>
+                                    <span class="circle bottom-right"></span>
+                                    <span class="circle bottom-right"></span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
+        </div>
+        <!-- 2.커지는 전체메뉴 박스 -->
+        <div id="nav">
+            <div class="wrap">
+                <nav class="nav">
+                    <i class="fa-solid fa-xmark close"></i>
+                    <ul>
+                        <li>
+                            <a href="#">Citadelle Original</a>
+                        </li>
+                        <li>
+                            <a href="#">Jardin d’Été</a>
+                        </li>
+                        <li>
+                            <a href="#">Citadelle Rouge</a>
+                        </li>
+                        <li>
+                            <a href="#">Limited Editions</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </body>
 </html>

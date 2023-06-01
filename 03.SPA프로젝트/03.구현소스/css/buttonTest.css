@@ -8,26 +8,41 @@ html,body {
     overflow: hidden;
 }
 
-header.top{
-    display: flex;
-    justify-content: space-between;
-    /* padding: 0 20px; */
-}
-
 /* 공사중 */
 body *{
     outline: 1px solid gray;
 }
 
-/* 햄버거 버튼 내부의 모든 요소 세팅 */
-.ham_btn * {
-    box-sizing: border-box;
+
+/************************ 헤더 영역 ************************/
+
+
+header.top{
+    position: fixed;
+    width: 100%;
+    height: 80px;
 }
+.flx_container{
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 상단로고 겉박스 */
+.tlogo{
+    margin-right: 20px;
+}
+
 /* 햄버거 버튼 겉박스 */
 .ham_btn {
     display: flex;
-    height: 80px;
-    width: 80px;
+    margin-right: 20px;
+}
+/* 햄버거 버튼 내부의 모든 요소 세팅 */
+.ham_btn * {
+    box-sizing: border-box;
 }
 
 /* 버튼 공통 세팅 */
@@ -154,22 +169,72 @@ body *{
     justify-content: center;
 }
 
-.nav_container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: #e5e5e5;
+/************************ 메뉴 박스 디자인 세팅 ************************/
+
+/* 내비 겉박스 */
+#nav{
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    z-index: 1;
+
+    background-color: #282864;
     
+    /* clip-path: circle(30% at 50% 50%); */
+    /* 클립패스로 보였다 안보였다 조절하기 맨앞의 퍼센티지가 원형 크기 조절하는 것이고 뒤의 2개가 x,y값 조절임 */
+    clip-path: circle(1% at 88% 4%);
+
+    opacity: 1;
+    /* display: none; */
+}
+
+/* 메뉴 겉박스 */
+#nav>.wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
 
-    /* 버튼 클릭시 애니메이션 */
-    /* animation: menuAni 10s cubic-bezier(0.61, 0.36, 0.38, 1.24) forwards; */
+    outline: 2px dashed blue;
 }
+
+/* 메뉴 박스 */
+.nav{
+    position: fixed;
+
+    padding: 20px 0 20px;
+    width: 100%;
+
+    outline: 1px dashed red;
+}
+
+/* 메뉴 a요소 공통 세팅 */
+.nav a{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #faf8f5;
+}
+/* 닫기 버튼 */
+.nav .close{
+    position: relative;
+    display: inherit;
+    text-align: right;
+    top: 0;
+    right: 0%;
+    font-size: 18px;
+    color: #faf8f5;
+    padding: 12px 36px;
+}
+.nav>ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 20px;
+}
+
 
 /* 메뉴 박스 애니메이션 키프레임 */
 @keyframes menuAni {
@@ -184,13 +249,3 @@ body *{
             scale(500);
     }
 }
-
-
-.nav{
-    position: absolute;
-    z-index: 99;
-    width: 100%;
-    height: 100%;
-}
-
-

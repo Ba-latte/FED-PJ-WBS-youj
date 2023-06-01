@@ -1,5 +1,7 @@
 
 $(()=>{
+    console.log("버튼테스트 로딩완료");
+
     $(".button--bubble").each(function () {
         var $circlesTopLeft = $(this).parent().find(".circle.top-left");
         var $circlesBottomRight = $(this).parent().find(".circle.bottom-right");
@@ -53,4 +55,40 @@ $(()=>{
         });
     });
 
+
+
+
+
+    // [ 햄버거 버튼 클릭시 내비 박스 클립패스 활성화 애니메이션 ] /////////////////////////////
+    const ham_btn = $(".button--bubble__container");
+    const nav_bx = $("#nav");
+    const cls_btn = $(".close");
+
+    // 햄버거 버튼의 x,y위치값 구하기 : 내비박스 클립패스 시작 위치를 정하기 위함
+    let xval = ham_btn.offset().left+20;
+    let yval = ham_btn.offset().top+20;
+    console.log("햄버거버튼 x값 : ", xval);
+    console.log("햄버거버튼 y값 : ", yval);
+
+    // 내비박스 클립패스 초기 설정
+    nav_bx.css({
+        clipPath: `circle(10px at ${xval}px ${yval}px)`,
+    });
+    
+    // 햄버거버튼 클릭시 내비박스의 CSS 트랜지션 변화
+    ham_btn.click(function(){
+        console.log("햄버거버튼 클릭시!");
+        nav_bx.css({
+            clipPath: `circle(150% at ${xval}px ${yval}px)`,
+            transition: "1s",
+        }); /////////// css //////////
+    }); ////////////////// click /////////////////////
+    
+    // 닫기버튼 클릭시 내비박스의 CSS 트랜지션 변화
+    cls_btn.click(function(){
+        console.log("닫기버튼 클릭시!");
+        nav_bx.css({
+            clipPath: `circle(10px at ${xval}px ${yval}px)`,
+        }); /////////// css //////////
+    }); /////////////////// click //////////////////////
 });
