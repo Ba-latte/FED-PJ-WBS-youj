@@ -154,7 +154,7 @@ body *{
     justify-content: center;
 }
 
-.nav_box{
+.nav_container{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -163,15 +163,15 @@ body *{
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #282864;
+    background-color: #e5e5e5;
     
     margin: 0 auto;
 
     /* 버튼 클릭시 애니메이션 */
-    animation: menuAni 1s cubic-bezier(0.61, 0.36, 0.38, 1.24) forwards;
+    /* animation: menuAni 10s cubic-bezier(0.61, 0.36, 0.38, 1.24) forwards; */
 }
 
-
+/* 메뉴 박스 애니메이션 키프레임 */
 @keyframes menuAni {
     0%{
         transform: 
@@ -183,6 +183,14 @@ body *{
             /* translate(-50%, -50%), */
             scale(500);
     }
+}
+
+
+.nav{
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
 }
 
 

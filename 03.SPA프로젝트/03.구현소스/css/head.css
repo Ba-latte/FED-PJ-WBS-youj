@@ -1,4 +1,16 @@
 @charset "utf-8";
 
-@import url(../css/head.css);
+@import url(../css/reset.css);
 
+/* 로고 겉박스 */
+.tlogo_bx .wrap{
+    padding: 10px;
+    
+    outline: 1px solid red;
+}
+/* 로고 svg 요소 */
+.tlogo_bx svg{
+    width: 170px;
+
+    outline: 1px dashed black;
+}
