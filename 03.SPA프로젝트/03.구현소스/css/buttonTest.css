@@ -10,7 +10,7 @@ html,body {
 
 /* 공사중 */
 body *{
-    outline: 1px solid gray;
+    /* outline: 1px solid gray; */
 }
 
 
@@ -43,11 +43,12 @@ header.top{
 /* 햄버거 버튼 내부의 모든 요소 세팅 */
 .ham_btn * {
     box-sizing: border-box;
+    display: block;
 }
 
 /* 버튼 공통 세팅 */
 .button {
-    padding: 10px 15px;
+    padding: 10px 10px;
     background-color: #ffd732;
     /* border: none; */
     display: inline-block;
@@ -184,7 +185,7 @@ header.top{
     
     /* clip-path: circle(30% at 50% 50%); */
     /* 클립패스로 보였다 안보였다 조절하기 맨앞의 퍼센티지가 원형 크기 조절하는 것이고 뒤의 2개가 x,y값 조절임 */
-    clip-path: circle(1% at 88% 4%);
+    clip-path: circle(0% at 97% 4%);
 
     opacity: 1;
     /* display: none; */
@@ -203,8 +204,6 @@ header.top{
 /* 메뉴 박스 */
 .nav{
     position: fixed;
-
-    padding: 20px 0 20px;
     width: 100%;
 
     outline: 1px dashed red;
@@ -216,17 +215,26 @@ header.top{
     font-size: 30px;
     font-weight: bold;
     color: #faf8f5;
+    letter-spacing: 2px;
 }
 /* 닫기 버튼 */
+.nav>.wrap:has(.close){
+    height: 80px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    outline: 2px solid red;
+}
 .nav .close{
-    position: relative;
-    display: inherit;
-    text-align: right;
-    top: 0;
-    right: 0%;
-    font-size: 18px;
+    display: block;
+    /* padding: 12px 30px; */
+
+    font-size: 24px;
     color: #faf8f5;
-    padding: 12px 36px;
+
+    cursor: pointer;
 }
 .nav>ul{
     display: flex;
@@ -235,17 +243,3 @@ header.top{
     padding: 20px;
 }
 
-
-/* 메뉴 박스 애니메이션 키프레임 */
-@keyframes menuAni {
-    0%{
-        transform: 
-        /* translate(-50%, -50%), */
-        scale(0);
-    }
-    100%{
-        transform: 
-            /* translate(-50%, -50%), */
-            scale(500);
-    }
-}

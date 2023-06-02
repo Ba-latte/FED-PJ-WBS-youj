@@ -1,7 +1,7 @@
 
 $(()=>{
     console.log("버튼테스트 로딩완료");
-
+    // [ 햄버거 버튼 클릭시 방울 svg 등장 이벤트 ] ///////////////////////////////
     $(".button--bubble").each(function () {
         var $circlesTopLeft = $(this).parent().find(".circle.top-left");
         var $circlesBottomRight = $(this).parent().find(".circle.bottom-right");
@@ -53,7 +53,7 @@ $(()=>{
         $(this).stop().on("mouseenter", function () {
             btTl.restart();
         });
-    });
+    }); ////////// [ 햄버거 버튼 클릭시 방울 svg 등장 이벤트 ] ///////////////////
 
 
 
@@ -63,32 +63,58 @@ $(()=>{
     const ham_btn = $(".button--bubble__container");
     const nav_bx = $("#nav");
     const cls_btn = $(".close");
+    let xval;
+    let yval;
 
+    // 윈도우 리사이즈시 내비박스 위치 실시간 변경하기
+    $(window).resize(function(){
+        console.log("윈도우 리사이즈");
+        positionFn(ham_btn, nav_bx);
+    });
+
+    // 햄버거버튼 클릭시 내비박스의 CSS 트랜지션 변화
+    ham_btn.click(function(){
+        console.log("햄버거버튼 클릭시!");
+        xval = $(this).offset().left+20;
+        yval = $(this).offset().top+20;
+
+        nav_bx.css({
+            clipPath: `circle(150% at ${xval}px ${yval}px)`,
+            transition: "1s cubic-bezier(0.83, 0, 0.21, 1.33)",
+        }); /////////// css //////////
+
+        // console.log($(".nav ul li"))
+        // li에 a의 높이값 주고 오버플로우 히든을 주고, a의 top값을 -100%로 해서 아래쪽에 숨긴다음 올라오게 하기...?
+        
+    }); ////////////////// click /////////////////////
+
+    // 닫기버튼 클릭시 내비박스의 CSS 트랜지션 변화
+    cls_btn.click(function(){
+        console.log("닫기버튼 클릭시!");
+        xval = ham_btn.offset().left+20;
+        yval = ham_btn.offset().top+20;
+
+        nav_bx.css({
+            clipPath: `circle(0% at ${xval}px ${yval}px)`,
+        }); /////////// css //////////
+    }); /////////////////// click //////////////////////
+    
+
+
+    
+}); ////////////////////////////// jQB ///////////////////////////////////////
+
+
+// 햄버거 버튼의 x,y위치값 구하기
+function positionFn(ham, nav){
     // 햄버거 버튼의 x,y위치값 구하기 : 내비박스 클립패스 시작 위치를 정하기 위함
-    let xval = ham_btn.offset().left+20;
-    let yval = ham_btn.offset().top+20;
+    xval = ham.offset().left+20;
+    yval = ham.offset().top+20;
     console.log("햄버거버튼 x값 : ", xval);
     console.log("햄버거버튼 y값 : ", yval);
 
     // 내비박스 클립패스 초기 설정
-    nav_bx.css({
-        clipPath: `circle(10px at ${xval}px ${yval}px)`,
+    nav.css({
+        clipPath: `circle(0% at ${xval}px ${yval}px)`,
     });
-    
-    // 햄버거버튼 클릭시 내비박스의 CSS 트랜지션 변화
-    ham_btn.click(function(){
-        console.log("햄버거버튼 클릭시!");
-        nav_bx.css({
-            clipPath: `circle(150% at ${xval}px ${yval}px)`,
-            transition: "1s",
-        }); /////////// css //////////
-    }); ////////////////// click /////////////////////
-    
-    // 닫기버튼 클릭시 내비박스의 CSS 트랜지션 변화
-    cls_btn.click(function(){
-        console.log("닫기버튼 클릭시!");
-        nav_bx.css({
-            clipPath: `circle(10px at ${xval}px ${yval}px)`,
-        }); /////////// css //////////
-    }); /////////////////// click //////////////////////
-});
+} ////////////////// positionFn 함수 ////////////////////

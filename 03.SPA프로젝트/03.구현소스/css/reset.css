@@ -42,3 +42,12 @@ img {
     vertical-align: bottom;
     /* 박스 이미지 하단간극 없애기 */
 }
+
+/* 구글 심볼 공통 디자인 세팅 */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 48
+}
