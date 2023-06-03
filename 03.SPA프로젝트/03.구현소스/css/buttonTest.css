@@ -185,7 +185,7 @@ header.top{
     
     /* clip-path: circle(30% at 50% 50%); */
     /* 클립패스로 보였다 안보였다 조절하기 맨앞의 퍼센티지가 원형 크기 조절하는 것이고 뒤의 2개가 x,y값 조절임 */
-    clip-path: circle(0% at 97% 4%);
+    /* clip-path: circle(0% at 97% 4%); */
 
     opacity: 1;
     /* display: none; */
