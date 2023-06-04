@@ -32,7 +32,7 @@ header.top{
 
 /* 상단로고 겉박스 */
 .tlogo{
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 /* 햄버거 버튼 겉박스 */
@@ -44,6 +44,12 @@ header.top{
 .ham_btn * {
     box-sizing: border-box;
     display: block;
+}
+
+/* 햄버거 아이콘 (구글심볼) 세팅 */
+.ham_icon{
+    color: var(--ft-navy-color);
+    font-weight: 700;
 }
 
 /* 버튼 공통 세팅 */
@@ -183,10 +189,10 @@ header.top{
 
     background-color: #282864;
     
-    /* clip-path: circle(30% at 50% 50%); */
     /* 클립패스로 보였다 안보였다 조절하기 맨앞의 퍼센티지가 원형 크기 조절하는 것이고 뒤의 2개가 x,y값 조절임 */
     /* clip-path: circle(0% at 97% 4%); */
-
+    clip-path: circle(0% at 97% 4%);
+    
     opacity: 1;
     /* display: none; */
 }

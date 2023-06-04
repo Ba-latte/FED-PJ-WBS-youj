@@ -69,13 +69,4 @@ function slideUpAni(){
         }
     );
 
-    // [ 슬라이드업/다운 메서드로 만들 경우 ]
-    // pd_slide.mouseover(function(){
-    //     console.log("마우스 엔터");
-    //     $(this).find(".product_tit").stop().slideDown(500);
-    // });
-    // pd_slide.mouseout(function(){
-    //     console.log("마우스 아웃");
-    //     $(this).find(".product_tit").stop().slideUp(500);
-    // });
 } //////////////////////// slideUpAni 함수 ///////////////////////////////

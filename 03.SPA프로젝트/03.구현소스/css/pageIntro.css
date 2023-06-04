@@ -13,23 +13,44 @@
 .pg_title{
     position: absolute;
     z-index: 1;
-    top: 40%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 50%);
+
 }
 /* 타이틀 */
 .tit{
-    font-family: 'Asap', sans-serif;
-    font-size: 34px;
+    /* width: 80vw; */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6vmax;
+    font-weight: bold;
+    color: var(--ft-navy-color);
+}
+/* 타이틀 각 단락 */
+.tit>span{
+    display: inline-block;
+    /* 넘치는 자식 요소 숨기기 */
+    overflow: hidden;
+
+    /* outline: 2px dashed red; */
+}
+.letter{
+    position: relative;
+    top: 100%;
 }
 
+/* 이미지 겉박스 */
 .pg_img{
     position: relative;
     top: 0;
     left: 50%;
     transform: translate(-50%, 40%);
 }
-
 /* 이미지 */
 .pg_img>img{
     width: 100%;

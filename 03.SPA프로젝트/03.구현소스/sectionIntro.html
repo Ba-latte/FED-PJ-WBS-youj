@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>각 섹션 소개 모듈</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/sectionIntro.css">
+    <!-- 제이쿼리 -->
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- JS -->
+    <script src="./js/sectionIntro.js"></script>
+</head>
+<body>
+    <!-- 각 섹션 소개 -->
+    <div id="section_intro">
+        <section class="section_intro">
+            <!-- 1.각 섹션의 타이틀 -->
+            <div class="sec_tit_container">
+                <div class="wrap">
+                    <!-- 라인 svg : 왼쪽 -->
+                    <div class="line_bx" data-aos="fade-right" data-aos-duration="1000" >
+                        <!-- 숨겨둔 svg 불러오기 -->
+                        <svg class="arrow-tail left" >
+                            <use xlink:href="#arrow-tail"></use>
+                        </svg>
+                    </div>
+                    <!-- 타이틀 박스 -->
+                    <div class="tit_bx">
+                        <h2 class="title">
+                            <span class="letter">01. THE FRENCH GIN</span>
+                        </h2>
+                    </div>
+                    <!-- 라인 svg : 오른쪽 -->
+                    <div class="line_bx" data-aos="fade-left" data-aos-duration="1000">
+                        <!-- 숨겨둔 svg 불러오기 -->
+                        <svg class="arrow-tail right" >
+                            <use xlink:href="#arrow-tail"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.섹션 아티클 제목 -->
+            <div class="sec_name_container">
+                <div class="name_bx">
+                    <h3 class="name">
+                        <span>
+                            <span id="lt1" class="letter" data-aos="fade-up" data-aos-duration="1000"  >Welcome to </span>
+                            <span id="lt2" class="letter" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="#lt1"  >the </span>
+                            <span id="lt3" class="letter" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor="#lt2"  >South West</span>
+                        </span>
+                    </h3>
+                </div>
+            </div>
+
+            <!-- 3.섹션 아티클 설명 -->
+            <div class="sec_desc_container">
+                <div class="desc_bx">
+                    <p class="desc">
+                        The south-west of France has it all: the sun, the sea, the countryside...
+                    </p>
+                    <p class="desc">
+                        and the château de Bonbonnet, which we are proud to call home!
+                    </p>
+                    <p class="desc">
+                        Juniper trees grow wild across from the château. Their berries gave our founder Alexandre Gabriel an idea: to create the first modern French gin. It was a crazy idea back in 1996, the year Citadelle Gin was born!
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4.섹션 아티클 이미지 -->
+            <div class="sec_img_container">
+                <div class="img_bx">
+                    <img src="./images/dt/main/2.jpg" alt="메인 이미지">
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 숨겨둔 svg 아이템 박스 -->
+    <div class="svg_item_bx">
+        <svg>
+            <!-- 화살표 꼬리 SVG -->
+            <symbol id="arrow-tail" width="20px" height="20px" viewBox="0 0 20 20">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Group-2" transform="translate(0.500000, 7.500000)" stroke="#D9D7D2" stroke-linecap="round">
+                        <path d="M-2.66453526e-15,0 C-2.66453526e-15,1.65685425 1.69470739,3 3.7852349,3" id="Path"></path>
+                        <path d="M-2.66453526e-15,3 C-2.66453526e-15,4.65685425 1.69470739,6 3.7852349,6" id="Path-Copy-2" transform="translate(1.892617, 4.500000) scale(1, -1) translate(-1.892617, -4.500000) "></path>
+                    </g>
+                    <line x1="3.5" y1="10.5" x2="20" y2="10.5" id="Line-2-Copy-3" stroke="#D9D7D2"></line>
+                </g>
+            </symbol>
+        </svg>
+    </div>
+</body>
+</html>
