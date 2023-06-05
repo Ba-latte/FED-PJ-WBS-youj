@@ -1,11 +1,146 @@
-// 상단 영역 컴포넌트
+// 상단 영역 컴포넌트 JS - Header.js
 
-import React from "react";
+import React from 'react';
+import $ from 'jquery';
+import './css/header.css';
 
 
+// [ JS 로드 구역 ] /////////////////////////////
+function loadingFn(){
+    $(()=>{
+        console.log("상단영역 로딩완료");
+    
+        // 대상 선정
+        const nav_list = $(".nav ul li");
+        const txt = nav_list.find("a");
+    
+        const ham_btn = $(".button");
+        const nav_bx = $("#nav");
+        const cls_btn = $(".close");
+        let xval;
+        let yval;
+        
+
+        // [ 햄버거 버튼 클릭시 내비 박스 클립패스 활성화 애니메이션 ] /////////////////////////////
+        // 윈도우 리사이즈시 내비박스 위치 실시간 변경하기
+        $(window).resize(function(){
+            // console.log("윈도우 리사이즈");
+            positionFn(ham_btn, nav_bx);
+        });
+    
+        // 햄버거버튼 클릭시 내비박스의 CSS 트랜지션 변화
+        ham_btn.click(function(){
+            console.log("햄버거버튼 클릭시!");
+            xval = $(this).offset().left+20;
+            yval = $(this).offset().top+20;
+    
+            nav_bx.css({
+                clipPath: `circle(150% at ${xval}px ${yval}px)`,
+                transition: "1s cubic-bezier(0.83, 0, 0.21, 1.33)",
+            }); /////////// css //////////
+    
+            // li에 a의 높이값 주고 오버플로우 히든을 주고, a의 top값을 -100%로 해서 아래쪽에 숨긴다음 올라오게 하기...?
+    
+            // 일정시간 후 타이틀 등장 함수 호출
+            tit_appearFn(nav_list, txt);
+    
+            // 마우스오버한 자신 제외 형제 요소의 투명도 흐리게 하는 함수 호출
+            blurFn(txt);
+    
+        }); ////////////////// click /////////////////////
+    
+        // 닫기버튼 클릭시 내비박스의 CSS 트랜지션 변화
+        cls_btn.click(function(){
+            console.log("닫기버튼 클릭시!");
+            xval = ham_btn.offset().left+20;
+            yval = ham_btn.offset().top+20;
+    
+            nav_bx.css({
+                clipPath: `circle(0% at ${xval}px ${yval}px)`,
+            }); /////////// css //////////
+        }); /////////////////// click //////////////////////
+        
+    
+    
+    
+        // [ 햄버거 버튼의 x,y위치값 구하기 ]
+        function positionFn(ham, nav){
+            // 햄버거 버튼의 x,y위치값 구하기 : 내비박스 클립패스 시작 위치를 정하기 위함
+            xval = ham.offset().left+20;
+            yval = ham.offset().top+20;
+            console.log("햄버거버튼 x값 : ", xval);
+            console.log("햄버거버튼 y값 : ", yval);
+        
+            // 내비박스 클립패스 초기 설정
+            nav.css({
+                clipPath: `circle(0% at ${xval}px ${yval}px)`,
+            });
+        } ////////////////// positionFn 함수 ////////////////////
+        
+        
+        // [ 일정시간 후 타이틀 등장 함수 ]
+        const tit_appearFn = function(bx, lt){
+            console.log("타이틀 등장 함수");
+        
+            // 대상 선정
+            const tit = bx;
+            // const letter = lt;
+            const hval = bx.height();
+        
+            // 겉박스에 타이틀요소 높이값 + 자식요소 숨기기 CSS 부여
+            tit.css({
+                height: hval,
+                overflow: "hidden",
+            });
+            // 글자 요소에 por, top 위치값 CSS 부여
+            lt.css({
+                position: "relative",
+                top: "100%",
+            });
+        
+            // 시차를 두고 애니메이션 발생하게 만들기
+            setTimeout(() => {
+                // .tit 요소에 애니메이션 부여
+                lt.animate({
+                    top: "0%"
+                }, 800);
+            }, 400);
+        
+        }; /////////////////////// tit_appearFn 함수 ///////////////////////
+        
+        
+        // [ 마우스오버한 자신 제외 형제 요소의 투명도 흐리게 하기 ]
+        const blurFn = function(ele){
+        
+            ele.hover(
+                // 마우스오버시
+                function(){
+                    $(this).parent().siblings().find("a").stop().animate({
+                        opacity: "0.5"
+                    }, 400);
+                },
+                // 마우스아웃시
+                function(){
+                    $(this).parent().siblings().find("a").stop().animate({
+                        opacity: "1"
+                    }, 400);
+                }
+            );
+        }; ///////////////////// blurFn 함수 /////////////////////
+    
+    }); ////////////////////////////// jQB ///////////////////////////////////////
+} ///////////////////////////// loadingFn : 로드 구역 함수 /////////////////////////////
+
+
+
+
+// [ 상단 영역 컴포넌트 만들기 ] /////////////////////////////
 const Header = ()=>{
     return(
         <>
+            {/* 구글 심볼 이렇게 쓰면 되나?ㅠ */}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
             {/* 1.상단 영역 */}
             <div id="top">
                 <header className="top">
@@ -13,37 +148,20 @@ const Header = ()=>{
                         {/* 상단 로고 */}
                         <div className="tlogo">
                             <div className="logoBx">
-                                로고
+                                <svg>
+                                    <img src="./images/logo.png" alt="로고" />
+                                    <img src="logo.svg" alt="로고" />
+                                </svg>
                             </div>
                         </div>
                         {/* 햄버거 버튼 */}
                         <div className="ham_btn">
-                            {/* 물방울 SVG */}
-                            <svg className="goo">
-                                <defs>
-                                    <filter id="goo">
-                                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="goo" />
-                                        <feComposite in="SourceGraphic" in2="goo" />
-                                    </filter>
-                                </defs>
-                            </svg>
-                        
-                            <div className="menu_wrap">
+                            <div className="wrap">
                                 {/* 메뉴 박스 */}
-                                <div className="button--bubble__container">
-                                    <a href="#" className="button button--bubble">
+                                <div className="button">
+                                    <a href="#">
                                         <span className="material-symbols-outlined ham_icon">menu</span>
                                     </a>
-                                    <span className="button--bubble__effect-container">
-                                        <span className="circle top-left"></span>
-                                        <span className="circle top-left"></span>
-                                        <span className="circle top-left"></span>
-                                        <span className="button effect-button"></span>
-                                        <span className="circle bottom-right"></span>
-                                        <span className="circle bottom-right"></span>
-                                        <span className="circle bottom-right"></span>
-                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -74,6 +192,8 @@ const Header = ()=>{
                     </nav>
                 </div>
             </div>
+            {/* 바깥에 빈 루트를 만들고 JS 로드 함수 포함시키기 */}
+            {loadingFn()}
         </>
     );
 };
