@@ -148,10 +148,7 @@ const Header = ()=>{
                         {/* 상단 로고 */}
                         <div className="tlogo">
                             <div className="logoBx">
-                                <svg>
                                     <img src="./images/logo.png" alt="로고" />
-                                    <img src="logo.svg" alt="로고" />
-                                </svg>
                             </div>
                         </div>
                         {/* 햄버거 버튼 */}

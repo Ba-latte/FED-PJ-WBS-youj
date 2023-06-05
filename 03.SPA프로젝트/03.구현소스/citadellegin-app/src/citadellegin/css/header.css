@@ -36,7 +36,10 @@ header.top{
 .tlogo{
     margin-left: 20px;
 }
-
+/* 상단 로고 이미지 요소 */
+.tlogo img{
+    width: 150px;
+}
 /* 햄버거 버튼 겉박스 */
 .ham_btn {
     margin-right: 20px;
