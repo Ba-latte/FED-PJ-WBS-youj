@@ -7,7 +7,7 @@ const Footer = ()=>{
     return(
         <>
             {/* 어썸 폰트 CDN */}
-            <script src="https://kit.fontawesome.com/6f514a7e76.js" crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/6f514a7e76.js"></script>
             <footer className="info">
                 {/* 로고 */}
                 <div className="logo_bx">
@@ -29,7 +29,6 @@ const Footer = ()=>{
                     {/* 가운데 라인 */}
                     <div className="cir">
                         <svg className="border">
-                            {/* <line className="line" x1="0%" y1="50%" x2="100%" y2="50%"></line> */}
                             <line x1="0" y1="10.5" x2="100%" y2="10.5" stroke="#D9D7D2"></line>
                         </svg>
                     </div>

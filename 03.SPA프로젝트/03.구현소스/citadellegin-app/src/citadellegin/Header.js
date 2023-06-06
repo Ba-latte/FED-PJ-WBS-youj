@@ -3,6 +3,72 @@
 import React from 'react';
 import $ from 'jquery';
 import './css/header.css';
+import {Link} from 'react-router-dom';
+
+
+
+// [ 상단 영역 컴포넌트 만들기 ] /////////////////////////////
+const Header = ()=>{
+    return(
+        <>
+            {/* 구글 심볼 이렇게 쓰면 되나?ㅠ */}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+            {/* 1.상단 영역 */}
+            <div id="top">
+                <header className="top">
+                    <div className="flx_container">
+                        {/* 상단 로고 */}
+                        <div className="tlogo">
+                            <div className="logoBx">
+                                    <Link to="/">
+                                        <img src="./images/logo.png" alt="로고" />
+                                    </Link>
+                            </div>
+                        </div>
+                        {/* 햄버거 버튼 */}
+                        <div className="ham_btn">
+                            <div className="wrap">
+                                {/* 메뉴 박스 */}
+                                <div className="button">
+                                    <a href="#">
+                                        <span className="material-symbols-outlined ham_icon">menu</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            {/* 2. 전체 메뉴 박스 */}
+            <div id="nav">
+                <div className="wrap">
+                    <nav className="nav">
+                        <div className="wrap">
+                            <span className="material-symbols-outlined close">close</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <Link to="/original">Citadelle Original</Link>
+                            </li>
+                            <li>
+                                <Link to="/dete">Jardin d’Été</Link>
+                            </li>
+                            <li>
+                                <Link to="/rouge">Citadelle Rouge</Link>
+                            </li>
+                            <li>
+                                <Link to="/limited">Limited Editions</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            {/* 바깥에 빈 루트를 만들고 JS 로드 함수 포함시키기 */}
+            {loadingFn()}
+        </>
+    );
+};
 
 
 // [ JS 로드 구역 ] /////////////////////////////
@@ -19,6 +85,7 @@ function loadingFn(){
         const cls_btn = $(".close");
         let xval;
         let yval;
+        
         
 
         // [ 햄버거 버튼 클릭시 내비 박스 클립패스 활성화 애니메이션 ] /////////////////////////////
@@ -39,7 +106,6 @@ function loadingFn(){
                 transition: "1s cubic-bezier(0.83, 0, 0.21, 1.33)",
             }); /////////// css //////////
     
-            // li에 a의 높이값 주고 오버플로우 히든을 주고, a의 top값을 -100%로 해서 아래쪽에 숨긴다음 올라오게 하기...?
     
             // 일정시간 후 타이틀 등장 함수 호출
             tit_appearFn(nav_list, txt);
@@ -127,73 +193,23 @@ function loadingFn(){
                 }
             );
         }; ///////////////////// blurFn 함수 /////////////////////
+
+
+
+        // [ 메뉴 클릭시 메뉴 배경 박스 원모양으로 줄어들게 만들기 ]
+        txt.click(function(){
+            // 햄버거 버튼의 위치에 맞게 원모양으로 줄어드는 함수 호출하기
+            positionFn(ham_btn, nav_bx);
+        });
     
+
+
     }); ////////////////////////////// jQB ///////////////////////////////////////
 } ///////////////////////////// loadingFn : 로드 구역 함수 /////////////////////////////
 
 
 
 
-// [ 상단 영역 컴포넌트 만들기 ] /////////////////////////////
-const Header = ()=>{
-    return(
-        <>
-            {/* 구글 심볼 이렇게 쓰면 되나?ㅠ */}
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-            {/* 1.상단 영역 */}
-            <div id="top">
-                <header className="top">
-                    <div className="flx_container">
-                        {/* 상단 로고 */}
-                        <div className="tlogo">
-                            <div className="logoBx">
-                                    <img src="./images/logo.png" alt="로고" />
-                            </div>
-                        </div>
-                        {/* 햄버거 버튼 */}
-                        <div className="ham_btn">
-                            <div className="wrap">
-                                {/* 메뉴 박스 */}
-                                <div className="button">
-                                    <a href="#">
-                                        <span className="material-symbols-outlined ham_icon">menu</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-            </div>
-            {/* 2. 전체 메뉴 박스 */}
-            <div id="nav">
-                <div className="wrap">
-                    <nav className="nav">
-                        <div className="wrap">
-                            <span className="material-symbols-outlined close">close</span>
-                        </div>
-                        <ul>
-                            <li>
-                                <a href="#">Citadelle Original</a>
-                            </li>
-                            <li>
-                                <a href="#">Jardin d’Été</a>
-                            </li>
-                            <li>
-                                <a href="#">Citadelle Rouge</a>
-                            </li>
-                            <li>
-                                <a href="#">Limited Editions</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            {/* 바깥에 빈 루트를 만들고 JS 로드 함수 포함시키기 */}
-            {loadingFn()}
-        </>
-    );
-};
 
 // 내보내기
 export default Header;

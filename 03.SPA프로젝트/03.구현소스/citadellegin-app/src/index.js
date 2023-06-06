@@ -6,6 +6,10 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './index.css';
 import Layout from './citadellegin/Layout';
 import Main from './citadellegin/Main';
+import Original from './citadellegin/Original';
+import Dete from './citadellegin/Dete';
+import Rouge from './citadellegin/Rouge';
+import Limited from './citadellegin/Limited';
 
 
 // 라우터 구성 컴포넌트 : 스스로 내보내기 세팅 필수
@@ -16,7 +20,10 @@ export default function App(){
         {/* 레이아웃 컴포넌트 루트로 잡기 */}
         <Route path='/' element={<Layout />}>
           <Route index element={<Main />} />
-          {/* <Route path="main" element={<Main />} /> */}
+          <Route path="/original" element={<Original />} />
+          <Route path="/dete" element={<Dete />} />
+          <Route path='/rouge' element={<Rouge />} />
+          <Route path='/limited' element={<Limited />} />
         </Route>
       </Routes>
     </BrowserRouter>

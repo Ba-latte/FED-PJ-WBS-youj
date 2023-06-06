@@ -1,7 +1,7 @@
 // 메인 페이지 레이아웃 컴포넌트
 
 import $ from 'jquery';
-import { Outlet,Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -22,7 +22,6 @@ const Layout = ()=>{
         <>
             {/* 1.상단 영역 */}
             <header>
-                {/* <Link to="/main"></Link> */}
                 <Header />
             </header>
             {/* 2.메인 영역 */}

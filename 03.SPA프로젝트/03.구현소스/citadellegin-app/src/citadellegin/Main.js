@@ -1,12 +1,14 @@
 // 메인페이지 컴포넌트
 
 import React from "react";
+import PageIntro from "./PageIntro";
+
 
 // [ 메인 컴포넌트 ] //////////////////
 const Main= ()=>{
     return(
         <>
-            <h1>메인 페이지</h1>
+            <PageIntro />
         </>
     );
 }; ////////////////// Main 컴포넌트 //////////////////

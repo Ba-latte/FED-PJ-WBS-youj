@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* 각 제품 소개 모듈 CSS - productIntro.css */
+
+.product_intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 제품명 박스 세팅 */
+.product_name_container{
+    padding: 100px 20px 0;
+    margin-bottom: 50px;
+}
+/* 제품명 폰트관련 세팅 */
+.name{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7vmax;
+    color: var(--ft-navy-color);
+}
+/* 제품명(단어) 위치 세팅 */
+.name>span{
+    display: flex;
+    gap: 20px;
+}
+/* 제품명(뒤에 오는 단어) 개별 세팅 */
+.name .letter:nth-child(2){
+    font-style: italic;
+    color: var(--ft-lemon-color);
+}
+
+/* 그리드 박스 세팅 */
+.gridBx{
+    max-width: 1400px;
+    display: grid;
+    /* 가로 그리드 템플릿 */
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 20px;
+
+    padding: 20px 20px 0;
+    margin-bottom: 50px;
+
+    /* outline: 1px dashed black; */
+}
+.product_img_container{
+    grid-column: 2/7;
+}
+.product_desc_container{
+    grid-column: 7/12;
+}
+
+/* 제품 이미지 설정 */
+/**************** 제품 설명 아티클 ****************/
+/* 제품 주변 꾸밈 이미지 세팅 */
+.wrap:has(.sticker){
+    position: absolute;
+    z-index: -1;
+    outline: 1px dashed blue;
+}
+img.sticker{
+    width: 100%;
+}
+/* 1.레몬 관련 세팅 */
+.wrap:has(.lemon){
+    width: 400px;
+    height: 400px;
+
+    top: 35%;
+    left: 15%;
+}
+/* 2.이파리 관련 세팅 */
+.wrap:has(.leaf-3){
+    width: 450px;
+    height: 450px;
+
+    top: 90%;
+    left: 35%;
+}
+/* 2.베리 관련 세팅 */
+.wrap:has(.berry){
+    width: 300px;
+    height: 300px;
+
+    top: 150%;
+    left: 10%;
+}
+
+/* 제품 유리병 img 요소 세팅 */
+.product_img_container img#product{
+    width: 100%;
+    margin-top: 30vh;
+
+    /* outline: 1px dashed red; */
+}
+
+
+/**************** 제품 설명 아티클 ****************/
+/* 겉박스 */
+.description{
+    padding: 20px 0 0;
+    margin-bottom: 100px;
+
+    outline: 1px dashed hotpink;
+}
+/* 아티클 타이틀 */
+.description .tit{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5vmax;
+}
+/* 아티클 서브 타이틀 */
+.description .subtit{
+    padding: 20px 20px 0;
+    margin-bottom: 20px;
+
+    font-family: 'Asap', sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+/* 아티클 설명글 */
+.description .desc{
+    padding: 20px 20px 0;
+    margin-bottom: 20px;
+
+    font-family: 'Asap', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+}
+/* 아티클 이미지 */
+.description .wrap:has(.img){
+    padding: 20px;
+}
+.description .img{
+    width: 100%;
+}
+
+/**************** 아티클 개별 세팅 ****************/
+.article_container:has(.recipe){
+
+}
+.article_container:has(.recipe)::after{
+    /* content: '';
+    display: block;
+
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    background-color: var(--bg-navy-color); */
+}
