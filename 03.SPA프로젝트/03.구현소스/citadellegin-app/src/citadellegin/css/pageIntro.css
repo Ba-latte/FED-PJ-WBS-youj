@@ -23,7 +23,7 @@
     transform: translate(-50%, 10%);
 }
 /* 타이틀 */
-.tit{
+.pg_intro .tit{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,21 +34,21 @@
     color: var(--ft-navy-color);
 }
 /* 타이틀 각 단락 */
-.tit>span{
+.pg_intro .tit>span{
     display: inline-block;
     /* 넘치는 자식 요소 숨기기 */
     overflow: hidden;
 
     /* outline: 2px dashed red; */
 }
-.letter{
+.pg_intro .letter{
     position: relative;
     top: 100%;
 }
 
 
 /* 이미지 겉박스 */
-.pg_img{
+.pg_intro .pg_img{
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -56,7 +56,7 @@
     overflow: hidden;
 }
 /* 이미지 */
-.pg_img>img{
+.pg_intro .pg_img>img{
     position: absolute;
     top: -15%;
     left: 50%;

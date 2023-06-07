@@ -1,7 +1,7 @@
 // 각 제품 소개 모듈 컴포넌트 JS - ProductIntro.js
 
 
-import './css/productIntro.css';
+import '../../css/productIntro.css';
 
 
 // [ 제품 소개 모듈 컴포넌트 ]
@@ -44,7 +44,7 @@ const ProductIntro = ()=>{
                     <div className="product_desc_container">
                         <div className="article_container">
                             <article className="description">
-                                <h3 className="tit">
+                                <h3 className="tit" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor="product_name_container">
                                     Citadelle Original, the pioneer of french gin.
                                 </h3>
                                 <p className="desc">
@@ -55,7 +55,7 @@ const ProductIntro = ()=>{
 
                         <div className="article_container">
                             <article className="description">
-                                <h3 className="tit">
+                                <h3 className="tit" data-aos="fade-up" data-aos-duration="1000">
                                     Experience the taste.
                                 </h3>
                                 <h4 className="subtit">
@@ -69,7 +69,7 @@ const ProductIntro = ()=>{
 
                         <div className="article_container">
                             <article className="description recipe">
-                                <h3 className="tit">
+                                <h3 className="tit" data-aos="fade-up" data-aos-duration="1000">
                                     How to enjoy it:
                                 </h3>
                                 <h4 className="subtit">
@@ -89,7 +89,7 @@ const ProductIntro = ()=>{
 
                         <div className="article_container">
                             <article className="description medal">
-                                <h3 className="tit">
+                                <h3 className="tit" data-aos="fade-up" data-aos-duration="1000">
                                     As for awards...
                                 </h3>
                                 <h4 className="subtit">
@@ -100,6 +100,8 @@ const ProductIntro = ()=>{
                                 </p>
                                 <div className="wrap">
                                     <img className="img" src="./images/dt/sub/original/medal1.png" alt="메달 이미지" />
+                                    <img className="img" src="./images/dt/sub/original/medal2.png" alt="메달 이미지" />
+                                    <img className="img" src="./images/dt/sub/original/medal3.png" alt="메달 이미지" />
                                 </div>
                             </article>
                         </div>

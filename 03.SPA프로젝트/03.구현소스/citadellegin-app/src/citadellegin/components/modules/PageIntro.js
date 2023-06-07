@@ -3,8 +3,8 @@
 
 import React from 'react';
 import $ from 'jquery';
-import './css/pageIntro.css';
-import Scroll from './Scroll';
+import '../../css/pageIntro.css';
+import Scroll from '../modules/Scroll';
 // AOS 라이브러리
 import AOS from 'aos';
 import 'aos/dist/aos.css';

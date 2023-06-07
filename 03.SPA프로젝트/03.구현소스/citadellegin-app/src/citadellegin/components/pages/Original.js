@@ -1,8 +1,8 @@
 // 서브페이지 : Original 컴포넌트
 
 import React from "react";
-import ProductIntro from "./ProductIntro";
-import Scroll from "./Scroll";
+import ProductIntro from "../modules/ProductIntro";
+import Scroll from "../modules/Scroll";
 
 
 // [ 서브페이지 : Original 컴포넌트 ] //////////////////

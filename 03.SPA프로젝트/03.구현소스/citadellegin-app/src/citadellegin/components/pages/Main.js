@@ -1,7 +1,7 @@
 // 메인페이지 컴포넌트
 
 import React from "react";
-import PageIntro from "./PageIntro";
+import PageIntro from "../modules/PageIntro";
 
 
 // [ 메인 컴포넌트 ] //////////////////

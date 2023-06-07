@@ -1,6 +1,6 @@
 // 각 섹션 소개 모듈 컴포넌트 JS - SectionIntro.js
 
-import './css/sectionIntro.css';
+import '../../css/sectionIntro.css';
 
 
 // [ 각 섹션별 소개 모듈 컴포넌트 ]

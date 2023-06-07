@@ -1,6 +1,6 @@
 // 스크롤 유도 표시 컴포넌트 - Scroll.js
 
-import './css/scroll.css';
+import '../../css/scroll.css';
 
 
 // [ 스크롤 유도 표시 컴포넌트 ]

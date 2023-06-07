@@ -19,11 +19,11 @@
     width: 20px;
     height: 20px;
 }
-svg.arrow-tail{
+.scrl_container svg.arrow-tail{
     transform: rotate(90deg);
     animation: tailAni 1s ease-out infinite;
 }
-svg.arrow-head{
+.scrl_container svg.arrow-head{
     transform: rotate(-90deg);
     animation: headAni 1s ease-out infinite;
 }

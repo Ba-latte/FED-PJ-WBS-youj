@@ -100,13 +100,16 @@ img.sticker{
 .description{
     padding: 20px 0 0;
     margin-bottom: 100px;
-
+    
+    color: var(--ft-navy-color);
+    
     outline: 1px dashed hotpink;
 }
 /* 아티클 타이틀 */
 .description .tit{
     font-family: 'Cormorant Garamond', serif;
     font-size: 3.5vmax;
+    line-height: 1;
 }
 /* 아티클 서브 타이틀 */
 .description .subtit{
@@ -150,4 +153,15 @@ img.sticker{
     width: 100vw;
     height: 50vh;
     background-color: var(--bg-navy-color); */
+}
+
+/* 메달 아티클 - 이미지 세팅 */
+.description.medal .wrap:has(>img){
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.description.medal img{
+    width: 100%;
+    height: 100%;
 }

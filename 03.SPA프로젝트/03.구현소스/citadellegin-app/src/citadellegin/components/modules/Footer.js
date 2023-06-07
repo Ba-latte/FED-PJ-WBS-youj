@@ -1,7 +1,7 @@
 // 하단 영역 컴포넌트 JS - Footer.js
 
 import React from "react";
-import './css/footer.css';
+import '../../css/footer.css';
 
 const Footer = ()=>{
     return(
@@ -9,12 +9,7 @@ const Footer = ()=>{
             {/* 어썸 폰트 CDN */}
             <script src="https://kit.fontawesome.com/6f514a7e76.js"></script>
             <footer className="info">
-                {/* 로고 */}
-                <div className="logo_bx">
-                    {/* svg 파일 불러오기 */}
-                    <img src="./images/logo.png" alt="로고 이미지" />
-                </div>
-                {/* 위쪽 라인 */}
+                {/* 1. 하단 영역 구분 라인 */}
                 <div className="line_bx">
                     {/* 화살표 꼬리 모양 svg */}
                     <svg className="arrow-tail left" viewBox="0 0 20 20">
@@ -26,7 +21,7 @@ const Footer = ()=>{
                             <line x1="3.5" y1="10.5" x2="20" y2="10.5" id="Line-2-Copy-3" stroke="#D9D7D2"></line>
                         </g>
                     </svg>
-                    {/* 가운데 라인 */}
+                    {/* 가운데 라인 svg */}
                     <div className="cir">
                         <svg className="border">
                             <line x1="0" y1="10.5" x2="100%" y2="10.5" stroke="#D9D7D2"></line>
@@ -43,7 +38,12 @@ const Footer = ()=>{
                         </g>
                     </svg>
                 </div>
-                {/* sns */}
+                {/* 2. 로고 */}
+                <div className="logo_bx">
+                    {/* svg 파일 불러오기 */}
+                    <img src="./images/logo.png" alt="로고 이미지" />
+                </div>
+                {/* 3. sns */}
                 <div className="sns_bx">
                     <ul className="sns_list">
                         <li>
@@ -57,7 +57,7 @@ const Footer = ()=>{
                         </li>
                     </ul>
                 </div>
-                {/* 기타 링크 */}
+                {/* 4. 기타 링크 */}
                 <ul className="etc_link">
                     <li>
                         <a href="#">Nos gins</a>
@@ -69,7 +69,7 @@ const Footer = ()=>{
                         <a href="#">Privacy Policy</a>
                     </li>
                 </ul>
-                {/* 회사 정보 */}
+                {/* 5. 회사 정보 */}
                 <ul className="corp_info">
                     <li>
                         <i className="fa-solid fa-location-dot"></i>

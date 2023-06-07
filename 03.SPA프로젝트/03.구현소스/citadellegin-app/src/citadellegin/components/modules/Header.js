@@ -2,7 +2,7 @@
 
 import React from 'react';
 import $ from 'jquery';
-import './css/header.css';
+import '../../css/header.css';
 import {Link} from 'react-router-dom';
 
 
