@@ -13,12 +13,12 @@ const Footer = ()=>{
                 <div className="line_bx">
                     {/* 화살표 꼬리 모양 svg */}
                     <svg className="arrow-tail left" viewBox="0 0 20 20">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="Group-2" transform="translate(0.500000, 7.500000)" stroke="#D9D7D2" stroke-linecap="round">
-                                <path d="M-2.66453526e-15,0 C-2.66453526e-15,1.65685425 1.69470739,3 3.7852349,3" id="Path"></path>
-                                <path d="M-2.66453526e-15,3 C-2.66453526e-15,4.65685425 1.69470739,6 3.7852349,6" id="Path-Copy-2" transform="translate(1.892617, 4.500000) scale(1, -1) translate(-1.892617, -4.500000) "></path>
+                        <g id='Group-1' >
+                            <g id="Group-2" transform="translate(0.500000, 7.500000)">
+                                <path d="M-2.66453526e-15,0 C-2.66453526e-15,1.65685425 1.69470739,3 3.7852349,3" id="Path-1"></path>
+                                <path d="M-2.66453526e-15,3 C-2.66453526e-15,4.65685425 1.69470739,6 3.7852349,6" id="Path-2" transform="translate(1.892617, 4.500000) scale(1, -1) translate(-1.892617, -4.500000) "></path>
                             </g>
-                            <line x1="3.5" y1="10.5" x2="20" y2="10.5" id="Line-2-Copy-3" stroke="#D9D7D2"></line>
+                            <line x1="3.5" y1="10.5" x2="20" y2="10.5" id="Line-2"></line>
                         </g>
                     </svg>
                     {/* 가운데 라인 svg */}
@@ -29,12 +29,12 @@ const Footer = ()=>{
                     </div>
                     {/* 화살표 꼬리모양 svg */}
                     <svg className="arrow-tail right" viewBox="0 0 20 20">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <g id="Group-2" transform="translate(0.500000, 7.500000)" stroke="#D9D7D2" stroke-linecap="round">
-                                <path d="M-2.66453526e-15,0 C-2.66453526e-15,1.65685425 1.69470739,3 3.7852349,3" id="Path"></path>
-                                <path d="M-2.66453526e-15,3 C-2.66453526e-15,4.65685425 1.69470739,6 3.7852349,6" id="Path-Copy-2" transform="translate(1.892617, 4.500000) scale(1, -1) translate(-1.892617, -4.500000) "></path>
+                        <g id='Group-1' >
+                            <g id="Group-2" transform="translate(0.500000, 7.500000)">
+                                <path d="M-2.66453526e-15,0 C-2.66453526e-15,1.65685425 1.69470739,3 3.7852349,3" id="Path-1"></path>
+                                <path d="M-2.66453526e-15,3 C-2.66453526e-15,4.65685425 1.69470739,6 3.7852349,6" id="Path-2" transform="translate(1.892617, 4.500000) scale(1, -1) translate(-1.892617, -4.500000) "></path>
                             </g>
-                            <line x1="3.5" y1="10.5" x2="20" y2="10.5" id="Line-2-Copy-3" stroke="#D9D7D2"></line>
+                            <line x1="3.5" y1="10.5" x2="20" y2="10.5" id="Line-2"></line>
                         </g>
                     </svg>
                 </div>

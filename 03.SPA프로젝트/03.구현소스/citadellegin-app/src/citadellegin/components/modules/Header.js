@@ -94,7 +94,7 @@ function loadingFn(){
             // console.log("윈도우 리사이즈");
             positionFn(ham_btn, nav_bx);
         });
-    
+
         // 햄버거버튼 클릭시 내비박스의 CSS 트랜지션 변화
         ham_btn.click(function(){
             console.log("햄버거버튼 클릭시!");
@@ -124,6 +124,8 @@ function loadingFn(){
             nav_bx.css({
                 clipPath: `circle(0% at ${xval}px ${yval}px)`,
             }); /////////// css //////////
+
+            
         }); /////////////////// click //////////////////////
         
     
@@ -169,14 +171,19 @@ function loadingFn(){
                 // .tit 요소에 애니메이션 부여
                 lt.animate({
                     top: "0%"
-                }, 800);
+                }, 800,);
             }, 400);
-        
+            
+            $(".nav").addClass('on');
+            setTimeout(()=>{$(".nav").removeClass('on')},1000);
+            
         }; /////////////////////// tit_appearFn 함수 ///////////////////////
         
         
         // [ 마우스오버한 자신 제외 형제 요소의 투명도 흐리게 하기 ]
         const blurFn = function(ele){
+
+            
         
             ele.hover(
                 // 마우스오버시
