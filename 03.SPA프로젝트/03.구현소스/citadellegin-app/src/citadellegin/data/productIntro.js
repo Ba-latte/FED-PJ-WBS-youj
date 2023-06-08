@@ -7,8 +7,12 @@ const productIntro_data = {
     "Dete": {
         "pdtit": ["Citadelle", "Jardin d’Été"],
     },
-    "Rouge": {},
-    "Limited": {}
+    "Rouge": {
+        "pdtit": ["Citadelle", "Rouge"],
+    },
+    "Limited": {
+        "pdtit": ["N°6", ""],
+    }
 }; //////////////// productIntro_data 데이터 객체 ////////////////
 
 // 내보내기

@@ -11,13 +11,18 @@ import Dete from './citadellegin/components/pages/Dete';
 import Rouge from './citadellegin/components/pages/Rouge';
 import Limited from './citadellegin/components/pages/Limited';
 
+// AOS 라이브러리
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 // 라우터 구성 컴포넌트 : 스스로 내보내기 세팅 필수
 export default function App(){
   return(
     <BrowserRouter>
       <Routes>
-        {/* 레이아웃 컴포넌트 루트로 잡기 */}
+        {/* 레이아웃 컴포넌트를 루트로 잡기 */}
         <Route path='/' element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="/original" element={<Original />} />

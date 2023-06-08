@@ -5,6 +5,7 @@ import $ from "jquery";
 import '../../css/article.css';
 import article_data from '../../data/article';
 
+
 // [ 컴포넌트 만들기 ]
 const Article = (props)=>{
     // props.pgname - 페이지 이름으로 구분
@@ -30,20 +31,22 @@ const Article = (props)=>{
             {
                 selcData[props.pgname].map((v, i)=>
                 <div className="article_container" key={i}>
-                    <div>{'😎테스트 : ' + i}</div>
-                    <article className={"description"+(i=selcData.length-1?" medal":"")}>
-                        <h3 className="tit" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor="product_name_container">
-                            {v.tit}
-                        </h3>
-                        {v.subtit.length >= 1 && <h4 className="subtit">{v.subtit}</h4>}
+                    {/* <div>{'😎테스트 : ' + v.tit}</div> */}
+                    <article className={"description" + (v.tit==="As for awards..."?" medal":v.tit==="How to enjoy it: "?" recipe":"")}>
+                        <div className="wrap">
+                            <h3 className="tit" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={i===0?"500":""}>
+                                {v.tit}
+                            </h3>
+                            {v.subtit.length >= 1 && <h4 className="subtit">{v.subtit}</h4>}
+                        </div>
                         
                         <p className="desc">{makeDesc(v.desc)}</p>
                         {
                             v.isrc.length >= 1 &&
                             <div className="wrap">
                                 {
-                                    v.isrc.map((val)=>
-                                        <img className="img" src={val} alt="메달 이미지" />
+                                    v.isrc.map((val, idx)=>
+                                        <img className="img" src={val} alt="메달 이미지" key={idx}/>
                                     )
                                 }
                             </div>

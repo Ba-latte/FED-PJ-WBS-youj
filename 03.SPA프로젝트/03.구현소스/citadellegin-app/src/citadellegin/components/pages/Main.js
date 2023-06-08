@@ -8,6 +8,7 @@ import PageIntro from "../modules/PageIntro";
 const Main= ()=>{
     return(
         <>
+            {/* 1.페이지 소개 모듈 */}
             <PageIntro />
         </>
     );

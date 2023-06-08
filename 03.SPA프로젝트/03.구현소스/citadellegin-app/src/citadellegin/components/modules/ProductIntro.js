@@ -2,13 +2,13 @@
 
 
 import '../../css/productIntro.css';
-import Article from './Article';
 import productIntro_data from '../../data/productIntro';
+import Article from './Article';
 
 
 // [ 제품 소개 모듈 컴포넌트 ]
 const ProductIntro = (props)=>{
-    // props.pgname - 페이지이름
+    // props.pgname - 데이터 구분할 페이지 이름
 
     // 데이터 세팅
     const selcData = productIntro_data;
@@ -48,7 +48,7 @@ const ProductIntro = (props)=>{
                     </div>
                     {/* 3.제품 설명 아티클들 */}
                     <div className="product_desc_container">
-                        <Article pgname="Original" />
+                        <Article pgname={props.pgname} />
                     </div>
                 </aside>
             </section>

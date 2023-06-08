@@ -56,7 +56,8 @@
 .wrap:has(.sticker){
     position: absolute;
     z-index: -1;
-    outline: 1px dashed blue;
+
+    /* outline: 1px dashed blue; */
 }
 img.sticker{
     width: 100%;

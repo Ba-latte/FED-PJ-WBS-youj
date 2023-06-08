@@ -4,10 +4,6 @@ import React from "react";
 import ProductIntro from "../modules/ProductIntro";
 import Scroll from "../modules/Scroll";
 
-// AOS 라이브러리
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
 
 
 
@@ -15,8 +11,9 @@ AOS.init();
 const Dete = ()=>{
     return(
         <>
-            <h1>서브페이지 : dete 페이지</h1>
+            {/* 1.제품 소개 모듈 : dete */}
             <ProductIntro pgname="Dete" />
+            {/* 2.스크롤 안내 표시 모듈 */}
             <Scroll />
         </>
     );

@@ -4,16 +4,14 @@ import React from "react";
 import ProductIntro from "../modules/ProductIntro";
 import Scroll from "../modules/Scroll";
 
-// AOS 라이브러리
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
 
 // [ 서브페이지 : Original 컴포넌트 ] //////////////////
 const Original = ()=>{
     return(
         <>
+            {/* 1.제품 소개 모듈 : dete */}
             <ProductIntro pgname="Original" />
+            {/* 2.스크롤 안내 표시 모듈 */}
             <Scroll />
         </>
     );
