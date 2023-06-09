@@ -1,11 +1,13 @@
 @charset "utf-8";
 /* 각 제품 소개 모듈 CSS - productIntro.css */
-
+/* 제일 겉 박스 */
 .product_intro{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    margin-bottom: 100px;
 }
 
 /* 제품명 박스 세팅 */
@@ -28,6 +30,9 @@
 .name .letter:nth-child(2){
     font-style: italic;
     color: var(--ft-lemon-color);
+}
+.name .letter.rouge:nth-child(2){
+    color: var(--ft-rose-color);
 }
 
 /* 그리드 박스 세팅 */
@@ -53,13 +58,13 @@
 /* 제품 이미지 설정 */
 /**************** 제품 설명 아티클 ****************/
 /* 제품 주변 꾸밈 이미지 세팅 */
-.wrap:has(.sticker){
+.product_img_container .wrap:has(.sticker){
     position: absolute;
     z-index: -1;
 
     /* outline: 1px dashed blue; */
 }
-img.sticker{
+.product_img_container img.sticker{
     width: 100%;
 }
 /* 1.레몬 관련 세팅 */

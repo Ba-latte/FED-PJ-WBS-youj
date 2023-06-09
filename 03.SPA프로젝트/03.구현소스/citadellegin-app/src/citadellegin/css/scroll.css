@@ -28,14 +28,14 @@
     animation: headAni 1s ease-out infinite;
 }
 /* 점 세팅 */
-.dot{
+.scrl_container .dot{
     width: 3px;
     height: 3px;
     background-color: var(--arrow-grey-color);
     border-radius: 50%;
 }
 /* 글자 세팅 */
-.txt{
+.scrl_container .txt{
     font-family: 'Asap', sans-serif;
     writing-mode: vertical-rl;
     font-size: var(--font-medium);

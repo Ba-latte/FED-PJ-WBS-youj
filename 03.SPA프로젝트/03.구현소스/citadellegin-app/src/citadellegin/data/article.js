@@ -53,7 +53,7 @@ const article_data = {
             "subtit": "",
             "desc": "Citadelle Jardin d’Été express all its summer freshness in a classic gin & tonic. We show you how to make it here… don’t forget the twist of lemon peel that makes all the difference!", 
             "isrc": [
-                "./images/dt/sub/original/recipe.jpg",
+                "./images/dt/sub/dete/recipe.jpg",
             ],
         },
         {
@@ -61,9 +61,9 @@ const article_data = {
             "subtit": "",
             "desc": "A newcomer to the gin market, Citadelle Jardin d’Été has already won a double gold medal at the San Francisco World Spirits Competition 2021 and a gold medal at the International Spirits Challenge 2021.",
             "isrc": [
-                "./images/dt/sub/original/medal1.png",
-                "./images/dt/sub/original/medal2.png",
-                "./images/dt/sub/original/medal3.png",
+                "./images/dt/sub/dete/medal1.png",
+                "./images/dt/sub/dete/medal2.png",
+                "./images/dt/sub/dete/medal3.png",
             ],
         },
     ],
@@ -85,7 +85,7 @@ const article_data = {
             "subtit": "",
             "desc": "Tastes delicious in any desired berry cocktail and in a classic gin & tonic. That’s all the twist you need for your summer drink!", 
             "isrc": [
-                "./images/dt/sub/original/recipe.jpg",
+                "./images/dt/sub/rouge/recipe.jpg",
             ],
         },
         {
