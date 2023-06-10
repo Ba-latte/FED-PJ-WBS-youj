@@ -1,9 +1,9 @@
 // 상단 영역 컴포넌트 JS - Header.js
 
 import React from 'react';
-import $ from 'jquery';
-import '../../css/header.css';
+import $, { event } from 'jquery';
 import {Link} from 'react-router-dom';
+import '../../css/header.css';
 
 
 
@@ -11,9 +11,6 @@ import {Link} from 'react-router-dom';
 const Header = ()=>{
     return(
         <>
-            {/* 구글 심볼 이렇게 쓰면 되나?ㅠ */}
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
             {/* 1.상단 영역 */}
             <div id="top">
                 <header className="top">
@@ -31,7 +28,7 @@ const Header = ()=>{
                             <div className="wrap">
                                 {/* 메뉴 박스 */}
                                 <div className="button">
-                                    <a href="#">
+                                    <a href="#" onClick={(e)=>{e.preventDefault();}}>
                                         <span className="material-symbols-outlined ham_icon">menu</span>
                                     </a>
                                 </div>
@@ -93,17 +90,21 @@ function loadingFn(){
         $(window).resize(function(){
             // console.log("윈도우 리사이즈");
             positionFn(ham_btn, nav_bx);
+
         });
 
         // 햄버거버튼 클릭시 내비박스의 CSS 트랜지션 변화
         ham_btn.click(function(){
             console.log("햄버거버튼 클릭시!");
-            xval = $(this).offset().left+20;
-            yval = $(this).offset().top+20;
-    
+            xval = $(this).offset().left+22;
+            yval = $(this).offset().top+22;
+            
+            // 내비 박스 css변경하기 : 애니메이션 설정하기
             nav_bx.css({
-                clipPath: `circle(150% at ${xval}px ${yval}px)`,
-                transition: "1s cubic-bezier(0.83, 0, 0.21, 1.33)",
+                // clipPath: `circle(150% at ${xval}px ${yval}px)`,
+                // transition: "clip-path 1s cubic-bezier(0.83, 0, 0.21, 1.33)",
+                display:"block",
+                animation:"navOpenAni 1s cubic-bezier(0.83, 0, 0.21, 1.33) forwards"
             }); /////////// css //////////
     
     
@@ -118,11 +119,12 @@ function loadingFn(){
         // 닫기버튼 클릭시 내비박스의 CSS 트랜지션 변화
         cls_btn.click(function(){
             console.log("닫기버튼 클릭시!");
-            xval = ham_btn.offset().left+20;
-            yval = ham_btn.offset().top+20;
+            xval = ham_btn.offset().left+22;
+            yval = ham_btn.offset().top+22;
     
             nav_bx.css({
-                clipPath: `circle(0% at ${xval}px ${yval}px)`,
+                // clipPath: `circle(0% at ${xval}px ${yval}px)`,
+                animation:"navCloseAni 1s cubic-bezier(0.83, 0, 0.21, 1.33) forwards"
             }); /////////// css //////////
 
             
@@ -134,19 +136,24 @@ function loadingFn(){
         // [ 햄버거 버튼의 x,y위치값 구하기 ]
         function positionFn(ham, nav){
             // 햄버거 버튼의 x,y위치값 구하기 : 내비박스 클립패스 시작 위치를 정하기 위함
-            xval = ham.offset().left+20;
-            yval = ham.offset().top+20;
+            xval = ham.offset().left + 22;
+            yval = ham.offset().top + 22;
             console.log("햄버거버튼 x값 : ", xval);
             console.log("햄버거버튼 y값 : ", yval);
         
             // 내비박스 클립패스 초기 설정
-            nav.css({
-                clipPath: `circle(0% at ${xval}px ${yval}px)`,
-            });
+            // nav.css({
+            //     clipPath: `circle(0% at ${xval}px ${yval}px)`,
+            // });
+            nav_bx.css({
+                // clipPath: `circle(0% at ${xval}px ${yval}px)`,
+                animation:"navCloseAni 1s cubic-bezier(0.83, 0, 0.21, 1.33) forwards"
+            }); /////////// css //////////
+
         } ////////////////// positionFn 함수 ////////////////////
         
         
-        // [ 일정시간 후 타이틀 등장 함수 ]
+        // [ 메뉴 박스 - 일정시간 후 타이틀 등장 함수 ]
         const tit_appearFn = function(bx, lt){
             console.log("타이틀 등장 함수");
         
@@ -183,8 +190,6 @@ function loadingFn(){
         // [ 마우스오버한 자신 제외 형제 요소의 투명도 흐리게 하기 ]
         const blurFn = function(ele){
 
-            
-        
             ele.hover(
                 // 마우스오버시
                 function(){
@@ -207,8 +212,11 @@ function loadingFn(){
         txt.click(function(){
             // 햄버거 버튼의 위치에 맞게 원모양으로 줄어드는 함수 호출하기
             positionFn(ham_btn, nav_bx);
+
+            // 페이지 맨 위로 이동하기
+            window.scrollTo(0,0);
+
         });
-    
 
 
     }); ////////////////////////////// jQB ///////////////////////////////////////
