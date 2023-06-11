@@ -89,6 +89,7 @@ function loadingFn(){
         // 윈도우 리사이즈시 내비박스 위치 실시간 변경하기
         $(window).resize(function(){
             // console.log("윈도우 리사이즈");
+
             positionFn(ham_btn, nav_bx);
 
         });
@@ -98,21 +99,44 @@ function loadingFn(){
             console.log("햄버거버튼 클릭시!");
             xval = $(this).offset().left+22;
             yval = $(this).offset().top+22;
-            
-            // 내비 박스 css변경하기 : 애니메이션 설정하기
-            nav_bx.css({
-                // clipPath: `circle(150% at ${xval}px ${yval}px)`,
-                // transition: "clip-path 1s cubic-bezier(0.83, 0, 0.21, 1.33)",
-                display:"block",
-                animation:"navOpenAni 1s cubic-bezier(0.83, 0, 0.21, 1.33) forwards"
-            }); /////////// css //////////
+
+
+            // 🔥방법1 ) 내비 박스 css변경하기 : 애니메이션 설정하기
+            // nav_bx.css({
+            //     // clipPath: `circle(150% at ${xval}px ${yval}px)`,
+            //     // transition: "clip-path 1s cubic-bezier(0.83, 0, 0.21, 1.33)",
+            //     display:"block",
+            //     animation:"navOpenAni 1s cubic-bezier(0.83, 0, 0.21, 1.33) forwards"
+            // }); /////////// css //////////
+
+            setTimeout(() => {
+                // 🔥방법2) js에서 직접 애니메이션 키프레임 제작해서 적용하기
+                document.querySelector("#nav").animate(
+                    // 키프레임 - 배열
+                    [
+                        // 0%
+                        {
+                            clipPath: `circle(0% at ` + xval + `px 60px)`
     
-    
+                        },
+                        // 100%
+                        {
+                            clipPath: `circle(300% at ` + xval + `px 60px)`
+                        }
+                    ],
+                    // 옵션 - 객체
+                    {
+                        duration: 1000,
+                        easing: "cubic-bezier(0.83, 0, 0.21, 1.33)",
+                        fill: "forwards"
+                    }
+                ); ////////////////// 내비 박스 애니메이션 //////////////////
+            }, 10, tit_appearFn(nav_list, txt));
             // 일정시간 후 타이틀 등장 함수 호출
-            tit_appearFn(nav_list, txt);
+            // tit_appearFn(nav_list, txt);
+            // // 마우스오버한 자신 제외 형제 요소의 투명도 흐리게 하는 함수 호출
+            // blurFn(txt);
     
-            // 마우스오버한 자신 제외 형제 요소의 투명도 흐리게 하는 함수 호출
-            blurFn(txt);
     
         }); ////////////////// click /////////////////////
     
@@ -121,11 +145,35 @@ function loadingFn(){
             console.log("닫기버튼 클릭시!");
             xval = ham_btn.offset().left+22;
             yval = ham_btn.offset().top+22;
-    
-            nav_bx.css({
-                // clipPath: `circle(0% at ${xval}px ${yval}px)`,
-                animation:"navCloseAni 1s cubic-bezier(0.83, 0, 0.21, 1.33) forwards"
-            }); /////////// css //////////
+
+
+            // 🔥방법1 ) 내비 박스 css변경하기 : 애니메이션 설정하기
+            // nav_bx.css({
+            //     // clipPath: `circle(0% at ${xval}px ${yval}px)`,
+            //     animation:"navCloseAni 1s cubic-bezier(0.83, 0, 0.21, 1.33) forwards"
+            // }); /////////// css //////////
+
+            // 🔥방법2) js에서 직접 애니메이션 키프레임 제작해서 적용하기
+            document.querySelector("#nav").animate(
+                // 키프레임 - 배열
+                [
+                    // 0%
+                    {
+                        clipPath: `circle(150% at ` + xval + `px 60px)`
+
+                    },
+                    // 100%
+                    {
+                        clipPath: `circle(0% at ` + xval + `px 60px)`
+                    }
+                ],
+                // 옵션 - 객체
+                {
+                    duration: 1000,
+                    easing: "cubic-bezier(0.83, 0, 0.21, 1.33)",
+                    fill: "forwards"
+                }
+            ); ////////////////// 내비 박스 애니메이션 //////////////////
 
             
         }); /////////////////// click //////////////////////
@@ -142,12 +190,8 @@ function loadingFn(){
             console.log("햄버거버튼 y값 : ", yval);
         
             // 내비박스 클립패스 초기 설정
-            // nav.css({
-            //     clipPath: `circle(0% at ${xval}px ${yval}px)`,
-            // });
-            nav_bx.css({
-                // clipPath: `circle(0% at ${xval}px ${yval}px)`,
-                animation:"navCloseAni 1s cubic-bezier(0.83, 0, 0.21, 1.33) forwards"
+            nav.css({
+                clipPath: `circle(0% at ${xval}px ${yval}px)`,
             }); /////////// css //////////
 
         } ////////////////// positionFn 함수 ////////////////////
@@ -173,16 +217,21 @@ function loadingFn(){
                 top: "100%",
             });
         
-            // 시차를 두고 애니메이션 발생하게 만들기
+            // 시차를 두고 타이틀 등장 애니메이션 발생하게 만들기
             setTimeout(() => {
                 // .tit 요소에 애니메이션 부여
                 lt.animate({
                     top: "0%"
                 }, 800,);
+
+                // 마우스오버한 자신 제외 형제 요소의 투명도 흐리게 하는 함수 호출
+                blurFn(txt);
             }, 400);
             
             $(".nav").addClass('on');
             setTimeout(()=>{$(".nav").removeClass('on')},1000);
+
+            
             
         }; /////////////////////// tit_appearFn 함수 ///////////////////////
         
@@ -208,15 +257,37 @@ function loadingFn(){
 
 
 
-        // [ 메뉴 클릭시 메뉴 배경 박스 원모양으로 줄어들게 만들기 ]
+        // [ 메뉴 클릭시 메뉴 배경 박스 원모양으로 줄어들게 만들기 ] ///////////////////////////////
         txt.click(function(){
-            // 햄버거 버튼의 위치에 맞게 원모양으로 줄어드는 함수 호출하기
+            // 위치 조정하기
             positionFn(ham_btn, nav_bx);
 
             // 페이지 맨 위로 이동하기
             window.scrollTo(0,0);
 
-        });
+            // 🔥방법2) js에서 직접 애니메이션 키프레임 제작해서 적용하기
+            document.querySelector("#nav").animate(
+                // 키프레임 - 배열
+                [
+                    // 0%
+                    {
+                        clipPath: `circle(150% at ` + xval + `px 60px)`
+
+                    },
+                    // 100%
+                    {
+                        clipPath: `circle(0% at ` + xval + `px 60px)`
+                    }
+                ],
+                // 옵션 - 객체
+                {
+                    duration: 1000,
+                    easing: "cubic-bezier(0.83, 0, 0.21, 1.33)",
+                    fill: "forwards"
+                }
+            ); ////////////////// 내비 박스 애니메이션 //////////////////
+
+        }); /////////////////////////////// click ///////////////////////////////
 
 
     }); ////////////////////////////// jQB ///////////////////////////////////////

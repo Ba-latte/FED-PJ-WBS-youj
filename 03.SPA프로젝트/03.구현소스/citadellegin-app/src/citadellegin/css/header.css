@@ -24,6 +24,7 @@ header.top{
     max-width: 1400px;
     height: 80px;
     margin: 0 auto;
+    padding: 0 30px;
 
     display: flex;
     justify-content: space-between;
@@ -69,7 +70,6 @@ header.top{
     height: 100%;
 
     position: fixed;
-    /* position: relative; */
     z-index: 3;
 
     background-color: var(--bg-navy-color);
@@ -82,7 +82,7 @@ header.top{
     /* border: 2px dashed blueviolet; */
 }
 
-/* 내비게이션 박스 애니메이션 키프레임 */
+/* 🔥방법1) 내비게이션 박스 애니메이션 키프레임 */
 @keyframes navOpenAni {
     0%{
         clip-path: circle(0% at 86.2% 60px);
@@ -116,6 +116,7 @@ header.top{
 #nav>.wrap{
     position: relative;
     max-width: 1400px;
+    padding: 0 30px;
     margin: 20px auto 0;
 
     /* outline: 2px dashed blue; */

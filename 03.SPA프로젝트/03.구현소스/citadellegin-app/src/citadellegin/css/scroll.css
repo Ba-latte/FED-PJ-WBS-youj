@@ -21,11 +21,11 @@
 }
 .scrl_container svg.arrow-tail{
     transform: rotate(90deg);
-    animation: tailAni 1s ease-out infinite;
+    /* animation: tailAni 1s ease-out infinite; */
 }
 .scrl_container svg.arrow-head{
     transform: rotate(-90deg);
-    animation: headAni 1s ease-out infinite;
+    /* animation: headAni 1s ease-out infinite; */
 }
 /* 점 세팅 */
 .scrl_container .dot{

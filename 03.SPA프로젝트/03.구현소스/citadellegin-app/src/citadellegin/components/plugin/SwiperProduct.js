@@ -62,7 +62,7 @@ export default function SwiperProduct() {
                 </Swiper>
             </section>
             {/* js 로드 함수 호출 */}
-            {jsFn}
+            {jsFn()}
         </>
     );
 }
@@ -72,7 +72,7 @@ const jsFn = ()=>{
         console.log("스와이프 배너 모듈 로딩 완료");
 
         //////////////////////////// [ 제품 타이틀 등장 액션 ] ////////////////////////////
-        function slideUpAni(){
+        const slideUpAni = ()=>{
             const pd_slide = $(".slide");
             const pd_tit = $(".product_tit");
             console.log("제품 슬라이드 : ", pd_slide);
@@ -118,7 +118,7 @@ const jsFn = ()=>{
 
 
         // 제품 타이틀 등장 액션 호출
-        slideUpAni();
+        slideUpAni;
 
         
     }); /////////////////////// jQB /////////////////////////////

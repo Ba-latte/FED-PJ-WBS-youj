@@ -3,6 +3,15 @@
 import React from "react";
 import '../../css/footer.css';
 
+// Font Awesome 불러오기
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// 개별 아이콘 불러오기
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+
+
 const Footer = ()=>{
     return(
         <>
@@ -47,13 +56,13 @@ const Footer = ()=>{
                 <div className="sns_bx">
                     <ul className="sns_list">
                         <li>
-                            <a href="https://www.instagram.com/citadellegin/?hl=en" target="_blank"><i className="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/citadellegin/?hl=en" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a>
                         </li>
                         <li>
-                            <a href="https://youtube.com/@citadellegin1929" target="_blank"><i className="fa-brands fa-youtube"></i></a>
+                            <a href="https://youtube.com/@citadellegin1929" target="_blank"><FontAwesomeIcon icon={faYoutube} /></a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/CitadelleGin" target="_blank"><i className="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/CitadelleGin" target="_blank"><FontAwesomeIcon icon={faFacebookF} /></a>
                         </li>
                     </ul>
                 </div>
@@ -72,8 +81,8 @@ const Footer = ()=>{
                 {/* 5. 회사 정보 */}
                 <ul className="corp_info">
                     <li>
-                        <i className="fa-solid fa-location-dot"></i>
-                        Château de Bonbonnet 16130 Ars, France
+                        <FontAwesomeIcon icon={faLocationDot} />
+                        &nbsp; Château de Bonbonnet 16130 Ars, France
                     </li>
                     <li>
                         © 2023 CITADELLE

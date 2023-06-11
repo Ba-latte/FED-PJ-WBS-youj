@@ -55,7 +55,7 @@ const ProductIntro = (props)=>{
                         <Article pgname={props.pgname} />
                     </div>
                 </aside>
-                {/* 4.제품 홍보 문구 섹션 */}
+                {/* 4.제품 홍보 단락 섹션 */}
                 <PromotionalPhrase pgname={props.pgname} />
             </section>
         </div>

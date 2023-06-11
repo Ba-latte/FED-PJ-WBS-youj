@@ -3,7 +3,6 @@
 import React from 'react';
 import $ from 'jquery';
 import '../../css/promotionalPhrase.css';
-import Original from '../pages/Original';
 
 
 const PromotionalPhrase = (props)=>{

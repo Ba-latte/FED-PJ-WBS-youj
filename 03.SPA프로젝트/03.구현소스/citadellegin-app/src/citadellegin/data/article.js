@@ -113,7 +113,7 @@ const article_data = {
             "subtit": "",
             "desc": "Intense, herbaceous notes of juniper and aniseed, followed by the vinegar and salty dimensions of the pickles. A long and persistent final with a subtle touch of mustard and pearl onions.", 
             "isrc": [
-                "./images/dt/sub/original/recipe.jpg",
+                "./images/dt/sub/limited/recipe.jpg",
             ],
         },
         {
