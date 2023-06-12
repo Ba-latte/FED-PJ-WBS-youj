@@ -10,6 +10,7 @@ import Original from './citadellegin/components/pages/Original';
 import Dete from './citadellegin/components/pages/Dete';
 import Rouge from './citadellegin/components/pages/Rouge';
 import Limited from './citadellegin/components/pages/Limited';
+import ScrollTop from './citadellegin/components/modules/ScrollTop';
 
 // AOS 라이브러리
 import AOS from 'aos';
@@ -21,6 +22,8 @@ AOS.init();
 export default function App(){
   return(
     <BrowserRouter>
+      {/* 👇 라우터 링크 이동할 때 스크롤 최상단으로 이동하기 */}
+      <ScrollTop />
       <Routes>
         {/* 레이아웃 컴포넌트를 루트로 잡기 */}
         <Route path='/' element={<Layout />}>

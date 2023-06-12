@@ -17,11 +17,15 @@ const ProductIntro = (props)=>{
         <div id="product_intro">
             {/* 제품 소개 섹션 */}
             <section className="product_intro">
+                {/* 0.배경 이미지 */}
+                <div className='wrap'>
+                    <img className='bg' src={'./images/dt/sub/'+props.pgname.toLowerCase()+'/background-right.png'} alt="배경 이미지" />
+                </div>
                 {/* 1. 제품명 */}
                 <div className="product_name_container">
                     <div className="wrap">
                         <h2 className="name">
-                            <span>
+                            <span data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700" data-aos-easing="ease-in-out-quart">
                                 {
                                     selcData[props.pgname]["pdtit"].map((v,i)=>
                                         <span key={i} className={'letter' + " " + props.pgname.toLowerCase()}>{v}</span>

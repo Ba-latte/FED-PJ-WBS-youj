@@ -4,6 +4,7 @@ import React from "react";
 import $ from "jquery";
 import '../../css/article.css';
 import article_data from '../../data/article';
+import SwiperLimited from "../plugin/SwiperLimited";
 
 
 // [ 컴포넌트 만들기 ]
@@ -34,13 +35,20 @@ const Article = (props)=>{
                     {/* <div>{'😎테스트 : ' + v.tit}</div> */}
                     <article className={"description" + (v.tit==="As for awards..."?" medal":v.tit==="How to enjoy it: "?" recipe":"")}>
                         <div className="wrap">
-                            <h3 className="tit" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={i===0?"500":""}>
+                            {/* 큰 제목 */}
+                            <h3 className="tit" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={i===0?"700":""} data-aos-easing="ease-in-out-quart">
                                 {v.tit}
                             </h3>
+                            {/* 작은 제목 */}
                             {v.subtit.length >= 1 && <h4 className="subtit">{v.subtit}</h4>}
                         </div>
-                        
-                        <p className="desc">{makeDesc(v.desc)}</p>
+                        {/* 설명 : pgname이 "limited"고 desc 속성 값이 비어있다면 -> <SwiperProduct/>컴포넌트 불러오기 */}
+                        {
+                            props.pgname=="Limited" && v.desc === "" ?
+                            <SwiperLimited /> :
+                            <p className="desc">{makeDesc(v.desc)}</p>
+                        }
+                        {/* 이미지 */}
                         {
                             v.isrc.length >= 1 &&
                             <div className="wrap">

@@ -9,6 +9,20 @@ import '../../css/header.css';
 
 // [ 상단 영역 컴포넌트 만들기 ] /////////////////////////////
 const Header = ()=>{
+    // 메뉴 데이터 세팅하기
+    const menuList = [
+        {
+            "original": ["Citadelle", "Original"],
+        },
+        {
+            "dete": ["Jardin", "d’Été"],
+        },
+        {
+            "dete": ["Jardin", "d’Été"],
+        },
+
+    ];
+
     return(
         <>
             {/* 1.상단 영역 */}
@@ -263,7 +277,7 @@ function loadingFn(){
             positionFn(ham_btn, nav_bx);
 
             // 페이지 맨 위로 이동하기
-            window.scrollTo(0,0);
+            // window.scrollTo(0,0);
 
             // 🔥방법2) js에서 직접 애니메이션 키프레임 제작해서 적용하기
             document.querySelector("#nav").animate(

@@ -1,4 +1,4 @@
-// 스와이퍼 - 제품 배너 컴포넌트 JS - Swiper-Product.js
+// 스와이퍼 - 제품 배너 컴포넌트 JS - SwiperLimited.js
 
 import React, { useRef, useState } from "react";
 import $ from 'jquery';
@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "./swiperProduct.css";
+import "./swiperLimited.css";
 
 
 
@@ -71,10 +71,8 @@ const slideUpAni = ()=>{
 
 
 // [ 컴포넌트 만들기 ]
-export default function SwiperProduct(props) {
+export default function SwiperLimited() {
     // props.pgname - 페이지 이름 (첫글자 대문자)
-
-    
     
     return (
         <>
@@ -82,7 +80,7 @@ export default function SwiperProduct(props) {
                 <Swiper
                     slidesPerView={2}
                     // "Limited"페이지에서 호출된 거면 간격 30주고 아니면 0주기
-                    spaceBetween={props.pgname=="Limited"?30:0}
+                    spaceBetween={30}
                     centeredSlides={true}
                     breakpoints={{
                         200: {
@@ -98,7 +96,7 @@ export default function SwiperProduct(props) {
                     className="swiper-product"
                 >
                     <ul className="swiper-wrapper">
-                        <SwiperSlide className="swiper-slide slide">
+                        <SwiperSlide className="swiper-slide slide limited">
                             <Link to='/original'>
                                 <img src="./images/dt/sub/citadelle-original.png" alt="제품 이미지" />
                                 <div className="wrap">
@@ -106,7 +104,7 @@ export default function SwiperProduct(props) {
                                 </div>
                             </Link>
                         </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide">
+                        <SwiperSlide className="swiper-slide slide limited">
                             <Link to="/dete">
                                 <img src="./images/dt/sub/citadelle-jardin-dete.png" alt="제품 이미지" />
                                 <div className="wrap">
@@ -114,7 +112,7 @@ export default function SwiperProduct(props) {
                                 </div>
                             </Link>
                         </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide">
+                        <SwiperSlide className="swiper-slide slide limited">
                             <Link to='/rouge'>
                                 <img src="./images/dt/sub/citadelle-rouge.png" alt="제품 이미지" />
                                 <div className="wrap">
@@ -122,7 +120,7 @@ export default function SwiperProduct(props) {
                                 </div>
                             </Link>
                         </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide">
+                        <SwiperSlide className="swiper-slide slide limited">
                             <Link to='limited'>
                                 <img src="./images/dt/sub/citadelle-sergent-pepper.png" alt="제품 이미지" />
                                 <div className="wrap">

@@ -10,6 +10,14 @@
     margin-bottom: 100px;
 }
 
+/* 배경 이미지 */
+.product_intro>.wrap:has(.bg){
+    position: absolute;
+    top: 20%;
+    right: 0;
+    z-index: -1;
+}
+
 /* 제품명 박스 세팅 */
 .product_name_container{
     padding: 100px 20px 0;
