@@ -73,6 +73,35 @@ const slideUpAni = ()=>{
 // [ 컴포넌트 만들기 ]
 export default function SwiperLimited() {
     // props.pgname - 페이지 이름 (첫글자 대문자)
+
+    // 리미티드 제품 데이터
+    const limited_product_data = [
+        {
+            "productName": "Extreme N°1",
+            "isrc": "./images/dt/sub/limited/n1.png",
+            
+        },
+        {
+            "productName": "Extreme N°2",
+            "isrc": "./images/dt/sub/limited/n1.png",
+        },
+        {
+            "productName": "Extreme N°3",
+            "isrc": "./images/dt/sub/limited/n1.png",
+        },
+        {
+            "productName": "Extreme N°4",
+            "isrc": "./images/dt/sub/limited/n1.png",
+        },
+        {
+            "productName": "Extreme N°5",
+            "isrc": "./images/dt/sub/limited/n1.png",
+        },
+        {
+            "productName": "Extreme N°6",
+            "isrc": "./images/dt/sub/limited/n1.png",
+        },
+    ];
     
     return (
         <>
@@ -93,46 +122,46 @@ export default function SwiperLimited() {
                             slidesPerView: 4,
                         }
                     }}
-                    className="swiper-product"
+                    className="swiper-limited"
                 >
                     <ul className="swiper-wrapper">
                         <SwiperSlide className="swiper-slide slide limited">
                             <Link to='/original'>
-                                <img src="./images/dt/sub/citadelle-original.png" alt="제품 이미지" />
                                 <div className="wrap">
-                                    <span className="product_tit">Original</span>
+                                    <span className="product_tit limited">Original</span>
                                 </div>
+                                <img src="./images/dt/sub/citadelle-original.png" alt="제품 이미지" />
                             </Link>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide slide limited">
                             <Link to="/dete">
-                                <img src="./images/dt/sub/citadelle-jardin-dete.png" alt="제품 이미지" />
                                 <div className="wrap">
-                                    <span className="product_tit">Jardin <br /> d’Été</span>
+                                    <span className="product_tit limited">Jardin d’Été</span>
                                 </div>
+                                <img src="./images/dt/sub/citadelle-jardin-dete.png" alt="제품 이미지" />
                             </Link>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide slide limited">
                             <Link to='/rouge'>
-                                <img src="./images/dt/sub/citadelle-rouge.png" alt="제품 이미지" />
                                 <div className="wrap">
-                                    <span className="product_tit">Rouge</span>
+                                    <span className="product_tit limited">Rouge</span>
                                 </div>
+                                <img src="./images/dt/sub/citadelle-rouge.png" alt="제품 이미지" />
                             </Link>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide slide limited">
                             <Link to='limited'>
-                                <img src="./images/dt/sub/citadelle-sergent-pepper.png" alt="제품 이미지" />
                                 <div className="wrap">
-                                    <span className="product_tit">Our limited <br /> editions</span>
+                                    <span className="product_tit limited">Our limited editions</span>
                                 </div>
+                                <img src="./images/dt/sub/citadelle-sergent-pepper.png" alt="제품 이미지" />
                             </Link>
                         </SwiperSlide>
                     </ul>
                 </Swiper>
             </section>
             {/* js 로드 함수 호출 */}
-            {slideUpAni()}
+            {/* {slideUpAni()} */}
         </>
     );
 }

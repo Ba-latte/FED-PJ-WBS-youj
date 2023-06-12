@@ -21,7 +21,7 @@ section.swipe_banner {
 }
 
 /* 각 슬라이드 (li) */
-.swiper-slide {
+.swiper-slide.gin {
     position: relative;
     /* 부모자격 - 타이틀의 겉박스 */
     display: flex;
@@ -41,7 +41,7 @@ section.swipe_banner {
 
 
 /* 제품 이미지 */
-.swiper-slide img {
+.swiper-slide.gin img {
     margin: 0 auto;
     display: block;
     width: 75%;
@@ -50,8 +50,8 @@ section.swipe_banner {
 
     /* border: 2px dashed red; */
 }
-
-.swiper-slide .wrap:has(.product_tit){
+/* 타이틀 겉박스 */
+.swiper-slide.gin .wrap:has(.product_tit.gin){
     position: absolute;
     /* 부모 - 각 li */
     top: 50%;
@@ -64,7 +64,7 @@ section.swipe_banner {
 }
 
 /* 제품 타이틀 */
-.swiper-slide .product_tit{
+.swiper-slide.gin .product_tit.gin{
     /* position: absolute; */
 
     font-family: 'Cormorant Garamond', serif;

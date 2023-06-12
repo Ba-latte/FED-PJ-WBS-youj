@@ -18,8 +18,8 @@ import "./swiperProduct.css";
 const slideUpAni = ()=>{
     $(()=>{
         
-    const pd_slide = $(".slide");
-    const pd_tit = $(".product_tit");
+    const pd_slide = $(".slide.gin");
+    const pd_tit = $(".product_tit.gin");
     console.log("제품 슬라이드 : ", pd_slide);
 
     // [ 애니메이트() 메서드로 만들 경우 ]
@@ -28,7 +28,7 @@ const slideUpAni = ()=>{
         // 오버시
         function(){
             // 오버한 요소의 타이틀 높이값 구하기
-            let hval = $(this).find(".product_tit").height();
+            let hval = $(this).find(".product_tit.gin").height();
             console.log("마우스 오버한 요소의 타이틀 높이값 : ", hval);
 
             // 오버한 요소를 제외한 형제 요소들의 투명도 흐리게 하기
@@ -98,35 +98,35 @@ export default function SwiperProduct(props) {
                     className="swiper-product"
                 >
                     <ul className="swiper-wrapper">
-                        <SwiperSlide className="swiper-slide slide">
+                        <SwiperSlide className="swiper-slide slide gin">
                             <Link to='/original'>
                                 <img src="./images/dt/sub/citadelle-original.png" alt="제품 이미지" />
                                 <div className="wrap">
-                                    <span className="product_tit">Original</span>
+                                    <span className="product_tit gin">Original</span>
                                 </div>
                             </Link>
                         </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide">
+                        <SwiperSlide className="swiper-slide slide gin">
                             <Link to="/dete">
                                 <img src="./images/dt/sub/citadelle-jardin-dete.png" alt="제품 이미지" />
                                 <div className="wrap">
-                                    <span className="product_tit">Jardin <br /> d’Été</span>
+                                    <span className="product_tit gin">Jardin <br /> d’Été</span>
                                 </div>
                             </Link>
                         </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide">
+                        <SwiperSlide className="swiper-slide slide gin">
                             <Link to='/rouge'>
                                 <img src="./images/dt/sub/citadelle-rouge.png" alt="제품 이미지" />
                                 <div className="wrap">
-                                    <span className="product_tit">Rouge</span>
+                                    <span className="product_tit gin">Rouge</span>
                                 </div>
                             </Link>
                         </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide">
+                        <SwiperSlide className="swiper-slide slide gin">
                             <Link to='limited'>
                                 <img src="./images/dt/sub/citadelle-sergent-pepper.png" alt="제품 이미지" />
                                 <div className="wrap">
-                                    <span className="product_tit">Our limited <br /> editions</span>
+                                    <span className="product_tit gin">Our limited <br /> editions</span>
                                 </div>
                             </Link>
                         </SwiperSlide>
