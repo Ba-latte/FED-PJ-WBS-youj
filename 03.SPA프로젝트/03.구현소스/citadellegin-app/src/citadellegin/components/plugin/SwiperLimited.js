@@ -83,80 +83,58 @@ export default function SwiperLimited() {
         },
         {
             "productName": "Extreme N°2",
-            "isrc": "./images/dt/sub/limited/n1.png",
+            "isrc": "./images/dt/sub/limited/n2.png",
         },
         {
             "productName": "Extreme N°3",
-            "isrc": "./images/dt/sub/limited/n1.png",
+            "isrc": "./images/dt/sub/limited/n3.png",
         },
         {
             "productName": "Extreme N°4",
-            "isrc": "./images/dt/sub/limited/n1.png",
+            "isrc": "./images/dt/sub/limited/n4.png",
         },
         {
             "productName": "Extreme N°5",
-            "isrc": "./images/dt/sub/limited/n1.png",
-        },
-        {
-            "productName": "Extreme N°6",
-            "isrc": "./images/dt/sub/limited/n1.png",
+            "isrc": "./images/dt/sub/limited/n5.png",
         },
     ];
     
     return (
         <>
-            <section className="swipe_banner">
+            <section className="swipe_banner limited">
                 <Swiper
-                    slidesPerView={2}
+                    slidesPerView={1}
                     // "Limited"페이지에서 호출된 거면 간격 30주고 아니면 0주기
                     spaceBetween={30}
-                    centeredSlides={true}
+                    centeredSlides={false}
                     breakpoints={{
                         200: {
-                            slidesPerView: 2,
+                            slidesPerView: 1,
                         },
                         700: {
+                            slidesPerView: 2,
+                        },
+                        1000: {
                             slidesPerView: 3,
                         },
-                        1200: {
-                            slidesPerView: 4,
-                        }
                     }}
                     className="swiper-limited"
                 >
                     <ul className="swiper-wrapper">
-                        <SwiperSlide className="swiper-slide slide limited">
-                            <Link to='/original'>
-                                <div className="wrap">
-                                    <span className="product_tit limited">Original</span>
-                                </div>
-                                <img src="./images/dt/sub/citadelle-original.png" alt="제품 이미지" />
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide limited">
-                            <Link to="/dete">
-                                <div className="wrap">
-                                    <span className="product_tit limited">Jardin d’Été</span>
-                                </div>
-                                <img src="./images/dt/sub/citadelle-jardin-dete.png" alt="제품 이미지" />
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide limited">
-                            <Link to='/rouge'>
-                                <div className="wrap">
-                                    <span className="product_tit limited">Rouge</span>
-                                </div>
-                                <img src="./images/dt/sub/citadelle-rouge.png" alt="제품 이미지" />
-                            </Link>
-                        </SwiperSlide>
-                        <SwiperSlide className="swiper-slide slide limited">
-                            <Link to='limited'>
-                                <div className="wrap">
-                                    <span className="product_tit limited">Our limited editions</span>
-                                </div>
-                                <img src="./images/dt/sub/citadelle-sergent-pepper.png" alt="제품 이미지" />
-                            </Link>
-                        </SwiperSlide>
+                        {
+                            limited_product_data.map((v, i)=>
+                            <SwiperSlide className="swiper-slide slide limited" key={i}>
+                                {console.log(v.isrc)}
+                                <Link to='/details'>
+                                    <div className="wrap">
+                                        <span className="product_tit limited">{v["productName"]}</span>
+                                    </div>
+                                    <img src={v["isrc"]} alt="제품 이미지" />
+                                    {/* <img src={v["isrc"]} alt="제품 이미지" /> */}
+                                </Link>
+                            </SwiperSlide>
+                            )
+                        }
                     </ul>
                 </Swiper>
             </section>

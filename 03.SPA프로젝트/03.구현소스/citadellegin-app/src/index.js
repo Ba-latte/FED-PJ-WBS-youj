@@ -15,6 +15,7 @@ import ScrollTop from './citadellegin/components/modules/ScrollTop';
 // AOS 라이브러리
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Details from './citadellegin/components/modules/Details';
 AOS.init();
 
 
@@ -32,6 +33,7 @@ export default function App(){
           <Route path="/dete" element={<Dete />} />
           <Route path='/rouge' element={<Rouge />} />
           <Route path='/limited' element={<Limited />} />
+          <Route path='/details' element={<Details />} />
         </Route>
       </Routes>
     </BrowserRouter>

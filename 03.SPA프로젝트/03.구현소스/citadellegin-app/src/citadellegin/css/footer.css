@@ -7,6 +7,9 @@
     /* outline: 1px dashed rgb(133, 133, 133); */
 }
 
+footer.info{
+    height: 210px;
+}
 
 /* 로고 겉박스 */
 .logo_bx{

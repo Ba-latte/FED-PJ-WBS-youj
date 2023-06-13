@@ -15,8 +15,6 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 const Footer = ()=>{
     return(
         <>
-            {/* 어썸 폰트 CDN */}
-            <script src="https://kit.fontawesome.com/6f514a7e76.js"></script>
             <footer className="info">
                 {/* 1. 하단 영역 구분 라인 */}
                 <div className="line_bx">

@@ -72,6 +72,7 @@
 
     /* outline: 1px dashed blue; */
 }
+/* 꾸밈 이미지 공통 세팅 */
 .product_img_container img.sticker{
     width: 100%;
 }
@@ -91,7 +92,7 @@
     top: 90%;
     left: 35%;
 }
-/* 2.베리 관련 세팅 */
+/* 3.베리 관련 세팅 */
 .wrap:has(.berry){
     width: 300px;
     height: 300px;
@@ -99,6 +100,66 @@
     top: 150%;
     left: 10%;
 }
+/* 4.맨 위에 있는 라즈베리 관련 세팅 */
+.wrap:has(.raspberry3){
+    width: 400px;
+    height: 400px;
+
+    top: 35%;
+    left: 10%;
+}
+/* 5.중간에 있는 블랙베리 관련 세팅 */
+.wrap:has(.blackberry2){
+    width: 300px;
+    height: 300px;
+
+    top: 100%;
+    left: 40%;
+    transform: rotateY(180deg) rotate(19deg);
+}
+/* 6.아래쪽에 있는 작은 라즈베리 관련 세팅 */
+.wrap:has(.raspberry1){
+    width: 200px;
+    height: 200px;
+
+    top: 180%;
+    left: 13%;
+}
+/* 7.아래쪽에 있는 블랙베리 관련 세팅 */
+.wrap:has(.blackberry1){
+    width: 560px;
+    top: 220%;
+    left: 20%;
+    transform: rotateY(180deg) rotate(78deg);
+}
+/* 8.오이 관련 세팅 */
+.wrap:has(.cucumber4){
+    top: 60%;
+    left: 36%;
+    transform: rotate(45deg);
+}
+.wrap:has(.cucumber-flower){
+    top: 87%;
+    left: 14%;
+}
+.wrap:has(.cucumber6){
+    top: 125%;
+    left: 40%;
+    transform: rotate(62deg);
+}
+.wrap:has(.cucumber-leaf){
+    width: 200px;
+    height: 200px;
+    top: 170%;
+    left: 12%;
+    transform: rotateX(180deg) rotate(17deg);
+}
+.wrap:has(.cucumber5){
+    top: 250%;
+    left: 9%;
+    transform: rotate(45deg);
+}
+
 
 /* 제품 유리병 img 요소 세팅 */
 .product_img_container img#product{

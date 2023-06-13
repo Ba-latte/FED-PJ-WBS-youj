@@ -9,7 +9,7 @@ import PromotionalPhrase from './PromotionalPhrase';
 
 // [ 제품 소개 모듈 컴포넌트 ]
 const ProductIntro = (props)=>{
-    // props.pgname - 데이터 구분할 페이지 이름
+    // props.pgname - 데이터 구분할 페이지 이름(첫글자 대문자)
 
     // 데이터 세팅
     const selcData = productIntro_data;
@@ -40,18 +40,21 @@ const ProductIntro = (props)=>{
                     {/* 2.제품 이미지 */}
                     <div className="product_img_container">
                         {/* 꾸밈 이미지 */}
-                        <div className="wrap">
-                            <img className="sticker lemon" src={"./images/dt/sub/"+props.pgname.toLowerCase()+"/lemon.png"} alt="레몬 일러스트" />
-                        </div>
-                        <div className="wrap">
-                            <img className="sticker leaf-3" src={"./images/dt/sub/"+props.pgname.toLowerCase()+"/leaf-3.png"} alt="이파리 일러스트" />
-                        </div>
-                        <div className="wrap">
-                            <img className="sticker berry" src={"./images/dt/sub/"+props.pgname.toLowerCase()+"/berry.png"} alt="베리 일러스트" />
-                        </div>
+                        {
+                            selcData[props.pgname]["isrc"].map((v, i)=>
+                                // 만약 데이터가 없다면 이미지 박스 만들지 않도록 제어하기!
+                                v !== "" &&
+                                <div className='wrap' key={i}>
+                                    {console.log(v,i)}
+                                    {/* 클래스이름은 이미지이름에서 따오기 */}
+                                    <img className={"sticker " + v.split("/")[5].split(".")[0]} src={v} alt="사용된 보태니컬 종류 일러스트" />
+                                </div>
+                            )
+                        }
+
                         {/* 제품 상세 이미지 */}
                         <div className="wrap">
-                            <img id="product" src={"./images/dt/sub/"+props.pgname.toLowerCase()+"/gin-1.png"} alt="제품 상세 이미지" />
+                            <img id="product" src={selcData[props.pgname]["pdsrc"]} alt="제품 상세 이미지" />
                         </div>
                     </div>
                     {/* 3.제품 설명 아티클들 */}

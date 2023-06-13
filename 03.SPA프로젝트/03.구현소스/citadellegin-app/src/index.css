@@ -78,3 +78,8 @@ img {
     'GRAD' 0,
     'opsz' 48
 }
+
+/* 컨텐츠 영역 높이 지정 */
+main.cont{
+    min-height: calc(100vh - 80px - 210px);
+}
