@@ -10,6 +10,8 @@ import {Link} from 'react-router-dom';
 import "swiper/css";
 import "swiper/css/pagination";
 import "./swiperLimited.css";
+import Details from "../modules/Details";
+import limited_product_data from "../../data/limitedProduct";
 
 
 
@@ -75,29 +77,7 @@ export default function SwiperLimited() {
     // props.pgname - 페이지 이름 (첫글자 대문자)
 
     // 리미티드 제품 데이터
-    const limited_product_data = [
-        {
-            "productName": "Extreme N°1",
-            "isrc": "./images/dt/sub/limited/n1.png",
-            
-        },
-        {
-            "productName": "Extreme N°2",
-            "isrc": "./images/dt/sub/limited/n2.png",
-        },
-        {
-            "productName": "Extreme N°3",
-            "isrc": "./images/dt/sub/limited/n3.png",
-        },
-        {
-            "productName": "Extreme N°4",
-            "isrc": "./images/dt/sub/limited/n4.png",
-        },
-        {
-            "productName": "Extreme N°5",
-            "isrc": "./images/dt/sub/limited/n5.png",
-        },
-    ];
+    const selecData = limited_product_data;
     
     return (
         <>
@@ -122,16 +102,13 @@ export default function SwiperLimited() {
                 >
                     <ul className="swiper-wrapper">
                         {
-                            limited_product_data.map((v, i)=>
+                            selecData.map((v, i)=>
                             <SwiperSlide className="swiper-slide slide limited" key={i}>
                                 {console.log(v.isrc)}
-                                <Link to='/details'>
                                     <div className="wrap">
                                         <span className="product_tit limited">{v["productName"]}</span>
                                     </div>
                                     <img src={v["isrc"]} alt="제품 이미지" />
-                                    {/* <img src={v["isrc"]} alt="제품 이미지" /> */}
-                                </Link>
                             </SwiperSlide>
                             )
                         }

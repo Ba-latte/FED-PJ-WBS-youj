@@ -4,6 +4,7 @@ import React from "react";
 import ProductIntro from "../modules/ProductIntro";
 import Scroll from "../modules/Scroll";
 import NextLink from "../modules/NextLink";
+import Details from "../modules/Details";
 
 
 // [ 서브페이지 : limited 페이지 컴포넌트 ] //////////////////
@@ -16,6 +17,8 @@ const Limited = ()=>{
             <Scroll />
             {/* 3.제품 링크 모듈 : 다음제품으로의 링크 */}
             <NextLink pgname="Limited" />
+            {/* 4.한정판 제품 세부사항 */}
+            <Details />
         </>
     );
 }; ////////////////// 서브페이지 : limited 페이지 컴포넌트 //////////////////

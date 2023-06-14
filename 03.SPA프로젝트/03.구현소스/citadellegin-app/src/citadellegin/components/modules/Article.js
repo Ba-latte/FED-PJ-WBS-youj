@@ -5,14 +5,16 @@ import $ from "jquery";
 import '../../css/article.css';
 import article_data from '../../data/article';
 import SwiperLimited from "../plugin/SwiperLimited";
-
+import limited_product_data from "../../data/limitedProduct";
 
 // [ 컴포넌트 만들기 ]
 const Article = (props)=>{
     // props.pgname - 페이지 이름으로 구분
+    // props.test - 한정판 제품 상세정보
 
     // 데이터 세팅하기
     const selcData = article_data;
+    const lmtData = limited_product_data;
 
     // desc 요소 구성하는 함수
     const makeDesc = (data)=>{
@@ -29,6 +31,7 @@ const Article = (props)=>{
 
     return(
         <>
+        {console.log("프롭스!!!!!: ", props)}
             {
                 selcData[props.pgname].map((v, i)=>
                 <div className="article_container" key={i}>
@@ -45,6 +48,7 @@ const Article = (props)=>{
                         {/* 설명 : pgname이 "limited"고 desc 속성 값이 비어있다면 -> <SwiperProduct/>컴포넌트 불러오기 */}
                         {
                             props.pgname=="Limited" && v.desc === "" ?
+                            // 스와이퍼 모듈
                             <SwiperLimited /> :
                             <p className="desc">{makeDesc(v.desc)}</p>
                         }
@@ -63,6 +67,8 @@ const Article = (props)=>{
                 </div>
                 )
             }
+            {/* 경우 2) 한정판 세부 사항 */}
+            
             {/* js 로드 함수 호출 */}
             {jsFn()}
         </>

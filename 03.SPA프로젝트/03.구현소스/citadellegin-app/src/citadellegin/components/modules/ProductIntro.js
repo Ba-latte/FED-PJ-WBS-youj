@@ -4,6 +4,7 @@
 import '../../css/productIntro.css';
 import productIntro_data from '../../data/productIntro';
 import Article from './Article';
+import Details from './Details';
 import PromotionalPhrase from './PromotionalPhrase';
 
 
@@ -59,7 +60,7 @@ const ProductIntro = (props)=>{
                     </div>
                     {/* 3.제품 설명 아티클들 */}
                     <div className="product_desc_container">
-                        <Article pgname={props.pgname} />
+                        <Article pgname={props.pgname} test="" />
                     </div>
                 </aside>
                 {/* 4.제품 홍보 단락 섹션 */}
