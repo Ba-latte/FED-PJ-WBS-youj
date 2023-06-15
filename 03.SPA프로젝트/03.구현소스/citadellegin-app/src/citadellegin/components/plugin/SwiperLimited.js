@@ -68,11 +68,6 @@ const slideUpAni = ()=>{
 } //////////////////////// slideUpAni 함수 ///////////////////////////////
 
 
-// 제품 타이틀 등장 액션 호출
-
-
-
-
 // [ 컴포넌트 만들기 ]
 export default function SwiperLimited() {
     // props.pgname - 페이지 이름 (첫글자 대문자)
@@ -84,8 +79,11 @@ export default function SwiperLimited() {
 
     const showFn = (idx)=>{
         console.log("등장해!",idx);
+        // dbseq변수의 값 바꾸기
         setDbseq(idx);
-
+        
+        window.scrollTo(0,0);
+        $("#details").css({display: "block"});
     };
     
     return (
@@ -125,6 +123,7 @@ export default function SwiperLimited() {
                     </ul>
                 </Swiper>
             </section>
+            {/* 한정판 제품 슬라이드 클릭 시 등장하는 세부 정보 박스 */}
             <Details dbseq={dbseq} />
             {/* js 로드 함수 호출 */}
             {/* {slideUpAni()} */}

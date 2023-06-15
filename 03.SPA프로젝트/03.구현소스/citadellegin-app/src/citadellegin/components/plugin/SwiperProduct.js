@@ -123,7 +123,7 @@ export default function SwiperProduct(props) {
                             </Link>
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide slide gin">
-                            <Link to='limited'>
+                            <Link to='/limited'>
                                 <img src="./images/dt/sub/citadelle-sergent-pepper.png" alt="제품 이미지" />
                                 <div className="wrap">
                                     <span className="product_tit gin">Our limited <br /> editions</span>

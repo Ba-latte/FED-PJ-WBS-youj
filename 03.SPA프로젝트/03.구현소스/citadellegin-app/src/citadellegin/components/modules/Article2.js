@@ -8,8 +8,9 @@ import SwiperLimited from "../plugin/SwiperLimited";
 import limited_product_data from "../../data/limitedProduct";
 
 // [ 컴포넌트 만들기 ]
-const Article = (props)=>{ //props.dbseq
+const Article = (props)=>{ 
     // props.pgname - 페이지 이름으로 구분 (첫글자 대문자)
+    //props.dbseq - Limited페이지 스와이퍼 배너 슬라이드 인덱스번호 (숫자)
 
     // 데이터 세팅하기
     const selcData = article_data;
@@ -28,22 +29,22 @@ const Article = (props)=>{ //props.dbseq
         );
     }
 
-    const atclFn = ()=>{
-        $(()=>{
-            console.log("Article:",props.dbseq);
-            const atclData = lmtData[props.dbseq]["article"];
-            console.log("ㅠㅠ", atclData);
+    // const atclFn = ()=>{
+    //     $(()=>{
+    //         // console.log("Article:",props.dbseq);
+    //         const atclData = lmtData[props.dbseq]["article"];
+    //         // console.log("ㅠㅠ", atclData);
     
-            $(".tit").text(atclData[0].tit);
+    //         $(".tit").text(atclData[0].tit);
 
-        });
-    };
+    //     });
+    // };
 
     return(
         <>
-            {/* 경우1) limited 페이지에서 불린 경우 */}
+            {/* 경우1) 제품 페이지에서 불린 경우 */}
             {
-                props.pgname != "test" &&
+                props.pgname == ("Original" || "Dete" || "Rouge" || "Limited") &&
                 selcData[props.pgname].map((v, i)=>
                     <div className="article_container" key={i}>
                         {/* <div>{'😎테스트 : ' + v.tit}</div> */}
@@ -81,21 +82,38 @@ const Article = (props)=>{ //props.dbseq
             {/* 경우2) limited 페이지의 스와이퍼 배너를 클릭한 경우 */}
             {
                 props.pgname == "test" &&
-                    <div className="article_container" style={{border:"2px dashed red"}}>
+                lmtData[props.dbseq]["article"].map((v, i)=>
+                    <div className="article_container details" key={i} style={{border:"2px dashed red"}}>
                         <article className="description">
                             <div className="wrap">
-                                {/* 큰제목 */}
-                                {
-                                    <h3 className="tit"></h3>
-                                }
-                                {/* 작은 제목 */}
+                                {/* 1.큰제목 */}
+                                <h3 className="tit">{v["tit"]}</h3>
+                                {/* 2.작은 제목 : 있따면 박스 넣기 */}
+                                {v["subtit"].length >= 1 && <h4 className="subtit">{v["subtit"]}</h4>}
                             </div>
+                            {/* 3.설명 : 단락이 1개 이상일 경우 갯수만큼 p요소 만들어서 그 안에 데이터 넣기 */}
+                            {
+                                v["desc"].length >= 1 &&
+                                <>
+                                    {v["desc"].map((v, i)=>
+                                        <p className="desc" key={i}>{v}</p>
+                                    )}
+                                </>
+                            }
+                            {/* 4.이미지 : 이미지 데이터가 있다면 태그 만들어서 넣기 */}
+                            {
+                                v["artiImgSrc"].length >= 1 &&
+                                <div className="wrap">
+                                    <img className="img" src={v["artiImgSrc"]} alt="제품 이미지" />
+                                </div>
+                            }
+                            
                         </article>
                     </div>
-
+                )
             }
             {/* js 로드 함수 호출 */}
-            {atclFn()}
+            {/* {atclFn()} */}
         </>
     );
 }; /////////////////////////// Article 컴포넌트 ///////////////////////////

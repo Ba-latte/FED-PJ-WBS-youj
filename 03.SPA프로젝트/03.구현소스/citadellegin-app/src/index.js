@@ -22,6 +22,8 @@ AOS.init();
 // 라우터 구성 컴포넌트 : 스스로 내보내기 세팅 필수
 export default function App(){
   return(
+    // 배포 위해 basename 속성 사용
+    // <BrowserRouter basename={process.env.PUBLIC_URL}>
     <BrowserRouter>
       {/* 👇 라우터 링크 이동할 때 스크롤 최상단으로 이동하기 */}
       <ScrollTop />
@@ -29,11 +31,11 @@ export default function App(){
         {/* 레이아웃 컴포넌트를 루트로 잡기 */}
         <Route path='/' element={<Layout />}>
           <Route index element={<Main />} />
+          <Route path='/main' element={<Main />} />
           <Route path="/original" element={<Original />} />
           <Route path="/dete" element={<Dete />} />
           <Route path='/rouge' element={<Rouge />} />
           <Route path='/limited' element={<Limited />} />
-          {/* <Route path='/details' element={<Details />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

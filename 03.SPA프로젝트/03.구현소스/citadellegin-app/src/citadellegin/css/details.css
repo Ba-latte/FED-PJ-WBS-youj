@@ -4,7 +4,15 @@
 
 /* 제일 겉 박스 */
 #details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
     background-color: var(--btn-lemon-color);
+
+    /* 처음에 숨겨두기 */
+    display: none;
 }
 .details{
     display: flex;
@@ -13,7 +21,41 @@
     align-items: center;
     
     margin-bottom: 100px;
+}
 
+
+/* 닫기 버튼 겉박스 */
+.details .cls_btn_container{
+    max-width: 1400px;
+    height: 80px;
+    margin: 20px auto 0;
+    padding: 0 30px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    border: 1px solid #000;
+}
+/* 닫기 버튼 */
+.details .cls_btn_container .close{
+    display: block;
+    padding: 10px;
+
+    cursor: pointer;
+
+    border: 1px solid red;
 }
 
 

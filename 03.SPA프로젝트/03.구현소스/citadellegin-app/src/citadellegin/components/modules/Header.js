@@ -32,7 +32,7 @@ const Header = ()=>{
                         {/* 상단 로고 */}
                         <div className="tlogo">
                             <div className="logoBx">
-                                    <Link to="/">
+                                    <Link to="/main">
                                         <img src="./images/logo.png" alt="로고" />
                                     </Link>
                             </div>
@@ -93,7 +93,7 @@ function loadingFn(){
     
         const ham_btn = $(".button");
         const nav_bx = $("#nav");
-        const cls_btn = $(".close");
+        const cls_btn = $("#nav .close");
         let xval;
         let yval;
         

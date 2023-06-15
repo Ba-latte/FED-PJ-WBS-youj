@@ -123,14 +123,7 @@ header.top{
 }
 
 /* 메뉴 박스 */
-.nav{
-    /* position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 1400px; */
 
-    /* outline: 1px dashed red; */
-}
 
 /* 메뉴 a요소 공통 세팅 */
 .nav a{
