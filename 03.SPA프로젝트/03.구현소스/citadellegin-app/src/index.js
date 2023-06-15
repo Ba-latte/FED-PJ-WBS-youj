@@ -33,7 +33,7 @@ export default function App(){
           <Route path="/dete" element={<Dete />} />
           <Route path='/rouge' element={<Rouge />} />
           <Route path='/limited' element={<Limited />} />
-          <Route path='/details' element={<Details />} />
+          {/* <Route path='/details' element={<Details />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

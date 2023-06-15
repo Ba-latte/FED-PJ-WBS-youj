@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import $ from 'jquery';
 import { easeOutExpo } from "jquery-ui";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Virtual } from 'swiper';
 import {Link} from 'react-router-dom';
 
 // Import Swiper styles
@@ -78,11 +79,20 @@ export default function SwiperLimited() {
 
     // 리미티드 제품 데이터
     const selecData = limited_product_data;
+    // 해당데이터 Hook구성
+    const [dbseq,setDbseq] = useState(0);
+
+    const showFn = (idx)=>{
+        console.log("등장해!",idx);
+        setDbseq(idx);
+
+    };
     
     return (
         <>
             <section className="swipe_banner limited">
                 <Swiper
+                
                     slidesPerView={1}
                     // "Limited"페이지에서 호출된 거면 간격 30주고 아니면 0주기
                     spaceBetween={30}
@@ -103,18 +113,19 @@ export default function SwiperLimited() {
                     <ul className="swiper-wrapper">
                         {
                             selecData.map((v, i)=>
-                            <SwiperSlide className="swiper-slide slide limited" key={i}>
-                                {console.log(v.isrc)}
-                                    <div className="wrap">
-                                        <span className="product_tit limited">{v["productName"]}</span>
-                                    </div>
-                                    <img src={v["isrc"]} alt="제품 이미지" />
+                            <SwiperSlide className="swiper-slide slide limited" key={i} onClick={()=>showFn(i)}>
+                                {/* {console.log(v.isrc)} */}
+                                <div className="wrap">
+                                    <span className="product_tit limited">{v["productName"]}</span>
+                                </div>
+                                <img src={v["isrc"]} alt="제품 이미지" />
                             </SwiperSlide>
                             )
                         }
                     </ul>
                 </Swiper>
             </section>
+            <Details dbseq={dbseq} />
             {/* js 로드 함수 호출 */}
             {/* {slideUpAni()} */}
         </>

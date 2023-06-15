@@ -8,7 +8,7 @@ import SwiperLimited from "../plugin/SwiperLimited";
 import limited_product_data from "../../data/limitedProduct";
 
 // [ 컴포넌트 만들기 ]
-const Article = (props)=>{
+const Article = (props)=>{ //props.dbseq
     // props.pgname - 페이지 이름으로 구분 (첫글자 대문자)
 
     // 데이터 세팅하기
@@ -29,8 +29,14 @@ const Article = (props)=>{
     }
 
     const atclFn = ()=>{
-        const atclData = lmtData.map(v=>v["article"]);
-        console.log("ㅠㅠ", atclData);
+        $(()=>{
+            console.log("Article:",props.dbseq);
+            const atclData = lmtData[props.dbseq]["article"];
+            console.log("ㅠㅠ", atclData);
+    
+            $(".tit").text(atclData[0].tit);
+
+        });
     };
 
     return(
@@ -80,7 +86,7 @@ const Article = (props)=>{
                             <div className="wrap">
                                 {/* 큰제목 */}
                                 {
-                                    <h3 className="tit">{atclFn()}</h3>
+                                    <h3 className="tit"></h3>
                                 }
                                 {/* 작은 제목 */}
                             </div>
@@ -89,7 +95,7 @@ const Article = (props)=>{
 
             }
             {/* js 로드 함수 호출 */}
-            {jsFn()}
+            {atclFn()}
         </>
     );
 }; /////////////////////////// Article 컴포넌트 ///////////////////////////

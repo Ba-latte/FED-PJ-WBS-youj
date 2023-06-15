@@ -4,7 +4,6 @@
 import '../../css/productIntro.css';
 import productIntro_data from '../../data/productIntro';
 import Article from './Article';
-import Details from './Details';
 import PromotionalPhrase from './PromotionalPhrase';
 
 
@@ -46,7 +45,7 @@ const ProductIntro = (props)=>{
                                 // 만약 데이터가 없다면 이미지 박스 만들지 않도록 제어하기!
                                 v !== "" &&
                                 <div className='wrap' key={i}>
-                                    {console.log(v,i)}
+                                    {/* {console.log(v,i)} */}
                                     {/* 클래스이름은 이미지이름에서 따오기 */}
                                     <img className={"sticker " + v.split("/")[5].split(".")[0]} src={v} alt="사용된 보태니컬 종류 일러스트" />
                                 </div>
@@ -60,7 +59,7 @@ const ProductIntro = (props)=>{
                     </div>
                     {/* 3.제품 설명 아티클들 */}
                     <div className="product_desc_container">
-                        <Article pgname={props.pgname} test="" />
+                        <Article pgname={props.pgname} />
                     </div>
                 </aside>
                 {/* 4.제품 홍보 단락 섹션 */}
