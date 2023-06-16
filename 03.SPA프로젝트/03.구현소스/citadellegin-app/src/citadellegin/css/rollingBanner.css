@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+/* RollingBanner 모듈 컴포넌트용 CSS - rollingBanner.css */
+
+
+/* 롤링배너 겉박스 세팅 */
+.rolling_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* 배너 사이즈 줄이기 */
+    /* transform: scale(0.8); */
+}
+
+/* 라인 svg 겉박스 */
+.rolling_container .line_bx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 화살표 꼬리 svg 공통 세팅 */
+.rolling_container .line_bx .arrow-head{
+    width: 20px;
+    height: 20px;
+}
+.rolling_container .line_bx .arrow-tail{
+    width: 20px;
+    height: 20px;
+}
+
+/* 라인 중 가운데 실선 svg 설정 */
+.rolling_container .line_bx .border{
+    /* calc(배너가로값700px - ((머리/꼬리20px - 사이간격10px - 점3px - 사이간격10px)*2) */
+    width: calc(700px - 86px);
+    height: 20px;
+    margin: 0 10px;
+}
+/* 화살표 꼬리와 가운데 실선 사이 원을 위한 박스 */
+.rolling_container .line_bx .cir{
+    display: flex;
+    align-items: center;
+}
+.rolling_container .line_bx .cir::before{
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: var(--arrow-grey-color);
+    margin-left: 10px;
+}
+.rolling_container .line_bx .cir::after{
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: var(--arrow-grey-color);
+    margin-right: 10px;
+}
+
+/* 라인 중 꼬리 모양(.right) 설정 */
+.rolling_container .line_bx svg:nth-child(3){
+    transform: rotateY(180deg)
+}
+
+/* 배너 뷰포트 : 배너 표시 영역 */
+.rolling_banner>.wrap{
+    position: relative;
+    /* 부모자격 - .wrap의 가상요소 */
+
+
+    width: 700px;
+    height: 200px;
+    
+    overflow: hidden;
+    /* 자식요소 숨기기 */
+
+    /* outline: 1px solid red; */
+}
+
+/* 좌/우 페이드인아웃 영역 만들기 */
+.rolling_container .wrap::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to right, #faf8f5 0%, #faf8f5bf 51%, #faf8f509 100%);
+}
+.rolling_container .wrap::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to left, #faf8f5 0%, #faf8f5bf 51%, #faf8f509 100%);
+}
+
+
+/* 배너 내용 wrapper */
+.rolling_container .roller{
+    position: absolute;
+    /* 복사한 배너 데이터 리스트 뒤에 오게 만들기 */
+}
+
+/* 배너 데이터 리스트 (ul) */
+.rolling_container .roller>ul{
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+    /* gap: 10px; */
+}
+
+/* 각 슬라이드 (li) */
+.rolling_container ul>.slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 150px;
+
+    /* outline: 1px dashed blue; */
+}
+
+/* 이미지 요소 공통 세팅 */
+.rolling_container li>img{
+    object-fit: cover;
+}
+/* 텍스트 요소 공통 세팅 */
+.rolling_container li>.rolTxt{
+    display: block;
+    font-size: 15px;
+
+    /* outline: 1px dashed black; */
+}
+
+
+
+
+/* 하단 영역 위쪽의 경계선 svg 요소들 세팅 */
+.Group-1{
+    stroke:none;
+    stroke-width: 1;
+    fill: none;
+    fill-rule: evenodd;
+}
+.Group-2{
+    stroke-linecap: round;
+    stroke:var(--arrow-grey-color);
+}
+.Group-3{
+    stroke: none;
+    stroke-width: 1;
+    fill: none;
+    fill-rule: evenodd;
+}
+
+.Line-1{
+    stroke-linecap: square;
+    stroke: var(--arrow-grey-color);
+}
+.Line-2{
+    stroke: var(--arrow-grey-color);
+}

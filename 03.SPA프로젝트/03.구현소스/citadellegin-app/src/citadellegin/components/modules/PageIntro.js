@@ -22,12 +22,12 @@ const PageIntro = ()=>{
                     <div className="wrap">
                         {/* 타이틀 */}
                         <div className="pg_title">
-                            <h2 className="tit" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                            <h2 className="tit">
                                 <span>
-                                    <span className="letter" >Citadelle, french</span>
+                                    <span className="letter" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" >Citadelle, french</span>
                                 </span>
                                 <span>
-                                    <span className="letter">gin pioneer</span>
+                                    <span className="letter" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" >gin pioneer</span>
                                 </span>
                             </h2>
                         </div>
@@ -35,7 +35,7 @@ const PageIntro = ()=>{
                     <div className="wrap">
                         {/* 이미지 */}
                         <div className="pg_img">
-                            <img src="./images/dt/main/1.jpg" alt="페이지 소개 이미지" />
+                            <img src="./images/dt/main/main.jpg" alt="페이지 소개 이미지" />
                         </div>
                     </div>
                 </section>

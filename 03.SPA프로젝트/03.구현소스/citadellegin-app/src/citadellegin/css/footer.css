@@ -22,28 +22,28 @@ footer.info{
 }
 
 /* 라인 svg 겉박스 */
-.line_bx{
+.info .line_bx{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 /* 화살표 꼬리 svg 공통 세팅 */
-.line_bx .arrow-tail{
+.info .line_bx .arrow-tail{
     width: 20px;
     height: 20px;
 }
 /* 라인 중 가운데 실선 svg 설정 */
-.line_bx .border{
+.info .line_bx .border{
     width: 70vw;
     height: 20px;
     margin: 0 10px;
 }
 /* 화살표 꼬리와 가운데 실선 사이 원을 위한 박스 */
-.line_bx .cir{
+.info .line_bx .cir{
     display: flex;
     align-items: center;
 }
-.line_bx .cir::before{
+.info .line_bx .cir::before{
     content: '';
     display: block;
     width: 3px;
@@ -52,7 +52,7 @@ footer.info{
     background-color: var(--arrow-grey-color);
     margin-left: 10px;
 }
-.line_bx .cir::after{
+.info .line_bx .cir::after{
     content: '';
     display: block;
     width: 3px;
@@ -63,7 +63,7 @@ footer.info{
 }
 
 /* 라인 중 꼬리 모양(.right) 설정 */
-.line_bx svg:nth-child(3){
+.info .line_bx svg:nth-child(3){
     transform: rotateY(180deg)
 }
 
