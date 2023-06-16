@@ -11,11 +11,11 @@
     flex-direction: column;
 }
 
-.wrap:has(.pg_title){
+.pg_intro .wrap:has(.pg_title){
     padding-top: 100px;
 }
 /* 타이틀 겉박스 */
-.pg_title{
+.pg_intro .pg_title{
     position: relative;
     z-index: 1;
     top: 0;
@@ -33,17 +33,17 @@
     font-weight: bold;
     color: var(--ft-navy-color);
 }
-/* 타이틀 각 단락 */
+/* 타이틀 각 단락 겉박스 */
 .pg_intro .tit>span{
-    display: inline-block;
+    display: block;
     /* 넘치는 자식 요소 숨기기 */
     overflow: hidden;
 
     /* outline: 2px dashed red; */
 }
-.pg_intro .letter{
-    position: relative;
-    top: 100%;
+/* 각 단락 요소 */
+.pg_intro .txt{
+    display: block;
 }
 
 

@@ -4,8 +4,8 @@ import React from "react";
 import $ from 'jquery';
 import '../../css/details.css';
 import limited_product_data from "../../data/limitedProduct";
-// 테스트용으로 연결함
-import Article from "./Article2";
+// 한정판용으로 연결함
+import Article from "./LimitedArticle";
 
 // [ 컴포넌트 ]
 const Details = (props)=>{ // props.dbseq - 슬라이드 인덱스 번호

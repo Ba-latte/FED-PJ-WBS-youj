@@ -12,11 +12,7 @@ import Rouge from './citadellegin/components/pages/Rouge';
 import Limited from './citadellegin/components/pages/Limited';
 import ScrollTop from './citadellegin/components/modules/ScrollTop';
 
-// AOS 라이브러리
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Details from './citadellegin/components/modules/Details';
-AOS.init();
+
 
 
 // 라우터 구성 컴포넌트 : 스스로 내보내기 세팅 필수

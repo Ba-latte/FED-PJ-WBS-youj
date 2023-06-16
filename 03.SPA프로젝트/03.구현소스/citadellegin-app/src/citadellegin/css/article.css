@@ -16,6 +16,11 @@
 
     /* outline: 2px dashed lime; */
 }
+/* 아티클 타이틀 겉박스 */
+.description div:has(>.tit){
+    /* background-color: red; */
+    overflow: hidden;
+}
 /* 아티클 타이틀 */
 .description .tit{
     margin-bottom: 10px;

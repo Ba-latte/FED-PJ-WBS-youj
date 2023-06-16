@@ -5,10 +5,7 @@ import React from 'react';
 import $ from 'jquery';
 import '../../css/pageIntro.css';
 import Scroll from '../modules/Scroll';
-// AOS 라이브러리
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
+
 
 
 
@@ -23,11 +20,11 @@ const PageIntro = ()=>{
                         {/* 타이틀 */}
                         <div className="pg_title">
                             <h2 className="tit">
-                                <span>
-                                    <span className="letter" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" >Citadelle, french</span>
+                                <span className='t_txt'>
+                                    <span className='txt' data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" >Citadelle, french</span>
                                 </span>
-                                <span>
-                                    <span className="letter" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" >gin pioneer</span>
+                                <span className='b_txt'>
+                                    <span className="txt" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" >gin pioneer</span>
                                 </span>
                             </h2>
                         </div>
@@ -40,6 +37,7 @@ const PageIntro = ()=>{
                     </div>
                 </section>
             </div>
+            {/* 스크롤 유도 표시 */}
             {<Scroll />}
             {/* JS 로드구역 함수 */}
             {/* {loadFn()} */}

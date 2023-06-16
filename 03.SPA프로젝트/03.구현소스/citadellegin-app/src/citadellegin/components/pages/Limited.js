@@ -4,7 +4,6 @@ import React from "react";
 import ProductIntro from "../modules/ProductIntro";
 import Scroll from "../modules/Scroll";
 import NextLink from "../modules/NextLink";
-import Details from "../modules/Details";
 
 
 // [ 서브페이지 : limited 페이지 컴포넌트 ] //////////////////

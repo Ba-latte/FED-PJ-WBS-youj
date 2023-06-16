@@ -44,16 +44,18 @@ const Article = (props)=>{
         <>
             {/* 경우1) 제품 페이지에서 불린 경우 */}
             {
-                props.pgname == ("Original" || "Dete" || "Rouge" || "Limited") &&
+                (props.pgname == "Original" || props.pgname == "Dete" || props.pgname == "Rouge" || props.pgname == "Limited") &&
                 selcData[props.pgname].map((v, i)=>
                     <div className="article_container" key={i}>
                         {/* <div>{'😎테스트 : ' + v.tit}</div> */}
                         <article className={"description" + (v.tit==="As for awards..."?" medal":v.tit==="How to enjoy it: "?" recipe":"")}>
                             <div className="wrap">
                                 {/* 큰 제목 */}
-                                <h3 className="tit" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={i===0?"700":""} data-aos-easing="ease-in-out-quart">
-                                    {v.tit}
-                                </h3>
+                                <div>
+                                    <h3 className="tit" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={i===0?"700":""} data-aos-easing="ease-in-out-quart">
+                                        {v.tit}
+                                    </h3>
+                                </div>
                                 {/* 작은 제목 */}
                                 {v.subtit.length >= 1 && <h4 className="subtit">{v.subtit}</h4>}
                             </div>
@@ -81,7 +83,7 @@ const Article = (props)=>{
             }
             {/* 경우2) limited 페이지의 스와이퍼 배너를 클릭한 경우 */}
             {
-                props.pgname == "test" &&
+                props.pgname == "test"  &&
                 lmtData[props.dbseq]["article"].map((v, i)=>
                     <div className="article_container details" key={i} style={{border:"2px dashed red"}}>
                         <article className="description">

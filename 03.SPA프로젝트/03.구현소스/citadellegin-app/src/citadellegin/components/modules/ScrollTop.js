@@ -2,6 +2,10 @@
 
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+// AOS 라이브러리
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 // 컴포넌트 만들기
 const ScrollTop = ()=>{
@@ -12,6 +16,9 @@ const ScrollTop = ()=>{
     useEffect(()=>{
         // 스크롤 최상단으로 이동시키기
         window.scrollTo(0, 0);
+        // AOS 초기화
+        AOS.init();
+        
     }, [pathname]); /////////////// useEffect() ///////////////
 
     // null리턴하기 : 다른 부가적인 코드 실행하지 않는다는 의미
