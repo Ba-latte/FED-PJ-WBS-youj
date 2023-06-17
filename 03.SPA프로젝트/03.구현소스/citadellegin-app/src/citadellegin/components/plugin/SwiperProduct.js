@@ -20,7 +20,7 @@ const slideUpAni = ()=>{
         
     const pd_slide = $(".slide.gin");
     const pd_tit = $(".product_tit.gin");
-    console.log("제품 슬라이드 : ", pd_slide);
+    // console.log("제품 슬라이드 : ", pd_slide);
 
     // [ 애니메이트() 메서드로 만들 경우 ]
     // 제품 슬라이드에 마우스오버/아웃시 제품 타이틀 요소 등장 액션 부여하기
@@ -29,7 +29,7 @@ const slideUpAni = ()=>{
         function(){
             // 오버한 요소의 타이틀 높이값 구하기
             let hval = $(this).find(".product_tit.gin").height();
-            console.log("마우스 오버한 요소의 타이틀 높이값 : ", hval);
+            // console.log("마우스 오버한 요소의 타이틀 높이값 : ", hval);
 
             // 오버한 요소를 제외한 형제 요소들의 투명도 흐리게 하기
             $(this).siblings().find("img").stop().animate({
@@ -44,7 +44,7 @@ const slideUpAni = ()=>{
         },
         // 아웃시
         function(){
-            console.log("마우스 아웃");
+            // console.log("마우스 아웃");
 
             // 오버한 요소를 제외한 형제 요소들의 투명도 돌아오게 하기
             $(this).siblings().find("img").stop().animate({

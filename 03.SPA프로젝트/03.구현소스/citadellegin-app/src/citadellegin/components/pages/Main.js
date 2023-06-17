@@ -13,7 +13,9 @@ const Main= ()=>{
             {/* 1.페이지 소개 모듈 */}
             <PageIntro />
             {/* 2.섹션 소개 모듈 */}
-            <SectionIntro snum="1" />
+            <SectionIntro snum="0" cls="sec1" />
+            <SectionIntro snum="1" cls="sec2" />
+            <SectionIntro snum="2" cls="sec3" />
             {/* 3.스와이퍼 - 제품 배너 모듈 */}
             <SwiperProduct />
         </>
