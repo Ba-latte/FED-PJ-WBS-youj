@@ -19,7 +19,7 @@ const Details = (props)=>{ // props.dbseq - 슬라이드 인덱스 번호
     };
 
     return(
-        <>
+        <div className="details_container">
         <div id="details">
             <section className="details">
                 {/* 1. 박스 닫기 버튼 */}
@@ -55,7 +55,7 @@ const Details = (props)=>{ // props.dbseq - 슬라이드 인덱스 번호
                 </aside>            
             </section>
         </div>
-        </>
+        </div>
     );
 }; //////////////////////// Details 컴포넌트 ////////////////////////
 

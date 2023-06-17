@@ -82,8 +82,11 @@ export default function SwiperLimited() {
         // dbseq변수의 값 바꾸기
         setDbseq(idx);
         
+        // 스크롤 맨위로 올리기
         window.scrollTo(0,0);
+        // 세부사항 박스 보이기
         $("#details").css({display: "block"});
+        
     };
     
     return (
