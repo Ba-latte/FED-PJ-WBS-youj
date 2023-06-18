@@ -10,6 +10,7 @@ import {Link} from 'react-router-dom';
 import "swiper/css";
 import "swiper/css/pagination";
 import "./swiperProduct.css";
+import Scroll from "../modules/Scroll";
 
 
 
@@ -78,6 +79,18 @@ export default function SwiperProduct(props) {
     
     return (
         <>
+            {/* 1. 배너 타이틀 */}
+            <div className="swipe_tit_container">
+                <div className="wrap">
+                    <h2 className="title">
+                        <p>Our gins made in</p>
+                        <p>France</p>
+                    </h2>
+                    <div>
+                    </div>
+                </div>
+            </div>
+            {/* 2. 배너 */}
             <section className="swipe_banner">
                 <Swiper
                     slidesPerView={2}

@@ -4,12 +4,15 @@ import React from "react";
 import PageIntro from "../modules/PageIntro";
 import SectionIntro from "../modules/SectionIntro";
 import SwiperProduct from "../plugin/SwiperProduct";
+import LegalAgeVerification from "../common/LegalAgeVerification";
 
 
 // [ 메인 컴포넌트 ] //////////////////
 const Main= ()=>{
     return(
         <>
+            {/* 0.법적 나이 확인 팝업창 */}
+            <LegalAgeVerification />
             {/* 1.페이지 소개 모듈 */}
             <PageIntro />
             {/* 2.섹션 소개 모듈 */}

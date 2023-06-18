@@ -3,6 +3,26 @@
 /* 스와이퍼 - 제품 배너 컴포넌트 CSS - swiper-product.css */
 
 
+/* 스와이퍼 배너 섹션의 타이틀 */
+.swipe_tit_container{
+
+}
+/* 타이틀 겉박스 */
+.swipe_tit_container .wrap:has(.title){
+    max-width: 1400px;
+    padding: 50px 20px;
+    margin: 50px auto 50px;
+
+    /* border: 1px solid #000; */
+}
+/* 타이틀(h2)요소 */
+.swipe_tit_container .title{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6vmax;
+    color: var(--ft-navy-color);
+
+    /* border: 1px solid red; */
+}
 
 section.swipe_banner {
     width: 100%;

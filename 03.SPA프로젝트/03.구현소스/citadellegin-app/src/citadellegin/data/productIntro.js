@@ -10,6 +10,7 @@ const productIntro_data = {
                 "./images/dt/sub/original/berry.png",
             ],
         "pdsrc": "./images/dt/sub/original/gin-1.png",
+        "next-img": "./images/dt/sub/original/next-product.png",
     },
     "Dete": {
         "pdtit": ["Citadelle", "Jardin d’Été"],
@@ -20,6 +21,7 @@ const productIntro_data = {
                 "./images/dt/sub/dete/berry.png",
             ],
         "pdsrc": "./images/dt/sub/dete/gin-1.png",
+        "next-img": "./images/dt/sub/dete/next-product.png",
     },
     "Rouge": {
         "pdtit": ["Citadelle", "Rouge"],
@@ -31,6 +33,7 @@ const productIntro_data = {
                 "./images/dt/sub/rouge/blackberry1.png",
             ],
         "pdsrc": "./images/dt/sub/rouge/gin-1.png",
+        "next-img": "./images/dt/sub/rouge/next-product.png",
     },
     "Limited": {
         "pdtit": ["N°6", ""],
@@ -42,6 +45,7 @@ const productIntro_data = {
             "./images/dt/sub/limited/cucumber5.png",
         ],
         "pdsrc": "./images/dt/sub/limited/gin-1.png",
+        "next-img": "./images/dt/sub/limited/next-product.png",
     }
 }; //////////////// productIntro_data 데이터 객체 ////////////////
 

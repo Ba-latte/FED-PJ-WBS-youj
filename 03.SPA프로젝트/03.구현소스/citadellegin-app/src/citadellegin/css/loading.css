@@ -1,0 +1,95 @@
+@charset "utf-8";
+/* 로딩 화면 모듈 컴포넌트의 CSS - loading.css */
+
+
+
+.loading_container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    overflow: hidden;
+}
+.loading_container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.loading_container .bg_wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/2;
+}
+.loading_container .bg_wrap>img:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+}
+.loading_container .bg_wrap>img:nth-child(2){
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+}
+
+
+/* svg - 로딩 애니메이션 박스 */
+.loading_container .svg_wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 580/190;
+    transform: translate(-50%, -50%) scale(1.5);
+    animation: fadeupAni 1s ease-out forwards;
+}
+@keyframes fadeupAni {
+    0%{
+        transform: translate(-50%, 0%) scale(1.5);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+    }
+}
+
+.loading_container .svg_wrap>svg{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+.loading_container #text{
+    transform: translateY(70%);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 161.047px;
+}
+.loading_container .water-fill {
+    animation: wave 1.3s infinite linear, fill-up 5s infinite ease-out alternate;
+}
+
+/* 키프레임 애니메이션 */
+@keyframes wave {
+    0% {
+        x: -400px;
+    }
+    100% {
+        x: 0;
+    }
+}
+@keyframes fill-up {
+    0% {
+        height: 0;
+        y: 130px;
+    }
+    100% {
+        height: 160px;
+        y: -30px;
+    }
+}

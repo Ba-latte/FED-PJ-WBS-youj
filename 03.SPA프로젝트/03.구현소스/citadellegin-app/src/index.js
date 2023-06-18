@@ -11,6 +11,7 @@ import Dete from './citadellegin/components/pages/Dete';
 import Rouge from './citadellegin/components/pages/Rouge';
 import Limited from './citadellegin/components/pages/Limited';
 import ScrollTop from './citadellegin/components/modules/ScrollTop';
+import Loading from './citadellegin/components/common/Loading';
 
 
 
@@ -32,6 +33,7 @@ export default function App(){
           <Route path="/dete" element={<Dete />} />
           <Route path='/rouge' element={<Rouge />} />
           <Route path='/limited' element={<Limited />} />
+          <Route path='/loading' element={<Loading />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -44,6 +44,7 @@ const NextLink = (props)=>{
                             </h2>
                         </div>
                         <div className='wrap'>
+                                {/* <img src={'./images/dt/sub/' + props.pgname.toLowerCase() + '/next-product.png'} alt='다음 제품 이미지' /> */}
                                 <img src={'./images/dt/sub/' + props.pgname.toLowerCase() + '/next-product.png'} alt='다음 제품 이미지' />
                         </div>
                     </Link>
