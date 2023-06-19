@@ -10,13 +10,11 @@ import Loading from './Loading';
 import { faL } from '@fortawesome/free-solid-svg-icons';
 
 
-// npm install react-cookie -> 리액트 쿠키 라이브러리 설치
+// 💥npm install react-cookie -> 리액트 쿠키 라이브러리 설치
+// 💥npm install react-modal 👉 모달 라이브러리 설치!!
 
 
-const LegalAgeVerification = (props)=>{
-    // props.modalIsOpen - 모달창 열기 (true / false)
-
-    // 💥💥npm install react-modal 👉 모달 라이브러리 설치!!
+const LegalAgeVerification = ()=>{
 
     // 마우스 오버시 상태값 변경!
     const [isHover, setIsHover] = useState(false);
@@ -24,6 +22,7 @@ const LegalAgeVerification = (props)=>{
     // useState를 이용하여 모달팝업창 상태값 변경! : 초기값 true = 창 뜨게 만들기
     const [modalIsOpen, setModalIsOpen] = useState(true);
 
+    // hasCookie라는 state를 추가로 생성해서 관리함
     // 쿠키 존재 여부 체크하는 state 생성 : true면 이미 쿠키 존재함
     const [hasCookie, setHasCookie] = useState(true);
 
@@ -69,26 +68,8 @@ const LegalAgeVerification = (props)=>{
         // 쿠키 존재 체크하는 Hook 변수 false로 바꾸기(?)
         setHasCookie(false);
     }, []);
-    // hasCookie라는 state를 추가로 생성해서 관리함
     // 그리고 Modal 컴포넌트에 closeModalUntilExpires 함수를 prop으로 넘겨서 "오늘 하루 더이상 보지 않기" 문구의 onClick 이벤트에 지정해주기
 
-
-
-    // 모달창 바깥 화면 스크롤 이동 금지하기
-    // useEffect(() => {
-
-    //     document.body.style.cssText = `
-    //         position: fixed; 
-    //         top: -${window.scrollY}px;
-    //         overflow-y: scroll;
-    //         width: 100%;`;
-    //     return () => {
-    //         const scrollY = document.body.style.top;
-    //         document.body.style.cssText = '';
-    //         window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-    //     };
-
-    // }, []);
     
 
 
@@ -140,13 +121,10 @@ const LegalAgeVerification = (props)=>{
 
     // no 버튼 클릭시 메시지 박스 출력하기
     const no_pick = ()=>{
-        console.log("아니! 나 미자얌! 그리고 쿠키 지울거야!!");
+        console.log("아니! 나 미자얌!");
 
         // 메시지 띄우기
         $(".no_pick_bx").css({display: "block"});
-
-        // 쿠키 지우기
-        // $.cookie("mypop", "OK", {expires: -1});
     };
 
 
@@ -163,8 +141,8 @@ const LegalAgeVerification = (props)=>{
                         isOpen={modalIsOpen}
                         closeModal={()=> setModalIsOpen(false)}
                         closeModalUntilExpires={closeModalUntilExpires}
-                        className="legal_age_modal" 
-                        overlayClassName="legal_age_overlay" 
+                        className="modal" 
+                        overlayClassName="overlay" 
                         closeTimeoutMS={500} 
                         >
                         {/* 
@@ -197,7 +175,7 @@ const LegalAgeVerification = (props)=>{
                                 </div>
                             </div>
                             {/* 4. y/n 선택 박스 */}
-                            <div className='YoN_bx'>
+                            <div className='YoN_bx' data-aos="fade" data-aos-duration="800" data-aos-delay="1000">
                                 <div className='yes_bx' onClick={closeModal}>
                                     <h3>Yes</h3>
                                 </div>

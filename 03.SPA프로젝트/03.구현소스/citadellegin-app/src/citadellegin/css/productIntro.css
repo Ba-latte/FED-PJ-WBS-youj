@@ -54,7 +54,7 @@
     padding: 20px 20px 0;
     margin-bottom: 50px;
 
-    /* outline: 1px dashed black; */
+    outline: 1px dashed green;
 }
 .product_img_container{
     grid-column: 2/7;
@@ -160,12 +160,14 @@
     transform: rotate(45deg);
 }
 
-
+.product_img_container .wrap:has(img#product){
+    outline: 2px dashed black;
+}
 /* 제품 유리병 img 요소 세팅 */
 .product_img_container img#product{
     width: 100%;
     margin-top: 30vh;
 
-    /* outline: 1px dashed red; */
+    outline: 1px dashed red;
 }
 

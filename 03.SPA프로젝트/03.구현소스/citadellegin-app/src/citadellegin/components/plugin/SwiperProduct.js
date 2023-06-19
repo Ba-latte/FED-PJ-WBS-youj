@@ -10,7 +10,6 @@ import {Link} from 'react-router-dom';
 import "swiper/css";
 import "swiper/css/pagination";
 import "./swiperProduct.css";
-import Scroll from "../modules/Scroll";
 import Arrow from "../common/Arrow";
 
 
@@ -87,13 +86,17 @@ export default function SwiperProduct(props) {
                         <p>Our gins made in</p>
                         <p>France</p>
                     </h2>
-                    <div>
-                    </div>
                 </div>
             </div>
-            {/* 2. 배너 타이틀과 배너 사이 구분선 */}
+            {/* 2. 꾸밈 이미지 */}
+            <div className="swipe_deco_container">
+                <div className="wrap">
+                    <img className="deco_img" src="./images/dt/sub/genevrier.png" alt="genevrier 일러스트" />
+                </div>
+            </div>
+            {/* 3. 배너 타이틀과 배너 사이 구분선 */}
             <Arrow />
-            {/* 3. 배너 */}
+            {/* 4. 배너 */}
             <section className="swipe_banner">
                 <Swiper
                     slidesPerView={2}
@@ -116,7 +119,7 @@ export default function SwiperProduct(props) {
                     <ul className="swiper-wrapper">
                         <SwiperSlide className="swiper-slide slide gin">
                             <Link to='/original'>
-                                <img src="./images/dt/sub/citadelle-original.png" alt="제품 이미지" />
+                                <img src="./images/dt/sub/original.png" alt="제품 이미지" />
                                 <div className="wrap">
                                     <span className="product_tit gin">Original</span>
                                 </div>
@@ -124,7 +127,7 @@ export default function SwiperProduct(props) {
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide slide gin">
                             <Link to="/dete">
-                                <img src="./images/dt/sub/citadelle-jardin-dete.png" alt="제품 이미지" />
+                                <img src="./images/dt/sub/dete.png" alt="제품 이미지" />
                                 <div className="wrap">
                                     <span className="product_tit gin">Jardin <br /> d’Été</span>
                                 </div>
@@ -132,7 +135,7 @@ export default function SwiperProduct(props) {
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide slide gin">
                             <Link to='/rouge'>
-                                <img src="./images/dt/sub/citadelle-rouge.png" alt="제품 이미지" />
+                                <img src="./images/dt/sub/rouge.png" alt="제품 이미지" />
                                 <div className="wrap">
                                     <span className="product_tit gin">Rouge</span>
                                 </div>
@@ -140,7 +143,7 @@ export default function SwiperProduct(props) {
                         </SwiperSlide>
                         <SwiperSlide className="swiper-slide slide gin">
                             <Link to='/limited'>
-                                <img src="./images/dt/sub/citadelle-sergent-pepper.png" alt="제품 이미지" />
+                                <img src="./images/dt/sub/limited.png" alt="제품 이미지" />
                                 <div className="wrap">
                                     <span className="product_tit gin">Our limited <br /> editions</span>
                                 </div>

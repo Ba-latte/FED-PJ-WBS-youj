@@ -79,14 +79,16 @@ export default function SwiperLimited() {
 
     const showFn = (idx)=>{
         console.log("등장해!",idx);
+        const detail_bx = $(".details_container");
+
         // dbseq변수의 값 바꾸기
         setDbseq(idx);
+
+        // 세부사항 박스의 외부 스크롤 숨겨두기
+        $("body").css({overflowY: "hidden"});
         
-        // 스크롤 맨위로 올리기
-        window.scrollTo(0,0);
         // 세부사항 박스 보이기
-        $("#details").css({display: "block"});
-        
+        detail_bx.css({display: "block"});
     };
     
     return (

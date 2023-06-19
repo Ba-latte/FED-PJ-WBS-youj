@@ -15,7 +15,15 @@ const Details = (props)=>{ // props.dbseq - 슬라이드 인덱스 번호
     // 닫기 버튼 클릭하면 details박스 숨기는 함수
     const clsFn = ()=>{
         console.log("닫아!");
-        $("#details").css({display:"none"});
+
+        // 세부사항 박스 바깥 영역 스크롤 가능하게 오버플로우 풀기
+        $("body").css({overflowY:"visible"});
+
+        // 세부사항 박스 스크롤 상단으로 옮겨두기
+        $(".details_container").scrollTop(0);
+        
+        // 세부사항 박스 닫아두기
+        $(".details_container").css({display:"none"});
     };
 
     return(

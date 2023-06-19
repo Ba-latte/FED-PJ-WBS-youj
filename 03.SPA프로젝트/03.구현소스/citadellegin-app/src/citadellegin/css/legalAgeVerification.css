@@ -8,7 +8,7 @@
 }
 
 /* 모달창 박스 */
-.legal_age_modal {
+.modal {
     position: absolute;
     top: 0;
     left: 0;
@@ -18,7 +18,7 @@
     background-color: #faf8f5cb;
 }
 /* 모달창 오버레이(박스 바깥쪽) */
-.legal_age_overlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -44,12 +44,12 @@
 
 
 /* 로고 이미지 */
-.legal_age_modal .logo_bx{
+.modal .logo_bx{
     margin-top: 5vh;
     padding: 50px 20px 0;
 }
 /* 타이틀 */
-.legal_age_modal .title{
+.modal .title{
     text-align: center;
     padding: 30px 20px 0;
     margin-bottom: 30px;
@@ -59,29 +59,29 @@
 }
 
 /* 타이틀의 단락 공통 세팅 */
-.legal_age_modal .txt{
+.modal .txt{
     overflow: hidden;
 }
-.legal_age_modal .txt>span{
+.modal .txt>span{
     display: block;
 }
 
 /* 타이틀의 각 단락별 개별 세팅 */
-.legal_age_modal .title .txt:nth-child(1){
+.modal .title .txt:nth-child(1){
     color: var(--ft-navy-color);
 }
-.legal_age_modal .title .txt:nth-child(2){
+.modal .title .txt:nth-child(2){
     font-style: italic;
     color: var(--ft-lemon-color);
 }
 
 /* 나이 질문 겉박스 */
-.legal_age_modal .verification_bx{
+.modal .verification_bx{
     padding: 20px 20px 0;
     margin-bottom: 30px;
 }
 /* 나이 질문 박스 */
-.legal_age_modal .query_desc{
+.modal .query_desc{
     text-align: center;
     font-family: 'Asap', sans-serif;
     font-size: 26px;
@@ -91,7 +91,7 @@
 }
 
 /* y/n 박스 */
-.legal_age_modal .YoN_bx{
+.modal .YoN_bx{
     padding: 20px 20px 0;
     margin-bottom: 30px;
 
@@ -104,12 +104,12 @@
     color: var(--ft-navy-color);
 }
 /* y/n박스의 h3요소 공통 세팅 */
-.legal_age_modal .YoN_bx h3{
+.modal .YoN_bx h3{
     cursor: pointer;
 }
 
 /* no 선택시 보이는 메시지 박스 */
-.legal_age_modal .no_pick_bx{
+.modal .no_pick_bx{
     text-align: center;
     margin: 0 auto 50px;
 
@@ -117,14 +117,14 @@
     display: none;
 }
 /* 메시지 세팅 */
-.legal_age_modal .no_pick_bx .msg{
+.modal .no_pick_bx .msg{
     font-family: 'Asap', sans-serif;
     font-size: 16px;
     color: #cc0000;
 }
 
 /* 7일간 보이지 않기 체크박스 */
-.legal_age_modal .cookieChk_bx{
+.modal .cookieChk_bx{
     display: flex;
     justify-content: center;
     align-items: center;

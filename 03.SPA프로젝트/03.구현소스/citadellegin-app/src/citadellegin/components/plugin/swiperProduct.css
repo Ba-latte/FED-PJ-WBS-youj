@@ -24,13 +24,27 @@
     /* border: 1px solid red; */
 }
 
+.swipe_deco_container{
+    position: relative;
+}
+.swipe_deco_container .wrap:has(.deco_img){
+    position: absolute;
+    top: -400px;
+    right: -5%;
+    transform: rotate(-15deg);
+}
+.swipe_deco_container .deco_img{
+    width: 80%;
+}
+
+/* 스와이퍼 배너 겉박스 */
 section.swipe_banner {
     width: 100%;
     height: 100%;
     padding: 100px 0 0;
     margin-bottom: 50px;
 }
-
+/* 스와이퍼 */
 .swiper-product {
     width: 100%;
     height: 100%;

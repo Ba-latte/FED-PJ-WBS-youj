@@ -3,17 +3,27 @@
 
 
 /* 제일 겉 박스 */
+.details_container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    overflow-y: auto;
+
+    /* 처음에 숨겨두기 */
+    display: none;
+}
+
 
 #details{
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
-    background-color: var(--btn-lemon-color);
 
-    /* 처음에 숨겨두기 */
-    display: none;
+    background-color: var(--btn-lemon-color);
 }
 .details{
     display: flex;

@@ -6,7 +6,7 @@ import '../../css/promotionalPhrase.css';
 
 
 const PromotionalPhrase = (props)=>{
-    // props.pgname - 각 페이지 이름
+    // props.pgname - 각 페이지 이름(첫글자 대문자)
 
     // 데이터 세팅
     const promo_phrase_data = {
@@ -46,22 +46,28 @@ const PromotionalPhrase = (props)=>{
     
     return(
         <>
-            {/* 제품 홍보 문구 파트 */}
-            <div className="promo_phrase_container">
-                {/* 배경이미지 */}
-                <div className='wrap'>
-                    <img className='bg' src={'./images/dt/sub/'+props.pgname.toLowerCase()+'/background-left.png'} alt='배경이미지' />
+            {
+            promo_phrase_data[props.pgname] != "" &&
+            <>
+                {console.log("안 비어있어!")}
+                {/* 제품 홍보 문구 파트 */}
+                <div className="promo_phrase_container">
+                    {/* 배경이미지 */}
+                    <div className='wrap'>
+                        <img className='bg' src={'./images/dt/sub/'+props.pgname.toLowerCase()+'/background-left.png'} alt='배경이미지' />
+                    </div>
+                    {/* 이미지 */}
+                    <div className="wrap">
+                        <img className='sticker' src="./images/sticker.png" alt="기업 이미지" />
+                    </div>
+                    {/* 홍보 문구 */}
+                    <div className="wrap">
+                        {/* <p className="phrase">{promo_phrase_data[props.pgname]}</p> */}
+                        <p className="phrase">{highlightFn(props.pgname)}</p>
+                    </div>
                 </div>
-                {/* 이미지 */}
-                <div className="wrap">
-                    <img className='sticker' src="./images/sticker.png" alt="기업 이미지" />
-                </div>
-                {/* 홍보 문구 */}
-                <div className="wrap">
-                    {/* <p className="phrase">{promo_phrase_data[props.pgname]}</p> */}
-                    <p className="phrase">{highlightFn(props.pgname)}</p>
-                </div>
-            </div>
+            </>
+            }
         </>
     );
 } ////////////////////////////////// PromotionalPhrase 컴포넌트 //////////////////////////////////
