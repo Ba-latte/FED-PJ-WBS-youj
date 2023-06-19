@@ -27,7 +27,7 @@ const LegalAgeVerification = ()=>{
     const [hasCookie, setHasCookie] = useState(true);
 
     // 쿠키 관리
-    const [cookies, setCookie] = useCookies();
+    const [cookies, setCookies] = useCookies();
 
 
     // 쿠키 만료 시기를 설정하는 함수 : pm에 일 수를 넣으면 현재 시간에서 해당 일 수를 더한 시기를 반환함
@@ -51,7 +51,7 @@ const LegalAgeVerification = ()=>{
         // 유효기간 1일 설정
         const expires = getExpiredDate(1);
         // 유효기간이 1일인 쿠키 생성
-        setCookie("MODAL_EXPIRES", true, {path: "/", expires: expires});
+        setCookies("MODAL_EXPIRES", true, {path: "/", expires: expires});
 
         // 모달창 Hook변수 상태 바꾸기
         setModalIsOpen(false);
