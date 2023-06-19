@@ -9,6 +9,8 @@ import LegalAgeVerification from "../common/LegalAgeVerification";
 
 // [ 메인 컴포넌트 ] //////////////////
 const Main= ()=>{
+    // 나이 확인 팝업창을 메인페이지에서 띄우니까, 여기서 관련 함수를 만드는 게 낫지 않을까,,,,?
+    
     return(
         <>
             {/* 0.법적 나이 확인 팝업창 */}

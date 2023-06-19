@@ -17,10 +17,8 @@ const ScrollTop = ()=>{
         // 스크롤 최상단으로 이동시키기
         window.scrollTo(0, 0);
 
-
         // AOS 초기화 : DOM 요소 로딩과 함수 실행 사이의 타이밍 문제가 있는 것 같아서 시차를 주려고 setTimeout을 씀
-        setTimeout(()=>AOS.init(), 10);
-        
+        setTimeout(()=>AOS.init(), 50);
         
     }, [pathname]); /////////////// useEffect() ///////////////
 

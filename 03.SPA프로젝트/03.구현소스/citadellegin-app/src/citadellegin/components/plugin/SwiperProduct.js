@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./swiperProduct.css";
 import Scroll from "../modules/Scroll";
+import Arrow from "../common/Arrow";
 
 
 
@@ -90,7 +91,9 @@ export default function SwiperProduct(props) {
                     </div>
                 </div>
             </div>
-            {/* 2. 배너 */}
+            {/* 2. 배너 타이틀과 배너 사이 구분선 */}
+            <Arrow />
+            {/* 3. 배너 */}
             <section className="swipe_banner">
                 <Swiper
                     slidesPerView={2}

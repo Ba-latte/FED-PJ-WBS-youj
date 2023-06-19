@@ -2,16 +2,31 @@
 
 /* 화살표 svg CSS - arrow.css */
 
+.arrow_container{
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.arrow_wrap{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 svg{
     width: 20px;
     height: 20px;
 }
 
-
 .dot{
     width: 3px;
     height: 3px;
     background-color: var(--arrow-grey-color);
     border-radius: 50%;
+}
+.arrow_container .border{
+    width: 45vw;
+}
+.arrow_container .arrow-head{
+    transform: rotate(180deg);
 }
