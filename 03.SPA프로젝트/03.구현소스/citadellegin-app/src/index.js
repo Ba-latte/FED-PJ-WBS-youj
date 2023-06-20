@@ -1,10 +1,17 @@
 // public/index.html 페이지에 적용되는 컴포넌트
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
+import scrollbar from 'smooth-scrollbar';
+import { Scrollbar } from "smooth-scrollbar-react";
+
+
+// CSS 불러오기
 import './index.css';
+// import './citadellegin/css/smooth-scroll.css';
+
 import Layout from './citadellegin/components/modules/Layout';
 import Main from './citadellegin/components/pages/Main';
 import Original from './citadellegin/components/pages/Original';
@@ -15,11 +22,31 @@ import ScrollTop from './citadellegin/components/modules/ScrollTop';
 import Loading from './citadellegin/components/common/Loading';
 
 
+// npm i smooth-scrollbar-react 👉 스무스스크롤 설치
+// scrollbar.init(document.querySelector('#smooth-scroll'));
+// npm install react-scroll-parallax 👉 패럴랙스 설치!
 
 // 라우터 구성 컴포넌트 : 스스로 내보내기 세팅 필수
 export default function App(){
+
+  // const scrollbar = useRef(null);
+
+  // useEffect(()=>{
+  //   console.log(scrollbar.current);
+  // }, []);
+
+  // 내보내기
   return(
     <CookiesProvider> {/* 쿠키 provider : 모든 컴포넌트에서 쿠키 관리가 가능해짐 */}
+    {/* <Scrollbar
+      // ref={scrollbar}
+      damping={0.1}
+      thumbMinSize={20}
+      renderByPixels={true}
+      alwaysShowTracks={false}
+      continuousScrolling={true}
+      wheelEventTarget={null}
+    > */}
       {/* 배포 위해 basename 속성 사용 */}
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
       <BrowserRouter>
@@ -41,6 +68,7 @@ export default function App(){
         </Routes>
         </Suspense>
       </BrowserRouter>
+    {/* </Scrollbar> */}
     </CookiesProvider>
   );
 } ///////////////////// App 컴포넌트 ////////////////////////////

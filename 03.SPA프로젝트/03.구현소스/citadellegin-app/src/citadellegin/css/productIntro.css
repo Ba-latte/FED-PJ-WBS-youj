@@ -77,7 +77,8 @@
     width: 100%;
 }
 /* 1.레몬 관련 세팅 */
-.wrap:has(.lemon){
+/* .wrap:has(.lemon){ */
+.wrap:has(.deco-1){
     width: 400px;
     height: 400px;
 
@@ -85,7 +86,8 @@
     left: 15%;
 }
 /* 2.이파리 관련 세팅 */
-.wrap:has(.leaf-3){
+/* .wrap:has(.leaf-3){ */
+.wrap:has(.deco-2){
     width: 450px;
     height: 450px;
 
@@ -93,7 +95,8 @@
     left: 35%;
 }
 /* 3.베리 관련 세팅 */
-.wrap:has(.berry){
+/* .wrap:has(.berry){ */
+.wrap:has(.deco-3){
     width: 300px;
     height: 300px;
 

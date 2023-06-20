@@ -1,0 +1,40 @@
+
+
+.App {
+    width: 500px;
+    max-width: 90vw;
+    margin: 20px auto 0;
+    height: 1500px;
+}
+
+.sample-container,
+.sample-container-2 {
+    margin: 30px 0;
+    background: #fff;
+}
+
+button {
+    border: 0;
+    outline: 0;
+    padding: 7px 10px;
+    background: #dedede;
+    cursor: pointer;
+}
+
+.scrollbar-track-x,
+.scrollbar-thumb-x {
+    height: 5px !important;
+}
+
+.scrollbar-track-y,
+.scrollbar-thumb-y {
+    width: 5px !important;
+}
+
+.scroll-content:hover ~ .scrollbar-track {
+    opacity: 1;
+}
+
+.custom-class {
+    background: #fff;
+}
