@@ -44,7 +44,7 @@ const Article = (props)=>{
                         <article className={"description" + (v.tit==="As for awards..."?" medal":v.tit==="How to enjoy it: "?" recipe":"")}>
                             <div className="wrap">
                                 {/* 큰 제목 */}
-                                <h3 className="tit" data-aos="fade-up" data-aos-duration="1000" data-aos-delay={i===0?"700":""} data-aos-easing="ease-in-out-quart">
+                                <h3 className="tit" data-aos="fade-up" data-aos-duration="800" data-aos-delay={i===0?"700":""} data-aos-easing="ease-in-out-quart">
                                     {v.tit}
                                 </h3>
                                 {/* 작은 제목 */}

@@ -54,13 +54,13 @@ const Footer = ()=>{
                 <div className="sns_bx">
                     <ul className="sns_list">
                         <li>
-                            <a href="https://www.instagram.com/citadellegin/?hl=en" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a>
+                            <a href="https://www.instagram.com/citadellegin/?hl=en" target="_blank"><FontAwesomeIcon icon={faInstagram} color="#121247" /></a>
                         </li>
                         <li>
-                            <a href="https://youtube.com/@citadellegin1929" target="_blank"><FontAwesomeIcon icon={faYoutube} /></a>
+                            <a href="https://youtube.com/@citadellegin1929" target="_blank"><FontAwesomeIcon icon={faYoutube} color="#121247" /></a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/CitadelleGin" target="_blank"><FontAwesomeIcon icon={faFacebookF} /></a>
+                            <a href="https://www.facebook.com/CitadelleGin" target="_blank"><FontAwesomeIcon icon={faFacebookF} color="#121247" /></a>
                         </li>
                     </ul>
                 </div>
@@ -79,7 +79,7 @@ const Footer = ()=>{
                 {/* 5. 회사 정보 */}
                 <ul className="corp_info">
                     <li>
-                        <FontAwesomeIcon icon={faLocationDot} />
+                        <FontAwesomeIcon icon={faLocationDot} color="#121247" />
                         &nbsp; Château de Bonbonnet 16130 Ars, France
                     </li>
                     <li>

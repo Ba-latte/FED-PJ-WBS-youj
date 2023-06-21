@@ -17,6 +17,9 @@
 }
 /* 타이틀(h2)요소 */
 .swipe_tit_container .title{
+    position: relative;
+    z-index: 1;
+
     font-family: 'Cormorant Garamond', serif;
     font-size: 6vmax;
     color: var(--ft-navy-color);
@@ -113,3 +116,29 @@ section.swipe_banner {
 
     /* outline: 1px solid red; */
 }
+
+
+
+
+
+/*************************************************************************************
+    🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥미디어 쿼리🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+*************************************************************************************/
+
+/* 500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+    .swipe_deco_container .wrap:has(.deco_img) {
+        width: 200px;
+        position: absolute;
+        top: -410px;
+        right: 0%;
+        transform: rotate(0deg);
+        /* z-index: -1; */
+        overflow: hidden;
+    }
+    .swipe_deco_container .deco_img {
+        width: 100%;
+        transform: rotate(-15deg);
+    }
+}
+/* 500px 사이즈 이하 미디어쿼리 끝 */

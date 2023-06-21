@@ -23,18 +23,17 @@
 }
 /* 아티클 타이틀 */
 .description .tit{
-    margin-bottom: 10px;
-
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5vmax;
+    font-size: max(35px, 3.5vmax);
     line-height: 1.2;
 }
 /* 아티클 서브 타이틀 */
 .description .subtit{
+    padding-top: 15px;
     font-family: 'Asap', sans-serif;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: normal;
-    line-height: 1.5;
+    /* line-height: 1.5; */
 }
 /* 아티클 설명글 */
 .description .desc{
@@ -90,11 +89,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    aspect-ratio: 3.5/1.25;
+    /* aspect-ratio: 3.5/1.25; */
+    justify-content: center;
 }
 /* 메달 아티클 - img요소 */
 .description.medal img{
-    width: 100%;
+    width: 30%;
     height: 100%;
 }
 /* 메달 아티클 - 가상요소(윈도우 가로전체 배경) */
@@ -129,12 +129,17 @@
 
 /* 500px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {
+    /* 레시피 아티클의 배경색 - 가상요소 */
+    .description.recipe::after{
+        transform: translateX(0);
+        width: 100%;
+    }
     /* 메달 아티클의 배경색 - 가상요소 */
     .description.medal::after{
         transform: translateX(0);
         width: 100%;
     }
     .description.medal .wrap:has(>img){
-        aspect-ratio: 3.4/1;
+        box-sizing: border-box;
     }
 } /* 500px 사이즈 이하 미디어쿼리 끝 */

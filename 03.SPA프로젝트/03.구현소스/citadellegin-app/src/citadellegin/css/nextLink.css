@@ -115,6 +115,6 @@
 @media screen and (max-width:400px) {
     /* 이름(h2) */
     .next_link_container .name{
-        font-size: 7vmax;
+        font-size: max(65px, 7vmax);
     }
 } /* 미디어쿼리 400px 이하 끝 */

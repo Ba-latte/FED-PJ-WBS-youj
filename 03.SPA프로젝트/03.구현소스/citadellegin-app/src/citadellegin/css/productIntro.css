@@ -79,6 +79,13 @@
     width: 100%;
 }
 /* 1.레몬 관련 세팅 */
+.wrap:has(.citrus){
+    width: 400px;
+    height: 400px;
+
+    top: 35%;
+    left: 15%;
+}
 .wrap:has(.lemon){
 /* .wrap:has(.deco-1){ */
     width: 400px;
@@ -96,9 +103,23 @@
     top: 90%;
     left: 35%;
 }
+.wrap:has(.leaf-1){
+    width: 450px;
+    height: 450px;
+
+    top: 90%;
+    left: 35%;
+}
 /* 3.베리 관련 세팅 */
 .wrap:has(.berry){
 /* .wrap:has(.deco-3){ */
+    width: 300px;
+    height: 300px;
+
+    top: 150%;
+    left: 10%;
+}
+.wrap:has(.berries){
     width: 300px;
     height: 300px;
 
@@ -214,6 +235,73 @@
         width: 80%;
     }
     /* 데코 이미지 세팅 */
+    /* original 제품 */
+    .wrap:has(.citrus){
+        width: 250px;
+        height: 250px;
+        top: 32%;
+        left: -5%;
+    }
+    .wrap:has(.leaf-3){
+        width: auto;
+        height: auto;
+    }
+    .wrap:has(.berry){
+        width: 300px;
+        height: 300px;
+        top: 108%;
+        left: -10%;
+    }
+    /* dete 제품 */
+    .wrap:has(.lemon){
+        width: auto;
+        height: auto;
+        top: 32%;
+        left: -5%;
+    }
+    .product_img_container .wrap:has(.leaf-1){
+        width: auto;
+        height: auto;
+        top: 107%;
+        z-index: 1;
+    }
+    .wrap:has(.berries){
+        top: 144%;
+        left: -23%;
+    }
+    /* rouge 제품 */
+    .wrap:has(.raspberry3) {
+        width: 250px;
+        height: 250px;
+        top: 30%;
+        left: 0%;
+    }
+    .wrap:has(.blackberry2) {
+        width: auto;
+        height: auto;
+        top: 101%;
+        left: 40%;
+        transform: rotateY(180deg) rotate(0deg);
+    }
+    .wrap:has(.raspberry1){
+        width: auto;
+        height: auto;
+        top: 175%;
+    }
+    .wrap:has(.blackberry1) {
+        width: 300px;
+        height: 340px;
+        transform: translate(0%) rotateY(0deg) rotate(0deg);
+    }
+    .product_img_container .blackberry1{
+        width: 100%;
+        position: absolute;
+        top: 20%;
+        left: -7%;
+        z-index: -1;
+        transform: translate(18%) rotateY(180deg) rotate(78deg);
+    }
+    /* limited 제품 */
     .wrap:has(.cucumber-flower) {
         top: 71%;
         left: -6%;
@@ -224,7 +312,7 @@
         transform: rotate(45deg);
     }
     .wrap:has(.cucumber6) {
-        top: 104%;
+        top: 110%;
         left: 36%;
         transform: rotate(0deg);
     }

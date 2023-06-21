@@ -5,7 +5,7 @@ const productIntro_data = {
         "pdtit": ["Citadelle", "Original"],
         "isrc":
             [
-                "./images/dt/sub/original/lemon.png",
+                "./images/dt/sub/original/citrus.png",
                 "./images/dt/sub/original/leaf-3.png",
                 "./images/dt/sub/original/berry.png",
             ],
@@ -18,8 +18,8 @@ const productIntro_data = {
         "isrc":
             [
                 "./images/dt/sub/dete/lemon.png",
-                "./images/dt/sub/dete/leaf-3.png",
-                "./images/dt/sub/dete/berry.png",
+                "./images/dt/sub/dete/leaf-1.png",
+                "./images/dt/sub/dete/berries.png",
             ],
         "pdsrc": "./images/dt/sub/dete/gin-1.png",
         "next-img": "./images/dt/sub/dete/next-product.png",
