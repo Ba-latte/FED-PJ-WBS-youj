@@ -5,9 +5,9 @@ import $ from 'jquery';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
+// CSS
 import '../../css/legalAgeVerification.css';
 import Loading from './Loading';
-import { faL } from '@fortawesome/free-solid-svg-icons';
 
 
 // 💥npm install react-cookie -> 리액트 쿠키 라이브러리 설치
