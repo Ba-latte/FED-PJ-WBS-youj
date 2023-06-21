@@ -42,29 +42,34 @@ const ProductIntro = (props)=>{
                     <div className="product_img_container">
                         {/* 꾸밈 이미지 */}
                         {
+                        
                             selcData[props.pgname]["isrc"].map((v, i)=>
                                 // 만약 데이터가 없다면 이미지 박스 만들지 않도록 제어하기!
                                 v !== "" &&
                                 <>
-                                {/* <div className='wrap' key={i}>
-                                    클래스이름은 이미지이름에서 따오기
-                                    <img className={"sticker " + v.split("/")[5].split(".")[0]} src={v} alt="사용된 보태니컬 종류 일러스트" />
-                                </div> */}
-                                <div className='wrap'>
-                                    <Parallax speed={-150}>
+                                <div className='wrap' key={i}>
+                                    {/* 클래스이름은 이미지이름에서 따오기 */}
+                                    {/* <Parallax speed={selcData[props.pgname]["speed"][i]}> */}
+                                        <img className={"sticker " + v.split("/")[5].split(".")[0]} src={v} alt="사용된 보태니컬 종류 일러스트" />
+                                    {/* </Parallax> */}
+                                </div>
+
+
+                                {/* <div className='wrap'>
+                                    <Parallax speed={-50}>
                                         <img className='sticker deco-1' src={selcData[props.pgname]["isrc"][0]} alt="데코이미지" />
                                     </Parallax>
                                 </div>
                                 <div className='wrap'>
-                                    <Parallax speed={10}>
+                                    <Parallax speed={15}>
                                         <img className='sticker deco-2' src={selcData[props.pgname]["isrc"][1]} alt="데코이미지" />
                                     </Parallax>
                                 </div>
                                 <div className='wrap'>
-                                    <Parallax speed={-50}>
+                                    <Parallax speed={20}>
                                         <img className='sticker deco-3' src={selcData[props.pgname]["isrc"][2]} alt="데코이미지" />
                                     </Parallax>
-                                </div>
+                                </div> */}
                                 </>
                             )
                         }
@@ -101,7 +106,9 @@ const ProductIntro = (props)=>{
 
                         {/* 제품 상세 이미지 */}
                         <div className="wrap">
-                            <img id="product" src={selcData[props.pgname]["pdsrc"]} alt="제품 상세 이미지" />
+                            <Parallax speed={window.innerWidth < 500 ? 0 : -50}>
+                                <img id="product" src={selcData[props.pgname]["pdsrc"]} alt="제품 상세 이미지" />
+                            </Parallax>
                         </div>
                     </div>
                     {/* 3.제품 설명 아티클들 */}

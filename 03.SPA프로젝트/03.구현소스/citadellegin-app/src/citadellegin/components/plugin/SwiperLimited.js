@@ -10,6 +10,7 @@ import {Link} from 'react-router-dom';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+// CSS 불러오기
 import "./swiperLimited.css";
 import Details from "../modules/Details";
 import limited_product_data from "../../data/limitedProduct";
@@ -104,10 +105,10 @@ export default function SwiperLimited() {
                         200: {
                             slidesPerView: 1,
                         },
-                        700: {
+                        500: {
                             slidesPerView: 2,
                         },
-                        1000: {
+                        1100: {
                             slidesPerView: 3,
                         },
                     }}

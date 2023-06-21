@@ -11,6 +11,7 @@ const productIntro_data = {
             ],
         "pdsrc": "./images/dt/sub/original/gin-1.png",
         "next-img": "./images/dt/sub/original/next-product.png",
+        "speed": [-50, 15, 20],
     },
     "Dete": {
         "pdtit": ["Citadelle", "Jardin d’Été"],
@@ -22,6 +23,7 @@ const productIntro_data = {
             ],
         "pdsrc": "./images/dt/sub/dete/gin-1.png",
         "next-img": "./images/dt/sub/dete/next-product.png",
+        "speed": [-70, 10, 0],
     },
     "Rouge": {
         "pdtit": ["Citadelle", "Rouge"],
@@ -34,6 +36,7 @@ const productIntro_data = {
             ],
         "pdsrc": "./images/dt/sub/rouge/gin-1.png",
         "next-img": "./images/dt/sub/rouge/next-product.png",
+        "speed": [-50, 15, 20, -20],
     },
     "Limited": {
         "pdtit": ["N°6", ""],
@@ -46,6 +49,7 @@ const productIntro_data = {
         ],
         "pdsrc": "./images/dt/sub/limited/gin-1.png",
         "next-img": "./images/dt/sub/limited/next-product.png",
+        "speed": [-50, 15, 20],
     }
 }; //////////////// productIntro_data 데이터 객체 ////////////////
 

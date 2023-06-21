@@ -36,7 +36,7 @@
     text-align: center;
 
     font-family: 'Cormorant Garamond', serif;
-    font-size: max(95px, 8vmax);
+    font-size: max(80px, 8vmax);
     color: var(--ft-navy-color);
 
     /* border: 2px dashed black; */
@@ -78,21 +78,38 @@
 }
 
 
+/*************************************************************************************
+    🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥미디어 쿼리🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+*************************************************************************************/
+
 /* 미디어쿼리 1400px 이하 시작 */
 @media screen and (max-width:1400px) {
     /* img요소 겉박스 */
     .next_link_container .wrap:has(img){
-        width: 500px;
+        max-width: 500px;
     }
 } /* 미디어쿼리 1400px 이하 끝 */
 
 /* 미디어쿼리 1000px 이하 시작 */
 @media screen and (max-width:1000px) {
     /* img요소 겉박스 */
-    .next_link_container .wrap:has(img){
+    /* .next_link_container .wrap:has(img){
         aspect-ratio: 400/500;
-    }
+    } */
 } /* 미디어쿼리 1000px 이하 끝 */
+
+/* 500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+    /* 다음페이지로 이동 - 박스 */
+    .next_link_container {
+        height: calc(100vh - 210px);
+    }
+    .next_link_container img{
+        height: 100%;
+        object-position: top;
+    }
+}
+/* 500px 사이즈 이하 미디어쿼리 끝 */
 
 /* 미디어쿼리 400px 이하 시작 */
 @media screen and (max-width:400px) {
