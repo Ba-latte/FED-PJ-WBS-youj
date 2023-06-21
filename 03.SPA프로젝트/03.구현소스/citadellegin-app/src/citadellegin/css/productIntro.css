@@ -317,3 +317,21 @@
         transform: rotate(0deg);
     }
 } /* 500px 사이즈 이하 미디어쿼리 끝 */
+
+/* 300px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 300px) {
+    .wrap:has(.blackberry1) {
+        width: 210px;
+        height: 340px;
+        transform: translate(0%) rotateY(0deg) rotate(0deg);
+    }
+    .product_img_container .blackberry1{
+        width: 100%;
+        position: absolute;
+        top: 7%;
+        left: -2%;
+        z-index: -1;
+        transform: translate(18%) rotateY(180deg) rotate(78deg);
+    }
+} /* 300px 사이즈 이하 미디어쿼리 끝 */
+

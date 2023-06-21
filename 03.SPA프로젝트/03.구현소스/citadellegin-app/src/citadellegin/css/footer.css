@@ -143,3 +143,10 @@ footer.info{
 #Line-2{
     stroke: var(--arrow-grey-color);
 }
+
+/* 300px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 300px) {
+    .info .line_bx .border {
+        width: 60vw;
+    }
+} /* 300px 사이즈 이하 미디어쿼리 끝 */
