@@ -1,7 +1,8 @@
 // 메인 페이지 레이아웃 컴포넌트
 
-import $ from 'jquery';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
+import $ from 'jquery';
 import Header from '../modules/Header';
 import Footer from '../modules/Footer';
 
@@ -13,7 +14,6 @@ function jqFn(){
         
     }); ////////////// jQB //////////////
 } ///////////////////// jqFn 함수 /////////////////////
-
 
 
 // [ 레이아웃 컴포넌트 ] ////////////////////
@@ -33,8 +33,6 @@ const Layout = ()=>{
             <div id="info">
                 <Footer />
             </div>
-            {/* JS로드 함수 */}
-            {jqFn()}
         </>
     );
 }; ///////////////////////////// Layout 컴포넌트 /////////////////////////////

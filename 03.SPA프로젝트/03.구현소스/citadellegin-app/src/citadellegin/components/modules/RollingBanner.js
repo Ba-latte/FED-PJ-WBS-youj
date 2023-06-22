@@ -29,12 +29,6 @@ const RollingBanner = ()=>{
             document.querySelector('#roller1').style.left = '0px';
             document.querySelector('#roller2').style.left = document.querySelector('.rolling_container .roller ul').offsetWidth+'px';
 
-            // 상,하단 svg 구분선 크기 지정
-            // let wval = document.querySelector('.rolling_container .roller ul').offsetWidth;
-            // $(".rolling_container .line_bx .border").css({
-            //     width: `${wval}px`
-            // })
-
             //클래스 할당
             roller.classList.add('original');
             clone.classList.add('clone');
@@ -168,7 +162,7 @@ const RollingBanner = ()=>{
                 </svg>
             </div>
             {/* 롤링 배너 함수 호출 */}
-            {rollingFn()}
+            {setTimeout(rollingFn, 100)}
         </div>
     );
 }; /////////////////////// RollingBanner 컴포넌트 ///////////////////////

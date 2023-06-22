@@ -1,30 +1,39 @@
 // public/index.html 페이지에 적용되는 컴포넌트
 
-import React, { Suspense, useEffect, useRef } from 'react';
+import React, { Suspense, lazy, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import scrollbar from 'smooth-scrollbar';
 import { Scrollbar } from "smooth-scrollbar-react";
 
-
 // CSS 불러오기
 import './index.css';
 // import './citadellegin/css/smooth-scroll.css';
 
-import Layout from './citadellegin/components/modules/Layout';
-import Main from './citadellegin/components/pages/Main';
-import Original from './citadellegin/components/pages/Original';
-import Dete from './citadellegin/components/pages/Dete';
-import Rouge from './citadellegin/components/pages/Rouge';
-import Limited from './citadellegin/components/pages/Limited';
-import ScrollTop from './citadellegin/components/modules/ScrollTop';
+// import Layout from './citadellegin/components/modules/Layout';
+// import Main from './citadellegin/components/pages/Main';
+// import Original from './citadellegin/components/pages/Original';
+// import Dete from './citadellegin/components/pages/Dete';
+// import Rouge from './citadellegin/components/pages/Rouge';
+// import Limited from './citadellegin/components/pages/Limited';
+// import ScrollTop from './citadellegin/components/modules/ScrollTop';
 import Loading from './citadellegin/components/common/Loading';
 
 
 // npm i smooth-scrollbar-react 👉 스무스스크롤 설치
 // scrollbar.init(document.querySelector('#smooth-scroll'));
 // npm install react-scroll-parallax 👉 패럴랙스 설치!
+
+// 라우트 기반 코드 분할하기
+const Layout = lazy(() => import('./citadellegin/components/modules/Layout'));
+const Main = lazy(() => import('./citadellegin/components/pages/Main'));
+const Original = lazy(() => import('./citadellegin/components/pages/Original'));
+const Dete = lazy(() => import('./citadellegin/components/pages/Dete'));
+const Rouge = lazy(() => import('./citadellegin/components/pages/Rouge'));
+const Limited = lazy(() => import('./citadellegin/components/pages/Limited'));
+const ScrollTop = lazy(() => import('./citadellegin/components/modules/ScrollTop'));
+// const Loading = lazy(() => import('./citadellegin/components/common/Loading'));
 
 // 라우터 구성 컴포넌트 : 스스로 내보내기 세팅 필수
 export default function App(){
@@ -50,10 +59,10 @@ export default function App(){
       {/* 배포 위해 basename 속성 사용 */}
       {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
       <BrowserRouter>
+      <Suspense fallback={<Loading />}>
         {/* 👇 라우터 링크 이동할 때 스크롤 최상단으로 이동하기 */}
         <ScrollTop />
         {/* 리액트 suspens를 사용하여 로딩페이지 구현해보기(?) */}
-        <Suspense>
         <Routes>
           {/* 레이아웃 컴포넌트를 루트로 잡기 */}
           <Route path='/' element={<Layout />}>
@@ -63,10 +72,9 @@ export default function App(){
             <Route path="/dete" element={<Dete />} />
             <Route path='/rouge' element={<Rouge />} />
             <Route path='/limited' element={<Limited />} />
-            <Route path='/loading' element={<Loading />} />
           </Route>
         </Routes>
-        </Suspense>
+      </Suspense>
       </BrowserRouter>
     {/* </Scrollbar> */}
     </CookiesProvider>
