@@ -41,7 +41,13 @@ export default function App(){
   // const scrollbar = useRef(null);
 
   // useEffect(()=>{
-  //   console.log(scrollbar.current);
+
+  //   const setIt = new Promise(function(success){
+  //     // 시간이 걸리는 코드 여기서 호출하기
+
+  //     // 위의 코드가 다 실행되면 아래 코드 호출하기
+  //     success();
+  //   });
   // }, []);
 
   // 내보내기
