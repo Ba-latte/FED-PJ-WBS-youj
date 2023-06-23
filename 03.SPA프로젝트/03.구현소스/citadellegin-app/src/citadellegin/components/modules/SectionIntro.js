@@ -1,6 +1,6 @@
 // 각 섹션 소개 모듈 컴포넌트 JS - SectionIntro.js
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import $ from 'jquery';
 import '../../css/sectionIntro.css';
 import sectionIntro_data from '../../data/sectionIntro';
@@ -14,7 +14,6 @@ const SectionIntro = (props)=>{
 
     // 데이터 셋업하기
     const slcData = sectionIntro_data;
-
 
     return(
         <>

@@ -1,19 +1,58 @@
 // 각 제품 소개 모듈 컴포넌트 JS - ProductIntro.js
 
-
+import React, { useEffect } from 'react';
+import $ from 'jquery';
 import '../../css/productIntro.css';
 import productIntro_data from '../../data/productIntro';
 import Article from './Article';
 import PromotionalPhrase from './PromotionalPhrase';
 // 패럴랙스
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax';
+import { Parallax, ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 
 // [ 제품 소개 모듈 컴포넌트 ]
 const ProductIntro = (props)=>{
     // props.pgname - 데이터 구분할 페이지 이름(첫글자 대문자)
 
+    /*************************************************************************************
+        [패럴랙스 팁]
+    -시차 효과는 이미지가 페이지보다 느리게 움직일 때 더 자연스러움 (speed < 0)
+    -여러 레이어로 자연스러운 시각적 효과를 얻으려면 각 레이어가 speed이미지의 거리에 따라 달라짐.
+    이미지의 항목이 가까울수록 더 빨리 움직여야하고, 멀어질수록 더 느리게 움직여야 함
+    *************************************************************************************/
+
     // 데이터 세팅
     const selcData = productIntro_data;
+
+    // [ 스크롤하면 병 돌아가는 함수 ] //////////////
+    const rotateBottle = ()=>{
+        // 화면의 높이값 읽기
+        // 윈도우 화면 : 위치값 = 정한범위 : 실제이동값
+        // ->실제이동값 = 정한범위 - (위치값 * 정한범위) / 윈도우화면
+    }; ///////////////////// rotateBottle 함수 ///////////////////////////
+
+    useEffect(()=>{
+        repeatImg();
+    }, []);
+
+
+    const repeatImg = ()=>{
+        const imgWrap = document.querySelector(".wrap:has(img#product)");
+        let imgArr = [];
+        console.log(imgWrap);
+        
+        let temp = "";
+        for(let i=1; i <= 36; i++){
+            temp += `
+            <img src='./images/dt/sub/original/gin-${i}.png' alt='제품 이미지' />
+            `;
+        }
+        console.log(temp);
+
+        return temp;
+        
+    }; ///////////////////// repeatImg 함수 /////////////////////////
+    repeatImg();
+
     return(
         <div id="product_intro">
             {/* 제품 소개 섹션 */}
@@ -40,76 +79,31 @@ const ProductIntro = (props)=>{
                 <aside className="gridBx">
                     {/* 2.제품 이미지 */}
                     <div className="product_img_container">
-                        {/* 꾸밈 이미지 */}
+                    {/* <ParallaxBanner style={{height: '100%'}}> */}
+                        {/* 2-1. 꾸밈 이미지 */}
                         {
-                        
                             selcData[props.pgname]["isrc"].map((v, i)=>
                                 // 만약 데이터가 없다면 이미지 박스 만들지 않도록 제어하기!
                                 v !== "" &&
                                 <>
                                 <div className='wrap' key={i}>
                                     {/* 클래스이름은 이미지이름에서 따오기 */}
-                                    {/* <Parallax speed={selcData[props.pgname]["speed"][i]}> */}
+                                    <Parallax speed={selcData[props.pgname]["speed"][i]}>
                                         <img className={"sticker " + v.split("/")[5].split(".")[0]} src={v} alt="사용된 보태니컬 종류 일러스트" />
-                                    {/* </Parallax> */}
-                                </div>
-
-
-                                {/* <div className='wrap'>
-                                    <Parallax speed={-50}>
-                                        <img className='sticker deco-1' src={selcData[props.pgname]["isrc"][0]} alt="데코이미지" />
                                     </Parallax>
                                 </div>
-                                <div className='wrap'>
-                                    <Parallax speed={15}>
-                                        <img className='sticker deco-2' src={selcData[props.pgname]["isrc"][1]} alt="데코이미지" />
-                                    </Parallax>
-                                </div>
-                                <div className='wrap'>
-                                    <Parallax speed={20}>
-                                        <img className='sticker deco-3' src={selcData[props.pgname]["isrc"][2]} alt="데코이미지" />
-                                    </Parallax>
-                                </div> */}
                                 </>
                             )
                         }
-                        
-                        {/* [ Parallax 컴포넌트를 써서 각각 옵션 주는 방법 ] */}
-                        {/* <div className='parallaxBx'>
-                            <Parallax speed={-50} style={{position:"absolute"}}>
-                                <img className='sticker' src='./images/dt/sub/rouge/raspberry3.png' alt="라즈베리" />
-                            </Parallax>
-                            <Parallax speed={-20} style={{position:"absolute"}}>
-                                <img src='./images/dt/sub/rouge/blackberry1.png' alt="블랙베리" />
-                            </Parallax>
-                        </div> */}
-                    
-                        {/*
-                        [ ParallaxBanner를 써서 하나의 세트로 만드는 방법 : 적용 못함^_ㅠ ]
-                        <ParallaxBanner
-                            layers={
-                                [
-                                    {image:'./images/dt/sub/rouge/raspberry3.png', speed: -30},
-                                    {image:'./images/dt/sub/rouge/blackberry2.png', speed: 30},
-                                    {image:'./images/dt/sub/rouge/raspberry1.png', speed: -50},
-                                    {image:'./images/dt/sub/rouge/blackberry1.png', speed: 50}
-                                ]
-                            }
-                            // style={{
-                            //     height:"100%",
-                            //     width: "100%",
-                            //     position: "absolute",
-                            //     zIndex: "99",
-                            // }}
-                        />
-                        */}
-
-                        {/* 제품 상세 이미지 */}
+                        {/* 2-2. 제품 상세 이미지 */}
                         <div className="wrap">
-                            <Parallax speed={window.innerWidth < 500 ? 0 : -50}>
-                                <img id="product" src={selcData[props.pgname]["pdsrc"]} alt="제품 상세 이미지" />
+                            {/* <ParallaxBannerLayer speed={window.innerWidth < 500 ? 0 : -70}> */}
+                            <Parallax speed={0}>
+                                {repeatImg}
+                                {/* <img id="product" src={selcData[props.pgname]["pdsrc"][0] + 1 + selcData[props.pgname]["pdsrc"][1]} alt="제품 상세 이미지" /> */}
                             </Parallax>
                         </div>
+                    {/* </ParallaxBanner> */}
                     </div>
                     {/* 3.제품 설명 아티클들 */}
                     <div className="product_desc_container">

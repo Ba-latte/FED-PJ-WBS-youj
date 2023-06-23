@@ -32,7 +32,7 @@
     width: 100%;
     height: 100%;
 
-    background: url(../../../public/images/age_bg.png) no-repeat center;
+    background: url(../../../public/images/age_bg.png) no-repeat center/cover;
 }
 
 .ReactModal__Overlay {

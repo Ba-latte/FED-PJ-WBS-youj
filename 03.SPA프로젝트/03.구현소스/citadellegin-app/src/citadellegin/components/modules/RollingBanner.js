@@ -1,13 +1,27 @@
 // 전광판처럼 돌아가는 롤링 배너 모듈 컴포넌트 JS - RollingBanner.js
 
 
-import React from "react";
+import React, { useEffect } from "react";
 import $ from 'jquery';
 import '../../css/rollingBanner.css';
 
 
 // 컴포넌트
 const RollingBanner = ()=>{
+
+    /*
+    롤링 배너 함수를 return()안에서 setTimeout()을 써서 불러올 때,
+    리액트에서 자체적으로 숫자를 리턴하는 기능이 있다고 함!
+
+    그래서 숫자가 찍혔던 것이며
+    이를 방지하기 위해서 컴포넌트 안에서 함수 호출하지 말고
+    useEffect()안에서 setTimeout()을 쓴 롤링 배너 함수를 호출하면 됨!
+
+    선생님이 알려주셨음~*^^*
+    
+    */
+    useEffect(()=>{setTimeout(rollingFn, 100)}, [])
+
     
     //////////////// [ 롤링 배너 함수 ] ////////////////
     function rollingFn(){    
@@ -162,7 +176,7 @@ const RollingBanner = ()=>{
                 </svg>
             </div>
             {/* 롤링 배너 함수 호출 */}
-            {setTimeout(rollingFn, 100)}
+            {/* {setTimeout(rollingFn, 100)} */}
         </div>
     );
 }; /////////////////////// RollingBanner 컴포넌트 ///////////////////////

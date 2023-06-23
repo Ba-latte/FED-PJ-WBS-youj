@@ -229,8 +229,10 @@
     }
     .product_img_container .wrap:has(img#product){
         text-align: center;
+        position: relative;
     }
     .product_img_container img#product{
+        position: absolute;
         margin-top: 0;
         width: 80%;
     }

@@ -11,7 +11,7 @@ const productIntro_data = {
             ],
         "pdsrc": "./images/dt/sub/original/gin-1.png",
         "next-img": "./images/dt/sub/original/next-product.png",
-        "speed": [-50, 15, 20],
+        "speed": [-50, -30, 10],
     },
     "Dete": {
         "pdtit": ["Citadelle", "Jardin d’Été"],
@@ -23,7 +23,7 @@ const productIntro_data = {
             ],
         "pdsrc": "./images/dt/sub/dete/gin-1.png",
         "next-img": "./images/dt/sub/dete/next-product.png",
-        "speed": [-70, 10, 0],
+        "speed": [-90, -5, 10],
     },
     "Rouge": {
         "pdtit": ["Citadelle", "Rouge"],

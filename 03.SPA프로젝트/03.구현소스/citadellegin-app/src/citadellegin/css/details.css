@@ -106,7 +106,7 @@
     padding: 20px 20px 0;
     margin-bottom: 50px;
 
-    outline: 1px dashed black;
+    /* outline: 1px dashed black; */
 }
 .details .product_img_container{
     grid-column: 1/7;
@@ -122,6 +122,45 @@
     width: 100%;
     margin-top: 30vh;
 
-    outline: 1px dashed red;
+    /* outline: 1px dashed red; */
 }
 
+
+
+
+/*************************************************************************************
+    🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥미디어 쿼리🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+*************************************************************************************/
+
+/* 1300px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1300px) {
+
+} /* 1300px 사이즈 이하 미디어쿼리 끝 */
+
+
+
+/* 500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+    .details .product_name_container .name>span{
+        gap: 0;
+    }
+    .details .gridBx{
+        padding: 20px 0 0;
+    }
+    .details .product_img_container{
+        grid-column: 1/13;
+        order: 1;
+        padding-bottom: 70px;
+    }
+    .details .product_desc_container{
+        grid-column: 1/13;
+        order: 2;
+    }
+    .details .product_img_container .wrap:has(img#product){
+        text-align: center;
+    }
+    .details .product_img_container img#product{
+        margin-top: 0;
+        width: 45%;
+    }
+} /* 500px 사이즈 이하 미디어쿼리 끝 */

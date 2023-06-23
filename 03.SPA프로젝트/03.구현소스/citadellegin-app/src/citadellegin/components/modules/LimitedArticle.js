@@ -85,7 +85,7 @@ const Article = (props)=>{
             {
                 props.pgname == "test"  &&
                 lmtData[props.dbseq]["article"].map((v, i)=>
-                    <div className="article_container details" key={i} style={{border:"2px dashed red"}}>
+                    <div className="article_container details" key={i} >
                         <article className="description">
                             <div className="wrap">
                                 {/* 1.큰제목 */}

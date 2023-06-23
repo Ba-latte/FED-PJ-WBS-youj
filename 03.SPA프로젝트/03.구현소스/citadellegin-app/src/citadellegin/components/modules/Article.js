@@ -40,14 +40,13 @@ const Article = (props)=>{
                 props.pgname != "test" &&
                 selcData[props.pgname].map((v, i)=>
                     <div className="article_container" key={i}>
-                        {/* <div>{'😎테스트 : ' + v.tit}</div> */}
                         <article className={"description" + (v.tit==="As for awards..."?" medal":v.tit==="How to enjoy it: "?" recipe":"")}>
                             <div className="wrap">
-                                {/* 큰 제목 */}
+                                {/* 1.큰 제목 */}
                                 <h3 className="tit" data-aos="fade-up" data-aos-duration="800" data-aos-delay={i===0?"700":""} data-aos-easing="ease-in-out-quart">
                                     {v.tit}
                                 </h3>
-                                {/* 작은 제목 */}
+                                {/* 2.작은 제목 */}
                                 {v.subtit.length >= 1 && <h4 className="subtit">{v.subtit}</h4>}
                             </div>
                             {/* 설명 : pgname이 "limited"고 desc 속성 값이 비어있다면 -> <SwiperProduct/>컴포넌트 불러오기 */}
@@ -57,7 +56,7 @@ const Article = (props)=>{
                                 <SwiperLimited /> :
                                 <p className="desc">{makeDesc(v.desc)}</p>
                             }
-                            {/* 이미지 */}
+                            {/* 3.이미지 */}
                             {
                                 v.isrc.length >= 1 &&
                                 <div className="wrap">
@@ -75,7 +74,7 @@ const Article = (props)=>{
             {/* 경우2) limited 페이지의 스와이퍼 배너를 클릭한 경우 */}
             {
                 props.pgname == "test" &&
-                    <div className="article_container" style={{border:"2px dashed red"}}>
+                    <div className="article_container">
                         <article className="description">
                             <div className="wrap">
                                 {/* 큰제목 */}
