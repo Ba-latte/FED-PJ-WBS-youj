@@ -65,7 +65,36 @@
     grid-column: 7/12;
 }
 
-/* 제품 이미지 설정 */
+
+/* 제품 이미지 겉박스 설정 */
+.product_img_container .wrap:has(img.product){
+    position: relative;
+
+    user-select: none;
+    /* 선택 안 되게 막기 */
+    -webkit-user-drag: none;
+    /* 드래그안되게함 */
+
+    /* outline: 2px dashed black; */
+}
+
+/* 제품 유리병 img 요소 세팅 - 모바일 (고정된 병) */
+.product_img_container img#product{
+    width: 100%;
+    margin-top: 45vh;
+
+    /* outline: 1px dashed red; */
+}
+/* 제품 유리병 img요소 세팅 - 그외 (돌아가는 병) */
+.product_img_container img.product{
+    position: relative;
+    width: 100%;
+    margin-top: 45vh;
+
+    /* outline: 1px dashed red; */
+}
+
+
 /**************** 제품 설명 아티클 ****************/
 /* 제품 주변 꾸밈 이미지 세팅 */
 .product_img_container .wrap:has(.sticker){
@@ -186,16 +215,7 @@
     transform: rotate(45deg);
 }
 
-.product_img_container .wrap:has(img#product){
-    /* outline: 2px dashed black; */
-}
-/* 제품 유리병 img 요소 세팅 */
-.product_img_container img#product{
-    width: 100%;
-    margin-top: 45vh;
 
-    /* outline: 1px dashed red; */
-}
 
 
 
@@ -232,10 +252,16 @@
         position: relative;
     }
     .product_img_container img#product{
-        position: absolute;
+        /* position: absolute; */
         margin-top: 0;
         width: 80%;
     }
+    /* 제품 유리병 img요소 세팅 - 돌아가는 병 */
+    .product_img_container img.product{
+        width: 80%;
+        margin-top: 0;
+    }
+
     /* 데코 이미지 세팅 */
     /* original 제품 */
     .wrap:has(.citrus){
