@@ -1,6 +1,6 @@
 // limited 페이지에서 한정판 제품의 각 상세 페이지 모듈 JS - Details.js
 
-import React from "react";
+import React, { useEffect } from "react";
 import $ from 'jquery';
 import '../../css/details.css';
 import limited_product_data from "../../data/limitedProduct";
@@ -12,19 +12,34 @@ const Details = (props)=>{ // props.dbseq - 슬라이드 인덱스 번호
     // 데이터 셋업하기
     const selecData = limited_product_data;
 
+    
+    
     // 닫기 버튼 클릭하면 details박스 숨기는 함수
     const clsFn = ()=>{
         console.log("닫아!");
+        // 대상 선정
+        const details_container = $(".details_container");
 
-        // 세부사항 박스 바깥 영역 스크롤 가능하게 오버플로우 풀기
-        $("body").css({overflowY:"visible"});
+        setTimeout(() => {
+            // 세부사항 박스 바깥 영역 스크롤 가능하게 오버플로우 풀기
+            $("body").css({overflowY:"visible"});
+    
+            
+            // 세부사항 박스 닫기
+            details_container.css({
+                clipPath: `circle(0% at 50% 50%)`,
+            });
+            
+        }, 10, 
+        ()=>{
+            // 세부사항 박스 스크롤 상단으로 옮겨두기
+            details_container.scrollTop(0);
+        });
 
-        // 세부사항 박스 스크롤 상단으로 옮겨두기
-        $(".details_container").scrollTop(0);
-        
-        // 세부사항 박스 닫아두기
-        $(".details_container").css({display:"none"});
     };
+
+
+
 
     return(
         <div className="details_container">
@@ -58,7 +73,7 @@ const Details = (props)=>{ // props.dbseq - 슬라이드 인덱스 번호
                     </div>
                     {/* 4.제품 설명 아티클들 */}
                     <div className="product_desc_container">
-                        <Article pgname="test" dbseq={props.dbseq} />
+                        <Article pgname="details" dbseq={props.dbseq} />
                     </div>
                 </aside>            
             </section>

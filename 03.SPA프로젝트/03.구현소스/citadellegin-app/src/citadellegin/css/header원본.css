@@ -112,95 +112,59 @@ header.top{
 
 }
 
-/* 내비게이션 요소의 겉박스 */
-#nav>.wrap:has(nav){
-    max-width: 1400px;
+/* 메뉴 겉박스 */
+#nav>.wrap{
     position: relative;
+    max-width: 1400px;
     padding: 0 30px;
     margin: 20px auto 0;
 
-    color: var(--grey-light-color);
+    display: flex;
+    flex-direction: column;
 
-    /* border: 2px solid red; */
+    /* outline: 2px dashed blue; */
 }
 
-/* 내비게이션의 a요소들 */
+/* 메뉴 박스 */
+
+
+/* 메뉴 a요소 공통 세팅 */
 #nav .nav a{
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
     font-weight: bold;
-    color: var(--grey-light-color);
+    color: #faf8f5;
     letter-spacing: 2px;
 }
-
-/* 닫기 버튼의 겉박스 */
-#nav .wrap .wrap:has(.close){
+/* 닫기 버튼 */
+#nav .wrap:has(.close){
     height: 80px;
-    position: static;
-    margin: 0 auto;
-
+    padding-right: 10px;
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
+    flex-direction: column;
 
-    /* outline: 2px solid lime; */
+    outline: 2px solid red;
 }
-
-/* 닫기 아이콘 */
 #nav .close{
     display: block;
-    padding: 10px;
+    /* padding: 12px 30px; */
+
     font-size: 24px;
-    color: var(--grey-light-color);
+    color: #faf8f5;
 
     cursor: pointer;
 }
-
-/* 메뉴와 스와이퍼배너의 겉박스 */
-#nav nav.nav{
-    max-width: 1400px;
-    margin: 0 auto;
-
-    display: flex;
-    justify-content: space-between;
-
-    /* outline: 2px dashed red; */
-}
-
-/* 내비게이션요소의 리스트(ul)공통 세팅 */
 #nav .nav>ul{
-    width: 30%;
-    padding: 20px;
-
     display: flex;
     flex-direction: column;
     gap: 5vh;
-
-    /* border: 2px dotted plum; */
+    padding: 20px;
 }
-
 
 /*************************************************************************************
     🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥미디어 쿼리🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 *************************************************************************************/
-
-/* 700px 사이즈 이하 미디어쿼리 시작 */
-@media screen and (max-width: 700px) {
-
-    /* 메뉴와 스와이퍼배너의 겉박스 */
-    #nav nav.nav{
-        flex-direction: column;
-        gap: 20px;
-        outline: 2px dashed red;
-    }
-    /* 메뉴 박스 */
-    #nav .nav>ul{
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-} /* 700px 사이즈 이하 미디어쿼리 끝 */
 
 /* 500px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {

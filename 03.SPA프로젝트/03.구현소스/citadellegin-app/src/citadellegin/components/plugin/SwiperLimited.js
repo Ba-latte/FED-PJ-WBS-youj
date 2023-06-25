@@ -76,26 +76,6 @@ export default function SwiperLimited(props) {
     // props.pgname - 페이지 이름 (첫글자 대문자)
 
 
-    // 온고잉 제품 데이터
-    const ginsData = [
-        {
-            "tit" : "Original",
-            "src" : "./images/dt/main/original.png",
-        },
-        {
-            "tit" : "Jardin d’Été",
-            "src" : "./images/dt/main/dete.png",
-        },
-        {
-            "tit" : "Rouge",
-            "src" : "./images/dt/main/rouge.png",
-        },
-        {
-            "tit" : "Our limited editions",
-            "src" : "./images/dt/main/limited.png",
-        },
-    ];
-
     // 리미티드 제품 데이터
     const selecData = limited_product_data;
 
@@ -113,9 +93,15 @@ export default function SwiperLimited(props) {
 
         // 세부사항 박스의 외부 스크롤 숨겨두기
         $("body").css({overflowY: "hidden"});
+
+        // 세부사항 박스 스크롤 상단으로 옮겨두기
+        detail_bx.scrollTop(0);
+        
         
         // 세부사항 박스 보이기
-        detail_bx.css({display: "block"});
+        detail_bx.css({
+            clipPath: `circle(100% at 50% 50%)`,
+        });
     };
     
     return (
@@ -145,21 +131,11 @@ export default function SwiperLimited(props) {
                             props.pgname == "Limited" &&
                             selecData.map((v, i)=>
                             <SwiperSlide className="swiper-slide slide limited" key={i} onClick={()=>showFn(i)}>
-                                {/* {console.log(v.isrc)} */}
+                                {/* {console.log("리미티드!")} */}
                                 <div className="wrap">
                                     <span className="product_tit limited">{v["productName"]}</span>
                                 </div>
                                 <img src={v["isrc"]} alt="제품 이미지" />
-                            </SwiperSlide>
-                            )
-                        }
-                        {
-                            props.pgname == "Nav" &&
-                            ginsData.map((v,i)=>
-                            <SwiperSlide className="swiper-slide slide nav" key={i}>
-                                <div className="wrap">
-                                    <span className="product_tit nav">{v["pdtit"]}</span>
-                                </div>
                             </SwiperSlide>
                             )
                         }

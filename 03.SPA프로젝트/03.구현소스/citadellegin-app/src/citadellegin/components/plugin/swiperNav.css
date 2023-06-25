@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+/* 스와이퍼 - 내비게이션에서의 배너 컴포넌트 CSS - swiperNav.css */
+
+
+/* 내비게이션 영역의 스와이프 배너 - 제일 겉박스 */
+section.swipe_banner.nav {
+    width: 70%;
+    height: 50%;
+    padding: 0 20px 20px;
+    margin: 0;
+
+    /* border: 2px dashed #fff; */
+}
+
+/* 배너의 타이틀 겉박스 */
+.swipe_banner.nav .wrap:has(.tit){
+    padding: 0 0 20px;
+}
+
+/* 배너의 타이틀 */
+.swipe_banner.nav .tit{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: max(30px, 4vmax);
+    font-weight: normal;
+    color: var(--grey-light-color);
+}
+/* 배너의 타이틀 중 i요소들 */
+.swipe_banner.nav .tit>i{
+    font-weight: bold;
+    color: var(--ft-lemon-color);
+}
+
+/* 스와이퍼 컴포넌트 */
+.swiper-nav {
+    width: 100%;
+    height: 100%;
+
+    /* 긁히는거 막기 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 각 슬라이드 (li) */
+.swiper-slide.nav{
+    position: relative;
+    /* 부모자격 - 타이틀의 겉박스 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent;
+    text-align: center;
+}
+/* 슬라이드의 a요소(링크) */
+.swiper-slide.nav>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 제품 타이틀 */
+.swiper-slide.nav .product_tit.nav{
+    display: inline-block;
+    margin-top: 20px;
+
+    font-family: 'Asap', sans-serif;
+    font-style: italic;
+    font-size: 20px;
+    white-space: nowrap;
+
+    font-weight: normal;
+    color: var(--grey-light-color);
+
+    /* outline: 1px solid red; */
+}
+
+/* 제품 이미지 겉박스 */
+.swiper-slide.nav .wrap:has(.banner_img) {
+    width: 100%;
+    height: 100%;
+    
+    margin: 0 auto;
+    background-color: var(--btn-lemon-color);
+
+    overflow: hidden;
+    /* border: 2px dashed red; */
+}
+/* 제품 이미지 */
+.swiper-slide.nav img.banner_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(35%);
+    transition: transform .4s cubic-bezier(0.85, 0, 0.3, 1);
+}
+
+/*************************************************************************************
+    🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥미디어 쿼리🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+*************************************************************************************/
+
+/* 1300px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1300px) {
+
+} /* 1300px 사이즈 이하 미디어쿼리 끝 */
+
+/* 700px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 700px) {
+    /* 내비게이션 영역의 스와이프 배너 - 제일 겉박스 */
+    section.swipe_banner.nav {
+        box-sizing: border-box;
+        width: 100%;
+    }
+    /* 스와이프 배너의 이미지요소 */
+    .swiper-slide.nav img.banner_img {
+        width: 50%;
+    }
+} /* 700px 사이즈 이하 미디어쿼리 끝 */
+
+
+
+/* 500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+    /* 스와이프 배너 - 이미지요소의 겉박스 */
+    .swiper-slide.nav .wrap:has(.banner_img) {
+        width: 90%;
+    }
+    /* 스와이프 배너 - 이미지요소 */
+    .swiper-slide.nav img.banner_img {
+        width: 35%;
+    }
+} /* 500px 사이즈 이하 미디어쿼리 끝 */

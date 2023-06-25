@@ -29,17 +29,6 @@ const Article = (props)=>{
         );
     }
 
-    // const atclFn = ()=>{
-    //     $(()=>{
-    //         // console.log("Article:",props.dbseq);
-    //         const atclData = lmtData[props.dbseq]["article"];
-    //         // console.log("ㅠㅠ", atclData);
-    
-    //         $(".tit").text(atclData[0].tit);
-
-    //     });
-    // };
-
     return(
         <>
             {/* 경우1) 제품 페이지에서 불린 경우 */}
@@ -47,7 +36,6 @@ const Article = (props)=>{
                 (props.pgname == "Original" || props.pgname == "Dete" || props.pgname == "Rouge" || props.pgname == "Limited") &&
                 selcData[props.pgname].map((v, i)=>
                     <div className="article_container" key={i}>
-                        {/* <div>{'😎테스트 : ' + v.tit}</div> */}
                         <article className={"description" + (v.tit==="As for awards..."?" medal":v.tit==="How to enjoy it: "?" recipe":"")}>
                             <div className="wrap">
                                 {/* 큰 제목 */}
@@ -83,7 +71,7 @@ const Article = (props)=>{
             }
             {/* 경우2) limited 페이지의 스와이퍼 배너를 클릭한 경우 */}
             {
-                props.pgname == "test"  &&
+                props.pgname == "details"  &&
                 lmtData[props.dbseq]["article"].map((v, i)=>
                     <div className="article_container details" key={i} >
                         <article className="description">
