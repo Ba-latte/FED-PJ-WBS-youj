@@ -49,7 +49,7 @@ const productIntro_data = {
         ],
         "pdsrc": "./images/dt/sub/limited/gin-1.png",
         "next-img": "./images/dt/sub/limited/next-product.png",
-        "speed": [-50, 15, 20],
+        "speed": [-50, 15, 20, -30, -10],
     }
 }; //////////////// productIntro_data 데이터 객체 ////////////////
 

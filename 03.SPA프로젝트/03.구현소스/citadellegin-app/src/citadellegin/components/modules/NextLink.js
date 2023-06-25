@@ -26,13 +26,17 @@ const NextLink = (props)=>{
         return [val[num].pdtit[0], val[num].pdtit[1], key[num]];
     }
 
+    function fadeOut(){
+        $(".stage").fadeOut();
+    }
+
 
     // 리턴하기
     return(
         <>
             <section className='next_link'>
                 <div className='next_link_container'>
-                    <Link to={'/'+next(props.pgname)[2]} >
+                    <Link to={'/'+next(props.pgname)[2]} onClick={fadeOut}>
                         <div className="wrap">
                             <h2 className="name">
                                 <span>

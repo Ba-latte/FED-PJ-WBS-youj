@@ -1,6 +1,7 @@
 // 서브페이지 : Original 컴포넌트
 
-import React from "react";
+import React, { useEffect } from "react";
+import $ from 'jquery';
 import ProductIntro from "../modules/ProductIntro";
 import Scroll from "../modules/Scroll";
 import NextLink from "../modules/NextLink";
@@ -10,6 +11,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 
 // [ 서브페이지 : Original 컴포넌트 ] //////////////////
 const Original = ()=>{
+
     return(
         <>
         <ParallaxProvider>
@@ -18,7 +20,7 @@ const Original = ()=>{
             {/* 2.스크롤 안내 표시 모듈 */}
             <Scroll />
             {/* 3.제품 링크 모듈 : 다음제품으로의 링크 */}
-            <NextLink pgname="Original" />
+            <NextLink pgname="Original"/>
         </ParallaxProvider>
         </>
     );

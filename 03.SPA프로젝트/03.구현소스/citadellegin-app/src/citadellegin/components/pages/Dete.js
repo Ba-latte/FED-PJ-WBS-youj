@@ -1,6 +1,7 @@
 // 서브페이지 : dete 페이지 컴포넌트
 
-import React from "react";
+import React, { useEffect } from "react";
+import $ from 'jquery';
 import ProductIntro from "../modules/ProductIntro";
 import Scroll from "../modules/Scroll";
 import NextLink from "../modules/NextLink";
@@ -11,6 +12,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 
 // [ 서브페이지 : dete 페이지 컴포넌트 ] //////////////////
 const Dete = ()=>{
+
     return(
         <>
             <ParallaxProvider>
