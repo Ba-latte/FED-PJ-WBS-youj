@@ -4,6 +4,7 @@ import React from 'react';
 import $, { event } from 'jquery';
 import {Link} from 'react-router-dom';
 import '../../css/header.css';
+import SwiperLimited from '../plugin/SwiperLimited';
 
 
 
@@ -55,9 +56,11 @@ const Header = ()=>{
             <div id="nav">
                 <div className="wrap">
                     <nav className="nav">
+                        {/* 닫기 버튼 */}
                         <div className="wrap">
                             <span className="material-symbols-outlined close">close</span>
                         </div>
+                        {/* 메뉴 */}
                         <ul>
                             <li>
                                 <Link to="/original">Citadelle Original</Link>
@@ -73,6 +76,10 @@ const Header = ()=>{
                             </li>
                         </ul>
                     </nav>
+                    {/* 스와이프 배너 */}
+                    <section className='swipe_banner_container'>
+                        <SwiperLimited pgname="Nav" />
+                    </section>
                 </div>
             </div>
             {/* 바깥에 빈 루트를 만들고 JS 로드 함수 포함시키기 */}

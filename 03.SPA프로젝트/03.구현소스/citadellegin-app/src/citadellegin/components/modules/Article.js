@@ -28,9 +28,10 @@ const Article = (props)=>{
         );
     }
 
+
     const atclFn = ()=>{
         const atclData = lmtData.map(v=>v["article"]);
-        console.log("ㅠㅠ", atclData);
+        // console.log("ㅠㅠ", atclData);
     };
 
     return(
@@ -53,7 +54,7 @@ const Article = (props)=>{
                             {
                                 props.pgname=="Limited" && v.desc === "" ?
                                 // 스와이퍼 모듈
-                                <SwiperLimited /> :
+                                <SwiperLimited pgname="Limited" /> :
                                 <p className="desc">{makeDesc(v.desc)}</p>
                             }
                             {/* 3.이미지 */}

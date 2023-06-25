@@ -6,14 +6,16 @@ import { easeOutExpo } from "jquery-ui";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Virtual } from 'swiper';
 import {Link} from 'react-router-dom';
+import Details from "../modules/Details";
+// 데이터
+import limited_product_data from "../../data/limitedProduct";
+import productIntro_data from "../../data/productIntro";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 // CSS 불러오기
 import "./swiperLimited.css";
-import Details from "../modules/Details";
-import limited_product_data from "../../data/limitedProduct";
 
 
 
@@ -70,14 +72,38 @@ const slideUpAni = ()=>{
 
 
 // [ 컴포넌트 만들기 ]
-export default function SwiperLimited() {
+export default function SwiperLimited(props) {
     // props.pgname - 페이지 이름 (첫글자 대문자)
+
+
+    // 온고잉 제품 데이터
+    const ginsData = [
+        {
+            "tit" : "Original",
+            "src" : "./images/dt/main/original.png",
+        },
+        {
+            "tit" : "Jardin d’Été",
+            "src" : "./images/dt/main/dete.png",
+        },
+        {
+            "tit" : "Rouge",
+            "src" : "./images/dt/main/rouge.png",
+        },
+        {
+            "tit" : "Our limited editions",
+            "src" : "./images/dt/main/limited.png",
+        },
+    ];
 
     // 리미티드 제품 데이터
     const selecData = limited_product_data;
+
     // 해당데이터 Hook구성
     const [dbseq,setDbseq] = useState(0);
 
+
+    // 배너의 슬라이드 클릭시 세부사항 박스 보여주는 함수
     const showFn = (idx)=>{
         console.log("등장해!",idx);
         const detail_bx = $(".details_container");
@@ -116,6 +142,7 @@ export default function SwiperLimited() {
                 >
                     <ul className="swiper-wrapper">
                         {
+                            props.pgname == "Limited" &&
                             selecData.map((v, i)=>
                             <SwiperSlide className="swiper-slide slide limited" key={i} onClick={()=>showFn(i)}>
                                 {/* {console.log(v.isrc)} */}
@@ -126,11 +153,24 @@ export default function SwiperLimited() {
                             </SwiperSlide>
                             )
                         }
+                        {
+                            props.pgname == "Nav" &&
+                            ginsData.map((v,i)=>
+                            <SwiperSlide className="swiper-slide slide nav" key={i}>
+                                <div className="wrap">
+                                    <span className="product_tit nav">{v["pdtit"]}</span>
+                                </div>
+                            </SwiperSlide>
+                            )
+                        }
                     </ul>
                 </Swiper>
             </section>
             {/* 한정판 제품 슬라이드 클릭 시 등장하는 세부 정보 박스 */}
-            <Details dbseq={dbseq} />
+            {
+                props.pgname == "Limited" &&
+                <Details dbseq={dbseq} />
+            }
             {/* js 로드 함수 호출 */}
             {/* {slideUpAni()} */}
         </>
