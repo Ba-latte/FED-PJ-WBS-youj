@@ -117,6 +117,10 @@ function loadingFn(){
         // 햄버거버튼 클릭시 내비박스의 CSS 트랜지션 변화
         ham_btn.click(function(){
             console.log("햄버거버튼 클릭시!");
+
+            // 윈도우화면 스크롤 기능 막기
+            // $("body").css({overflowY: 'hidden'});
+
             xval = $(this).offset().left+22;
             yval = $(this).offset().top+22;
 
@@ -160,6 +164,10 @@ function loadingFn(){
         // 닫기버튼 클릭시 내비박스의 CSS 트랜지션 변화
         cls_btn.click(function(){
             console.log("닫기버튼 클릭시!");
+
+            // 윈도우화면 스크롤 기능 풀기
+            // $("body").css({overflowY: 'visible'});
+
             xval = ham_btn.offset().left+22;
             yval = ham_btn.offset().top+22;
 

@@ -43,6 +43,15 @@ section.swipe_banner.nav {
     user-select: none;
 }
 
+/* 스와이퍼 컴포넌트의 좌,우 화살표 */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--bg-navy-color);
+}
+/* 좌,우 화살표 넘길 슬라이드 없을 때엔 안보이게 하기 */
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    display: none;
+}
+
 /* 각 슬라이드 (li) */
 .swiper-slide.nav{
     position: relative;
@@ -132,5 +141,16 @@ section.swipe_banner.nav {
     /* 스와이프 배너 - 이미지요소 */
     .swiper-slide.nav img.banner_img {
         width: 35%;
+    }
+
+    /* 스와이프 배너 - 오른쪽 이동 버튼 */
+    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+        right: var(--swiper-navigation-sides-offset,25px);
+        left: auto;
+    }
+    /* 스와이프 배너 - 왼쪽 이동 버튼 */
+    .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: var(--swiper-navigation-sides-offset,25px);
+        right: auto;
     }
 } /* 500px 사이즈 이하 미디어쿼리 끝 */

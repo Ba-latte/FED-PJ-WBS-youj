@@ -14,8 +14,9 @@
 
     /* 처음에 숨겨두기 */
     clip-path: circle(0% at 50% 50%);
-    
+
     transition: clip-path 1s cubic-bezier(0.83, 0, 0.21, 1.33);
+
 }
 
 
@@ -61,6 +62,11 @@
     
     /* border: 1px solid #000; */
 }
+/* 닫기 버튼의 타이틀 */
+.details .cls_btn_container .cls_tit{
+    font-size: 20px;
+}
+
 /* 닫기 버튼 */
 .details .cls_btn_container .close{
     display: block;

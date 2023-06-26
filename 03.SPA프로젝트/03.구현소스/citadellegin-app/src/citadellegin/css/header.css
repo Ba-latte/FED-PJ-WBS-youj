@@ -191,7 +191,7 @@ header.top{
     #nav nav.nav{
         flex-direction: column;
         gap: 20px;
-        outline: 2px dashed red;
+        /* outline: 2px dashed red; */
     }
     /* 메뉴 박스 */
     #nav .nav>ul{

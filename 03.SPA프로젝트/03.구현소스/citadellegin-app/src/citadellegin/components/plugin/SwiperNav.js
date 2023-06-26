@@ -2,11 +2,14 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+
 
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 // CSS 불러오기
 import "./swiperNav.css";
 
@@ -52,6 +55,8 @@ export default function SwiperLimited(props) {
                     slidesPerView={1}
                     spaceBetween={30}
                     centeredSlides={false}
+                    navigation={true}
+                    modules={[Navigation]}
                     breakpoints={{
                         500: {
                             slidesPerView: 2,
