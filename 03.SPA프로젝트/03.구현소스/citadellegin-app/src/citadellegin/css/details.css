@@ -14,6 +14,7 @@
 
     /* 처음에 숨겨두기 */
     clip-path: circle(0% at 50% 50%);
+    
     transition: clip-path 1s cubic-bezier(0.83, 0, 0.21, 1.33);
 }
 

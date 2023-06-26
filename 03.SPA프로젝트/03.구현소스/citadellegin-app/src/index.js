@@ -102,8 +102,8 @@ export default function App(){
       wheelEventTarget={null}
     > */}
       {/* 배포 위해 basename 속성 사용 */}
-      {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      {/* <BrowserRouter> */}
       {/* <Suspense fallback={<Loading />}> */}
         {/* 👇 라우터 링크 이동할 때 스크롤 최상단으로 이동하기 */}
         <ScrollTop />

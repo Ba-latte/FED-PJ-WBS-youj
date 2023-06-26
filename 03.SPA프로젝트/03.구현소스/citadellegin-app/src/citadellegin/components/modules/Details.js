@@ -19,20 +19,32 @@ const Details = (props)=>{ // props.dbseq - 슬라이드 인덱스 번호
         console.log("닫아!");
         // 대상 선정
         const details_container = $(".details_container");
+        
+        // // 세부사항 박스 닫기
+        // details_container.css({
+        //     clipPath: `circle(0% at 50% 50%)`,
+        // });
+
+        // // 세부사항 박스 바깥 영역 스크롤 가능하게 오버플로우 풀기
+        // $("body").css({overflowY:"visible"});
+        
+
 
         setTimeout(() => {
+            
             // 세부사항 박스 닫기
             details_container.css({
                 clipPath: `circle(0% at 50% 50%)`,
             });
+
             
         }, 10, 
         ()=>{
-            // 세부사항 박스 스크롤 상단으로 옮겨두기
-            details_container.scrollTop(0);
-            
             // 세부사항 박스 바깥 영역 스크롤 가능하게 오버플로우 풀기
             $("body").css({overflowY:"visible"});
+
+            // 세부사항 박스 스크롤 상단으로 옮겨두기
+            // details_container.scrollTop(0);
         });
 
     };

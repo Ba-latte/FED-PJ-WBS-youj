@@ -91,17 +91,16 @@ export default function SwiperLimited(props) {
         // dbseq변수의 값 바꾸기
         setDbseq(idx);
 
+        // 세부사항 박스 보이기
+        detail_bx.css({
+            clipPath: `circle(100% at 50% 50%)`,
+        });
+
         // 세부사항 박스의 외부 스크롤 숨겨두기
         $("body").css({overflowY: "hidden"});
 
         // 세부사항 박스 스크롤 상단으로 옮겨두기
         detail_bx.scrollTop(0);
-        
-        
-        // 세부사항 박스 보이기
-        detail_bx.css({
-            clipPath: `circle(100% at 50% 50%)`,
-        });
     };
     
     return (
