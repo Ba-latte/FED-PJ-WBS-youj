@@ -44,11 +44,11 @@ section.swipe_banner.nav {
 }
 
 /* 스와이퍼 컴포넌트의 좌,우 화살표 */
-.swiper-button-next, .swiper-button-prev {
+.swipe_banner.nav .swiper-button-next, .swiper-button-prev {
     color: var(--bg-navy-color);
 }
 /* 좌,우 화살표 넘길 슬라이드 없을 때엔 안보이게 하기 */
-.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+.swipe_banner.nav .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
     display: none;
 }
 

@@ -27,7 +27,7 @@ const LegalAgeVerification = ()=>{
     const [hasCookie, setHasCookie] = useState(true);
 
     // 쿠키 관리
-    const [cookies, setCookies] = useCookies();
+    const [cookies, setCookies, removeCookies] = useCookies();
 
 
     // 쿠키 만료 시기를 설정하는 함수 : pm에 일 수를 넣으면 현재 시간에서 해당 일 수를 더한 시기를 반환함
@@ -41,21 +41,34 @@ const LegalAgeVerification = ()=>{
     }; ////////////////// getExpiredDate 함수 //////////////////
 
 
-    // 유효기간이 1일인 쿠키 생성하고 모달 닫는 함수
+    // // [기존의 방법] 유효기간이 7일인 쿠키 생성하고 모달 닫는 함수
+    // const closeModalUntilExpires = ()=>{
+    //     // 쿠키가 false상태라면(?) 이 함수 들어가지 말고 나가기(?)
+    //     if(!cookies) return;
+        
+    //     console.log("쿠키 설정하고 창 닫았어!");
+
+    //     // 유효기간 7일 설정
+    //     const expires = getExpiredDate(7);
+    //     // 유효기간이 7일인 쿠키 생성
+    //     setCookies("MODAL_EXPIRES", true, {path: "/", expires: expires});
+
+    //     // 모달창 Hook변수 상태 바꾸기
+    //     setModalIsOpen(false);
+    // }; ////////////////// closeModalUntilExpires 함수 //////////////////
+
+
+    // 유효기간이 7일인 쿠키 생성하고 모달 닫는 함수
     const closeModalUntilExpires = ()=>{
         // 쿠키가 false상태라면(?) 이 함수 들어가지 말고 나가기(?)
         if(!cookies) return;
         
-        console.log("쿠키 설정하고 창 닫았어!");
-
-        // 유효기간 1일 설정
-        const expires = getExpiredDate(1);
-        // 유효기간이 1일인 쿠키 생성
-        setCookies("MODAL_EXPIRES", true, {path: "/", expires: expires});
+        console.log("쿠키 설정 유무 확인하고 창 닫았어!");
 
         // 모달창 Hook변수 상태 바꾸기
         setModalIsOpen(false);
     }; ////////////////// closeModalUntilExpires 함수 //////////////////
+
 
     // useEffect로 해당 쿠키가 존재하하면 모달이 안 뜨고, 쿠키가 존재하지 않으면 모달이 뜨도록 하기
     useEffect(()=>{
@@ -70,7 +83,36 @@ const LegalAgeVerification = ()=>{
     }, []);
     // 그리고 Modal 컴포넌트에 closeModalUntilExpires 함수를 prop으로 넘겨서 "오늘 하루 더이상 보지 않기" 문구의 onClick 이벤트에 지정해주기
 
-    
+
+    // 체크 박스 체크시 쿠키 생성하는 함수
+    const checkedCookies = (e)=>{
+        // 체크박스 체크/언체크 여부 확인하기
+        let isChecked = e.target.checked;
+        console.log("7일간 안 볼거야? : ", isChecked);
+
+        if(isChecked){
+            console.log("모달창 안보임!", cookies);
+
+            // 유효기간 7일 설정
+            const expires = getExpiredDate(7);
+            // 유효기간이 7일인 쿠키 생성
+            setCookies("MODAL_EXPIRES", true, {path: "/", expires: expires});
+            // path : 쿠키 값을 저장하는 서버의 경로. '/'면 모든 페이지에서 쿠키에 접근 가능함
+            // expires : 유효 시간 지정하기
+
+            // 쿠키 존재 체크하는 Hook 변수 true로 바꾸기(?)
+            // setHasCookie(true);
+        }
+        else{
+            console.log("모달창 볼거야!", cookies);
+
+            // 쿠키 지우기
+            removeCookies("MODAL_EXPIRES");
+
+            // 쿠키 존재 체크하는 Hook 변수 false로 바꾸기
+            setHasCookie(false);
+        }
+    }; ////////////////// checkedCookies 함수 //////////////////
 
 
     // 마우스 오버시 상대 박스 투명도 변경하기
@@ -176,7 +218,7 @@ const LegalAgeVerification = ()=>{
                             </div>
                             {/* 4. y/n 선택 박스 */}
                             <div className='YoN_bx' data-aos="fade" data-aos-duration="800" data-aos-delay="1000">
-                                <div className='yes_bx' onClick={closeModal}>
+                                <div className='yes_bx' onClick={closeModalUntilExpires} /* onClick={closeModal} */>
                                     <h3>Yes</h3>
                                 </div>
                                 <div className='no_bx' onClick={no_pick}>
@@ -198,7 +240,7 @@ const LegalAgeVerification = ()=>{
                             <div className='cookieChk_bx'>
                                 {/* 체크박스 */}
                                 <div className='chk_bx' >
-                                    <input type='checkbox' id='checker' className='noShowChk' onClick={closeModalUntilExpires} ></input>
+                                    <input type='checkbox' id='checker' className='noShowChk' onChange={checkedCookies} /* onClick={closeModalUntilExpires} */ ></input>
                                 </div>
                                 {/* 라벨박스 */}
                                 <div className='desc_bx'>

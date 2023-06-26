@@ -126,6 +126,24 @@
 } /* 1300px 사이즈 이하 미디어쿼리 끝 */
 
 
+/* 800px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 800px) {
+    /* 레시피 아티클의 배경색 - 가상요소 */
+    .description.recipe::after{
+        transform: translateX(0);
+        width: 100%;
+    }
+    /* 메달 아티클의 배경색 - 가상요소 */
+    .description.medal::after{
+        transform: translateX(0);
+        width: 100%;
+    }
+    .description.medal .wrap:has(>img){
+        box-sizing: border-box;
+    }
+} /* 800px 사이즈 이하 미디어쿼리 끝 */
+
+
 
 /* 500px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {

@@ -22,6 +22,14 @@ section.swipe_banner.limited {
     -ms-user-select: none;
     user-select: none;
 }
+/* 스와이퍼 컴포넌트의 좌,우 화살표 */
+.swipe_banner.limited .swiper-button-next, .swiper-button-prev {
+    color: var(--bg-navy-color);
+}
+/* 좌,우 화살표 넘길 슬라이드 없을 때엔 안보이게 하기 */
+.swipe_banner.limited .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    display: none;
+}
 
 /* 각 슬라이드 (li) */
 .swiper-slide.limited{
@@ -93,11 +101,20 @@ section.swipe_banner.limited {
 
 } /* 1300px 사이즈 이하 미디어쿼리 끝 */
 
-/* 500px 사이즈 이하 미디어쿼리 시작 */
-@media screen and (max-width: 500px) {
+/* 800px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 800px) {
     section.swipe_banner.limited{
         width: 100%;
         padding: 20px;
         box-sizing: border-box;
     }
+} /* 800px 사이즈 이하 미디어쿼리 끝 */
+
+/* 500px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+    /* section.swipe_banner.limited{
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    } */
 } /* 500px 사이즈 이하 미디어쿼리 끝 */

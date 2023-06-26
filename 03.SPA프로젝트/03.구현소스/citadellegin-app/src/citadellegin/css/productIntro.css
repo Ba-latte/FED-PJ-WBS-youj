@@ -231,37 +231,84 @@
 } /* 1300px 사이즈 이하 미디어쿼리 끝 */
 
 
+/* 800px 사이즈 이하 미디어쿼리 시작 */
+@media screen and (max-width: 800px) {
+    /* 제품 페이지 큰 타이틀 */
+    .product_name_container .name{
+        margin-top: 30px;
+    }
+    /* 제품 페이지 큰 타이틀 - 각 단락 겉박스 */
+    .product_name_container .name>span{
+        gap: 20px;
+    }
+    /* 그리드 박스 */
+    .gridBx{
+        padding: 20px 0 0;
+    }
+    /* 그리드 박스 - 이미지 컨테이너 */
+    .product_img_container{
+        grid-column: 1/13;
+        order: 1;
+        padding-bottom: 70px;
+    }
+    /* 그리드 박스 - 아티클 컨테이너 */
+    .product_desc_container{
+        grid-column: 1/13;
+        order: 2;
+    }
+    /* 이미지 컨테이너 - 고정된 병의 겉박스 */
+    .product_img_container .wrap:has(img#product){
+        text-align: center;
+        position: relative;
+    }
+    /* 이미지 컨테이너 - 고정된 병 요소 */
+    .product_img_container img#product{
+        /* position: absolute; */
+        margin-top: 0;
+        width: 60%;
+    }
+    /* 이미지 컨테이너 - 돌아가는 병 요소 */
+    .product_img_container img.product{
+        width: 60%;
+        margin-top: 0;
+    }
+    /* 데코 이미지 세팅 */
+    /* original 제품 */
+    .wrap:has(.citrus){
+        top: 32%;
+        left: -5%;
+    }
+    /* dete 제품 */
+    .wrap:has(.lemon){
+        left: 5%;
+    }
+    .product_img_container .wrap:has(.leaf-1){
+        width: 300px;
+        height: 300px;
+        top: 130%;
+        left: 55%;
+        z-index: 1;
+    }
+    .wrap:has(.berries){
+        left: 30%;
+    }
+} /* 800px 사이즈 이하 미디어쿼리 끝 */
+
+
 
 /* 500px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {
     .product_name_container .name>span{
         gap: 0;
     }
-    .gridBx{
-        padding: 20px 0 0;
-    }
-    .product_img_container{
-        grid-column: 1/13;
-        order: 1;
-        padding-bottom: 70px;
-    }
-    .product_desc_container{
-        grid-column: 1/13;
-        order: 2;
-    }
-    .product_img_container .wrap:has(img#product){
-        text-align: center;
-        position: relative;
-    }
+    /* 이미지 컨테이너 - 고정된 병 요소 */
     .product_img_container img#product{
         /* position: absolute; */
-        margin-top: 0;
         width: 80%;
     }
     /* 제품 유리병 img요소 세팅 - 돌아가는 병 */
     .product_img_container img.product{
         width: 80%;
-        margin-top: 0;
     }
 
     /* 데코 이미지 세팅 */
@@ -269,8 +316,8 @@
     .wrap:has(.citrus){
         width: 250px;
         height: 250px;
-        top: 32%;
-        left: -5%;
+        /* top: 32%; */
+        /* left: -5%; */
     }
     .wrap:has(.leaf-3){
         width: auto;

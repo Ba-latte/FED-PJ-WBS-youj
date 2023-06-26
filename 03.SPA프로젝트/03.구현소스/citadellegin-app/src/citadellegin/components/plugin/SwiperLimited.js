@@ -4,16 +4,15 @@ import React, { useRef, useState } from "react";
 import $ from 'jquery';
 import { easeOutExpo } from "jquery-ui";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Virtual } from 'swiper';
-import {Link} from 'react-router-dom';
 import Details from "../modules/Details";
+import { Navigation } from "swiper";
 // 데이터
 import limited_product_data from "../../data/limitedProduct";
-import productIntro_data from "../../data/productIntro";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 // CSS 불러오기
 import "./swiperLimited.css";
 
@@ -114,6 +113,8 @@ export default function SwiperLimited(props) {
                     // "Limited"페이지에서 호출된 거면 간격 30주고 아니면 0주기
                     spaceBetween={30}
                     centeredSlides={false}
+                    navigation={true}
+                    modules={[Navigation]}
                     breakpoints={{
                         200: {
                             slidesPerView: 1,

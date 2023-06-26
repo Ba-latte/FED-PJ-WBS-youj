@@ -1,8 +1,9 @@
 // 상단 영역 컴포넌트 JS - Header.js
 
 import React from 'react';
-import $, { event } from 'jquery';
+import $ from 'jquery';
 import {Link} from 'react-router-dom';
+// CSS 불러오기
 import '../../css/header.css';
 import SwiperNaV from '../plugin/SwiperNav';
 
@@ -21,7 +22,6 @@ const Header = ()=>{
         {
             "dete": ["Jardin", "d’Été"],
         },
-
     ];
 
     return(
@@ -256,7 +256,7 @@ function loadingFn(){
             
             // 타이틀이 등장하는 동안에는 마우스오버 애니메이션 함수가 먹히지 않도록 막아두기
             $(".nav").addClass('on');
-            setTimeout(()=>{$(".nav").removeClass('on')},1000);
+            setTimeout(()=>{$(".nav").removeClass('on')},1100);
 
 
         }; /////////////////////// tit_appearFn 함수 ///////////////////////
