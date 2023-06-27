@@ -2,7 +2,7 @@
 
 import React, { Suspense, lazy, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes, HashRouter} from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import scrollbar from 'smooth-scrollbar';
 import { Scrollbar } from "smooth-scrollbar-react";
@@ -102,8 +102,9 @@ export default function App(){
       wheelEventTarget={null}
     > */}
       {/* 배포 위해 basename 속성 사용 */}
-      {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      {/* <HashRouter> */}
+      {/* <BrowserRouter> */}
       {/* <Suspense fallback={<Loading />}> */}
         {/* 👇 라우터 링크 이동할 때 스크롤 최상단으로 이동하기 */}
         <ScrollTop />
@@ -121,6 +122,7 @@ export default function App(){
         </Routes>
       {/* </Suspense> */}
       </BrowserRouter>
+      {/* </HashRouter> */}
     {/* </Scrollbar> */}
     </CookiesProvider>
   );

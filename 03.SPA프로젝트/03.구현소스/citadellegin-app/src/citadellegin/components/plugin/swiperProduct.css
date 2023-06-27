@@ -131,7 +131,7 @@ section.swipe_banner {
         width: 200px;
         position: absolute;
         top: -410px;
-        right: 0%;
+        right: 2%;
         transform: rotate(0deg);
         /* z-index: -1; */
         overflow: hidden;

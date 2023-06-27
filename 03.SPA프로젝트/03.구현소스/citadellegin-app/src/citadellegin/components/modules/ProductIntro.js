@@ -136,7 +136,13 @@ const ProductIntro = (props)=>{
                                 v !== "" &&
                                 <div className='wrap' key={i}>
                                     {/* 클래스이름은 이미지이름에서 따오기 */}
-                                    <Parallax speed={selcData[props.pgname]["speed"][i]}>
+                                    <Parallax 
+                                    speed={
+                                        window.innerWidth < 500 ?
+                                        0 : 
+                                        selcData[props.pgname]["speed"][i]
+                                    }
+                                    >
                                         <img className={"sticker " + v.split("/")[5].split(".")[0]} src={v} alt="사용된 보태니컬 종류 일러스트" />
                                     </Parallax>
                                 </div>
