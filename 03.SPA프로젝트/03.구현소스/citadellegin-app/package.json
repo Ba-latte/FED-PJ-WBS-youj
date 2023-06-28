@@ -2,7 +2,6 @@
   "name": "citadellegin-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Ba-latte.github.io/citadellegin-app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
