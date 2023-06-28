@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/* 카드 넘기는 형식의 스와이퍼 모듈용 CSS - SwiperCard.css */
+
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 제일 겉박스 */
+.swiperCard_container {
+    /* 일단 윈도우 화면에 꽉차게 + 스크롤 안 생기게 만들기 */
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 스와이퍼 카드 - 스와이퍼 컴포넌트 박스 */
+.swiper.swiper-card {
+    width: 85vw;
+    height: 90vh;
+
+    /* border: 2px dashed red; */
+}
+/* 스와이퍼 카드 - 슬라이드 */
+.swiper-slide.slide-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--ft-navy-color);
+}
+/* 스와이퍼 카드 - 슬라이드별 개별 세팅 */
+.swiper-slide:nth-child(1n) {
+    background-color: var(--grey-light-color);
+}
+
+.swiper-slide:nth-child(2n) {
+    background-color: var(--grey-light-color);
+}
+
+.swiper-slide:nth-child(3n) {
+    background-color: var(--grey-light-color);
+}
+
+.swiper-slide:nth-child(4n) {
+    background-color: var(--grey-light-color);
+}
