@@ -100,14 +100,17 @@ const LegalAgeVerification = ()=>{
             // path : 쿠키 값을 저장하는 서버의 경로. '/'면 모든 페이지에서 쿠키에 접근 가능함
             // expires : 유효 시간 지정하기
 
-            // 쿠키 존재 체크하는 Hook 변수 true로 바꾸기(?)
-            // setHasCookie(true);
         }
         else{
             console.log("모달창 볼거야!", cookies);
 
+            // 유효기간 -1일로 설정하기
+            const expires = getExpiredDate(-1);
+
             // 쿠키 지우기
-            removeCookies("MODAL_EXPIRES");
+            // removeCookies("MODAL_EXPIRES");
+            // 👆 removeCookies를 쓰면 안 먹힐 때도 있음! 그래서 안전하게 유효기간을 -1로 바꾸는 형식으로 함!
+            setCookies("MODAL_EXPIRES", false, {path: "/", expires: expires});
 
             // 쿠키 존재 체크하는 Hook 변수 false로 바꾸기
             setHasCookie(false);
