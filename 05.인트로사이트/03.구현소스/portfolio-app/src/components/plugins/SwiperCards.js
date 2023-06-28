@@ -1,6 +1,7 @@
 // 카드 넘기는 형식의 스와이퍼 모듈 컴포넌트 JS - SwiperCard.js
 
 import React from "react";
+import { Link } from "react-router-dom";
 // 스와이퍼
 import { Swiper, SwiperSlide } from "swiper/react";
 // 스와이퍼 모듈
