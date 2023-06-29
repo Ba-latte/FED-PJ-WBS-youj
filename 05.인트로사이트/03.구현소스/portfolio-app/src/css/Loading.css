@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+/* 로딩화면 모듈용 CSS - Loading.css */
+
+.loading_container{
+    width: 100vw;
+    height: 100vh;
+    background-color: lime;
+    opacity: 0;
+
+    border: 2px dashed red;
+}

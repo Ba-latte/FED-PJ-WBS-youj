@@ -27,14 +27,18 @@ function SwiperCard(){
             >
                 {/* 1. 이력서 카드 */}
                 <SwiperSlide className="slide-card">
-                    😎이력서
+                    {/* <Link to='/loading'>😎이력서</Link> */}
                 </SwiperSlide>
                 {/* 2. 1차 플젝 카드 */}
                 <SwiperSlide className="slide-card">🙂1차 플젝 : 서울미식주간</SwiperSlide>
                 {/* 3. 2차 플젝 카드 */}
                 <SwiperSlide className="slide-card">😊2차 플젝 : 불가리</SwiperSlide>
                 {/* 4. 3차 플젝 카드 */}
-                <SwiperSlide className="slide-card">🥰3차 플젝 : 시타델</SwiperSlide>
+                <SwiperSlide className="slide-card">
+                    <Link to='/citadelle'>
+                        🥰3차 플젝 : 시타델
+                    </Link>
+                </SwiperSlide>
             </Swiper>
         </section>
         </>

@@ -61,7 +61,8 @@ class MouseTracking extends React.Component {
         return (
             <section className="mouseTracking_container" >
                 <div className="mouseTracking_box" style={offset}>
-                
+                    <img className="phoneImg" src='./images/phone02.png' alt='핸드폰' />
+                    <img className="pjImg" src='./images/pj01.png' alt='프로젝트 이미지' />
                 </div>
                 {/* <p className="pop link">www.D.SHRIG.com</p> */}
                 {/* <p className="pop min">-</p> */}

@@ -2,3 +2,74 @@
 
 /* 3차 플젝인 Citadelle 페이지 컴포넌트 CSS - Citadelle.css */
 
+
+/* 제일 겉박스 */
+.citadelle_pj_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    outline: 1px solid blueviolet;
+}
+
+/* 배경 */
+.background_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: #666;
+}
+
+/* 플립 박스의 겉박스 */
+.flip_container.wrap{
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    perspective: 5000px;
+}
+
+/* 플립 박스 */
+.flip_box{
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    /* transition:  3s; */
+}
+
+/* 앞면, 뒷면 공통 세팅 */
+.front_side_container, .back_side_container{
+    width: 100%;
+    height: 100%;
+
+    /* 앞면,뒷면을 겹치게 만들기 */
+    position: absolute;
+
+    /* 뒷면 보이기 */
+    backface-visibility: hidden;
+}
+
+/* 앞면, 뒷면 개별 세팅 */
+/* 앞면 세팅 */
+.front_side_container{
+    background-color: lightblue;
+}
+/* 뒷면 세팅 : 미리 뒤집힌 상태로 두기 */
+.back_side_container{
+    background-color: lightsalmon;
+    transform: rotateY(180deg);
+}
+
+
+/* 마우스 호버시 뒤집기 */
+/* .flip_container:hover .flip_box{
+    transform: rotateY(180deg);
+} */

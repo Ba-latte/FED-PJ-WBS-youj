@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes, HashRouter} from 'react-router-dom';
 import MouseTracking from '../plugins/MouseTracking';
 import SwiperCard from '../plugins/SwiperCards';
 import Loading from './Loading';
+import Citadelle from '../pages/Citadelle';
 
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
         <Routes>
           {/* 루트 : 카드 넘기는 형식의 배너 */}
           <Route path='/' element={<SwiperCard />}></Route>
-          {/* 로딩화면 */}
-          <Route path='/roading' element={<Loading />}></Route>
+          {/* 로딩화면(?) */}
+          <Route path='/loading' element={<Loading />}></Route>
+          {/* 시타델 페이지 */}
+          <Route path='/citadelle' element={<Citadelle />}></Route>
         </Routes>
       </BrowserRouter>
       
