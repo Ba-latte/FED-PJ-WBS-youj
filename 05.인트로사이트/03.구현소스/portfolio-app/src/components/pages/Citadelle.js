@@ -31,14 +31,14 @@ function Citadelle(){
         <section className='citadelle_pj_container'>
             <div className='flip_container wrap'>
                 <div className='flip_box' style={ flip_value }>
-                {/* 앞면 */}
-                <section className='front_side_container'>
-                    <MouseTracking />
-                </section>
-                {/* 뒷면 */}
-                <section className='back_side_container'>
-                <h1 style={{textAlign:"center", fontSize:"50px"}}>뒷면</h1>
-                </section>
+                    {/* 앞면 */}
+                    <section className='front_side_container'>
+                        <MouseTracking />
+                    </section>
+                    {/* 뒷면 */}
+                    <section className='back_side_container'>
+                    <h1 style={{textAlign:"center", fontSize:"50px"}}>뒷면</h1>
+                    </section>
                 </div>
             </div>
             {/* 앞/뒷면 뒤집는 레인지 슬라이더 */}
