@@ -20,6 +20,7 @@ const Main= ()=>{
             {
                 check == true &&
                 <>
+                {/* 0.법적 나이 확인 팝업창 */}
                 <LegalAgeVerification />
                 {/* 1.페이지 소개 모듈 */}
                 <PageIntro />
