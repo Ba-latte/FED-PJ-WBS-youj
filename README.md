@@ -7,7 +7,7 @@ HTML,CSS,JavaScript만을 사용하여 웹사이트를 구현한 프로젝트입
 # 02.모바일 웹&앱 프로젝트
 뷰를 활용하여 웹 어플리케이션을 만드는 프로젝트이며 일부는 SPA로 구현되도록 하였습니다.
 
-# 03.SPA 프로젝트
+# 03.SPA 프로젝트 (citadellegin-app)
 리액트를 활용하여 SPA를 만드는 프로젝트입니다.
 - 배포 레파지토리 주소   
 👉 https://github.com/Ba-latte/citadellegin-app
